@@ -1,0 +1,103 @@
+{
+  "meta": { "title": "Số đếm & Bộ đếm N5" },
+  "numbers": [
+    { "num": 1, "kanji": "一", "hira": "いち", "romaji": "ichi" },
+    { "num": 2, "kanji": "二", "hira": "に", "romaji": "ni" },
+    { "num": 3, "kanji": "三", "hira": "さん", "romaji": "san" },
+    { "num": 4, "kanji": "四", "hira": "し/よん", "romaji": "shi/yon" },
+    { "num": 5, "kanji": "五", "hira": "ご", "romaji": "go" },
+    { "num": 6, "kanji": "六", "hira": "ろく", "romaji": "roku" },
+    { "num": 7, "kanji": "七", "hira": "しち/なな", "romaji": "shichi/nana" },
+    { "num": 8, "kanji": "八", "hira": "はち", "romaji": "hachi" },
+    { "num": 9, "kanji": "九", "hira": "く/きゅう", "romaji": "ku/kyū" },
+    { "num": 10, "kanji": "十", "hira": "じゅう", "romaji": "jū" },
+    { "num": 100, "kanji": "百", "hira": "ひゃく", "romaji": "hyaku" },
+    { "num": 1000, "kanji": "千", "hira": "せん", "romaji": "sen" },
+    { "num": 10000, "kanji": "万", "hira": "まん", "romaji": "man" }
+  ],
+  "counters": [
+    {
+      "id": "tsu",
+      "suffix": "〜つ",
+      "use": "Đồ vật nhỏ (tổng quát)",
+      "color": "#22d3ee",
+      "readings": [
+        { "n": 1, "read": "ひとつ" }, { "n": 2, "read": "ふたつ" }, { "n": 3, "read": "みっつ" },
+        { "n": 4, "read": "よっつ" }, { "n": 5, "read": "いつつ" }, { "n": 6, "read": "むっつ" },
+        { "n": 7, "read": "ななつ" }, { "n": 8, "read": "やっつ" }, { "n": 9, "read": "ここのつ" }, { "n": 10, "read": "とお" }
+      ],
+      "example": "りんごをみっつください。(Cho tôi 3 quả táo.)"
+    },
+    {
+      "id": "nin",
+      "suffix": "〜人",
+      "use": "Người",
+      "color": "#f472b6",
+      "readings": [
+        { "n": 1, "read": "ひとり ⚠️" }, { "n": 2, "read": "ふたり ⚠️" }, { "n": 3, "read": "さんにん" },
+        { "n": 4, "read": "よにん" }, { "n": 5, "read": "ごにん" }, { "n": 6, "read": "ろくにん" },
+        { "n": 7, "read": "しちにん" }, { "n": 8, "read": "はちにん" }, { "n": 9, "read": "きゅうにん" }, { "n": 10, "read": "じゅうにん" }
+      ],
+      "example": "かぞくは4にんです。(Gia đình tôi có 4 người.)",
+      "note": "⚠️ 1人=ひとり, 2人=ふたり là đặc biệt, cần nhớ riêng!"
+    },
+    {
+      "id": "hon",
+      "suffix": "〜本",
+      "use": "Vật dài, hình trụ (bút, chai, cây)",
+      "color": "#34d399",
+      "readings": [
+        { "n": 1, "read": "いっぽん ⚠️" }, { "n": 2, "read": "にほん" }, { "n": 3, "read": "さんぼん ⚠️" },
+        { "n": 4, "read": "よんほん" }, { "n": 5, "read": "ごほん" }, { "n": 6, "read": "ろっぽん ⚠️" },
+        { "n": 7, "read": "ななほん" }, { "n": 8, "read": "はっぽん ⚠️" }, { "n": 9, "read": "きゅうほん" }, { "n": 10, "read": "じゅっぽん ⚠️" }
+      ],
+      "example": "えんぴつを2ほんください。(Cho tôi 2 cây bút chì.)",
+      "note": "⚠️ Biến âm: 1=いっぽん, 3=さんぼん, 6=ろっぽん, 8=はっぽん, 10=じゅっぽん"
+    },
+    {
+      "id": "mai",
+      "suffix": "〜枚",
+      "use": "Vật phẳng, mỏng (tờ giấy, áo)",
+      "color": "#a78bfa",
+      "readings": [
+        { "n": 1, "read": "いちまい" }, { "n": 2, "read": "にまい" }, { "n": 3, "read": "さんまい" },
+        { "n": 4, "read": "よんまい" }, { "n": 5, "read": "ごまい" }, { "n": 6, "read": "ろくまい" },
+        { "n": 7, "read": "ななまい" }, { "n": 8, "read": "はちまい" }, { "n": 9, "read": "きゅうまい" }, { "n": 10, "read": "じゅうまい" }
+      ],
+      "example": "かみを3まいください。(Cho tôi 3 tờ giấy.)"
+    },
+    {
+      "id": "ko",
+      "suffix": "〜個",
+      "use": "Vật nhỏ tròn (táo, kẹo, viên thuốc)",
+      "color": "#f97316",
+      "readings": [
+        { "n": 1, "read": "いっこ ⚠️" }, { "n": 2, "read": "にこ" }, { "n": 3, "read": "さんこ" },
+        { "n": 4, "read": "よんこ" }, { "n": 5, "read": "ごこ" }, { "n": 6, "read": "ろっこ ⚠️" },
+        { "n": 7, "read": "ななこ" }, { "n": 8, "read": "はっこ ⚠️" }, { "n": 9, "read": "きゅうこ" }, { "n": 10, "read": "じゅっこ ⚠️" }
+      ],
+      "example": "たまごを6こかいました。(Tôi mua 6 quả trứng.)"
+    },
+    {
+      "id": "pun",
+      "suffix": "〜分",
+      "use": "Phút",
+      "color": "#facc15",
+      "readings": [
+        { "n": 1, "read": "いっぷん ⚠️" }, { "n": 2, "read": "にふん" }, { "n": 3, "read": "さんぷん ⚠️" },
+        { "n": 4, "read": "よんぷん" }, { "n": 5, "read": "ごふん" }, { "n": 6, "read": "ろっぷん ⚠️" },
+        { "n": 7, "read": "ななふん" }, { "n": 8, "read": "はっぷん ⚠️" }, { "n": 9, "read": "きゅうふん" }, { "n": 10, "read": "じゅっぷん ⚠️" }
+      ],
+      "example": "あと5ふんまってください。(Hãy đợi thêm 5 phút nữa.)"
+    }
+  ],
+  "weekdays": [
+    { "jp": "月曜日", "hira": "げつようび", "romaji": "getsuyōbi", "vn": "Thứ Hai", "kanji_meaning": "月=Trăng", "color": "#60a5fa" },
+    { "jp": "火曜日", "hira": "かようび", "romaji": "kayōbi", "vn": "Thứ Ba", "kanji_meaning": "火=Lửa", "color": "#f87171" },
+    { "jp": "水曜日", "hira": "すいようび", "romaji": "suiyōbi", "vn": "Thứ Tư", "kanji_meaning": "水=Nước", "color": "#22d3ee" },
+    { "jp": "木曜日", "hira": "もくようび", "romaji": "mokuyōbi", "vn": "Thứ Năm", "kanji_meaning": "木=Cây", "color": "#34d399" },
+    { "jp": "金曜日", "hira": "きんようび", "romaji": "kin'yōbi", "vn": "Thứ Sáu", "kanji_meaning": "金=Vàng", "color": "#facc15" },
+    { "jp": "土曜日", "hira": "どようび", "romaji": "doyōbi", "vn": "Thứ Bảy", "kanji_meaning": "土=Đất", "color": "#a78bfa" },
+    { "jp": "日曜日", "hira": "にちようび", "romaji": "nichiyōbi", "vn": "Chủ Nhật", "kanji_meaning": "日=Mặt trời", "color": "#f97316" }
+  ]
+}

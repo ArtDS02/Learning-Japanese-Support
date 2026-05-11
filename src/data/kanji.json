@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "Kanji JLPT N5",
+    "description": "80 Kanji bắt buộc cho JLPT N5",
+    "total": 80
+  },
+  "categories": [
+    {
+      "id": "numbers-time",
+      "label": "Số & Thời gian",
+      "icon": "🔢",
+      "color": "#facc15"
+    },
+    {
+      "id": "people-family",
+      "label": "Con người & Gia đình",
+      "icon": "👨‍👩‍👧",
+      "color": "#f472b6"
+    },
+    {
+      "id": "nature",
+      "label": "Thiên nhiên",
+      "icon": "🌿",
+      "color": "#34d399"
+    },
+    {
+      "id": "actions",
+      "label": "Hành động",
+      "icon": "⚡",
+      "color": "#60a5fa"
+    },
+    {
+      "id": "school",
+      "label": "Trường học & Ngôn ngữ",
+      "icon": "📚",
+      "color": "#a78bfa"
+    }
+  ],
+  "kanji": [
+    { "id": "k1", "char": "一", "on": "イチ", "kun": "ひと(つ)", "meaning": "một", "stroke": 1, "category": "numbers-time", "examples": [{"word": "一月", "reading": "いちがつ", "meaning": "tháng 1"}, {"word": "一人", "reading": "ひとり", "meaning": "một người"}], "mnemonic": "Một nét ngang = số 1" },
+    { "id": "k2", "char": "二", "on": "ニ", "kun": "ふた(つ)", "meaning": "hai", "stroke": 2, "category": "numbers-time", "examples": [{"word": "二月", "reading": "にがつ", "meaning": "tháng 2"}, {"word": "二人", "reading": "ふたり", "meaning": "hai người"}], "mnemonic": "Hai nét ngang = số 2" },
+    { "id": "k3", "char": "三", "on": "サン", "kun": "みっ(つ)", "meaning": "ba", "stroke": 3, "category": "numbers-time", "examples": [{"word": "三月", "reading": "さんがつ", "meaning": "tháng 3"}, {"word": "三つ", "reading": "みっつ", "meaning": "ba cái"}], "mnemonic": "Ba nét ngang = số 3" },
+    { "id": "k4", "char": "四", "on": "シ", "kun": "よっ(つ)・よん", "meaning": "bốn", "stroke": 5, "category": "numbers-time", "examples": [{"word": "四月", "reading": "しがつ", "meaning": "tháng 4"}, {"word": "四人", "reading": "よにん", "meaning": "bốn người"}], "mnemonic": "Bên trong có 2 người đứng = 4 chân" },
+    { "id": "k5", "char": "五", "on": "ゴ", "kun": "いつ(つ)", "meaning": "năm", "stroke": 4, "category": "numbers-time", "examples": [{"word": "五月", "reading": "ごがつ", "meaning": "tháng 5"}, {"word": "五つ", "reading": "いつつ", "meaning": "năm cái"}], "mnemonic": "Hình dáng tay có 5 ngón" },
+    { "id": "k6", "char": "六", "on": "ロク", "kun": "むっ(つ)", "meaning": "sáu", "stroke": 4, "category": "numbers-time", "examples": [{"word": "六月", "reading": "ろくがつ", "meaning": "tháng 6"}, {"word": "六つ", "reading": "むっつ", "meaning": "sáu cái"}], "mnemonic": "Nét trên = mái nhà, bên dưới = 6 chân côn trùng" },
+    { "id": "k7", "char": "七", "on": "シチ", "kun": "なな(つ)", "meaning": "bảy", "stroke": 2, "category": "numbers-time", "examples": [{"word": "七月", "reading": "しちがつ", "meaning": "tháng 7"}, {"word": "七つ", "reading": "ななつ", "meaning": "bảy cái"}], "mnemonic": "Trông như số 7 có thêm nét" },
+    { "id": "k8", "char": "八", "on": "ハチ", "kun": "やっ(つ)", "meaning": "tám", "stroke": 2, "category": "numbers-time", "examples": [{"word": "八月", "reading": "はちがつ", "meaning": "tháng 8"}, {"word": "八つ", "reading": "やっつ", "meaning": "tám cái"}], "mnemonic": "Hai nét banh ra như 2 cánh tay" },
+    { "id": "k9", "char": "九", "on": "ク・キュウ", "kun": "ここの(つ)", "meaning": "chín", "stroke": 2, "category": "numbers-time", "examples": [{"word": "九月", "reading": "くがつ", "meaning": "tháng 9"}, {"word": "九つ", "reading": "ここのつ", "meaning": "chín cái"}], "mnemonic": "Trông giống số 9 bị cong" },
+    { "id": "k10", "char": "十", "on": "ジュウ", "kun": "とお", "meaning": "mười", "stroke": 2, "category": "numbers-time", "examples": [{"word": "十月", "reading": "じゅうがつ", "meaning": "tháng 10"}, {"word": "十分", "reading": "じゅっぷん", "meaning": "10 phút"}], "mnemonic": "Dấu + = cộng thêm = 10" },
+    { "id": "k11", "char": "百", "on": "ヒャク", "kun": "—", "meaning": "trăm", "stroke": 6, "category": "numbers-time", "examples": [{"word": "百円", "reading": "ひゃくえん", "meaning": "100 yen"}, {"word": "三百", "reading": "さんびゃく", "meaning": "300"}], "mnemonic": "Một (一) ở trên + bạch (白) = 100" },
+    { "id": "k12", "char": "千", "on": "セン", "kun": "ち", "meaning": "nghìn", "stroke": 3, "category": "numbers-time", "examples": [{"word": "千円", "reading": "せんえん", "meaning": "1000 yen"}, {"word": "三千", "reading": "さんぜん", "meaning": "3000"}], "mnemonic": "Người đứng với tay xoải ra = 1000" },
+    { "id": "k13", "char": "年", "on": "ネン", "kun": "とし", "meaning": "năm (year)", "stroke": 6, "category": "numbers-time", "examples": [{"word": "今年", "reading": "ことし", "meaning": "năm nay"}, {"word": "来年", "reading": "らいねん", "meaning": "năm sau"}], "mnemonic": "Lúa mì (禾) gặt xong = qua một năm" },
+    { "id": "k14", "char": "月", "on": "ガツ・ゲツ", "kun": "つき", "meaning": "tháng / mặt trăng", "stroke": 4, "category": "numbers-time", "examples": [{"word": "来月", "reading": "らいげつ", "meaning": "tháng sau"}, {"word": "月曜日", "reading": "げつようび", "meaning": "thứ Hai"}], "mnemonic": "Hình mặt trăng lưỡi liềm" },
+    { "id": "k15", "char": "日", "on": "ニチ・ジツ", "kun": "ひ・か", "meaning": "ngày / mặt trời", "stroke": 4, "category": "numbers-time", "examples": [{"word": "今日", "reading": "きょう", "meaning": "hôm nay"}, {"word": "日曜日", "reading": "にちようび", "meaning": "Chủ Nhật"}], "mnemonic": "Vòng tròn có chấm giữa = mặt trời" },
+    { "id": "k16", "char": "時", "on": "ジ", "kun": "とき", "meaning": "giờ / lúc", "stroke": 10, "category": "numbers-time", "examples": [{"word": "何時", "reading": "なんじ", "meaning": "mấy giờ?"}, {"word": "時間", "reading": "じかん", "meaning": "thời gian"}], "mnemonic": "Mặt trời (日) + chùa (寺) = đo giờ bằng bóng nắng" },
+    { "id": "k17", "char": "分", "on": "ブン・フン", "kun": "わかる", "meaning": "phút / hiểu / chia", "stroke": 4, "category": "numbers-time", "examples": [{"word": "三分", "reading": "さんぷん", "meaning": "3 phút"}, {"word": "気分", "reading": "きぶん", "meaning": "tâm trạng"}], "mnemonic": "Dao (刀) chia đôi (八) = phân chia" },
+    { "id": "k18", "char": "人", "on": "ジン・ニン", "kun": "ひと", "meaning": "người", "stroke": 2, "category": "people-family", "examples": [{"word": "日本人", "reading": "にほんじん", "meaning": "người Nhật"}, {"word": "一人", "reading": "ひとり", "meaning": "một mình"}], "mnemonic": "Hai nét = người đứng nhìn nghiêng" },
+    { "id": "k19", "char": "女", "on": "ジョ", "kun": "おんな", "meaning": "phụ nữ", "stroke": 3, "category": "people-family", "examples": [{"word": "女の人", "reading": "おんなのひと", "meaning": "phụ nữ"}, {"word": "女子", "reading": "じょし", "meaning": "nữ giới"}], "mnemonic": "Hình người phụ nữ đang cúi chào" },
+    { "id": "k20", "char": "男", "on": "ダン", "kun": "おとこ", "meaning": "đàn ông", "stroke": 7, "category": "people-family", "examples": [{"word": "男の人", "reading": "おとこのひと", "meaning": "đàn ông"}, {"word": "男子", "reading": "だんし", "meaning": "nam giới"}], "mnemonic": "Ruộng (田) + sức (力) = đàn ông cày ruộng" },
+    { "id": "k21", "char": "子", "on": "シ・ス", "kun": "こ", "meaning": "trẻ em / con", "stroke": 3, "category": "people-family", "examples": [{"word": "子ども", "reading": "こども", "meaning": "trẻ em"}, {"word": "女子", "reading": "じょし", "meaning": "nữ sinh"}], "mnemonic": "Hình em bé đang vẫy tay" },
+    { "id": "k22", "char": "父", "on": "フ", "kun": "ちち", "meaning": "cha / bố", "stroke": 4, "category": "people-family", "examples": [{"word": "お父さん", "reading": "おとうさん", "meaning": "bố (lịch sự)"}, {"word": "父親", "reading": "ちちおや", "meaning": "người cha"}], "mnemonic": "Tay cầm gậy = người cha uy quyền" },
+    { "id": "k23", "char": "母", "on": "ボ", "kun": "はは", "meaning": "mẹ", "stroke": 5, "category": "people-family", "examples": [{"word": "お母さん", "reading": "おかあさん", "meaning": "mẹ (lịch sự)"}, {"word": "母語", "reading": "ぼご", "meaning": "tiếng mẹ đẻ"}], "mnemonic": "女 + 2 chấm = người mẹ cho con bú" },
+    { "id": "k24", "char": "山", "on": "サン", "kun": "やま", "meaning": "núi", "stroke": 3, "category": "nature", "examples": [{"word": "富士山", "reading": "ふじさん", "meaning": "núi Phú Sĩ"}, {"word": "山田", "reading": "やまだ", "meaning": "họ Yamada"}], "mnemonic": "Ba đỉnh núi nhô lên" },
+    { "id": "k25", "char": "川", "on": "セン", "kun": "かわ", "meaning": "sông", "stroke": 3, "category": "nature", "examples": [{"word": "川", "reading": "かわ", "meaning": "con sông"}, {"word": "川口", "reading": "かわぐち", "meaning": "cửa sông"}], "mnemonic": "Ba nét chảy song song = dòng sông" },
+    { "id": "k26", "char": "木", "on": "モク", "kun": "き", "meaning": "cây / gỗ", "stroke": 4, "category": "nature", "examples": [{"word": "木曜日", "reading": "もくようび", "meaning": "thứ Năm"}, {"word": "木", "reading": "き", "meaning": "cái cây"}], "mnemonic": "Thân cây có rễ và cành" },
+    { "id": "k27", "char": "火", "on": "カ", "kun": "ひ", "meaning": "lửa", "stroke": 4, "category": "nature", "examples": [{"word": "火曜日", "reading": "かようび", "meaning": "thứ Ba"}, {"word": "火山", "reading": "かざん", "meaning": "núi lửa"}], "mnemonic": "Ngọn lửa bùng cháy" },
+    { "id": "k28", "char": "水", "on": "スイ", "kun": "みず", "meaning": "nước", "stroke": 4, "category": "nature", "examples": [{"word": "水曜日", "reading": "すいようび", "meaning": "thứ Tư"}, {"word": "水", "reading": "みず", "meaning": "nước"}], "mnemonic": "Dòng nước chảy với bong bóng" },
+    { "id": "k29", "char": "金", "on": "キン", "kun": "かね", "meaning": "vàng / tiền / kim loại", "stroke": 8, "category": "nature", "examples": [{"word": "金曜日", "reading": "きんようび", "meaning": "thứ Sáu"}, {"word": "お金", "reading": "おかね", "meaning": "tiền"}], "mnemonic": "Mỏ vàng (土) dưới đất, người đào" },
+    { "id": "k30", "char": "土", "on": "ド", "kun": "つち", "meaning": "đất", "stroke": 3, "category": "nature", "examples": [{"word": "土曜日", "reading": "どようび", "meaning": "thứ Bảy"}, {"word": "土地", "reading": "とち", "meaning": "đất đai"}], "mnemonic": "Cây mọc từ đất lên" },
+    { "id": "k31", "char": "食", "on": "ショク", "kun": "たべる", "meaning": "ăn / thức ăn", "stroke": 9, "category": "actions", "examples": [{"word": "食べる", "reading": "たべる", "meaning": "ăn"}, {"word": "食事", "reading": "しょくじ", "meaning": "bữa ăn"}], "mnemonic": "Người há miệng (良) ăn cơm (米)" },
+    { "id": "k32", "char": "飲", "on": "イン", "kun": "のむ", "meaning": "uống", "stroke": 12, "category": "actions", "examples": [{"word": "飲む", "reading": "のむ", "meaning": "uống"}, {"word": "飲み物", "reading": "のみもの", "meaning": "đồ uống"}], "mnemonic": "Người há miệng uống nước" },
+    { "id": "k33", "char": "見", "on": "ケン", "kun": "みる", "meaning": "nhìn / thấy / xem", "stroke": 7, "category": "actions", "examples": [{"word": "見る", "reading": "みる", "meaning": "nhìn, xem"}, {"word": "見物", "reading": "けんぶつ", "meaning": "tham quan"}], "mnemonic": "Mắt (目) trên chân người = nhìn" },
+    { "id": "k34", "char": "聞", "on": "ブン", "kun": "きく", "meaning": "nghe / hỏi", "stroke": 14, "category": "actions", "examples": [{"word": "聞く", "reading": "きく", "meaning": "nghe / hỏi"}, {"word": "新聞", "reading": "しんぶん", "meaning": "báo chí"}], "mnemonic": "Tai (耳) trong cửa (門) = nghe ngóng" },
+    { "id": "k35", "char": "話", "on": "ワ", "kun": "はなす", "meaning": "nói / câu chuyện", "stroke": 13, "category": "actions", "examples": [{"word": "話す", "reading": "はなす", "meaning": "nói"}, {"word": "電話", "reading": "でんわ", "meaning": "điện thoại"}], "mnemonic": "Lưỡi (言) + vỏ ốc (舌) = nói" },
+    { "id": "k36", "char": "行", "on": "コウ・ギョウ", "kun": "いく", "meaning": "đi", "stroke": 6, "category": "actions", "examples": [{"word": "行く", "reading": "いく", "meaning": "đi"}, {"word": "銀行", "reading": "ぎんこう", "meaning": "ngân hàng"}], "mnemonic": "Đường thập tự = ngã tư để đi" },
+    { "id": "k37", "char": "来", "on": "ライ", "kun": "くる", "meaning": "đến / tới", "stroke": 7, "category": "actions", "examples": [{"word": "来る", "reading": "くる", "meaning": "đến"}, {"word": "来月", "reading": "らいげつ", "meaning": "tháng sau"}], "mnemonic": "Cây lúa mì chín đến mùa gặt" },
+    { "id": "k38", "char": "学", "on": "ガク", "kun": "まなぶ", "meaning": "học", "stroke": 8, "category": "school", "examples": [{"word": "学校", "reading": "がっこう", "meaning": "trường học"}, {"word": "大学", "reading": "だいがく", "meaning": "đại học"}], "mnemonic": "Tay dẫn dắt (爻) + mái nhà + đứa trẻ (子) = học" },
+    { "id": "k39", "char": "校", "on": "コウ", "kun": "—", "meaning": "trường học", "stroke": 10, "category": "school", "examples": [{"word": "学校", "reading": "がっこう", "meaning": "trường học"}, {"word": "高校", "reading": "こうこう", "meaning": "trường trung học"}], "mnemonic": "Cây (木) + giao (交) = trường có cây" },
+    { "id": "k40", "char": "語", "on": "ゴ", "kun": "かたる", "meaning": "ngôn ngữ / lời nói", "stroke": 14, "category": "school", "examples": [{"word": "日本語", "reading": "にほんご", "meaning": "tiếng Nhật"}, {"word": "英語", "reading": "えいご", "meaning": "tiếng Anh"}], "mnemonic": "Lời (言) + ngã (吾) = ngôn ngữ" }
+  ]
+}

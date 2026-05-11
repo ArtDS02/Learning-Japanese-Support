@@ -1,0 +1,827 @@
+{
+  "meta": {
+    "title": "Ngữ pháp JLPT N5",
+    "description": "Tổng hợp các cấu trúc ngữ pháp N5"
+  },
+  "categories": [
+    {
+      "id": "particles",
+      "label": "Trợ từ (Particles)",
+      "icon": "⚡",
+      "color": "#facc15",
+      "items": [
+        {
+          "id": "p_wa",
+          "particle": "は",
+          "romaji": "wa",
+          "function": "Đánh dấu chủ đề câu",
+          "color": "#facc15",
+          "detail": "は đánh dấu chủ đề mà câu nói xoay quanh. Khác với が (chủ ngữ hành động), は mang tính giới thiệu chủ đề.",
+          "examples": [
+            {
+              "jp": "わたし<は>がくせいです。",
+              "romaji": "Watashi <wa> gakusei desu.",
+              "vn": "Tôi là học sinh.",
+              "highlight": "は"
+            },
+            {
+              "jp": "これ<は>ほんです。",
+              "romaji": "Kore <wa> hon desu.",
+              "vn": "Đây là sách.",
+              "highlight": "は"
+            }
+          ]
+        },
+        {
+          "id": "p_ga",
+          "particle": "が",
+          "romaji": "ga",
+          "function": "Đánh dấu chủ ngữ / Nhấn mạnh",
+          "color": "#f87171",
+          "detail": "が chỉ rõ AI HOẶC CÁI GÌ thực hiện hành động. Thường dùng khi hỏi/trả lời câu hỏi 'ai?', 'cái gì?' hoặc nhấn mạnh.",
+          "examples": [
+            {
+              "jp": "だれ<が>きましたか？",
+              "romaji": "Dare <ga> kimashita ka?",
+              "vn": "Ai đã đến?",
+              "highlight": "が"
+            },
+            {
+              "jp": "わたし<が>やります！",
+              "romaji": "Watashi <ga> yarimasu!",
+              "vn": "Tôi (chứ không ai khác) sẽ làm!",
+              "highlight": "が"
+            }
+          ]
+        },
+        {
+          "id": "p_wo",
+          "particle": "を",
+          "romaji": "wo / o",
+          "function": "Đánh dấu tân ngữ trực tiếp",
+          "color": "#34d399",
+          "detail": "を đứng sau danh từ là tân ngữ chịu tác động của động từ. Phát âm là 'o' trong hội thoại hiện đại.",
+          "examples": [
+            {
+              "jp": "みず<を>のみます。",
+              "romaji": "Mizu <wo> nomimasu.",
+              "vn": "Uống nước.",
+              "highlight": "を"
+            },
+            {
+              "jp": "にほんご<を>べんきょうします。",
+              "romaji": "Nihongo <wo> benkyō shimasu.",
+              "vn": "Học tiếng Nhật.",
+              "highlight": "を"
+            }
+          ]
+        },
+        {
+          "id": "p_ni",
+          "particle": "に",
+          "romaji": "ni",
+          "function": "Địa điểm đến / Thời gian / Người nhận",
+          "color": "#a78bfa",
+          "detail": "に có 3 chức năng chính: (1) chỉ điểm đến của chuyển động, (2) chỉ thời điểm cụ thể, (3) chỉ người nhận.",
+          "examples": [
+            {
+              "jp": "がっこう<に>いきます。",
+              "romaji": "Gakkō <ni> ikimasu.",
+              "vn": "Đi đến trường.",
+              "highlight": "に"
+            },
+            {
+              "jp": "3じ<に>あいましょう。",
+              "romaji": "Sanji <ni> aimashou.",
+              "vn": "Hãy gặp nhau lúc 3 giờ.",
+              "highlight": "に"
+            }
+          ]
+        },
+        {
+          "id": "p_de",
+          "particle": "で",
+          "romaji": "de",
+          "function": "Địa điểm hành động / Phương tiện / Nguyên liệu",
+          "color": "#fb923c",
+          "detail": "で chỉ nơi diễn ra hành động (khác với に chỉ điểm đến). Cũng dùng để chỉ phương tiện di chuyển hoặc phương pháp.",
+          "examples": [
+            {
+              "jp": "としょかん<で>べんきょうします。",
+              "romaji": "Toshokan <de> benkyō shimasu.",
+              "vn": "Học ở thư viện.",
+              "highlight": "で"
+            },
+            {
+              "jp": "バス<で>きました。",
+              "romaji": "Basu <de> kimashita.",
+              "vn": "Đi bằng xe buýt đến.",
+              "highlight": "で"
+            }
+          ]
+        },
+        {
+          "id": "p_no",
+          "particle": "の",
+          "romaji": "no",
+          "function": "Sở hữu / Liên kết danh từ",
+          "color": "#22d3ee",
+          "detail": "の liên kết hai danh từ, thể hiện sở hữu hoặc mối quan hệ. Danh từ trước の bổ nghĩa cho danh từ sau.",
+          "examples": [
+            {
+              "jp": "わたし<の>ほん",
+              "romaji": "Watashi <no> hon",
+              "vn": "Sách của tôi",
+              "highlight": "の"
+            },
+            {
+              "jp": "にほん<の>りょうり",
+              "romaji": "Nihon <no> ryōri",
+              "vn": "Ẩm thực Nhật Bản",
+              "highlight": "の"
+            }
+          ]
+        },
+        {
+          "id": "p_he",
+          "particle": "へ",
+          "romaji": "he",
+          "function": "Hướng tới / Đến",
+          "color": "#38bdf8",
+          "detail": "へ dùng để chỉ hướng đi, điểm đến hoặc hướng chuyển động. Phát âm giống に trong nhiều trường hợp.",
+          "examples": [
+            {
+              "jp": "がっこう<へ>いきます。",
+              "romaji": "Gakkō <he> ikimasu.",
+              "vn": "Tôi đi đến trường.",
+              "highlight": "へ"
+            },
+            {
+              "jp": "ともだち<へ>てがみをかきます。",
+              "romaji": "Tomodachi <he> tegami o kakimasu.",
+              "vn": "Viết thư cho bạn.",
+              "highlight": "へ"
+            }
+          ]
+        },
+        {
+          "id": "p_to",
+          "particle": "と",
+          "romaji": "to",
+          "function": "Và / Cùng với",
+          "color": "#f472b6",
+          "detail": "と dùng để liệt kê (A と B = A và B) hoặc chỉ người đồng hành (〜と いく = đi cùng với ~).",
+          "examples": [
+            {
+              "jp": "ともだち<と>いきます。",
+              "romaji": "Tomodachi <to> ikimasu.",
+              "vn": "Đi cùng bạn bè.",
+              "highlight": "と"
+            },
+            {
+              "jp": "パン<と>たまご",
+              "romaji": "Pan <to> tamago",
+              "vn": "Bánh mì và trứng",
+              "highlight": "と"
+            }
+          ]
+        },
+        {
+          "id": "p_mo",
+          "particle": "も",
+          "romaji": "mo",
+          "function": "Cũng",
+          "color": "#86efac",
+          "detail": "も thay thế は hoặc が để diễn đạt 'cũng'. Thêm thông tin tương tự vào chủ đề đã nói.",
+          "examples": [
+            {
+              "jp": "わたし<も>いきます。",
+              "romaji": "Watashi <mo> ikimasu.",
+              "vn": "Tôi cũng đi.",
+              "highlight": "も"
+            },
+            {
+              "jp": "これ<も>おいしいです。",
+              "romaji": "Kore <mo> oishii desu.",
+              "vn": "Cái này cũng ngon.",
+              "highlight": "も"
+            }
+          ]
+        },
+        {
+          "id": "p_ka",
+          "particle": "か",
+          "romaji": "ka",
+          "function": "Dấu hỏi (cuối câu)",
+          "color": "#cbd5e1",
+          "detail": "か đặt cuối câu để biến câu thành câu hỏi. Không cần đảo vị trí chủ ngữ như tiếng Anh.",
+          "examples": [
+            {
+              "jp": "これはなんです<か>？",
+              "romaji": "Kore wa nan desu <ka>?",
+              "vn": "Cái này là gì?",
+              "highlight": "か"
+            },
+            {
+              "jp": "いきます<か>？",
+              "romaji": "Ikimasu <ka>?",
+              "vn": "Bạn có đi không?",
+              "highlight": "か"
+            }
+          ]
+        },
+        {
+          "id": "p_kara",
+          "particle": "から",
+          "romaji": "kara",
+          "function": "Từ / Bắt đầu từ / Vì (nguyên nhân)",
+          "color": "#f97316",
+          "detail": "から có 2 chức năng chính: (1) chỉ điểm xuất phát về không gian hoặc thời gian (từ ~), (2) chỉ nguyên nhân/lý do (vì ~). Thường đi kèm với まで để diễn đạt 'từ ~ đến ~'.",
+          "examples": [
+            {
+              "jp": "とうきょう<から>きました。",
+              "romaji": "Tōkyō <kara> kimashita.",
+              "vn": "Tôi đến từ Tokyo.",
+              "highlight": "から"
+            },
+            {
+              "jp": "9じ<から>べんきょうします。",
+              "romaji": "Kuji <kara> benkyō shimasu.",
+              "vn": "Học từ 9 giờ.",
+              "highlight": "から"
+            }
+          ]
+        },
+        {
+          "id": "p_made",
+          "particle": "まで",
+          "romaji": "made",
+          "function": "Đến / Cho đến (giới hạn)",
+          "color": "#e879f9",
+          "detail": "まで chỉ giới hạn cuối cùng về không gian hoặc thời gian. Thường dùng cặp から〜まで (từ ~ đến ~).",
+          "examples": [
+            {
+              "jp": "えき<まで>あるきます。",
+              "romaji": "Eki <made> arukimasu.",
+              "vn": "Đi bộ đến ga.",
+              "highlight": "まで"
+            },
+            {
+              "jp": "6じ<まで>はたらきます。",
+              "romaji": "Rokuji <made> hatarakimasu.",
+              "vn": "Làm việc đến 6 giờ.",
+              "highlight": "まで"
+            }
+          ]
+        },
+        {
+          "id": "p_ya",
+          "particle": "や",
+          "romaji": "ya",
+          "function": "Và (liệt kê không đầy đủ)",
+          "color": "#4ade80",
+          "detail": "や dùng để liệt kê một số ví dụ trong danh sách, ám chỉ còn nhiều thứ khác nữa (khác với と liệt kê đầy đủ). Thường đi kèm với など (vân vân).",
+          "examples": [
+            {
+              "jp": "パン<や>たまごをかいました。",
+              "romaji": "Pan <ya> tamago o kaimashita.",
+              "vn": "Đã mua bánh mì, trứng (và các thứ khác).",
+              "highlight": "や"
+            },
+            {
+              "jp": "にほんご<や>えいごをならいます。",
+              "romaji": "Nihongo <ya> eigo o naraimasu.",
+              "vn": "Học tiếng Nhật, tiếng Anh (và các thứ khác).",
+              "highlight": "や"
+            }
+          ]
+        },
+        {
+          "id": "p_yo",
+          "particle": "よ",
+          "romaji": "yo",
+          "function": "Khẳng định / Thông báo (cuối câu)",
+          "color": "#fbbf24",
+          "detail": "よ đặt cuối câu để nhấn mạnh thông tin mới hoặc khẳng định điều người nghe chưa biết. Mang nghĩa 'đấy', 'nhé', 'đó'.",
+          "examples": [
+            {
+              "jp": "これはおいしい<よ>。",
+              "romaji": "Kore wa oishii <yo>.",
+              "vn": "Cái này ngon đấy!",
+              "highlight": "よ"
+            },
+            {
+              "jp": "もうすぐきます<よ>。",
+              "romaji": "Mōsugu kimasu <yo>.",
+              "vn": "Sắp đến rồi đó.",
+              "highlight": "よ"
+            }
+          ]
+        },
+        {
+          "id": "p_ne",
+          "particle": "ね",
+          "romaji": "ne",
+          "function": "Xác nhận / Đồng thuận (cuối câu)",
+          "color": "#67e8f9",
+          "detail": "ね đặt cuối câu để tìm kiếm sự đồng ý hoặc xác nhận từ người nghe, tương đương 'phải không?', 'nhỉ?', 'nhé?'. Tạo cảm giác gần gũi trong hội thoại.",
+          "examples": [
+            {
+              "jp": "いいてんきです<ね>。",
+              "romaji": "Ii tenki desu <ne>.",
+              "vn": "Thời tiết đẹp nhỉ.",
+              "highlight": "ね"
+            },
+            {
+              "jp": "むずかしい<ね>。",
+              "romaji": "Muzukashii <ne>.",
+              "vn": "Khó nhỉ?",
+              "highlight": "ね"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verb-groups",
+      "label": "Nhóm Động từ",
+      "icon": "🔄",
+      "color": "#60a5fa",
+      "items": [
+        {
+          "id": "vg1",
+          "title": "Nhóm 1 — う-động từ (Godan)",
+          "subtitle": "Kết thúc: u, ku, su, tsu, nu, bu, mu, ru (trước là a/o/u)",
+          "color": "#60a5fa",
+          "rule": "Thay âm cuối: u → i, rồi thêm ます",
+          "conjugations": [
+            {
+              "dict": "かく (書く)",
+              "meaning": "viết",
+              "masu": "かきます",
+              "masen": "かきません",
+              "mashita": "かきました",
+              "te": "かいて"
+            },
+            {
+              "dict": "よむ (読む)",
+              "meaning": "đọc",
+              "masu": "よみます",
+              "masen": "よみません",
+              "mashita": "よみました",
+              "te": "よんで"
+            },
+            {
+              "dict": "のむ (飲む)",
+              "meaning": "uống",
+              "masu": "のみます",
+              "masen": "のみません",
+              "mashita": "のみました",
+              "te": "のんで"
+            },
+            {
+              "dict": "はなす (話す)",
+              "meaning": "nói",
+              "masu": "はなします",
+              "masen": "はなしません",
+              "mashita": "はなしました",
+              "te": "はなして"
+            },
+            {
+              "dict": "いく (行く)",
+              "meaning": "đi",
+              "masu": "いきます",
+              "masen": "いきません",
+              "mashita": "いきました",
+              "te": "いって"
+            },
+            {
+              "dict": "かう (買う)",
+              "meaning": "mua",
+              "masu": "かいます",
+              "masen": "かいません",
+              "mashita": "かいました",
+              "te": "かって"
+            }
+          ]
+        },
+        {
+          "id": "vg2",
+          "title": "Nhóm 2 — る-động từ (Ichidan)",
+          "subtitle": "Kết thúc bằng る, âm trước là i hoặc e",
+          "color": "#34d399",
+          "rule": "Bỏ る, thêm ます",
+          "conjugations": [
+            {
+              "dict": "たべる (食べる)",
+              "meaning": "ăn",
+              "masu": "たべます",
+              "masen": "たべません",
+              "mashita": "たべました",
+              "te": "たべて"
+            },
+            {
+              "dict": "みる (見る)",
+              "meaning": "xem",
+              "masu": "みます",
+              "masen": "みません",
+              "mashita": "みました",
+              "te": "みて"
+            },
+            {
+              "dict": "おきる (起きる)",
+              "meaning": "thức dậy",
+              "masu": "おきます",
+              "masen": "おきません",
+              "mashita": "おきました",
+              "te": "おきて"
+            },
+            {
+              "dict": "ねる (寝る)",
+              "meaning": "ngủ",
+              "masu": "ねます",
+              "masen": "ねません",
+              "mashita": "ねました",
+              "te": "ねて"
+            }
+          ]
+        },
+        {
+          "id": "vg3",
+          "title": "Nhóm 3 — Bất quy tắc",
+          "subtitle": "Chỉ có 2 động từ, cần học thuộc lòng",
+          "color": "#f97316",
+          "rule": "Chia hoàn toàn bất quy tắc — phải nhớ thuộc!",
+          "conjugations": [
+            {
+              "dict": "する",
+              "meaning": "làm",
+              "masu": "します",
+              "masen": "しません",
+              "mashita": "しました",
+              "te": "して"
+            },
+            {
+              "dict": "くる (来る)",
+              "meaning": "đến, tới",
+              "masu": "きます",
+              "masen": "きません",
+              "mashita": "きました",
+              "te": "きて"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "patterns",
+      "label": "Cấu trúc câu",
+      "icon": "📐",
+      "color": "#c084fc",
+      "items": [
+        {
+          "id": "pat1",
+          "pattern": "〜は〜です",
+          "meaning": "A là B",
+          "level": "Cơ bản",
+          "color": "#22d3ee",
+          "explanation": "Cấu trúc câu đơn giản nhất. Dùng để định nghĩa, giới thiệu. Phủ định: ではありません (hoặc じゃありません thân mật hơn).",
+          "examples": [
+            {
+              "jp": "わたし<は> がくせい <です>。",
+              "vn": "Tôi là học sinh.",
+              "highlights": [
+                "は",
+                "です"
+              ]
+            },
+            {
+              "jp": "これ<は> ほん <です>。",
+              "vn": "Đây là sách.",
+              "highlights": [
+                "は",
+                "です"
+              ]
+            },
+            {
+              "jp": "やまださん<は> せんせい <です>。",
+              "vn": "Anh Yamada là giáo viên.",
+              "highlights": [
+                "は",
+                "です"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pat2",
+          "pattern": "〜が あります / います",
+          "meaning": "Có (tồn tại)",
+          "level": "Cơ bản",
+          "color": "#34d399",
+          "explanation": "あります dùng cho vật vô tri. います dùng cho người và động vật. Phủ định: ありません / いません.",
+          "examples": [
+            {
+              "jp": "つくえのうえ<に> ほん<が> あります。",
+              "vn": "Trên bàn có sách.",
+              "highlights": [
+                "に",
+                "が"
+              ]
+            },
+            {
+              "jp": "へや<に> ねこ<が> います。",
+              "vn": "Trong phòng có mèo.",
+              "highlights": [
+                "に",
+                "が"
+              ]
+            },
+            {
+              "jp": "ここ<に> ATM<が> ありますか？",
+              "vn": "Ở đây có ATM không?",
+              "highlights": [
+                "に",
+                "が"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pat3",
+          "pattern": "〜たいです",
+          "meaning": "Muốn làm gì",
+          "level": "Trung bình",
+          "color": "#f97316",
+          "explanation": "Ghép: [động từ thể ます bỏ ます] + たい + です. Dùng tân ngữ với を hoặc が đều được.",
+          "examples": [
+            {
+              "jp": "にほん<に> いき<たいです>。",
+              "vn": "Tôi muốn đến Nhật Bản.",
+              "highlights": [
+                "に",
+                "たいです"
+              ]
+            },
+            {
+              "jp": "すし<を> たべ<たいです>。",
+              "vn": "Tôi muốn ăn sushi.",
+              "highlights": [
+                "を",
+                "たいです"
+              ]
+            },
+            {
+              "jp": "にほんご<を> はなし<たいです>。",
+              "vn": "Tôi muốn nói được tiếng Nhật.",
+              "highlights": [
+                "を",
+                "たいです"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pat4",
+          "pattern": "〜てください",
+          "meaning": "Hãy làm gì (yêu cầu lịch sự)",
+          "level": "Trung bình",
+          "color": "#f472b6",
+          "explanation": "Ghép: [động từ thể て] + ください. Để yêu cầu lịch sự. Thêm 〜ないで trước ください để cấm nhẹ nhàng.",
+          "examples": [
+            {
+              "jp": "ゆっくり はなし<てください>。",
+              "vn": "Hãy nói chậm thôi.",
+              "highlights": [
+                "てください"
+              ]
+            },
+            {
+              "jp": "ここに かい<てください>。",
+              "vn": "Hãy viết vào đây.",
+              "highlights": [
+                "てください"
+              ]
+            },
+            {
+              "jp": "まっすぐ いっ<てください>。",
+              "vn": "Hãy đi thẳng.",
+              "highlights": [
+                "てください"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pat5",
+          "pattern": "〜ましょう / 〜ませんか",
+          "meaning": "Hãy cùng... / Có muốn... không?",
+          "level": "Trung bình",
+          "color": "#a78bfa",
+          "explanation": "ましょう: đề nghị cùng làm (mạnh hơn). ませんか: mời mọc lịch sự, mang tính hỏi ý kiến hơn.",
+          "examples": [
+            {
+              "jp": "いっしょに いき<ましょう>！",
+              "vn": "Hãy cùng đi nào!",
+              "highlights": [
+                "ましょう"
+              ]
+            },
+            {
+              "jp": "えいが<を> み<ませんか>？",
+              "vn": "Có muốn xem phim không?",
+              "highlights": [
+                "を",
+                "ませんか"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pat6",
+          "pattern": "〜ている",
+          "meaning": "Đang làm / Trạng thái hiện tại",
+          "level": "Trung bình",
+          "color": "#60a5fa",
+          "explanation": "Ghép: [thể て] + いる/います. Có 2 nghĩa: (1) hành động đang diễn ra, (2) trạng thái kết quả đang tồn tại.",
+          "examples": [
+            {
+              "jp": "いま たべ<ています>。",
+              "vn": "Tôi đang ăn. (đang diễn ra)",
+              "highlights": [
+                "ています"
+              ]
+            },
+            {
+              "jp": "けっこんし<ています>。",
+              "vn": "Tôi đã kết hôn. (trạng thái)",
+              "highlights": [
+                "ています"
+              ]
+            },
+            {
+              "jp": "にほんご<を> べんきょうし<ています>。",
+              "vn": "Tôi đang học tiếng Nhật.",
+              "highlights": [
+                "を",
+                "ています"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pat7",
+          "pattern": "〜てもいいですか",
+          "meaning": "Cho phép làm gì",
+          "level": "Cơ bản",
+          "color": "#fb7185",
+          "explanation": "Dùng để xin phép làm điều gì đó một cách lịch sự. Phủ định: 〜てもいけません。",
+          "examples": [
+            {
+              "jp": "ここで たべ<てもいいですか>？",
+              "vn": "Ở đây tôi có thể ăn không?",
+              "highlights": [
+                "てもいいですか"
+              ]
+            },
+            {
+              "jp": "これを つか<ってもいいですか>？",
+              "vn": "Tôi có thể dùng cái này không?",
+              "highlights": [
+                "ってもいいですか"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pat8",
+          "pattern": "〜から / 〜ので",
+          "meaning": "Vì, bởi vì",
+          "level": "Cơ bản",
+          "color": "#fbbf24",
+          "explanation": "Dùng để giải thích lý do. から thân mật hơn, ので trông lịch sự và nhẹ nhàng hơn.",
+          "examples": [
+            {
+              "jp": "あめが ふ<るから>、でかけません。",
+              "vn": "Vì trời mưa nên tôi không đi ra ngoài.",
+              "highlights": [
+                "から"
+              ]
+            },
+            {
+              "jp": "かぜを ひ<いたので>、やすみます。",
+              "vn": "Vì bị cảm nên tôi nghỉ học.",
+              "highlights": [
+                "ので"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pat9",
+          "pattern": "〜まで",
+          "meaning": "Đến tận ...",
+          "level": "Cơ bản",
+          "color": "#34d399",
+          "explanation": "Được dùng để chỉ giới hạn điểm cuối cùng về thời gian, địa điểm hoặc phạm vi.",
+          "examples": [
+            {
+              "jp": "ごご5じ<まで> はたらきます。",
+              "vn": "Làm việc đến 5 giờ chiều.",
+              "highlights": [
+                "まで"
+              ]
+            },
+            {
+              "jp": "えき<まで> いきます。",
+              "vn": "Đi đến ga.",
+              "highlights": [
+                "まで"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "expressions",
+      "label": "Cụm từ hữu ích",
+      "icon": "🗣️",
+      "color": "#f9a8d4",
+      "items": [
+        {
+          "id": "expr1",
+          "title": "〜をください",
+          "subtitle": "Xin hãy đưa tôi...",
+          "meaning": "Dùng khi yêu cầu mua đồ hoặc xin thứ gì đó.",
+          "color": "#f9a8d4",
+          "note": "Thường gặp ở cửa hàng, quầy bán hàng.",
+          "examples": [
+            {
+              "jp": "みず<を>ください。",
+              "vn": "Cho tôi nước đi. "
+            },
+            {
+              "jp": "パン<を>ください。",
+              "vn": "Cho tôi một chiếc bánh mì. "
+            }
+          ]
+        },
+        {
+          "id": "expr2",
+          "title": "〜ましょうか",
+          "subtitle": "Tôi sẽ... nhé?",
+          "meaning": "Đề nghị giúp đỡ hoặc mời ai đó làm điều gì.",
+          "color": "#fde047",
+          "note": "Dùng để thể hiện sự hỗ trợ hoặc gợi ý.",
+          "examples": [
+            {
+              "jp": "てつだいましょうか？",
+              "vn": "Tôi giúp bạn nhé?"
+            },
+            {
+              "jp": "いっしょに いきましょうか？",
+              "vn": "Chúng ta đi cùng nhau nhé?"
+            }
+          ]
+        },
+        {
+          "id": "expr3",
+          "title": "〜たいです",
+          "subtitle": "Muốn làm ...",
+          "meaning": "Thể hiện mong muốn làm việc gì đó.",
+          "color": "#60a5fa",
+          "note": "Ghép với thể ます bỏ ます của động từ.",
+          "examples": [
+            {
+              "jp": "すしを たべたいです。",
+              "vn": "Tôi muốn ăn sushi."
+            },
+            {
+              "jp": "にほんへ いきたいです。",
+              "vn": "Tôi muốn đi Nhật Bản."
+            }
+          ]
+        },
+        {
+          "id": "expr4",
+          "title": "〜てもいいですか",
+          "subtitle": "Có thể làm ... không?",
+          "meaning": "Xin phép làm việc gì một cách lịch sự.",
+          "color": "#a78bfa",
+          "note": "Thích hợp trong giao tiếp hàng ngày.",
+          "examples": [
+            {
+              "jp": "ここに すわってもいいですか？",
+              "vn": "Tôi ngồi ở đây được không?"
+            },
+            {
+              "jp": "ほんを よんでもいいですか？",
+              "vn": "Tôi có thể đọc sách không?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

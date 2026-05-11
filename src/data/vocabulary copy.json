@@ -1,0 +1,1201 @@
+{
+  "meta": {
+    "title": "Từ vựng JLPT N5",
+    "description": "Tổng hợp từ vựng N5 phân theo chủ đề",
+    "totalWords": 120
+  },
+  "categories": [
+    {
+      "id": "greetings",
+      "label": "Chào hỏi",
+      "icon": "👋",
+      "color": "#22d3ee",
+      "words": [
+        {
+          "id": "g1",
+          "japanese": "おはようございます",
+          "romaji": "ohayō gozaimasu",
+          "meaning": "Chào buổi sáng (lịch sự)",
+          "note": "Dùng trước 10h sáng, với người lớn tuổi hoặc cấp trên",
+          "example": {
+            "jp": "おはようございます、田中さん！",
+            "romaji": "Ohayō gozaimasu, Tanaka-san!",
+            "vn": "Chào buổi sáng, anh Tanaka!"
+          }
+        },
+        {
+          "id": "g2",
+          "japanese": "おはよう",
+          "romaji": "ohayō",
+          "meaning": "Chào buổi sáng (thân mật)",
+          "note": "Dùng với bạn bè, gia đình",
+          "example": {
+            "jp": "おはよう！",
+            "romaji": "Ohayō!",
+            "vn": "Chào buổi sáng!"
+          }
+        },
+        {
+          "id": "g3",
+          "japanese": "こんにちは",
+          "romaji": "konnichiwa",
+          "meaning": "Xin chào (ban ngày)",
+          "note": "Dùng từ 10h đến 17h",
+          "example": {
+            "jp": "こんにちは、元気ですか？",
+            "romaji": "Konnichiwa, genki desu ka?",
+            "vn": "Xin chào, bạn có khỏe không?"
+          }
+        },
+        {
+          "id": "g4",
+          "japanese": "こんばんは",
+          "romaji": "konbanwa",
+          "meaning": "Xin chào buổi tối",
+          "note": "Dùng từ 17h trở đi",
+          "example": {
+            "jp": "こんばんは！",
+            "romaji": "Konbanwa!",
+            "vn": "Chào buổi tối!"
+          }
+        },
+        {
+          "id": "g5",
+          "japanese": "さようなら",
+          "romaji": "sayōnara",
+          "meaning": "Tạm biệt (lâu dài)",
+          "note": "Dùng khi chia tay lâu, không gặp lại sớm",
+          "example": {
+            "jp": "さようなら、またいつか！",
+            "romaji": "Sayōnara, mata itsuka!",
+            "vn": "Tạm biệt, hẹn gặp lại khi nào đó!"
+          }
+        },
+        {
+          "id": "g6",
+          "japanese": "じゃあ、また",
+          "romaji": "jā, mata",
+          "meaning": "Hẹn gặp lại (thân mật)",
+          "note": "Dùng khi sắp gặp lại sớm",
+          "example": {
+            "jp": "じゃあ、また明日！",
+            "romaji": "Jā, mata ashita!",
+            "vn": "Hẹn gặp lại ngày mai!"
+          }
+        },
+        {
+          "id": "g7",
+          "japanese": "ありがとうございます",
+          "romaji": "arigatō gozaimasu",
+          "meaning": "Cảm ơn (rất lịch sự)",
+          "note": "Dùng trong mọi tình huống trang trọng",
+          "example": {
+            "jp": "助けてくれてありがとうございます。",
+            "romaji": "Tasukete kurete arigatō gozaimasu.",
+            "vn": "Cảm ơn bạn đã giúp đỡ tôi."
+          }
+        },
+        {
+          "id": "g8",
+          "japanese": "すみません",
+          "romaji": "sumimasen",
+          "meaning": "Xin lỗi / Xin hỏi",
+          "note": "Dùng để xin lỗi nhẹ hoặc gọi ai đó, thu hút sự chú ý",
+          "example": {
+            "jp": "すみません、駅はどこですか？",
+            "romaji": "Sumimasen, eki wa doko desu ka?",
+            "vn": "Xin hỏi, ga tàu ở đâu ạ?"
+          }
+        },
+        {
+          "id": "g9",
+          "japanese": "ごめんなさい",
+          "romaji": "gomen nasai",
+          "meaning": "Xin lỗi (thật lòng)",
+          "note": "Mạnh hơn すみません, dùng khi thực sự có lỗi",
+          "example": {
+            "jp": "遅れてごめんなさい。",
+            "romaji": "Okurete gomen nasai.",
+            "vn": "Xin lỗi vì đã đến trễ."
+          }
+        },
+        {
+          "id": "g10",
+          "japanese": "わかりました",
+          "romaji": "wakarimashita",
+          "meaning": "Tôi hiểu rồi",
+          "note": "Biểu thị đã tiếp nhận và hiểu thông tin",
+          "example": {
+            "jp": "はい、わかりました！",
+            "romaji": "Hai, wakarimashita!",
+            "vn": "Vâng, tôi hiểu rồi!"
+          }
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "label": "Ẩm thực",
+      "icon": "🍜",
+      "color": "#f97316",
+      "words": [
+        {
+          "id": "f1",
+          "japanese": "ごはん",
+          "kanji": "ご飯",
+          "romaji": "gohan",
+          "meaning": "Cơm / Bữa ăn",
+          "note": "Có thể dùng để chỉ bữa ăn nói chung (sáng/trưa/tối)",
+          "example": {
+            "jp": "ごはんを食べましょう。",
+            "romaji": "Gohan wo tabemashou.",
+            "vn": "Hãy cùng ăn cơm nào."
+          }
+        },
+        {
+          "id": "f2",
+          "japanese": "パン",
+          "romaji": "pan",
+          "meaning": "Bánh mì",
+          "note": "Từ gốc Bồ Đào Nha 'pão', viết katakana",
+          "example": {
+            "jp": "毎朝パンを食べます。",
+            "romaji": "Mai asa pan wo tabemasu.",
+            "vn": "Mỗi sáng tôi ăn bánh mì."
+          }
+        },
+        {
+          "id": "f3",
+          "japanese": "たまご",
+          "kanji": "卵",
+          "romaji": "tamago",
+          "meaning": "Trứng",
+          "note": "Cũng có thể viết お卵 (otamago) để lịch sự hơn",
+          "example": {
+            "jp": "たまごを二つください。",
+            "romaji": "Tamago wo futatsu kudasai.",
+            "vn": "Cho tôi hai quả trứng."
+          }
+        },
+        {
+          "id": "f4",
+          "japanese": "にく",
+          "kanji": "肉",
+          "romaji": "niku",
+          "meaning": "Thịt",
+          "note": "Ghép thêm loại: ぶたにく (thịt lợn), とりにく (thịt gà)",
+          "example": {
+            "jp": "肉が好きですか？",
+            "romaji": "Niku ga suki desu ka?",
+            "vn": "Bạn có thích thịt không?"
+          }
+        },
+        {
+          "id": "f5",
+          "japanese": "さかな",
+          "kanji": "魚",
+          "romaji": "sakana",
+          "meaning": "Cá",
+          "note": "Nhật Bản nổi tiếng với văn hóa ăn cá tươi sống (sashimi)",
+          "example": {
+            "jp": "さかなを食べるのが好きです。",
+            "romaji": "Sakana wo taberu no ga suki desu.",
+            "vn": "Tôi thích ăn cá."
+          }
+        },
+        {
+          "id": "f6",
+          "japanese": "おちゃ",
+          "kanji": "お茶",
+          "romaji": "ocha",
+          "meaning": "Trà (thường là trà xanh)",
+          "note": "Trà Nhật thường uống không đường",
+          "example": {
+            "jp": "お茶を一杯どうぞ。",
+            "romaji": "Ocha wo ippai dōzo.",
+            "vn": "Mời bạn một tách trà."
+          }
+        },
+        {
+          "id": "f7",
+          "japanese": "コーヒー",
+          "romaji": "kōhī",
+          "meaning": "Cà phê",
+          "note": "Từ tiếng Anh 'coffee', viết katakana",
+          "example": {
+            "jp": "コーヒーを飲みますか？",
+            "romaji": "Kōhī wo nomimasu ka?",
+            "vn": "Bạn có uống cà phê không?"
+          }
+        },
+        {
+          "id": "f8",
+          "japanese": "すし",
+          "kanji": "寿司",
+          "romaji": "sushi",
+          "meaning": "Sushi",
+          "note": "Món ăn nổi tiếng nhất Nhật Bản, cơm nặn với hải sản",
+          "example": {
+            "jp": "すしを食べたいです。",
+            "romaji": "Sushi wo tabetai desu.",
+            "vn": "Tôi muốn ăn sushi."
+          }
+        },
+        {
+          "id": "f9",
+          "japanese": "ラーメン",
+          "romaji": "rāmen",
+          "meaning": "Mì ramen",
+          "note": "Mì nước đặc trưng của Nhật, có nhiều loại nước dùng",
+          "example": {
+            "jp": "ラーメンを注文します。",
+            "romaji": "Rāmen wo chūmon shimasu.",
+            "vn": "Tôi sẽ gọi mì ramen."
+          }
+        },
+        {
+          "id": "f10",
+          "japanese": "みず",
+          "kanji": "水",
+          "romaji": "mizu",
+          "meaning": "Nước",
+          "note": "Nước ở nhà hàng Nhật thường được phục vụ miễn phí",
+          "example": {
+            "jp": "水を一杯ください。",
+            "romaji": "Mizu wo ippai kudasai.",
+            "vn": "Cho tôi một ly nước."
+          }
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "label": "Phương tiện",
+      "icon": "🚆",
+      "color": "#a78bfa",
+      "words": [
+        {
+          "id": "t1",
+          "japanese": "でんしゃ",
+          "kanji": "電車",
+          "romaji": "densha",
+          "meaning": "Tàu điện",
+          "note": "Phương tiện phổ biến nhất ở Nhật, luôn đúng giờ",
+          "example": {
+            "jp": "電車で学校に行きます。",
+            "romaji": "Densha de gakkō ni ikimasu.",
+            "vn": "Tôi đi học bằng tàu điện."
+          }
+        },
+        {
+          "id": "t2",
+          "japanese": "バス",
+          "romaji": "basu",
+          "meaning": "Xe buýt",
+          "note": "Phổ biến ở vùng nông thôn Nhật Bản",
+          "example": {
+            "jp": "バスで10分かかります。",
+            "romaji": "Basu de juppun kakarimasu.",
+            "vn": "Đi xe buýt mất 10 phút."
+          }
+        },
+        {
+          "id": "t3",
+          "japanese": "タクシー",
+          "romaji": "takushī",
+          "meaning": "Taxi",
+          "note": "Taxi Nhật đắt nhưng rất sạch và đúng giờ",
+          "example": {
+            "jp": "タクシーを呼んでください。",
+            "romaji": "Takushī wo yonde kudasai.",
+            "vn": "Hãy gọi taxi cho tôi."
+          }
+        },
+        {
+          "id": "t4",
+          "japanese": "じてんしゃ",
+          "kanji": "自転車",
+          "romaji": "jitensha",
+          "meaning": "Xe đạp",
+          "note": "Rất phổ biến ở Nhật, nhiều thành phố có làn đường xe đạp",
+          "example": {
+            "jp": "自転車で来ました。",
+            "romaji": "Jitensha de kimashita.",
+            "vn": "Tôi đã đến bằng xe đạp."
+          }
+        },
+        {
+          "id": "t5",
+          "japanese": "ひこうき",
+          "kanji": "飛行機",
+          "romaji": "hikōki",
+          "meaning": "Máy bay",
+          "note": "Ghép: 飛 (bay) + 行 (đi) + 機 (máy móc)",
+          "example": {
+            "jp": "飛行機でベトナムに帰ります。",
+            "romaji": "Hikōki de Betonamu ni kaerimasu.",
+            "vn": "Tôi về Việt Nam bằng máy bay."
+          }
+        },
+        {
+          "id": "t6",
+          "japanese": "えき",
+          "kanji": "駅",
+          "romaji": "eki",
+          "meaning": "Ga tàu",
+          "note": "Hệ thống ga tàu Nhật cực kỳ phức tạp và hiện đại",
+          "example": {
+            "jp": "駅はどこですか？",
+            "romaji": "Eki wa doko desu ka?",
+            "vn": "Ga tàu ở đâu ạ?"
+          }
+        }
+      ]
+    },
+    {
+      "id": "adjectives",
+      "label": "Tính từ",
+      "icon": "✨",
+      "color": "#34d399",
+      "words": [
+        {
+          "id": "adj1",
+          "japanese": "おおきい",
+          "kanji": "大きい",
+          "romaji": "ōkii",
+          "meaning": "To, lớn",
+          "type": "i-adj",
+          "negative": "おおきくない",
+          "past": "おおきかった",
+          "note": "い-tính từ: bỏ い, thêm くない để phủ định",
+          "example": {
+            "jp": "この犬は大きいです。",
+            "romaji": "Kono inu wa ōkii desu.",
+            "vn": "Con chó này to."
+          }
+        },
+        {
+          "id": "adj2",
+          "japanese": "ちいさい",
+          "kanji": "小さい",
+          "romaji": "chīsai",
+          "meaning": "Nhỏ bé",
+          "type": "i-adj",
+          "negative": "ちいさくない",
+          "past": "ちいさかった",
+          "note": "Cặp đối lập với おおきい",
+          "example": {
+            "jp": "この部屋は小さいです。",
+            "romaji": "Kono heya wa chīsai desu.",
+            "vn": "Căn phòng này nhỏ."
+          }
+        },
+        {
+          "id": "adj3",
+          "japanese": "おいしい",
+          "romaji": "oishii",
+          "meaning": "Ngon",
+          "type": "i-adj",
+          "negative": "おいしくない",
+          "past": "おいしかった",
+          "note": "Từ thông dụng nhất để khen đồ ăn",
+          "example": {
+            "jp": "このラーメンはおいしいです！",
+            "romaji": "Kono rāmen wa oishii desu!",
+            "vn": "Bát mì ramen này ngon quá!"
+          }
+        },
+        {
+          "id": "adj4",
+          "japanese": "たかい",
+          "kanji": "高い",
+          "romaji": "takai",
+          "meaning": "Cao / Đắt",
+          "type": "i-adj",
+          "negative": "たかくない",
+          "past": "たかかった",
+          "note": "Dùng cho cả nghĩa vật lý (cao) và giá cả (đắt)",
+          "example": {
+            "jp": "このバッグは高いですね。",
+            "romaji": "Kono baggu wa takai desu ne.",
+            "vn": "Cái túi này đắt nhỉ."
+          }
+        },
+        {
+          "id": "adj5",
+          "japanese": "きれい",
+          "romaji": "kirei",
+          "meaning": "Đẹp / Sạch",
+          "type": "na-adj",
+          "negative": "きれいじゃない",
+          "past": "きれいでした",
+          "note": "な-tính từ: thêm な trước danh từ (きれいな花)",
+          "example": {
+            "jp": "あの花はきれいですね。",
+            "romaji": "Ano hana wa kirei desu ne.",
+            "vn": "Bông hoa kia đẹp nhỉ."
+          }
+        },
+        {
+          "id": "adj6",
+          "japanese": "すき",
+          "kanji": "好き",
+          "romaji": "suki",
+          "meaning": "Thích",
+          "type": "na-adj",
+          "negative": "すきじゃない",
+          "past": "すきでした",
+          "note": "Dùng với trợ từ が: 〜がすきです",
+          "example": {
+            "jp": "日本語が好きです。",
+            "romaji": "Nihongo ga suki desu.",
+            "vn": "Tôi thích tiếng Nhật."
+          }
+        },
+        {
+          "id": "adj7",
+          "japanese": "むずかしい",
+          "kanji": "難しい",
+          "romaji": "muzukashii",
+          "meaning": "Khó",
+          "type": "i-adj",
+          "negative": "むずかしくない",
+          "past": "むずかしかった",
+          "note": "Cặp đối lập với やさしい (dễ)",
+          "example": {
+            "jp": "漢字は難しいですね。",
+            "romaji": "Kanji wa muzukashii desu ne.",
+            "vn": "Kanji khó nhỉ."
+          }
+        },
+        {
+          "id": "adj8",
+          "japanese": "げんき",
+          "kanji": "元気",
+          "romaji": "genki",
+          "meaning": "Khỏe mạnh / Năng động",
+          "type": "na-adj",
+          "negative": "げんきじゃない",
+          "past": "げんきでした",
+          "note": "Câu hỏi phổ biến: 元気ですか？ (Bạn có khỏe không?)",
+          "example": {
+            "jp": "毎日元気です！",
+            "romaji": "Mainichi genki desu!",
+            "vn": "Ngày nào tôi cũng khỏe!"
+          }
+        }
+      ]
+    },
+    {
+      "id": "places",
+      "label": "Địa điểm",
+      "icon": "📍",
+      "color": "#fb7185",
+      "words": [
+        {
+          "id": "p1",
+          "japanese": "がっこう",
+          "kanji": "学校",
+          "romaji": "gakkō",
+          "meaning": "Trường học",
+          "note": "学 (học) + 校 (trường)",
+          "example": {
+            "jp": "学校まで歩いて行きます。",
+            "romaji": "Gakkō made aruite ikimasu.",
+            "vn": "Tôi đi bộ đến trường."
+          }
+        },
+        {
+          "id": "p2",
+          "japanese": "びょういん",
+          "kanji": "病院",
+          "romaji": "byōin",
+          "meaning": "Bệnh viện",
+          "note": "Đừng nhầm với ホテル (hoteru) - khách sạn!",
+          "example": {
+            "jp": "病院に行かなければなりません。",
+            "romaji": "Byōin ni ikanakereba narimasen.",
+            "vn": "Tôi phải đến bệnh viện."
+          }
+        },
+        {
+          "id": "p3",
+          "japanese": "ぎんこう",
+          "kanji": "銀行",
+          "romaji": "ginkō",
+          "meaning": "Ngân hàng",
+          "note": "銀 (bạc) + 行 (đi, hành)",
+          "example": {
+            "jp": "銀行はどこですか？",
+            "romaji": "Ginkō wa doko desu ka?",
+            "vn": "Ngân hàng ở đâu ạ?"
+          }
+        },
+        {
+          "id": "p4",
+          "japanese": "コンビニ",
+          "romaji": "konbini",
+          "meaning": "Cửa hàng tiện lợi",
+          "note": "Viết tắt từ 'convenience store', mở 24/7 khắp Nhật Bản",
+          "example": {
+            "jp": "コンビニで買いました。",
+            "romaji": "Konbini de kaimashita.",
+            "vn": "Tôi mua ở cửa hàng tiện lợi."
+          }
+        },
+        {
+          "id": "p5",
+          "japanese": "レストラン",
+          "romaji": "resutoran",
+          "meaning": "Nhà hàng",
+          "note": "Từ tiếng Pháp 'restaurant'",
+          "example": {
+            "jp": "このレストランはおいしいです。",
+            "romaji": "Kono resutoran wa oishii desu.",
+            "vn": "Nhà hàng này ngon."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verbs_n5",
+      "label": "Các động từ cần nhớ",
+      "icon": "🔥",
+      "color": "#f97316",
+      "words": [
+        {
+          "id": "v1",
+          "japanese": "あります / います",
+          "romaji": "arimasu / imasu",
+          "meaning": "Có / Tồn tại",
+          "note": "あります dùng cho vật vô tri; います dùng cho người và động vật",
+          "example": {
+            "jp": "テーブルの上に本があります。",
+            "romaji": "Tēburu no ue ni hon ga arimasu.",
+            "vn": "Có quyển sách trên bàn."
+          }
+        },
+        {
+          "id": "v2",
+          "japanese": "いきます",
+          "romaji": "ikimasu",
+          "meaning": "Đi (đến nơi nào đó)",
+          "note": "Động từ nhóm 1. Hướng di chuyển dùng với trợ từ に hoặc へ",
+          "example": {
+            "jp": "明日、学校に行きます。",
+            "romaji": "Ashita, gakkō ni ikimasu.",
+            "vn": "Ngày mai tôi đi học."
+          }
+        },
+        {
+          "id": "v3",
+          "japanese": "きます",
+          "romaji": "kimasu",
+          "meaning": "Đến / Tới",
+          "note": "Động từ nhóm 3 (bất quy tắc). Người nói chuyển động về phía người nghe hoặc nơi đang nói đến",
+          "example": {
+            "jp": "友達が家に来ます。",
+            "romaji": "Tomodachi ga ie ni kimasu.",
+            "vn": "Bạn tôi sẽ đến nhà."
+          }
+        },
+        {
+          "id": "v4",
+          "japanese": "かえります",
+          "romaji": "kaerimasu",
+          "meaning": "Về / Trở về",
+          "note": "Dùng khi quay trở về nơi quen thuộc như nhà, quê hương",
+          "example": {
+            "jp": "6時に家に帰ります。",
+            "romaji": "Roku-ji ni ie ni kaerimasu.",
+            "vn": "Tôi về nhà lúc 6 giờ."
+          }
+        },
+        {
+          "id": "v5",
+          "japanese": "たべます",
+          "romaji": "tabemasu",
+          "meaning": "Ăn",
+          "note": "Động từ nhóm 2. Tân ngữ (thức ăn) đi với trợ từ を",
+          "example": {
+            "jp": "朝ご飯を食べます。",
+            "romaji": "Asa-gohan o tabemasu.",
+            "vn": "Tôi ăn bữa sáng."
+          }
+        },
+        {
+          "id": "v6",
+          "japanese": "のみます",
+          "romaji": "nomimasu",
+          "meaning": "Uống",
+          "note": "Động từ nhóm 1. Cũng có nghĩa bóng là 'nuốt' thuốc",
+          "example": {
+            "jp": "水を飲みます。",
+            "romaji": "Mizu o nomimasu.",
+            "vn": "Tôi uống nước."
+          }
+        },
+        {
+          "id": "v7",
+          "japanese": "みます",
+          "romaji": "mimasu",
+          "meaning": "Nhìn / Xem",
+          "note": "Động từ nhóm 2. Dùng cho xem TV, phim, tranh; đối tượng dùng trợ từ を",
+          "example": {
+            "jp": "テレビを見ます。",
+            "romaji": "Terebi o mimasu.",
+            "vn": "Tôi xem tivi."
+          }
+        },
+        {
+          "id": "v8",
+          "japanese": "ききます",
+          "romaji": "kikimasu",
+          "meaning": "Nghe / Hỏi",
+          "note": "Có hai nghĩa: 聞きます (nghe nhạc, âm thanh) và 聞きます (hỏi ai đó)",
+          "example": {
+            "jp": "音楽を聞きます。",
+            "romaji": "Ongaku o kikimasu.",
+            "vn": "Tôi nghe nhạc."
+          }
+        },
+        {
+          "id": "v9",
+          "japanese": "よみます",
+          "romaji": "yomimasu",
+          "meaning": "Đọc",
+          "note": "Động từ nhóm 1. Đọc sách, báo, email… đều dùng được",
+          "example": {
+            "jp": "新聞を読みます。",
+            "romaji": "Shinbun o yomimasu.",
+            "vn": "Tôi đọc báo."
+          }
+        },
+        {
+          "id": "v10",
+          "japanese": "かきます",
+          "romaji": "kakimasu",
+          "meaning": "Viết / Vẽ",
+          "note": "Dùng cho cả viết chữ (手紙を書く) và vẽ tranh (絵を書く)",
+          "example": {
+            "jp": "手紙を書きます。",
+            "romaji": "Tegami o kakimasu.",
+            "vn": "Tôi viết thư."
+          }
+        },
+        {
+          "id": "v11",
+          "japanese": "はなします",
+          "romaji": "hanashimasu",
+          "meaning": "Nói / Nói chuyện",
+          "note": "Ngôn ngữ nói dùng で (日本語で話す). Khác với いいます (nói / phát biểu câu cụ thể)",
+          "example": {
+            "jp": "日本語で話します。",
+            "romaji": "Nihongo de hanashimasu.",
+            "vn": "Tôi nói bằng tiếng Nhật."
+          }
+        },
+        {
+          "id": "v12",
+          "japanese": "かいます",
+          "romaji": "kaimasu",
+          "meaning": "Mua",
+          "note": "Động từ nhóm 1. Địa điểm mua hàng dùng で, thứ mua dùng を",
+          "example": {
+            "jp": "スーパーで野菜を買います。",
+            "romaji": "Sūpā de yasai o kaimasu.",
+            "vn": "Tôi mua rau ở siêu thị."
+          }
+        },
+        {
+          "id": "v13",
+          "japanese": "のります",
+          "romaji": "norimasu",
+          "meaning": "Lên / Đi (phương tiện)",
+          "note": "Phương tiện đi với trợ từ に. Ngược lại là おります (xuống xe)",
+          "example": {
+            "jp": "電車に乗ります。",
+            "romaji": "Densha ni norimasu.",
+            "vn": "Tôi đi tàu điện."
+          }
+        },
+        {
+          "id": "v14",
+          "japanese": "あいます",
+          "romaji": "aimasu",
+          "meaning": "Gặp / Gặp gỡ",
+          "note": "Người gặp dùng trợ từ に hoặc と. Khác với あっています (đang gặp nhau)",
+          "example": {
+            "jp": "友達に会います。",
+            "romaji": "Tomodachi ni aimasu.",
+            "vn": "Tôi gặp bạn bè."
+          }
+        },
+        {
+          "id": "v15",
+          "japanese": "します",
+          "romaji": "shimasu",
+          "meaning": "Làm / Thực hiện",
+          "note": "Động từ nhóm 3 (bất quy tắc). Cực kỳ đa dụng; kết hợp với danh từ để tạo động từ mới: 勉強します, 運動します…",
+          "example": {
+            "jp": "毎日運動をします。",
+            "romaji": "Mainichi undō o shimasu.",
+            "vn": "Tôi tập thể dục mỗi ngày."
+          }
+        },
+        {
+          "id": "v16",
+          "japanese": "べんきょうします",
+          "romaji": "benkyō shimasu",
+          "meaning": "Học / Học bài",
+          "note": "Ghép danh từ 勉強 + します. Môn học dùng trợ từ を hoặc の",
+          "example": {
+            "jp": "日本語を勉強します。",
+            "romaji": "Nihongo o benkyō shimasu.",
+            "vn": "Tôi học tiếng Nhật."
+          }
+        },
+        {
+          "id": "v17",
+          "japanese": "はたらきます",
+          "romaji": "hatarakimasu",
+          "meaning": "Làm việc",
+          "note": "Nơi làm việc dùng で. Khác với しごとをします (làm công việc cụ thể)",
+          "example": {
+            "jp": "会社で働きます。",
+            "romaji": "Kaisha de hatarakimasu.",
+            "vn": "Tôi làm việc ở công ty."
+          }
+        },
+        {
+          "id": "v18",
+          "japanese": "やすみます",
+          "romaji": "yasumimasu",
+          "meaning": "Nghỉ / Nghỉ ngơi",
+          "note": "Dùng cho nghỉ phép (会社を休む) và nghỉ ngơi; ngủ cũng có thể dùng ねます",
+          "example": {
+            "jp": "今日は会社を休みます。",
+            "romaji": "Kyō wa kaisha o yasumimasu.",
+            "vn": "Hôm nay tôi nghỉ làm."
+          }
+        },
+        {
+          "id": "v19",
+          "japanese": "おきます",
+          "romaji": "okimasu",
+          "meaning": "Thức dậy / Dậy",
+          "note": "Động từ nhóm 2. Thời gian dùng に: 7時に起きます",
+          "example": {
+            "jp": "毎朝7時に起きます。",
+            "romaji": "Mai asa shichi-ji ni okimasu.",
+            "vn": "Mỗi sáng tôi dậy lúc 7 giờ."
+          }
+        },
+        {
+          "id": "v20",
+          "japanese": "ねます",
+          "romaji": "nemasu",
+          "meaning": "Ngủ / Đi ngủ",
+          "note": "Động từ nhóm 2. Cặp đôi với おきます. Cũng có nghĩa 'nằm xuống'",
+          "example": {
+            "jp": "11時に寝ます。",
+            "romaji": "Jūichi-ji ni nemasu.",
+            "vn": "Tôi ngủ lúc 11 giờ."
+          }
+        },
+        {
+          "id": "v21",
+          "japanese": "あけます",
+          "romaji": "akemasu",
+          "meaning": "Mở (ra)",
+          "note": "Động từ nhóm 2. Dùng cho cửa, cửa sổ, hộp… Ngược lại: しめます (đóng lại)",
+          "example": {
+            "jp": "窓を開けます。",
+            "romaji": "Mado o akemasu.",
+            "vn": "Tôi mở cửa sổ."
+          }
+        },
+        {
+          "id": "v22",
+          "japanese": "しめます",
+          "romaji": "shimemasu",
+          "meaning": "Đóng (lại)",
+          "note": "Động từ nhóm 2. Cặp với あけます. Khác với とじます (đóng sách, mắt)",
+          "example": {
+            "jp": "ドアを閉めます。",
+            "romaji": "Doa o shimemasu.",
+            "vn": "Tôi đóng cửa."
+          }
+        },
+        {
+          "id": "v23",
+          "japanese": "つけます",
+          "romaji": "tsukemasu",
+          "meaning": "Bật (đèn, thiết bị)",
+          "note": "Động từ nhóm 2. Ngược lại: けします (tắt). Dùng cho đèn, TV, điều hòa…",
+          "example": {
+            "jp": "電気をつけます。",
+            "romaji": "Denki o tsukemasu.",
+            "vn": "Tôi bật đèn."
+          }
+        },
+        {
+          "id": "v24",
+          "japanese": "けします",
+          "romaji": "keshimasu",
+          "meaning": "Tắt (đèn, thiết bị) / Xóa",
+          "note": "Nhóm 1. Ngoài tắt thiết bị, còn có nghĩa xóa chữ (黒板を消す)",
+          "example": {
+            "jp": "テレビを消します。",
+            "romaji": "Terebi o keshimasu.",
+            "vn": "Tôi tắt tivi."
+          }
+        },
+        {
+          "id": "v25",
+          "japanese": "かけます",
+          "romaji": "kakemasu",
+          "meaning": "Gọi điện / Treo / Ngồi",
+          "note": "Đa nghĩa: 電話をかける (gọi điện), 絵をかける (treo tranh), いすにかける (ngồi ghế)",
+          "example": {
+            "jp": "電話をかけます。",
+            "romaji": "Denwa o kakemasu.",
+            "vn": "Tôi gọi điện."
+          }
+        },
+        {
+          "id": "v26",
+          "japanese": "つかいます",
+          "romaji": "tsukaimasu",
+          "meaning": "Sử dụng / Dùng",
+          "note": "Nhóm 1. Công cụ / phương tiện dùng trợ từ を hoặc で",
+          "example": {
+            "jp": "パソコンを使います。",
+            "romaji": "Pasokon o tsukaimasu.",
+            "vn": "Tôi dùng máy tính."
+          }
+        },
+        {
+          "id": "v27",
+          "japanese": "もらいます",
+          "romaji": "moraimasu",
+          "meaning": "Nhận (từ ai đó)",
+          "note": "Người cho dùng trợ từ に hoặc から. Ngược với あげます (cho đi) và くれます (ai đó cho mình)",
+          "example": {
+            "jp": "友達にプレゼントをもらいました。",
+            "romaji": "Tomodachi ni purezento o moraimashita.",
+            "vn": "Tôi nhận quà từ bạn."
+          }
+        },
+        {
+          "id": "v28",
+          "japanese": "あげます",
+          "romaji": "agemasu",
+          "meaning": "Cho / Tặng (cho người khác)",
+          "note": "Nhóm 2. Người nhận dùng に. Không dùng khi người nhận là người nói",
+          "example": {
+            "jp": "友達に花をあげます。",
+            "romaji": "Tomodachi ni hana o agemasu.",
+            "vn": "Tôi tặng hoa cho bạn."
+          }
+        },
+        {
+          "id": "v29",
+          "japanese": "くれます",
+          "romaji": "kuremasu",
+          "meaning": "Cho / Tặng (cho tôi)",
+          "note": "Chủ thể là người khác, người nhận là tôi hoặc người thân của tôi. Không thể dùng thay あげます",
+          "example": {
+            "jp": "田中さんが私に本をくれました。",
+            "romaji": "Tanaka-san ga watashi ni hon o kuremashita.",
+            "vn": "Anh Tanaka đã tặng sách cho tôi."
+          }
+        },
+        {
+          "id": "v30",
+          "japanese": "かります",
+          "romaji": "karimasu",
+          "meaning": "Mượn",
+          "note": "Nhóm 2. Người cho mượn dùng に, thứ mượn dùng を. Ngược lại: かします (cho mượn)",
+          "example": {
+            "jp": "図書館で本を借ります。",
+            "romaji": "Toshokan de hon o karimasu.",
+            "vn": "Tôi mượn sách ở thư viện."
+          }
+        },
+        {
+          "id": "v31",
+          "japanese": "おしえます",
+          "romaji": "oshiemasu",
+          "meaning": "Dạy / Chỉ cho biết",
+          "note": "Nhóm 2. Người được dạy dùng に, nội dung dùng を. Cũng có nghĩa 'thông báo, cho biết'",
+          "example": {
+            "jp": "先生が英語を教えます。",
+            "romaji": "Sensei ga eigo o oshiemasu.",
+            "vn": "Giáo viên dạy tiếng Anh."
+          }
+        },
+        {
+          "id": "v32",
+          "japanese": "わかります",
+          "romaji": "wakarimasu",
+          "meaning": "Hiểu / Biết",
+          "note": "Chủ thể hiểu biết dùng が (not を): 日本語がわかります. Không dùng を",
+          "example": {
+            "jp": "この漢字がわかりません。",
+            "romaji": "Kono kanji ga wakarimasen.",
+            "vn": "Tôi không hiểu chữ Hán này."
+          }
+        },
+        {
+          "id": "v33",
+          "japanese": "おもいます",
+          "romaji": "omoimasu",
+          "meaning": "Nghĩ / Cho rằng",
+          "note": "Theo sau と (と思います). Diễn đạt ý kiến chủ quan của người nói",
+          "example": {
+            "jp": "おいしいと思います。",
+            "romaji": "Oishii to omoimasu.",
+            "vn": "Tôi nghĩ là ngon."
+          }
+        },
+        {
+          "id": "v34",
+          "japanese": "しっています",
+          "romaji": "shitte imasu",
+          "meaning": "Biết (đã biết rồi)",
+          "note": "Trạng thái kết quả của しる. Hỏi 'bạn có biết không?' → 知っていますか？ Không dùng 知りますか？",
+          "example": {
+            "jp": "田中さんを知っていますか？",
+            "romaji": "Tanaka-san o shitte imasu ka?",
+            "vn": "Bạn có biết anh Tanaka không?"
+          }
+        },
+        {
+          "id": "v35",
+          "japanese": "すんでいます",
+          "romaji": "sunde imasu",
+          "meaning": "Đang sống / Cư trú",
+          "note": "Trạng thái tiếp diễn của すむ. Nơi ở dùng に: 東京に住んでいます",
+          "example": {
+            "jp": "大阪に住んでいます。",
+            "romaji": "Ōsaka ni sunde imasu.",
+            "vn": "Tôi đang sống ở Osaka."
+          }
+        },
+        {
+          "id": "v36",
+          "japanese": "つとめています",
+          "romaji": "tsutomete imasu",
+          "meaning": "Đang làm việc tại (công ty)",
+          "note": "Trạng thái tiếp diễn của つとめる. Nơi làm việc dùng に: 銀行に勤めています",
+          "example": {
+            "jp": "銀行に勤めています。",
+            "romaji": "Ginkō ni tsutomete imasu.",
+            "vn": "Tôi đang làm ở ngân hàng."
+          }
+        },
+        {
+          "id": "v37",
+          "japanese": "まちます",
+          "romaji": "machimasu",
+          "meaning": "Chờ / Đợi",
+          "note": "Nhóm 1. Đối tượng chờ dùng を: バスを待つ. Cũng dùng でまちます (chờ ở đâu đó)",
+          "example": {
+            "jp": "駅でバスを待ちます。",
+            "romaji": "Eki de basu o machimasu.",
+            "vn": "Tôi chờ xe buýt ở ga."
+          }
+        },
+        {
+          "id": "v38",
+          "japanese": "はじめます",
+          "romaji": "hajimemasu",
+          "meaning": "Bắt đầu (cái gì đó)",
+          "note": "Nhóm 2, ngoại động từ. Ngược lại: おわります (kết thúc). Nội động từ tương ứng: はじまります",
+          "example": {
+            "jp": "授業を始めます。",
+            "romaji": "Jugyō o hajimemasu.",
+            "vn": "Chúng ta bắt đầu bài học."
+          }
+        },
+        {
+          "id": "v39",
+          "japanese": "おわります",
+          "romaji": "owarimasu",
+          "meaning": "Kết thúc / Xong",
+          "note": "Nhóm 1, vừa là nội vừa ngoại động từ. 授業が終わります (bài học kết thúc) hay 仕事を終わります",
+          "example": {
+            "jp": "仕事は6時に終わります。",
+            "romaji": "Shigoto wa roku-ji ni owarimasu.",
+            "vn": "Công việc kết thúc lúc 6 giờ."
+          }
+        },
+        {
+          "id": "v40",
+          "japanese": "いいます",
+          "romaji": "iimasu",
+          "meaning": "Nói / Phát biểu",
+          "note": "Nhóm 1. Nội dung câu nói đi với と: 「ありがとう」と言います. Khác với はなします (nói chuyện)",
+          "example": {
+            "jp": "「おはよう」と言います。",
+            "romaji": "\"Ohayō\" to iimasu.",
+            "vn": "Nói 'Chào buổi sáng'."
+          }
+        }
+      ]
+    },
+    {
+      "id": "directions",
+      "label": "Chỉ vị trí",
+      "icon": "🧭",
+      "color": "#a78bfa",
+      "words": [
+        {
+          "id": "d1",
+          "japanese": "うえ",
+          "romaji": "ue",
+          "meaning": "Phía trên / trên",
+          "note": "Chỉ vị trí ở trên so với vật tham chiếu",
+          "example": {
+            "jp": "テーブルの上に本があります。",
+            "romaji": "Tēburu no ue ni hon ga arimasu.",
+            "vn": "Có quyển sách trên bàn."
+          }
+        },
+        {
+          "id": "d2",
+          "japanese": "した",
+          "romaji": "shita",
+          "meaning": "Phía dưới / dưới",
+          "note": "Chỉ vị trí ở dưới so với vật tham chiếu",
+          "example": {
+            "jp": "いすの下にねこがいます。",
+            "romaji": "Isu no shita ni neko ga imasu.",
+            "vn": "Có con mèo dưới ghế."
+          }
+        },
+        {
+          "id": "d3",
+          "japanese": "みぎ",
+          "romaji": "migi",
+          "meaning": "Bên phải",
+          "note": "Luôn dùng với の để chỉ vị trí: ～の右",
+          "example": {
+            "jp": "ドアの右にまどがあります。",
+            "romaji": "Doa no migi ni mado ga arimasu.",
+            "vn": "Có cửa sổ ở bên phải cửa."
+          }
+        },
+        {
+          "id": "d4",
+          "japanese": "ひだり",
+          "romaji": "hidari",
+          "meaning": "Bên trái",
+          "note": "Luôn dùng với の để chỉ vị trí: ～の左",
+          "example": {
+            "jp": "銀行は駅の左にあります。",
+            "romaji": "Ginkō wa eki no hidari ni arimasu.",
+            "vn": "Ngân hàng ở bên trái ga tàu."
+          }
+        },
+        {
+          "id": "d5",
+          "japanese": "まえ",
+          "romaji": "mae",
+          "meaning": "Phía trước",
+          "note": "Chỉ vị trí ở phía trước, đối diện với うしろ",
+          "example": {
+            "jp": "学校の前にコンビニがあります。",
+            "romaji": "Gakkō no mae ni konbini ga arimasu.",
+            "vn": "Có cửa hàng tiện lợi ở trước trường học."
+          }
+        },
+        {
+          "id": "d6",
+          "japanese": "うしろ",
+          "romaji": "ushiro",
+          "meaning": "Phía sau",
+          "note": "Chỉ vị trí ở phía sau, đối diện với まえ",
+          "example": {
+            "jp": "わたしのうしろにだれかいますか？",
+            "romaji": "Watashi no ushiro ni dare ka imasu ka?",
+            "vn": "Có ai đứng phía sau tôi không?"
+          }
+        },
+        {
+          "id": "d7",
+          "japanese": "なか",
+          "romaji": "naka",
+          "meaning": "Bên trong / trong",
+          "note": "Chỉ vị trí ở bên trong một không gian hoặc vật thể",
+          "example": {
+            "jp": "かばんの中にさいふがあります。",
+            "romaji": "Kaban no naka ni saifu ga arimasu.",
+            "vn": "Có ví tiền trong túi."
+          }
+        },
+        {
+          "id": "d8",
+          "japanese": "そと",
+          "romaji": "soto",
+          "meaning": "Bên ngoài / ngoài",
+          "note": "Đối nghĩa với なか, chỉ vị trí ở bên ngoài",
+          "example": {
+            "jp": "そとはさむいですね。",
+            "romaji": "Soto wa samui desu ne.",
+            "vn": "Bên ngoài lạnh nhỉ."
+          }
+        },
+        {
+          "id": "d9",
+          "japanese": "となり",
+          "romaji": "tonari",
+          "meaning": "Bên cạnh (liền kề)",
+          "note": "Chỉ vị trí cạnh nhau, thường là cùng loại: nhà cạnh nhà, người cạnh người",
+          "example": {
+            "jp": "わたしのとなりにすわってください。",
+            "romaji": "Watashi no tonari ni suwatte kudasai.",
+            "vn": "Xin hãy ngồi cạnh tôi."
+          }
+        },
+        {
+          "id": "d10",
+          "japanese": "ちかく",
+          "romaji": "chikaku",
+          "meaning": "Gần / xung quanh",
+          "note": "Chỉ khoảng cách gần, không nhất thiết phải liền kề như となり",
+          "example": {
+            "jp": "えきのちかくにすんでいます。",
+            "romaji": "Eki no chikaku ni sunde imasu.",
+            "vn": "Tôi sống gần ga tàu."
+          }
+        },
+        {
+          "id": "d11",
+          "japanese": "あいだ",
+          "romaji": "aida",
+          "meaning": "Ở giữa (giữa hai vật)",
+          "note": "Dùng khi diễn tả vị trí kẹp giữa hai đối tượng: AとBのあいだ",
+          "example": {
+            "jp": "ゆうびんきょくは銀行とスーパーのあいだにあります。",
+            "romaji": "Yūbinkyoku wa ginkō to sūpā no aida ni arimasu.",
+            "vn": "Bưu điện nằm giữa ngân hàng và siêu thị."
+          }
+        },
+        {
+          "id": "d12",
+          "japanese": "むこう",
+          "romaji": "mukō",
+          "meaning": "Phía bên kia / đối diện",
+          "note": "Chỉ vị trí ở phía bên kia của một ranh giới (con đường, con sông,...)",
+          "example": {
+            "jp": "みちのむこうにこうえんがあります。",
+            "romaji": "Michi no mukō ni kōen ga arimasu.",
+            "vn": "Có công viên ở bên kia đường."
+          }
+        }
+      ]
+    }
+  ]
+}
