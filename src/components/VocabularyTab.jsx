@@ -25,6 +25,8 @@ export default function VocabularyTab() {
   const [flashFlipped, setFlashFlipped] = useState(false);
   const [isShuffling, setIsShuffling] = useState(false);
   const [markedIds, setMarkedIds] = useState(() => loadMarked());
+  const [hideMeanings, setHideMeanings] = useState(false);
+  const [markAll, setMarkAll] = useState(false);
 
   const allWords = useMemo(() => {
     return vocabData.categories.flatMap((cat) =>
@@ -69,11 +71,36 @@ export default function VocabularyTab() {
       if (next.has(id)) next.delete(id);
       else next.add(id);
       saveMarked(next);
+      setMarkAll(markedIds.length == filtered.length);
+
+      return next;
+    });
+  };
+
+  // Đánh dấu tất cả từ trong filtered, hoặc hủy nếu tất cả đã được đánh dấu
+  const toggleMarkAll = () => {
+    const allFilteredMarked = filtered.every((w) => markedIds.has(w.id));
+    setMarkedIds((prev) => {
+      const next = new Set(prev);
+      if (allFilteredMarked) {
+        filtered.forEach((w) => next.delete(w.id));
+        setMarkAll(false);
+      } else {
+        setMarkAll(true);
+        filtered.forEach((w) => next.add(w.id));
+      }
+      saveMarked(next);
       return next;
     });
   };
 
   const toggleCard = (id) => setExpandedCard(expandedCard === id ? null : id);
+
+  const clearAllMarked = () => {
+    setMarkedIds(new Set());
+    saveMarked(new Set());
+    setMarkAll(false);
+  };
 
   useEffect(() => {
     setFlashIndex(0);
@@ -160,35 +187,68 @@ export default function VocabularyTab() {
 
       {/* Flash card controls */}
       {!flashMode ? (
-        <div style={{ display: "flex", gap: 10, marginBottom: 20, flexWrap: "wrap" }}>
-          <button
-            className="filter-btn"
-            style={{ background: "#27272a", color: "#fff", border: "none" }}
-            onClick={() => enterFlash("all")}
-          >
-            🎴 Học Flash Card (tất cả · {filtered.length})
-          </button>
-          <button
-            className="filter-btn"
-            style={{
-              background: markedWords.length > 0 ? "#713f12" : "#1c1c1f",
-              color: markedWords.length > 0 ? "#facc15" : "#666",
-              border: markedWords.length > 0 ? "1px solid #854d0e" : "1px solid #333",
-              cursor: markedWords.length > 0 ? "pointer" : "not-allowed",
-              opacity: markedWords.length > 0 ? 1 : 0.5,
-            }}
-            onClick={() => markedWords.length > 0 && enterFlash("marked")}
-            title={
-              markedWords.length === 0
-                ? "Đánh dấu ít nhất 1 từ để học"
-                : `Học ${markedWords.length} từ đã đánh dấu`
-            }
-          >
-            ⭐ Học từ đã đánh dấu ({markedWords.length})
-          </button>
+        <div
+          style={{
+            display: "flex",
+            gap: 10,
+            marginBottom: 12,
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <div className="flash-box">
+            <button
+              className="filter-btn"
+              style={{ background: "#27272a", color: "#fff", border: "none" }}
+              onClick={() => enterFlash("all")}
+            >
+              🎴 Học Flash Card (tất cả · {filtered.length})
+            </button>
+            <button
+              className="filter-btn"
+              style={{
+                background: markedWords.length > 0 ? "#713f12" : "#1c1c1f",
+                color: markedWords.length > 0 ? "#facc15" : "#666",
+                border:
+                  markedWords.length > 0
+                    ? "1px solid #854d0e"
+                    : "1px solid #333",
+                cursor: markedWords.length > 0 ? "pointer" : "not-allowed",
+                opacity: markedWords.length > 0 ? 1 : 0.5,
+              }}
+              onClick={() => markedWords.length > 0 && enterFlash("marked")}
+              title={
+                markedWords.length === 0
+                  ? "Đánh dấu ít nhất 1 từ để học"
+                  : `Học ${markedWords.length} từ đã đánh dấu`
+              }
+            >
+              ⭐ Học từ đã đánh dấu ({markedWords.length})
+            </button>
+          </div>
+
+          <div className="unmarked-box">
+            {markedIds.size > 0 && (
+              <button
+                className="filter-btn"
+                style={{
+                  background: "transparent",
+                  color: "#f87171",
+                  border: "1px solid #7f1d1d",
+                }}
+                onClick={() => {
+                  clearAllMarked();
+                }}
+                title="Hủy toàn bộ đánh dấu"
+              >
+                🗑 Hủy tất cả ({markedIds.size})
+              </button>
+            )}
+          </div>
         </div>
       ) : (
-        <div style={{ marginBottom: 20 }}>
+        <div style={{ marginBottom: 12 }}>
           <button
             className="filter-btn"
             style={{ background: "#facc15", color: "#000", border: "none" }}
@@ -204,12 +264,64 @@ export default function VocabularyTab() {
             }}
           >
             Đang học:{" "}
-            <strong style={{ color: flashScope === "marked" ? "#facc15" : "#a78bfa" }}>
+            <strong
+              style={{ color: flashScope === "marked" ? "#facc15" : "#a78bfa" }}
+            >
               {flashScope === "marked"
                 ? `⭐ ${flashWords.length} từ đã đánh dấu`
                 : `🌐 ${flashWords.length} từ (tất cả)`}
             </strong>
           </span>
+        </div>
+      )}
+
+      {/* Card view toolbar — hide/show meanings */}
+      {!flashMode && filtered.length > 0 && (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            marginBottom: 16,
+          }}
+        >
+          <button
+            className="filter-btn"
+            style={{
+              background: hideMeanings ? "#312e81" : "#1e1b4b",
+              color: hideMeanings ? "#c4b5fd" : "#818cf8",
+              border: "1px solid #3730a3",
+              fontSize: 18,
+            }}
+            onClick={() => setHideMeanings((v) => !v)}
+          >
+            {hideMeanings
+              ? "👀 Hiện tất cả định nghĩa"
+              : "🙈 Ẩn tất cả định nghĩa"}
+          </button>
+          {/* {hideMeanings && (
+            <span
+              style={{
+                fontSize: 18,
+                color: "var(--text-muted)",
+                fontStyle: "italic",
+              }}
+            >
+              Nhấn vào từng card để xem định nghĩa riêng
+            </span>
+          )} */}
+          <button
+            className="filter-btn"
+            style={{
+              background: markAll ? "#312e81" : "#1e1b4b",
+              color: markAll ? "#b5d4fd" : "#818cf8",
+              border: "1px solid #3730a3",
+              fontSize: 18,
+            }}
+            onClick={() => toggleMarkAll((v) => !v)}
+          >
+            {markAll ? "❌ Hủy đánh dấu tất cả" : "✅ Đánh dấu tất cả"}{" "}
+          </button>
         </div>
       )}
 
@@ -253,6 +365,7 @@ export default function VocabularyTab() {
               onToggle={() => toggleCard(word.id)}
               marked={markedIds.has(word.id)}
               onToggleMark={(e) => toggleMark(word.id, e)}
+              hideMeanings={hideMeanings}
             />
           ))}
         </div>
@@ -261,9 +374,34 @@ export default function VocabularyTab() {
   );
 }
 
-function WordCard({ word, delay, expanded, onToggle, marked, onToggleMark }) {
+function WordCard({
+  word,
+  delay,
+  expanded,
+  onToggle,
+  marked,
+  onToggleMark,
+  hideMeanings,
+}) {
   const isIAdj = word.type === "i-adj";
   const isNaAdj = word.type === "na-adj";
+  // Per-card meaning override: null = follow global, true = revealed, false = hidden
+  const [localRevealed, setLocalRevealed] = useState(null);
+
+  // When global toggle changes, reset per-card override
+  useEffect(() => {
+    setLocalRevealed(null);
+  }, [hideMeanings]);
+
+  const meaningHidden = localRevealed !== null ? !localRevealed : hideMeanings;
+
+  const handleRevealToggle = (e) => {
+    e.stopPropagation();
+    setLocalRevealed((prev) => {
+      if (prev === null) return !hideMeanings ? false : true;
+      return !prev;
+    });
+  };
 
   return (
     <div
@@ -275,7 +413,7 @@ function WordCard({ word, delay, expanded, onToggle, marked, onToggleMark }) {
       }}
       onClick={onToggle}
     >
-      {/* Top row: category tag + bookmark */}
+      {/* Top row: category tag + actions */}
       <div
         style={{
           display: "flex",
@@ -298,6 +436,26 @@ function WordCard({ word, delay, expanded, onToggle, marked, onToggleMark }) {
           {word.categoryLabel}
         </span>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          {/* Per-card meaning toggle */}
+          <button
+            onClick={handleRevealToggle}
+            title={meaningHidden ? "Hiện định nghĩa" : "Ẩn định nghĩa"}
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              fontSize: 14,
+              lineHeight: 1,
+              padding: 0,
+              opacity: 0.85,
+              transition: "opacity 0.15s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = 1)}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = 0.55)}
+          >
+            {meaningHidden ? "👀" : "🙈"}
+          </button>
+          {/* Bookmark */}
           <button
             onClick={onToggleMark}
             title={marked ? "Bỏ đánh dấu" : "Đánh dấu để học riêng"}
@@ -347,11 +505,26 @@ function WordCard({ word, delay, expanded, onToggle, marked, onToggleMark }) {
         </span>
       )}
 
-      {/* Meaning */}
-      <div className="word-card__meaning">{word.meaning}</div>
+      {/* Meaning — hideable */}
+      {meaningHidden ? (
+        <div
+          style={{
+            marginTop: 6,
+            marginBottom: 4,
+            fontSize: 13,
+            color: "var(--text-muted)",
+            fontStyle: "italic",
+            userSelect: "none",
+          }}
+        >
+          ∙∙∙ nhấn 👁 để xem nghĩa
+        </div>
+      ) : (
+        <div className="word-card__meaning">{word.meaning}</div>
+      )}
 
       {/* Conjugation for adjectives */}
-      {expanded && (isIAdj || isNaAdj) && (
+      {expanded && !meaningHidden && (isIAdj || isNaAdj) && (
         <div
           style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 8 }}
         >
@@ -377,10 +550,12 @@ function WordCard({ word, delay, expanded, onToggle, marked, onToggleMark }) {
       )}
 
       {/* Note */}
-      {word.note && <div className="word-card__note">{word.note}</div>}
+      {word.note && !meaningHidden && (
+        <div className="word-card__note">{word.note}</div>
+      )}
 
       {/* Example — shown when expanded */}
-      {expanded && word.example && (
+      {expanded && !meaningHidden && word.example && (
         <div className="word-card__example">
           <div
             style={{
@@ -400,7 +575,7 @@ function WordCard({ word, delay, expanded, onToggle, marked, onToggleMark }) {
         </div>
       )}
 
-      {!expanded && (
+      {!expanded && !meaningHidden && (
         <div
           style={{
             marginTop: 10,
@@ -416,18 +591,31 @@ function WordCard({ word, delay, expanded, onToggle, marked, onToggleMark }) {
   );
 }
 
-function FlashCardStudy({
-  words,
-  index,
-  setIndex,
-  flipped,
-  setFlipped,
-  isShuffling,
-  setIsShuffling,
-  markedIds,
-  onToggleMark,
-}) {
-  const word = words[index];
+function fisherYates(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function FlashCardStudy({ words, markedIds, onToggleMark }) {
+  const [deck, setDeck] = useState(words);
+  const [index, setIndex] = useState(0);
+  const [flipped, setFlipped] = useState(false);
+  const [isShuffling, setIsShuffling] = useState(false);
+  const [isShuffled, setIsShuffled] = useState(false);
+
+  // Khi words bên ngoài thay đổi (đổi scope/filter), reset deck
+  useEffect(() => {
+    setDeck(words);
+    setIndex(0);
+    setFlipped(false);
+    setIsShuffled(false);
+  }, [words]);
+
+  const word = deck[index];
 
   const animateCard = (callback) => {
     setIsShuffling(true);
@@ -439,20 +627,30 @@ function FlashCardStudy({
 
   const nextCard = () =>
     animateCard(() => {
-      setIndex((prev) => (prev + 1) % words.length);
+      setIndex((prev) => (prev + 1) % deck.length);
       setFlipped(false);
     });
 
   const prevCard = () =>
     animateCard(() => {
-      setIndex((prev) => (prev - 1 + words.length) % words.length);
+      setIndex((prev) => (prev - 1 + deck.length) % deck.length);
       setFlipped(false);
     });
 
-  const shuffleCard = () =>
+  const shuffleDeck = () =>
     animateCard(() => {
-      setIndex(Math.floor(Math.random() * words.length));
+      setDeck((prev) => fisherYates(prev));
+      setIndex(0);
       setFlipped(false);
+      setIsShuffled(true);
+    });
+
+  const resetDeck = () =>
+    animateCard(() => {
+      setDeck(words);
+      setIndex(0);
+      setFlipped(false);
+      setIsShuffled(false);
     });
 
   useEffect(() => {
@@ -477,7 +675,7 @@ function FlashCardStudy({
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [flipped, words.length]);
+  }, [flipped, deck.length]);
 
   const isMarked = markedIds.has(word.id);
 
@@ -541,12 +739,24 @@ function FlashCardStudy({
       <div className="flashcard-keyboard-hint">⌨ ← → đổi card · ↑ ↓ flip</div>
 
       <div className="flashcard-progress">
-        {index + 1} / {words.length}
+        {index + 1} / {deck.length}
+        {isShuffled && (
+          <span style={{ marginLeft: 8, fontSize: 11, color: "#a78bfa" }}>
+            🔀 Đã xáo trộn
+          </span>
+        )}
       </div>
 
       <div className="flashcard-actions">
         <button onClick={prevCard}>⬅ Prev</button>
-        <button onClick={shuffleCard}>🔀 Shuffle</button>
+        <button onClick={shuffleDeck} title="Xáo trộn thứ tự toàn bộ deck">
+          🔀 Shuffle
+        </button>
+        {isShuffled && (
+          <button onClick={resetDeck} title="Khôi phục thứ tự gốc">
+            ↺ Reset
+          </button>
+        )}
         <button onClick={nextCard}>Next ➡</button>
       </div>
     </div>

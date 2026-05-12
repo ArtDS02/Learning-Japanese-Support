@@ -339,7 +339,7 @@ body {
   padding: 6px 14px;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 18px;
   font-family: var(--font-body);
   transition: all var(--transition);
 }
