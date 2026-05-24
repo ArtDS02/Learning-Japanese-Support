@@ -37,45 +37,1262 @@
     }
   ],
   "kanji": [
-    { "id": "k1", "char": "一", "on": "イチ", "kun": "ひと(つ)", "meaning": "một", "stroke": 1, "category": "numbers-time", "examples": [{"word": "一月", "reading": "いちがつ", "meaning": "tháng 1"}, {"word": "一人", "reading": "ひとり", "meaning": "một người"}], "mnemonic": "Một nét ngang = số 1" },
-    { "id": "k2", "char": "二", "on": "ニ", "kun": "ふた(つ)", "meaning": "hai", "stroke": 2, "category": "numbers-time", "examples": [{"word": "二月", "reading": "にがつ", "meaning": "tháng 2"}, {"word": "二人", "reading": "ふたり", "meaning": "hai người"}], "mnemonic": "Hai nét ngang = số 2" },
-    { "id": "k3", "char": "三", "on": "サン", "kun": "みっ(つ)", "meaning": "ba", "stroke": 3, "category": "numbers-time", "examples": [{"word": "三月", "reading": "さんがつ", "meaning": "tháng 3"}, {"word": "三つ", "reading": "みっつ", "meaning": "ba cái"}], "mnemonic": "Ba nét ngang = số 3" },
-    { "id": "k4", "char": "四", "on": "シ", "kun": "よっ(つ)・よん", "meaning": "bốn", "stroke": 5, "category": "numbers-time", "examples": [{"word": "四月", "reading": "しがつ", "meaning": "tháng 4"}, {"word": "四人", "reading": "よにん", "meaning": "bốn người"}], "mnemonic": "Bên trong có 2 người đứng = 4 chân" },
-    { "id": "k5", "char": "五", "on": "ゴ", "kun": "いつ(つ)", "meaning": "năm", "stroke": 4, "category": "numbers-time", "examples": [{"word": "五月", "reading": "ごがつ", "meaning": "tháng 5"}, {"word": "五つ", "reading": "いつつ", "meaning": "năm cái"}], "mnemonic": "Hình dáng tay có 5 ngón" },
-    { "id": "k6", "char": "六", "on": "ロク", "kun": "むっ(つ)", "meaning": "sáu", "stroke": 4, "category": "numbers-time", "examples": [{"word": "六月", "reading": "ろくがつ", "meaning": "tháng 6"}, {"word": "六つ", "reading": "むっつ", "meaning": "sáu cái"}], "mnemonic": "Nét trên = mái nhà, bên dưới = 6 chân côn trùng" },
-    { "id": "k7", "char": "七", "on": "シチ", "kun": "なな(つ)", "meaning": "bảy", "stroke": 2, "category": "numbers-time", "examples": [{"word": "七月", "reading": "しちがつ", "meaning": "tháng 7"}, {"word": "七つ", "reading": "ななつ", "meaning": "bảy cái"}], "mnemonic": "Trông như số 7 có thêm nét" },
-    { "id": "k8", "char": "八", "on": "ハチ", "kun": "やっ(つ)", "meaning": "tám", "stroke": 2, "category": "numbers-time", "examples": [{"word": "八月", "reading": "はちがつ", "meaning": "tháng 8"}, {"word": "八つ", "reading": "やっつ", "meaning": "tám cái"}], "mnemonic": "Hai nét banh ra như 2 cánh tay" },
-    { "id": "k9", "char": "九", "on": "ク・キュウ", "kun": "ここの(つ)", "meaning": "chín", "stroke": 2, "category": "numbers-time", "examples": [{"word": "九月", "reading": "くがつ", "meaning": "tháng 9"}, {"word": "九つ", "reading": "ここのつ", "meaning": "chín cái"}], "mnemonic": "Trông giống số 9 bị cong" },
-    { "id": "k10", "char": "十", "on": "ジュウ", "kun": "とお", "meaning": "mười", "stroke": 2, "category": "numbers-time", "examples": [{"word": "十月", "reading": "じゅうがつ", "meaning": "tháng 10"}, {"word": "十分", "reading": "じゅっぷん", "meaning": "10 phút"}], "mnemonic": "Dấu + = cộng thêm = 10" },
-    { "id": "k11", "char": "百", "on": "ヒャク", "kun": "—", "meaning": "trăm", "stroke": 6, "category": "numbers-time", "examples": [{"word": "百円", "reading": "ひゃくえん", "meaning": "100 yen"}, {"word": "三百", "reading": "さんびゃく", "meaning": "300"}], "mnemonic": "Một (一) ở trên + bạch (白) = 100" },
-    { "id": "k12", "char": "千", "on": "セン", "kun": "ち", "meaning": "nghìn", "stroke": 3, "category": "numbers-time", "examples": [{"word": "千円", "reading": "せんえん", "meaning": "1000 yen"}, {"word": "三千", "reading": "さんぜん", "meaning": "3000"}], "mnemonic": "Người đứng với tay xoải ra = 1000" },
-    { "id": "k13", "char": "年", "on": "ネン", "kun": "とし", "meaning": "năm (year)", "stroke": 6, "category": "numbers-time", "examples": [{"word": "今年", "reading": "ことし", "meaning": "năm nay"}, {"word": "来年", "reading": "らいねん", "meaning": "năm sau"}], "mnemonic": "Lúa mì (禾) gặt xong = qua một năm" },
-    { "id": "k14", "char": "月", "on": "ガツ・ゲツ", "kun": "つき", "meaning": "tháng / mặt trăng", "stroke": 4, "category": "numbers-time", "examples": [{"word": "来月", "reading": "らいげつ", "meaning": "tháng sau"}, {"word": "月曜日", "reading": "げつようび", "meaning": "thứ Hai"}], "mnemonic": "Hình mặt trăng lưỡi liềm" },
-    { "id": "k15", "char": "日", "on": "ニチ・ジツ", "kun": "ひ・か", "meaning": "ngày / mặt trời", "stroke": 4, "category": "numbers-time", "examples": [{"word": "今日", "reading": "きょう", "meaning": "hôm nay"}, {"word": "日曜日", "reading": "にちようび", "meaning": "Chủ Nhật"}], "mnemonic": "Vòng tròn có chấm giữa = mặt trời" },
-    { "id": "k16", "char": "時", "on": "ジ", "kun": "とき", "meaning": "giờ / lúc", "stroke": 10, "category": "numbers-time", "examples": [{"word": "何時", "reading": "なんじ", "meaning": "mấy giờ?"}, {"word": "時間", "reading": "じかん", "meaning": "thời gian"}], "mnemonic": "Mặt trời (日) + chùa (寺) = đo giờ bằng bóng nắng" },
-    { "id": "k17", "char": "分", "on": "ブン・フン", "kun": "わかる", "meaning": "phút / hiểu / chia", "stroke": 4, "category": "numbers-time", "examples": [{"word": "三分", "reading": "さんぷん", "meaning": "3 phút"}, {"word": "気分", "reading": "きぶん", "meaning": "tâm trạng"}], "mnemonic": "Dao (刀) chia đôi (八) = phân chia" },
-    { "id": "k18", "char": "人", "on": "ジン・ニン", "kun": "ひと", "meaning": "người", "stroke": 2, "category": "people-family", "examples": [{"word": "日本人", "reading": "にほんじん", "meaning": "người Nhật"}, {"word": "一人", "reading": "ひとり", "meaning": "một mình"}], "mnemonic": "Hai nét = người đứng nhìn nghiêng" },
-    { "id": "k19", "char": "女", "on": "ジョ", "kun": "おんな", "meaning": "phụ nữ", "stroke": 3, "category": "people-family", "examples": [{"word": "女の人", "reading": "おんなのひと", "meaning": "phụ nữ"}, {"word": "女子", "reading": "じょし", "meaning": "nữ giới"}], "mnemonic": "Hình người phụ nữ đang cúi chào" },
-    { "id": "k20", "char": "男", "on": "ダン", "kun": "おとこ", "meaning": "đàn ông", "stroke": 7, "category": "people-family", "examples": [{"word": "男の人", "reading": "おとこのひと", "meaning": "đàn ông"}, {"word": "男子", "reading": "だんし", "meaning": "nam giới"}], "mnemonic": "Ruộng (田) + sức (力) = đàn ông cày ruộng" },
-    { "id": "k21", "char": "子", "on": "シ・ス", "kun": "こ", "meaning": "trẻ em / con", "stroke": 3, "category": "people-family", "examples": [{"word": "子ども", "reading": "こども", "meaning": "trẻ em"}, {"word": "女子", "reading": "じょし", "meaning": "nữ sinh"}], "mnemonic": "Hình em bé đang vẫy tay" },
-    { "id": "k22", "char": "父", "on": "フ", "kun": "ちち", "meaning": "cha / bố", "stroke": 4, "category": "people-family", "examples": [{"word": "お父さん", "reading": "おとうさん", "meaning": "bố (lịch sự)"}, {"word": "父親", "reading": "ちちおや", "meaning": "người cha"}], "mnemonic": "Tay cầm gậy = người cha uy quyền" },
-    { "id": "k23", "char": "母", "on": "ボ", "kun": "はは", "meaning": "mẹ", "stroke": 5, "category": "people-family", "examples": [{"word": "お母さん", "reading": "おかあさん", "meaning": "mẹ (lịch sự)"}, {"word": "母語", "reading": "ぼご", "meaning": "tiếng mẹ đẻ"}], "mnemonic": "女 + 2 chấm = người mẹ cho con bú" },
-    { "id": "k24", "char": "山", "on": "サン", "kun": "やま", "meaning": "núi", "stroke": 3, "category": "nature", "examples": [{"word": "富士山", "reading": "ふじさん", "meaning": "núi Phú Sĩ"}, {"word": "山田", "reading": "やまだ", "meaning": "họ Yamada"}], "mnemonic": "Ba đỉnh núi nhô lên" },
-    { "id": "k25", "char": "川", "on": "セン", "kun": "かわ", "meaning": "sông", "stroke": 3, "category": "nature", "examples": [{"word": "川", "reading": "かわ", "meaning": "con sông"}, {"word": "川口", "reading": "かわぐち", "meaning": "cửa sông"}], "mnemonic": "Ba nét chảy song song = dòng sông" },
-    { "id": "k26", "char": "木", "on": "モク", "kun": "き", "meaning": "cây / gỗ", "stroke": 4, "category": "nature", "examples": [{"word": "木曜日", "reading": "もくようび", "meaning": "thứ Năm"}, {"word": "木", "reading": "き", "meaning": "cái cây"}], "mnemonic": "Thân cây có rễ và cành" },
-    { "id": "k27", "char": "火", "on": "カ", "kun": "ひ", "meaning": "lửa", "stroke": 4, "category": "nature", "examples": [{"word": "火曜日", "reading": "かようび", "meaning": "thứ Ba"}, {"word": "火山", "reading": "かざん", "meaning": "núi lửa"}], "mnemonic": "Ngọn lửa bùng cháy" },
-    { "id": "k28", "char": "水", "on": "スイ", "kun": "みず", "meaning": "nước", "stroke": 4, "category": "nature", "examples": [{"word": "水曜日", "reading": "すいようび", "meaning": "thứ Tư"}, {"word": "水", "reading": "みず", "meaning": "nước"}], "mnemonic": "Dòng nước chảy với bong bóng" },
-    { "id": "k29", "char": "金", "on": "キン", "kun": "かね", "meaning": "vàng / tiền / kim loại", "stroke": 8, "category": "nature", "examples": [{"word": "金曜日", "reading": "きんようび", "meaning": "thứ Sáu"}, {"word": "お金", "reading": "おかね", "meaning": "tiền"}], "mnemonic": "Mỏ vàng (土) dưới đất, người đào" },
-    { "id": "k30", "char": "土", "on": "ド", "kun": "つち", "meaning": "đất", "stroke": 3, "category": "nature", "examples": [{"word": "土曜日", "reading": "どようび", "meaning": "thứ Bảy"}, {"word": "土地", "reading": "とち", "meaning": "đất đai"}], "mnemonic": "Cây mọc từ đất lên" },
-    { "id": "k31", "char": "食", "on": "ショク", "kun": "たべる", "meaning": "ăn / thức ăn", "stroke": 9, "category": "actions", "examples": [{"word": "食べる", "reading": "たべる", "meaning": "ăn"}, {"word": "食事", "reading": "しょくじ", "meaning": "bữa ăn"}], "mnemonic": "Người há miệng (良) ăn cơm (米)" },
-    { "id": "k32", "char": "飲", "on": "イン", "kun": "のむ", "meaning": "uống", "stroke": 12, "category": "actions", "examples": [{"word": "飲む", "reading": "のむ", "meaning": "uống"}, {"word": "飲み物", "reading": "のみもの", "meaning": "đồ uống"}], "mnemonic": "Người há miệng uống nước" },
-    { "id": "k33", "char": "見", "on": "ケン", "kun": "みる", "meaning": "nhìn / thấy / xem", "stroke": 7, "category": "actions", "examples": [{"word": "見る", "reading": "みる", "meaning": "nhìn, xem"}, {"word": "見物", "reading": "けんぶつ", "meaning": "tham quan"}], "mnemonic": "Mắt (目) trên chân người = nhìn" },
-    { "id": "k34", "char": "聞", "on": "ブン", "kun": "きく", "meaning": "nghe / hỏi", "stroke": 14, "category": "actions", "examples": [{"word": "聞く", "reading": "きく", "meaning": "nghe / hỏi"}, {"word": "新聞", "reading": "しんぶん", "meaning": "báo chí"}], "mnemonic": "Tai (耳) trong cửa (門) = nghe ngóng" },
-    { "id": "k35", "char": "話", "on": "ワ", "kun": "はなす", "meaning": "nói / câu chuyện", "stroke": 13, "category": "actions", "examples": [{"word": "話す", "reading": "はなす", "meaning": "nói"}, {"word": "電話", "reading": "でんわ", "meaning": "điện thoại"}], "mnemonic": "Lưỡi (言) + vỏ ốc (舌) = nói" },
-    { "id": "k36", "char": "行", "on": "コウ・ギョウ", "kun": "いく", "meaning": "đi", "stroke": 6, "category": "actions", "examples": [{"word": "行く", "reading": "いく", "meaning": "đi"}, {"word": "銀行", "reading": "ぎんこう", "meaning": "ngân hàng"}], "mnemonic": "Đường thập tự = ngã tư để đi" },
-    { "id": "k37", "char": "来", "on": "ライ", "kun": "くる", "meaning": "đến / tới", "stroke": 7, "category": "actions", "examples": [{"word": "来る", "reading": "くる", "meaning": "đến"}, {"word": "来月", "reading": "らいげつ", "meaning": "tháng sau"}], "mnemonic": "Cây lúa mì chín đến mùa gặt" },
-    { "id": "k38", "char": "学", "on": "ガク", "kun": "まなぶ", "meaning": "học", "stroke": 8, "category": "school", "examples": [{"word": "学校", "reading": "がっこう", "meaning": "trường học"}, {"word": "大学", "reading": "だいがく", "meaning": "đại học"}], "mnemonic": "Tay dẫn dắt (爻) + mái nhà + đứa trẻ (子) = học" },
-    { "id": "k39", "char": "校", "on": "コウ", "kun": "—", "meaning": "trường học", "stroke": 10, "category": "school", "examples": [{"word": "学校", "reading": "がっこう", "meaning": "trường học"}, {"word": "高校", "reading": "こうこう", "meaning": "trường trung học"}], "mnemonic": "Cây (木) + giao (交) = trường có cây" },
-    { "id": "k40", "char": "語", "on": "ゴ", "kun": "かたる", "meaning": "ngôn ngữ / lời nói", "stroke": 14, "category": "school", "examples": [{"word": "日本語", "reading": "にほんご", "meaning": "tiếng Nhật"}, {"word": "英語", "reading": "えいご", "meaning": "tiếng Anh"}], "mnemonic": "Lời (言) + ngã (吾) = ngôn ngữ" }
+    {
+      "id": "k1",
+      "char": "一",
+      "on": "イチ",
+      "kun": "ひと(つ)",
+      "meaning": "một",
+      "stroke": 1,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "一月",
+          "reading": "いちがつ",
+          "meaning": "tháng 1"
+        },
+        {
+          "word": "一人",
+          "reading": "ひとり",
+          "meaning": "một người"
+        }
+      ],
+      "mnemonic": "Một nét ngang = số 1",
+      "strokes": [
+        "M11,54.25c3.19,0.62,6.25,0.75,9.73,0.5c20.64-1.5,50.39-5.12,68.58-5.24c3.6-0.02,5.77,0.24,7.57,0.49"
+      ],
+      "on_romaji": "ichi",
+      "kun_romaji": "hito(tsu)"
+    },
+    {
+      "id": "k2",
+      "char": "二",
+      "on": "ニ",
+      "kun": "ふた(つ)",
+      "meaning": "hai",
+      "stroke": 2,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "二月",
+          "reading": "にがつ",
+          "meaning": "tháng 2"
+        },
+        {
+          "word": "二人",
+          "reading": "ふたり",
+          "meaning": "hai người"
+        }
+      ],
+      "mnemonic": "Hai nét ngang = số 2",
+      "strokes": [
+        "M25.25,32.4c1.77,0.37,4.78,0.56,6.55,0.37c10.82-1.15,28.82-3.4,41.24-3.76c2.95-0.09,4.73,0.18,6.21,0.36",
+        "M12,80.75c2.37,0.5,6.73,0.67,9.09,0.5c23.79-1.75,45.04-4.12,67.49-4.74c3.95-0.11,6.32,0.24,8.3,0.49"
+      ],
+      "on_romaji": "ni",
+      "kun_romaji": "futa(tsu)"
+    },
+    {
+      "id": "k3",
+      "char": "三",
+      "on": "サン",
+      "kun": "みっ(つ)",
+      "meaning": "ba",
+      "stroke": 3,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "三月",
+          "reading": "さんがつ",
+          "meaning": "tháng 3"
+        },
+        {
+          "word": "三つ",
+          "reading": "みっつ",
+          "meaning": "ba cái"
+        }
+      ],
+      "mnemonic": "Ba nét ngang = số 3",
+      "strokes": [
+        "M27.5,23.65c3.09,0.73,6.29,0.36,9.4,0.06c10.2-1,27-2.94,38.97-3.57c3.06-0.16,6.09-0.2,9.14,0.23",
+        "M28.75,55.14c3.13,0.76,6.46,0.43,9.64,0.2c10.03-0.72,23.97-2.63,34.73-3.12c2.7-0.12,5.45-0.16,8.13,0.3",
+        "M13,87.83c3.94,1.01,7.72,0.96,11.75,0.72c18.41-1.07,41.27-3.39,61.12-4.07c3.63-0.13,7.2-0.1,10.75,0.78"
+      ],
+      "on_romaji": "san",
+      "kun_romaji": "mit(tsu)"
+    },
+    {
+      "id": "k4",
+      "char": "四",
+      "on": "シ",
+      "kun": "よっ(つ)・よん",
+      "meaning": "bốn",
+      "stroke": 5,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "四月",
+          "reading": "しがつ",
+          "meaning": "tháng 4"
+        },
+        {
+          "word": "四人",
+          "reading": "よにん",
+          "meaning": "bốn người"
+        }
+      ],
+      "mnemonic": "Bên trong có 2 người đứng = 4 chân",
+      "strokes": [
+        "M14.5,31.48c1.51,1.51,2.25,3.27,2.53,5.2c1.14,7.9,2.61,25.18,4.39,40.83c0.29,2.55,0.34,3.81,0.64,6.24",
+        "M17.85,34.04c21.65-1.92,51.52-3.92,67.82-4.3c4.85-0.11,6.31,2.62,6.04,5.38c-0.9,9.02-4.17,28.29-6.41,39.62c-0.49,2.49-0.94,4.6-1.3,6.13",
+        "M40.5,36c0.08,0.64,0.12,1.65-0.16,2.57c-2.22,7.3-5.1,14.55-13.35,22.68",
+        "M59.75,34.25c0.8,1.05,1.44,2.29,1.49,3.92c0.11,3.62,0.05,7.05,0.05,9.89c0,6.94,0.71,7.54,9.47,7.54c4.99,0,8.86-0.72,10.25-1.72",
+        "M22.73,79.32c13.77-0.57,43.64-1.8,61.18-2.08"
+      ],
+      "on_romaji": "shi",
+      "kun_romaji": "yot(tsu) / yon"
+    },
+    {
+      "id": "k5",
+      "char": "五",
+      "on": "ゴ",
+      "kun": "いつ(つ)",
+      "meaning": "năm",
+      "stroke": 4,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "五月",
+          "reading": "ごがつ",
+          "meaning": "tháng 5"
+        },
+        {
+          "word": "五つ",
+          "reading": "いつつ",
+          "meaning": "năm cái"
+        }
+      ],
+      "mnemonic": "Hình dáng tay có 5 ngón",
+      "strokes": [
+        "M31.75,23.15c2.8,0.67,5.54,0.42,8.36,0.12c9.3-0.99,22.18-2.4,34.14-3.21c2.49-0.17,5.04-0.33,7.5,0.2",
+        "M55.75,25.25c0.62,1.25,1.02,3.01,0.5,5c-3.12,11.88-14,44.12-19.75,59",
+        "M25.5,55.25c2.07,1.24,4.73,1.03,7,0.81c15.49-1.45,29.89-3.03,42.25-4.06c3-0.25,4.25,1.75,3.5,3.75c-2.24,5.96-6,20.75-7.75,31.5",
+        "M11.25,90.5c3.04,0.81,6.52,0.63,9.63,0.41c15.71-1.1,43.9-2.8,67.75-3.8c3.41-0.14,6.9-0.4,10.25,0.39"
+      ],
+      "on_romaji": "go",
+      "kun_romaji": "itsu(tsu)"
+    },
+    {
+      "id": "k6",
+      "char": "六",
+      "on": "ロク",
+      "kun": "むっ(つ)",
+      "meaning": "sáu",
+      "stroke": 4,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "六月",
+          "reading": "ろくがつ",
+          "meaning": "tháng 6"
+        },
+        {
+          "word": "六つ",
+          "reading": "むっつ",
+          "meaning": "sáu cái"
+        }
+      ],
+      "mnemonic": "Nét trên = mái nhà, bên dưới = 6 chân côn trùng",
+      "strokes": [
+        "M51.87,17.5c1.78,1.78,2.71,3.48,2.71,6.5c0,6.46,0.12,9.16,0.12,14.35",
+        "M13.5,42.13c3.27,0.74,7.11,0.89,9.93,0.64c21.56-1.9,41.78-5.02,61.41-5.47c4.8-0.11,7.49,0.31,11.06,1.07",
+        "M38.11,58.6c0.51,1.37,0.42,3.67-0.49,5.29C33.38,71.38,24,82.38,15.41,88.75",
+        "M70.16,59.92c9.96,8.61,18.18,18.54,23.16,28.99"
+      ],
+      "on_romaji": "roku",
+      "kun_romaji": "mut(tsu)"
+    },
+    {
+      "id": "k7",
+      "char": "七",
+      "on": "シチ",
+      "kun": "なな(つ)",
+      "meaning": "bảy",
+      "stroke": 2,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "七月",
+          "reading": "しちがつ",
+          "meaning": "tháng 7"
+        },
+        {
+          "word": "七つ",
+          "reading": "ななつ",
+          "meaning": "bảy cái"
+        }
+      ],
+      "mnemonic": "Trông như số 7 có thêm nét",
+      "strokes": [
+        "M15.5,51.75c1.82,0.5,4.38,0.88,6.96,0.5c16.91-2.45,50.92-8.12,64.44-8.74c3.02-0.14,4.84,0.24,6.35,0.49",
+        "M43,20c1.38,1.38,2.15,3.25,2.15,5.26C45.15,29.5,45,71.84,45,76c0,10.5,2.25,12.25,20.25,12.25c18.75,0,20-3.75,20-12.31"
+      ],
+      "on_romaji": "shichi",
+      "kun_romaji": "nana(tsu)"
+    },
+    {
+      "id": "k8",
+      "char": "八",
+      "on": "ハチ",
+      "kun": "やっ(つ)",
+      "meaning": "tám",
+      "stroke": 2,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "八月",
+          "reading": "はちがつ",
+          "meaning": "tháng 8"
+        },
+        {
+          "word": "八つ",
+          "reading": "やっつ",
+          "meaning": "tám cái"
+        }
+      ],
+      "mnemonic": "Hai nét banh ra như 2 cánh tay",
+      "strokes": [
+        "M37.22,45c0.28,1.5,0.2,3.21-0.86,5.48c-4.23,9.02-11.48,20.4-24.1,32.02",
+        "M48,27.25c9.38,0.25,21.12,30,37.27,45.72c3.79,3.69,6.73,5.66,9.98,7.03"
+      ],
+      "on_romaji": "hachi",
+      "kun_romaji": "yat(tsu)"
+    },
+    {
+      "id": "k9",
+      "char": "九",
+      "on": "ク・キュウ",
+      "kun": "ここの(つ)",
+      "meaning": "chín",
+      "stroke": 2,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "九月",
+          "reading": "くがつ",
+          "meaning": "tháng 9"
+        },
+        {
+          "word": "九つ",
+          "reading": "ここのつ",
+          "meaning": "chín cái"
+        }
+      ],
+      "mnemonic": "Trông giống số 9 bị cong",
+      "strokes": [
+        "M41.88,14.38c1,1.38,1.5,3.25,1.5,5.12c0,40.13-9.12,57.5-28.5,68.75",
+        "M13.5,45.75c2.88,0.85,5.78,0.05,8.58-0.66c8.47-2.14,39.88-9.79,40.92-9.84c2.5-0.12,4.75,0.5,4.25,4.75c-0.5,4.25-5.5,20.75-7,32.5c-2.23,17.46,2,19.37,18.21,19.37c13.79,0,19.01-1.07,19.27-10.12"
+      ],
+      "on_romaji": "ku / kyuu",
+      "kun_romaji": "kokono(tsu)"
+    },
+    {
+      "id": "k10",
+      "char": "十",
+      "on": "ジュウ",
+      "kun": "とお",
+      "meaning": "mười",
+      "stroke": 2,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "十月",
+          "reading": "じゅうがつ",
+          "meaning": "tháng 10"
+        },
+        {
+          "word": "十分",
+          "reading": "じゅっぷん",
+          "meaning": "10 phút"
+        }
+      ],
+      "mnemonic": "Dấu + = cộng thêm = 10",
+      "strokes": [
+        "M11.88,50.98c3.18,0.89,6.62,0.61,9.87,0.35c19.92-1.58,45.23-4.76,63.38-5.82c3.85-0.23,7.23-0.07,11,0.56",
+        "M52.22,11.63c1.4,1.4,2.2,3.96,2.2,6.26c0,1.13-0.03,51.22-0.19,73.41c-0.03,3.96-0.06,6.83-0.08,8.08"
+      ],
+      "on_romaji": "juu",
+      "kun_romaji": "too"
+    },
+    {
+      "id": "k11",
+      "char": "百",
+      "on": "ヒャク",
+      "kun": "—",
+      "meaning": "trăm",
+      "stroke": 6,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "百円",
+          "reading": "ひゃくえん",
+          "meaning": "100 yen"
+        },
+        {
+          "word": "三百",
+          "reading": "さんびゃく",
+          "meaning": "300"
+        }
+      ],
+      "mnemonic": "Một (一) ở trên + bạch (白) = 100",
+      "strokes": [
+        "M16.13,20.23c2.22,0.54,6.29,0.75,8.51,0.54c21.49-2.02,41.86-4.39,59.22-4.98c3.7-0.12,5.92,0.26,7.77,0.53",
+        "M52.31,21.75c0.19,1.38,0.19,2.5-0.38,3.93c-1.65,4.19-4.81,9.19-8.66,14.68",
+        "M30.75,42.82c0.96,0.96,1.64,2.45,1.72,4.19c0.41,8.74,0.96,32.92,1.18,43.74c0.05,2.48,0.08,4.12,0.1,4.5",
+        "M33.55,44.8c10.35-1.37,35.73-4.38,38.78-4.59c3.15-0.22,4.92,1.17,4.92,4.24c0,4.48-0.68,32-0.92,44.06c-0.06,3.02-0.1,5.05-0.11,5.48",
+        "M34.14,66.95c10.24-1.08,32.11-3.2,41.44-3.57",
+        "M34.97,92.87c8.78-0.87,30.53-2.12,40.06-2.39"
+      ],
+      "on_romaji": "hyaku",
+      "kun_romaji": "—"
+    },
+    {
+      "id": "k12",
+      "char": "千",
+      "on": "セン",
+      "kun": "ち",
+      "meaning": "nghìn",
+      "stroke": 3,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "千円",
+          "reading": "せんえん",
+          "meaning": "1000 yen"
+        },
+        {
+          "word": "三千",
+          "reading": "さんぜん",
+          "meaning": "3000"
+        }
+      ],
+      "mnemonic": "Người đứng với tay xoải ra = 1000",
+      "strokes": [
+        "M70.38,10.17c-0.13,1.58-0.83,2.64-2.17,3.67c-5.71,4.41-21.46,11.91-41.57,16.82",
+        "M12.13,50.83c3.36,0.94,7.21,0.75,10.63,0.49c17.76-1.34,37.63-4.16,66.24-4.94c3.08-0.08,6.08-0.14,9.13,0.38",
+        "M54.56,25.25c1.03,1.03,2.01,3,2.01,5.18c0,0.9-0.07,46.38-0.19,63.58c-0.02,2.93-0.04,5.04-0.06,5.99"
+      ],
+      "on_romaji": "sen",
+      "kun_romaji": "chi"
+    },
+    {
+      "id": "k13",
+      "char": "年",
+      "on": "ネン",
+      "kun": "とし",
+      "meaning": "năm (year)",
+      "stroke": 6,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "今年",
+          "reading": "ことし",
+          "meaning": "năm nay"
+        },
+        {
+          "word": "来年",
+          "reading": "らいねん",
+          "meaning": "năm sau"
+        }
+      ],
+      "mnemonic": "Lúa mì (禾) gặt xong = qua một năm",
+      "strokes": [
+        "M40.01,11.89c0.24,1.61-0.01,2.86-0.84,4.46c-2.53,4.84-6.91,11.4-15.86,19.62",
+        "M39.13,23.62c2.25,0.38,4.4,0.18,5.79,0.03c11.7-1.27,21.33-2.9,33.22-4.07c2.3-0.23,4.2,0,5.35,0.26",
+        "M30.13,43.59c1.36,0.33,3.87,0.46,5.21,0.33c10.91-1.05,28.53-3.42,40.78-4.26c2.26-0.15,3.63,0.16,4.76,0.32",
+        "M33.75,44.5c1,1.25,1,1.97,1.01,3.5C34.8,52.33,35,65.29,35,66.25",
+        "M13.88,67.74c1.97,0.47,5.61,0.66,7.57,0.47c20.21-2.03,36.35-4.62,66.65-5.31c3.29-0.08,5.26,0.22,6.91,0.46",
+        "M56.56,25.46c1.12,1.12,1.79,3.54,1.79,4.94c0,0.89-0.05,44.26-0.13,61.6c-0.01,3.12-0.03,5.39-0.05,6.38"
+      ],
+      "on_romaji": "nen",
+      "kun_romaji": "toshi"
+    },
+    {
+      "id": "k14",
+      "char": "月",
+      "on": "ガツ・ゲツ",
+      "kun": "つき",
+      "meaning": "tháng / mặt trăng",
+      "stroke": 4,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "来月",
+          "reading": "らいげつ",
+          "meaning": "tháng sau"
+        },
+        {
+          "word": "月曜日",
+          "reading": "げつようび",
+          "meaning": "thứ Hai"
+        }
+      ],
+      "mnemonic": "Hình mặt trăng lưỡi liềm",
+      "strokes": [
+        "M34.25,16.25c1,1,1.48,2.38,1.5,4c0.38,33.62,2.38,59.38-11,73.25",
+        "M36.25,19c4.12-0.62,31.49-4.78,33.25-5c4-0.5,5.5,1.12,5.5,4.75c0,2.76-0.5,49.25-0.5,69.5c0,13-6.25,4-8.75,1.75",
+        "M37.25,38c10.25-1.5,27.25-3.75,36.25-4.5",
+        "M37,58.25c8.75-1.12,27-3.5,36.25-4"
+      ],
+      "on_romaji": "gatsu / getsu",
+      "kun_romaji": "tsuki"
+    },
+    {
+      "id": "k15",
+      "char": "日",
+      "on": "ニチ・ジツ",
+      "kun": "ひ・か",
+      "meaning": "ngày / mặt trời",
+      "stroke": 4,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "今日",
+          "reading": "きょう",
+          "meaning": "hôm nay"
+        },
+        {
+          "word": "日曜日",
+          "reading": "にちようび",
+          "meaning": "Chủ Nhật"
+        }
+      ],
+      "mnemonic": "Vòng tròn có chấm giữa = mặt trời",
+      "strokes": [
+        "M31.5,24.5c1.12,1.12,1.74,2.75,1.74,4.75c0,1.6-0.16,38.11-0.09,53.5c0.02,3.82,0.05,6.35,0.09,6.75",
+        "M33.48,26c0.8-0.05,37.67-3.01,40.77-3.25c3.19-0.25,5,1.75,5,4.25c0,4-0.22,40.84-0.23,56c0,3.48,0,5.72,0,6",
+        "M34.22,55.25c7.78-0.5,35.9-2.5,44.06-2.75",
+        "M34.23,86.5c10.52-0.75,34.15-2.12,43.81-2.25"
+      ],
+      "on_romaji": "nichi / jitsu",
+      "kun_romaji": "hi / ka"
+    },
+    {
+      "id": "k16",
+      "char": "時",
+      "on": "ジ",
+      "kun": "とき",
+      "meaning": "giờ / lúc",
+      "stroke": 10,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "何時",
+          "reading": "なんじ",
+          "meaning": "mấy giờ?"
+        },
+        {
+          "word": "時間",
+          "reading": "じかん",
+          "meaning": "thời gian"
+        }
+      ],
+      "mnemonic": "Mặt trời (日) + chùa (寺) = đo giờ bằng bóng nắng",
+      "strokes": [
+        "M16,29.84c0.75,0.66,1.21,1.62,1.21,3.07c0,1.18-0.16,30.08-0.21,40.85c-0.01,2.42-0.02,3.95-0.02,4.08",
+        "M17.78,30.74c4.65-0.63,16.12-2.07,17.6-2.25c1.52-0.18,3,1.5,2.88,2.57c-0.24,2.17-0.36,24.9-0.35,40.79c0,1.63-0.12,3.35-0.12,4.43",
+        "M18.75,52c4.5-0.75,13.5-2.12,18.22-2.35",
+        "M17.8,74.52c6.2-0.92,11.45-1.89,18.94-2.7",
+        "M51.44,29.03c1.37,0.44,3.63,0.34,5,0.19c9.79-1.09,16.34-2.34,25.62-3.08c2.27-0.18,3.9-0.04,5.04,0.18",
+        "M67.59,11.37c0.89,0.9,1.59,2.24,1.59,3.75c0,8.39,0.03,27.02,0.03,27.6",
+        "M45.38,45.35c1.49,0.44,4.21,0.59,5.71,0.44c11.29-1.16,25.66-3.29,39.2-3.99c2.48-0.13,3.97,0.21,5.21,0.43",
+        "M46,60.99c1.43,0.46,4.04,0.58,5.49,0.46c12.01-1.07,26.89-3.07,39.07-3.89c2.38-0.16,4.41,0.22,5.6,0.44",
+        "M78.07,46.08c1.11,1.11,1.66,2.56,1.71,5.06c0.23,12.03-0.09,34.43-0.09,38.52c0,9.83-5.42,2.19-7.66-0.04",
+        "M56.75,70.38c2.87,1.76,6.55,6.38,7.27,9.12"
+      ],
+      "on_romaji": "ji",
+      "kun_romaji": "toki"
+    },
+    {
+      "id": "k17",
+      "char": "分",
+      "on": "ブン・フン",
+      "kun": "わかる",
+      "meaning": "phút / hiểu / chia",
+      "stroke": 4,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "三分",
+          "reading": "さんぷん",
+          "meaning": "3 phút"
+        },
+        {
+          "word": "気分",
+          "reading": "きぶん",
+          "meaning": "tâm trạng"
+        }
+      ],
+      "mnemonic": "Dao (刀) chia đôi (八) = phân chia",
+      "strokes": [
+        "M41.12,19.38c0.25,1.24-0.44,3.01-1.1,4.08C34.31,32.72,27.13,40.62,13,51.25",
+        "M54.69,13.75c7.56-0.12,20.68,19.17,29.41,25.95c3.07,2.39,6.02,4.05,10.4,5.3",
+        "M29.35,55.37c2.42,0.83,4.97,0.75,7.42,0.37c11.06-1.7,28.87-5.3,34.1-5.76c3.69-0.33,5.08,1.48,4.88,3.77c-0.54,6.05-5.94,29.03-10.5,36.3c-4.99,7.96-5.74,4.21-9.84-0.49",
+        "M49.12,57.25c0.15,1.49,0.06,2.72-0.56,4.08C43.5,72.5,35.75,82,22.5,90.75"
+      ],
+      "on_romaji": "bun / fun",
+      "kun_romaji": "wakaru"
+    },
+    {
+      "id": "k18",
+      "char": "人",
+      "on": "ジン・ニン",
+      "kun": "ひと",
+      "meaning": "người",
+      "stroke": 2,
+      "category": "people-family",
+      "examples": [
+        {
+          "word": "日本人",
+          "reading": "にほんじん",
+          "meaning": "người Nhật"
+        },
+        {
+          "word": "一人",
+          "reading": "ひとり",
+          "meaning": "một mình"
+        }
+      ],
+      "mnemonic": "Hai nét = người đứng nhìn nghiêng",
+      "strokes": [
+        "M54.5,20c0.37,2.12,0.23,4.03-0.22,6.27C51.68,39.48,38.25,72.25,16.5,87.25",
+        "M46,54.25c6.12,6,25.51,22.24,35.52,29.72c3.66,2.73,6.94,4.64,11.48,5.53"
+      ],
+      "on_romaji": "jin / nin",
+      "kun_romaji": "hito"
+    },
+    {
+      "id": "k19",
+      "char": "女",
+      "on": "ジョ",
+      "kun": "おんな",
+      "meaning": "phụ nữ",
+      "stroke": 3,
+      "category": "people-family",
+      "examples": [
+        {
+          "word": "女の人",
+          "reading": "おんなのひと",
+          "meaning": "phụ nữ"
+        },
+        {
+          "word": "女子",
+          "reading": "じょし",
+          "meaning": "nữ giới"
+        }
+      ],
+      "mnemonic": "Hình người phụ nữ đang cúi chào",
+      "strokes": [
+        "M53.21,18.37c0.54,2.13,0.26,3.41-0.25,5.25C50.38,33,42.62,52.75,35.75,64c-1.39,2.27-1,3.5,1,3.5c11.63,0,28.46,7.48,38.83,16.41c2.56,2.21,4.68,4.51,6.17,6.84",
+        "M69.62,42.18c0.5,1.7,0.63,3.57-0.01,5.93C65.93,61.8,54.61,81.6,27,91.75",
+        "M13.88,50.43c3.48,1.39,7.26,0.85,10.88,0.53c19.52-1.7,42.04-4.08,60.61-4.63c3.66-0.11,7.21-0.1,10.62,1.42"
+      ],
+      "on_romaji": "jo",
+      "kun_romaji": "onna"
+    },
+    {
+      "id": "k20",
+      "char": "男",
+      "on": "ダン",
+      "kun": "おとこ",
+      "meaning": "đàn ông",
+      "stroke": 7,
+      "category": "people-family",
+      "examples": [
+        {
+          "word": "男の人",
+          "reading": "おとこのひと",
+          "meaning": "đàn ông"
+        },
+        {
+          "word": "男子",
+          "reading": "だんし",
+          "meaning": "nam giới"
+        }
+      ],
+      "mnemonic": "Ruộng (田) + sức (力) = đàn ông cày ruộng",
+      "strokes": [
+        "M26.5,14.25c0.88,0.88,1.56,1.99,1.73,2.98c0.84,4.77,2.47,16.75,3.34,26.04c0.18,1.95,0.37,2.37,0.55,4.23",
+        "M29,15.95c11.38-1.45,41.21-4.57,49.56-4.71c3.9-0.07,5.44,1.51,4.91,5.29c-0.45,3.21-3.15,15.19-4.94,22.23c-0.41,1.62-0.79,2.99-1.4,4.19",
+        "M54,15.97c0.77,0.77,1,1.91,1,2.79c0.02,6.32,0.2,22,0.2,22.75",
+        "M30.98,30.82C45,29.12,57.12,28,80.53,26.34",
+        "M32.87,44.74c11.38-1.24,28.38-2.99,44.14-3.7",
+        "M19.98,60.98c2.15,0.67,4.58,0.78,6.77,0.53c13.46-1.53,42.24-5.66,51.88-6.86c5.26-0.66,6.86,1.04,5.72,6.27c-1.92,8.83-9,27.39-15.66,33.19c-5.11,4.45-7.44,2.14-9.69-0.86",
+        "M53.22,46.43c0.28,1.32,0.29,3.04-0.2,4.57C49.12,63.12,38,81.25,17.14,92.06"
+      ],
+      "on_romaji": "dan",
+      "kun_romaji": "otoko"
+    },
+    {
+      "id": "k21",
+      "char": "子",
+      "on": "シ・ス",
+      "kun": "こ",
+      "meaning": "trẻ em / con",
+      "stroke": 3,
+      "category": "people-family",
+      "examples": [
+        {
+          "word": "子ども",
+          "reading": "こども",
+          "meaning": "trẻ em"
+        },
+        {
+          "word": "女子",
+          "reading": "じょし",
+          "meaning": "nữ sinh"
+        }
+      ],
+      "mnemonic": "Hình em bé đang vẫy tay",
+      "strokes": [
+        "M33.28,19.04c1.84,0.71,3.7,0.86,5.4,0.63c4.95-0.67,27.95-4.58,29.86-4.92c3.46-0.62,4.06,1.36,2.11,3.58c-1.95,2.22-11.41,13.17-16.35,17.19",
+        "M52.48,37.74c6.42,2.97,11.75,30.73,5.24,52.57c-2.8,9.38-8.09,2.96-10.47,0.99",
+        "M12.25,51.48c3.75,1.14,8.79,1.03,12.48,0.49c16.77-2.47,42.86-5.84,58.53-6.75c4.26-0.25,9.11-0.34,13.11,0.57"
+      ],
+      "on_romaji": "shi / su",
+      "kun_romaji": "ko"
+    },
+    {
+      "id": "k22",
+      "char": "父",
+      "on": "フ",
+      "kun": "ちち",
+      "meaning": "cha / bố",
+      "stroke": 4,
+      "category": "people-family",
+      "examples": [
+        {
+          "word": "お父さん",
+          "reading": "おとうさん",
+          "meaning": "bố (lịch sự)"
+        },
+        {
+          "word": "父親",
+          "reading": "ちちおや",
+          "meaning": "người cha"
+        }
+      ],
+      "mnemonic": "Tay cầm gậy = người cha uy quyền",
+      "strokes": [
+        "M38.49,18.25c0.39,1.38,0.07,2.89-0.59,4.16C32,33.91,26.32,39.13,18.75,45.62",
+        "M69.38,19.5c7.25,4,14.29,9.68,18.88,15.5",
+        "M67.7,39.68c0.55,1.57,0.31,3.8-0.42,5.92C60.63,64.87,48,80.25,23,90.25",
+        "M34.25,47c4.83,0,29,25.38,45.99,37.02c3.54,2.43,7.39,4.55,11.51,5.77"
+      ],
+      "on_romaji": "fu",
+      "kun_romaji": "chichi"
+    },
+    {
+      "id": "k23",
+      "char": "母",
+      "on": "ボ",
+      "kun": "はは",
+      "meaning": "mẹ",
+      "stroke": 5,
+      "category": "people-family",
+      "examples": [
+        {
+          "word": "お母さん",
+          "reading": "おかあさん",
+          "meaning": "mẹ (lịch sự)"
+        },
+        {
+          "word": "母語",
+          "reading": "ぼご",
+          "meaning": "tiếng mẹ đẻ"
+        }
+      ],
+      "mnemonic": "女 + 2 chấm = người mẹ cho con bú",
+      "strokes": [
+        "M34.82,19.37c1.14,1.02,1.72,3.42,1.41,6.09c-1.46,12.62-8.22,32.3-13.04,44.1c-1.47,3.6-0.44,5.27,3.63,5.2c11.37-0.18,27.52,2.13,40.68,7.24c4.98,1.93,9.54,4.26,13.25,7.01",
+        "M37.32,22.07c4.81,0.56,13.81-1.32,39.18-6.07c4-0.75,5.92,0.77,5.5,4.25c-2.25,18.62-7,49-16.06,69.18c-3.36,7.49-9.86,1.68-11.42,0",
+        "M49,28.5c3.88,1.98,10.03,8.16,11,11.25",
+        "M45.25,57.62c3.79,1.96,9.8,8.07,10.75,11.12",
+        "M9.88,51.45c2.21,0.63,6.26,0.87,8.46,0.63C46.77,49,67.12,47,90.65,46.07c3.68-0.15,5.89,0.3,7.72,0.61"
+      ],
+      "on_romaji": "bo",
+      "kun_romaji": "haha"
+    },
+    {
+      "id": "k24",
+      "char": "山",
+      "on": "サン",
+      "kun": "やま",
+      "meaning": "núi",
+      "stroke": 3,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "富士山",
+          "reading": "ふじさん",
+          "meaning": "núi Phú Sĩ"
+        },
+        {
+          "word": "山田",
+          "reading": "やまだ",
+          "meaning": "họ Yamada"
+        }
+      ],
+      "mnemonic": "Ba đỉnh núi nhô lên",
+      "strokes": [
+        "M52.49,15.5c1.38,1.38,2.26,3.5,2.26,5.75c0,0.75-0.22,58.3-0.25,59.25",
+        "M21.49,54.5c0.88,0.88,1.39,2.25,1.26,3.75c-0.58,6.99-1,16-2.5,23c-0.7,3.26,0.11,4,2,3.75c17-2.25,47.12-5.12,65.5-6",
+        "M89.24,49c0.94,0.94,1.64,2.38,1.51,4.25c-0.25,3.68-1.83,20.3-2.55,28.77c-0.22,2.64-0.39,4.51-0.45,4.98"
+      ],
+      "on_romaji": "san",
+      "kun_romaji": "yama"
+    },
+    {
+      "id": "k25",
+      "char": "川",
+      "on": "セン",
+      "kun": "かわ",
+      "meaning": "sông",
+      "stroke": 3,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "川",
+          "reading": "かわ",
+          "meaning": "con sông"
+        },
+        {
+          "word": "川口",
+          "reading": "かわぐち",
+          "meaning": "cửa sông"
+        }
+      ],
+      "mnemonic": "Ba nét chảy song song = dòng sông",
+      "strokes": [
+        "M27.22,25.68c0.91,1.57,1.18,3.45,1.19,5.37C28.5,43.5,28.5,69,17.39,84.15",
+        "M53.75,23.63c0.94,0.94,1.41,2.37,1.41,3.9c0,0.58-0.01,28.48-0.08,41.71c-0.02,3.31-0.04,5.74-0.06,6.63",
+        "M85.56,15.63c1.09,1.09,1.76,2.62,1.76,4.25c0,0.74,0.23,46.86,0.09,66.12c-0.03,4.31-0.06,7.61-0.09,8.63"
+      ],
+      "on_romaji": "sen",
+      "kun_romaji": "kawa"
+    },
+    {
+      "id": "k26",
+      "char": "木",
+      "on": "モク",
+      "kun": "き",
+      "meaning": "cây / gỗ",
+      "stroke": 4,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "木曜日",
+          "reading": "もくようび",
+          "meaning": "thứ Năm"
+        },
+        {
+          "word": "木",
+          "reading": "き",
+          "meaning": "cái cây"
+        }
+      ],
+      "mnemonic": "Thân cây có rễ và cành",
+      "strokes": [
+        "M19.5,39.86c2.45,0.57,5.23,0.8,8.04,0.57C40.75,39.38,63,36.5,79.78,36.15c2.8-0.06,4.54,0.1,7.34,0.5",
+        "M51.75,10.5c1.19,1.19,2,3,2,5c0,8.65,0,55.15-0.14,74.75c-0.03,4.19-0.07,7.15-0.11,8.25",
+        "M50.75,39.5c0,1.12-0.61,2.44-1.42,3.95C41.75,57.5,26.7,73.93,15.75,80.25",
+        "M54.5,39c4.62,6,23,25.75,31.76,34.61c2.27,2.29,4.61,4.39,7.49,5.64"
+      ],
+      "on_romaji": "moku",
+      "kun_romaji": "ki"
+    },
+    {
+      "id": "k27",
+      "char": "火",
+      "on": "カ",
+      "kun": "ひ",
+      "meaning": "lửa",
+      "stroke": 4,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "火曜日",
+          "reading": "かようび",
+          "meaning": "thứ Ba"
+        },
+        {
+          "word": "火山",
+          "reading": "かざん",
+          "meaning": "núi lửa"
+        }
+      ],
+      "mnemonic": "Ngọn lửa bùng cháy",
+      "strokes": [
+        "M24.25,34c3.27,3.33,8.5,13,9.5,17.75",
+        "M83,27.25c0.5,1.38,0.22,2.74-0.5,4.25c-2.38,5-7.5,12.12-12.75,17.25",
+        "M52.5,14.25c1,1.25,1.5,3.12,1.5,5C54,69,39.62,80,21,91.5",
+        "M52.75,50c12.49,14.06,25.01,28.42,33.62,36.13c2.7,2.42,4.9,4.02,8.38,4.87"
+      ],
+      "on_romaji": "ka",
+      "kun_romaji": "hi"
+    },
+    {
+      "id": "k28",
+      "char": "水",
+      "on": "スイ",
+      "kun": "みず",
+      "meaning": "nước",
+      "stroke": 4,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "水曜日",
+          "reading": "すいようび",
+          "meaning": "thứ Tư"
+        },
+        {
+          "word": "水",
+          "reading": "みず",
+          "meaning": "nước"
+        }
+      ],
+      "mnemonic": "Dòng nước chảy với bong bóng",
+      "strokes": [
+        "M52.77,15.08c1.08,1.08,1.67,2.49,1.76,5.52c0.4,14.55-0.26,62.16-0.26,67.12c0,9.78-7.52,0.03-9.02-1.22",
+        "M17.5,45.75c1.75,0.62,3.73,0.43,5.25,0C25.88,44.88,36.09,41,38.59,40s4.47,1.24,3.75,3.5C39,54,28.25,69,19,74.75",
+        "M81.22,27.5c-0.22,1.25-0.72,2.25-1.52,2.97c-5.64,5.1-12.45,9.78-22.45,13.78",
+        "M57,46c8.82,10.73,19.23,21.46,28.42,27.42c2.16,1.4,4.52,3,7.08,3.58"
+      ],
+      "on_romaji": "sui",
+      "kun_romaji": "mizu"
+    },
+    {
+      "id": "k29",
+      "char": "金",
+      "on": "キン",
+      "kun": "かね",
+      "meaning": "vàng / tiền / kim loại",
+      "stroke": 8,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "金曜日",
+          "reading": "きんようび",
+          "meaning": "thứ Sáu"
+        },
+        {
+          "word": "お金",
+          "reading": "おかね",
+          "meaning": "tiền"
+        }
+      ],
+      "mnemonic": "Mỏ vàng (土) dưới đất, người đào",
+      "strokes": [
+        "M51.75,11.88c0.25,1.52-0.22,3.57-0.8,4.84C47.73,23.79,33.13,47.1,14.5,58",
+        "M52.25,18.25c9.5,7.5,34.14,30.88,37.21,32.67c3.12,1.82,4.14,2.66,5.54,2.83",
+        "M34.02,47.08c1.69,0.65,3.85,0.36,5.6,0.21c6.91-0.6,14.33-1.69,23.99-2.64c2.07-0.2,4.1-0.4,6.15,0.12",
+        "M30.18,64.96c1.95,0.67,4.47,0.31,6.47,0.12c9.24-0.87,17.42-1.58,31.35-2.53c2.3-0.16,4.68-0.36,6.96,0.08",
+        "M51.47,48.82c0.89,0.85,0.89,3.76,0.89,4.43c0,3.64,0.27,38.71,0.22,39.82",
+        "M31,74.75c3.25,3,7.48,9.27,8.5,12",
+        "M73.01,72.11c0.24,1.14,0.11,2.46-0.54,3.51C70.38,79,66.44,83.22,63,86",
+        "M18.5,94.86c2.88,1.01,6.41,0.4,9.37,0.15c16.55-1.42,32.95-2.12,51.51-3c3.13-0.15,6.32-0.27,9.38,0.59"
+      ],
+      "on_romaji": "kin",
+      "kun_romaji": "kane"
+    },
+    {
+      "id": "k30",
+      "char": "土",
+      "on": "ド",
+      "kun": "つち",
+      "meaning": "đất",
+      "stroke": 3,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "土曜日",
+          "reading": "どようび",
+          "meaning": "thứ Bảy"
+        },
+        {
+          "word": "土地",
+          "reading": "とち",
+          "meaning": "đất đai"
+        }
+      ],
+      "mnemonic": "Cây mọc từ đất lên",
+      "strokes": [
+        "M26.63,50.89c1.63,0.4,4.64,0.6,6.26,0.4C43.5,50,62.12,48,75.66,46.92c2.71-0.22,4.36,0.19,5.72,0.39",
+        "M52.17,17.37c1.17,1.17,2.02,3.13,2.02,4.64c0,10.25,0.14,61.06,0.14,63.36",
+        "M15.38,87.73c2.12,0.54,6.01,0.73,8.12,0.54C46,86.25,69,84.62,90.34,83.79c3.53-0.14,5.65,0.26,7.41,0.53"
+      ],
+      "on_romaji": "do",
+      "kun_romaji": "tsuchi"
+    },
+    {
+      "id": "k31",
+      "char": "食",
+      "on": "ショク",
+      "kun": "たべる",
+      "meaning": "ăn / thức ăn",
+      "stroke": 9,
+      "category": "actions",
+      "examples": [
+        {
+          "word": "食べる",
+          "reading": "たべる",
+          "meaning": "ăn"
+        },
+        {
+          "word": "食事",
+          "reading": "しょくじ",
+          "meaning": "bữa ăn"
+        }
+      ],
+      "mnemonic": "Người há miệng (良) ăn cơm (米)",
+      "strokes": [
+        "M52.75,10.5c0.11,0.98-0.19,2.67-0.97,3.93C45,25.34,31.75,41.19,14,51.5",
+        "M52.75,16.25c5.09,4.8,25.71,19.61,33.7,24.9c2.68,1.78,5.37,2.79,8.55,3.35",
+        "M52.25,29.25c1,1,1.5,2.25,1.5,3.5c0,2,0,3,0,5.5",
+        "M38,40c0.83,0.47,2.19,1,3.86,0.83c9.39-0.96,21.95-2.76,23.25-2.84c1.67-0.1,3.14,0.88,3.11,2.53C68.2,41.8,67,53.25,66.34,62.4c-0.07,0.94-0.13,1.36-0.13,1.99",
+        "M40.83,51.73C47.25,51.25,59.5,50,66,49.75",
+        "M40.69,63.9c7.04-0.52,16.55-1.62,24.6-2.04",
+        "M38.25,40.25c1.12,1.12,1.5,2.62,1.5,4c0,9.12,0,43.62,0,47.25c0,4,1,4.88,4.12,2.88c2.93-1.87,6.75-5.25,10.88-8.38",
+        "M74,64c0.25,1.25,0.09,2.57-0.75,3.5c-3.5,3.88-4.5,4.88-7.25,7.5",
+        "M51.5,71C55.75,71,77,90,81,92.75c2.49,1.71,4.62,2.62,7.5,3.5"
+      ],
+      "on_romaji": "shoku",
+      "kun_romaji": "taberu"
+    },
+    {
+      "id": "k32",
+      "char": "飲",
+      "on": "イン",
+      "kun": "のむ",
+      "meaning": "uống",
+      "stroke": 12,
+      "category": "actions",
+      "examples": [
+        {
+          "word": "飲む",
+          "reading": "のむ",
+          "meaning": "uống"
+        },
+        {
+          "word": "飲み物",
+          "reading": "のみもの",
+          "meaning": "đồ uống"
+        }
+      ],
+      "mnemonic": "Người há miệng uống nước",
+      "strokes": [
+        "M31.53,14.5c0.06,0.73,0.24,1.94-0.12,2.92c-2.96,8.1-11.79,20.97-21.04,27.95",
+        "M33.5,19.5c5.48,2.15,11.9,6.21,15,10.75",
+        "M32.79,32.26c0.85,0.85,1.28,2.38,1.28,3.32c0,3.54-0.08,5.92-0.08,8.2",
+        "M20.01,46.32c1.61,0.8,2.86,0.43,4.86,0.03c5.87-1.17,15.18-2.91,16.08-3.04c2.3-0.32,2.98,1.17,2.77,2.63c-0.71,4.9-2.07,13.76-2.78,18.54c-0.27,1.86-0.45,3.1-0.45,3.26",
+        "M22.71,57.53c4.17-0.91,13.42-2.41,18.53-3.16",
+        "M22.37,68.85c5.51-0.98,11.63-1.73,17.21-2.47",
+        "M20.37,47.01c0.69,0.69,1.03,1.8,1.03,2.74c0,5.75-0.29,36.68-0.33,38.97C21,92.75,21.5,93.75,26,90.5c2.1-1.52,7-5,12.5-8.25",
+        "M37.25,74.25c1.59,2.03,4.09,7.46,5,11.75",
+        "M61.5,14.25c0.25,1.12,0.42,2.14,0.18,3.31C60,25.75,55.82,40.12,49,49.5",
+        "M58.22,37.74c1.9,0.39,3.14,0.18,4.51-0.14c1.67-0.39,21.21-5.25,22.76-5.6c6.75-1.5,3.5,4.5-3,11.25",
+        "M64.85,47.5c0.78,1.5,0.86,2.88,0.62,4.52C63,68.62,57.25,84.5,42.25,95.75",
+        "M65.42,60.5c3.56,6.77,15.26,21.56,22.62,29.46c1.89,2.03,3.98,4.66,6.71,5.54"
+      ],
+      "on_romaji": "in",
+      "kun_romaji": "nomu"
+    },
+    {
+      "id": "k33",
+      "char": "見",
+      "on": "ケン",
+      "kun": "みる",
+      "meaning": "nhìn / thấy / xem",
+      "stroke": 7,
+      "category": "actions",
+      "examples": [
+        {
+          "word": "見る",
+          "reading": "みる",
+          "meaning": "nhìn, xem"
+        },
+        {
+          "word": "見物",
+          "reading": "けんぶつ",
+          "meaning": "tham quan"
+        }
+      ],
+      "mnemonic": "Mắt (目) trên chân người = nhìn",
+      "strokes": [
+        "M32.5,15.46c0.96,0.96,1.18,2.1,1.18,3.52c0,1.12,0.07,27.43-0.02,39.27c-0.02,3.12-0.02,5.21,0.02,5.5",
+        "M34.65,17.15c9.23-1.27,22.23-2.65,31.1-3.65c2.99-0.34,4.26,1.01,4.26,3.55c0,2.5-0.1,28.08-0.14,38.96c-0.01,2.91-0.02,4.75-0.02,4.79",
+        "M34.84,31.1c7.28-0.6,25.03-2.98,33.9-3.38",
+        "M34.86,44.63C43.38,44,59,42.12,68.6,41.51",
+        "M34.71,59.66C44.5,59,58.38,57.5,68.45,57.03",
+        "M41.99,66.75c0.26,1.5,0.01,2.99-0.41,4.04c-2.7,6.83-13.83,20.83-28.41,27.87",
+        "M54.49,61.37c1.07,1.07,1.33,2.59,1.38,4.43c0.2,8.19,0.04,6.2,0.04,18.2c0,10.12,1.23,11.53,18.54,11.53c18.81,0,19.81-1.53,19.81-10.12"
+      ],
+      "on_romaji": "ken",
+      "kun_romaji": "miru"
+    },
+    {
+      "id": "k34",
+      "char": "聞",
+      "on": "ブン",
+      "kun": "きく",
+      "meaning": "nghe / hỏi",
+      "stroke": 14,
+      "category": "actions",
+      "examples": [
+        {
+          "word": "聞く",
+          "reading": "きく",
+          "meaning": "nghe / hỏi"
+        },
+        {
+          "word": "新聞",
+          "reading": "しんぶん",
+          "meaning": "báo chí"
+        }
+      ],
+      "mnemonic": "Tai (耳) trong cửa (門) = nghe ngóng",
+      "strokes": [
+        "M16.14,17.97c0.94,0.94,1.51,2.16,1.51,3.25c0,0.77-0.03,48.45-0.18,66.29c-0.03,3.16-0.05,5.37-0.07,6.21",
+        "M19.01,19.6c6.86-1.22,18.49-3.1,21.08-3.39c1.9-0.21,3.03,0.79,3,2.46c-0.04,1.84-0.59,10.46-1.44,20.02c-0.09,1.04-0.15,2-0.15,2.69",
+        "M18.81,30.43c6.94-1.05,15.82-2.55,22.41-2.9",
+        "M17.86,42.57C26.25,41.25,33,40,40.42,39.4",
+        "M66.21,14.22c0.66,0.66,1.17,1.78,1.17,2.93c0,0.56,0.12,13.19,0.17,19.1c0.02,1.71,0.03,2.83,0.03,2.91",
+        "M68.51,16.1c6.89-1.1,19.28-3.26,21.17-3.36c1.96-0.1,3.57,1.38,3.57,2.98c0,18.78-0.26,60.28-0.26,73.89c0,11.13-6.37,2.13-8.21,0.25",
+        "M68.59,25.94c5.16-0.69,18.16-2.44,23-2.71",
+        "M69.13,36.75c6.37-0.75,15.12-2,22.15-2.53",
+        "M33.5,51.24c1.71,0.31,4.02,0.25,5.71,0.06c9.6-1.05,20.21-3.05,30.66-4.05c2.83-0.27,4.57-0.1,6,0.05",
+        "M42.71,53c0.89,0.89,1.3,2.26,1.3,3.51S44,79.31,44,83.84",
+        "M45.13,61.43c4.49-0.43,13.74-2.05,19.78-2.36",
+        "M44.81,71.67c5.72-0.67,12.31-1.92,20.12-2.95",
+        "M32.51,85.14c0.99,0.86,2.2,1.23,3.25,0.92c4.87-1.43,28.2-7.83,34.76-9.39",
+        "M64.84,49.66c0.62,0.63,1.05,1.71,1.05,2.99c0,0.66,0.12,27.55,0.15,39.1c0.01,1.88,0.01,3.36,0.01,4.25"
+      ],
+      "on_romaji": "bun",
+      "kun_romaji": "kiku"
+    },
+    {
+      "id": "k35",
+      "char": "話",
+      "on": "ワ",
+      "kun": "はなす",
+      "meaning": "nói / câu chuyện",
+      "stroke": 13,
+      "category": "actions",
+      "examples": [
+        {
+          "word": "話す",
+          "reading": "はなす",
+          "meaning": "nói"
+        },
+        {
+          "word": "電話",
+          "reading": "でんわ",
+          "meaning": "điện thoại"
+        }
+      ],
+      "mnemonic": "Lưỡi (言) + vỏ ốc (舌) = nói",
+      "strokes": [
+        "M24.99,14c2.36,1.5,6.1,6.17,6.7,8.5",
+        "M11.37,32.83c1.41,0.42,3.07,0.29,4.51,0.17c8.29-0.7,16.95-1.9,23.59-2.81c1.28-0.17,3.22,0.11,3.87,0.23",
+        "M17.78,47.06c1.05,0.32,2.15,0.35,3.23,0.29c4.11-0.23,10.69-1.59,14.43-1.97c1.31-0.13,2.68-0.13,4.04-0.13",
+        "M18.58,59.33c1.2,0.36,2.8,0.13,4.04,0.08c3.71-0.16,8.38-0.79,12.92-1.36c1.43-0.18,2.85-0.34,4.3-0.08",
+        "M17.4,71.9c0.81,0.68,1.33,1.82,1.49,2.87c0.73,4.61,1.4,8.31,2.2,13.18c0.22,1.33,0.43,2.62,0.63,3.8",
+        "M19.64,73.54c6.67-1.14,13.31-2.75,19.46-3.66c1.85-0.27,2.96,1.26,2.7,2.51c-0.89,4.19-2.46,8.16-4.05,14.07",
+        "M22.49,89.55c4.76-0.55,8.86-1.17,14.02-1.72c0.93-0.1,1.91,0.04,2.97-0.09",
+        "M81.75,13.75c-0.12,1.25-0.79,2.39-1.66,3.06c-4.84,3.69-15.34,9.94-29.34,14.94",
+        "M45.39,45.8c1.55,0.34,4.36,0.62,6.73,0.34C62.8,44.9,76.37,43.07,91,42.23c2.28-0.13,4.49-0.01,6.75,0.29",
+        "M68.87,27.19c1.4,1.4,1.85,3.06,1.85,4.88c0,1.44-0.21,28.18-0.21,35.16",
+        "M52.07,67.83c0.93,1.17,1.22,1.76,1.35,2.34c1.38,6.2,2.13,12.33,3.08,20.33c0.13,1.14,0.27,2.31,0.42,3.53",
+        "M54.62,69.29c12.9-1.37,25.41-2.73,32.68-3.31c2.94-0.24,3.79,2.4,3.37,3.8c-1.47,4.87-3.03,11.64-5.04,18.35",
+        "M56.64,91.74c7.5-0.57,16.99-1.13,27.14-1.93c1.37-0.11,2.75-0.22,4.13-0.34"
+      ],
+      "on_romaji": "wa",
+      "kun_romaji": "hanasu"
+    },
+    {
+      "id": "k36",
+      "char": "行",
+      "on": "コウ・ギョウ",
+      "kun": "いく",
+      "meaning": "đi",
+      "stroke": 6,
+      "category": "actions",
+      "examples": [
+        {
+          "word": "行く",
+          "reading": "いく",
+          "meaning": "đi"
+        },
+        {
+          "word": "銀行",
+          "reading": "ぎんこう",
+          "meaning": "ngân hàng"
+        }
+      ],
+      "mnemonic": "Đường thập tự = ngã tư để đi",
+      "strokes": [
+        "M32.49,12c-0.12,1-0.45,1.9-1.1,2.62C28.29,18.06,22.2,22.6,12.5,28",
+        "M36.5,31.75c0.07,0.73,0.08,2.28-0.39,3.18C32.12,42.5,23.83,52.5,11,62.75",
+        "M25.57,51.75c0.9,0.9,1.23,2.25,1.23,3.26c0,0.72,0.04,24.47-0.07,35.49c-0.02,2.19-0.04,3.87-0.07,4.75",
+        "M50.5,18.45c1.44,0.35,3.81,0.52,5.23,0.35c7.14-0.8,16.01-2.43,24.49-3.06c2.38-0.18,3.83-0.06,5.02,0.11",
+        "M43.13,41.42c1.5,0.38,4.27,0.58,5.76,0.38c12.86-1.67,28.86-4.05,41.85-5.38c2.49-0.26,4.01,0.18,5.26,0.37",
+        "M71.52,41.33c1.26,1.26,1.76,2.79,1.76,5.27c0,14.56-0.26,38.66-0.26,43.62c0,8.03-7.21-0.5-8.71-1.75"
+      ],
+      "on_romaji": "kou / gyou",
+      "kun_romaji": "iku"
+    },
+    {
+      "id": "k37",
+      "char": "来",
+      "on": "ライ",
+      "kun": "くる",
+      "meaning": "đến / tới",
+      "stroke": 7,
+      "category": "actions",
+      "examples": [
+        {
+          "word": "来る",
+          "reading": "くる",
+          "meaning": "đến"
+        },
+        {
+          "word": "来月",
+          "reading": "らいげつ",
+          "meaning": "tháng sau"
+        }
+      ],
+      "mnemonic": "Cây lúa mì chín đến mùa gặt",
+      "strokes": [
+        "M25.54,28.33c1.61,0.39,4.58,0.53,6.19,0.39c16.32-1.46,27.01-3.46,43.69-3.67c2.69-0.03,4.31,0.18,5.65,0.38",
+        "M30.12,37.62c2.85,2.07,7.16,7.91,7.88,11.12",
+        "M74.52,33c0.08,0.98-0.11,1.9-0.58,2.77c-1.33,3.04-4.7,7.77-9.06,10.86",
+        "M16.62,57c2.28,0.5,4.9,0.74,8.42,0.5c14.81-1,39.08-3.5,58.03-4.25c3.54-0.14,6.33,0.25,8.55,0.5",
+        "M51.67,10.75c1.33,1,2.18,2.75,2.18,4.5c0,0.9,0.06,58.96-0.17,78c-0.03,2.77-0.07,4.71-0.1,5.5",
+        "M49.75,56.5c0,1.5-0.44,2.48-0.82,3.11C42.37,70.49,29,83.75,15.75,90.5",
+        "M55,56.25c4.38,3.88,19.75,19,29.73,26.28c2.82,2.06,6.52,4.5,10.02,5.22"
+      ],
+      "on_romaji": "rai",
+      "kun_romaji": "kuru"
+    },
+    {
+      "id": "k38",
+      "char": "学",
+      "on": "ガク",
+      "kun": "まなぶ",
+      "meaning": "học",
+      "stroke": 8,
+      "category": "school",
+      "examples": [
+        {
+          "word": "学校",
+          "reading": "がっこう",
+          "meaning": "trường học"
+        },
+        {
+          "word": "大学",
+          "reading": "だいがく",
+          "meaning": "đại học"
+        }
+      ],
+      "mnemonic": "Tay dẫn dắt (爻) + mái nhà + đứa trẻ (子) = học",
+      "strokes": [
+        "M29.5,17.25c3.5,3,6.5,7.25,7.75,9.75",
+        "M49,12c1.25,2,4.75,8.25,5.25,11.5",
+        "M75,11c0.25,1.75-0.12,2.75-0.75,4.25c-1.29,3.1-4.25,7.38-6.5,9.75",
+        "M21.25,33.75c-0.12,4.75-2,12.5-3.75,16.25",
+        "M23.5,36.5c17-1.62,42.38-5.5,60-5.75c9.5-0.13,4.12,5.12,0,9",
+        "M37.25,46.5c1,0.25,3.75,0.25,5.5-0.25s18.25-4,20-4s2.75,0.75,1,2.25S54.5,53.5,53,54.75",
+        "M50.75,55.75c4,8.75,7.18,24.67,1.75,38c-2.75,6.75-7.75,1.25-9.75-2",
+        "M15.75,67.75c1.75,1,4.64,1.36,7.5,1c15.88-2,44.43-6.25,61.37-5.5c2.5,0.11,4.72,0.25,6.39,1"
+      ],
+      "on_romaji": "gaku",
+      "kun_romaji": "manabu"
+    },
+    {
+      "id": "k39",
+      "char": "校",
+      "on": "コウ",
+      "kun": "—",
+      "meaning": "trường học",
+      "stroke": 10,
+      "category": "school",
+      "examples": [
+        {
+          "word": "学校",
+          "reading": "がっこう",
+          "meaning": "trường học"
+        },
+        {
+          "word": "高校",
+          "reading": "こうこう",
+          "meaning": "trường trung học"
+        }
+      ],
+      "mnemonic": "Cây (木) + giao (交) = trường có cây",
+      "strokes": [
+        "M11.53,40.68c1.1,0.32,2.6,0.45,4.53,0.32c5.4-0.35,16.57-3,23.14-4.04c1.25-0.2,2.3-0.18,3.07,0",
+        "M28.99,17.25c1.07,1.07,1.76,3.25,1.76,5.25c0,0.77-0.03,48.09-0.18,65.25c-0.03,3.03-0.05,5.16-0.07,6",
+        "M30.25,40.75c0,1.25-0.49,2.66-0.96,3.77C25.28,53.91,20.88,62.25,15,70",
+        "M33.75,51.25c2.75,1.5,6,5.25,7.25,7.75",
+        "M66.39,15.5c0.99,0.99,1.38,1.88,1.38,3.62c0,4.25-0.02,7.62-0.08,10.41",
+        "M48.12,31.71c2.3,0.29,3.9,0.44,6.09,0.2c10.28-1.16,20.32-2.66,32.45-3.53c2.35-0.17,4.03-0.01,5.33,0.32",
+        "M59.24,38.93c0.2,0.53,0.06,2.27-0.4,3.14C57,45.5,53.75,49.5,50,52.5",
+        "M79.27,38.5c4.34,3.07,8.73,8.68,10.9,12.41",
+        "M79.15,49.18c0.35,1.32,0.17,2.62-0.54,4.18C72.25,67.25,58.75,83.25,44,91.25",
+        "M55.95,55.88c6.3,3.37,21.64,22.12,31.45,30.33c2.64,2.21,5.07,4.15,8.6,4.44"
+      ],
+      "on_romaji": "kou",
+      "kun_romaji": "—"
+    },
+    {
+      "id": "k40",
+      "char": "語",
+      "on": "ゴ",
+      "kun": "かたる",
+      "meaning": "ngôn ngữ / lời nói",
+      "stroke": 14,
+      "category": "school",
+      "examples": [
+        {
+          "word": "日本語",
+          "reading": "にほんご",
+          "meaning": "tiếng Nhật"
+        },
+        {
+          "word": "英語",
+          "reading": "えいご",
+          "meaning": "tiếng Anh"
+        }
+      ],
+      "mnemonic": "Lời (言) + ngã (吾) = ngôn ngữ",
+      "strokes": [
+        "M26,15.25c2.82,1.41,7.29,5.8,8,8",
+        "M12.37,32.97c1.25,0.28,2.88,0.66,4.36,0.53c7.02-0.59,17.78-1.75,25.95-3c1.52-0.23,3.57-0.38,5.16,0.03",
+        "M18.73,45.76c0.38,0.18,2.71,0.2,3.1,0.18c3.97-0.21,9.79-1.19,14.46-2.31c1.67-0.4,2.71-0.38,3.86-0.08",
+        "M18.73,58.89c0.89,0.23,1.89,0.36,3.35,0.15c3.89-0.54,10.71-1.51,14.85-2.29c0.7-0.13,1.82-0.26,2.61-0.1",
+        "M17.14,71.9c0.63,0.62,1.12,1.65,1.23,2.57c0.63,5.03,1.51,10.28,2.23,15.59c0.14,1.03,0.27,2.02,0.41,2.93",
+        "M19.37,73.6c5.67-0.94,15.47-2.73,20.36-3.48c1.49-0.22,2.39,1.05,2.18,2.08c-0.71,3.44-2.27,9.75-3.23,13.89",
+        "M21.47,89.02c3.95-0.45,10.71-1.19,16.28-1.61c1.21-0.09,2.36-0.17,3.41-0.22",
+        "M51.79,17.49c1.38,0.26,3.91,0.28,5.27,0.15C63.88,17,72.62,15.62,80,15.32c2.3-0.1,3.67,0.04,4.81,0.15",
+        "M67.75,20.25c0.37,1.25,0.5,2.38,0.23,3.75c-0.75,3.78-6.03,23.83-7.96,31.58",
+        "M52.18,36.96c1.82,0.66,4.17,0.95,5.84,0.66c8.48-1.5,16.13-3.06,22.74-4.1c2.49-0.39,4.05,1.27,3.71,2.93c-0.6,2.93-2.48,11.43-3.74,17.86",
+        "M46.33,58.46c1.13,0.24,3.94,0.2,5.07,0.08c12.34-1.29,19.11-2.39,40.88-4.02c1.88-0.14,3.75-0.02,4.69,0.09",
+        "M52.5,69.88c0.93,0.93,1.42,2.28,1.54,3.31c0.71,6.06,1.42,12.65,2.06,19.3c0.15,1.5,0.28,2.44,0.4,3.75",
+        "M54.99,71.67c9.47-1.45,23.75-3.41,28.85-3.9c2.14-0.21,3.28,0.98,2.86,2.93c-0.84,3.88-3.08,12.57-4.39,17.58",
+        "M57.2,91.49c5.94-0.55,14.67-1.24,23.54-1.76c1.3-0.08,2.63-0.13,3.97-0.2"
+      ],
+      "on_romaji": "go",
+      "kun_romaji": "kataru"
+    }
   ]
 }

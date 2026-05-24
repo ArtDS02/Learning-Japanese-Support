@@ -261,7 +261,7 @@ body {
   border-radius: var(--radius-md);
   cursor: pointer;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
   transition: all var(--transition);
   white-space: nowrap;
@@ -352,6 +352,12 @@ body {
 .filter-btn--active {
   color: var(--bg-base) !important;
   border-color: transparent !important;
+}
+
+.exam-tab .filter-btn--active {
+  color: var(--bg-base) !important;
+  border-color: transparent !important;
+  background-color: #e8eaf0;
 }
 
 /* ── Search Box ── */
@@ -769,7 +775,7 @@ body {
 /* ── Kanji Cards ── */
 .kanji-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 14px;
 }
 
@@ -832,13 +838,13 @@ body {
 
 .kanji-on {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 15px;
   color: var(--accent-yellow);
 }
 
 .kanji-kun {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 15px;
   color: var(--accent-cyan);
 }
 
@@ -884,10 +890,28 @@ body {
   border: 1px solid var(--bg-border);
   border-radius: var(--radius-xl);
   padding: 32px;
-  max-width: 480px;
   width: 100%;
   position: relative;
   animation: slide-up 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  display: grid;
+  grid-template-columns: 38% 38%;
+  gap: 2%;
+  justify-content: center;
+  align-items: center;
+}
+
+.stroke-number {
+  font-size: 13;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12;
+  display: flex;
+  align-items: center;
+  gap: 8;
+  justify-content: center;
 }
 
 @keyframes slide-up {
@@ -970,7 +994,7 @@ body {
   background: rgba(250, 204, 21, 0.08);
   border: 1px solid rgba(250, 204, 21, 0.2);
   border-radius: var(--radius-md);
-  font-size: 13px;
+  font-size: 20px;
   color: var(--accent-yellow);
   margin-bottom: 20px;
   line-height: 1.6;
@@ -1004,12 +1028,12 @@ body {
 
 .kanji-modal__example-reading {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 20px;
   color: var(--text-secondary);
 }
 
 .kanji-modal__example-meaning {
-  font-size: 13px;
+  font-size: 20px;
   color: var(--text-secondary);
   font-style: italic;
 }
@@ -1393,22 +1417,100 @@ body {
   color: var(--text-primary);
 }
 
-/* ── Responsive ── */
+/* ══════════════════════════════════════════════
+   RESPONSIVE — TABLET (≤ 1024px)
+   ══════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .kanji-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .particle-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .study-methods {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .kanji-modal {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 24px;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 768px)
+   ══════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .main-content {
-    padding: 20px 16px 60px;
+
+  /* ── Body & Base ── */
+  body {
+    font-size: 14px;
   }
 
-  .header__inner {
-    padding: 0;
+  /* ── Background orbs — thu nhỏ để tránh overflow ── */
+  .bg-orb--1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -80px;
   }
 
+  .bg-orb--2 {
+    width: 250px;
+    height: 250px;
+    right: -80px;
+  }
+
+  .bg-orb--3 {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* ── Header ── */
   .header {
     padding: 0 16px;
   }
 
+  .header__inner {
+    height: 58px;
+    padding: 0;
+  }
+
+  .header__title {
+    font-size: 17px;
+  }
+
+  .header__subtitle {
+    font-size: 11px;
+  }
+
+  .header__flag {
+    font-size: 22px;
+  }
+
+  .header__badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  /* ── Tab Navigation ── */
   .tab-nav {
-    padding: 0 16px;
+    padding: 0 12px;
+    top: 58px;
+  }
+
+  .tab-nav__inner {
+    gap: 2px;
+    padding: 6px 0;
+  }
+
+  .tab-btn {
+    padding: 7px 10px;
+    font-size: 11px;
+    border-radius: var(--radius-sm);
   }
 
   .tab-btn__label {
@@ -1419,33 +1521,470 @@ body {
     display: block;
   }
 
-  .tab-btn {
-    padding: 8px 12px;
-    font-size: 12px;
+  /* ── Main Content ── */
+  .main-content {
+    padding: 18px 14px 72px;
   }
 
+  /* ── Section Header ── */
+  .section-title {
+    font-size: 20px;
+  }
+
+  .section-desc {
+    font-size: 14px;
+  }
+
+  .section-header {
+    margin-bottom: 18px;
+  }
+
+  /* ── Filter Bar ── */
+  .filter-bar {
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .filter-btn {
+    padding: 5px 11px;
+    font-size: 13px;
+  }
+
+  /* ── Search Box ── */
+  .search-box input {
+    font-size: 16px;
+    /* tránh auto-zoom trên iOS */
+    padding: 10px 14px 10px 38px;
+  }
+
+  /* ── Cards Grid ── */
   .cards-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  .particle-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .kanji-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  }
-
-  .choices-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .study-methods {
-    grid-template-columns: 1fr;
+  /* ── Word Cards ── */
+  .word-card {
+    padding: 16px;
   }
 
   .word-card__jp {
-    font-size: 22px;
+    font-size: 24px;
+  }
+
+  .word-card__meaning {
+    font-size: 16px;
+  }
+
+  .word-card__example-jp {
+    font-size: 15px;
+  }
+
+  /* ── Grammar / Particle Grid ── */
+  .particle-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .particle-card {
+    padding: 16px;
+  }
+
+  .particle-chip {
+    font-size: 20px;
+  }
+
+  /* ── Pattern Cards ── */
+  .pattern-card {
+    padding: 18px;
+  }
+
+  .pattern-chip {
+    font-size: 16px;
+  }
+
+  .pattern-meaning {
+    font-size: 17px;
+  }
+
+  .pattern-example__jp {
+    font-size: 16px;
+  }
+
+  /* ── Verb Table ── */
+  .verb-table {
+    font-size: 13px;
+  }
+
+  .verb-table th,
+  .verb-table td {
+    padding: 8px 10px;
+  }
+
+  /* ── Kanji Grid ── */
+  .kanji-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .kanji-card {
+    padding: 14px 10px;
+  }
+
+  .kanji-char {
+    font-size: 40px;
+  }
+
+  .kanji-meaning {
+    font-size: 12px;
+  }
+
+  .kanji-on,
+  .kanji-kun {
+    font-size: 13px;
+  }
+
+  /* ── Kanji Modal ── */
+  .kanji-modal-overlay {
+    padding: 12px;
+    align-items: flex-end;
+    /* trượt lên từ dưới trên mobile */
+  }
+
+  .kanji-modal {
+    grid-template-columns: 1fr;
+    padding: 20px 16px 28px;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .kanji-modal__char {
+    font-size: 64px;
+  }
+
+  .kanji-modal__meaning {
+    font-size: 18px;
+  }
+
+  .kanji-modal__readings {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .kanji-modal__mnemonic {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .kanji-modal__example {
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+    padding: 10px 12px;
+  }
+
+  .kanji-modal__example-reading,
+  .kanji-modal__example-meaning {
+    font-size: 14px;
+  }
+
+  /* ── Exercise / Choices ── */
+  .choices-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .question-card {
+    padding: 18px;
+  }
+
+  .question-text {
+    font-size: 16px;
+  }
+
+  .choice-btn {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .answer-reveal {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+
+  /* ── Score Display ── */
+  .score-display {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 14px;
+  }
+
+  .score-display__value {
+    font-size: 17px;
+  }
+
+  .score-display__bar {
+    min-width: 100%;
+    order: 3;
+  }
+
+  /* ── Tips Section ── */
+  .tips-section__header {
+    padding: 14px 16px;
+  }
+
+  .tip-item {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .tip-item__title {
+    font-size: 14px;
+  }
+
+  /* ── Study Methods ── */
+  .study-methods {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .method-card {
+    padding: 18px;
+  }
+
+  .method-icon {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .method-title {
+    font-size: 15px;
+  }
+
+  /* ── Schedule Timeline ── */
+  .schedule-item {
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .schedule-item__week {
+    min-width: 70px;
+    font-size: 11px;
+  }
+
+  .schedule-item__focus {
+    font-size: 14px;
+  }
+
+  .schedule-item__goal {
+    font-size: 12px;
+  }
+
+  /* ── Flashcard ── */
+  .flashcard-wrapper {
+    gap: 14px;
+  }
+
+  .flashcard {
+    min-height: 260px;
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .flashcard-jp {
+    font-size: 38px;
+  }
+
+  .flashcard-kanji {
+    font-size: 20px;
+  }
+
+  .flashcard-romaji {
+    font-size: 15px;
+  }
+
+  .flashcard-meaning {
+    font-size: 28px;
+  }
+
+  .flashcard-hint {
+    margin-top: 24px;
+    font-size: 12px;
+  }
+
+  .flashcard-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .flashcard-actions button {
+    padding: 10px 20px;
+    font-size: 14px;
+    flex: 1;
+    min-width: 120px;
+  }
+
+  /* ── Empty State ── */
+  .empty-state {
+    padding: 40px 16px;
+  }
+
+  .empty-state__icon {
+    font-size: 40px;
+  }
+
+  /* ── Reset Button ── */
+  .reset-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    padding: 18px 16px;
+    font-size: 12px;
+    margin-top: 28px;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE — SMALL PHONE (≤ 390px)
+   ══════════════════════════════════════════════ */
+@media (max-width: 390px) {
+
+  .header__title {
+    font-size: 15px;
+  }
+
+  .header__badge {
+    display: none;
+    /* ẩn badge nếu quá chật */
+  }
+
+  .tab-btn {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .main-content {
+    padding: 14px 12px 72px;
+  }
+
+  .kanji-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .kanji-char {
+    font-size: 34px;
+  }
+
+  .kanji-modal__char {
+    font-size: 52px;
+  }
+
+  .flashcard-jp {
+    font-size: 32px;
+  }
+
+  .flashcard-meaning {
+    font-size: 24px;
+  }
+
+  .word-card__jp {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .choices-grid {
+    gap: 6px;
+  }
+
+  .choice-btn {
+    padding: 10px 12px;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   TOUCH & PERFORMANCE OPTIMIZATIONS
+   ══════════════════════════════════════════════ */
+@media (hover: none) and (pointer: coarse) {
+
+  /* Tắt hover transform trên thiết bị cảm ứng */
+  .word-card:hover,
+  .kanji-card:hover,
+  .particle-card:hover,
+  .pattern-card:hover,
+  .method-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .kanji-card:hover::after {
+    opacity: 0;
+  }
+
+  .flashcard:hover {
+    transform: none;
+  }
+
+  /* Tăng vùng chạm cho buttons */
+  .tab-btn,
+  .filter-btn,
+  .choice-btn,
+  .flashcard-actions button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Tăng vùng chạm cho close button */
+  .kanji-modal__close {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  /* Giảm animation phức tạp để tiết kiệm pin */
+  .bg-orb {
+    animation-duration: 30s;
+    opacity: 0.08;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   SAFE AREA — iPhone notch / Dynamic Island
+   ══════════════════════════════════════════════ */
+@supports (padding: env(safe-area-inset-top)) {
+  .header {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  .tab-nav {
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+
+  .main-content {
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+    padding-bottom: max(72px, calc(env(safe-area-inset-bottom) + 60px));
+  }
+
+  .footer {
+    padding-bottom: max(18px, env(safe-area-inset-bottom));
   }
 }
 
