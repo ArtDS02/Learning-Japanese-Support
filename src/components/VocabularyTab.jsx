@@ -71,7 +71,7 @@ export default function VocabularyTab() {
       if (next.has(id)) next.delete(id);
       else next.add(id);
       saveMarked(next);
-      setMarkAll(markedIds.length == filtered.length);
+      setMarkAll(filtered.length > 0 && filtered.every((w) => next.has(w.id)));
 
       return next;
     });

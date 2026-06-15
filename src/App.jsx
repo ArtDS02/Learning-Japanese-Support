@@ -10,14 +10,14 @@ import StudyPlanTab from "./components/StudyPlanTab";
 import "./styles/global.css";
 
 const TABS = [
-  { id: "vocabulary", label: "📖 Từ vựng" },
-  { id: "grammar",    label: "⚙️ Ngữ pháp" },
-  { id: "kanji",      label: "🈳 Kanji" },
-  { id: "kana",       label: "🔤 Kana" },
-  { id: "numbers",    label: "🔢 Số đếm" },
-  { id: "tips",       label: "💡 Mẹo thi" },
-  { id: "exercises",  label: "✏️ Bài tập" },
-  { id: "studyplan",  label: "🗓️ Lộ trình" },
+  { id: "vocabulary", icon: "📖", label: "Từ vựng" },
+  { id: "grammar",    icon: "⚙️", label: "Ngữ pháp" },
+  { id: "kanji",      icon: "🈳", label: "Kanji" },
+  { id: "kana",       icon: "🔤", label: "Kana" },
+  { id: "numbers",    icon: "🔢", label: "Số đếm" },
+  { id: "tips",       icon: "💡", label: "Mẹo thi" },
+  { id: "exercises",  icon: "✏️", label: "Bài tập" },
+  { id: "studyplan",  icon: "🗓️", label: "Lộ trình" },
 ];
 
 export default function App() {
@@ -65,8 +65,11 @@ export default function App() {
               key={tab.id}
               className={`tab-btn ${activeTab === tab.id ? "tab-btn--active" : ""}`}
               onClick={() => setActiveTab(tab.id)}
+              aria-pressed={activeTab === tab.id}
+              title={tab.label}
             >
-              {tab.label}
+              <span className="tab-btn__label">{tab.icon} {tab.label}</span>
+              <span className="tab-btn__short" aria-hidden="true">{tab.icon}</span>
             </button>
           ))}
         </div>
