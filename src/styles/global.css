@@ -134,7 +134,10 @@ body {
 
 .app--mounted {
   opacity: 1;
-  transform: translateY(0);
+  /* 'none' (không phải translateY(0)) để KHÔNG tạo containing block cho
+     các phần tử position:fixed bên trong — nếu không, overlay modal sẽ
+     bám theo .app (cao bằng cả trang) thay vì viewport và bị tụt xuống. */
+  transform: none;
 }
 
 /* ── Background Orbs ── */
