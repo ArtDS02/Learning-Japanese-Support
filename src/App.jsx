@@ -7,6 +7,7 @@ import NumbersTab from "./components/NumbersTab";
 import TipsTab from "./components/TipsTab";
 import ExercisesTab from "./components/ExercisesTab";
 import StudyPlanTab from "./components/StudyPlanTab";
+import ProgressTab from "./components/ProgressTab";
 import "./styles/global.css";
 
 const TABS = [
@@ -18,6 +19,7 @@ const TABS = [
   { id: "tips",       icon: "💡", label: "Mẹo thi" },
   { id: "exercises",  icon: "✏️", label: "Bài tập" },
   { id: "studyplan",  icon: "🗓️", label: "Lộ trình" },
+  { id: "progress",   icon: "📊", label: "Tiến độ" },
 ];
 
 export default function App() {
@@ -35,6 +37,7 @@ export default function App() {
       case "tips":       return <TipsTab />;
       case "exercises":  return <ExercisesTab />;
       case "studyplan":  return <StudyPlanTab />;
+      case "progress":   return <ProgressTab />;
       default:           return null;
     }
   };

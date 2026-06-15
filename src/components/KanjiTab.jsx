@@ -1,5 +1,7 @@
 import { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import kanjiData from "../data/kanji.json";
+import { rateCard } from "../lib/srs";
+import { recordReview } from "../lib/progress";
 
 export default function KanjiTab() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -871,6 +873,11 @@ function FlashcardMode({ deck, catColor, onExit, isMarkedOnly }) {
   }
 
   function handleAnswer(result) {
+    // Ghi nhận vào SRS + tiến độ: "know" = Nhớ, "again" = Quên
+    if (current) {
+      rateCard("kanji", current.id, result === "know" ? "remember" : "forget");
+      recordReview(1);
+    }
     const newResults = { ...results, [cardIdx]: result };
     setResults(newResults);
     if (cardIdx + 1 >= order.length) {
