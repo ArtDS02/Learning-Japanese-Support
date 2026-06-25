@@ -8,7 +8,6 @@ import TipsTab from "./components/TipsTab";
 import ExercisesTab from "./components/ExercisesTab";
 import StudyPlanTab from "./components/StudyPlanTab";
 import ProgressTab from "./components/ProgressTab";
-import "./styles/global.css";
 
 const TABS = [
   { id: "vocabulary", icon: "📖", label: "Từ vựng" },

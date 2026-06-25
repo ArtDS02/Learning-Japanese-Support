@@ -1,0 +1,344 @@
+/* ============================================================
+   JLPT N5 App — kanji
+   (tách từ global.css; thứ tự nội bộ giữ nguyên để cascade không đổi)
+   ============================================================ */
+
+.kanji-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.kanji-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  animation: fade-up 0.3s ease both;
+  position: relative;
+  overflow: hidden;
+}
+
+.kanji-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, var(--card-color, rgba(189, 182, 207, 0.1)), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.kanji-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--card-color, rgba(167, 139, 250, 0.4));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.kanji-card:hover::after {
+  opacity: 0.2;
+}
+
+.kanji-char {
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 8px;
+  transition: transform var(--transition);
+  display: block;
+}
+
+.kanji-card:hover .kanji-char {
+  transform: scale(1.08);
+}
+
+.kanji-meaning {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.kanji-readings {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kanji-on {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--accent-yellow);
+}
+
+.kanji-kun {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--accent-cyan);
+}
+
+.kanji-stroke {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.kanji-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fade-in 0.2s ease;
+  overflow-y: auto;
+}
+
+.kanji-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slide-up 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.stroke-number {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.kanji-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.kanji-modal__close:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+}
+
+.kanji-modal__char {
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.kanji-modal__meaning {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.kanji-modal__readings {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.kanji-modal__reading-group {
+  text-align: center;
+}
+
+.kanji-modal__reading-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  font-family: var(--font-mono);
+}
+
+.kanji-modal__reading-value {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.kanji-modal__mnemonic {
+  padding: 12px 16px;
+  background: rgba(250, 204, 21, 0.08);
+  border: 1px solid rgba(250, 204, 21, 0.2);
+  border-radius: var(--radius-md);
+  font-size: 20px;
+  color: var(--accent-yellow);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.kanji-modal__mnemonic::before {
+  content: '💡 Ghi nhớ: ';
+  font-weight: 700;
+}
+
+.kanji-modal__examples {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kanji-modal__example {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+}
+
+.kanji-modal__example-word {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.kanji-modal__example-reading {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--text-secondary);
+}
+
+.kanji-modal__example-meaning {
+  font-size: 20px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .kanji-grid {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+  
+    .kanji-modal {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+  .kanji-grid {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+    }
+  
+    .kanji-card {
+      padding: 14px 10px;
+    }
+  
+    .kanji-char {
+      font-size: 40px;
+    }
+  
+    .kanji-meaning {
+      font-size: 12px;
+    }
+  
+    .kanji-on,
+    .kanji-kun {
+      font-size: 13px;
+    }
+  
+    .kanji-modal-overlay {
+      padding: 12px;
+      align-items: flex-end;
+      /* trượt lên từ dưới trên mobile */
+    }
+  
+    .kanji-modal {
+      grid-template-columns: 1fr;
+      padding: 20px 16px 28px;
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      max-height: 60vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .kanji-modal__char {
+      font-size: 64px;
+    }
+  
+    .kanji-modal__meaning {
+      font-size: 18px;
+    }
+  
+    .kanji-modal__readings {
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .kanji-modal__mnemonic {
+      font-size: 14px;
+      padding: 10px 14px;
+    }
+  
+    .kanji-modal__example {
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-start;
+      padding: 10px 12px;
+    }
+  
+    .kanji-modal__example-reading,
+    .kanji-modal__example-meaning {
+      font-size: 14px;
+    }
+}
+
+@media (max-width: 390px) {
+  .kanji-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 8px;
+    }
+  
+    .kanji-char {
+      font-size: 34px;
+    }
+  
+    .kanji-modal__char {
+      font-size: 52px;
+    }
+}

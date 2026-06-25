@@ -2,6 +2,7 @@ import vocabData from "../data/vocabulary.json";
 import { useState, useMemo, useEffect } from "react";
 import { rateCard, getCard, getStatus, orderForStudy } from "../lib/srs";
 import { recordReview } from "../lib/progress";
+import "../styles/tabs/vocabulary.css";
 
 const MARKED_KEY = "vocab_marked_ids";
 

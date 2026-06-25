@@ -9,6 +9,7 @@ import {
   studiedToday,
   recentActivity,
 } from "../lib/progress";
+import "../styles/tabs/progress.css";
 
 function Segments({ mastered, learning, neu }) {
   const total = mastered + learning + neu || 1;

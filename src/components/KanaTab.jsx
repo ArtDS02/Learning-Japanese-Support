@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import kanaData from "../data/kana.json";
 import { recordReview } from "../lib/progress";
+import "../styles/tabs/kana.css";
 
 // Chấp nhận thêm các biến thể romaji kiểu kunrei (si=shi, tu=tsu, ...)
 const ROMAJI_ALIASES = {

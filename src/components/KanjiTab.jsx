@@ -2,6 +2,7 @@ import { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import kanjiData from "../data/kanji.json";
 import { rateCard } from "../lib/srs";
 import { recordReview } from "../lib/progress";
+import "../styles/tabs/kanji.css";
 
 export default function KanjiTab() {
   const [activeCategory, setActiveCategory] = useState("all");

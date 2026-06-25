@@ -1,5 +1,6 @@
 import { useMemo, useState, useEffect, useRef } from "react";
 import data from "../data/jlpt-sets.json";
+import "../styles/tabs/exercises.css";
 
 const { examSets } = data;
 

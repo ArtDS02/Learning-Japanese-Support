@@ -1,0 +1,358 @@
+/* ============================================================
+   JLPT N5 App — exercises
+   (tách từ global.css; thứ tự nội bộ giữ nguyên để cascade không đổi)
+   ============================================================ */
+
+.exercise-set {
+  margin-bottom: 40px;
+}
+
+.exercise-set__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.exercise-set__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.question-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 14px;
+  animation: fade-up 0.4s ease both;
+  transition: all var(--transition);
+}
+
+.question-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.question-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.choices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.choice-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--bg-border);
+  color: var(--text-primary);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 14px;
+  text-align: left;
+  transition: all var(--transition);
+}
+
+.choice-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.choice-btn--correct {
+  background: rgba(52, 211, 153, 0.15) !important;
+  border-color: var(--accent-green) !important;
+  color: var(--accent-green) !important;
+}
+
+.choice-btn--wrong {
+  background: rgba(255, 71, 87, 0.15) !important;
+  border-color: var(--accent-red) !important;
+  color: var(--accent-red) !important;
+}
+
+.choice-btn--revealed {
+  background: rgba(52, 211, 153, 0.08) !important;
+  border-color: rgba(52, 211, 153, 0.3) !important;
+}
+
+.choice-btn:disabled {
+  cursor: default;
+}
+
+.answer-reveal {
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  line-height: 1.6;
+  animation: fade-in 0.3s ease;
+}
+
+.answer-reveal--correct {
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  color: var(--accent-green);
+}
+
+.answer-reveal--wrong {
+  background: rgba(255, 71, 87, 0.1);
+  border: 1px solid rgba(255, 71, 87, 0.3);
+  color: var(--accent-red);
+}
+
+.answer-reveal__full {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  margin-top: 6px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .choices-grid {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+  
+    .question-card {
+      padding: 18px;
+    }
+  
+    .question-text {
+      font-size: 16px;
+    }
+  
+    .choice-btn {
+      padding: 12px 14px;
+      font-size: 14px;
+    }
+  
+    .answer-reveal {
+      font-size: 13px;
+      padding: 12px 14px;
+    }
+}
+
+@media (max-width: 390px) {
+  .choices-grid {
+      gap: 6px;
+    }
+  
+    .choice-btn {
+      padding: 10px 12px;
+    }
+}
+
+.exercise-set__tools {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sec-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: 999px;
+  padding: 3px 6px 3px 12px;
+}
+
+.sec-timer--danger {
+  color: var(--accent-red);
+  border-color: rgba(255, 71, 87, 0.4);
+}
+
+.sec-timer__btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  color: inherit;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background var(--transition);
+}
+
+.sec-timer__btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sec-score-chip {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.sec-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.sec-progress__track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.sec-progress__fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.sec-progress__txt {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.sec-result {
+  margin-top: 8px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+}
+
+.sec-result--good {
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  color: var(--accent-green);
+}
+
+.sec-result--bad {
+  background: rgba(255, 71, 87, 0.1);
+  border: 1px solid rgba(255, 71, 87, 0.3);
+  color: var(--accent-red);
+}
+
+.exam-summary {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.06), rgba(34, 211, 238, 0.04));
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.exam-summary__big {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.exam-summary__total {
+  font-size: 18px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.exam-summary__cap {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.exam-summary__barwrap {
+  flex: 1;
+  min-width: 200px;
+}
+
+.exam-summary__bar {
+  position: relative;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.exam-summary__barfill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+.exam-summary__threshold {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  background: var(--text-secondary);
+  overflow: visible;
+}
+
+.exam-summary__threshold span {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  font-family: var(--font-mono);
+}
+
+.exam-summary__hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+.exam-summary__verdict {
+  font-weight: 800;
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+}
+
+.exam-summary__verdict.is-pass {
+  color: var(--accent-green);
+  background: rgba(52, 211, 153, 0.12);
+}
+
+.exam-summary__verdict.is-fail {
+  color: var(--accent-red);
+  background: rgba(255, 71, 87, 0.12);
+}
+
+.exam-summary__verdict.is-progress {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .exam-summary {
+      gap: 14px;
+      padding: 16px;
+    }
+  
+    .exercise-set__tools {
+      width: 100%;
+    }
+}

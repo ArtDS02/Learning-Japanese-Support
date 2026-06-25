@@ -1,6 +1,7 @@
 import { useState } from "react";
 import data from "../data/numbers.json";
 import { kanaToRomaji } from "../lib/romaji";
+import "../styles/tabs/numbers.css";
 
 const SECTIONS = [
   { id: "numbers", label: "🔢 Số cơ bản", color: "#facc15" },
