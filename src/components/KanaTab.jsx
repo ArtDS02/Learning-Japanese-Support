@@ -1,11 +1,42 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import kanaData from "../data/kana.json";
+import { recordReview } from "../lib/progress";
+import "../styles/tabs/kana.css";
+
+// Chấp nhận thêm các biến thể romaji kiểu kunrei (si=shi, tu=tsu, ...)
+const ROMAJI_ALIASES = {
+  shi: ["si"],
+  chi: ["ti"],
+  tsu: ["tu"],
+  fu: ["hu"],
+  ji: ["zi", "di"],
+  zu: ["du"],
+  n: ["nn"],
+};
+
+function isRomajiMatch(input, answer) {
+  const v = input.trim().toLowerCase().replace(/[^a-z]/g, "");
+  const a = answer.trim().toLowerCase();
+  if (!v) return false;
+  if (v === a) return true;
+  return (ROMAJI_ALIASES[a] || []).includes(v);
+}
+
+function shuffleArr(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 export default function KanaTab() {
   const [mode, setMode] = useState("hiragana"); // hiragana | katakana | katakana-words
   const [quizMode, setQuizMode] = useState(false);
   const [quizCard, setQuizCard] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [fillMode, setFillMode] = useState(false);
 
   const rows = [
     ["a", "i", "u", "e", "o"],
@@ -61,23 +92,36 @@ export default function KanaTab() {
             key={m.id}
             className={`filter-btn ${mode === m.id ? "filter-btn--active" : ""}`}
             style={mode === m.id ? { background: m.color, color: "#0a0b0f" } : {}}
-            onClick={() => { setMode(m.id); setQuizMode(false); }}
+            onClick={() => { setMode(m.id); setQuizMode(false); setFillMode(false); }}
           >
             {m.label}
           </button>
         ))}
         {mode !== "katakana-words" && (
-          <button
-            style={{
-              marginLeft: "auto", background: quizMode ? "var(--accent-green)" : "rgba(255,255,255,0.06)",
-              border: "1px solid var(--bg-border)", color: quizMode ? "#0a0b0f" : "var(--text-secondary)",
-              padding: "6px 16px", borderRadius: 20, cursor: "pointer", fontSize: 13, fontFamily: "var(--font-body)",
-              transition: "all var(--transition)"
-            }}
-            onClick={quizMode ? () => setQuizMode(false) : startQuiz}
-          >
-            {quizMode ? "✕ Thoát Quiz" : "🎯 Quiz mode"}
-          </button>
+          <div style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
+            <button
+              style={{
+                background: fillMode ? "var(--accent-violet)" : "rgba(255,255,255,0.06)",
+                border: "1px solid var(--bg-border)", color: fillMode ? "#0a0b0f" : "var(--text-secondary)",
+                padding: "6px 16px", borderRadius: 20, cursor: "pointer", fontSize: 13, fontFamily: "var(--font-body)",
+                transition: "all var(--transition)"
+              }}
+              onClick={() => { setFillMode((v) => !v); setQuizMode(false); }}
+            >
+              {fillMode ? "✕ Thoát" : "✍️ Điền romaji"}
+            </button>
+            <button
+              style={{
+                background: quizMode ? "var(--accent-green)" : "rgba(255,255,255,0.06)",
+                border: "1px solid var(--bg-border)", color: quizMode ? "#0a0b0f" : "var(--text-secondary)",
+                padding: "6px 16px", borderRadius: 20, cursor: "pointer", fontSize: 13, fontFamily: "var(--font-body)",
+                transition: "all var(--transition)"
+              }}
+              onClick={quizMode ? () => setQuizMode(false) : () => { startQuiz(); setFillMode(false); }}
+            >
+              {quizMode ? "✕ Thoát Quiz" : "🎯 Quiz nhanh"}
+            </button>
+          </div>
         )}
       </div>
 
@@ -116,6 +160,15 @@ export default function KanaTab() {
         </div>
       )}
 
+      {/* Fill romaji mode */}
+      {fillMode && mode !== "katakana-words" && (
+        <FillRomaji
+          chars={basicChars}
+          mode={mode}
+          color={mode === "hiragana" ? "#22d3ee" : "#a78bfa"}
+        />
+      )}
+
       {/* Katakana Words */}
       {mode === "katakana-words" && (
         <div>
@@ -136,7 +189,7 @@ export default function KanaTab() {
       )}
 
       {/* Bảng chữ cái */}
-      {mode !== "katakana-words" && !quizMode && (
+      {mode !== "katakana-words" && !quizMode && !fillMode && (
         <>
           <div style={{ marginBottom: 24 }}>
             <div style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, marginBottom: 12, color: mode === "hiragana" ? "var(--accent-cyan)" : "var(--accent-violet)" }}>
@@ -187,6 +240,168 @@ export default function KanaTab() {
           )}
         </>
       )}
+    </div>
+  );
+}
+
+// ─── Điền romaji ──────────────────────────────────────────────────────────────
+function FillRomaji({ chars, mode, color }) {
+  const pool = chars.filter((c) => c.char && c.romaji);
+  const [deck, setDeck] = useState(() => shuffleArr(pool));
+  const [i, setI] = useState(0);
+  const [value, setValue] = useState("");
+  const [status, setStatus] = useState(null); // null | "correct" | "wrong"
+  const [score, setScore] = useState({ correct: 0, wrong: 0 });
+  const [done, setDone] = useState(false);
+  const inputRef = useRef(null);
+
+  const cur = deck[i];
+
+  // Tự focus ô nhập mỗi khi sang thẻ mới
+  useEffect(() => {
+    if (!done) inputRef.current?.focus();
+  }, [i, done]);
+
+  const restart = () => {
+    setDeck(shuffleArr(pool));
+    setI(0);
+    setValue("");
+    setStatus(null);
+    setScore({ correct: 0, wrong: 0 });
+    setDone(false);
+  };
+
+  const goNext = () => {
+    if (i + 1 >= deck.length) {
+      setDone(true);
+    } else {
+      setI((p) => p + 1);
+      setValue("");
+      setStatus(null);
+    }
+  };
+
+  const submit = () => {
+    if (status) {
+      // đã chấm rồi → Enter để sang thẻ tiếp
+      goNext();
+      return;
+    }
+    if (!value.trim()) return;
+    const ok = isRomajiMatch(value, cur.romaji);
+    setStatus(ok ? "correct" : "wrong");
+    setScore((s) => ({
+      correct: s.correct + (ok ? 1 : 0),
+      wrong: s.wrong + (ok ? 0 : 1),
+    }));
+    recordReview(1);
+    if (ok) setTimeout(goNext, 650); // đúng → tự chuyển
+  };
+
+  const onKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      submit();
+    }
+  };
+
+  if (pool.length === 0) {
+    return (
+      <div className="empty-state">
+        <div className="empty-state__icon">🔤</div>
+        <p className="empty-state__text">Không có chữ cái để luyện.</p>
+      </div>
+    );
+  }
+
+  // Màn hình tổng kết
+  if (done) {
+    const total = score.correct + score.wrong;
+    const pct = total ? Math.round((score.correct / total) * 100) : 0;
+    return (
+      <div className="flashcard-wrapper">
+        <div className="flash-summary">
+          <div style={{ fontSize: 54, marginBottom: 8 }}>
+            {pct === 100 ? "🎉" : pct >= 70 ? "👏" : "💪"}
+          </div>
+          <h3 className="flash-summary__title">Hoàn thành!</h3>
+          <p className="flash-summary__sub">
+            Đúng {score.correct}/{total} chữ · {pct}%
+          </p>
+          <div className="flash-summary__stats">
+            <div className="flash-stat" style={{ "--c": "#34d399" }}>
+              <div className="flash-stat__n">{score.correct}</div>
+              <div className="flash-stat__l">✓ Đúng</div>
+            </div>
+            <div className="flash-stat" style={{ "--c": "#f87171" }}>
+              <div className="flash-stat__n">{score.wrong}</div>
+              <div className="flash-stat__l">✗ Sai</div>
+            </div>
+          </div>
+          <button className="flash-restart-btn" onClick={restart}>
+            🔀 Xáo lại & học tiếp
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const progress = Math.round((i / deck.length) * 100);
+
+  return (
+    <div className="fill-quiz">
+      <div className="fill-quiz__bar">
+        <div className="fill-quiz__top">
+          <span className="fill-quiz__count">
+            {i + 1} / {deck.length}
+          </span>
+          <span className="fill-quiz__score">
+            <span style={{ color: "#34d399" }}>✓ {score.correct}</span>
+            <span style={{ color: "#f87171", marginLeft: 8 }}>✗ {score.wrong}</span>
+          </span>
+          <button className="fill-quiz__shuffle" onClick={restart} title="Xáo lại từ đầu">
+            🔀
+          </button>
+        </div>
+        <div className="flash-track">
+          <div className="flash-track__fill" style={{ width: `${progress}%` }} />
+        </div>
+      </div>
+
+      <div className="fill-quiz__prompt">
+        {mode === "hiragana" ? "Hiragana" : "Katakana"} này đọc là gì? (gõ romaji)
+      </div>
+
+      <div className="fill-quiz__char" style={{ color }}>
+        {cur.char}
+      </div>
+
+      <input
+        ref={inputRef}
+        className={`fill-quiz__input ${status ? `is-${status}` : ""}`}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        onKeyDown={onKeyDown}
+        placeholder="Gõ romaji rồi Enter…"
+        autoComplete="off"
+        autoCapitalize="off"
+        spellCheck={false}
+        disabled={status === "correct"}
+      />
+
+      <div className="fill-quiz__feedback">
+        {status === "correct" && <span className="is-correct">✓ Chính xác!</span>}
+        {status === "wrong" && (
+          <span className="is-wrong">
+            ✗ Đáp án: <strong>{cur.romaji}</strong> — Enter để tiếp
+          </span>
+        )}
+        {!status && <span className="hint">Enter để kiểm tra</span>}
+      </div>
+
+      <button className="fill-quiz__next" onClick={submit}>
+        {status ? "Tiếp theo →" : "Kiểm tra"}
+      </button>
     </div>
   );
 }

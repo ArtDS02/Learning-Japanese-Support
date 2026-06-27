@@ -89,6 +89,156 @@
         { "n": 7, "read": "ななふん" }, { "n": 8, "read": "はっぷん ⚠️" }, { "n": 9, "read": "きゅうふん" }, { "n": 10, "read": "じゅっぷん ⚠️" }
       ],
       "example": "あと5ふんまってください。(Hãy đợi thêm 5 phút nữa.)"
+    },
+    {
+      "id": "sai",
+      "suffix": "〜歳/才",
+      "use": "Tuổi",
+      "color": "#f472b6",
+      "readings": [
+        { "n": 1, "read": "いっさい ⚠️" }, { "n": 2, "read": "にさい" }, { "n": 3, "read": "さんさい" },
+        { "n": 4, "read": "よんさい" }, { "n": 5, "read": "ごさい" }, { "n": 6, "read": "ろくさい" },
+        { "n": 7, "read": "ななさい" }, { "n": 8, "read": "はっさい ⚠️" }, { "n": 9, "read": "きゅうさい" }, { "n": 10, "read": "じゅっさい ⚠️" }
+      ],
+      "example": "わたしは20歳（はたち）です。(Tôi 20 tuổi.)",
+      "note": "⚠️ 20歳 đọc đặc biệt là はたち. Biến âm: 1=いっさい, 8=はっさい, 10=じゅっさい"
+    },
+    {
+      "id": "kai-times",
+      "suffix": "〜回",
+      "use": "Số lần (tần suất)",
+      "color": "#60a5fa",
+      "readings": [
+        { "n": 1, "read": "いっかい ⚠️" }, { "n": 2, "read": "にかい" }, { "n": 3, "read": "さんかい" },
+        { "n": 4, "read": "よんかい" }, { "n": 5, "read": "ごかい" }, { "n": 6, "read": "ろっかい ⚠️" },
+        { "n": 7, "read": "ななかい" }, { "n": 8, "read": "はっかい ⚠️" }, { "n": 9, "read": "きゅうかい" }, { "n": 10, "read": "じゅっかい ⚠️" }
+      ],
+      "example": "1日に3回くすりをのみます。(Mỗi ngày uống thuốc 3 lần.)"
+    },
+    {
+      "id": "kai-floor",
+      "suffix": "〜階",
+      "use": "Tầng (nhà)",
+      "color": "#22d3ee",
+      "readings": [
+        { "n": 1, "read": "いっかい ⚠️" }, { "n": 2, "read": "にかい" }, { "n": 3, "read": "さんがい ⚠️" },
+        { "n": 4, "read": "よんかい" }, { "n": 5, "read": "ごかい" }, { "n": 6, "read": "ろっかい ⚠️" },
+        { "n": 7, "read": "ななかい" }, { "n": 8, "read": "はっかい ⚠️" }, { "n": 9, "read": "きゅうかい" }, { "n": 10, "read": "じゅっかい ⚠️" }
+      ],
+      "example": "トイレは3階（さんがい）です。(Nhà vệ sinh ở tầng 3.)",
+      "note": "⚠️ Đặc biệt 3階=さんがい (biến âm が). なんがい？= tầng mấy?"
+    },
+    {
+      "id": "hai",
+      "suffix": "〜杯",
+      "use": "Cốc, ly, bát (đồ uống/cơm)",
+      "color": "#34d399",
+      "readings": [
+        { "n": 1, "read": "いっぱい ⚠️" }, { "n": 2, "read": "にはい" }, { "n": 3, "read": "さんばい ⚠️" },
+        { "n": 4, "read": "よんはい" }, { "n": 5, "read": "ごはい" }, { "n": 6, "read": "ろっぱい ⚠️" },
+        { "n": 7, "read": "ななはい" }, { "n": 8, "read": "はっぱい ⚠️" }, { "n": 9, "read": "きゅうはい" }, { "n": 10, "read": "じゅっぱい ⚠️" }
+      ],
+      "example": "コーヒーを1杯（いっぱい）のみます。(Uống 1 ly cà phê.)",
+      "note": "⚠️ Biến âm như 〜本: 1=いっぱい, 3=さんばい, 6=ろっぱい, 8=はっぱい"
+    },
+    {
+      "id": "hiki",
+      "suffix": "〜匹",
+      "use": "Động vật nhỏ (chó, mèo, cá)",
+      "color": "#f97316",
+      "readings": [
+        { "n": 1, "read": "いっぴき ⚠️" }, { "n": 2, "read": "にひき" }, { "n": 3, "read": "さんびき ⚠️" },
+        { "n": 4, "read": "よんひき" }, { "n": 5, "read": "ごひき" }, { "n": 6, "read": "ろっぴき ⚠️" },
+        { "n": 7, "read": "ななひき" }, { "n": 8, "read": "はっぴき ⚠️" }, { "n": 9, "read": "きゅうひき" }, { "n": 10, "read": "じゅっぴき ⚠️" }
+      ],
+      "example": "ねこが2匹（にひき）います。(Có 2 con mèo.)"
+    },
+    {
+      "id": "dai",
+      "suffix": "〜台",
+      "use": "Máy móc, xe cộ (ô tô, máy tính)",
+      "color": "#a78bfa",
+      "readings": [
+        { "n": 1, "read": "いちだい" }, { "n": 2, "read": "にだい" }, { "n": 3, "read": "さんだい" },
+        { "n": 4, "read": "よんだい" }, { "n": 5, "read": "ごだい" }, { "n": 6, "read": "ろくだい" },
+        { "n": 7, "read": "ななだい" }, { "n": 8, "read": "はちだい" }, { "n": 9, "read": "きゅうだい" }, { "n": 10, "read": "じゅうだい" }
+      ],
+      "example": "くるまが1台（いちだい）あります。(Có 1 chiếc ô tô.)",
+      "note": "✅ Bộ đếm \"dễ\" — không biến âm, đọc số như bình thường + だい"
+    }
+  ],
+  "hours": [
+    { "n": 1, "read": "いちじ", "romaji": "ichi-ji" }, { "n": 2, "read": "にじ", "romaji": "ni-ji" },
+    { "n": 3, "read": "さんじ", "romaji": "san-ji" }, { "n": 4, "read": "よじ ⚠️", "romaji": "yo-ji" },
+    { "n": 5, "read": "ごじ", "romaji": "go-ji" }, { "n": 6, "read": "ろくじ", "romaji": "roku-ji" },
+    { "n": 7, "read": "しちじ ⚠️", "romaji": "shichi-ji" }, { "n": 8, "read": "はちじ", "romaji": "hachi-ji" },
+    { "n": 9, "read": "くじ ⚠️", "romaji": "ku-ji" }, { "n": 10, "read": "じゅうじ", "romaji": "jū-ji" },
+    { "n": 11, "read": "じゅういちじ", "romaji": "jūichi-ji" }, { "n": 12, "read": "じゅうにじ", "romaji": "jūni-ji" }
+  ],
+  "months": [
+    { "n": 1, "jp": "一月", "read": "いちがつ" }, { "n": 2, "jp": "二月", "read": "にがつ" },
+    { "n": 3, "jp": "三月", "read": "さんがつ" }, { "n": 4, "jp": "四月", "read": "しがつ ⚠️" },
+    { "n": 5, "jp": "五月", "read": "ごがつ" }, { "n": 6, "jp": "六月", "read": "ろくがつ" },
+    { "n": 7, "jp": "七月", "read": "しちがつ ⚠️" }, { "n": 8, "jp": "八月", "read": "はちがつ" },
+    { "n": 9, "jp": "九月", "read": "くがつ ⚠️" }, { "n": 10, "jp": "十月", "read": "じゅうがつ" },
+    { "n": 11, "jp": "十一月", "read": "じゅういちがつ" }, { "n": 12, "jp": "十二月", "read": "じゅうにがつ" }
+  ],
+  "dates": [
+    { "n": 1, "jp": "一日", "read": "ついたち", "special": true }, { "n": 2, "jp": "二日", "read": "ふつか", "special": true },
+    { "n": 3, "jp": "三日", "read": "みっか", "special": true }, { "n": 4, "jp": "四日", "read": "よっか", "special": true },
+    { "n": 5, "jp": "五日", "read": "いつか", "special": true }, { "n": 6, "jp": "六日", "read": "むいか", "special": true },
+    { "n": 7, "jp": "七日", "read": "なのか", "special": true }, { "n": 8, "jp": "八日", "read": "ようか", "special": true },
+    { "n": 9, "jp": "九日", "read": "ここのか", "special": true }, { "n": 10, "jp": "十日", "read": "とおか", "special": true },
+    { "n": 14, "jp": "十四日", "read": "じゅうよっか", "special": true }, { "n": 20, "jp": "二十日", "read": "はつか", "special": true },
+    { "n": 24, "jp": "二十四日", "read": "にじゅうよっか", "special": true }
+  ],
+  "questionWords": [
+    { "q": "いくつ", "use": "Mấy cái? (đồ vật ~つ) / Mấy tuổi?" },
+    { "q": "なんにん", "use": "Mấy người?" },
+    { "q": "なんじ", "use": "Mấy giờ?" },
+    { "q": "なんぷん", "use": "Mấy phút?" },
+    { "q": "なんがつ", "use": "Tháng mấy?" },
+    { "q": "なんにち", "use": "Ngày mấy? / Mấy ngày?" },
+    { "q": "なんようび", "use": "Thứ mấy?" },
+    { "q": "いくら", "use": "Bao nhiêu tiền?" },
+    { "q": "なんさい / おいくつ", "use": "Bao nhiêu tuổi? (おいくつ lịch sự hơn)" }
+  ],
+  "rules": [
+    {
+      "icon": "🔟",
+      "title": "Đếm theo đơn vị VẠN (万), không phải nghìn",
+      "color": "#facc15",
+      "detail": "Tiếng Nhật nhóm số theo 4 chữ số (1万 = 10.000), khác tiếng Việt nhóm 3 chữ số. Mẹo: tách số từ phải sang trái thành cụm 4 chữ số. VD: 100.000 = 10万 (じゅうまん), 1.000.000 = 100万 (ひゃくまん), 100 triệu = 1億 (いちおく)."
+    },
+    {
+      "icon": "4️⃣",
+      "title": "Chọn cách đọc 4 / 7 / 9",
+      "color": "#22d3ee",
+      "detail": "Khi đếm/đứng riêng nên dùng よん・なな・きゅう (tránh し vì trùng âm 死 = chết). NHƯNG cố định trong: 4時=よじ, 4月=しがつ, 7時=しちじ, 7月=しちがつ, 9時=くじ, 9月=くがつ. Phải học thuộc các ngoại lệ này."
+    },
+    {
+      "icon": "🔊",
+      "title": "Biến âm với 百 (trăm) và 千 (nghìn)",
+      "color": "#f472b6",
+      "detail": "300=さんびゃく, 600=ろっぴゃく, 800=はっぴゃく · 3000=さんぜん, 8000=はっせん. Cứ gặp số 3/6/8 ghép với 百/千 là cảnh giác biến âm."
+    },
+    {
+      "icon": "📦",
+      "title": "Quy luật biến âm của bộ đếm",
+      "color": "#34d399",
+      "detail": "Với bộ đếm bắt đầu bằng h-/k-/s-/p-, các số 1・6・8・10 (và đôi khi 3) thường biến âm thành dạng っ + âm bật (ぱ・ぴ・か...). Nhớ nhóm '1-6-8-10 hay biến âm' để đỡ sai."
+    },
+    {
+      "icon": "🅾️",
+      "title": "Số 0 và số điện thoại",
+      "color": "#a78bfa",
+      "detail": "Số 0 đọc là ゼロ (zero) hoặc れい (零). Số điện thoại đọc từng chữ số, 0 đọc ゼロ, dấu '-' đọc の. VD: 090-1234 → ゼロきゅうゼロ の いちにさんよん."
+    },
+    {
+      "icon": "💴",
+      "title": "Tiền yên 〜円 (えん)",
+      "color": "#f97316",
+      "detail": "Đọc số bình thường + えん. Lưu ý 4円 = よえん (không phải しえん). VD: 500円=ごひゃくえん, 1000円=せんえん, 10.000円=いちまんえん. Hỏi giá: いくらですか。"
     }
   ],
   "weekdays": [

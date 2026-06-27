@@ -7,17 +7,18 @@ import NumbersTab from "./components/NumbersTab";
 import TipsTab from "./components/TipsTab";
 import ExercisesTab from "./components/ExercisesTab";
 import StudyPlanTab from "./components/StudyPlanTab";
-import "./styles/global.css";
+import ProgressTab from "./components/ProgressTab";
 
 const TABS = [
-  { id: "vocabulary", label: "📖 Từ vựng" },
-  { id: "grammar", label: "⚙️ Ngữ pháp" },
-  { id: "kanji", label: "🈳 Kanji" },
-  { id: "kana", label: "🔤 Kana" },
-  { id: "numbers", label: "🔢 Số đếm" },
-  { id: "tips", label: "💡 Mẹo thi" },
-  { id: "exercises", label: "✏️ Bài tập" },
-  { id: "studyplan", label: "🗓️ Lộ trình" },
+  { id: "vocabulary", icon: "📖", label: "Từ vựng" },
+  { id: "grammar",    icon: "⚙️", label: "Ngữ pháp" },
+  { id: "kanji",      icon: "🈳", label: "Kanji" },
+  { id: "kana",       icon: "🔤", label: "Kana" },
+  { id: "numbers",    icon: "🔢", label: "Số đếm" },
+  { id: "tips",       icon: "💡", label: "Mẹo thi" },
+  { id: "exercises",  icon: "✏️", label: "Bài tập" },
+  { id: "studyplan",  icon: "🗓️", label: "Lộ trình" },
+  { id: "progress",   icon: "📊", label: "Tiến độ" },
 ];
 
 export default function App() {
@@ -35,24 +36,16 @@ export default function App() {
 
   const renderTab = () => {
     switch (activeTab) {
-      case "vocabulary":
-        return <VocabularyTab />;
-      case "grammar":
-        return <GrammarTab />;
-      case "kanji":
-        return <KanjiTab />;
-      case "kana":
-        return <KanaTab />;
-      case "numbers":
-        return <NumbersTab />;
-      case "tips":
-        return <TipsTab />;
-      case "exercises":
-        return <ExercisesTab />;
-      case "studyplan":
-        return <StudyPlanTab />;
-      default:
-        return null;
+      case "vocabulary": return <VocabularyTab />;
+      case "grammar":    return <GrammarTab />;
+      case "kanji":      return <KanjiTab />;
+      case "kana":       return <KanaTab />;
+      case "numbers":    return <NumbersTab />;
+      case "tips":       return <TipsTab />;
+      case "exercises":  return <ExercisesTab />;
+      case "studyplan":  return <StudyPlanTab />;
+      case "progress":   return <ProgressTab />;
+      default:           return null;
     }
   };
 
@@ -82,8 +75,11 @@ export default function App() {
               key={tab.id}
               className={`tab-btn ${activeTab === tab.id ? "tab-btn--active" : ""}`}
               onClick={() => setActiveTab(tab.id)}
+              aria-pressed={activeTab === tab.id}
+              title={tab.label}
             >
-              {tab.label}
+              <span className="tab-btn__label">{tab.icon} {tab.label}</span>
+              <span className="tab-btn__short" aria-hidden="true">{tab.icon}</span>
             </button>
           ))}
         </div>

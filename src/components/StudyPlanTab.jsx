@@ -1,4 +1,5 @@
 import data from "../data/tips-exercises.json";
+import "../styles/tabs/studyplan.css";
 
 const { studyPlan } = data;
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import grammarData from "../data/grammar.json";
+import "../styles/tabs/grammar.css";
 
 // Highlights specific text within a sentence
 function HighlightedText({ text, highlights = [], color }) {

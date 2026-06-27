@@ -1,12 +1,70 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect, useRef } from "react";
 import data from "../data/jlpt-sets.json";
+import "../styles/tabs/exercises.css";
 
 const { examSets } = data;
+
+/* Lấy tất cả id câu hỏi trong một section (kể cả trong passage đọc hiểu) */
+function getQuestionIds(section) {
+  const ids = [];
+  if (section.questions) section.questions.forEach((q) => ids.push(q.id));
+  if (section.passages)
+    section.passages.forEach((p) => p.questions.forEach((q) => ids.push(q.id)));
+  return ids;
+}
+
+/* =========================================================
+ * SECTION TIMER — đếm ngược theo phút
+ * =======================================================*/
+function SectionTimer({ minutes }) {
+  const [left, setLeft] = useState(minutes * 60);
+  const [running, setRunning] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (!running) return;
+    ref.current = setInterval(() => {
+      setLeft((s) => {
+        if (s <= 1) {
+          clearInterval(ref.current);
+          setRunning(false);
+          return 0;
+        }
+        return s - 1;
+      });
+    }, 1000);
+    return () => clearInterval(ref.current);
+  }, [running]);
+
+  const mm = String(Math.floor(left / 60)).padStart(2, "0");
+  const ss = String(left % 60).padStart(2, "0");
+  const danger = left <= 60;
+  const over = left === 0;
+
+  const reset = () => {
+    setRunning(false);
+    setLeft(minutes * 60);
+  };
+
+  return (
+    <div className={`sec-timer ${danger ? "sec-timer--danger" : ""}`}>
+      <span className="sec-timer__time">{over ? "⏰ Hết giờ" : `⏱ ${mm}:${ss}`}</span>
+      {!over && (
+        <button className="sec-timer__btn" onClick={() => setRunning((r) => !r)}>
+          {running ? "⏸" : "▶"}
+        </button>
+      )}
+      <button className="sec-timer__btn" onClick={reset} title="Đặt lại đồng hồ">
+        ↺
+      </button>
+    </div>
+  );
+}
 
 /* =========================================================
  * QUESTION CARD
  * =======================================================*/
-function QuestionCard({ q, delay = 0 }) {
+function QuestionCard({ q, delay = 0, onAnswer }) {
   const [selected, setSelected] = useState(null);
   const [revealed, setRevealed] = useState(false);
 
@@ -15,6 +73,7 @@ function QuestionCard({ q, delay = 0 }) {
 
     setSelected(choice);
     setRevealed(true);
+    onAnswer?.(q.id, choice === q.answer);
   };
 
   const isCorrect = selected === q.answer;
@@ -98,7 +157,7 @@ function QuestionCard({ q, delay = 0 }) {
 /* =========================================================
  * READING PASSAGE
  * =======================================================*/
-function ReadingPassage({ passage }) {
+function ReadingPassage({ passage, onAnswer }) {
   return (
     <div className="reading-passage">
       <div
@@ -148,7 +207,7 @@ function ReadingPassage({ passage }) {
 
       <div>
         {passage.questions.map((q, idx) => (
-          <QuestionCard key={q.id} q={q} delay={idx * 60} />
+          <QuestionCard key={q.id} q={q} delay={idx * 60} onAnswer={onAnswer} />
         ))}
       </div>
     </div>
@@ -158,25 +217,22 @@ function ReadingPassage({ passage }) {
 /* =========================================================
  * SECTION
  * =======================================================*/
-function SectionBlock({ section, startDelay = 0 }) {
+function SectionBlock({ section, startDelay = 0, answers, onAnswer, onResetSection }) {
   const [key, setKey] = useState(0);
 
   const isReading = !!section.passages;
+  const qids = useMemo(() => getQuestionIds(section), [section]);
+  const questionCount = qids.length;
 
-  const questionCount = useMemo(() => {
-    if (section.questions) {
-      return section.questions.length;
-    }
+  const answered = qids.filter((id) => id in answers).length;
+  const correct = qids.filter((id) => answers[id] === true).length;
+  const allDone = questionCount > 0 && answered === questionCount;
+  const pct = answered > 0 ? Math.round((correct / answered) * 100) : 0;
 
-    if (section.passages) {
-      return section.passages.reduce(
-        (total, p) => total + p.questions.length,
-        0,
-      );
-    }
-
-    return 0;
-  }, [section]);
+  const handleReset = () => {
+    onResetSection(qids);
+    setKey((k) => k + 1);
+  };
 
   return (
     <div className="exercise-set">
@@ -188,24 +244,38 @@ function SectionBlock({ section, startDelay = 0 }) {
           {section.title}
         </h3>
 
-        <span
-          style={{
-            marginLeft: "auto",
-            fontFamily: "var(--font-mono)",
-            fontSize: 12,
-            color: "var(--text-muted)",
-            background: "var(--bg-card)",
-            padding: "4px 12px",
-            borderRadius: 20,
-            border: "1px solid var(--bg-border)",
-          }}
-        >
-          {questionCount} câu · ⏱ {section.timeLimit} phút
+        <div className="exercise-set__tools">
+          <SectionTimer minutes={section.timeLimit} />
+          <span
+            className="sec-score-chip"
+            style={{
+              color: answered ? (pct >= 60 ? "#34d399" : "#f87171") : "var(--text-muted)",
+            }}
+          >
+            ✓ {correct}/{answered || 0}
+            <span style={{ color: "var(--text-muted)" }}> · {questionCount} câu</span>
+          </span>
+        </div>
+      </div>
+
+      {/* SCORE BAR */}
+      <div className="sec-progress">
+        <div className="sec-progress__track">
+          <div
+            className="sec-progress__fill"
+            style={{
+              width: `${(answered / (questionCount || 1)) * 100}%`,
+              background: section.color,
+            }}
+          />
+        </div>
+        <span className="sec-progress__txt">
+          Đã làm {answered}/{questionCount}
         </span>
       </div>
 
       {/* RESET */}
-      <button className="reset-btn" onClick={() => setKey((k) => k + 1)}>
+      <button className="reset-btn" onClick={handleReset}>
         🔄 Làm lại phần này
       </button>
 
@@ -215,7 +285,12 @@ function SectionBlock({ section, startDelay = 0 }) {
         {!isReading && section.questions && (
           <div>
             {section.questions.map((q, idx) => (
-              <QuestionCard key={q.id} q={q} delay={startDelay + idx * 80} />
+              <QuestionCard
+                key={q.id}
+                q={q}
+                delay={startDelay + idx * 80}
+                onAnswer={onAnswer}
+              />
             ))}
           </div>
         )}
@@ -228,11 +303,19 @@ function SectionBlock({ section, startDelay = 0 }) {
                 key={passage.id}
                 passage={passage}
                 delay={idx * 100}
+                onAnswer={onAnswer}
               />
             ))}
           </div>
         )}
       </div>
+
+      {/* RESULT */}
+      {allDone && (
+        <div className={`sec-result ${pct >= 60 ? "sec-result--good" : "sec-result--bad"}`}>
+          {pct >= 60 ? "🎯" : "📌"} Phần này: đúng <strong>{correct}/{questionCount}</strong> ({pct}%)
+        </div>
+      )}
     </div>
   );
 }
@@ -240,26 +323,31 @@ function SectionBlock({ section, startDelay = 0 }) {
 /* =========================================================
  * EXAM CARD
  * =======================================================*/
+const N5_PASS_RATIO = 0.44; // ~80/180 điểm sàn JLPT N5
+
 function ExamCard({ exam }) {
   const [expanded, setExpanded] = useState(true);
+  const [answers, setAnswers] = useState({});
 
-  const totalQuestions = useMemo(() => {
-    let total = 0;
+  const allQids = useMemo(
+    () => exam.sections.flatMap((s) => getQuestionIds(s)),
+    [exam],
+  );
+  const totalQuestions = allQids.length;
 
-    exam.sections.forEach((section) => {
-      if (section.questions) {
-        total += section.questions.length;
-      }
+  const answeredAll = allQids.filter((id) => id in answers).length;
+  const correctAll = allQids.filter((id) => answers[id] === true).length;
+  const finished = totalQuestions > 0 && answeredAll === totalQuestions;
+  const pctTotal = totalQuestions > 0 ? Math.round((correctAll / totalQuestions) * 100) : 0;
+  const pass = correctAll / (totalQuestions || 1) >= N5_PASS_RATIO;
 
-      if (section.passages) {
-        section.passages.forEach((p) => {
-          total += p.questions.length;
-        });
-      }
+  const onAnswer = (qid, ok) => setAnswers((a) => ({ ...a, [qid]: ok }));
+  const onResetSection = (qids) =>
+    setAnswers((a) => {
+      const n = { ...a };
+      qids.forEach((id) => delete n[id]);
+      return n;
     });
-
-    return total;
-  }, [exam]);
 
   return (
     <div
@@ -321,6 +409,49 @@ function ExamCard({ exam }) {
         </div>
       </div>
 
+      {/* SCORE SUMMARY */}
+      {expanded && answeredAll > 0 && (
+        <div className="exam-summary">
+          <div className="exam-summary__score">
+            <div className="exam-summary__big">
+              {correctAll}
+              <span className="exam-summary__total">/{totalQuestions}</span>
+            </div>
+            <div className="exam-summary__cap">câu đúng · {pctTotal}% tổng đề</div>
+          </div>
+
+          <div className="exam-summary__barwrap">
+            <div className="exam-summary__bar">
+              <div
+                className="exam-summary__barfill"
+                style={{
+                  width: `${pctTotal}%`,
+                  background: pass ? "var(--accent-green)" : "var(--accent-red)",
+                }}
+              />
+              <div className="exam-summary__threshold" style={{ left: `${N5_PASS_RATIO * 100}%` }}>
+                <span>sàn N5</span>
+              </div>
+            </div>
+            <div className="exam-summary__hint">
+              Mức đậu N5 ≈ 80/180 (~44% tổng điểm) + đạt điểm sàn từng phần
+            </div>
+          </div>
+
+          <div
+            className={`exam-summary__verdict ${
+              finished ? (pass ? "is-pass" : "is-fail") : "is-progress"
+            }`}
+          >
+            {finished
+              ? pass
+                ? "✅ Ước tính ĐẠT"
+                : "❌ Ước tính CHƯA ĐẠT"
+              : `Còn ${totalQuestions - answeredAll} câu`}
+          </div>
+        </div>
+      )}
+
       {/* SECTIONS */}
       {expanded && (
         <div style={{ padding: 24 }}>
@@ -329,6 +460,9 @@ function ExamCard({ exam }) {
               key={section.id}
               section={section}
               startDelay={idx * 80}
+              answers={answers}
+              onAnswer={onAnswer}
+              onResetSection={onResetSection}
             />
           ))}
         </div>

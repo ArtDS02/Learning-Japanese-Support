@@ -1,5 +1,8 @@
 import vocabData from "../data/vocabulary.json";
 import { useState, useMemo, useEffect } from "react";
+import { rateCard, getCard, getStatus, orderForStudy } from "../lib/srs";
+import { recordReview } from "../lib/progress";
+import "../styles/tabs/vocabulary.css";
 
 const MARKED_KEY = "vocab_marked_ids";
 
@@ -71,7 +74,7 @@ export default function VocabularyTab() {
       if (next.has(id)) next.delete(id);
       else next.add(id);
       saveMarked(next);
-      setMarkAll(markedIds.length == filtered.length);
+      setMarkAll(filtered.length > 0 && filtered.every((w) => next.has(w.id)));
 
       return next;
     });
@@ -600,22 +603,36 @@ function fisherYates(arr) {
   return a;
 }
 
+const STATUS_META = {
+  new: { label: "🆕 Mới", color: "#60a5fa" },
+  learning: { label: "📚 Đang học", color: "#facc15" },
+  mastered: { label: "✅ Đã thuộc", color: "#34d399" },
+};
+
+function buildQueue(words, mode) {
+  if (mode === "random") return fisherYates(words);
+  return orderForStudy(words, "vocab", (w) => w.id);
+}
+
 function FlashCardStudy({ words, markedIds, onToggleMark }) {
-  const [deck, setDeck] = useState(words);
-  const [index, setIndex] = useState(0);
+  const [mode, setMode] = useState("srs"); // "srs" | "random"
+  const [queue, setQueue] = useState(() => buildQueue(words, "srs"));
+  const [pos, setPos] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [isShuffling, setIsShuffling] = useState(false);
-  const [isShuffled, setIsShuffled] = useState(false);
+  const [done, setDone] = useState(false);
+  const [session, setSession] = useState({ remember: 0, vague: 0, forget: 0 });
 
-  // Khi words bên ngoài thay đổi (đổi scope/filter), reset deck
+  // Dựng lại hàng đợi khi đổi bộ từ hoặc đổi chế độ
   useEffect(() => {
-    setDeck(words);
-    setIndex(0);
+    setQueue(buildQueue(words, mode));
+    setPos(0);
     setFlipped(false);
-    setIsShuffled(false);
-  }, [words]);
+    setDone(false);
+    setSession({ remember: 0, vague: 0, forget: 0 });
+  }, [words, mode]);
 
-  const word = deck[index];
+  const word = queue[pos];
 
   const animateCard = (callback) => {
     setIsShuffling(true);
@@ -625,40 +642,60 @@ function FlashCardStudy({ words, markedIds, onToggleMark }) {
     }, 180);
   };
 
-  const nextCard = () =>
+  const advance = (nextQueue = queue) => {
+    if (pos + 1 >= nextQueue.length) {
+      setDone(true);
+    } else {
+      setPos((p) => p + 1);
+      setFlipped(false);
+    }
+  };
+
+  const rate = (rating) => {
+    if (!word) return;
+    rateCard("vocab", word.id, rating);
+    recordReview(1);
+    setSession((s) => ({ ...s, [rating]: s[rating] + 1 }));
+
     animateCard(() => {
-      setIndex((prev) => (prev + 1) % deck.length);
+      // "Quên" trong chế độ SRS → đẩy lại thẻ vào cuối hàng đợi để gặp lại
+      if (rating === "forget" && mode === "srs") {
+        const nq = [...queue, word];
+        setQueue(nq);
+        advance(nq);
+      } else {
+        advance();
+      }
+    });
+  };
+
+  const skipNext = () =>
+    animateCard(() => {
+      setPos((p) => (p + 1) % queue.length);
       setFlipped(false);
     });
 
   const prevCard = () =>
     animateCard(() => {
-      setIndex((prev) => (prev - 1 + deck.length) % deck.length);
+      setPos((p) => (p - 1 + queue.length) % queue.length);
       setFlipped(false);
     });
 
-  const shuffleDeck = () =>
+  const restart = () =>
     animateCard(() => {
-      setDeck((prev) => fisherYates(prev));
-      setIndex(0);
+      setQueue(buildQueue(words, mode));
+      setPos(0);
       setFlipped(false);
-      setIsShuffled(true);
-    });
-
-  const resetDeck = () =>
-    animateCard(() => {
-      setDeck(words);
-      setIndex(0);
-      setFlipped(false);
-      setIsShuffled(false);
+      setDone(false);
+      setSession({ remember: 0, vague: 0, forget: 0 });
     });
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.repeat) return;
+      if (e.repeat || done) return;
       switch (e.key) {
         case "ArrowRight":
-          nextCard();
+          skipNext();
           break;
         case "ArrowLeft":
           prevCard();
@@ -669,23 +706,101 @@ function FlashCardStudy({ words, markedIds, onToggleMark }) {
           e.preventDefault();
           animateCard(() => setFlipped((prev) => !prev));
           break;
+        case "1":
+          if (flipped) rate("forget");
+          break;
+        case "2":
+          if (flipped) rate("vague");
+          break;
+        case "3":
+          if (flipped) rate("remember");
+          break;
         default:
           break;
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [flipped, deck.length]);
+  }, [flipped, queue, pos, done, mode]);
+
+  // ── Màn hình hoàn thành phiên ──
+  if (done || !word) {
+    const total = session.remember + session.vague + session.forget;
+    return (
+      <div className="flashcard-wrapper">
+        <div className="flash-summary">
+          <div style={{ fontSize: 54, marginBottom: 8 }}>
+            {session.forget === 0 ? "🎉" : session.remember >= session.forget ? "👏" : "💪"}
+          </div>
+          <h3 className="flash-summary__title">Hoàn thành phiên học!</h3>
+          <p className="flash-summary__sub">Bạn đã ôn {total} lượt thẻ</p>
+          <div className="flash-summary__stats">
+            <div className="flash-stat" style={{ "--c": "#34d399" }}>
+              <div className="flash-stat__n">{session.remember}</div>
+              <div className="flash-stat__l">😎 Nhớ</div>
+            </div>
+            <div className="flash-stat" style={{ "--c": "#facc15" }}>
+              <div className="flash-stat__n">{session.vague}</div>
+              <div className="flash-stat__l">🤔 Mơ hồ</div>
+            </div>
+            <div className="flash-stat" style={{ "--c": "#f87171" }}>
+              <div className="flash-stat__n">{session.forget}</div>
+              <div className="flash-stat__l">😟 Quên</div>
+            </div>
+          </div>
+          <button className="flash-restart-btn" onClick={restart}>
+            🔁 Học lại đợt mới
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   const isMarked = markedIds.has(word.id);
+  const card = getCard("vocab", word.id);
+  const status = getStatus(card);
+  const meta = STATUS_META[status];
+  const progress = Math.round((pos / queue.length) * 100);
 
   return (
     <div className="flashcard-wrapper">
+      {/* Mode switch */}
+      <div className="flash-mode-switch">
+        <button
+          className={`flash-mode-btn ${mode === "srs" ? "is-active" : ""}`}
+          onClick={() => setMode("srs")}
+          title="Ưu tiên thẻ khó & tới hạn ôn"
+        >
+          🧠 Ôn thông minh
+        </button>
+        <button
+          className={`flash-mode-btn ${mode === "random" ? "is-active" : ""}`}
+          onClick={() => setMode("random")}
+          title="Xáo trộn ngẫu nhiên"
+        >
+          🔀 Ngẫu nhiên
+        </button>
+      </div>
+
+      {/* Progress bar */}
+      <div className="flash-track">
+        <div className="flash-track__fill" style={{ width: `${progress}%` }} />
+      </div>
+
       <div
         className={`flashcard ${isShuffling ? "flashcard--shuffle" : ""}`}
         onClick={() => animateCard(() => setFlipped(!flipped))}
         style={{ position: "relative" }}
       >
+        {/* SRS status badge */}
+        <span
+          className="flash-status-badge"
+          style={{ color: meta.color, borderColor: `${meta.color}55`, background: `${meta.color}1a` }}
+        >
+          {meta.label}
+          {status === "learning" && card?.box ? ` · L${card.box}` : ""}
+        </span>
+
         {/* Bookmark button on flashcard */}
         <button
           onClick={(e) => {
@@ -736,28 +851,39 @@ function FlashCardStudy({ words, markedIds, onToggleMark }) {
         )}
       </div>
 
-      <div className="flashcard-keyboard-hint">⌨ ← → đổi card · ↑ ↓ flip</div>
+      {/* Rating buttons — chỉ hiện khi đã lật để xem nghĩa */}
+      {flipped ? (
+        <div className="flash-rate">
+          <button className="flash-rate__btn flash-rate__btn--forget" onClick={() => rate("forget")}>
+            😟 Quên <kbd>1</kbd>
+          </button>
+          <button className="flash-rate__btn flash-rate__btn--vague" onClick={() => rate("vague")}>
+            🤔 Mơ hồ <kbd>2</kbd>
+          </button>
+          <button className="flash-rate__btn flash-rate__btn--remember" onClick={() => rate("remember")}>
+            😎 Nhớ <kbd>3</kbd>
+          </button>
+        </div>
+      ) : (
+        <div className="flashcard-keyboard-hint">
+          ⌨ Space lật · ← → đổi thẻ · 1 / 2 / 3 chấm nhớ
+        </div>
+      )}
 
       <div className="flashcard-progress">
-        {index + 1} / {deck.length}
-        {isShuffled && (
-          <span style={{ marginLeft: 8, fontSize: 11, color: "#a78bfa" }}>
-            🔀 Đã xáo trộn
-          </span>
-        )}
+        {pos + 1} / {queue.length}
+        <span style={{ marginLeft: 10, fontSize: 11, color: "#34d399" }}>
+          ✓ {session.remember}
+        </span>
+        <span style={{ marginLeft: 6, fontSize: 11, color: "#f87171" }}>
+          ✗ {session.forget}
+        </span>
       </div>
 
       <div className="flashcard-actions">
-        <button onClick={prevCard}>⬅ Prev</button>
-        <button onClick={shuffleDeck} title="Xáo trộn thứ tự toàn bộ deck">
-          🔀 Shuffle
-        </button>
-        {isShuffled && (
-          <button onClick={resetDeck} title="Khôi phục thứ tự gốc">
-            ↺ Reset
-          </button>
-        )}
-        <button onClick={nextCard}>Next ➡</button>
+        <button onClick={prevCard}>⬅ Trước</button>
+        <button onClick={restart} title="Bắt đầu lại phiên">↺ Làm lại</button>
+        <button onClick={skipNext}>Bỏ qua ➡</button>
       </div>
     </div>
   );

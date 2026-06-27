@@ -1,5 +1,6 @@
 import { useState } from "react";
 import data from "../data/tips-exercises.json";
+import "../styles/tabs/tips.css";
 
 const { tips } = data;
 
