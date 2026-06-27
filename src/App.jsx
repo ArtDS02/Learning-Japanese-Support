@@ -11,31 +11,48 @@ import "./styles/global.css";
 
 const TABS = [
   { id: "vocabulary", label: "📖 Từ vựng" },
-  { id: "grammar",    label: "⚙️ Ngữ pháp" },
-  { id: "kanji",      label: "🈳 Kanji" },
-  { id: "kana",       label: "🔤 Kana" },
-  { id: "numbers",    label: "🔢 Số đếm" },
-  { id: "tips",       label: "💡 Mẹo thi" },
-  { id: "exercises",  label: "✏️ Bài tập" },
-  { id: "studyplan",  label: "🗓️ Lộ trình" },
+  { id: "grammar", label: "⚙️ Ngữ pháp" },
+  { id: "kanji", label: "🈳 Kanji" },
+  { id: "kana", label: "🔤 Kana" },
+  { id: "numbers", label: "🔢 Số đếm" },
+  { id: "tips", label: "💡 Mẹo thi" },
+  { id: "exercises", label: "✏️ Bài tập" },
+  { id: "studyplan", label: "🗓️ Lộ trình" },
 ];
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("vocabulary");
+  const [activeTab, setActiveTab] = useState(() => {
+    return localStorage.getItem("jlpt-active-tab") || "vocabulary";
+  });
   const [mounted, setMounted] = useState(false);
-  useEffect(() => { setTimeout(() => setMounted(true), 50); }, []);
+  useEffect(() => {
+    setTimeout(() => setMounted(true), 50);
+  }, []);
+  
+  useEffect(() => {
+    localStorage.setItem("jlpt-active-tab", activeTab);
+  }, [activeTab]);
 
   const renderTab = () => {
     switch (activeTab) {
-      case "vocabulary": return <VocabularyTab />;
-      case "grammar":    return <GrammarTab />;
-      case "kanji":      return <KanjiTab />;
-      case "kana":       return <KanaTab />;
-      case "numbers":    return <NumbersTab />;
-      case "tips":       return <TipsTab />;
-      case "exercises":  return <ExercisesTab />;
-      case "studyplan":  return <StudyPlanTab />;
-      default:           return null;
+      case "vocabulary":
+        return <VocabularyTab />;
+      case "grammar":
+        return <GrammarTab />;
+      case "kanji":
+        return <KanjiTab />;
+      case "kana":
+        return <KanaTab />;
+      case "numbers":
+        return <NumbersTab />;
+      case "tips":
+        return <TipsTab />;
+      case "exercises":
+        return <ExercisesTab />;
+      case "studyplan":
+        return <StudyPlanTab />;
+      default:
+        return null;
     }
   };
 

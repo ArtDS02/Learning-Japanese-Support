@@ -5,8 +5,37 @@ export default function KanjiTab() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [search, setSearch] = useState("");
   const [selectedIdx, setSelectedIdx] = useState(null); // index in `filtered`
-  const [marked, setMarked] = useState(new Set()); // Set of kanji ids
+  const [marked, setMarked] = useState(() => {
+    try {
+      const saved = localStorage.getItem("kanji_marked");
+      return saved ? new Set(JSON.parse(saved)) : new Set();
+    } catch {
+      return new Set();
+    }
+  }); // Set of kanji ids
+  const [learned, setLearned] = useState(() => {
+    try {
+      const saved = localStorage.getItem("kanji_learned");
+      return saved ? new Set(JSON.parse(saved)) : new Set();
+    } catch {
+      return new Set();
+    }
+  }); // Set of kanji ids that user marked as "đã học"
   const [mode, setMode] = useState("browse"); // "browse" | "flashcard"
+
+  // Persist marked to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem("kanji_marked", JSON.stringify([...marked]));
+    } catch {}
+  }, [marked]);
+
+  // Persist learned to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem("kanji_learned", JSON.stringify([...learned]));
+    } catch {}
+  }, [learned]);
 
   const filtered = useMemo(() => {
     return kanjiData.kanji.filter((k) => {
@@ -34,6 +63,35 @@ export default function KanjiTab() {
     });
   };
 
+  const markAll = () => {
+    setMarked((prev) => {
+      const next = new Set(prev);
+      filtered.forEach((k) => next.add(k.id));
+      return next;
+    });
+  };
+
+  const unmarkAll = () => {
+    setMarked((prev) => {
+      const next = new Set(prev);
+      filtered.forEach((k) => next.delete(k.id));
+      return next;
+    });
+  };
+
+  const toggleLearn = (id) => {
+    setLearned((prev) => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+  };
+
+  const clearAllLearned = () => setLearned(new Set());
+
+  const allFilteredMarked =
+    filtered.length > 0 && filtered.every((k) => marked.has(k.id));
+
   const markedList = kanjiData.kanji.filter((k) => marked.has(k.id));
 
   // Keyboard navigation in modal
@@ -59,6 +117,9 @@ export default function KanjiTab() {
         catColor={catColor}
         onExit={() => setMode("browse")}
         isMarkedOnly={markedList.length > 0}
+        learned={learned}
+        onToggleLearn={toggleLearn}
+        onClearLearned={clearAllLearned}
       />
     );
   }
@@ -72,6 +133,11 @@ export default function KanjiTab() {
           {marked.size > 0 && (
             <span style={{ marginLeft: 8, color: "#f59e0b", fontWeight: 700 }}>
               · ★ {marked.size} đã đánh dấu
+            </span>
+          )}
+          {learned.size > 0 && (
+            <span style={{ marginLeft: 8, color: "#22c55e", fontWeight: 700 }}>
+              · ✓ {learned.size} đã học
             </span>
           )}
         </p>
@@ -103,9 +169,12 @@ export default function KanjiTab() {
             ? `(★ ${markedList.length})`
             : `(${filtered.length})`}
         </button>
-        {marked.size > 0 && (
+
+        {/* Mark all / Unmark all cho filtered hiện tại */}
+        {!allFilteredMarked ? (
           <button
-            onClick={() => setMarked(new Set())}
+            onClick={markAll}
+            title={`Đánh dấu tất cả ${filtered.length} kanji đang hiển thị`}
             style={{
               padding: "8px 14px",
               borderRadius: 20,
@@ -118,7 +187,46 @@ export default function KanjiTab() {
               fontFamily: "var(--font-mono)",
             }}
           >
-            Bỏ tất cả ★
+            ★ Đánh dấu tất cả
+          </button>
+        ) : (
+          <button
+            onClick={unmarkAll}
+            title={`Bỏ đánh dấu tất cả ${filtered.length} kanji đang hiển thị`}
+            style={{
+              padding: "8px 14px",
+              borderRadius: 20,
+              border: "1.5px solid #f59e0b44",
+              background: "#f59e0b22",
+              color: "#f59e0b",
+              fontSize: 20,
+              fontWeight: 700,
+              cursor: "pointer",
+              fontFamily: "var(--font-mono)",
+            }}
+          >
+            ☆ Bỏ đánh dấu tất cả
+          </button>
+        )}
+
+        {/* Xóa tất cả đánh dấu đã học */}
+        {learned.size > 0 && (
+          <button
+            onClick={clearAllLearned}
+            title="Xóa tất cả đánh dấu đã học"
+            style={{
+              padding: "8px 14px",
+              borderRadius: 20,
+              border: "1.5px solid #22c55e44",
+              background: "transparent",
+              color: "#22c55e",
+              fontSize: 20,
+              fontWeight: 700,
+              cursor: "pointer",
+              fontFamily: "var(--font-mono)",
+            }}
+          >
+            ✓ Xóa đã học ({learned.size})
           </button>
         )}
       </div>
@@ -222,6 +330,18 @@ export default function KanjiTab() {
           <span style={{ color: "#f59e0b", fontSize: 20 }}>★</span>
           Đã đánh dấu
         </span>
+        <span
+          style={{
+            fontSize: 20,
+            color: "var(--text-muted)",
+            display: "flex",
+            alignItems: "center",
+            gap: 6,
+          }}
+        >
+          <span style={{ color: "#22c55e", fontSize: 20 }}>✓</span>
+          Đã học
+        </span>
       </div>
 
       {filtered.length === 0 ? (
@@ -267,6 +387,27 @@ export default function KanjiTab() {
               >
                 ★
               </button>
+              {/* Learned badge */}
+              {learned.has(k.id) && (
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 6,
+                    left: 6,
+                    background: "#22c55e22",
+                    border: "1px solid #22c55e66",
+                    borderRadius: 20,
+                    padding: "1px 6px",
+                    fontSize: 10,
+                    fontWeight: 700,
+                    color: "#22c55e",
+                    fontFamily: "var(--font-mono)",
+                    zIndex: 100,
+                  }}
+                >
+                  ✓
+                </div>
+              )}
               {/* <span className="kanji-stroke">{k.stroke}nét</span> */}
               <span className="kanji-char">{k.char}</span>
               <div className="kanji-meaning">{k.meaning}</div>
@@ -312,6 +453,8 @@ export default function KanjiTab() {
           catColor={catColor(filtered[selectedIdx].category)}
           isMarked={marked.has(filtered[selectedIdx].id)}
           onToggleMark={() => toggleMark(filtered[selectedIdx].id)}
+          isLearned={learned.has(filtered[selectedIdx].id)}
+          onToggleLearn={() => toggleLearn(filtered[selectedIdx].id)}
         />
       )}
     </div>
@@ -604,7 +747,15 @@ function StrokeOrderAnimator({ strokes, catColor }) {
 
 // ─── Modal ────────────────────────────────────────────────────────────────────
 
-function KanjiModal({ kanji, onClose, catColor }) {
+function KanjiModal({
+  kanji,
+  onClose,
+  catColor,
+  isMarked,
+  onToggleMark,
+  isLearned,
+  onToggleLearn,
+}) {
   return (
     <div className="kanji-modal-overlay" onClick={onClose}>
       <div className="kanji-modal" onClick={(e) => e.stopPropagation()}>
@@ -719,6 +870,55 @@ function KanjiModal({ kanji, onClose, catColor }) {
               </div>
             ))}
           </div>
+
+          {/* Action buttons: Mark + Learned */}
+          <div
+            style={{
+              display: "flex",
+              gap: 10,
+              marginTop: 18,
+              justifyContent: "center",
+            }}
+          >
+            <button
+              onClick={onToggleMark}
+              style={{
+                flex: 1,
+                padding: "10px 14px",
+                borderRadius: 16,
+                border: isMarked
+                  ? "1.5px solid #f59e0b"
+                  : "1.5px solid #f59e0b44",
+                background: isMarked ? "#f59e0b22" : "transparent",
+                color: "#f59e0b",
+                fontSize: 14,
+                fontWeight: 700,
+                cursor: "pointer",
+                transition: "all 0.2s",
+              }}
+            >
+              {isMarked ? "★ Bỏ đánh dấu" : "☆ Đánh dấu"}
+            </button>
+            <button
+              onClick={onToggleLearn}
+              style={{
+                flex: 1,
+                padding: "10px 14px",
+                borderRadius: 16,
+                border: isLearned
+                  ? "1.5px solid #22c55e"
+                  : "1.5px solid #22c55e44",
+                background: isLearned ? "#22c55e22" : "transparent",
+                color: "#22c55e",
+                fontSize: 14,
+                fontWeight: 700,
+                cursor: "pointer",
+                transition: "all 0.2s",
+              }}
+            >
+              {isLearned ? "✓ Đã học rồi" : "○ Đánh dấu đã học"}
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -783,7 +983,16 @@ const FLIP_STYLE = `
   }
 `;
 
-function FlashcardMode({ deck, catColor, onExit, isMarkedOnly }) {
+function FlashcardMode({
+  deck,
+  catColor,
+  onExit,
+  isMarkedOnly,
+  learned,
+  onToggleLearn,
+  onClearLearned,
+}) {
+  const [showIntro, setShowIntro] = useState(true); // màn hình chào khi vừa vào
   const [order, setOrder] = useState(() => deck.map((_, i) => i));
   const [cardIdx, setCardIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -807,6 +1016,7 @@ function FlashcardMode({ deck, catColor, onExit, isMarkedOnly }) {
     setFlipped(false);
     setResults({});
     setDone(false);
+    setShowIntro(false); // học lại thì không show intro nữa
     setSlideDir("right");
     setAnimKey((k) => k + 1);
   }, [deck]);
@@ -819,31 +1029,66 @@ function FlashcardMode({ deck, catColor, onExit, isMarkedOnly }) {
   useEffect(() => {
     const handler = (e) => {
       if (done) return;
-      if (e.key === " " || e.key === "Enter") {
+
+      // Flip card
+      if (
+        e.key === " " ||
+        e.key === "Enter" ||
+        e.key === "ArrowUp" ||
+        e.key === "ArrowDown"
+      ) {
         e.preventDefault();
-        if (!flipped) setFlipped(true);
-      } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+
+        if (!flipped) {
+          setFlipped(true); // <-- FIX
+        } else {
+          handleAnswer("know");
+        }
+
+        return;
+      }
+
+      // Next
+      if (e.key === "ArrowRight") {
         e.preventDefault();
+
         if (flipped) {
           handleAnswer("know");
         } else {
           goNext();
         }
-      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+
+        return;
+      }
+
+      // Prev / Again
+      if (e.key === "ArrowLeft") {
         e.preventDefault();
+
         if (flipped) {
           handleAnswer("again");
         } else {
           goPrev();
         }
-      } else if (e.key === "1") {
-        if (flipped) handleAnswer("again");
-      } else if (e.key === "2") {
-        if (flipped) handleAnswer("know");
+
+        return;
+      }
+
+      // Shortcuts
+      if (e.key === "1" && flipped) {
+        handleAnswer("again");
+      }
+
+      if (e.key === "2" && flipped) {
+        handleAnswer("know");
       }
     };
+
     window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
+
+    return () => {
+      window.removeEventListener("keydown", handler);
+    };
   }, [flipped, cardIdx, order, done]);
 
   const current = deck[order[cardIdx]];
@@ -881,6 +1126,141 @@ function FlashcardMode({ deck, catColor, onExit, isMarkedOnly }) {
       setCardIdx((i) => i + 1);
       setFlipped(false);
     }
+  }
+
+  // ── Intro screen ─────────────────────────────────────────────────────────
+  if (showIntro) {
+    const learnedInDeck = deck.filter((k) => learned.has(k.id)).length;
+    const unlearnedCount = deck.length - learnedInDeck;
+    return (
+      <div style={{ textAlign: "center", padding: "48px 24px" }}>
+        <div style={{ fontSize: 56, marginBottom: 16 }}>🃏</div>
+        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>
+          {isMarkedOnly ? "Ôn kanji đã đánh dấu" : "Ôn tất cả kanji"}
+        </h2>
+        <p
+          style={{ color: "var(--text-muted)", fontSize: 14, marginBottom: 28 }}
+        >
+          {deck.length} thẻ sẽ được xáo ngẫu nhiên
+          {learnedInDeck > 0 && (
+            <span style={{ display: "block", marginTop: 6, color: "#22c55e" }}>
+              ✓ {learnedInDeck} đã học · {unlearnedCount} còn lại
+            </span>
+          )}
+        </p>
+
+        {/* Stats nhanh */}
+        <div
+          style={{
+            display: "flex",
+            gap: 12,
+            justifyContent: "center",
+            marginBottom: 32,
+            flexWrap: "wrap",
+          }}
+        >
+          <div
+            style={{
+              padding: "14px 22px",
+              borderRadius: 14,
+              background: "#a78bfa22",
+              border: "1.5px solid #a78bfa44",
+            }}
+          >
+            <div style={{ fontSize: 26, fontWeight: 800, color: "#a78bfa" }}>
+              {deck.length}
+            </div>
+            <div
+              style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 2 }}
+            >
+              Tổng thẻ
+            </div>
+          </div>
+          {learnedInDeck > 0 && (
+            <div
+              style={{
+                padding: "14px 22px",
+                borderRadius: 14,
+                background: "#22c55e22",
+                border: "1.5px solid #22c55e44",
+              }}
+            >
+              <div style={{ fontSize: 26, fontWeight: 800, color: "#22c55e" }}>
+                {learnedInDeck}
+              </div>
+              <div
+                style={{
+                  fontSize: 11,
+                  color: "var(--text-muted)",
+                  marginTop: 2,
+                }}
+              >
+                Đã học
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            gap: 10,
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <button
+            onClick={() => setShowIntro(false)}
+            style={{
+              padding: "12px 28px",
+              borderRadius: 20,
+              border: "1.5px solid #a78bfa",
+              background: "#a78bfa",
+              color: "#0a0b0f",
+              fontSize: 15,
+              fontWeight: 700,
+              cursor: "pointer",
+            }}
+          >
+            🚀 Bắt đầu học
+          </button>
+          <button
+            onClick={onExit}
+            style={{
+              padding: "12px 22px",
+              borderRadius: 20,
+              border: "1.5px solid var(--bg-border)",
+              background: "transparent",
+              color: "var(--text-muted)",
+              fontSize: 14,
+              fontWeight: 700,
+              cursor: "pointer",
+            }}
+          >
+            ← Quay lại
+          </button>
+        </div>
+
+        {learnedInDeck > 0 && (
+          <button
+            onClick={onClearLearned}
+            style={{
+              marginTop: 16,
+              padding: "8px 18px",
+              borderRadius: 20,
+              border: "1.5px solid #22c55e44",
+              background: "transparent",
+              color: "#22c55e",
+              fontSize: 12,
+              fontWeight: 700,
+              cursor: "pointer",
+            }}
+          >
+            Xóa {learnedInDeck} đánh dấu đã học
+          </button>
+        )}
+      </div>
+    );
   }
 
   // ── Done screen ───────────────────────────────────────────────────────────
@@ -983,6 +1363,24 @@ function FlashcardMode({ deck, catColor, onExit, isMarkedOnly }) {
             ← Quay lại
           </button>
         </div>
+        {learned.size > 0 && (
+          <button
+            onClick={onClearLearned}
+            style={{
+              marginTop: 14,
+              padding: "8px 18px",
+              borderRadius: 20,
+              border: "1.5px solid #22c55e44",
+              background: "transparent",
+              color: "#22c55e",
+              fontSize: 12,
+              fontWeight: 700,
+              cursor: "pointer",
+            }}
+          >
+            Xóa tất cả {learned.size} đánh dấu đã học
+          </button>
+        )}
       </div>
     );
   }
@@ -1084,6 +1482,40 @@ function FlashcardMode({ deck, catColor, onExit, isMarkedOnly }) {
                 background: `${color}09`,
               }}
             >
+              {/* Learned badge top-right */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggleLearn(current.id);
+                }}
+                style={{
+                  position: "absolute",
+                  top: 10,
+                  right: 10,
+                  background: learned.has(current.id)
+                    ? "#22c55e22"
+                    : "transparent",
+                  border: learned.has(current.id)
+                    ? "1.5px solid #22c55e"
+                    : "1.5px solid var(--bg-border)",
+                  borderRadius: 20,
+                  padding: "3px 10px",
+                  color: learned.has(current.id)
+                    ? "#22c55e"
+                    : "var(--text-muted)",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  cursor: "pointer",
+                  transition: "all 0.2s",
+                }}
+                title={
+                  learned.has(current.id)
+                    ? "Bỏ đánh dấu đã học"
+                    : "Đánh dấu đã học"
+                }
+              >
+                {learned.has(current.id) ? "✓ Đã học" : "○ Đã học"}
+              </button>
               <div
                 style={{
                   fontSize: 88,
