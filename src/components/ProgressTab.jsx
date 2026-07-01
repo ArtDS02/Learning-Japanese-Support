@@ -139,14 +139,14 @@ export default function ProgressTab() {
                   <span className="prog-cat__name">
                     {c.icon} {c.label}
                   </span>
-                  <span className="prog-cat__num" style={{ color: c.color }}>
+                  <span className="prog-cat__num" style={{ "--c": c.color }}>
                     {s.mastered}/{s.total}
                   </span>
                 </div>
                 <div className="prog-cat__track">
                   <div
                     className="prog-cat__fill"
-                    style={{ width: `${pct}%`, background: c.color }}
+                    style={{ width: `${pct}%`, "--c": c.color }}
                   />
                 </div>
               </div>
@@ -185,12 +185,8 @@ export default function ProgressTab() {
           {activity.map((a) => (
             <div key={a.date} className="prog-chart__col" title={`${a.date}: ${a.count} lượt`}>
               <div
-                className="prog-chart__bar"
-                style={{
-                  height: `${a.count === 0 ? 3 : 8 + (a.count / maxAct) * 80}px`,
-                  background: a.count === 0 ? "rgba(255,255,255,0.06)" : "var(--accent-cyan)",
-                  opacity: a.offset === 0 ? 1 : 0.7,
-                }}
+                className={`prog-chart__bar ${a.count === 0 ? "is-empty" : ""} ${a.offset === 0 ? "is-today" : ""}`}
+                style={{ height: `${a.count === 0 ? 3 : 8 + (a.count / maxAct) * 80}%` }}
               />
               <div className="prog-chart__day">{a.date.slice(8)}</div>
             </div>
@@ -201,9 +197,9 @@ export default function ProgressTab() {
       {/* How it works + reset */}
       <div className="prog-note">
         <strong>Cách hoạt động:</strong> Khi học flashcard, chấm thẻ
-        <span style={{ color: "#f87171" }}> 😟 Quên</span> /
-        <span style={{ color: "#facc15" }}> 🤔 Mơ hồ</span> /
-        <span style={{ color: "#34d399" }}> 😎 Nhớ</span>. Thẻ trả lời đúng nhiều lần
+        <span className="tone-forget"> 😟 Quên</span> /
+        <span className="tone-vague"> 🤔 Mơ hồ</span> /
+        <span className="tone-remember"> 😎 Nhớ</span>. Thẻ trả lời đúng nhiều lần
         sẽ lên cấp (L1→L5) và giãn dần thời gian ôn; đạt <strong>L4</strong> trở lên được
         tính là <em>đã thuộc</em>. Mọi tiến độ lưu ngay trên trình duyệt này.
       </div>

@@ -108,15 +108,7 @@ function QuestionCard({ q, delay = 0, onAnswer }) {
             onClick={() => handleSelect(choice)}
             disabled={revealed}
           >
-            <span
-              style={{
-                fontFamily: "var(--font-mono)",
-                marginRight: 8,
-                opacity: 0.5,
-              }}
-            >
-              {String.fromCharCode(65 + i)}.
-            </span>
+            <span className="choice-letter">{String.fromCharCode(65 + i)}.</span>
 
             {choice}
           </button>
@@ -130,7 +122,7 @@ function QuestionCard({ q, delay = 0, onAnswer }) {
             isCorrect ? "answer-reveal--correct" : "answer-reveal--wrong"
           }`}
         >
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>
+          <div className="answer-reveal__head">
             {isCorrect
               ? "✅ Chính xác!"
               : `❌ Sai rồi! Đáp án đúng: ${q.answer}`}
@@ -160,48 +152,13 @@ function QuestionCard({ q, delay = 0, onAnswer }) {
 function ReadingPassage({ passage, onAnswer }) {
   return (
     <div className="reading-passage">
-      <div
-        style={{
-          marginBottom: 20,
-          padding: 20,
-          background: "var(--bg-card)",
-          border: "1px solid var(--bg-border)",
-          borderRadius: "var(--radius-lg)",
-        }}
-      >
-        <h4
-          style={{
-            marginBottom: 12,
-            fontSize: 20,
-            fontWeight: 700,
-          }}
-        >
-          📖 {passage.title}
-        </h4>
+      <div className="reading-box">
+        <h4 className="reading-box__title">📖 {passage.title}</h4>
 
-        <div
-          style={{
-            lineHeight: 1.9,
-            fontSize: 17,
-            marginBottom: 16,
-          }}
-        >
-          {passage.text}
-        </div>
+        <div className="reading-box__text">{passage.text}</div>
 
         {passage.translation && (
-          <div
-            style={{
-              padding: 16,
-              borderRadius: 12,
-              background: "rgba(255,255,255,0.04)",
-              color: "var(--text-secondary)",
-              fontSize: 14,
-              lineHeight: 1.7,
-            }}
-          >
-            🇻🇳 {passage.translation}
-          </div>
+          <div className="reading-box__trans">🇻🇳 {passage.translation}</div>
         )}
       </div>
 
@@ -238,22 +195,19 @@ function SectionBlock({ section, startDelay = 0, answers, onAnswer, onResetSecti
     <div className="exercise-set">
       {/* HEADER */}
       <div className="exercise-set__header">
-        <span style={{ fontSize: 24 }}>{section.icon}</span>
+        <span className="exercise-set__icon">{section.icon}</span>
 
-        <h3 className="exercise-set__title" style={{ color: section.color }}>
+        <h3 className="exercise-set__title" style={{ "--c": section.color }}>
           {section.title}
         </h3>
 
         <div className="exercise-set__tools">
           <SectionTimer minutes={section.timeLimit} />
           <span
-            className="sec-score-chip"
-            style={{
-              color: answered ? (pct >= 60 ? "#34d399" : "#f87171") : "var(--text-muted)",
-            }}
+            className={`sec-score-chip ${answered ? (pct >= 60 ? "is-good" : "is-bad") : ""}`}
           >
             ✓ {correct}/{answered || 0}
-            <span style={{ color: "var(--text-muted)" }}> · {questionCount} câu</span>
+            <span className="sec-score-chip__total"> · {questionCount} câu</span>
           </span>
         </div>
       </div>
@@ -265,7 +219,7 @@ function SectionBlock({ section, startDelay = 0, answers, onAnswer, onResetSecti
             className="sec-progress__fill"
             style={{
               width: `${(answered / (questionCount || 1)) * 100}%`,
-              background: section.color,
+              "--c": section.color,
             }}
           />
         </div>
@@ -350,57 +304,15 @@ function ExamCard({ exam }) {
     });
 
   return (
-    <div
-      style={{
-        marginBottom: 48,
-        border: "1px solid var(--bg-border)",
-        borderRadius: "var(--radius-xl)",
-        overflow: "hidden",
-        background: "rgba(255,255,255,0.02)",
-      }}
-    >
+    <div className="exam-card">
       {/* EXAM HEADER */}
-      <div
-        style={{
-          padding: 24,
-          borderBottom: "1px solid var(--bg-border)",
-          display: "flex",
-          alignItems: "center",
-          gap: 16,
-          flexWrap: "wrap",
-        }}
-      >
+      <div className="exam-card__head">
         <div>
-          <div
-            style={{
-              fontSize: 12,
-              opacity: 0.6,
-              letterSpacing: 1.2,
-              marginBottom: 6,
-            }}
-          >
-            JLPT MOCK EXAM
-          </div>
-
-          <h2
-            style={{
-              margin: 0,
-              fontSize: 28,
-              fontWeight: 800,
-            }}
-          >
-            🎌 {exam.title}
-          </h2>
+          <div className="exam-card__label">JLPT MOCK EXAM</div>
+          <h2 className="exam-card__title">🎌 {exam.title}</h2>
         </div>
 
-        <div
-          style={{
-            marginLeft: "auto",
-            display: "flex",
-            gap: 12,
-            flexWrap: "wrap",
-          }}
-        >
+        <div className="exam-card__actions">
           <div className="filter-btn">📝 {totalQuestions} câu</div>
 
           <button className="filter-btn" onClick={() => setExpanded((v) => !v)}>
@@ -423,13 +335,10 @@ function ExamCard({ exam }) {
           <div className="exam-summary__barwrap">
             <div className="exam-summary__bar">
               <div
-                className="exam-summary__barfill"
-                style={{
-                  width: `${pctTotal}%`,
-                  background: pass ? "var(--accent-green)" : "var(--accent-red)",
-                }}
+                className={`exam-summary__barfill ${pass ? "is-pass" : "is-fail"}`}
+                style={{ width: `${pctTotal}%` }}
               />
-              <div className="exam-summary__threshold" style={{ left: `${N5_PASS_RATIO * 100}%` }}>
+              <div className="exam-summary__threshold">
                 <span>sàn N5</span>
               </div>
             </div>
@@ -454,7 +363,7 @@ function ExamCard({ exam }) {
 
       {/* SECTIONS */}
       {expanded && (
-        <div style={{ padding: 24 }}>
+        <div className="exam-card__sections">
           {exam.sections.map((section, idx) => (
             <SectionBlock
               key={section.id}
@@ -543,14 +452,7 @@ export default function ExercisesTab() {
           className={`filter-btn ${
             activeExam === "all" ? "filter-btn--active" : ""
           }`}
-          style={
-            activeExam === "all"
-              ? {
-                  background: "#a78bfa",
-                  color: "#0a0b0f",
-                }
-              : {}
-          }
+          style={{ "--c": "#a78bfa" }}
           onClick={() => {
             setActiveExam("all");
             setGlobalKey((k) => k + 1);
@@ -578,7 +480,7 @@ export default function ExercisesTab() {
       {/* =====================================================
        * SECTION TYPE FILTER
        * ===================================================*/}
-      <div className="filter-bar" style={{ marginTop: 12 }}>
+      <div className="filter-bar ex-filter-gap">
         <span className="filter-label">Phần thi:</span>
 
         {/* ALL */}
@@ -586,14 +488,7 @@ export default function ExercisesTab() {
           className={`filter-btn ${
             activeSectionType === "all" ? "filter-btn--active" : ""
           }`}
-          style={
-            activeSectionType === "all"
-              ? {
-                  background: "#94a3b8",
-                  color: "#0a0b0f",
-                }
-              : {}
-          }
+          style={{ "--c": "#94a3b8" }}
           onClick={() => {
             setActiveSectionType("all");
             setGlobalKey((k) => k + 1);
@@ -607,14 +502,7 @@ export default function ExercisesTab() {
           className={`filter-btn ${
             activeSectionType === "vocab" ? "filter-btn--active" : ""
           }`}
-          style={
-            activeSectionType === "vocab"
-              ? {
-                  background: "#22d3ee",
-                  color: "#0a0b0f",
-                }
-              : {}
-          }
+          style={{ "--c": "#22d3ee" }}
           onClick={() => {
             setActiveSectionType("vocab");
             setGlobalKey((k) => k + 1);
@@ -628,14 +516,7 @@ export default function ExercisesTab() {
           className={`filter-btn ${
             activeSectionType === "grammar" ? "filter-btn--active" : ""
           }`}
-          style={
-            activeSectionType === "grammar"
-              ? {
-                  background: "#a78bfa",
-                  color: "#0a0b0f",
-                }
-              : {}
-          }
+          style={{ "--c": "#a78bfa" }}
           onClick={() => {
             setActiveSectionType("grammar");
             setGlobalKey((k) => k + 1);
@@ -649,14 +530,7 @@ export default function ExercisesTab() {
           className={`filter-btn ${
             activeSectionType === "reading" ? "filter-btn--active" : ""
           }`}
-          style={
-            activeSectionType === "reading"
-              ? {
-                  background: "#34d399",
-                  color: "#0a0b0f",
-                }
-              : {}
-          }
+          style={{ "--c": "#34d399" }}
           onClick={() => {
             setActiveSectionType("reading");
             setGlobalKey((k) => k + 1);
@@ -680,61 +554,17 @@ export default function ExercisesTab() {
 
       {/* EMPTY */}
       {finalExams.length === 0 && (
-        <div
-          style={{
-            marginTop: 40,
-            padding: 40,
-            textAlign: "center",
-            border: "1px solid var(--bg-border)",
-            borderRadius: "var(--radius-lg)",
-            background: "rgba(255,255,255,0.02)",
-          }}
-        >
-          <div style={{ fontSize: 42 }}>😢</div>
-
-          <div
-            style={{
-              marginTop: 12,
-              fontSize: 18,
-              fontWeight: 700,
-            }}
-          >
-            Không có dữ liệu phù hợp
-          </div>
+        <div className="ex-empty">
+          <div className="ex-empty__icon">😢</div>
+          <div className="ex-empty__text">Không có dữ liệu phù hợp</div>
         </div>
       )}
 
       {/* FOOTER */}
-      <div
-        style={{
-          marginTop: 32,
-          padding: 24,
-          background: "var(--bg-card)",
-          border: "1px solid rgba(34,211,238,0.2)",
-          borderRadius: "var(--radius-lg)",
-          textAlign: "center",
-        }}
-      >
-        <div style={{ fontSize: 32, marginBottom: 12 }}>🎌</div>
-
-        <div
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: 20,
-            fontWeight: 700,
-            color: "var(--accent-cyan)",
-            marginBottom: 8,
-          }}
-        >
-          がんばってください！
-        </div>
-
-        <div
-          style={{
-            color: "var(--text-secondary)",
-            fontSize: 14,
-          }}
-        >
+      <div className="ex-footer">
+        <div className="ex-footer__emoji">🎌</div>
+        <div className="ex-footer__jp">がんばってください！</div>
+        <div className="ex-footer__sub">
           Luyện tập mỗi ngày, dù chỉ 15 phút — đó là bí quyết thành công!
         </div>
       </div>

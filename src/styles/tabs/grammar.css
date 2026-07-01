@@ -4,283 +4,493 @@
    ============================================================ */
 
 .grammar-section {
-  margin-bottom: 40px;
+margin-bottom: 2.0833vw;
 }
 
 .grammar-section__title {
-  font-family: var(--font-display);
-  font-size: 20px;
+font-family: var(--font-display);
+  font-size: 1.0417vw;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 0.8333vw;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.5208vw;
 }
 
 .particle-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 16px;
+display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17.7083vw, 1fr));
+  gap: 0.8333vw;
 }
 
 .particle-card {
-  background: var(--bg-card);
-  border: 1px solid var(--bg-border);
+background: var(--bg-card);
+  border: 0.0521vw solid var(--bg-border);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 1.0417vw;
   transition: all var(--transition);
   animation: fade-up 0.4s ease both;
 }
 
 .particle-card:hover {
-  background: var(--bg-card-hover);
-  transform: translateY(-2px);
+background: var(--bg-card-hover);
+  transform: translateY(-0.1042vw);
   box-shadow: var(--shadow-card);
 }
 
 .particle-chip {
-  display: inline-flex;
+display: inline-flex;
   align-items: center;
   justify-content: center;
   width: fit-content;
   height: fit-content;
-  padding: 0 10px;
-  border-radius: 12px;
-  font-size: 24px;
+  padding: 0 0.5208vw;
+  border-radius: 0.625vw;
+  font-size: 1.25vw;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 0.625vw;
+  background: color-mix(in srgb, var(--c) 13%, transparent);
+  color: var(--c);
+  border: 0.0521vw solid color-mix(in srgb, var(--c) 27%, transparent);
+}
+
+.particle-chip--word {
+font-size: 0.9375vw;
 }
 
 .particle-function {
-  font-size: 15px;
+font-size: 0.7813vw;
   font-weight: 600;
   color: var(--text-secondary);
-  margin-bottom: 8px;
+  margin-bottom: 0.4167vw;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
 .particle-detail {
-  font-size: 15px;
+font-size: 0.7813vw;
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 14px;
+  margin-bottom: 0.7292vw;
 }
 
 .particle-examples {
-  display: flex;
+display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.4167vw;
 }
 
 .particle-example {
-  padding: 10px 12px;
+padding: 0.5208vw 0.625vw;
   background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-sm);
-  font-size: 15px;
+  font-size: 0.7813vw;
 }
 
 .particle-example__jp {
-  font-size: 17px;
-  margin-bottom: 3px;
+font-size: 0.8854vw;
+  margin-bottom: 0.1563vw;
   line-height: 1.5;
 }
 
 .particle-example__vn {
-  color: var(--text-secondary);
+color: var(--text-secondary);
   font-style: italic;
-  font-size: 14px;
+  font-size: 0.7292vw;
 }
 
 .highlight {
-  font-weight: 700;
-  padding: 1px 3px;
-  border-radius: 3px;
+font-weight: 700;
+  padding: 0.0521vw 0.1563vw;
+  border-radius: 0.1563vw;
   font-size: 1.05em;
+  background: color-mix(in srgb, var(--c) 20%, transparent);
+  color: var(--c);
+  border: 0.0521vw solid color-mix(in srgb, var(--c) 33%, transparent);
 }
 
 .pattern-card {
-  background: var(--bg-card);
-  border: 1px solid var(--bg-border);
+background: var(--bg-card);
+  border: 0.0521vw solid var(--bg-border);
   border-radius: var(--radius-lg);
-  padding: 24px;
-  margin-bottom: 16px;
+  padding: 1.25vw;
+  margin-bottom: 0.8333vw;
   animation: fade-up 0.4s ease both;
   transition: all var(--transition);
 }
 
 .pattern-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
+border-color: rgba(255, 255, 255, 0.12);
   background: var(--bg-card-hover);
 }
 
 .pattern-chip {
-  font-family: var(--font-mono);
-  font-size: 18px;
+font-family: var(--font-mono);
+  font-size: 0.9375vw;
   font-weight: 700;
-  padding: 6px 14px;
+  padding: 0.3125vw 0.7292vw;
   border-radius: var(--radius-sm);
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 0.4167vw;
+  background: color-mix(in srgb, var(--c) 13%, transparent);
+  color: var(--c);
+  border: 0.0521vw solid color-mix(in srgb, var(--c) 27%, transparent);
+}
+
+.pattern-level.is-basic {
+background: rgba(52, 211, 153, 0.15);
+  color: var(--accent-green);
+}
+
+.pattern-level.is-adv {
+background: rgba(167, 139, 250, 0.15);
+  color: var(--accent-violet);
 }
 
 .pattern-level {
-  font-size: 13px;
+font-size: 0.6771vw;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 3px 10px;
-  border-radius: 20px;
+  padding: 0.1563vw 0.5208vw;
+  border-radius: 1.0417vw;
   display: inline-block;
-  margin-left: 8px;
+  margin-left: 0.4167vw;
   vertical-align: middle;
 }
 
 .pattern-meaning {
-  font-size: 20px;
+font-size: 1.0417vw;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 0.5208vw;
 }
 
 .pattern-explanation {
-  font-size: 15px;
+font-size: 0.7813vw;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin-bottom: 16px;
-  padding: 10px 14px;
+  margin-bottom: 0.8333vw;
+  padding: 0.5208vw 0.7292vw;
   background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-sm);
-  border-left: 3px solid var(--card-color, var(--accent-violet));
+  border-left: 0.1563vw solid var(--card-color, var(--accent-violet));
 }
 
 .pattern-examples {
-  display: flex;
+display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.5208vw;
 }
 
 .pattern-example {
-  padding: 12px 16px;
+padding: 0.625vw 0.8333vw;
   background: rgba(255, 255, 255, 0.04);
   border-radius: var(--radius-sm);
 }
 
 .pattern-example__jp {
-  font-size: 18px;
-  margin-bottom: 4px;
+font-size: 0.9375vw;
+  margin-bottom: 0.2083vw;
   line-height: 1.6;
 }
 
 .pattern-example__vn {
-  font-size: 15px;
+font-size: 0.7813vw;
   color: var(--text-secondary);
   font-style: italic;
 }
 
 .verb-table-wrapper {
-  overflow-x: auto;
-  margin-top: 16px;
+overflow-x: auto;
+  margin-top: 0.8333vw;
 }
 
 .verb-table {
-  width: 100%;
+width: 100%;
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: 0.7813vw;
 }
 
 .verb-table th {
-  padding: 10px 14px;
+padding: 0.5208vw 0.7292vw;
   text-align: left;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 0.6771vw;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-muted);
-  border-bottom: 1px solid var(--bg-border);
+  border-bottom: 0.0521vw solid var(--bg-border);
 }
 
 .verb-table td {
-  padding: 10px 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+padding: 0.5208vw 0.7292vw;
+  border-bottom: 0.0521vw solid rgba(255, 255, 255, 0.04);
   vertical-align: middle;
 }
 
 .verb-table tr:hover td {
-  background: rgba(255, 255, 255, 0.03);
+background: rgba(255, 255, 255, 0.03);
 }
 
 .verb-dict {
-  font-size: 17px;
+font-size: 0.8854vw;
   font-weight: 600;
 }
 
 .verb-meaning {
-  color: var(--text-secondary);
-  font-size: 14px;
+color: var(--text-secondary);
+  font-size: 0.7292vw;
 }
 
 .verb-masu {
-  color: var(--accent-cyan);
+color: var(--accent-cyan);
   font-family: var(--font-mono);
 }
 
 .verb-masen {
-  color: var(--accent-red);
+color: var(--accent-red);
   font-family: var(--font-mono);
 }
 
 .verb-mashita {
-  color: var(--accent-green);
+color: var(--accent-green);
   font-family: var(--font-mono);
 }
 
 .verb-te {
-  color: var(--accent-yellow);
+color: var(--accent-yellow);
   font-family: var(--font-mono);
 }
 
+/* Section title parts */
+
+.gs-icon {
+font-size: 1.1458vw;
+}
+
+.gs-label {
+color: var(--c);
+}
+
+.gs-romaji {
+font-family: var(--font-mono);
+  font-size: 0.5729vw;
+  color: var(--text-muted);
+  margin-bottom: 0.4167vw;
+}
+
+.particle-example__romaji {
+font-family: var(--font-mono);
+  font-size: 0.5729vw;
+  color: var(--text-muted);
+  margin: 0.1042vw 0;
+}
+
+/* Filter/search spacing */
+
+.gs-section-nav {
+margin-bottom: 1.4583vw;
+}
+
+.gs-filter {
+margin-bottom: 1.0417vw;
+}
+
+.gs-search {
+margin-bottom: 1.0417vw;
+}
+
+/* Group cards (verb/adjective/counter) — extends .word-card */
+
+.gs-group {
+padding: 1.25vw;
+  margin-bottom: 0.8333vw;
+  border-left: 0.1563vw solid var(--c);
+}
+
+.gs-group__titlerow {
+margin-bottom: 0.2083vw;
+}
+
+.gs-group__title {
+font-family: var(--font-display);
+  font-size: 0.8854vw;
+  font-weight: 700;
+  color: var(--c);
+}
+
+.gs-group__sub {
+font-size: 0.6771vw;
+  color: var(--text-secondary);
+  margin-bottom: 0.4167vw;
+}
+
+.gs-rule {
+font-size: 0.6771vw;
+  padding: 0.4167vw 0.7292vw;
+  background: color-mix(in srgb, var(--c) 8%, transparent);
+  border: 0.0521vw solid color-mix(in srgb, var(--c) 20%, transparent);
+  border-radius: var(--radius-sm);
+  color: var(--c);
+  margin-bottom: 0.8333vw;
+  font-family: var(--font-mono);
+}
+
+.gs-rule--plain {
+font-family: var(--font-body);
+}
+
+/* Verb table header/cell color helpers */
+
+.th-cyan {
+color: var(--accent-cyan);
+}
+
+.th-red {
+color: var(--accent-red);
+}
+
+.th-green {
+color: var(--accent-green);
+}
+
+.th-yellow {
+color: var(--accent-yellow);
+}
+
+.th-violet {
+color: var(--accent-violet);
+}
+
+.verb-noun {
+font-family: var(--font-jp);
+  font-size: 0.6771vw;
+}
+
+.vt-accent {
+color: var(--c);
+}
+
+.vt-sm {
+font-size: 0.625vw;
+  color: var(--text-secondary);
+}
+
+.vt-sm-mono {
+font-size: 0.625vw;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+/* Expressions section */
+
+.gs-expr-head {
+display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5208vw;
+  margin-bottom: 0.5208vw;
+}
+
+.gs-expr__jp {
+font-size: 1.1458vw;
+}
+
+.gs-expr__sub {
+color: var(--c);
+}
+
+.gs-badge {
+background: color-mix(in srgb, var(--c) 13%, transparent);
+  color: var(--c);
+}
+
+.gs-expr-examples {
+margin-top: 0.7292vw;
+  display: grid;
+  gap: 0.5208vw;
+}
+
+/* Patterns section */
+
+.gs-pattern-head {
+margin-bottom: 0.5208vw;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4167vw;
+}
+
+/* Counters special readings */
+
+.gs-special {
+display: grid;
+  gap: 0.4167vw;
+}
+
+.gs-special__item {
+padding: 0.5208vw 0.7292vw;
+  background: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  border: 0.0521vw solid var(--bg-border);
+}
+
+.gs-special__counter {
+font-family: var(--font-jp);
+  color: var(--c);
+  font-weight: 600;
+  margin-right: 0.5208vw;
+}
+
+.gs-special__irregular {
+font-family: var(--font-mono);
+  font-size: 0.625vw;
+  color: var(--text-secondary);
+}
+
 @media (max-width: 1024px) {
-  .particle-grid {
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
+.particle-grid {
+grid-template-columns: repeat(auto-fill, minmax(14.5833vw, 1fr));
+}
 }
 
 @media (max-width: 768px) {
-  .particle-grid {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-  
-    .particle-card {
-      padding: 16px;
-    }
-  
-    .particle-chip {
-      font-size: 20px;
-    }
-  
-    .pattern-card {
-      padding: 18px;
-    }
-  
-    .pattern-chip {
-      font-size: 16px;
-    }
-  
-    .pattern-meaning {
-      font-size: 17px;
-    }
-  
-    .pattern-example__jp {
-      font-size: 16px;
-    }
-  
-    .verb-table {
-      font-size: 13px;
-    }
-  
-    .verb-table th,
-    .verb-table td {
-      padding: 8px 10px;
-    }
+.particle-grid {
+grid-template-columns: 1fr;
+      gap: 1.563vw;
 }
+
+.particle-card {
+padding: 2.083vw;
+}
+
+.particle-chip {
+font-size: 2.604vw;
+}
+
+.pattern-card {
+padding: 2.344vw;
+}
+
+.pattern-chip {
+font-size: 2.083vw;
+}
+
+.pattern-meaning {
+font-size: 2.214vw;
+}
+
+.pattern-example__jp {
+font-size: 2.083vw;
+}
+
+.verb-table {
+font-size: 1.693vw;
+}
+
+.verb-table th,
+    .verb-table td {
+padding: 1.042vw 1.302vw;
+}
+}
+

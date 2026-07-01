@@ -4,81 +4,166 @@
    ============================================================ */
 
 .tips-section {
-  margin-bottom: 36px;
+margin-bottom: 1.875vw;
 }
 
 .tips-section__header {
-  display: flex;
+display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px 20px;
+  gap: 0.625vw;
+  padding: 0.8333vw 1.0417vw;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   margin-bottom: 0;
+  background: color-mix(in srgb, var(--c) 10%, transparent);
+  border: 0.0521vw solid color-mix(in srgb, var(--c) 20%, transparent);
+  border-bottom: none;
+}
+
+.tips-section__icon {
+font-size: 1.25vw;
+}
+
+.tips-section__title {
+font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8854vw;
+  color: var(--c);
+}
+
+.tips-sections {
+display: flex;
+  flex-direction: column;
+  gap: 1.25vw;
 }
 
 .tips-list {
-  background: var(--bg-card);
-  border: 1px solid var(--bg-border);
+background: var(--bg-card);
+  border: 0.0521vw solid var(--bg-border);
   border-top: none;
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   overflow: hidden;
+  border-color: color-mix(in srgb, var(--c) 13%, var(--bg-border));
 }
 
 .tip-item {
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--bg-border);
+padding: 0.8333vw 1.0417vw;
+  border-bottom: 0.0521vw solid var(--bg-border);
   display: flex;
-  gap: 14px;
+  gap: 0.7292vw;
   align-items: flex-start;
   transition: background var(--transition);
   animation: fade-up 0.4s ease both;
 }
 
 .tip-item:last-child {
-  border-bottom: none;
+border-bottom: none;
 }
 
 .tip-item:hover {
-  background: rgba(255, 255, 255, 0.02);
+background: rgba(255, 255, 255, 0.02);
 }
 
 .tip-item__num {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
+flex-shrink: 0;
+  width: 1.25vw;
+  height: 1.25vw;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 0.625vw;
   font-weight: 700;
   font-family: var(--font-mono);
-  margin-top: 2px;
+  margin-top: 0.1042vw;
+  background: color-mix(in srgb, var(--c) 13%, transparent);
+  color: var(--c);
 }
 
 .tip-item__title {
-  font-weight: 600;
-  margin-bottom: 4px;
-  font-size: 15px;
+font-weight: 600;
+  margin-bottom: 0.2083vw;
+  font-size: 0.7813vw;
 }
 
 .tip-item__detail {
-  font-size: 13px;
+font-size: 0.6771vw;
   color: var(--text-secondary);
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .tips-section__header {
-      padding: 14px 16px;
-    }
-  
-    .tip-item {
-      padding: 14px 16px;
-      gap: 12px;
-    }
-  
-    .tip-item__title {
-      font-size: 14px;
-    }
+.tips-quickref {
+margin-top: 1.6667vw;
+  padding: 1.25vw;
+  background: var(--bg-card);
+  border: 0.0521vw solid rgba(250, 204, 21, 0.2);
+  border-radius: var(--radius-lg);
+  border-left: 0.1563vw solid var(--accent-yellow);
 }
+
+.tips-quickref__title {
+font-family: var(--font-display);
+  font-size: 0.8854vw;
+  font-weight: 700;
+  color: var(--accent-yellow);
+  margin-bottom: 0.7292vw;
+}
+
+.tips-timegrid {
+display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10.4167vw, 1fr));
+  gap: 0.625vw;
+}
+
+.tips-timecard {
+padding: 0.625vw 0.8333vw;
+  background: color-mix(in srgb, var(--c) 6%, transparent);
+  border: 0.0521vw solid color-mix(in srgb, var(--c) 19%, transparent);
+  border-radius: var(--radius-md);
+}
+
+.tips-timecard__name {
+font-weight: 600;
+  font-size: 0.7292vw;
+  color: var(--c);
+  margin-bottom: 0.2083vw;
+}
+
+.tips-timecard__time {
+font-size: 0.6771vw;
+  color: var(--text-secondary);
+}
+
+.tips-timecard__q {
+font-size: 0.625vw;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.tips-passnote {
+margin-top: 0.8333vw;
+  font-size: 0.6771vw;
+  color: var(--text-secondary);
+  padding: 0.5208vw 0.7292vw;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+}
+
+.tips-hl {
+color: var(--accent-yellow);
+}
+
+@media (max-width: 768px) {
+.tips-section__header {
+padding: 1.823vw 2.083vw;
+}
+
+.tip-item {
+padding: 1.823vw 2.083vw;
+      gap: 1.563vw;
+}
+
+.tip-item__title {
+font-size: 1.823vw;
+}
+}
+

@@ -4,172 +4,356 @@
    ============================================================ */
 
 .study-methods {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
-  margin-bottom: 40px;
+display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14.5833vw, 1fr));
+  gap: 0.8333vw;
+  margin-bottom: 2.0833vw;
 }
 
 .method-card {
-  background: var(--bg-card);
-  border: 1px solid var(--bg-border);
+background: var(--bg-card);
+  border: 0.0521vw solid var(--bg-border);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 1.25vw;
   transition: all var(--transition);
   animation: fade-up 0.4s ease both;
+  border-left: 0.1563vw solid var(--card-color);
 }
 
 .method-card:hover {
-  background: var(--bg-card-hover);
-  transform: translateY(-2px);
+background: var(--bg-card-hover);
+  transform: translateY(-0.1042vw);
   box-shadow: var(--shadow-card);
 }
 
 .method-icon {
-  font-size: 32px;
-  margin-bottom: 12px;
+font-size: 1.6667vw;
+  margin-bottom: 0.625vw;
   display: block;
 }
 
 .method-title {
-  font-family: var(--font-display);
-  font-size: 17px;
+font-family: var(--font-display);
+  font-size: 0.8854vw;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 0.4167vw;
+  color: var(--card-color);
+}
+
+.method-tools-label {
+font-size: 0.5729vw;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3125vw;
 }
 
 .method-desc {
-  font-size: 13px;
+font-size: 0.6771vw;
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 14px;
+  margin-bottom: 0.7292vw;
 }
 
 .method-tools {
-  display: flex;
+display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-bottom: 12px;
+  gap: 0.2083vw;
+  margin-bottom: 0.625vw;
 }
 
 .method-tool {
-  font-size: 12px;
-  color: var(--text-muted);
-  padding: 4px 0;
+font-size: 0.625vw;
+  color: var(--card-color, var(--text-muted));
+  padding: 0.2083vw 0;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 0.3125vw;
 }
 
 .method-tool::before {
-  content: '→';
+content: '→';
 }
 
 .method-howto {
-  font-size: 13px;
-  padding: 10px 14px;
+font-size: 0.6771vw;
+  padding: 0.5208vw 0.7292vw;
   border-radius: var(--radius-sm);
   line-height: 1.6;
   background: rgba(255, 255, 255, 0.03);
-  border-left: 2px solid var(--card-color, var(--accent-violet));
+  border-left: 0.1042vw solid var(--card-color, var(--accent-violet));
 }
 
 .schedule-timeline {
-  display: flex;
+display: flex;
   flex-direction: column;
   gap: 0;
 }
 
 .schedule-item {
-  display: flex;
-  gap: 20px;
+display: flex;
+  gap: 1.0417vw;
   align-items: flex-start;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--bg-border);
+  padding: 1.0417vw 0;
+  border-bottom: 0.0521vw solid var(--bg-border);
   animation: fade-up 0.4s ease both;
   position: relative;
 }
 
 .schedule-item:last-child {
-  border-bottom: none;
+border-bottom: none;
 }
 
 .schedule-item__dot {
-  flex-shrink: 0;
-  width: 12px;
-  height: 12px;
+flex-shrink: 0;
+  width: 0.625vw;
+  height: 0.625vw;
   border-radius: 50%;
-  margin-top: 6px;
+  margin-top: 0.3125vw;
+  background: var(--c);
+  box-shadow: 0 0 0.4167vw color-mix(in srgb, var(--c) 40%, transparent);
+}
+
+.schedule-item__body {
+flex: 1;
 }
 
 .schedule-item__week {
-  flex-shrink: 0;
+flex-shrink: 0;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 0.625vw;
   color: var(--text-muted);
-  min-width: 90px;
-  margin-top: 2px;
+  min-width: 4.6875vw;
+  margin-top: 0.1042vw;
 }
 
 .schedule-item__focus {
-  font-weight: 600;
-  font-size: 16px;
-  margin-bottom: 4px;
+font-weight: 600;
+  font-size: 0.8333vw;
+  margin-bottom: 0.2083vw;
+  color: var(--c);
 }
 
 .schedule-item__goal {
-  font-size: 13px;
+font-size: 0.6771vw;
   color: var(--text-secondary);
-  margin-bottom: 4px;
+  margin-bottom: 0.2083vw;
 }
 
 .schedule-item__daily {
-  font-size: 12px;
+font-size: 0.625vw;
   font-family: var(--font-mono);
   color: var(--text-muted);
 }
 
+/* Headings & section boxes */
+
+.sp-methods-head {
+margin-bottom: 0.625vw;
+}
+
+.sp-heading {
+font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--c);
+}
+
+.sp-heading--20 {
+font-size: 1.0417vw;
+}
+
+.sp-heading--18 {
+font-size: 0.9375vw;
+}
+
+.sp-heading--mb20 {
+margin-bottom: 1.0417vw;
+}
+
+.sp-heading--mb16 {
+margin-bottom: 0.8333vw;
+}
+
+.sp-schedule-head {
+margin-top: 2.0833vw;
+  margin-bottom: 1.0417vw;
+}
+
+.sp-schedule-sub {
+color: var(--text-secondary);
+  font-size: 0.7292vw;
+  margin-top: 0.2083vw;
+}
+
+.sp-schedule-box {
+background: var(--bg-card);
+  border: 0.0521vw solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  padding: 0.4167vw 1.25vw;
+}
+
+.sp-box {
+margin-top: 1.6667vw;
+  padding: 1.25vw;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+}
+
+.sp-box--green {
+border: 0.0521vw solid rgba(52, 211, 153, 0.2);
+}
+
+.sp-box--yellow {
+margin-top: 1.25vw;
+  border: 0.0521vw solid rgba(250, 204, 21, 0.2);
+}
+
+/* Daily routine */
+
+.sp-daily-list {
+display: flex;
+  flex-direction: column;
+  gap: 0.5208vw;
+}
+
+.sp-daily {
+display: flex;
+  align-items: center;
+  gap: 0.8333vw;
+  padding: 0.5208vw 0.7292vw;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-sm);
+  border: 0.0521vw solid var(--bg-border);
+}
+
+.sp-daily__time {
+flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6771vw;
+  font-weight: 700;
+  color: var(--c);
+  min-width: 3.125vw;
+}
+
+.sp-daily__task {
+font-size: 0.7292vw;
+  color: var(--text-primary);
+}
+
+/* Resources */
+
+.sp-res-grid {
+display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11.4583vw, 1fr));
+  gap: 0.625vw;
+}
+
+.sp-res {
+padding: 0.7292vw 0.8333vw;
+  background: color-mix(in srgb, var(--c) 5%, transparent);
+  border: 0.0521vw solid color-mix(in srgb, var(--c) 19%, transparent);
+  border-radius: var(--radius-md);
+}
+
+.sp-res__icon {
+font-size: 1.1458vw;
+  margin-bottom: 0.3125vw;
+}
+
+.sp-res__name {
+font-weight: 600;
+  color: var(--c);
+  margin-bottom: 0.2083vw;
+  font-size: 0.7813vw;
+}
+
+.sp-res__desc {
+font-size: 0.625vw;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Closing */
+
+.sp-closing {
+margin-top: 1.6667vw;
+  text-align: center;
+  padding: 1.6667vw;
+  background: linear-gradient(135deg, rgba(255, 71, 87, 0.08), rgba(167, 139, 250, 0.08));
+  border: 0.0521vw solid rgba(167, 139, 250, 0.2);
+  border-radius: var(--radius-xl);
+}
+
+.sp-closing__emoji {
+font-size: 2.5vw;
+  margin-bottom: 0.625vw;
+}
+
+.sp-closing__jp {
+font-family: var(--font-display);
+  font-size: 1.4583vw;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ff4757, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.4167vw;
+}
+
+.sp-closing__sub {
+color: var(--text-secondary);
+  font-size: 0.8333vw;
+}
+
+.sp-closing__note {
+color: var(--text-muted);
+  font-size: 0.6771vw;
+  margin-top: 0.4167vw;
+}
+
 @media (max-width: 1024px) {
-  .study-methods {
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    }
+.study-methods {
+grid-template-columns: repeat(auto-fill, minmax(12.5vw, 1fr));
+}
 }
 
 @media (max-width: 768px) {
-  .study-methods {
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-  
-    .method-card {
-      padding: 18px;
-    }
-  
-    .method-icon {
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
-  
-    .method-title {
-      font-size: 15px;
-    }
-  
-    .schedule-item {
-      gap: 12px;
-      padding: 16px 0;
-    }
-  
-    .schedule-item__week {
-      min-width: 70px;
-      font-size: 11px;
-    }
-  
-    .schedule-item__focus {
-      font-size: 14px;
-    }
-  
-    .schedule-item__goal {
-      font-size: 12px;
-    }
+.study-methods {
+grid-template-columns: 1fr;
+      gap: 1.563vw;
+      margin-bottom: 3.646vw;
 }
+
+.method-card {
+padding: 2.344vw;
+}
+
+.method-icon {
+font-size: 3.385vw;
+      margin-bottom: 1.302vw;
+}
+
+.method-title {
+font-size: 1.953vw;
+}
+
+.schedule-item {
+gap: 1.563vw;
+      padding: 2.083vw 0;
+}
+
+.schedule-item__week {
+min-width: 9.115vw;
+      font-size: 1.432vw;
+}
+
+.schedule-item__focus {
+font-size: 1.823vw;
+}
+
+.schedule-item__goal {
+font-size: 1.563vw;
+}
+}
+

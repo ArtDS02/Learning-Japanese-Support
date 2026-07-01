@@ -131,7 +131,7 @@ export default function VocabularyTab() {
           {allWords.length} từ · Phân loại theo {vocabData.categories.length}{" "}
           chủ đề
           {markedIds.size > 0 && (
-            <span style={{ marginLeft: 8, color: "#facc15" }}>
+            <span className="vocab-marked-count">
               · ⭐ {markedIds.size} đã đánh dấu
             </span>
           )}
@@ -154,11 +154,7 @@ export default function VocabularyTab() {
         <span className="filter-label">Chủ đề:</span>
         <button
           className={`filter-btn ${activeCategory === "all" ? "filter-btn--active" : ""}`}
-          style={
-            activeCategory === "all"
-              ? { background: "#a78bfa", color: "#0a0b0f" }
-              : {}
-          }
+          style={{ "--c": "#a78bfa" }}
           onClick={() => setActiveCategory("all")}
         >
           🌐 Tất cả ({allWords.length})
@@ -167,11 +163,7 @@ export default function VocabularyTab() {
           <button
             key={cat.id}
             className={`filter-btn ${activeCategory === cat.id ? "filter-btn--active" : ""}`}
-            style={
-              activeCategory === cat.id
-                ? { background: cat.color, color: "#0a0b0f" }
-                : {}
-            }
+            style={{ "--c": cat.color }}
             onClick={() => setActiveCategory(cat.id)}
           >
             {cat.icon} {cat.label} ({cat.words.length})
@@ -181,45 +173,23 @@ export default function VocabularyTab() {
 
       {/* Results count */}
       {search && (
-        <p
-          style={{ color: "var(--text-muted)", fontSize: 13, marginBottom: 16 }}
-        >
+        <p className="vocab-results">
           Tìm thấy {filtered.length} kết quả cho "{search}"
         </p>
       )}
 
       {/* Flash card controls */}
       {!flashMode ? (
-        <div
-          style={{
-            display: "flex",
-            gap: 10,
-            marginBottom: 12,
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
+        <div className="flash-controls">
           <div className="flash-box">
             <button
-              className="filter-btn"
-              style={{ background: "#27272a", color: "#fff", border: "none" }}
+              className="filter-btn vocab-flash-btn"
               onClick={() => enterFlash("all")}
             >
               🎴 Học Flash Card (tất cả · {filtered.length})
             </button>
             <button
-              className="filter-btn"
-              style={{
-                background: markedWords.length > 0 ? "#713f12" : "#1c1c1f",
-                color: markedWords.length > 0 ? "#facc15" : "#666",
-                border:
-                  markedWords.length > 0
-                    ? "1px solid #854d0e"
-                    : "1px solid #333",
-                cursor: markedWords.length > 0 ? "pointer" : "not-allowed",
-                opacity: markedWords.length > 0 ? 1 : 0.5,
-              }}
+              className={`filter-btn vocab-marked-btn ${markedWords.length > 0 ? "is-on" : "is-off"}`}
               onClick={() => markedWords.length > 0 && enterFlash("marked")}
               title={
                 markedWords.length === 0
@@ -234,12 +204,7 @@ export default function VocabularyTab() {
           <div className="unmarked-box">
             {markedIds.size > 0 && (
               <button
-                className="filter-btn"
-                style={{
-                  background: "transparent",
-                  color: "#f87171",
-                  border: "1px solid #7f1d1d",
-                }}
+                className="filter-btn vocab-clear-btn"
                 onClick={() => {
                   clearAllMarked();
                 }}
@@ -251,24 +216,15 @@ export default function VocabularyTab() {
           </div>
         </div>
       ) : (
-        <div style={{ marginBottom: 12 }}>
-          <button
-            className="filter-btn"
-            style={{ background: "#facc15", color: "#000", border: "none" }}
-            onClick={exitFlash}
-          >
+        <div className="flash-active-bar">
+          <button className="filter-btn vocab-exit-btn" onClick={exitFlash}>
             ✕ Thoát Flash Card
           </button>
-          <span
-            style={{
-              marginLeft: 12,
-              fontSize: 13,
-              color: "var(--text-muted)",
-            }}
-          >
+          <span className="flash-active-bar__label">
             Đang học:{" "}
             <strong
-              style={{ color: flashScope === "marked" ? "#facc15" : "#a78bfa" }}
+              className="flash-active-bar__scope"
+              style={{ "--c": flashScope === "marked" ? "#facc15" : "#a78bfa" }}
             >
               {flashScope === "marked"
                 ? `⭐ ${flashWords.length} từ đã đánh dấu`
@@ -280,47 +236,17 @@ export default function VocabularyTab() {
 
       {/* Card view toolbar — hide/show meanings */}
       {!flashMode && filtered.length > 0 && (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-            marginBottom: 16,
-          }}
-        >
+        <div className="vocab-view-toolbar">
           <button
-            className="filter-btn"
-            style={{
-              background: hideMeanings ? "#312e81" : "#1e1b4b",
-              color: hideMeanings ? "#c4b5fd" : "#818cf8",
-              border: "1px solid #3730a3",
-              fontSize: 18,
-            }}
+            className={`filter-btn vocab-toggle-btn ${hideMeanings ? "is-on" : ""}`}
             onClick={() => setHideMeanings((v) => !v)}
           >
             {hideMeanings
               ? "👀 Hiện tất cả định nghĩa"
               : "🙈 Ẩn tất cả định nghĩa"}
           </button>
-          {/* {hideMeanings && (
-            <span
-              style={{
-                fontSize: 18,
-                color: "var(--text-muted)",
-                fontStyle: "italic",
-              }}
-            >
-              Nhấn vào từng card để xem định nghĩa riêng
-            </span>
-          )} */}
           <button
-            className="filter-btn"
-            style={{
-              background: markAll ? "#312e81" : "#1e1b4b",
-              color: markAll ? "#b5d4fd" : "#818cf8",
-              border: "1px solid #3730a3",
-              fontSize: 18,
-            }}
+            className={`filter-btn vocab-toggle-btn ${markAll ? "is-on-blue" : ""}`}
             onClick={() => toggleMarkAll((v) => !v)}
           >
             {markAll ? "❌ Hủy đánh dấu tất cả" : "✅ Đánh dấu tất cả"}{" "}
@@ -412,73 +338,30 @@ function WordCard({
       style={{
         "--card-color": word.categoryColor,
         animationDelay: `${delay}ms`,
-        position: "relative",
       }}
       onClick={onToggle}
     >
       {/* Top row: category tag + actions */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "flex-start",
-          marginBottom: 8,
-        }}
-      >
-        <span
-          style={{
-            fontSize: 11,
-            padding: "2px 8px",
-            borderRadius: 20,
-            background: `${word.categoryColor}22`,
-            color: word.categoryColor,
-            fontWeight: 600,
-            fontFamily: "var(--font-mono)",
-          }}
-        >
-          {word.categoryLabel}
-        </span>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+      <div className="wc-top">
+        <span className="wc-cat">{word.categoryLabel}</span>
+        <div className="wc-actions">
           {/* Per-card meaning toggle */}
           <button
+            className="wc-iconbtn"
             onClick={handleRevealToggle}
             title={meaningHidden ? "Hiện định nghĩa" : "Ẩn định nghĩa"}
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              fontSize: 14,
-              lineHeight: 1,
-              padding: 0,
-              opacity: 0.85,
-              transition: "opacity 0.15s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = 1)}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = 0.55)}
           >
             {meaningHidden ? "👀" : "🙈"}
           </button>
           {/* Bookmark */}
           <button
+            className={`wc-bookmark ${marked ? "is-marked" : ""}`}
             onClick={onToggleMark}
             title={marked ? "Bỏ đánh dấu" : "Đánh dấu để học riêng"}
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              fontSize: 16,
-              lineHeight: 1,
-              padding: 0,
-              opacity: marked ? 1 : 0.3,
-              transition: "opacity 0.15s, transform 0.15s",
-              transform: marked ? "scale(1.15)" : "scale(1)",
-            }}
           >
             ⭐
           </button>
-          <span style={{ fontSize: 16, opacity: 0.5 }}>
-            {expanded ? "▲" : "▼"}
-          </span>
+          <span className="wc-caret">{expanded ? "▲" : "▼"}</span>
         </div>
       </div>
 
@@ -494,61 +377,23 @@ function WordCard({
 
       {/* Type badge for adjectives */}
       {(isIAdj || isNaAdj) && (
-        <span
-          className="word-card__type-badge"
-          style={{
-            background: isIAdj
-              ? "rgba(250,204,21,0.15)"
-              : "rgba(52,211,153,0.15)",
-            color: isIAdj ? "var(--accent-yellow)" : "var(--accent-green)",
-            border: `1px solid ${isIAdj ? "rgba(250,204,21,0.3)" : "rgba(52,211,153,0.3)"}`,
-          }}
-        >
+        <span className={`word-card__type-badge ${isIAdj ? "is-i" : "is-na"}`}>
           {isIAdj ? "い-tính từ" : "な-tính từ"}
         </span>
       )}
 
       {/* Meaning — hideable */}
       {meaningHidden ? (
-        <div
-          style={{
-            marginTop: 6,
-            marginBottom: 4,
-            fontSize: 13,
-            color: "var(--text-muted)",
-            fontStyle: "italic",
-            userSelect: "none",
-          }}
-        >
-          ∙∙∙ nhấn 👁 để xem nghĩa
-        </div>
+        <div className="wc-hidden">∙∙∙ nhấn 👁 để xem nghĩa</div>
       ) : (
         <div className="word-card__meaning">{word.meaning}</div>
       )}
 
       {/* Conjugation for adjectives */}
       {expanded && !meaningHidden && (isIAdj || isNaAdj) && (
-        <div
-          style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 8 }}
-        >
-          <span
-            style={{
-              fontSize: 12,
-              color: "var(--accent-red)",
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            ✗ {word.negative}
-          </span>
-          <span
-            style={{
-              fontSize: 12,
-              color: "var(--text-muted)",
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            ⏪ {word.past}
-          </span>
+        <div className="wc-conj">
+          <span className="wc-conj__neg">✗ {word.negative}</span>
+          <span className="wc-conj__past">⏪ {word.past}</span>
         </div>
       )}
 
@@ -560,18 +405,7 @@ function WordCard({
       {/* Example — shown when expanded */}
       {expanded && !meaningHidden && word.example && (
         <div className="word-card__example">
-          <div
-            style={{
-              fontSize: 11,
-              color: "var(--text-muted)",
-              marginBottom: 6,
-              fontFamily: "var(--font-mono)",
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-            }}
-          >
-            Ví dụ
-          </div>
+          <div className="wc-ex-label">Ví dụ</div>
           <div className="word-card__example-jp">{word.example.jp}</div>
           <div className="word-card__example-romaji">{word.example.romaji}</div>
           <div className="word-card__example-vn">→ {word.example.vn}</div>
@@ -579,16 +413,7 @@ function WordCard({
       )}
 
       {!expanded && !meaningHidden && (
-        <div
-          style={{
-            marginTop: 10,
-            fontSize: 12,
-            color: "var(--text-muted)",
-            fontStyle: "italic",
-          }}
-        >
-          Nhấn để xem ví dụ
-        </div>
+        <div className="wc-hint">Nhấn để xem ví dụ</div>
       )}
     </div>
   );
@@ -729,7 +554,7 @@ function FlashCardStudy({ words, markedIds, onToggleMark }) {
     return (
       <div className="flashcard-wrapper">
         <div className="flash-summary">
-          <div style={{ fontSize: 54, marginBottom: 8 }}>
+          <div className="flash-summary__emoji">
             {session.forget === 0 ? "🎉" : session.remember >= session.forget ? "👏" : "💪"}
           </div>
           <h3 className="flash-summary__title">Hoàn thành phiên học!</h3>
@@ -790,37 +615,21 @@ function FlashCardStudy({ words, markedIds, onToggleMark }) {
       <div
         className={`flashcard ${isShuffling ? "flashcard--shuffle" : ""}`}
         onClick={() => animateCard(() => setFlipped(!flipped))}
-        style={{ position: "relative" }}
       >
         {/* SRS status badge */}
-        <span
-          className="flash-status-badge"
-          style={{ color: meta.color, borderColor: `${meta.color}55`, background: `${meta.color}1a` }}
-        >
+        <span className="flash-status-badge" style={{ "--c": meta.color }}>
           {meta.label}
           {status === "learning" && card?.box ? ` · L${card.box}` : ""}
         </span>
 
         {/* Bookmark button on flashcard */}
         <button
+          className={`flash-bookmark ${isMarked ? "is-marked" : ""}`}
           onClick={(e) => {
             e.stopPropagation();
             onToggleMark(word.id, e);
           }}
           title={isMarked ? "Bỏ đánh dấu" : "Đánh dấu từ này"}
-          style={{
-            position: "absolute",
-            top: 12,
-            right: 14,
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            fontSize: 20,
-            opacity: isMarked ? 1 : 0.25,
-            transition: "opacity 0.15s, transform 0.15s",
-            transform: isMarked ? "scale(1.2)" : "scale(1)",
-            zIndex: 10,
-          }}
         >
           ⭐
         </button>
@@ -872,12 +681,8 @@ function FlashCardStudy({ words, markedIds, onToggleMark }) {
 
       <div className="flashcard-progress">
         {pos + 1} / {queue.length}
-        <span style={{ marginLeft: 10, fontSize: 11, color: "#34d399" }}>
-          ✓ {session.remember}
-        </span>
-        <span style={{ marginLeft: 6, fontSize: 11, color: "#f87171" }}>
-          ✗ {session.forget}
-        </span>
+        <span className="flashcard-progress__ok">✓ {session.remember}</span>
+        <span className="flashcard-progress__no">✗ {session.forget}</span>
       </div>
 
       <div className="flashcard-actions">

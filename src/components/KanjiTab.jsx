@@ -134,39 +134,17 @@ export default function KanjiTab() {
         <p className="section-desc">
           {kanjiData.kanji.length} kanji · Nhấn vào kanji để xem chi tiết
           {marked.size > 0 && (
-            <span style={{ marginLeft: 8, color: "#f59e0b", fontWeight: 700 }}>
-              · ★ {marked.size} đã đánh dấu
-            </span>
+            <span className="k-count-mark">· ★ {marked.size} đã đánh dấu</span>
           )}
           {learned.size > 0 && (
-            <span style={{ marginLeft: 8, color: "#22c55e", fontWeight: 700 }}>
-              · ✓ {learned.size} đã học
-            </span>
+            <span className="k-count-learn">· ✓ {learned.size} đã học</span>
           )}
         </p>
       </div>
 
       {/* Toolbar */}
-      <div
-        style={{ display: "flex", gap: 8, marginBottom: 16, flexWrap: "wrap" }}
-      >
-        <button
-          onClick={() => setMode("flashcard")}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-            padding: "8px 16px",
-            borderRadius: 20,
-            border: "1.5px solid #a78bfa",
-            background: "#a78bfa22",
-            color: "#a78bfa",
-            fontSize: 20,
-            fontWeight: 700,
-            cursor: "pointer",
-            fontFamily: "var(--font-mono)",
-          }}
-        >
+      <div className="k-toolbar">
+        <button className="k-flashbtn" onClick={() => setMode("flashcard")}>
           🃏 Flashcard{" "}
           {markedList.length > 0
             ? `(★ ${markedList.length})`
@@ -176,37 +154,17 @@ export default function KanjiTab() {
         {/* Mark all / Unmark all cho filtered hiện tại */}
         {!allFilteredMarked ? (
           <button
+            className="k-markbtn"
             onClick={markAll}
             title={`Đánh dấu tất cả ${filtered.length} kanji đang hiển thị`}
-            style={{
-              padding: "8px 14px",
-              borderRadius: 20,
-              border: "1.5px solid #f59e0b44",
-              background: "transparent",
-              color: "#f59e0b",
-              fontSize: 20,
-              fontWeight: 700,
-              cursor: "pointer",
-              fontFamily: "var(--font-mono)",
-            }}
           >
             ★ Đánh dấu tất cả
           </button>
         ) : (
           <button
+            className="k-markbtn is-on"
             onClick={unmarkAll}
             title={`Bỏ đánh dấu tất cả ${filtered.length} kanji đang hiển thị`}
-            style={{
-              padding: "8px 14px",
-              borderRadius: 20,
-              border: "1.5px solid #f59e0b44",
-              background: "#f59e0b22",
-              color: "#f59e0b",
-              fontSize: 20,
-              fontWeight: 700,
-              cursor: "pointer",
-              fontFamily: "var(--font-mono)",
-            }}
           >
             ☆ Bỏ đánh dấu tất cả
           </button>
@@ -215,19 +173,9 @@ export default function KanjiTab() {
         {/* Xóa tất cả đánh dấu đã học */}
         {learned.size > 0 && (
           <button
+            className="k-clearbtn"
             onClick={clearAllLearned}
             title="Xóa tất cả đánh dấu đã học"
-            style={{
-              padding: "8px 14px",
-              borderRadius: 20,
-              border: "1.5px solid #22c55e44",
-              background: "transparent",
-              color: "#22c55e",
-              fontSize: 20,
-              fontWeight: 700,
-              cursor: "pointer",
-              fontFamily: "var(--font-mono)",
-            }}
           >
             ✓ Xóa đã học ({learned.size})
           </button>
@@ -248,11 +196,7 @@ export default function KanjiTab() {
         <span className="filter-label">Nhóm:</span>
         <button
           className={`filter-btn ${activeCategory === "all" ? "filter-btn--active" : ""}`}
-          style={
-            activeCategory === "all"
-              ? { background: "#a78bfa", color: "#0a0b0f" }
-              : {}
-          }
+          style={{ "--c": "#a78bfa" }}
           onClick={() => setActiveCategory("all")}
         >
           🌐 Tất cả ({kanjiData.kanji.length})
@@ -265,11 +209,7 @@ export default function KanjiTab() {
             <button
               key={cat.id}
               className={`filter-btn ${activeCategory === cat.id ? "filter-btn--active" : ""}`}
-              style={
-                activeCategory === cat.id
-                  ? { background: cat.color, color: "#0a0b0f" }
-                  : {}
-              }
+              style={{ "--c": cat.color }}
               onClick={() => setActiveCategory(cat.id)}
             >
               {cat.icon} {cat.label} ({count})
@@ -278,71 +218,21 @@ export default function KanjiTab() {
         })}
       </div>
 
-      <div
-        style={{ display: "flex", gap: 20, marginBottom: 20, flexWrap: "wrap" }}
-      >
-        <span
-          style={{
-            fontSize: 20,
-            color: "var(--text-muted)",
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-          }}
-        >
-          <span
-            style={{
-              color: "var(--accent-yellow)",
-              fontFamily: "var(--font-mono)",
-              fontSize: 20,
-            }}
-          >
-            ■
-          </span>
+      <div className="k-legend">
+        <span className="k-legend__item">
+          <span className="k-legend__sq" style={{ "--c": "var(--accent-yellow)" }}>■</span>
           Âm On (Hán-Nhật)
         </span>
-        <span
-          style={{
-            fontSize: 20,
-            color: "var(--text-muted)",
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-          }}
-        >
-          <span
-            style={{
-              color: "var(--accent-cyan)",
-              fontFamily: "var(--font-mono)",
-              fontSize: 20,
-            }}
-          >
-            ■
-          </span>
+        <span className="k-legend__item">
+          <span className="k-legend__sq" style={{ "--c": "var(--accent-cyan)" }}>■</span>
           Âm Kun (thuần Nhật)
         </span>
-        <span
-          style={{
-            fontSize: 20,
-            color: "var(--text-muted)",
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-          }}
-        >
-          <span style={{ color: "#f59e0b", fontSize: 20 }}>★</span>
+        <span className="k-legend__item">
+          <span className="k-legend__sym" style={{ "--c": "#f59e0b" }}>★</span>
           Đã đánh dấu
         </span>
-        <span
-          style={{
-            fontSize: 20,
-            color: "var(--text-muted)",
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-          }}
-        >
-          <span style={{ color: "#22c55e", fontSize: 20 }}>✓</span>
+        <span className="k-legend__item">
+          <span className="k-legend__sym" style={{ "--c": "#22c55e" }}>✓</span>
           Đã học
         </span>
       </div>
@@ -361,56 +251,22 @@ export default function KanjiTab() {
               style={{
                 "--card-color": catColor(k.category),
                 animationDelay: `${idx * 30}ms`,
-                position: "relative",
               }}
               onClick={() => setSelectedIdx(idx)}
             >
               {/* Mark button */}
               <button
+                className={`k-card__mark ${marked.has(k.id) ? "is-on" : ""}`}
                 onClick={(e) => {
                   e.stopPropagation();
                   toggleMark(k.id);
-                }}
-                style={{
-                  position: "absolute",
-                  top: 6,
-                  right: 6,
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  fontSize: 40,
-                  lineHeight: 1,
-                  padding: 2,
-                  color: marked.has(k.id) ? "#f59e0b" : "var(--text-muted)",
-                  opacity: marked.has(k.id) ? 1 : 0.4,
-                  transition: "all 0.2s",
-                  zIndex: 100,
                 }}
                 title={marked.has(k.id) ? "Bỏ đánh dấu" : "Đánh dấu"}
               >
                 ★
               </button>
               {/* Learned badge */}
-              {learned.has(k.id) && (
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 6,
-                    left: 6,
-                    background: "#22c55e22",
-                    border: "1px solid #22c55e66",
-                    borderRadius: 20,
-                    padding: "1px 6px",
-                    fontSize: 10,
-                    fontWeight: 700,
-                    color: "#22c55e",
-                    fontFamily: "var(--font-mono)",
-                    zIndex: 100,
-                  }}
-                >
-                  ✓
-                </div>
-              )}
+              {learned.has(k.id) && <div className="k-card__learned">✓</div>}
               {/* <span className="kanji-stroke">{k.stroke}nét</span> */}
               <span className="kanji-char">{k.char}</span>
               <div className="kanji-meaning">{k.meaning}</div>
@@ -418,25 +274,9 @@ export default function KanjiTab() {
                 <span className="kanji-on">On: {k.on}</span>
                 <span className="kanji-kun">Kun: {k.kun}</span>
               </div>
-              <div className="kanji-readings" style={{ marginTop: 2 }}>
-                <span
-                  style={{
-                    fontSize: 20,
-                    color: "var(--text-muted)",
-                    fontStyle: "italic",
-                  }}
-                >
-                  {k.on_romaji}
-                </span>
-                <span
-                  style={{
-                    fontSize: 20,
-                    color: "var(--text-muted)",
-                    fontStyle: "italic",
-                  }}
-                >
-                  {k.kun_romaji}
-                </span>
+              <div className="kanji-readings k-readings--romaji">
+                <span className="k-romaji">{k.on_romaji}</span>
+                <span className="k-romaji">{k.kun_romaji}</span>
               </div>
             </div>
           ))}
@@ -557,61 +397,16 @@ function StrokeOrderAnimator({ strokes, catColor }) {
   if (!strokes || strokes.length === 0) return null;
 
   return (
-    <div style={{ marginBottom: 20 }}>
-      <div
-        style={{
-          fontSize: 20,
-          color: "var(--text-muted)",
-          fontFamily: "var(--font-mono)",
-          textTransform: "uppercase",
-          letterSpacing: "0.08em",
-          marginBottom: 12,
-          display: "flex",
-          alignItems: "center",
-          gap: 8,
-        }}
-      >
+    <div className="k-stroke" style={{ "--c": catColor }}>
+      <div className="k-stroke__title">
         ✍️ Thứ tự nét viết
-        <span
-          style={{
-            fontSize: 20,
-            background: `${catColor}22`,
-            color: catColor,
-            borderRadius: 20,
-            padding: "2px 8px",
-            fontWeight: 700,
-          }}
-        >
+        <span className="k-stroke__count">
           {current}/{strokes.length} nét
         </span>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: 12,
-        }}
-      >
-        <div
-          style={{
-            width: 168,
-            height: 168,
-            borderRadius: 16,
-            border: `2px solid ${catColor}44`,
-            background: `${catColor}09`,
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <svg
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              opacity: 0.12,
-            }}
+      <div className="k-stroke__body">
+        <div className="k-stroke__canvas">
+          <svg className="k-stroke__grid"
             viewBox="0 0 168 168"
           >
             <line
@@ -654,7 +449,7 @@ function StrokeOrderAnimator({ strokes, catColor }) {
           <svg
             viewBox="0 0 109 109"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ width: "100%", height: "100%", display: "block" }}
+            className="k-stroke__svg"
           >
             {strokes.map((d, i) => (
               <path
@@ -672,74 +467,18 @@ function StrokeOrderAnimator({ strokes, catColor }) {
             ))}
           </svg>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: 5,
-            flexWrap: "wrap",
-            justifyContent: "center",
-            maxWidth: 200,
-          }}
-        >
+        <div className="k-stroke__dots">
           {strokes.map((_, i) => (
-            <div
-              key={i}
-              style={{
-                width: 22,
-                height: 22,
-                borderRadius: "50%",
-                background: i < current ? catColor : `${catColor}22`,
-                color: i < current ? "#0a0b0f" : catColor,
-                fontSize: 10,
-                fontWeight: 700,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "var(--font-mono)",
-                transition: "background 0.3s, color 0.3s",
-                border: `1.5px solid ${catColor}55`,
-              }}
-            >
+            <div key={i} className={`k-stroke__dot ${i < current ? "is-done" : ""}`}>
               {i + 1}
             </div>
           ))}
         </div>
-        <div style={{ display: "flex", gap: 8 }}>
-          <button
-            onClick={animate}
-            disabled={isPlaying}
-            style={{
-              padding: "7px 16px",
-              borderRadius: 20,
-              border: `1.5px solid ${catColor}`,
-              background: isPlaying ? `${catColor}22` : catColor,
-              color: isPlaying ? catColor : "#0a0b0f",
-              fontSize: 20,
-              fontWeight: 700,
-              cursor: isPlaying ? "not-allowed" : "pointer",
-              fontFamily: "var(--font-mono)",
-              transition: "all 0.2s",
-            }}
-          >
+        <div className="k-stroke__btns">
+          <button className="k-stroke__play" onClick={animate} disabled={isPlaying}>
             {isPlaying ? "⏳ Đang vẽ..." : "▶ Vẽ lại"}
           </button>
-          <button
-            onClick={showAll}
-            disabled={isPlaying}
-            style={{
-              padding: "7px 16px",
-              borderRadius: 20,
-              border: `1.5px solid ${catColor}55`,
-              background: "transparent",
-              color: catColor,
-              fontSize: 20,
-              fontWeight: 700,
-              cursor: isPlaying ? "not-allowed" : "pointer",
-              fontFamily: "var(--font-mono)",
-              opacity: isPlaying ? 0.5 : 1,
-              transition: "all 0.2s",
-            }}
-          >
+          <button className="k-stroke__all" onClick={showAll} disabled={isPlaying}>
             Xem tất cả
           </button>
         </div>
@@ -761,32 +500,24 @@ function KanjiModal({
 }) {
   return (
     <div className="kanji-modal-overlay" onClick={onClose}>
-      <div className="kanji-modal" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="kanji-modal"
+        style={{ "--c": catColor }}
+        onClick={(e) => e.stopPropagation()}
+      >
         <button className="kanji-modal__close" onClick={onClose}>
           ✕
         </button>
 
         <div className="kanji-character">
-          <div style={{ textAlign: "center", marginBottom: 8 }}>
-            <span
-              style={{
-                fontSize: 15,
-                padding: "3px 10px",
-                borderRadius: 20,
-                background: `${catColor}22`,
-                color: catColor,
-                fontFamily: "var(--font-mono)",
-                fontWeight: 700,
-              }}
-            >
+          <div className="km-cat-row">
+            <span className="km-cat">
               {kanjiData.categories.find((c) => c.id === kanji.category)?.icon}{" "}
               {kanjiData.categories.find((c) => c.id === kanji.category)?.label}
             </span>
           </div>
 
-          <div className="kanji-modal__char" style={{ color: catColor }}>
-            {kanji.char}
-          </div>
+          <div className="kanji-modal__char">{kanji.char}</div>
           <div className="kanji-modal__meaning">{kanji.meaning}</div>
 
           <div className="stroke-number">
@@ -798,48 +529,14 @@ function KanjiModal({
           <div className="kanji-modal__readings">
             <div className="kanji-modal__reading-group">
               <div className="kanji-modal__reading-label">Âm On</div>
-              <div
-                className="kanji-modal__reading-value"
-                style={{ color: "var(--accent-yellow)" }}
-              >
-                {kanji.on}
-              </div>
-              <div
-                style={{
-                  fontSize: 15,
-                  color: "var(--text-muted)",
-                  fontStyle: "italic",
-                  marginTop: 3,
-                }}
-              >
-                {kanji.on_romaji}
-              </div>
+              <div className="kanji-modal__reading-value km-on">{kanji.on}</div>
+              <div className="km-reading-romaji">{kanji.on_romaji}</div>
             </div>
-            <div
-              style={{
-                width: 1,
-                background: "var(--bg-border)",
-                margin: "0 8px",
-              }}
-            />
+            <div className="km-divider" />
             <div className="kanji-modal__reading-group">
               <div className="kanji-modal__reading-label">Âm Kun</div>
-              <div
-                className="kanji-modal__reading-value"
-                style={{ color: "var(--accent-cyan)" }}
-              >
-                {kanji.kun}
-              </div>
-              <div
-                style={{
-                  fontSize: 15,
-                  color: "var(--text-muted)",
-                  fontStyle: "italic",
-                  marginTop: 3,
-                }}
-              >
-                {kanji.kun_romaji}
-              </div>
+              <div className="kanji-modal__reading-value km-kun">{kanji.kun}</div>
+              <div className="km-reading-romaji">{kanji.kun_romaji}</div>
             </div>
           </div>
         </div>
@@ -848,18 +545,7 @@ function KanjiModal({
             <div className="kanji-modal__mnemonic">{kanji.mnemonic}</div>
           )}
 
-          <div
-            style={{
-              fontSize: 20,
-              color: "var(--text-muted)",
-              fontFamily: "var(--font-mono)",
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              marginBottom: 10,
-            }}
-          >
-            Ví dụ từ ghép
-          </div>
+          <div className="km-examples-label">Ví dụ từ ghép</div>
           <div className="kanji-modal__examples">
             {kanji.examples.map((ex, i) => (
               <div key={i} className="kanji-modal__example">
@@ -875,49 +561,16 @@ function KanjiModal({
           </div>
 
           {/* Action buttons: Mark + Learned */}
-          <div
-            style={{
-              display: "flex",
-              gap: 10,
-              marginTop: 18,
-              justifyContent: "center",
-            }}
-          >
+          <div className="km-actions">
             <button
+              className={`km-actbtn km-actbtn--mark ${isMarked ? "is-on" : ""}`}
               onClick={onToggleMark}
-              style={{
-                flex: 1,
-                padding: "10px 14px",
-                borderRadius: 16,
-                border: isMarked
-                  ? "1.5px solid #f59e0b"
-                  : "1.5px solid #f59e0b44",
-                background: isMarked ? "#f59e0b22" : "transparent",
-                color: "#f59e0b",
-                fontSize: 14,
-                fontWeight: 700,
-                cursor: "pointer",
-                transition: "all 0.2s",
-              }}
             >
               {isMarked ? "★ Bỏ đánh dấu" : "☆ Đánh dấu"}
             </button>
             <button
+              className={`km-actbtn km-actbtn--learn ${isLearned ? "is-on" : ""}`}
               onClick={onToggleLearn}
-              style={{
-                flex: 1,
-                padding: "10px 14px",
-                borderRadius: 16,
-                border: isLearned
-                  ? "1.5px solid #22c55e"
-                  : "1.5px solid #22c55e44",
-                background: isLearned ? "#22c55e22" : "transparent",
-                color: "#22c55e",
-                fontSize: 14,
-                fontWeight: 700,
-                cursor: "pointer",
-                transition: "all 0.2s",
-              }}
             >
               {isLearned ? "✓ Đã học rồi" : "○ Đánh dấu đã học"}
             </button>
@@ -929,62 +582,7 @@ function KanjiModal({
 }
 
 // ─── Flashcard Mode ───────────────────────────────────────────────────────────
-
-// CSS injected once for flip animation
-const FLIP_STYLE = `
-  .fc-scene { perspective: 1000px; width: 100%; }
-  .fc-card {
-    position: relative; width: 100%; min-height: 300px;
-    transform-style: preserve-3d;
-    transition: transform 0.52s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-  }
-  .fc-card.is-flipped { transform: rotateY(180deg); }
-  .fc-face {
-    position: absolute; inset: 0; border-radius: 24px;
-    backface-visibility: hidden; -webkit-backface-visibility: hidden;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    padding: 32px 24px; overflow: hidden;
-  }
-  .fc-face--back { transform: rotateY(180deg); }
- 
-  .fc-slide-enter  { animation: fc-slide-in  0.28s cubic-bezier(0.4,0,0.2,1) both; }
-  .fc-slide-leave  { animation: fc-slide-out 0.22s cubic-bezier(0.4,0,0.2,1) both; }
-  @keyframes fc-slide-in  { from { opacity:0; transform:translateX(48px); } to { opacity:1; transform:translateX(0); } }
-  @keyframes fc-slide-out { from { opacity:1; transform:translateX(0); } to { opacity:0; transform:translateX(-48px); } }
-  .fc-slide-enter-left { animation: fc-slide-in-left 0.28s cubic-bezier(0.4,0,0.2,1) both; }
-  @keyframes fc-slide-in-left { from { opacity:0; transform:translateX(-48px); } to { opacity:1; transform:translateX(0); } }
- 
-  .fc-btn-nav {
-    display:flex; align-items:center; justify-content:center;
-    width:44px; height:44px; border-radius:50%;
-    border:1.5px solid var(--bg-border);
-    background:transparent; cursor:pointer;
-    font-size:18px; font-weight:700; color:var(--text-muted);
-    transition:all 0.15s; flex-shrink:0;
-  }
-  .fc-btn-nav:hover:not(:disabled) { border-color:currentColor; color:var(--text-primary); background:var(--bg-card); }
-  .fc-btn-nav:disabled { opacity:0.25; cursor:not-allowed; }
- 
-  .fc-answer-btn {
-    flex:1; padding:14px; border-radius:16px;
-    font-size:14px; font-weight:700; cursor:pointer; transition:all 0.15s;
-    border:1.5px solid transparent;
-  }
-  .fc-answer-btn:hover { filter:brightness(1.15); transform:translateY(-1px); }
-  .fc-answer-btn:active { transform:translateY(0); }
- 
-  .fc-kbd-hint {
-    display:inline-flex; align-items:center; gap:3px;
-    font-size:10px; color:var(--text-muted); opacity:0.6;
-    font-family:var(--font-mono);
-  }
-  .fc-kbd-hint kbd {
-    background:var(--bg-card); border:1px solid var(--bg-border);
-    border-radius:4px; padding:1px 5px; font-size:9px;
-  }
-`;
+// (Style cho .fc-* nằm trong styles/tabs/kanji.css)
 
 function FlashcardMode({
   deck,
@@ -1003,15 +601,6 @@ function FlashcardMode({
   const [done, setDone] = useState(false);
   const [slideDir, setSlideDir] = useState("right"); // "right" | "left"
   const [animKey, setAnimKey] = useState(0); // bump to retrigger slide anim
-
-  // Inject CSS once
-  useEffect(() => {
-    if (document.getElementById("fc-styles")) return;
-    const el = document.createElement("style");
-    el.id = "fc-styles";
-    el.textContent = FLIP_STYLE;
-    document.head.appendChild(el);
-  }, []);
 
   const shuffleDeck = useCallback(() => {
     setOrder([...deck.map((_, i) => i)].sort(() => Math.random() - 0.5));
@@ -1141,129 +730,45 @@ function FlashcardMode({
     const learnedInDeck = deck.filter((k) => learned.has(k.id)).length;
     const unlearnedCount = deck.length - learnedInDeck;
     return (
-      <div style={{ textAlign: "center", padding: "48px 24px" }}>
-        <div style={{ fontSize: 56, marginBottom: 16 }}>🃏</div>
-        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>
+      <div className="kfc-center">
+        <div className="kfc-emoji-lg">🃏</div>
+        <h2 className="kfc-title">
           {isMarkedOnly ? "Ôn kanji đã đánh dấu" : "Ôn tất cả kanji"}
         </h2>
-        <p
-          style={{ color: "var(--text-muted)", fontSize: 14, marginBottom: 28 }}
-        >
+        <p className="kfc-sub">
           {deck.length} thẻ sẽ được xáo ngẫu nhiên
           {learnedInDeck > 0 && (
-            <span style={{ display: "block", marginTop: 6, color: "#22c55e" }}>
+            <span className="kfc-sub-learned">
               ✓ {learnedInDeck} đã học · {unlearnedCount} còn lại
             </span>
           )}
         </p>
 
         {/* Stats nhanh */}
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            justifyContent: "center",
-            marginBottom: 32,
-            flexWrap: "wrap",
-          }}
-        >
-          <div
-            style={{
-              padding: "14px 22px",
-              borderRadius: 14,
-              background: "#a78bfa22",
-              border: "1.5px solid #a78bfa44",
-            }}
-          >
-            <div style={{ fontSize: 26, fontWeight: 800, color: "#a78bfa" }}>
-              {deck.length}
-            </div>
-            <div
-              style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 2 }}
-            >
-              Tổng thẻ
-            </div>
+        <div className="kfc-stats">
+          <div className="kfc-stat" style={{ "--c": "#a78bfa" }}>
+            <div className="kfc-stat__n">{deck.length}</div>
+            <div className="kfc-stat__l">Tổng thẻ</div>
           </div>
           {learnedInDeck > 0 && (
-            <div
-              style={{
-                padding: "14px 22px",
-                borderRadius: 14,
-                background: "#22c55e22",
-                border: "1.5px solid #22c55e44",
-              }}
-            >
-              <div style={{ fontSize: 26, fontWeight: 800, color: "#22c55e" }}>
-                {learnedInDeck}
-              </div>
-              <div
-                style={{
-                  fontSize: 11,
-                  color: "var(--text-muted)",
-                  marginTop: 2,
-                }}
-              >
-                Đã học
-              </div>
+            <div className="kfc-stat" style={{ "--c": "#22c55e" }}>
+              <div className="kfc-stat__n">{learnedInDeck}</div>
+              <div className="kfc-stat__l">Đã học</div>
             </div>
           )}
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            gap: 10,
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <button
-            onClick={() => setShowIntro(false)}
-            style={{
-              padding: "12px 28px",
-              borderRadius: 20,
-              border: "1.5px solid #a78bfa",
-              background: "#a78bfa",
-              color: "#0a0b0f",
-              fontSize: 15,
-              fontWeight: 700,
-              cursor: "pointer",
-            }}
-          >
+        <div className="kfc-actions">
+          <button className="kfc-btn-primary" onClick={() => setShowIntro(false)}>
             🚀 Bắt đầu học
           </button>
-          <button
-            onClick={onExit}
-            style={{
-              padding: "12px 22px",
-              borderRadius: 20,
-              border: "1.5px solid var(--bg-border)",
-              background: "transparent",
-              color: "var(--text-muted)",
-              fontSize: 14,
-              fontWeight: 700,
-              cursor: "pointer",
-            }}
-          >
+          <button className="kfc-btn-ghost" onClick={onExit}>
             ← Quay lại
           </button>
         </div>
 
         {learnedInDeck > 0 && (
-          <button
-            onClick={onClearLearned}
-            style={{
-              marginTop: 16,
-              padding: "8px 18px",
-              borderRadius: 20,
-              border: "1.5px solid #22c55e44",
-              background: "transparent",
-              color: "#22c55e",
-              fontSize: 12,
-              fontWeight: 700,
-              cursor: "pointer",
-            }}
-          >
+          <button className="kfc-btn-clear" onClick={onClearLearned}>
             Xóa {learnedInDeck} đánh dấu đã học
           </button>
         )}
@@ -1275,117 +780,34 @@ function FlashcardMode({
   if (done) {
     const pct = Math.round((knowCount / order.length) * 100);
     return (
-      <div style={{ textAlign: "center", padding: "40px 20px" }}>
-        <div style={{ fontSize: 60, marginBottom: 16 }}>
+      <div className="kfc-done">
+        <div className="kfc-emoji-xl">
           {pct === 100 ? "🎉" : pct >= 70 ? "👏" : "💪"}
         </div>
-        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 6 }}>
-          Hoàn thành!
-        </h2>
-        <p
-          style={{ color: "var(--text-muted)", marginBottom: 28, fontSize: 14 }}
-        >
+        <h2 className="kfc-title kfc-title--done">Hoàn thành!</h2>
+        <p className="kfc-sub">
           Bạn đã ôn {order.length} kanji · đạt {pct}%
         </p>
-        <div
-          style={{
-            display: "flex",
-            gap: 16,
-            justifyContent: "center",
-            marginBottom: 32,
-          }}
-        >
-          <div
-            style={{
-              textAlign: "center",
-              padding: "16px 28px",
-              borderRadius: 16,
-              background: "#22c55e22",
-              border: "1.5px solid #22c55e55",
-            }}
-          >
-            <div style={{ fontSize: 30, fontWeight: 800, color: "#22c55e" }}>
-              {knowCount}
-            </div>
-            <div
-              style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 2 }}
-            >
-              Đã nhớ ✓
-            </div>
+        <div className="kfc-stats">
+          <div className="kfc-dstat" style={{ "--c": "#22c55e" }}>
+            <div className="kfc-dstat__n">{knowCount}</div>
+            <div className="kfc-dstat__l">Đã nhớ ✓</div>
           </div>
-          <div
-            style={{
-              textAlign: "center",
-              padding: "16px 28px",
-              borderRadius: 16,
-              background: "#f59e0b22",
-              border: "1.5px solid #f59e0b55",
-            }}
-          >
-            <div style={{ fontSize: 30, fontWeight: 800, color: "#f59e0b" }}>
-              {againCount}
-            </div>
-            <div
-              style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 2 }}
-            >
-              Cần ôn lại
-            </div>
+          <div className="kfc-dstat" style={{ "--c": "#f59e0b" }}>
+            <div className="kfc-dstat__n">{againCount}</div>
+            <div className="kfc-dstat__l">Cần ôn lại</div>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: 10,
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <button
-            onClick={shuffleDeck}
-            style={{
-              padding: "10px 22px",
-              borderRadius: 20,
-              border: "1.5px solid #a78bfa",
-              background: "#a78bfa",
-              color: "#0a0b0f",
-              fontSize: 13,
-              fontWeight: 700,
-              cursor: "pointer",
-            }}
-          >
+        <div className="kfc-actions kfc-actions--done">
+          <button className="kfc-btn-primary" onClick={shuffleDeck}>
             🔀 Học lại (ngẫu nhiên)
           </button>
-          <button
-            onClick={onExit}
-            style={{
-              padding: "10px 22px",
-              borderRadius: 20,
-              border: "1.5px solid var(--bg-border)",
-              background: "transparent",
-              color: "var(--text-muted)",
-              fontSize: 13,
-              fontWeight: 700,
-              cursor: "pointer",
-            }}
-          >
+          <button className="kfc-btn-ghost" onClick={onExit}>
             ← Quay lại
           </button>
         </div>
         {learned.size > 0 && (
-          <button
-            onClick={onClearLearned}
-            style={{
-              marginTop: 14,
-              padding: "8px 18px",
-              borderRadius: 20,
-              border: "1.5px solid #22c55e44",
-              background: "transparent",
-              color: "#22c55e",
-              fontSize: 12,
-              fontWeight: 700,
-              cursor: "pointer",
-            }}
-          >
+          <button className="kfc-btn-clear" onClick={onClearLearned}>
             Xóa tất cả {learned.size} đánh dấu đã học
           </button>
         )}
@@ -1399,122 +821,41 @@ function FlashcardMode({
   return (
     <div>
       {/* Header */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginBottom: 14,
-        }}
-      >
-        <button
-          onClick={onExit}
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            color: "var(--text-muted)",
-            fontSize: 13,
-            fontWeight: 700,
-          }}
-        >
+      <div className="kfc-header">
+        <button className="kfc-header__back" onClick={onExit}>
           ← Quay lại
         </button>
-        <div
-          style={{
-            fontSize: 12,
-            color: "var(--text-muted)",
-            fontFamily: "var(--font-mono)",
-            textAlign: "center",
-          }}
-        >
+        <div className="kfc-header__center">
           <div>{isMarkedOnly ? "★ Đã đánh dấu" : "Tất cả"}</div>
-          <div
-            style={{
-              fontSize: 13,
-              fontWeight: 700,
-              color: "var(--text-primary)",
-            }}
-          >
+          <div className="kfc-header__pos">
             {cardIdx + 1} / {order.length}
           </div>
         </div>
-        <button
-          onClick={shuffleDeck}
-          title="Xáo bài"
-          style={{
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-            color: "var(--text-muted)",
-            fontSize: 18,
-          }}
-        >
+        <button className="kfc-header__shuffle" onClick={shuffleDeck} title="Xáo bài">
           🔀
         </button>
       </div>
 
       {/* Progress bar */}
-      <div
-        style={{
-          height: 5,
-          borderRadius: 5,
-          background: "var(--bg-border)",
-          marginBottom: 20,
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            height: "100%",
-            borderRadius: 5,
-            background: `linear-gradient(90deg, ${color}, ${color}cc)`,
-            width: `${progress}%`,
-            transition: "width 0.5s ease",
-          }}
-        />
+      <div className="kfc-progress" style={{ "--c": color }}>
+        <div className="kfc-progress__fill" style={{ width: `${progress}%` }} />
       </div>
 
       {/* Card with flip animation — wrapped in slide container */}
-      <div key={animKey} className={slideClass} style={{ marginBottom: 16 }}>
+      <div key={animKey} className={`${slideClass} kfc-slide`} style={{ "--c": color }}>
         <div className="fc-scene">
           <div
             className={`fc-card${flipped ? " is-flipped" : ""}`}
             onClick={() => setFlipped((f) => !f)}
           >
             {/* Front */}
-            <div
-              className="fc-face fc-face--front"
-              style={{
-                border: `2px solid ${color}44`,
-                background: `${color}09`,
-              }}
-            >
+            <div className="fc-face fc-face--front">
               {/* Learned badge top-right */}
               <button
+                className={`kfc-learn-toggle ${learned.has(current.id) ? "is-on" : ""}`}
                 onClick={(e) => {
                   e.stopPropagation();
                   onToggleLearn(current.id);
-                }}
-                style={{
-                  position: "absolute",
-                  top: 10,
-                  right: 10,
-                  background: learned.has(current.id)
-                    ? "#22c55e22"
-                    : "transparent",
-                  border: learned.has(current.id)
-                    ? "1.5px solid #22c55e"
-                    : "1.5px solid var(--bg-border)",
-                  borderRadius: 20,
-                  padding: "3px 10px",
-                  color: learned.has(current.id)
-                    ? "#22c55e"
-                    : "var(--text-muted)",
-                  fontSize: 11,
-                  fontWeight: 700,
-                  cursor: "pointer",
-                  transition: "all 0.2s",
                 }}
                 title={
                   learned.has(current.id)
@@ -1524,169 +865,42 @@ function FlashcardMode({
               >
                 {learned.has(current.id) ? "✓ Đã học" : "○ Đã học"}
               </button>
-              <div
-                style={{
-                  fontSize: 88,
-                  lineHeight: 1,
-                  color,
-                  fontWeight: 400,
-                  marginBottom: 12,
-                }}
-              >
-                {current.char}
-              </div>
-              <div
-                style={{
-                  fontSize: 12,
-                  color: "var(--text-muted)",
-                  fontFamily: "var(--font-mono)",
-                  marginBottom: 6,
-                }}
-              >
-                Nhấn để xem đáp án
-              </div>
+              <div className="kfc-char-front">{current.char}</div>
+              <div className="kfc-tap">Nhấn để xem đáp án</div>
               <div className="fc-kbd-hint">
                 <kbd>Space</kbd> lật thẻ
               </div>
             </div>
 
             {/* Back */}
-            <div
-              className="fc-face fc-face--back"
-              style={{
-                border: `2px solid ${color}66`,
-                background: `${color}12`,
-              }}
-            >
-              <div style={{ textAlign: "center", width: "100%" }}>
-                <div
-                  style={{
-                    fontSize: 54,
-                    lineHeight: 1,
-                    color,
-                    marginBottom: 8,
-                  }}
-                >
-                  {current.char}
-                </div>
-                <div
-                  style={{ fontSize: 22, fontWeight: 700, marginBottom: 14 }}
-                >
-                  {current.meaning}
-                </div>
+            <div className="fc-face fc-face--back">
+              <div className="kfc-back-inner">
+                <div className="kfc-char-back">{current.char}</div>
+                <div className="kfc-meaning">{current.meaning}</div>
 
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 16,
-                    justifyContent: "center",
-                    marginBottom: 14,
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <div style={{ textAlign: "center" }}>
-                    <div
-                      style={{
-                        fontSize: 10,
-                        color: "var(--text-muted)",
-                        marginBottom: 2,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.06em",
-                      }}
-                    >
-                      Âm On
-                    </div>
-                    <div
-                      style={{
-                        color: "var(--accent-yellow)",
-                        fontWeight: 700,
-                        fontSize: 16,
-                      }}
-                    >
-                      {current.on}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: 11,
-                        color: "var(--text-muted)",
-                        fontStyle: "italic",
-                      }}
-                    >
-                      {current.on_romaji}
-                    </div>
+                <div className="kfc-readings">
+                  <div className="kfc-reading">
+                    <div className="kfc-reading__label">Âm On</div>
+                    <div className="kfc-reading__on">{current.on}</div>
+                    <div className="kfc-reading__romaji">{current.on_romaji}</div>
                   </div>
-                  <div style={{ width: 1, background: "var(--bg-border)" }} />
-                  <div style={{ textAlign: "center" }}>
-                    <div
-                      style={{
-                        fontSize: 10,
-                        color: "var(--text-muted)",
-                        marginBottom: 2,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.06em",
-                      }}
-                    >
-                      Âm Kun
-                    </div>
-                    <div
-                      style={{
-                        color: "var(--accent-cyan)",
-                        fontWeight: 700,
-                        fontSize: 16,
-                      }}
-                    >
-                      {current.kun}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: 11,
-                        color: "var(--text-muted)",
-                        fontStyle: "italic",
-                      }}
-                    >
-                      {current.kun_romaji}
-                    </div>
+                  <div className="kfc-vdivider" />
+                  <div className="kfc-reading">
+                    <div className="kfc-reading__label">Âm Kun</div>
+                    <div className="kfc-reading__kun">{current.kun}</div>
+                    <div className="kfc-reading__romaji">{current.kun_romaji}</div>
                   </div>
                 </div>
 
                 {current.mnemonic && (
-                  <div
-                    style={{
-                      fontSize: 12,
-                      color: "var(--text-muted)",
-                      fontStyle: "italic",
-                      background: "var(--bg-card)",
-                      borderRadius: 10,
-                      padding: "8px 14px",
-                      marginBottom: 10,
-                      textAlign: "left",
-                    }}
-                  >
-                    💡 {current.mnemonic}
-                  </div>
+                  <div className="kfc-mnemonic">💡 {current.mnemonic}</div>
                 )}
 
-                <div
-                  style={{
-                    display: "flex",
-                    gap: 8,
-                    flexWrap: "wrap",
-                    justifyContent: "center",
-                  }}
-                >
+                <div className="kfc-examples">
                   {current.examples.map((ex, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        background: `${color}18`,
-                        borderRadius: 10,
-                        padding: "6px 12px",
-                        fontSize: 12,
-                        textAlign: "left",
-                      }}
-                    >
-                      <div style={{ fontWeight: 700 }}>{ex.word}</div>
-                      <div style={{ color: "var(--text-muted)", fontSize: 11 }}>
+                    <div key={i} className="kfc-example">
+                      <div className="kfc-example__word">{ex.word}</div>
+                      <div className="kfc-example__sub">
                         {ex.reading} · {ex.meaning}
                       </div>
                     </div>
@@ -1699,14 +913,7 @@ function FlashcardMode({
       </div>
 
       {/* Controls row: prev | answer buttons | next */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 10,
-          marginBottom: 12,
-        }}
-      >
+      <div className="kfc-controls" style={{ "--c": color }}>
         <button
           className="fc-btn-nav"
           onClick={goPrev}
@@ -1717,27 +924,17 @@ function FlashcardMode({
         </button>
 
         {flipped ? (
-          <div style={{ flex: 1, display: "flex", gap: 10 }}>
+          <div className="kfc-answers">
             <button
-              className="fc-answer-btn"
+              className="fc-answer-btn fc-answer-btn--again"
               onClick={() => handleAnswer("again")}
-              style={{
-                border: "1.5px solid #f59e0b66",
-                background: "#f59e0b22",
-                color: "#f59e0b",
-              }}
               title="Ôn lại (← hoặc 1)"
             >
               😅 Ôn lại
             </button>
             <button
-              className="fc-answer-btn"
+              className="fc-answer-btn fc-answer-btn--know"
               onClick={() => handleAnswer("know")}
-              style={{
-                border: "1.5px solid #22c55e66",
-                background: "#22c55e22",
-                color: "#22c55e",
-              }}
               title="Đã nhớ (→ hoặc 2)"
             >
               ✓ Đã nhớ
@@ -1745,19 +942,8 @@ function FlashcardMode({
           </div>
         ) : (
           <button
+            className="kfc-flip-btn"
             onClick={() => setFlipped(true)}
-            style={{
-              flex: 1,
-              padding: "13px",
-              borderRadius: 16,
-              border: `1.5px solid ${color}`,
-              background: color,
-              color: "#0a0b0f",
-              fontSize: 13,
-              fontWeight: 700,
-              cursor: "pointer",
-              transition: "all 0.15s",
-            }}
             title="Lật thẻ (Space)"
           >
             Lật thẻ
@@ -1775,15 +961,7 @@ function FlashcardMode({
       </div>
 
       {/* Keyboard hints */}
-      <div
-        style={{
-          display: "flex",
-          gap: 14,
-          justifyContent: "center",
-          marginBottom: 16,
-          flexWrap: "wrap",
-        }}
-      >
+      <div className="kfc-hints">
         {!flipped ? (
           <span className="fc-kbd-hint">
             <kbd>Space</kbd> lật thẻ &nbsp;·&nbsp; <kbd>←</kbd>
@@ -1798,46 +976,12 @@ function FlashcardMode({
       </div>
 
       {/* Mini scoreboard */}
-      <div
-        style={{
-          display: "flex",
-          gap: 16,
-          justifyContent: "center",
-          padding: "10px 0",
-          borderTop: "1px solid var(--bg-border)",
-        }}
-      >
-        <span
-          style={{
-            fontSize: 12,
-            color: "#22c55e",
-            fontFamily: "var(--font-mono)",
-            fontWeight: 700,
-          }}
-        >
-          ✓ {knowCount}
-        </span>
-        <span style={{ fontSize: 12, color: "var(--text-muted)" }}>·</span>
-        <span
-          style={{
-            fontSize: 12,
-            color: "#f59e0b",
-            fontFamily: "var(--font-mono)",
-            fontWeight: 700,
-          }}
-        >
-          ↺ {againCount}
-        </span>
-        <span style={{ fontSize: 12, color: "var(--text-muted)" }}>·</span>
-        <span
-          style={{
-            fontSize: 12,
-            color: "var(--text-muted)",
-            fontFamily: "var(--font-mono)",
-          }}
-        >
-          còn {order.length - cardIdx - 1}
-        </span>
+      <div className="kfc-scoreboard">
+        <span className="kfc-score-know">✓ {knowCount}</span>
+        <span className="kfc-score-dot">·</span>
+        <span className="kfc-score-again">↺ {againCount}</span>
+        <span className="kfc-score-dot">·</span>
+        <span className="kfc-score-left">còn {order.length - cardIdx - 1}</span>
       </div>
     </div>
   );

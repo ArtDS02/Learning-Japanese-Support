@@ -57,6 +57,7 @@ export default function KanaTab() {
     : kanaData.katakana.basic;
 
   const dakuten = kanaData.hiragana.dakuten;
+  const modeColor = mode === "hiragana" ? "#22d3ee" : "#a78bfa";
 
   const startQuiz = () => {
     const chars = basicChars.filter(c => c.char && c.romaji);
@@ -91,32 +92,24 @@ export default function KanaTab() {
           <button
             key={m.id}
             className={`filter-btn ${mode === m.id ? "filter-btn--active" : ""}`}
-            style={mode === m.id ? { background: m.color, color: "#0a0b0f" } : {}}
+            style={{ "--c": m.color }}
             onClick={() => { setMode(m.id); setQuizMode(false); setFillMode(false); }}
           >
             {m.label}
           </button>
         ))}
         {mode !== "katakana-words" && (
-          <div style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
+          <div className="kana-tools">
             <button
-              style={{
-                background: fillMode ? "var(--accent-violet)" : "rgba(255,255,255,0.06)",
-                border: "1px solid var(--bg-border)", color: fillMode ? "#0a0b0f" : "var(--text-secondary)",
-                padding: "6px 16px", borderRadius: 20, cursor: "pointer", fontSize: 13, fontFamily: "var(--font-body)",
-                transition: "all var(--transition)"
-              }}
+              className={`kana-toolbtn ${fillMode ? "is-active" : ""}`}
+              style={{ "--c": "var(--accent-violet)" }}
               onClick={() => { setFillMode((v) => !v); setQuizMode(false); }}
             >
               {fillMode ? "✕ Thoát" : "✍️ Điền romaji"}
             </button>
             <button
-              style={{
-                background: quizMode ? "var(--accent-green)" : "rgba(255,255,255,0.06)",
-                border: "1px solid var(--bg-border)", color: quizMode ? "#0a0b0f" : "var(--text-secondary)",
-                padding: "6px 16px", borderRadius: 20, cursor: "pointer", fontSize: 13, fontFamily: "var(--font-body)",
-                transition: "all var(--transition)"
-              }}
+              className={`kana-toolbtn ${quizMode ? "is-active" : ""}`}
+              style={{ "--c": "var(--accent-green)" }}
               onClick={quizMode ? () => setQuizMode(false) : () => { startQuiz(); setFillMode(false); }}
             >
               {quizMode ? "✕ Thoát Quiz" : "🎯 Quiz nhanh"}
@@ -127,32 +120,19 @@ export default function KanaTab() {
 
       {/* Quiz Mode */}
       {quizMode && quizCard && (
-        <div style={{
-          background: "var(--bg-card)", border: "1px solid var(--bg-border)", borderRadius: "var(--radius-xl)",
-          padding: 40, textAlign: "center", marginBottom: 28, animation: "fade-up 0.3s ease"
-        }}>
-          <div style={{ fontSize: 11, color: "var(--text-muted)", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 20 }}>
+        <div className="kana-quiz" style={{ "--c": modeColor }}>
+          <div className="kana-quiz__prompt">
             {mode === "hiragana" ? "Hiragana này đọc là gì?" : "Katakana này đọc là gì?"}
           </div>
-          <div style={{ fontSize: 100, lineHeight: 1, marginBottom: 32, color: mode === "hiragana" ? "var(--accent-cyan)" : "var(--accent-violet)" }}>
-            {quizCard.char}
-          </div>
+          <div className="kana-quiz__char">{quizCard.char}</div>
           {!showAnswer ? (
-            <button
-              onClick={() => setShowAnswer(true)}
-              style={{ background: "var(--gradient-primary)", border: "none", color: "#fff", padding: "12px 32px", borderRadius: "var(--radius-md)", cursor: "pointer", fontSize: 16, fontFamily: "var(--font-body)", fontWeight: 600 }}
-            >
+            <button className="kana-quiz__reveal" onClick={() => setShowAnswer(true)}>
               Xem đáp án
             </button>
           ) : (
-            <div style={{ animation: "fade-up 0.3s ease" }}>
-              <div style={{ fontSize: 36, fontWeight: 700, color: "var(--accent-green)", fontFamily: "var(--font-mono)", marginBottom: 20 }}>
-                {quizCard.romaji}
-              </div>
-              <button
-                onClick={nextCard}
-                style={{ background: "var(--accent-cyan)", border: "none", color: "#0a0b0f", padding: "10px 28px", borderRadius: "var(--radius-md)", cursor: "pointer", fontSize: 15, fontFamily: "var(--font-body)", fontWeight: 700 }}
-              >
+            <div className="kana-quiz__result">
+              <div className="kana-quiz__answer">{quizCard.romaji}</div>
+              <button className="kana-quiz__next" onClick={nextCard}>
                 Tiếp theo →
               </button>
             </div>
@@ -172,16 +152,16 @@ export default function KanaTab() {
       {/* Katakana Words */}
       {mode === "katakana-words" && (
         <div>
-          <div style={{ marginBottom: 16, padding: 14, background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.2)", borderRadius: "var(--radius-md)", fontSize: 13, color: "var(--accent-orange)" }}>
+          <div className="kana-info">
             💡 Katakana chủ yếu dùng để viết từ ngoại lai (từ mượn tiếng Anh/Pháp/...). Học những từ này rất dễ vì bạn đã biết nghĩa rồi!
           </div>
           <div className="cards-grid">
             {kanaData.commonKatakanaWords.map((w, i) => (
               <div key={i} className="word-card" style={{ "--card-color": "#a78bfa", animationDelay: `${i * 40}ms` }}>
-                <div style={{ fontSize: 28, fontWeight: 700, marginBottom: 4 }}>{w.katakana}</div>
-                <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--text-secondary)", marginBottom: 8 }}>{w.romaji}</div>
-                <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 6 }}>{w.meaning}</div>
-                <div style={{ fontSize: 12, color: "var(--text-muted)", fontFamily: "var(--font-mono)" }}>← {w.origin}</div>
+                <div className="kana-kw__jp">{w.katakana}</div>
+                <div className="kana-kw__romaji">{w.romaji}</div>
+                <div className="kana-kw__meaning">{w.meaning}</div>
+                <div className="kana-kw__origin">← {w.origin}</div>
               </div>
             ))}
           </div>
@@ -191,27 +171,21 @@ export default function KanaTab() {
       {/* Bảng chữ cái */}
       {mode !== "katakana-words" && !quizMode && !fillMode && (
         <>
-          <div style={{ marginBottom: 24 }}>
-            <div style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, marginBottom: 12, color: mode === "hiragana" ? "var(--accent-cyan)" : "var(--accent-violet)" }}>
+          <div className="kana-section" style={{ "--c": modeColor }}>
+            <div className="kana-section__title">
               {mode === "hiragana" ? "あ Bảng Hiragana cơ bản" : "ア Bảng Katakana cơ bản"}
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 8 }}>
+            <div className="kana-grid">
               {basicChars.map((c, i) => (
                 <div
                   key={i}
-                  style={{
-                    background: c.char ? "var(--bg-card)" : "transparent",
-                    border: c.char ? "1px solid var(--bg-border)" : "1px solid transparent",
-                    borderRadius: "var(--radius-md)", padding: "12px 8px", textAlign: "center",
-                    transition: "all var(--transition)", cursor: c.char ? "default" : "default",
-                    animationDelay: `${i * 20}ms`,
-                  }}
-                  className={c.char ? "kanji-card" : ""}
+                  className={c.char ? "kana-cell" : "kana-cell kana-cell--empty"}
+                  style={{ animationDelay: `${i * 20}ms` }}
                 >
                   {c.char && (
                     <>
-                      <div style={{ fontSize: 28, marginBottom: 4, color: mode === "hiragana" ? "var(--accent-cyan)" : "var(--accent-violet)" }}>{c.char}</div>
-                      <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--text-secondary)" }}>{c.romaji}</div>
+                      <div className="kana-cell__char">{c.char}</div>
+                      <div className="kana-cell__romaji">{c.romaji}</div>
                     </>
                   )}
                 </div>
@@ -221,18 +195,18 @@ export default function KanaTab() {
 
           {/* Dakuten - only for hiragana */}
           {mode === "hiragana" && (
-            <div>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, marginBottom: 12, color: "var(--accent-orange)" }}>
+            <div className="kana-section" style={{ "--c": "#f97316" }}>
+              <div className="kana-section__title">
                 ゛Hàng biến âm (Dakuten & Handakuten)
               </div>
-              <div style={{ marginBottom: 12, fontSize: 13, color: "var(--text-secondary)", padding: "10px 14px", background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.2)", borderRadius: "var(--radius-sm)" }}>
+              <div className="kana-dakuten-note">
                 💡 Thêm ゛(dakuten) để đổi k→g, s→z, t→d, h→b · Thêm ゜(handakuten) để đổi h→p
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 8 }}>
+              <div className="kana-grid">
                 {dakuten.map((c, i) => (
-                  <div key={i} className="kanji-card" style={{ animationDelay: `${i * 20}ms` }}>
-                    <div style={{ fontSize: 26, marginBottom: 4, color: "var(--accent-orange)" }}>{c.char}</div>
-                    <div style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--text-secondary)" }}>{c.romaji}</div>
+                  <div key={i} className="kana-cell" style={{ animationDelay: `${i * 20}ms` }}>
+                    <div className="kana-cell__char">{c.char}</div>
+                    <div className="kana-cell__romaji">{c.romaji}</div>
                   </div>
                 ))}
               </div>
@@ -319,26 +293,26 @@ function FillRomaji({ chars, mode, color }) {
     const total = score.correct + score.wrong;
     const pct = total ? Math.round((score.correct / total) * 100) : 0;
     return (
-      <div className="flashcard-wrapper">
-        <div className="flash-summary">
-          <div style={{ fontSize: 54, marginBottom: 8 }}>
+      <div className="fill-quiz">
+        <div className="fill-summary">
+          <div className="fill-summary__emoji">
             {pct === 100 ? "🎉" : pct >= 70 ? "👏" : "💪"}
           </div>
-          <h3 className="flash-summary__title">Hoàn thành!</h3>
-          <p className="flash-summary__sub">
+          <h3 className="fill-summary__title">Hoàn thành!</h3>
+          <p className="fill-summary__sub">
             Đúng {score.correct}/{total} chữ · {pct}%
           </p>
-          <div className="flash-summary__stats">
-            <div className="flash-stat" style={{ "--c": "#34d399" }}>
-              <div className="flash-stat__n">{score.correct}</div>
-              <div className="flash-stat__l">✓ Đúng</div>
+          <div className="fill-summary__stats">
+            <div className="fill-stat" style={{ "--c": "#34d399" }}>
+              <div className="fill-stat__n">{score.correct}</div>
+              <div className="fill-stat__l">✓ Đúng</div>
             </div>
-            <div className="flash-stat" style={{ "--c": "#f87171" }}>
-              <div className="flash-stat__n">{score.wrong}</div>
-              <div className="flash-stat__l">✗ Sai</div>
+            <div className="fill-stat" style={{ "--c": "#f87171" }}>
+              <div className="fill-stat__n">{score.wrong}</div>
+              <div className="fill-stat__l">✗ Sai</div>
             </div>
           </div>
-          <button className="flash-restart-btn" onClick={restart}>
+          <button className="fill-restart" onClick={restart}>
             🔀 Xáo lại & học tiếp
           </button>
         </div>
@@ -356,15 +330,15 @@ function FillRomaji({ chars, mode, color }) {
             {i + 1} / {deck.length}
           </span>
           <span className="fill-quiz__score">
-            <span style={{ color: "#34d399" }}>✓ {score.correct}</span>
-            <span style={{ color: "#f87171", marginLeft: 8 }}>✗ {score.wrong}</span>
+            <span className="ok">✓ {score.correct}</span>
+            <span className="no">✗ {score.wrong}</span>
           </span>
           <button className="fill-quiz__shuffle" onClick={restart} title="Xáo lại từ đầu">
             🔀
           </button>
         </div>
-        <div className="flash-track">
-          <div className="flash-track__fill" style={{ width: `${progress}%` }} />
+        <div className="fill-track">
+          <div className="fill-track__fill" style={{ width: `${progress}%` }} />
         </div>
       </div>
 
@@ -372,7 +346,7 @@ function FillRomaji({ chars, mode, color }) {
         {mode === "hiragana" ? "Hiragana" : "Katakana"} này đọc là gì? (gõ romaji)
       </div>
 
-      <div className="fill-quiz__char" style={{ color }}>
+      <div className="fill-quiz__char" style={{ "--c": color }}>
         {cur.char}
       </div>
 

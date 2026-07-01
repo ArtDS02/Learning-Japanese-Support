@@ -17,15 +17,7 @@ function HighlightedText({ text, highlights = [], color }) {
     <span>
       {parts.map((part, i) =>
         highlights.includes(part) ? (
-          <mark
-            key={i}
-            className="highlight"
-            style={{
-              background: `${color}33`,
-              color: color,
-              border: `1px solid ${color}55`,
-            }}
-          >
+          <mark key={i} className="highlight" style={{ "--c": color }}>
             {part}
           </mark>
         ) : (
@@ -46,21 +38,17 @@ function ParticlesSection({ category }) {
 
   return (
     <div className="grammar-section">
-      <div className="grammar-section__title">
-        <span style={{ fontSize: 22 }}>{category.icon}</span>
-        <span style={{ color: category.color }}>{category.label}</span>
+      <div className="grammar-section__title" style={{ "--c": category.color }}>
+        <span className="gs-icon">{category.icon}</span>
+        <span className="gs-label">{category.label}</span>
       </div>
 
       {/* Particle quick-filter */}
-      <div className="filter-bar" style={{ marginBottom: 20 }}>
+      <div className="filter-bar gs-filter">
         <span className="filter-label">Lọc:</span>
         <button
           className={`filter-btn ${activeFilter === "all" ? "filter-btn--active" : ""}`}
-          style={
-            activeFilter === "all"
-              ? { background: category.color, color: "#0a0b0f" }
-              : {}
-          }
+          style={{ "--c": category.color }}
           onClick={() => setActiveFilter("all")}
         >
           Tất cả
@@ -69,16 +57,7 @@ function ParticlesSection({ category }) {
           <button
             key={item.id}
             className={`filter-btn ${activeFilter === item.id ? "filter-btn--active" : ""}`}
-            style={
-              activeFilter === item.id
-                ? {
-                    background: item.color,
-                    color: "#0a0b0f",
-                    fontWeight: 700,
-                    fontSize: 16,
-                  }
-                : {}
-            }
+            style={{ "--c": item.color }}
             onClick={() =>
               setActiveFilter(item.id === activeFilter ? "all" : item.id)
             }
@@ -96,28 +75,12 @@ function ParticlesSection({ category }) {
             style={{ animationDelay: `${idx * 60}ms` }}
           >
             {/* Particle chip */}
-            <div
-              className="particle-chip"
-              style={{
-                background: `${item.color}22`,
-                color: item.color,
-                border: `1px solid ${item.color}44`,
-              }}
-            >
+            <div className="particle-chip" style={{ "--c": item.color }}>
               {item.particle}
             </div>
 
             {/* Romaji */}
-            <div
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: 11,
-                color: "var(--text-muted)",
-                marginBottom: 8,
-              }}
-            >
-              / {item.romaji} /
-            </div>
+            <div className="gs-romaji">/ {item.romaji} /</div>
 
             <div className="particle-function">{item.function}</div>
             <div className="particle-detail">{item.detail}</div>
@@ -133,14 +96,7 @@ function ParticlesSection({ category }) {
                       color={item.color}
                     />
                   </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: 11,
-                      color: "var(--text-muted)",
-                      margin: "2px 0",
-                    }}
-                  >
+                  <div className="particle-example__romaji">
                     {ex.romaji.replace(/<|>/g, "")}
                   </div>
                   <div className="particle-example__vn">→ {ex.vn}</div>
@@ -157,60 +113,22 @@ function ParticlesSection({ category }) {
 function VerbGroupsSection({ category }) {
   return (
     <div className="grammar-section">
-      <div className="grammar-section__title">
-        <span style={{ fontSize: 22 }}>{category.icon}</span>
-        <span style={{ color: category.color }}>{category.label}</span>
+      <div className="grammar-section__title" style={{ "--c": category.color }}>
+        <span className="gs-icon">{category.icon}</span>
+        <span className="gs-label">{category.label}</span>
       </div>
 
       {category.items.map((group, gi) => (
         <div
           key={group.id}
-          style={{
-            background: "var(--bg-card)",
-            border: "1px solid var(--bg-border)",
-            borderRadius: "var(--radius-lg)",
-            padding: 24,
-            marginBottom: 16,
-            borderLeft: `3px solid ${group.color}`,
-            animationDelay: `${gi * 100}ms`,
-          }}
-          className="word-card"
+          className="word-card gs-group"
+          style={{ "--c": group.color, animationDelay: `${gi * 100}ms` }}
         >
-          <div style={{ marginBottom: 4 }}>
-            <span
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: 17,
-                fontWeight: 700,
-                color: group.color,
-              }}
-            >
-              {group.title}
-            </span>
+          <div className="gs-group__titlerow">
+            <span className="gs-group__title">{group.title}</span>
           </div>
-          <div
-            style={{
-              fontSize: 13,
-              color: "var(--text-secondary)",
-              marginBottom: 8,
-            }}
-          >
-            {group.subtitle}
-          </div>
-          <div
-            style={{
-              fontSize: 13,
-              padding: "8px 14px",
-              background: `${group.color}15`,
-              border: `1px solid ${group.color}33`,
-              borderRadius: "var(--radius-sm)",
-              color: group.color,
-              marginBottom: 16,
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            📌 Quy tắc: {group.rule}
-          </div>
+          <div className="gs-group__sub">{group.subtitle}</div>
+          <div className="gs-rule">📌 Quy tắc: {group.rule}</div>
 
           <div className="verb-table-wrapper">
             <table className="verb-table">
@@ -218,10 +136,10 @@ function VerbGroupsSection({ category }) {
                 <tr>
                   <th>Từ điển</th>
                   <th>Nghĩa</th>
-                  <th style={{ color: "var(--accent-cyan)" }}>ます</th>
-                  <th style={{ color: "var(--accent-red)" }}>ません</th>
-                  <th style={{ color: "var(--accent-green)" }}>ました</th>
-                  <th style={{ color: "var(--accent-yellow)" }}>て形</th>
+                  <th className="th-cyan">ます</th>
+                  <th className="th-red">ません</th>
+                  <th className="th-green">ました</th>
+                  <th className="th-yellow">て形</th>
                 </tr>
               </thead>
               <tbody>
@@ -247,9 +165,9 @@ function VerbGroupsSection({ category }) {
 function ExpressionsSection({ category }) {
   return (
     <div className="grammar-section">
-      <div className="grammar-section__title">
-        <span style={{ fontSize: 22 }}>{category.icon}</span>
-        <span style={{ color: category.color }}>{category.label}</span>
+      <div className="grammar-section__title" style={{ "--c": category.color }}>
+        <span className="gs-icon">{category.icon}</span>
+        <span className="gs-label">{category.label}</span>
       </div>
 
       <div className="cards-grid">
@@ -262,35 +180,18 @@ function ExpressionsSection({ category }) {
               animationDelay: `${idx * 80}ms`,
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                flexWrap: "wrap",
-                gap: 10,
-                marginBottom: 10,
-              }}
-            >
+            <div className="gs-expr-head">
               <div>
-                <div className="word-card__jp" style={{ fontSize: 22 }}>
-                  {item.title}
-                </div>
-                <div className="word-card__kanji" style={{ color: item.color }}>
-                  {item.subtitle}
-                </div>
+                <div className="word-card__jp gs-expr__jp">{item.title}</div>
+                <div className="word-card__kanji gs-expr__sub">{item.subtitle}</div>
               </div>
-              <div
-                className="word-card__type-badge"
-                style={{ background: `${item.color}22`, color: item.color }}
-              >
-                Mẫu câu
-              </div>
+              <div className="word-card__type-badge gs-badge">Mẫu câu</div>
             </div>
 
             <div className="word-card__meaning">{item.meaning}</div>
             <div className="word-card__note">{item.note}</div>
 
-            <div style={{ marginTop: 14, display: "grid", gap: 10 }}>
+            <div className="gs-expr-examples">
               {item.examples.map((ex, i) => (
                 <div key={i} className="word-card__example">
                   <div className="word-card__example-jp">{ex.jp}</div>
@@ -316,12 +217,12 @@ function PatternsSection({ category }) {
 
   return (
     <div className="grammar-section">
-      <div className="grammar-section__title">
-        <span style={{ fontSize: 22 }}>{category.icon}</span>
-        <span style={{ color: category.color }}>{category.label}</span>
+      <div className="grammar-section__title" style={{ "--c": category.color }}>
+        <span className="gs-icon">{category.icon}</span>
+        <span className="gs-label">{category.label}</span>
       </div>
 
-      <div className="search-box" style={{ marginBottom: 20 }}>
+      <div className="search-box gs-search">
         <span className="search-box__icon">🔍</span>
         <input
           type="text"
@@ -340,37 +241,12 @@ function PatternsSection({ category }) {
             animationDelay: `${idx * 80}ms`,
           }}
         >
-          <div
-            style={{
-              marginBottom: 10,
-              display: "flex",
-              alignItems: "center",
-              flexWrap: "wrap",
-              gap: 8,
-            }}
-          >
-            <span
-              className="pattern-chip"
-              style={{
-                background: `${item.color}22`,
-                color: item.color,
-                border: `1px solid ${item.color}44`,
-              }}
-            >
+          <div className="gs-pattern-head">
+            <span className="pattern-chip" style={{ "--c": item.color }}>
               {item.pattern}
             </span>
             <span
-              className="pattern-level"
-              style={{
-                background:
-                  item.level === "Cơ bản"
-                    ? "rgba(52,211,153,0.15)"
-                    : "rgba(167,139,250,0.15)",
-                color:
-                  item.level === "Cơ bản"
-                    ? "var(--accent-green)"
-                    : "var(--accent-violet)",
-              }}
+              className={`pattern-level ${item.level === "Cơ bản" ? "is-basic" : "is-adv"}`}
             >
               {item.level}
             </span>
@@ -407,60 +283,22 @@ function PatternsSection({ category }) {
 function AdjectivesSection({ category }) {
   return (
     <div className="grammar-section">
-      <div className="grammar-section__title">
-        <span style={{ fontSize: 22 }}>{category.icon}</span>
-        <span style={{ color: category.color }}>{category.label}</span>
+      <div className="grammar-section__title" style={{ "--c": category.color }}>
+        <span className="gs-icon">{category.icon}</span>
+        <span className="gs-label">{category.label}</span>
       </div>
 
       {category.items.map((group, gi) => (
         <div
           key={group.id}
-          className="word-card"
-          style={{
-            background: "var(--bg-card)",
-            border: "1px solid var(--bg-border)",
-            borderRadius: "var(--radius-lg)",
-            padding: 24,
-            marginBottom: 16,
-            borderLeft: `3px solid ${group.color}`,
-            animationDelay: `${gi * 100}ms`,
-          }}
+          className="word-card gs-group"
+          style={{ "--c": group.color, animationDelay: `${gi * 100}ms` }}
         >
-          <div style={{ marginBottom: 4 }}>
-            <span
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: 17,
-                fontWeight: 700,
-                color: group.color,
-              }}
-            >
-              {group.title}
-            </span>
+          <div className="gs-group__titlerow">
+            <span className="gs-group__title">{group.title}</span>
           </div>
-          <div
-            style={{
-              fontSize: 13,
-              color: "var(--text-secondary)",
-              marginBottom: 8,
-            }}
-          >
-            {group.subtitle}
-          </div>
-          <div
-            style={{
-              fontSize: 13,
-              padding: "8px 14px",
-              background: `${group.color}15`,
-              border: `1px solid ${group.color}33`,
-              borderRadius: "var(--radius-sm)",
-              color: group.color,
-              marginBottom: 16,
-              fontFamily: "var(--font-mono)",
-            }}
-          >
-            📌 Quy tắc: {group.rule}
-          </div>
+          <div className="gs-group__sub">{group.subtitle}</div>
+          <div className="gs-rule">📌 Quy tắc: {group.rule}</div>
 
           <div className="verb-table-wrapper">
             <table className="verb-table">
@@ -468,11 +306,11 @@ function AdjectivesSection({ category }) {
                 <tr>
                   <th>Từ điển</th>
                   <th>Nghĩa</th>
-                  <th style={{ color: "var(--accent-cyan)" }}>Hiện tại</th>
-                  <th style={{ color: "var(--accent-red)" }}>Phủ định</th>
-                  <th style={{ color: "var(--accent-green)" }}>Quá khứ</th>
-                  <th style={{ color: "var(--accent-yellow)" }}>+ Danh từ</th>
-                  <th style={{ color: "var(--accent-violet)" }}>Thể て</th>
+                  <th className="th-cyan">Hiện tại</th>
+                  <th className="th-red">Phủ định</th>
+                  <th className="th-green">Quá khứ</th>
+                  <th className="th-yellow">+ Danh từ</th>
+                  <th className="th-violet">Thể て</th>
                 </tr>
               </thead>
               <tbody>
@@ -483,9 +321,7 @@ function AdjectivesSection({ category }) {
                     <td className="verb-masu">{v.present}</td>
                     <td className="verb-masen">{v.negative}</td>
                     <td className="verb-mashita">{v.past}</td>
-                    <td style={{ fontFamily: "var(--font-jp)", fontSize: 13 }}>
-                      {v.noun}
-                    </td>
+                    <td className="verb-noun">{v.noun}</td>
                     <td className="verb-te">{v.te}</td>
                   </tr>
                 ))}
@@ -502,9 +338,9 @@ function AdjectivesSection({ category }) {
 function QuestionWordsSection({ category }) {
   return (
     <div className="grammar-section">
-      <div className="grammar-section__title">
-        <span style={{ fontSize: 22 }}>{category.icon}</span>
-        <span style={{ color: category.color }}>{category.label}</span>
+      <div className="grammar-section__title" style={{ "--c": category.color }}>
+        <span className="gs-icon">{category.icon}</span>
+        <span className="gs-label">{category.label}</span>
       </div>
 
       <div className="particle-grid">
@@ -515,27 +351,12 @@ function QuestionWordsSection({ category }) {
             style={{ animationDelay: `${idx * 60}ms` }}
           >
             <div
-              className="particle-chip"
-              style={{
-                background: `${item.color}22`,
-                color: item.color,
-                border: `1px solid ${item.color}44`,
-                fontSize: 18,
-                fontWeight: 700,
-              }}
+              className="particle-chip particle-chip--word"
+              style={{ "--c": item.color }}
             >
               {item.word}
             </div>
-            <div
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: 11,
-                color: "var(--text-muted)",
-                marginBottom: 8,
-              }}
-            >
-              / {item.romaji} /
-            </div>
+            <div className="gs-romaji">/ {item.romaji} /</div>
             <div className="particle-function">{item.meaning}</div>
             <div className="particle-detail">{item.note}</div>
 
@@ -564,60 +385,23 @@ function QuestionWordsSection({ category }) {
 function CountersSection({ category }) {
   return (
     <div className="grammar-section">
-      <div className="grammar-section__title">
-        <span style={{ fontSize: 22 }}>{category.icon}</span>
-        <span style={{ color: category.color }}>{category.label}</span>
+      <div className="grammar-section__title" style={{ "--c": category.color }}>
+        <span className="gs-icon">{category.icon}</span>
+        <span className="gs-label">{category.label}</span>
       </div>
 
       {category.items.map((group, gi) => (
         <div
           key={group.id}
-          className="word-card"
-          style={{
-            background: "var(--bg-card)",
-            border: "1px solid var(--bg-border)",
-            borderRadius: "var(--radius-lg)",
-            padding: 24,
-            marginBottom: 16,
-            borderLeft: `3px solid ${group.color}`,
-            animationDelay: `${gi * 100}ms`,
-          }}
+          className="word-card gs-group"
+          style={{ "--c": group.color, animationDelay: `${gi * 100}ms` }}
         >
-          <div style={{ marginBottom: 4 }}>
-            <span
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: 17,
-                fontWeight: 700,
-                color: group.color,
-              }}
-            >
-              {group.title}
-            </span>
+          <div className="gs-group__titlerow">
+            <span className="gs-group__title">{group.title}</span>
           </div>
-          <div
-            style={{
-              fontSize: 13,
-              color: "var(--text-secondary)",
-              marginBottom: 8,
-            }}
-          >
-            {group.subtitle}
-          </div>
+          <div className="gs-group__sub">{group.subtitle}</div>
           {group.note && (
-            <div
-              style={{
-                fontSize: 13,
-                padding: "8px 14px",
-                background: `${group.color}15`,
-                border: `1px solid ${group.color}33`,
-                borderRadius: "var(--radius-sm)",
-                color: group.color,
-                marginBottom: 16,
-              }}
-            >
-              💡 {group.note}
-            </div>
+            <div className="gs-rule gs-rule--plain">💡 {group.note}</div>
           )}
 
           {/* Lượng từ thông dụng */}
@@ -634,15 +418,9 @@ function CountersSection({ category }) {
                 <tbody>
                   {group.counters.map((c, i) => (
                     <tr key={i}>
-                      <td className="verb-dict" style={{ color: group.color }}>
-                        {c.kanji}
-                      </td>
+                      <td className="verb-dict vt-accent">{c.kanji}</td>
                       <td className="verb-meaning">{c.use}</td>
-                      <td
-                        style={{ fontSize: 12, color: "var(--text-secondary)" }}
-                      >
-                        {c.examples}
-                      </td>
+                      <td className="vt-sm">{c.examples}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -652,36 +430,11 @@ function CountersSection({ category }) {
 
           {/* Biến âm bất quy tắc */}
           {group.special_readings && (
-            <div style={{ display: "grid", gap: 8 }}>
+            <div className="gs-special">
               {group.special_readings.map((r, i) => (
-                <div
-                  key={i}
-                  style={{
-                    padding: "10px 14px",
-                    background: "var(--bg-surface)",
-                    borderRadius: "var(--radius-sm)",
-                    border: "1px solid var(--bg-border)",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "var(--font-jp)",
-                      color: group.color,
-                      fontWeight: 600,
-                      marginRight: 10,
-                    }}
-                  >
-                    {r.counter}
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: 12,
-                      color: "var(--text-secondary)",
-                    }}
-                  >
-                    {r.irregular}
-                  </span>
+                <div key={i} className="gs-special__item">
+                  <span className="gs-special__counter">{r.counter}</span>
+                  <span className="gs-special__irregular">{r.irregular}</span>
                 </div>
               ))}
             </div>
@@ -701,19 +454,9 @@ function CountersSection({ category }) {
                 <tbody>
                   {group.time_expressions.map((t, i) => (
                     <tr key={i}>
-                      <td className="verb-dict" style={{ color: group.color }}>
-                        {t.jp}
-                      </td>
+                      <td className="verb-dict vt-accent">{t.jp}</td>
                       <td className="verb-meaning">{t.meaning}</td>
-                      <td
-                        style={{
-                          fontSize: 12,
-                          color: "var(--text-secondary)",
-                          fontFamily: "var(--font-mono)",
-                        }}
-                      >
-                        {t.ex}
-                      </td>
+                      <td className="vt-sm-mono">{t.ex}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -754,17 +497,13 @@ export default function GrammarTab() {
       </div>
 
       {/* Section selector */}
-      <div className="filter-bar" style={{ marginBottom: 28 }}>
+      <div className="filter-bar gs-section-nav">
         <span className="filter-label">Phần:</span>
         {sections.map((sec) => (
           <button
             key={sec.id}
             className={`filter-btn ${activeSection === sec.id ? "filter-btn--active" : ""}`}
-            style={
-              activeSection === sec.id
-                ? { background: sec.color, color: "#0a0b0f" }
-                : {}
-            }
+            style={{ "--c": sec.color }}
             onClick={() => setActiveSection(sec.id)}
           >
             {sec.icon} {sec.label}
