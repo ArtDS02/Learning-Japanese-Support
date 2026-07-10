@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Ngữ pháp JLPT N5",
-    "description": "Tổng hợp các cấu trúc ngữ pháp N5"
+    "description": "Tổng hợp các cấu trúc ngữ pháp N5",
+    "total": 84
   },
   "categories": [
     {
@@ -935,9 +936,18 @@
           "color": "#38bdf8",
           "note": "なん dùng trước です、の、〜語、số đếm. なに dùng trước trợ từ を、が、に.",
           "examples": [
-            { "jp": "これは なんですか？", "vn": "Đây là cái gì?" },
-            { "jp": "なにを たべますか？", "vn": "Bạn ăn gì?" },
-            { "jp": "なんご が はなせますか？", "vn": "Bạn nói được tiếng gì?" }
+            {
+              "jp": "これは なんですか？",
+              "vn": "Đây là cái gì?"
+            },
+            {
+              "jp": "なにを たべますか？",
+              "vn": "Bạn ăn gì?"
+            },
+            {
+              "jp": "なんご が はなせますか？",
+              "vn": "Bạn nói được tiếng gì?"
+            }
           ]
         },
         {
@@ -948,8 +958,14 @@
           "color": "#f472b6",
           "note": "だれの (của ai), だれが (ai làm), だれに (cho/với ai).",
           "examples": [
-            { "jp": "だれが きましたか？", "vn": "Ai đã đến?" },
-            { "jp": "これは だれの ほんですか？", "vn": "Đây là sách của ai?" }
+            {
+              "jp": "だれが きましたか？",
+              "vn": "Ai đã đến?"
+            },
+            {
+              "jp": "これは だれの ほんですか？",
+              "vn": "Đây là sách của ai?"
+            }
           ]
         },
         {
@@ -960,8 +976,14 @@
           "color": "#34d399",
           "note": "どこ（に/で/へ/から）—  dùng với trợ từ chỉ địa điểm.",
           "examples": [
-            { "jp": "トイレは どこですか？", "vn": "Nhà vệ sinh ở đâu?" },
-            { "jp": "どこで かいましたか？", "vn": "Bạn mua ở đâu?" }
+            {
+              "jp": "トイレは どこですか？",
+              "vn": "Nhà vệ sinh ở đâu?"
+            },
+            {
+              "jp": "どこで かいましたか？",
+              "vn": "Bạn mua ở đâu?"
+            }
           ]
         },
         {
@@ -972,8 +994,14 @@
           "color": "#fbbf24",
           "note": "いつ không cần trợ từ に đi kèm (khác với thời gian cụ thể).",
           "examples": [
-            { "jp": "たんじょうびは いつですか？", "vn": "Sinh nhật bạn là khi nào?" },
-            { "jp": "いつ にほんへ いきますか？", "vn": "Bao giờ bạn đi Nhật?" }
+            {
+              "jp": "たんじょうびは いつですか？",
+              "vn": "Sinh nhật bạn là khi nào?"
+            },
+            {
+              "jp": "いつ にほんへ いきますか？",
+              "vn": "Bao giờ bạn đi Nhật?"
+            }
           ]
         },
         {
@@ -984,8 +1012,14 @@
           "color": "#f97316",
           "note": "どれ đứng một mình. どの đứng trước danh từ (どの + Danh từ).",
           "examples": [
-            { "jp": "どれが あなたの かばんですか？", "vn": "Cái nào là túi của bạn?" },
-            { "jp": "どの でんしゃに のりますか？", "vn": "Bạn đi tàu nào?" }
+            {
+              "jp": "どれが あなたの かばんですか？",
+              "vn": "Cái nào là túi của bạn?"
+            },
+            {
+              "jp": "どの でんしゃに のりますか？",
+              "vn": "Bạn đi tàu nào?"
+            }
           ]
         },
         {
@@ -996,8 +1030,14 @@
           "color": "#a78bfa",
           "note": "どんな + Danh từ: hỏi về tính chất, đặc điểm của sự vật.",
           "examples": [
-            { "jp": "どんな おんがくが すきですか？", "vn": "Bạn thích loại nhạc nào?" },
-            { "jp": "どんな ひとですか？", "vn": "Đó là người như thế nào?" }
+            {
+              "jp": "どんな おんがくが すきですか？",
+              "vn": "Bạn thích loại nhạc nào?"
+            },
+            {
+              "jp": "どんな ひとですか？",
+              "vn": "Đó là người như thế nào?"
+            }
           ]
         },
         {
@@ -1008,8 +1048,14 @@
           "color": "#fb7185",
           "note": "Dùng để hỏi giá tiền. Không dùng trợ từ に hay で sau いくら.",
           "examples": [
-            { "jp": "これは いくらですか？", "vn": "Cái này bao nhiêu tiền?" },
-            { "jp": "ぜんぶで いくらですか？", "vn": "Tổng cộng bao nhiêu?" }
+            {
+              "jp": "これは いくらですか？",
+              "vn": "Cái này bao nhiêu tiền?"
+            },
+            {
+              "jp": "ぜんぶで いくらですか？",
+              "vn": "Tổng cộng bao nhiêu?"
+            }
           ]
         },
         {
@@ -1020,8 +1066,14 @@
           "color": "#67e8f9",
           "note": "いくつ hỏi số lượng vật (dùng lượng từ 個) hoặc tuổi. なんさい hỏi tuổi trực tiếp.",
           "examples": [
-            { "jp": "りんごを いくつ かいましたか？", "vn": "Bạn đã mua bao nhiêu quả táo?" },
-            { "jp": "おいくつですか？/ なんさいですか？", "vn": "Bạn bao nhiêu tuổi?" }
+            {
+              "jp": "りんごを いくつ かいましたか？",
+              "vn": "Bạn đã mua bao nhiêu quả táo?"
+            },
+            {
+              "jp": "おいくつですか？/ なんさいですか？",
+              "vn": "Bạn bao nhiêu tuổi?"
+            }
           ]
         },
         {
@@ -1032,8 +1084,14 @@
           "color": "#4ade80",
           "note": "なんじ hỏi giờ, なんぷん hỏi phút. Kết hợp: いま なんじですか？",
           "examples": [
-            { "jp": "いま なんじですか？", "vn": "Bây giờ là mấy giờ?" },
-            { "jp": "なんじに おきますか？", "vn": "Bạn thức dậy lúc mấy giờ?" }
+            {
+              "jp": "いま なんじですか？",
+              "vn": "Bây giờ là mấy giờ?"
+            },
+            {
+              "jp": "なんじに おきますか？",
+              "vn": "Bạn thức dậy lúc mấy giờ?"
+            }
           ]
         }
       ]
@@ -1051,18 +1109,66 @@
           "color": "#34d399",
           "note": "Tiếng Nhật dùng lượng từ (助数詞) khác nhau tùy loại vật. Cần nhớ các lượng từ phổ biến cho N5.",
           "counters": [
-            { "kanji": "〜枚 (まい)", "use": "Vật mỏng, phẳng", "examples": "giấy, áo, đĩa, tem" },
-            { "kanji": "〜本 (ほん)", "use": "Vật dài, hình trụ", "examples": "bút, chai, cành cây, cá" },
-            { "kanji": "〜冊 (さつ)", "use": "Sách, vở", "examples": "ほん (sách), ノート (vở)" },
-            { "kanji": "〜匹 (ひき)", "use": "Động vật nhỏ", "examples": "mèo, chó, cá, côn trùng" },
-            { "kanji": "〜頭 (とう)", "use": "Động vật lớn", "examples": "bò, ngựa, voi" },
-            { "kanji": "〜羽 (わ)", "use": "Chim, thỏ", "examples": "chim, thỏ" },
-            { "kanji": "〜個 (こ)", "use": "Vật nhỏ tròn", "examples": "táo, trứng, kẹo" },
-            { "kanji": "〜台 (だい)", "use": "Máy móc, xe", "examples": "ô tô, máy tính, TV" },
-            { "kanji": "〜杯 (はい)", "use": "Đồ uống trong cốc/chén", "examples": "cà phê, nước, cơm" },
-            { "kanji": "〜人 (にん)", "use": "Người", "examples": "ひとり (1 người), ふたり (2 người), さんにん..." },
-            { "kanji": "〜階 (かい)", "use": "Tầng nhà", "examples": "いっかい (tầng 1), にかい (tầng 2)" },
-            { "kanji": "〜番 (ばん)", "use": "Số thứ tự", "examples": "いちばん (số 1 / nhất)" }
+            {
+              "kanji": "〜枚 (まい)",
+              "use": "Vật mỏng, phẳng",
+              "examples": "giấy, áo, đĩa, tem"
+            },
+            {
+              "kanji": "〜本 (ほん)",
+              "use": "Vật dài, hình trụ",
+              "examples": "bút, chai, cành cây, cá"
+            },
+            {
+              "kanji": "〜冊 (さつ)",
+              "use": "Sách, vở",
+              "examples": "ほん (sách), ノート (vở)"
+            },
+            {
+              "kanji": "〜匹 (ひき)",
+              "use": "Động vật nhỏ",
+              "examples": "mèo, chó, cá, côn trùng"
+            },
+            {
+              "kanji": "〜頭 (とう)",
+              "use": "Động vật lớn",
+              "examples": "bò, ngựa, voi"
+            },
+            {
+              "kanji": "〜羽 (わ)",
+              "use": "Chim, thỏ",
+              "examples": "chim, thỏ"
+            },
+            {
+              "kanji": "〜個 (こ)",
+              "use": "Vật nhỏ tròn",
+              "examples": "táo, trứng, kẹo"
+            },
+            {
+              "kanji": "〜台 (だい)",
+              "use": "Máy móc, xe",
+              "examples": "ô tô, máy tính, TV"
+            },
+            {
+              "kanji": "〜杯 (はい)",
+              "use": "Đồ uống trong cốc/chén",
+              "examples": "cà phê, nước, cơm"
+            },
+            {
+              "kanji": "〜人 (にん)",
+              "use": "Người",
+              "examples": "ひとり (1 người), ふたり (2 người), さんにん..."
+            },
+            {
+              "kanji": "〜階 (かい)",
+              "use": "Tầng nhà",
+              "examples": "いっかい (tầng 1), にかい (tầng 2)"
+            },
+            {
+              "kanji": "〜番 (ばん)",
+              "use": "Số thứ tự",
+              "examples": "いちばん (số 1 / nhất)"
+            }
           ]
         },
         {
@@ -1072,13 +1178,34 @@
           "color": "#fbbf24",
           "note": "Một số tổ hợp số + lượng từ có cách đọc bất quy tắc. Đây là những trường hợp hay gặp trong đề thi N5.",
           "special_readings": [
-            { "counter": "〜本 (ほん)", "irregular": "1本=いっぽん, 3本=さんぼん, 6本=ろっぽん, 8本=はっぽん, 10本=じゅっぽん" },
-            { "counter": "〜枚 (まい)", "irregular": "Đọc bình thường: いちまい、にまい、さんまい..." },
-            { "counter": "〜匹 (ひき)", "irregular": "1匹=いっぴき, 3匹=さんびき, 6匹=ろっぴき, 8匹=はっぴき" },
-            { "counter": "〜冊 (さつ)", "irregular": "1冊=いっさつ, 8冊=はっさつ, 10冊=じゅっさつ" },
-            { "counter": "〜人 (にん)", "irregular": "1人=ひとり, 2人=ふたり (bất quy tắc!), từ 3 người trở đi: さんにん, よにん..." },
-            { "counter": "〜階 (かい)", "irregular": "1階=いっかい, 3階=さんがい hoặc さんかい, 6階=ろっかい, 8階=はっかい" },
-            { "counter": "〜個 (こ)", "irregular": "1個=いっこ, 6個=ろっこ, 8個=はっこ, 10個=じゅっこ" }
+            {
+              "counter": "〜本 (ほん)",
+              "irregular": "1本=いっぽん, 3本=さんぼん, 6本=ろっぽん, 8本=はっぽん, 10本=じゅっぽん"
+            },
+            {
+              "counter": "〜枚 (まい)",
+              "irregular": "Đọc bình thường: いちまい、にまい、さんまい..."
+            },
+            {
+              "counter": "〜匹 (ひき)",
+              "irregular": "1匹=いっぴき, 3匹=さんびき, 6匹=ろっぴき, 8匹=はっぴき"
+            },
+            {
+              "counter": "〜冊 (さつ)",
+              "irregular": "1冊=いっさつ, 8冊=はっさつ, 10冊=じゅっさつ"
+            },
+            {
+              "counter": "〜人 (にん)",
+              "irregular": "1人=ひとり, 2人=ふたり (bất quy tắc!), từ 3 người trở đi: さんにん, よにん..."
+            },
+            {
+              "counter": "〜階 (かい)",
+              "irregular": "1階=いっかい, 3階=さんがい hoặc さんかい, 6階=ろっかい, 8階=はっかい"
+            },
+            {
+              "counter": "〜個 (こ)",
+              "irregular": "1個=いっこ, 6個=ろっこ, 8個=はっこ, 10個=じゅっこ"
+            }
           ]
         },
         {
@@ -1088,21 +1215,81 @@
           "color": "#60a5fa",
           "note": "Các cụm thời gian thường gặp trong đề thi nghe và đọc hiểu N5.",
           "time_expressions": [
-            { "jp": "〜時間 (じかん)", "meaning": "... tiếng đồng hồ (khoảng thời gian)", "ex": "2時間 = 2 tiếng" },
-            { "jp": "〜分 (ふん/ぷん)", "meaning": "... phút", "ex": "30分 = 30 phút" },
-            { "jp": "〜日間 (にちかん)", "meaning": "... ngày (khoảng thời gian)", "ex": "3日間 = 3 ngày" },
-            { "jp": "〜週間 (しゅうかん)", "meaning": "... tuần", "ex": "1週間 = 1 tuần" },
-            { "jp": "〜ヶ月 (かげつ)", "meaning": "... tháng (khoảng thời gian)", "ex": "6ヶ月 = 6 tháng" },
-            { "jp": "〜年間 (ねんかん)", "meaning": "... năm (khoảng thời gian)", "ex": "3年間 = 3 năm" },
-            { "jp": "今日 (きょう)", "meaning": "Hôm nay", "ex": "きょうは どようびです" },
-            { "jp": "明日 (あした)", "meaning": "Ngày mai", "ex": "あした いきます" },
-            { "jp": "昨日 (きのう)", "meaning": "Hôm qua", "ex": "きのう たべました" },
-            { "jp": "今週 (こんしゅう)", "meaning": "Tuần này", "ex": "こんしゅう いそがしいです" },
-            { "jp": "来週 (らいしゅう)", "meaning": "Tuần sau", "ex": "らいしゅう あいましょう" },
-            { "jp": "先週 (せんしゅう)", "meaning": "Tuần trước", "ex": "せんしゅう みました" },
-            { "jp": "今月 (こんげつ)", "meaning": "Tháng này", "ex": "こんげつ いそがしいです" },
-            { "jp": "来月 (らいげつ)", "meaning": "Tháng sau", "ex": "らいげつ りょこうします" },
-            { "jp": "来年 (らいねん)", "meaning": "Năm sau", "ex": "らいねん にほんへ いきます" }
+            {
+              "jp": "〜時間 (じかん)",
+              "meaning": "... tiếng đồng hồ (khoảng thời gian)",
+              "ex": "2時間 = 2 tiếng"
+            },
+            {
+              "jp": "〜分 (ふん/ぷん)",
+              "meaning": "... phút",
+              "ex": "30分 = 30 phút"
+            },
+            {
+              "jp": "〜日間 (にちかん)",
+              "meaning": "... ngày (khoảng thời gian)",
+              "ex": "3日間 = 3 ngày"
+            },
+            {
+              "jp": "〜週間 (しゅうかん)",
+              "meaning": "... tuần",
+              "ex": "1週間 = 1 tuần"
+            },
+            {
+              "jp": "〜ヶ月 (かげつ)",
+              "meaning": "... tháng (khoảng thời gian)",
+              "ex": "6ヶ月 = 6 tháng"
+            },
+            {
+              "jp": "〜年間 (ねんかん)",
+              "meaning": "... năm (khoảng thời gian)",
+              "ex": "3年間 = 3 năm"
+            },
+            {
+              "jp": "今日 (きょう)",
+              "meaning": "Hôm nay",
+              "ex": "きょうは どようびです"
+            },
+            {
+              "jp": "明日 (あした)",
+              "meaning": "Ngày mai",
+              "ex": "あした いきます"
+            },
+            {
+              "jp": "昨日 (きのう)",
+              "meaning": "Hôm qua",
+              "ex": "きのう たべました"
+            },
+            {
+              "jp": "今週 (こんしゅう)",
+              "meaning": "Tuần này",
+              "ex": "こんしゅう いそがしいです"
+            },
+            {
+              "jp": "来週 (らいしゅう)",
+              "meaning": "Tuần sau",
+              "ex": "らいしゅう あいましょう"
+            },
+            {
+              "jp": "先週 (せんしゅう)",
+              "meaning": "Tuần trước",
+              "ex": "せんしゅう みました"
+            },
+            {
+              "jp": "今月 (こんげつ)",
+              "meaning": "Tháng này",
+              "ex": "こんげつ いそがしいです"
+            },
+            {
+              "jp": "来月 (らいげつ)",
+              "meaning": "Tháng sau",
+              "ex": "らいげつ りょこうします"
+            },
+            {
+              "jp": "来年 (らいねん)",
+              "meaning": "Năm sau",
+              "ex": "らいねん にほんへ いきます"
+            }
           ]
         }
       ]
@@ -1121,9 +1308,27 @@
           "color": "#f87171",
           "explanation": "Thể ます phủ định quá khứ: [động từ thể ます] bỏ ます → thêm ませんでした. Đây là thể phủ định quá khứ lịch sự thường gặp nhất.",
           "examples": [
-            { "jp": "きのう がっこうに いきませんでした。", "vn": "Hôm qua tôi đã không đi học.", "highlights": ["ませんでした"] },
-            { "jp": "あさごはんを たべませんでした。", "vn": "Tôi đã không ăn sáng.", "highlights": ["ませんでした"] },
-            { "jp": "その えいがを みませんでした。", "vn": "Tôi đã không xem bộ phim đó.", "highlights": ["ませんでした"] }
+            {
+              "jp": "きのう がっこうに いきませんでした。",
+              "vn": "Hôm qua tôi đã không đi học.",
+              "highlights": [
+                "ませんでした"
+              ]
+            },
+            {
+              "jp": "あさごはんを たべませんでした。",
+              "vn": "Tôi đã không ăn sáng.",
+              "highlights": [
+                "ませんでした"
+              ]
+            },
+            {
+              "jp": "その えいがを みませんでした。",
+              "vn": "Tôi đã không xem bộ phim đó.",
+              "highlights": [
+                "ませんでした"
+              ]
+            }
           ]
         },
         {
@@ -1134,9 +1339,27 @@
           "color": "#fb923c",
           "explanation": "Tính từ い: bỏ い → thêm くない(です). Tính từ な & Danh từ: thêm ではない(です) hoặc じゃない(です) (thân mật hơn). Chú ý: いい → よくない (bất quy tắc).",
           "examples": [
-            { "jp": "このりんごは おいしくないです。", "vn": "Quả táo này không ngon.", "highlights": ["くないです"] },
-            { "jp": "あしたは ひまじゃないです。", "vn": "Ngày mai tôi không rảnh.", "highlights": ["じゃないです"] },
-            { "jp": "かれは せんせいでは ありません。", "vn": "Anh ấy không phải là giáo viên.", "highlights": ["ではありません"] }
+            {
+              "jp": "このりんごは おいしくないです。",
+              "vn": "Quả táo này không ngon.",
+              "highlights": [
+                "くないです"
+              ]
+            },
+            {
+              "jp": "あしたは ひまじゃないです。",
+              "vn": "Ngày mai tôi không rảnh.",
+              "highlights": [
+                "じゃないです"
+              ]
+            },
+            {
+              "jp": "かれは せんせいでは ありません。",
+              "vn": "Anh ấy không phải là giáo viên.",
+              "highlights": [
+                "ではありません"
+              ]
+            }
           ]
         },
         {
@@ -1147,9 +1370,27 @@
           "color": "#fbbf24",
           "explanation": "Tính từ い: bỏ い → thêm くて. Tính từ な: thêm で. Dùng để nối 2 tính từ cùng mô tả một sự vật, hoặc nối 2 vế câu.",
           "examples": [
-            { "jp": "このへやは ひろくて あかるいです。", "vn": "Căn phòng này rộng và sáng.", "highlights": ["くて"] },
-            { "jp": "かのじょは きれいで やさしいです。", "vn": "Cô ấy đẹp và dịu dàng.", "highlights": ["で"] },
-            { "jp": "このケーキは あまくて おいしいです。", "vn": "Chiếc bánh này ngọt và ngon.", "highlights": ["くて"] }
+            {
+              "jp": "このへやは ひろくて あかるいです。",
+              "vn": "Căn phòng này rộng và sáng.",
+              "highlights": [
+                "くて"
+              ]
+            },
+            {
+              "jp": "かのじょは きれいで やさしいです。",
+              "vn": "Cô ấy đẹp và dịu dàng.",
+              "highlights": [
+                "で"
+              ]
+            },
+            {
+              "jp": "このケーキは あまくて おいしいです。",
+              "vn": "Chiếc bánh này ngọt và ngon.",
+              "highlights": [
+                "くて"
+              ]
+            }
           ]
         },
         {
@@ -1160,10 +1401,38 @@
           "color": "#4ade80",
           "explanation": "Đây là nhóm tính từ đặc biệt dùng với が (không phải を). Chủ thể cảm xúc/đánh giá đi với は, đối tượng đi với が.",
           "examples": [
-            { "jp": "わたしは にほんごが すきです。", "vn": "Tôi thích tiếng Nhật.", "highlights": ["が", "すきです"] },
-            { "jp": "かれは うたが じょうずです。", "vn": "Anh ấy giỏi ca hát.", "highlights": ["が", "じょうずです"] },
-            { "jp": "わたしは りょうりが へたです。", "vn": "Tôi nấu ăn không giỏi.", "highlights": ["が", "へたです"] },
-            { "jp": "こどもは やさいが きらいです。", "vn": "Trẻ con ghét rau.", "highlights": ["が", "きらいです"] }
+            {
+              "jp": "わたしは にほんごが すきです。",
+              "vn": "Tôi thích tiếng Nhật.",
+              "highlights": [
+                "が",
+                "すきです"
+              ]
+            },
+            {
+              "jp": "かれは うたが じょうずです。",
+              "vn": "Anh ấy giỏi ca hát.",
+              "highlights": [
+                "が",
+                "じょうずです"
+              ]
+            },
+            {
+              "jp": "わたしは りょうりが へたです。",
+              "vn": "Tôi nấu ăn không giỏi.",
+              "highlights": [
+                "が",
+                "へたです"
+              ]
+            },
+            {
+              "jp": "こどもは やさいが きらいです。",
+              "vn": "Trẻ con ghét rau.",
+              "highlights": [
+                "が",
+                "きらいです"
+              ]
+            }
           ]
         },
         {
@@ -1174,9 +1443,30 @@
           "color": "#60a5fa",
           "explanation": "Diễn đạt sự thay đổi trạng thái. Tính từ い: bỏ い → く + なります. Tính từ な & Danh từ: + に + なります.",
           "examples": [
-            { "jp": "さむく なりました。", "vn": "Trời trở nên lạnh.", "highlights": ["く", "なりました"] },
-            { "jp": "にほんご が じょうずに なりたいです。", "vn": "Tôi muốn trở nên giỏi tiếng Nhật.", "highlights": ["に", "なりたいです"] },
-            { "jp": "こどもが おとなに なりました。", "vn": "Đứa trẻ đã trở thành người lớn.", "highlights": ["に", "なりました"] }
+            {
+              "jp": "さむく なりました。",
+              "vn": "Trời trở nên lạnh.",
+              "highlights": [
+                "く",
+                "なりました"
+              ]
+            },
+            {
+              "jp": "にほんご が じょうずに なりたいです。",
+              "vn": "Tôi muốn trở nên giỏi tiếng Nhật.",
+              "highlights": [
+                "に",
+                "なりたいです"
+              ]
+            },
+            {
+              "jp": "こどもが おとなに なりました。",
+              "vn": "Đứa trẻ đã trở thành người lớn.",
+              "highlights": [
+                "に",
+                "なりました"
+              ]
+            }
           ]
         },
         {
@@ -1187,9 +1477,27 @@
           "color": "#f472b6",
           "explanation": "Ghép: [động từ thể ない] + でください. Dùng để yêu cầu ai đó không làm điều gì, lịch sự hơn cấm hẳn.",
           "examples": [
-            { "jp": "ここで たばこを すわないでください。", "vn": "Xin đừng hút thuốc ở đây.", "highlights": ["ないでください"] },
-            { "jp": "しゃしんを とらないでください。", "vn": "Xin đừng chụp ảnh.", "highlights": ["ないでください"] },
-            { "jp": "おそく こないでください。", "vn": "Xin đừng đến muộn.", "highlights": ["ないでください"] }
+            {
+              "jp": "ここで たばこを すわないでください。",
+              "vn": "Xin đừng hút thuốc ở đây.",
+              "highlights": [
+                "ないでください"
+              ]
+            },
+            {
+              "jp": "しゃしんを とらないでください。",
+              "vn": "Xin đừng chụp ảnh.",
+              "highlights": [
+                "ないでください"
+              ]
+            },
+            {
+              "jp": "おそく こないでください。",
+              "vn": "Xin đừng đến muộn.",
+              "highlights": [
+                "ないでください"
+              ]
+            }
           ]
         },
         {
@@ -1200,9 +1508,27 @@
           "color": "#34d399",
           "explanation": "Ghép: [thể て] + から. Nhấn mạnh thứ tự hành động: hành động 1 hoàn tất TRƯỚC, rồi mới đến hành động 2. Khác với 〜た後で (sau khi) — てから nhấn mạnh hơn vào tính thứ tự.",
           "examples": [
-            { "jp": "てを あらってから たべます。", "vn": "Rửa tay xong rồi mới ăn.", "highlights": ["てから"] },
-            { "jp": "しゅくだいを してから あそびます。", "vn": "Làm bài tập xong rồi mới chơi.", "highlights": ["てから"] },
-            { "jp": "にほんに きてから 3ねんに なります。", "vn": "Kể từ khi đến Nhật đã được 3 năm.", "highlights": ["てから"] }
+            {
+              "jp": "てを あらってから たべます。",
+              "vn": "Rửa tay xong rồi mới ăn.",
+              "highlights": [
+                "てから"
+              ]
+            },
+            {
+              "jp": "しゅくだいを してから あそびます。",
+              "vn": "Làm bài tập xong rồi mới chơi.",
+              "highlights": [
+                "てから"
+              ]
+            },
+            {
+              "jp": "にほんに きてから 3ねんに なります。",
+              "vn": "Kể từ khi đến Nhật đã được 3 năm.",
+              "highlights": [
+                "てから"
+              ]
+            }
           ]
         },
         {
@@ -1213,9 +1539,27 @@
           "color": "#a78bfa",
           "explanation": "前に: [động từ từ điển] + まえに → hành động chưa xảy ra. 後で: [động từ thể た] + あとで → hành động đã xảy ra. Danh từ dùng: [Danh từ] + の + まえに/あとで.",
           "examples": [
-            { "jp": "ねる まえに はを みがきます。", "vn": "Trước khi ngủ thì đánh răng.", "highlights": ["まえに"] },
-            { "jp": "たべた あとで さんぽします。", "vn": "Sau khi ăn thì đi dạo.", "highlights": ["あとで"] },
-            { "jp": "しゅっぱつの まえに でんわします。", "vn": "Trước khi khởi hành thì gọi điện.", "highlights": ["まえに"] }
+            {
+              "jp": "ねる まえに はを みがきます。",
+              "vn": "Trước khi ngủ thì đánh răng.",
+              "highlights": [
+                "まえに"
+              ]
+            },
+            {
+              "jp": "たべた あとで さんぽします。",
+              "vn": "Sau khi ăn thì đi dạo.",
+              "highlights": [
+                "あとで"
+              ]
+            },
+            {
+              "jp": "しゅっぱつの まえに でんわします。",
+              "vn": "Trước khi khởi hành thì gọi điện.",
+              "highlights": [
+                "まえに"
+              ]
+            }
           ]
         },
         {
@@ -1226,9 +1570,27 @@
           "color": "#fbbf24",
           "explanation": "Ghép: [mệnh đề thể thường] + と + おもいます. Dùng để nêu ý kiến, suy đoán. Mệnh đề trước と phải dùng thể thường (không phải thể lịch sự).",
           "examples": [
-            { "jp": "あしたは あめだと おもいます。", "vn": "Tôi nghĩ ngày mai sẽ mưa.", "highlights": ["と おもいます"] },
-            { "jp": "かれは いそがしいと おもいます。", "vn": "Tôi nghĩ anh ấy bận.", "highlights": ["と おもいます"] },
-            { "jp": "この もんだいは むずかしいと おもいます。", "vn": "Tôi nghĩ bài tập này khó.", "highlights": ["と おもいます"] }
+            {
+              "jp": "あしたは あめだと おもいます。",
+              "vn": "Tôi nghĩ ngày mai sẽ mưa.",
+              "highlights": [
+                "と おもいます"
+              ]
+            },
+            {
+              "jp": "かれは いそがしいと おもいます。",
+              "vn": "Tôi nghĩ anh ấy bận.",
+              "highlights": [
+                "と おもいます"
+              ]
+            },
+            {
+              "jp": "この もんだいは むずかしいと おもいます。",
+              "vn": "Tôi nghĩ bài tập này khó.",
+              "highlights": [
+                "と おもいます"
+              ]
+            }
           ]
         },
         {
@@ -1239,9 +1601,27 @@
           "color": "#38bdf8",
           "explanation": "Ghép: [động từ thể từ điển] + ことが + できます. Diễn đạt khả năng hoặc năng lực. Phủ định: できません. Quá khứ: できました.",
           "examples": [
-            { "jp": "にほんごで はなすことが できます。", "vn": "Tôi có thể nói bằng tiếng Nhật.", "highlights": ["ことが できます"] },
-            { "jp": "ピアノを ひくことが できません。", "vn": "Tôi không thể chơi piano.", "highlights": ["ことが できません"] },
-            { "jp": "はやく はしることが できます。", "vn": "Tôi có thể chạy nhanh.", "highlights": ["ことが できます"] }
+            {
+              "jp": "にほんごで はなすことが できます。",
+              "vn": "Tôi có thể nói bằng tiếng Nhật.",
+              "highlights": [
+                "ことが できます"
+              ]
+            },
+            {
+              "jp": "ピアノを ひくことが できません。",
+              "vn": "Tôi không thể chơi piano.",
+              "highlights": [
+                "ことが できません"
+              ]
+            },
+            {
+              "jp": "はやく はしることが できます。",
+              "vn": "Tôi có thể chạy nhanh.",
+              "highlights": [
+                "ことが できます"
+              ]
+            }
           ]
         },
         {
@@ -1252,9 +1632,27 @@
           "color": "#fb7185",
           "explanation": "Ghép: [thể ます bỏ ます] + ながら. Hành động phụ đứng trước ながら, hành động chính đứng sau. Chủ ngữ của 2 hành động phải giống nhau.",
           "examples": [
-            { "jp": "おんがくを ききながら べんきょうします。", "vn": "Vừa nghe nhạc vừa học bài.", "highlights": ["ながら"] },
-            { "jp": "あるきながら でんわします。", "vn": "Vừa đi bộ vừa gọi điện.", "highlights": ["ながら"] },
-            { "jp": "テレビを みながら ごはんを たべます。", "vn": "Vừa xem TV vừa ăn cơm.", "highlights": ["ながら"] }
+            {
+              "jp": "おんがくを ききながら べんきょうします。",
+              "vn": "Vừa nghe nhạc vừa học bài.",
+              "highlights": [
+                "ながら"
+              ]
+            },
+            {
+              "jp": "あるきながら でんわします。",
+              "vn": "Vừa đi bộ vừa gọi điện.",
+              "highlights": [
+                "ながら"
+              ]
+            },
+            {
+              "jp": "テレビを みながら ごはんを たべます。",
+              "vn": "Vừa xem TV vừa ăn cơm.",
+              "highlights": [
+                "ながら"
+              ]
+            }
           ]
         },
         {
@@ -1265,9 +1663,27 @@
           "color": "#86efac",
           "explanation": "Ghép: [thể た] + ほうが + いいです. Dùng để đưa ra lời khuyên. Phủ định (không nên): [thể ない] + ほうが + いいです.",
           "examples": [
-            { "jp": "はやく ねたほうが いいです。", "vn": "Bạn nên đi ngủ sớm thôi.", "highlights": ["たほうが いいです"] },
-            { "jp": "くすりを のんだほうが いいですよ。", "vn": "Bạn nên uống thuốc đấy.", "highlights": ["たほうが いいですよ"] },
-            { "jp": "タバコは すわないほうが いいです。", "vn": "Bạn không nên hút thuốc.", "highlights": ["ないほうが いいです"] }
+            {
+              "jp": "はやく ねたほうが いいです。",
+              "vn": "Bạn nên đi ngủ sớm thôi.",
+              "highlights": [
+                "たほうが いいです"
+              ]
+            },
+            {
+              "jp": "くすりを のんだほうが いいですよ。",
+              "vn": "Bạn nên uống thuốc đấy.",
+              "highlights": [
+                "たほうが いいですよ"
+              ]
+            },
+            {
+              "jp": "タバコは すわないほうが いいです。",
+              "vn": "Bạn không nên hút thuốc.",
+              "highlights": [
+                "ないほうが いいです"
+              ]
+            }
           ]
         },
         {
@@ -1278,9 +1694,29 @@
           "color": "#e879f9",
           "explanation": "だけ: chỉ ~, trung tính, có thể thay thế các trợ từ. しか: dùng với phủ định (しか〜ない), nhấn mạnh lượng ít hơn mong đợi. Cùng nói 'chỉ 3 người' nhưng しか mang sắc thái tiếc nuối/không đủ.",
           "examples": [
-            { "jp": "すこし だけ たべます。", "vn": "Tôi chỉ ăn một chút thôi.", "highlights": ["だけ"] },
-            { "jp": "3にん しか きませんでした。", "vn": "Chỉ có 3 người đến (ít quá).", "highlights": ["しか", "きませんでした"] },
-            { "jp": "100えん しか もっていません。", "vn": "Tôi chỉ có 100 yên (không đủ).", "highlights": ["しか", "もっていません"] }
+            {
+              "jp": "すこし だけ たべます。",
+              "vn": "Tôi chỉ ăn một chút thôi.",
+              "highlights": [
+                "だけ"
+              ]
+            },
+            {
+              "jp": "3にん しか きませんでした。",
+              "vn": "Chỉ có 3 người đến (ít quá).",
+              "highlights": [
+                "しか",
+                "きませんでした"
+              ]
+            },
+            {
+              "jp": "100えん しか もっていません。",
+              "vn": "Tôi chỉ có 100 yên (không đủ).",
+              "highlights": [
+                "しか",
+                "もっていません"
+              ]
+            }
           ]
         },
         {
@@ -1291,9 +1727,28 @@
           "color": "#f97316",
           "explanation": "Ghép: [mệnh đề thể thường] + んです (nói) hoặc のです (viết). Dùng để giải thích lý do, bối cảnh, hoặc yêu cầu giải thích. Thường đi kèm với か (〜んですか?) để hỏi nguyên nhân.",
           "examples": [
-            { "jp": "どうしたんですか？ — ちょっと ぐあいが わるいんです。", "vn": "Bạn sao vậy? — Tôi hơi không khỏe.", "highlights": ["んですか", "んです"] },
-            { "jp": "なぜ おくれたんですか？", "vn": "Tại sao bạn đến muộn vậy?", "highlights": ["んですか"] },
-            { "jp": "じつは にほんに すんでいるんです。", "vn": "Thực ra là tôi đang sống ở Nhật.", "highlights": ["んです"] }
+            {
+              "jp": "どうしたんですか？ — ちょっと ぐあいが わるいんです。",
+              "vn": "Bạn sao vậy? — Tôi hơi không khỏe.",
+              "highlights": [
+                "んですか",
+                "んです"
+              ]
+            },
+            {
+              "jp": "なぜ おくれたんですか？",
+              "vn": "Tại sao bạn đến muộn vậy?",
+              "highlights": [
+                "んですか"
+              ]
+            },
+            {
+              "jp": "じつは にほんに すんでいるんです。",
+              "vn": "Thực ra là tôi đang sống ở Nhật.",
+              "highlights": [
+                "んです"
+              ]
+            }
           ]
         },
         {
@@ -1304,9 +1759,612 @@
           "color": "#67e8f9",
           "explanation": "Ghép: [thể thường hoặc thể lịch sự] + でしょう. Diễn đạt phỏng đoán hoặc hỏi ý kiến nhẹ nhàng. 〜でしょうか lịch sự hơn か đơn thuần.",
           "examples": [
-            { "jp": "あしたは あめでしょう。", "vn": "Ngày mai có lẽ sẽ mưa.", "highlights": ["でしょう"] },
-            { "jp": "かれは もう きたでしょうか？", "vn": "Anh ấy chắc đã đến rồi nhỉ?", "highlights": ["でしょうか"] },
-            { "jp": "むずかしいでしょうね。", "vn": "Chắc là khó nhỉ.", "highlights": ["でしょう"] }
+            {
+              "jp": "あしたは あめでしょう。",
+              "vn": "Ngày mai có lẽ sẽ mưa.",
+              "highlights": [
+                "でしょう"
+              ]
+            },
+            {
+              "jp": "かれは もう きたでしょうか？",
+              "vn": "Anh ấy chắc đã đến rồi nhỉ?",
+              "highlights": [
+                "でしょうか"
+              ]
+            },
+            {
+              "jp": "むずかしいでしょうね。",
+              "vn": "Chắc là khó nhỉ.",
+              "highlights": [
+                "でしょう"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn1",
+          "pattern": "〜より 〜のほうが",
+          "meaning": "B … hơn A (so sánh hơn)",
+          "level": "Cơ bản",
+          "color": "#22d3ee",
+          "explanation": "So sánh hai đối tượng: cái được nhấn mạnh đứng trước のほうが, cái bị so sánh đứng trước より.",
+          "examples": [
+            {
+              "jp": "でんしゃよりバスのほうがやすいです。",
+              "vn": "Xe buýt rẻ hơn tàu điện.",
+              "highlights": [
+                "より",
+                "のほうが"
+              ]
+            },
+            {
+              "jp": "なつはふゆよりあついです。",
+              "vn": "Mùa hè nóng hơn mùa đông.",
+              "highlights": [
+                "より"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn2",
+          "pattern": "〜で いちばん 〜",
+          "meaning": "… nhất (trong phạm vi)",
+          "level": "Cơ bản",
+          "color": "#f472b6",
+          "explanation": "Diễn tả mức độ cao nhất trong một phạm vi. Phạm vi + で, sau đó いちばん + tính từ.",
+          "examples": [
+            {
+              "jp": "クラスでいちばんせがたかいです。",
+              "vn": "Cao nhất lớp.",
+              "highlights": [
+                "で",
+                "いちばん"
+              ]
+            },
+            {
+              "jp": "にほんでいちばんたかいやまはふじさんです。",
+              "vn": "Núi cao nhất Nhật Bản là núi Phú Sĩ.",
+              "highlights": [
+                "いちばん"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn3",
+          "pattern": "〜が ほしいです",
+          "meaning": "Muốn có (danh từ)",
+          "level": "Cơ bản",
+          "color": "#34d399",
+          "explanation": "Diễn tả mong muốn sở hữu một vật. Đối tượng muốn đi với が. Chỉ dùng cho ngôi thứ nhất (hoặc hỏi ngôi thứ hai).",
+          "examples": [
+            {
+              "jp": "あたらしいスマホがほしいです。",
+              "vn": "Tôi muốn có điện thoại mới.",
+              "highlights": [
+                "ほしい"
+              ]
+            },
+            {
+              "jp": "なにがほしいですか。",
+              "vn": "Bạn muốn gì?",
+              "highlights": [
+                "ほしい"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn4",
+          "pattern": "〜なければなりません",
+          "meaning": "Phải làm (nghĩa vụ)",
+          "level": "Nâng cao",
+          "color": "#fbbf24",
+          "explanation": "Diễn tả việc bắt buộc phải làm. Bỏ い của thể ない, thêm ければなりません. Thân mật: 〜なきゃ.",
+          "examples": [
+            {
+              "jp": "くすりをのまなければなりません。",
+              "vn": "Tôi phải uống thuốc.",
+              "highlights": [
+                "なければなりません"
+              ]
+            },
+            {
+              "jp": "あしたはやくおきなければなりません。",
+              "vn": "Mai tôi phải dậy sớm.",
+              "highlights": [
+                "なければなりません"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn5",
+          "pattern": "〜なくてもいいです",
+          "meaning": "Không cần phải làm",
+          "level": "Nâng cao",
+          "color": "#a78bfa",
+          "explanation": "Diễn tả việc không bắt buộc. Bỏ い của thể ない, thêm くてもいいです.",
+          "examples": [
+            {
+              "jp": "あしたこなくてもいいです。",
+              "vn": "Mai bạn không cần đến.",
+              "highlights": [
+                "なくてもいい"
+              ]
+            },
+            {
+              "jp": "ぜんぶたべなくてもいいです。",
+              "vn": "Không cần ăn hết đâu.",
+              "highlights": [
+                "なくてもいい"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn6",
+          "pattern": "〜てはいけません",
+          "meaning": "Không được (cấm đoán)",
+          "level": "Cơ bản",
+          "color": "#fb923c",
+          "explanation": "Cấm làm gì đó. Thể て + はいけません. Thân mật: 〜ちゃだめ.",
+          "examples": [
+            {
+              "jp": "ここでたばこをすってはいけません。",
+              "vn": "Không được hút thuốc ở đây.",
+              "highlights": [
+                "てはいけません"
+              ]
+            },
+            {
+              "jp": "あかしんごうをわたってはいけません。",
+              "vn": "Không được băng qua khi đèn đỏ.",
+              "highlights": [
+                "てはいけません"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn7",
+          "pattern": "〜たことがあります",
+          "meaning": "Đã từng (kinh nghiệm)",
+          "level": "Nâng cao",
+          "color": "#60a5fa",
+          "explanation": "Diễn tả kinh nghiệm đã từng làm gì đó. Thể た + ことがあります.",
+          "examples": [
+            {
+              "jp": "にほんへいったことがあります。",
+              "vn": "Tôi đã từng đi Nhật.",
+              "highlights": [
+                "ことがあります"
+              ]
+            },
+            {
+              "jp": "すしをたべたことがありますか。",
+              "vn": "Bạn đã từng ăn sushi chưa?",
+              "highlights": [
+                "ことがあります"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn8",
+          "pattern": "〜たり 〜たり します",
+          "meaning": "Khi thì … khi thì … (liệt kê)",
+          "level": "Nâng cao",
+          "color": "#f87171",
+          "explanation": "Liệt kê vài hành động tiêu biểu (không theo thứ tự). Thể た + り, kết thúc bằng する.",
+          "examples": [
+            {
+              "jp": "にちようびはそうじしたり、かいものしたりします。",
+              "vn": "Chủ nhật tôi khi thì dọn dẹp, khi thì mua sắm.",
+              "highlights": [
+                "たり"
+              ]
+            },
+            {
+              "jp": "こうえんではしったり、あるいたりしました。",
+              "vn": "Ở công viên tôi lúc chạy lúc đi bộ.",
+              "highlights": [
+                "たり"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn9",
+          "pattern": "〜たら",
+          "meaning": "Nếu / khi … thì",
+          "level": "Nâng cao",
+          "color": "#22d3ee",
+          "explanation": "Điều kiện: sau khi A xảy ra thì B. Thể た + ら. Dùng được cho cả giả định lẫn trình tự.",
+          "examples": [
+            {
+              "jp": "あめがふったら、いきません。",
+              "vn": "Nếu trời mưa thì tôi không đi.",
+              "highlights": [
+                "たら"
+              ]
+            },
+            {
+              "jp": "じかんがあったら、てつだいます。",
+              "vn": "Nếu có thời gian tôi sẽ giúp.",
+              "highlights": [
+                "たら"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn10",
+          "pattern": "〜とき",
+          "meaning": "Khi, lúc …",
+          "level": "Cơ bản",
+          "color": "#f472b6",
+          "explanation": "Chỉ thời điểm. Danh từ + の + とき; tính từ/động từ đứng trước とき ở thể thích hợp.",
+          "examples": [
+            {
+              "jp": "こどものとき、よくあそびました。",
+              "vn": "Hồi nhỏ tôi hay chơi.",
+              "highlights": [
+                "とき"
+              ]
+            },
+            {
+              "jp": "ひまなとき、ほんをよみます。",
+              "vn": "Lúc rảnh tôi đọc sách.",
+              "highlights": [
+                "とき"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn11",
+          "pattern": "疑問詞 ＋ か",
+          "meaning": "… gì đó / … nào đó",
+          "level": "Cơ bản",
+          "color": "#34d399",
+          "explanation": "Từ để hỏi + か tạo nghĩa bất định: なにか (cái gì đó), だれか (ai đó), どこか (nơi nào đó).",
+          "examples": [
+            {
+              "jp": "なにかたべますか。",
+              "vn": "Bạn có ăn gì đó không?",
+              "highlights": [
+                "なにか"
+              ]
+            },
+            {
+              "jp": "どこかへいきましょう。",
+              "vn": "Mình đi đâu đó đi.",
+              "highlights": [
+                "どこか"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn12",
+          "pattern": "疑問詞 ＋ も ＋ 否定",
+          "meaning": "Không … gì/ai/đâu cả",
+          "level": "Cơ bản",
+          "color": "#fbbf24",
+          "explanation": "Từ để hỏi + も + động từ phủ định = phủ định hoàn toàn: なにも, だれも, どこも.",
+          "examples": [
+            {
+              "jp": "なにもたべませんでした。",
+              "vn": "Tôi chẳng ăn gì cả.",
+              "highlights": [
+                "なにも"
+              ]
+            },
+            {
+              "jp": "きょうはだれもいません。",
+              "vn": "Hôm nay chẳng có ai.",
+              "highlights": [
+                "だれも"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn13",
+          "pattern": "もう 〜ました / まだ 〜ていません",
+          "meaning": "Đã … rồi / vẫn chưa …",
+          "level": "Cơ bản",
+          "color": "#a78bfa",
+          "explanation": "もう + thể ました = đã xong. Trả lời phủ định dùng まだ + thể ていません (chưa), KHÔNG dùng ませんでした.",
+          "examples": [
+            {
+              "jp": "もうひるごはんをたべました。",
+              "vn": "Tôi đã ăn trưa rồi.",
+              "highlights": [
+                "もう"
+              ]
+            },
+            {
+              "jp": "いいえ、まだたべていません。",
+              "vn": "Chưa, tôi vẫn chưa ăn.",
+              "highlights": [
+                "まだ"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn14",
+          "pattern": "〜く なる / 〜に なる",
+          "meaning": "Trở nên … (thay đổi trạng thái)",
+          "level": "Cơ bản",
+          "color": "#fb923c",
+          "explanation": "Tính từ い → bỏ い + く + なる; tính từ な/danh từ → + に + なる. Diễn tả sự thay đổi.",
+          "examples": [
+            {
+              "jp": "さむくなりました。",
+              "vn": "Trời đã trở lạnh.",
+              "highlights": [
+                "なりました"
+              ]
+            },
+            {
+              "jp": "にほんごがじょうずになりました。",
+              "vn": "Tiếng Nhật của tôi giỏi hơn rồi.",
+              "highlights": [
+                "になりました"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn15",
+          "pattern": "動詞 ＋ のが 〜",
+          "meaning": "Danh từ hóa động từ (の)",
+          "level": "Nâng cao",
+          "color": "#60a5fa",
+          "explanation": "Biến động từ (thể từ điển) thành danh từ bằng の để làm chủ ngữ/tân ngữ, thường đi với すき/じょうず.",
+          "examples": [
+            {
+              "jp": "うたをうたうのがすきです。",
+              "vn": "Tôi thích hát.",
+              "highlights": [
+                "のが"
+              ]
+            },
+            {
+              "jp": "えをかくのがじょうずです。",
+              "vn": "Tôi vẽ tranh giỏi.",
+              "highlights": [
+                "のが"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn16",
+          "pattern": "〜つもりです",
+          "meaning": "Dự định (làm gì)",
+          "level": "Nâng cao",
+          "color": "#f87171",
+          "explanation": "Diễn tả dự định, ý định. Thể từ điển của động từ + つもりです. Phủ định: 〜ないつもりです.",
+          "examples": [
+            {
+              "jp": "らいねんにほんへいくつもりです。",
+              "vn": "Năm sau tôi định đi Nhật.",
+              "highlights": [
+                "つもり"
+              ]
+            },
+            {
+              "jp": "きょうはなにもしないつもりです。",
+              "vn": "Hôm nay tôi định không làm gì cả.",
+              "highlights": [
+                "つもり"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn17",
+          "pattern": "あげる・もらう・くれる",
+          "meaning": "Cho / nhận / được cho",
+          "level": "Nâng cao",
+          "color": "#22d3ee",
+          "explanation": "あげる: tôi cho người khác. もらう: tôi nhận từ ai. くれる: ai đó cho TÔI. Chú ý hướng của hành động.",
+          "examples": [
+            {
+              "jp": "ともだちにプレゼントをあげます。",
+              "vn": "Tôi tặng quà cho bạn.",
+              "highlights": [
+                "あげます"
+              ]
+            },
+            {
+              "jp": "ちちにとけいをもらいました。",
+              "vn": "Tôi được bố cho đồng hồ.",
+              "highlights": [
+                "もらいました"
+              ]
+            },
+            {
+              "jp": "ともだちがほんをくれました。",
+              "vn": "Bạn đã cho tôi quyển sách.",
+              "highlights": [
+                "くれました"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn18",
+          "pattern": "〜ないで",
+          "meaning": "Không làm A mà (làm B)",
+          "level": "Nâng cao",
+          "color": "#f472b6",
+          "explanation": "Thể ない + で: làm việc gì đó trong trạng thái không làm A, hoặc thay vì A.",
+          "examples": [
+            {
+              "jp": "あさごはんをたべないで、がっこうへいきました。",
+              "vn": "Tôi đi học mà không ăn sáng.",
+              "highlights": [
+                "ないで"
+              ]
+            },
+            {
+              "jp": "じしょをつかわないで、よんでください。",
+              "vn": "Hãy đọc mà không dùng từ điển.",
+              "highlights": [
+                "ないで"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn19",
+          "pattern": "形容詞 → 副詞 (〜く / 〜に)",
+          "meaning": "Biến tính từ thành trạng từ",
+          "level": "Cơ bản",
+          "color": "#34d399",
+          "explanation": "Tính từ い → bỏ い + く; tính từ な → + に. Dùng để bổ nghĩa cho động từ.",
+          "examples": [
+            {
+              "jp": "はやくおきます。",
+              "vn": "Tôi dậy sớm.",
+              "highlights": [
+                "はやく"
+              ]
+            },
+            {
+              "jp": "しずかにしてください。",
+              "vn": "Hãy giữ yên lặng.",
+              "highlights": [
+                "しずかに"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn20",
+          "pattern": "〜と (điều kiện tất yếu)",
+          "meaning": "Hễ … thì (tất yếu)",
+          "level": "Nâng cao",
+          "color": "#fbbf24",
+          "explanation": "Thể từ điển + と: nếu A thì tất yếu/tự nhiên xảy ra B. Dùng cho quy luật, đường đi, thao tác máy.",
+          "examples": [
+            {
+              "jp": "はるになると、はながさきます。",
+              "vn": "Cứ đến mùa xuân là hoa nở.",
+              "highlights": [
+                "になると"
+              ]
+            },
+            {
+              "jp": "このボタンをおすと、きっぷがでます。",
+              "vn": "Nhấn nút này thì vé sẽ ra.",
+              "highlights": [
+                "おすと"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn21",
+          "pattern": "〜も 〜も",
+          "meaning": "Cả … cả … (cùng loại)",
+          "level": "Cơ bản",
+          "color": "#a78bfa",
+          "explanation": "Liệt kê nhiều thứ cùng đúng/cùng sai. Với phủ định = cả hai đều không.",
+          "examples": [
+            {
+              "jp": "コーヒーもおちゃもすきです。",
+              "vn": "Tôi thích cả cà phê lẫn trà.",
+              "highlights": [
+                "も"
+              ]
+            },
+            {
+              "jp": "にくもさかなもたべません。",
+              "vn": "Tôi không ăn cả thịt lẫn cá.",
+              "highlights": [
+                "も"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn22",
+          "pattern": "〜が、〜 (nhưng)",
+          "meaning": "… nhưng …",
+          "level": "Cơ bản",
+          "color": "#fb923c",
+          "explanation": "が đứng cuối vế đầu nối hai vế trái ngược, nghĩa 'nhưng'. Lịch sự hơn けど.",
+          "examples": [
+            {
+              "jp": "たかいですが、かいます。",
+              "vn": "Đắt nhưng tôi vẫn mua.",
+              "highlights": [
+                "ですが"
+              ]
+            },
+            {
+              "jp": "にほんごはむずかしいですが、おもしろいです。",
+              "vn": "Tiếng Nhật khó nhưng thú vị.",
+              "highlights": [
+                "ですが"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn23",
+          "pattern": "〜という 〜",
+          "meaning": "(cái) được gọi là …",
+          "level": "Nâng cao",
+          "color": "#60a5fa",
+          "explanation": "Giới thiệu tên gọi của người/vật mà người nghe chưa biết: A という B = B tên là A.",
+          "examples": [
+            {
+              "jp": "これは「すし」というたべものです。",
+              "vn": "Đây là món ăn tên là sushi.",
+              "highlights": [
+                "という"
+              ]
+            },
+            {
+              "jp": "たなかさんというひとをしっていますか。",
+              "vn": "Bạn có biết người tên Tanaka không?",
+              "highlights": [
+                "という"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "pxn24",
+          "pattern": "〜ば (điều kiện giả định)",
+          "meaning": "Nếu … thì",
+          "level": "Nâng cao",
+          "color": "#f87171",
+          "explanation": "Điều kiện giả định. Tính từ い → 〜ければ; động từ nhóm 1 đổi う→え+ば. Nhấn mạnh điều kiện.",
+          "examples": [
+            {
+              "jp": "やすければ、かいます。",
+              "vn": "Nếu rẻ thì tôi mua.",
+              "highlights": [
+                "ければ"
+              ]
+            },
+            {
+              "jp": "じかんがあれば、いきます。",
+              "vn": "Nếu có thời gian thì tôi đi.",
+              "highlights": [
+                "あれば"
+              ]
+            }
           ]
         }
       ]

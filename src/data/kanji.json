@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "Kanji JLPT N5",
-    "description": "80 Kanji bắt buộc cho JLPT N5",
-    "total": 80
+    "description": "103 Kanji cho JLPT N5",
+    "total": 103
   },
   "categories": [
     {
@@ -34,6 +34,12 @@
       "label": "Trường học & Ngôn ngữ",
       "icon": "📚",
       "color": "#a78bfa"
+    },
+    {
+      "id": "size-pos",
+      "label": "Kích thước & Vị trí",
+      "icon": "📏",
+      "color": "#fb923c"
     }
   ],
   "kanji": [
@@ -1295,152 +1301,6 @@
       "kun_romaji": "kataru"
     },
     {
-      "id": "k41",
-      "char": "食",
-      "on": "ショク",
-      "kun": "たべる",
-      "meaning": "ăn / thức ăn",
-      "stroke": 9,
-      "category": "actions",
-      "examples": [
-        {
-          "word": "食べる",
-          "reading": "たべる",
-          "meaning": "ăn"
-        },
-        {
-          "word": "食事",
-          "reading": "しょくじ",
-          "meaning": "bữa ăn"
-        }
-      ],
-      "mnemonic": "Mái nhà + người há miệng ăn = ăn uống trong nhà",
-      "strokes": [
-        "M50,10c0.75,1,1.25,2.5,1,4c-0.25,2-1,5-2,8",
-        "M20,26c2,0.5,5,0.75,7.5,0.5c12-1,30-3,45-3.5c3-0.1,6,0.25,8.5,0.5",
-        "M22,26c1.5,1.5,2,3.5,2,5.5c0,1-0.1,48-0.2,62",
-        "M24,40c9-1,22-2.5,32-3c2.75-0.12,5.5,0.25,7.5,0.5",
-        "M76,26c1,1.25,1.5,3,1.5,4.75c0,1.25-0.1,48-0.2,62",
-        "M22,54c9-1,22-2.5,32-3c2.75-0.12,5.5,0.25,7.5,0.5",
-        "M22,68c9-1,22-2.5,32-3c2.75-0.12,5.5,0.25,7.5,0.5",
-        "M14,85c3,0.75,6.5,1,10,0.75c14.5-1,36-2.5,59-3.5c3.5-0.15,7-0.4,10.5,0.4",
-        "M50,54c0.5,1.5,0.5,3.25,0,5c-2,7-6,15-10,21"
-      ],
-      "on_romaji": "shoku",
-      "kun_romaji": "taberu"
-    },
-    {
-      "id": "k42",
-      "char": "飲",
-      "on": "イン",
-      "kun": "のむ",
-      "meaning": "uống",
-      "stroke": 12,
-      "category": "actions",
-      "examples": [
-        {
-          "word": "飲む",
-          "reading": "のむ",
-          "meaning": "uống"
-        },
-        {
-          "word": "飲み物",
-          "reading": "のみもの",
-          "meaning": "đồ uống"
-        }
-      ],
-      "mnemonic": "Thức ăn (食) + há miệng (欠) = há miệng uống",
-      "strokes": [
-        "M14,26c2,0.5,4.5,0.75,6.5,0.5c8-1,20-2.5,28-3c2.5-0.15,5,0.25,7,0.5",
-        "M22,14c1.5,1.5,2,3.5,2,5.5c0,1.25-0.1,60-0.2,76",
-        "M24,38c6-0.75,15-2,21-2.5c2-0.15,3,0.5,2.75,2c-0.75,3-2,7.5-3.5,12",
-        "M14,52c2,0.5,4.5,0.75,6.5,0.5c8-1,20-2.5,28-3c2.5-0.15,5,0.25,7,0.5",
-        "M14,66c2,0.5,4.5,0.75,6.5,0.5c8-1,20-2.5,28-3c2.5-0.15,5,0.25,7,0.5",
-        "M16,78c0.75,0.5,1.5,1.5,1.75,2.25c0.75,3.5,1.5,7.5,2,12",
-        "M18,80c4.5-0.75,10.5-1.75,14-2.25c1.1-0.15,1.75,0.75,1.5,1.5c-0.5,2.5-1.75,7-2.5,10",
-        "M20,92c2.5-0.35,6.5-0.75,10-1c0.75-0.06,1.5-0.1,2.25-0.15",
-        "M62,13c-1,1.25-2.25,2.75-4,4c-4,3-11,7.5-20,12",
-        "M52,42c1.25,0.25,3.5,0.5,5,0.25c8-1.25,16-3,25-3.5c2.25-0.1,4.5,0.15,6,0.35",
-        "M68,36c1,1,1.5,2.25,1.5,4c0,2-0.15,26-0.5,38",
-        "M52,68c5,4.5,12,12,18,18c2,2,4.5,3.75,7,4.5"
-      ],
-      "on_romaji": "in",
-      "kun_romaji": "nomu"
-    },
-    {
-      "id": "k43",
-      "char": "見",
-      "on": "ケン",
-      "kun": "みる",
-      "meaning": "nhìn / xem",
-      "stroke": 7,
-      "category": "actions",
-      "examples": [
-        {
-          "word": "見る",
-          "reading": "みる",
-          "meaning": "nhìn / xem"
-        },
-        {
-          "word": "見せる",
-          "reading": "みせる",
-          "meaning": "cho xem"
-        }
-      ],
-      "mnemonic": "Mắt (目) trên đôi chân = người đang quan sát",
-      "strokes": [
-        "M16,26c2,0.5,4.5,0.75,6.5,0.5c10-1.25,28-3.5,43-4c3-0.1,6,0.25,8.5,0.5",
-        "M18,26c1.5,1.5,2,3.5,2,5.5c0,1-0.1,22-0.2,30",
-        "M20,40c8-0.75,20-2,29-2.5c2.5-0.12,5,0.25,7,0.5",
-        "M74,26c1,1.25,1.5,3,1.5,4.75c0,1.25-0.1,22-0.2,30",
-        "M20,54c8-0.75,20-2,29-2.5c2.5-0.12,5,0.25,7,0.5",
-        "M18,64c0.75,0.5,1.25,1.75,1.5,2.75c1,5,2.25,11,3.25,17.5c0.25,1.25,0.5,2.5,0.75,3.5",
-        "M50,63c5.5,5,16,15.5,22,21.5c1.75,1.7,4,3.75,6.5,4.5"
-      ],
-      "on_romaji": "ken",
-      "kun_romaji": "miru"
-    },
-    {
-      "id": "k44",
-      "char": "聞",
-      "on": "ブン・モン",
-      "kun": "きく",
-      "meaning": "nghe / hỏi",
-      "stroke": 14,
-      "category": "actions",
-      "examples": [
-        {
-          "word": "聞く",
-          "reading": "きく",
-          "meaning": "nghe / hỏi"
-        },
-        {
-          "word": "新聞",
-          "reading": "しんぶん",
-          "meaning": "báo"
-        }
-      ],
-      "mnemonic": "Cửa (門) + tai (耳) = áp tai vào cửa nghe trộm",
-      "strokes": [
-        "M18,12c1.5,1.5,2,3.5,2,5.5c0,1.25-0.1,62-0.2,76",
-        "M20,12c15-1.5,38-3.5,54-3.75c4-0.06,6,2,6,4.5c0,12-0.25,42-0.25,50c0,7.5-5,2-7,0.25",
-        "M20,26c12-1,30-2.5,43-3",
-        "M20,40c12-1,30-2.5,43-3",
-        "M20,54c12-1,30-2.5,43-3",
-        "M33,56c0.5,1.25,0.75,2.75,0.5,4.5c-1,7-3.5,17-6,24",
-        "M54,56c3.5,3.5,7,9,10,14c1.25,2,2.5,4,4,5.5",
-        "M18,84c2,0.5,4.5,0.75,6.5,0.5c10-1,26-2.5,40-3c3-0.1,6,0.25,8.5,0.5",
-        "M35,72c0.5,1.25,0.75,2.75,0.5,4.5c-0.5,5-2,11-3.5,16.5",
-        "M37,74c6-1,15-2.5,21-3c2-0.15,3,0.75,2.75,2c-0.5,3-2,9-3,13",
-        "M39,89c3-0.35,7.5-0.75,12-1c1-0.06,2-0.1,3-0.15",
-        "M62,72c0.5,1.25,0.75,2.75,0.5,4.5c-0.5,5-2,11-3.5,16.5",
-        "M64,74c6-1,15-2.5,21-3c2-0.15,3,0.75,2.75,2c-0.5,3-2,9-3,13",
-        "M66,89c3-0.35,7.5-0.75,12-1c1-0.06,2-0.1,3-0.15"
-      ],
-      "on_romaji": "bun / mon",
-      "kun_romaji": "kiku"
-    },
-    {
       "id": "k45",
       "char": "読",
       "on": "ドク",
@@ -2227,42 +2087,6 @@
       "kun_romaji": "ato / ushiro"
     },
     {
-      "id": "k68",
-      "char": "時",
-      "on": "ジ",
-      "kun": "とき",
-      "meaning": "giờ / thời gian",
-      "stroke": 10,
-      "category": "numbers-time",
-      "examples": [
-        {
-          "word": "何時",
-          "reading": "なんじ",
-          "meaning": "mấy giờ"
-        },
-        {
-          "word": "時間",
-          "reading": "じかん",
-          "meaning": "thời gian"
-        }
-      ],
-      "mnemonic": "Mặt trời (日) + chùa (寺) = giờ chuông chùa điểm",
-      "strokes": [
-        "M16,25c1.75,0.5,4,0.75,5.75,0.5c7-1,17-2.25,25-2.75c2.5-0.12,5,0.25,7,0.5",
-        "M27,13c0.75,0.75,1,2,1,3c0,0.5-0.1,58-0.2,77",
-        "M29,38c7.5-0.75,18-2,26-2.5c2.5-0.12,5,0.25,7,0.5",
-        "M16,51c1.75,0.5,4,0.75,5.75,0.5c7-1,17-2.25,25-2.75c2.5-0.12,5,0.25,7,0.5",
-        "M55,16c1,1,1.5,2.5,1.5,4c0,1-0.1,58-0.2,74",
-        "M57,16c7-0.75,18-2,25-2.5c2.25-0.12,4.5,0.25,6,0.5",
-        "M57,30c7-0.75,18-2,25-2.5c2.25-0.12,4.5,0.25,6,0.5",
-        "M57,44c7-0.75,18-2,25-2.5c2.25-0.12,4.5,0.25,6,0.5",
-        "M14,64c3,0.75,6.5,1,10,0.75c14.5-1,36-2.5,59-3.5c3.5-0.15,7-0.4,10.5,0.4",
-        "M57,66c5-0.75,14-1.75,19.5-2.25c1.75-0.15,2.75,0.5,2.5,1.75c-0.5,3-2,7.5-3.25,11.5"
-      ],
-      "on_romaji": "ji",
-      "kun_romaji": "toki"
-    },
-    {
       "id": "k69",
       "char": "間",
       "on": "カン・ケン",
@@ -2655,6 +2479,733 @@
       ],
       "on_romaji": "kou",
       "kun_romaji": "takai"
+    },
+    {
+      "id": "kn1",
+      "char": "万",
+      "on": "マン・バン",
+      "kun": "―",
+      "meaning": "vạn (10.000)",
+      "stroke": 3,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "一万円",
+          "reading": "いちまんえん",
+          "meaning": "10.000 yên"
+        },
+        {
+          "word": "十万",
+          "reading": "じゅうまん",
+          "meaning": "một trăm nghìn"
+        }
+      ],
+      "mnemonic": "Số lớn: một vạn",
+      "on_romaji": "man/ban",
+      "kun_romaji": "-"
+    },
+    {
+      "id": "kn2",
+      "char": "午",
+      "on": "ゴ",
+      "kun": "―",
+      "meaning": "buổi trưa (giờ Ngọ)",
+      "stroke": 4,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "午前",
+          "reading": "ごぜん",
+          "meaning": "buổi sáng (AM)"
+        },
+        {
+          "word": "午後",
+          "reading": "ごご",
+          "meaning": "buổi chiều (PM)"
+        }
+      ],
+      "mnemonic": "Cột mốc giữa ngày",
+      "on_romaji": "go",
+      "kun_romaji": "-"
+    },
+    {
+      "id": "kn3",
+      "char": "週",
+      "on": "シュウ",
+      "kun": "―",
+      "meaning": "tuần",
+      "stroke": 11,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "今週",
+          "reading": "こんしゅう",
+          "meaning": "tuần này"
+        },
+        {
+          "word": "毎週",
+          "reading": "まいしゅう",
+          "meaning": "hằng tuần"
+        },
+        {
+          "word": "週末",
+          "reading": "しゅうまつ",
+          "meaning": "cuối tuần"
+        }
+      ],
+      "mnemonic": "Vòng lặp 7 ngày",
+      "on_romaji": "shū",
+      "kun_romaji": "-"
+    },
+    {
+      "id": "kn4",
+      "char": "曜",
+      "on": "ヨウ",
+      "kun": "―",
+      "meaning": "thứ (trong tuần)",
+      "stroke": 18,
+      "category": "numbers-time",
+      "examples": [
+        {
+          "word": "何曜日",
+          "reading": "なんようび",
+          "meaning": "thứ mấy"
+        },
+        {
+          "word": "日曜日",
+          "reading": "にちようび",
+          "meaning": "chủ nhật"
+        },
+        {
+          "word": "月曜日",
+          "reading": "げつようび",
+          "meaning": "thứ hai"
+        }
+      ],
+      "mnemonic": "Đi với 日 thành 曜日",
+      "on_romaji": "yō",
+      "kun_romaji": "-"
+    },
+    {
+      "id": "kn5",
+      "char": "生",
+      "on": "セイ・ショウ",
+      "kun": "い(きる)・う(まれる)・なま",
+      "meaning": "sinh, sống; học sinh",
+      "stroke": 5,
+      "category": "people-family",
+      "examples": [
+        {
+          "word": "学生",
+          "reading": "がくせい",
+          "meaning": "học sinh"
+        },
+        {
+          "word": "先生",
+          "reading": "せんせい",
+          "meaning": "giáo viên"
+        },
+        {
+          "word": "生まれる",
+          "reading": "うまれる",
+          "meaning": "được sinh ra"
+        }
+      ],
+      "mnemonic": "Mầm cây mọc lên = sự sống",
+      "on_romaji": "sei/shō",
+      "kun_romaji": "i(kiru)/u(mareru)/nama"
+    },
+    {
+      "id": "kn6",
+      "char": "先",
+      "on": "セン",
+      "kun": "さき",
+      "meaning": "trước; phía trước",
+      "stroke": 6,
+      "category": "people-family",
+      "examples": [
+        {
+          "word": "先生",
+          "reading": "せんせい",
+          "meaning": "giáo viên"
+        },
+        {
+          "word": "先週",
+          "reading": "せんしゅう",
+          "meaning": "tuần trước"
+        },
+        {
+          "word": "先に",
+          "reading": "さきに",
+          "meaning": "trước tiên"
+        }
+      ],
+      "mnemonic": "Người đi trước dẫn đường",
+      "on_romaji": "sen",
+      "kun_romaji": "saki"
+    },
+    {
+      "id": "kn7",
+      "char": "名",
+      "on": "メイ・ミョウ",
+      "kun": "な",
+      "meaning": "tên",
+      "stroke": 6,
+      "category": "people-family",
+      "examples": [
+        {
+          "word": "名前",
+          "reading": "なまえ",
+          "meaning": "tên"
+        },
+        {
+          "word": "有名",
+          "reading": "ゆうめい",
+          "meaning": "nổi tiếng"
+        }
+      ],
+      "mnemonic": "Buổi tối (夕) gọi (口) tên nhau",
+      "on_romaji": "mei/myō",
+      "kun_romaji": "na"
+    },
+    {
+      "id": "kn8",
+      "char": "気",
+      "on": "キ・ケ",
+      "kun": "―",
+      "meaning": "khí; tinh thần",
+      "stroke": 6,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "元気",
+          "reading": "げんき",
+          "meaning": "khỏe mạnh"
+        },
+        {
+          "word": "天気",
+          "reading": "てんき",
+          "meaning": "thời tiết"
+        },
+        {
+          "word": "電気",
+          "reading": "でんき",
+          "meaning": "điện; đèn"
+        }
+      ],
+      "mnemonic": "Hơi thở, năng lượng",
+      "on_romaji": "ki/ke",
+      "kun_romaji": "-"
+    },
+    {
+      "id": "kn9",
+      "char": "天",
+      "on": "テン",
+      "kun": "あめ・あま",
+      "meaning": "trời, bầu trời",
+      "stroke": 4,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "天気",
+          "reading": "てんき",
+          "meaning": "thời tiết"
+        },
+        {
+          "word": "天国",
+          "reading": "てんごく",
+          "meaning": "thiên đường"
+        }
+      ],
+      "mnemonic": "Người dang tay dưới bầu trời",
+      "on_romaji": "ten",
+      "kun_romaji": "ame/ama"
+    },
+    {
+      "id": "kn10",
+      "char": "空",
+      "on": "クウ",
+      "kun": "そら・あ(く)・から",
+      "meaning": "bầu trời; trống, không",
+      "stroke": 8,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "空",
+          "reading": "そら",
+          "meaning": "bầu trời"
+        },
+        {
+          "word": "空気",
+          "reading": "くうき",
+          "meaning": "không khí"
+        },
+        {
+          "word": "空港",
+          "reading": "くうこう",
+          "meaning": "sân bay"
+        }
+      ],
+      "mnemonic": "Khoảng không phía trên",
+      "on_romaji": "kū",
+      "kun_romaji": "sora/a(ku)/kara"
+    },
+    {
+      "id": "kn11",
+      "char": "花",
+      "on": "カ",
+      "kun": "はな",
+      "meaning": "hoa",
+      "stroke": 7,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "花",
+          "reading": "はな",
+          "meaning": "hoa"
+        },
+        {
+          "word": "花見",
+          "reading": "はなみ",
+          "meaning": "ngắm hoa anh đào"
+        }
+      ],
+      "mnemonic": "Cây cỏ (艹) nở hoa",
+      "on_romaji": "ka",
+      "kun_romaji": "hana"
+    },
+    {
+      "id": "kn12",
+      "char": "力",
+      "on": "リキ・リョク",
+      "kun": "ちから",
+      "meaning": "sức mạnh",
+      "stroke": 2,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "力",
+          "reading": "ちから",
+          "meaning": "sức lực"
+        },
+        {
+          "word": "電力",
+          "reading": "でんりょく",
+          "meaning": "điện lực"
+        }
+      ],
+      "mnemonic": "Cánh tay gồng cơ bắp",
+      "on_romaji": "riki/ryoku",
+      "kun_romaji": "chikara"
+    },
+    {
+      "id": "kn13",
+      "char": "元",
+      "on": "ゲン・ガン",
+      "kun": "もと",
+      "meaning": "gốc, nguyên",
+      "stroke": 4,
+      "category": "nature",
+      "examples": [
+        {
+          "word": "元気",
+          "reading": "げんき",
+          "meaning": "khỏe mạnh, sung sức"
+        },
+        {
+          "word": "元",
+          "reading": "もと",
+          "meaning": "gốc, ban đầu"
+        }
+      ],
+      "mnemonic": "Nguồn gốc ban đầu",
+      "on_romaji": "gen/gan",
+      "kun_romaji": "moto"
+    },
+    {
+      "id": "kn14",
+      "char": "本",
+      "on": "ホン",
+      "kun": "もと",
+      "meaning": "sách; gốc",
+      "stroke": 5,
+      "category": "school",
+      "examples": [
+        {
+          "word": "本",
+          "reading": "ほん",
+          "meaning": "sách"
+        },
+        {
+          "word": "日本",
+          "reading": "にほん",
+          "meaning": "Nhật Bản"
+        },
+        {
+          "word": "本屋",
+          "reading": "ほんや",
+          "meaning": "hiệu sách"
+        }
+      ],
+      "mnemonic": "Cây (木) có vạch dưới = gốc rễ → sách",
+      "on_romaji": "hon",
+      "kun_romaji": "moto"
+    },
+    {
+      "id": "kn15",
+      "char": "国",
+      "on": "コク",
+      "kun": "くに",
+      "meaning": "đất nước, quốc gia",
+      "stroke": 8,
+      "category": "school",
+      "examples": [
+        {
+          "word": "国",
+          "reading": "くに",
+          "meaning": "đất nước"
+        },
+        {
+          "word": "外国",
+          "reading": "がいこく",
+          "meaning": "nước ngoài"
+        },
+        {
+          "word": "国語",
+          "reading": "こくご",
+          "meaning": "quốc ngữ"
+        }
+      ],
+      "mnemonic": "Ngọc quý (玉) trong hàng rào = lãnh thổ",
+      "on_romaji": "koku",
+      "kun_romaji": "kuni"
+    },
+    {
+      "id": "kn16",
+      "char": "大",
+      "on": "ダイ・タイ",
+      "kun": "おお(きい)",
+      "meaning": "to, lớn",
+      "stroke": 3,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "大きい",
+          "reading": "おおきい",
+          "meaning": "to, lớn"
+        },
+        {
+          "word": "大学",
+          "reading": "だいがく",
+          "meaning": "đại học"
+        },
+        {
+          "word": "大人",
+          "reading": "おとな",
+          "meaning": "người lớn"
+        }
+      ],
+      "mnemonic": "Người dang rộng tay = lớn",
+      "on_romaji": "dai/tai",
+      "kun_romaji": "ō(kii)"
+    },
+    {
+      "id": "kn17",
+      "char": "小",
+      "on": "ショウ",
+      "kun": "ちい(さい)・こ",
+      "meaning": "nhỏ, bé",
+      "stroke": 3,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "小さい",
+          "reading": "ちいさい",
+          "meaning": "nhỏ"
+        },
+        {
+          "word": "小学校",
+          "reading": "しょうがっこう",
+          "meaning": "trường tiểu học"
+        }
+      ],
+      "mnemonic": "Ba nét nhỏ chụm lại",
+      "on_romaji": "shō",
+      "kun_romaji": "chī(sai)/ko"
+    },
+    {
+      "id": "kn18",
+      "char": "中",
+      "on": "チュウ",
+      "kun": "なか",
+      "meaning": "giữa, trong",
+      "stroke": 4,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "中",
+          "reading": "なか",
+          "meaning": "bên trong"
+        },
+        {
+          "word": "中国",
+          "reading": "ちゅうごく",
+          "meaning": "Trung Quốc"
+        },
+        {
+          "word": "一日中",
+          "reading": "いちにちじゅう",
+          "meaning": "cả ngày"
+        }
+      ],
+      "mnemonic": "Vạch xuyên qua giữa ô",
+      "on_romaji": "chū",
+      "kun_romaji": "naka"
+    },
+    {
+      "id": "kn19",
+      "char": "長",
+      "on": "チョウ",
+      "kun": "なが(い)",
+      "meaning": "dài; trưởng, sếp",
+      "stroke": 8,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "長い",
+          "reading": "ながい",
+          "meaning": "dài"
+        },
+        {
+          "word": "社長",
+          "reading": "しゃちょう",
+          "meaning": "giám đốc"
+        }
+      ],
+      "mnemonic": "Tóc dài của người lớn tuổi",
+      "on_romaji": "chō",
+      "kun_romaji": "naga(i)"
+    },
+    {
+      "id": "kn20",
+      "char": "上",
+      "on": "ジョウ",
+      "kun": "うえ・あ(がる)・のぼ(る)",
+      "meaning": "trên",
+      "stroke": 3,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "上",
+          "reading": "うえ",
+          "meaning": "phía trên"
+        },
+        {
+          "word": "上手",
+          "reading": "じょうず",
+          "meaning": "giỏi, khéo"
+        }
+      ],
+      "mnemonic": "Vạch nằm phía trên",
+      "on_romaji": "jō",
+      "kun_romaji": "ue/a(garu)/nobo(ru)"
+    },
+    {
+      "id": "kn21",
+      "char": "下",
+      "on": "カ・ゲ",
+      "kun": "した・さ(がる)・くだ(る)",
+      "meaning": "dưới",
+      "stroke": 3,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "下",
+          "reading": "した",
+          "meaning": "phía dưới"
+        },
+        {
+          "word": "地下",
+          "reading": "ちか",
+          "meaning": "dưới lòng đất"
+        },
+        {
+          "word": "下手",
+          "reading": "へた",
+          "meaning": "kém, vụng"
+        }
+      ],
+      "mnemonic": "Vạch nằm phía dưới",
+      "on_romaji": "ka/ge",
+      "kun_romaji": "shita/sa(garu)/kuda(ru)"
+    },
+    {
+      "id": "kn22",
+      "char": "東",
+      "on": "トウ",
+      "kun": "ひがし",
+      "meaning": "phía Đông",
+      "stroke": 8,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "東",
+          "reading": "ひがし",
+          "meaning": "phía đông"
+        },
+        {
+          "word": "東京",
+          "reading": "とうきょう",
+          "meaning": "Tokyo"
+        }
+      ],
+      "mnemonic": "Mặt trời (日) sau cái cây (木) lúc bình minh",
+      "on_romaji": "tō",
+      "kun_romaji": "higashi"
+    },
+    {
+      "id": "kn23",
+      "char": "西",
+      "on": "セイ・サイ",
+      "kun": "にし",
+      "meaning": "phía Tây",
+      "stroke": 6,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "西",
+          "reading": "にし",
+          "meaning": "phía tây"
+        },
+        {
+          "word": "西口",
+          "reading": "にしぐち",
+          "meaning": "cửa (ra) phía tây"
+        }
+      ],
+      "mnemonic": "Nơi mặt trời lặn",
+      "on_romaji": "sei/sai",
+      "kun_romaji": "nishi"
+    },
+    {
+      "id": "kn24",
+      "char": "南",
+      "on": "ナン",
+      "kun": "みなみ",
+      "meaning": "phía Nam",
+      "stroke": 9,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "南",
+          "reading": "みなみ",
+          "meaning": "phía nam"
+        },
+        {
+          "word": "南口",
+          "reading": "みなみぐち",
+          "meaning": "cửa phía nam"
+        }
+      ],
+      "mnemonic": "Hướng ấm áp",
+      "on_romaji": "nan",
+      "kun_romaji": "minami"
+    },
+    {
+      "id": "kn25",
+      "char": "北",
+      "on": "ホク",
+      "kun": "きた",
+      "meaning": "phía Bắc",
+      "stroke": 5,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "北",
+          "reading": "きた",
+          "meaning": "phía bắc"
+        },
+        {
+          "word": "北口",
+          "reading": "きたぐち",
+          "meaning": "cửa phía bắc"
+        }
+      ],
+      "mnemonic": "Hai người quay lưng (hướng lạnh)",
+      "on_romaji": "hoku",
+      "kun_romaji": "kita"
+    },
+    {
+      "id": "kn26",
+      "char": "外",
+      "on": "ガイ・ゲ",
+      "kun": "そと・ほか",
+      "meaning": "bên ngoài",
+      "stroke": 5,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "外",
+          "reading": "そと",
+          "meaning": "bên ngoài"
+        },
+        {
+          "word": "外国",
+          "reading": "がいこく",
+          "meaning": "nước ngoài"
+        }
+      ],
+      "mnemonic": "Buổi tối (夕) bói toán bên ngoài",
+      "on_romaji": "gai/ge",
+      "kun_romaji": "soto/hoka"
+    },
+    {
+      "id": "kn27",
+      "char": "右",
+      "on": "ウ・ユウ",
+      "kun": "みぎ",
+      "meaning": "bên phải",
+      "stroke": 5,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "右",
+          "reading": "みぎ",
+          "meaning": "bên phải"
+        },
+        {
+          "word": "右手",
+          "reading": "みぎて",
+          "meaning": "tay phải"
+        }
+      ],
+      "mnemonic": "Tay (ナ) đưa lên miệng (口)",
+      "on_romaji": "u/yū",
+      "kun_romaji": "migi"
+    },
+    {
+      "id": "kn28",
+      "char": "左",
+      "on": "サ",
+      "kun": "ひだり",
+      "meaning": "bên trái",
+      "stroke": 5,
+      "category": "size-pos",
+      "examples": [
+        {
+          "word": "左",
+          "reading": "ひだり",
+          "meaning": "bên trái"
+        },
+        {
+          "word": "左手",
+          "reading": "ひだりて",
+          "meaning": "tay trái"
+        }
+      ],
+      "mnemonic": "Tay (ナ) cầm thước thợ (工)",
+      "on_romaji": "sa",
+      "kun_romaji": "hidari"
     }
   ]
 }

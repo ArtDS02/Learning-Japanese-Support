@@ -674,6 +674,12 @@ background: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
+/* Bề rộng khung dùng vw (61vw) chỉ hợp cho PC — trên điện thoại phải
+   dùng gần hết màn hình, nếu không nội dung bị bó vào ~60% giữa trang. */
+:root {
+--container: 100%;
+}
+
 body {
 font-size: 1.823vw;
 }

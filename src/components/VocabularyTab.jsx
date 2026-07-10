@@ -412,7 +412,7 @@ function WordCard({
         </div>
       )}
 
-      {!expanded && !meaningHidden && (
+      {!expanded && !meaningHidden && (word.example || isIAdj || isNaAdj) && (
         <div className="wc-hint">Nhấn để xem ví dụ</div>
       )}
     </div>
