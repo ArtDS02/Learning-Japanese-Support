@@ -3,6 +3,7 @@ import { rateCard, getCard, getStatus } from "../../lib/srs";
 import { recordReview } from "../../lib/progress";
 import { matchesKana } from "../../lib/romaji";
 import { loadSettings } from "../../lib/userdata";
+import { cardKey, sessionKey, loadRun, saveRun, clearRun } from "../../lib/runstate";
 import { speak, ttsSupported, hasJaVoice } from "../../lib/tts";
 import SpeakButton from "./SpeakButton";
 import NoteBox from "./NoteBox";
@@ -17,8 +18,42 @@ import "../../styles/common/runner.css";
  * Mỗi phần tử `items` có dạng:
  *   { deck, id, kind: "flash" | "choice" | "type", ... }  (xem lib/session.js & lib/quizgen.js)
  *
+ * Thẻ lật: `speak` đọc được ở cả hai mặt, `speakBack` chỉ hiện sau khi lật —
+ * dùng cho thẻ mà chính cách đọc là đáp án (số đếm, giờ, ngày…), nghe trước là lộ.
+ *
  * `items` cần được memo hoá ở phía gọi để phiên không bị dựng lại mỗi lần render.
  */
+
+const EMPTY_STATS = { ok: 0, no: 0, vague: 0 };
+const FRESH = (items) => ({ queue: items, graded: [], stats: EMPTY_STATS, missed: [], resumed: 0 });
+
+/**
+ * Dựng phiên từ bản lưu (nếu có): bỏ những thẻ đã chấm ra khỏi hàng đợi và giữ
+ * nguyên điểm. Lọc theo ID nên không phụ thuộc thứ tự — SRS có sắp lại thẻ giữa
+ * hai lần vào vẫn nối tiếp đúng chỗ.
+ */
+function resumeSession(items) {
+  if (!items.length) return { key: null, ...FRESH(items) };
+  const key = sessionKey(items);
+  const saved = loadRun(key);
+  if (!saved) return { key, ...FRESH(items) };
+
+  const graded = new Set(saved.graded || []);
+  const queue = items.filter((it) => !graded.has(cardKey(it)));
+  // Chấm hết rồi mà vẫn còn bản lưu (thoát ngay ở màn tổng kết) → coi như phiên mới.
+  if (!queue.length) return { key, ...FRESH(items) };
+
+  const missed = new Set(saved.missed || []);
+  return {
+    key,
+    queue,
+    graded: saved.graded || [],
+    stats: { ...EMPTY_STATS, ...(saved.stats || {}) },
+    missed: items.filter((it) => missed.has(cardKey(it))),
+    resumed: items.length - queue.length,
+  };
+}
+
 export default function StudyRunner({
   items,
   title,
@@ -28,18 +63,23 @@ export default function StudyRunner({
   color = "#a78bfa",
 }) {
   const settings = loadSettings();
-  const [queue, setQueue] = useState(items);
+  // Chạy trong lúc render (không phải effect) để phiên học dở hiện ra ngay từ lượt
+  // vẽ đầu, không nháy qua thẻ số 1.
+  const session = useMemo(() => resumeSession(items), [items]);
+  const [queue, setQueue] = useState(session.queue);
   const [pos, setPos] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [selected, setSelected] = useState(null);
   const [typed, setTyped] = useState("");
   const [typeOk, setTypeOk] = useState(null);
   const [done, setDone] = useState(false);
-  const [stats, setStats] = useState({ ok: 0, no: 0, vague: 0 });
-  const [missed, setMissed] = useState([]);
+  const [stats, setStats] = useState(session.stats);
+  const [missed, setMissed] = useState(session.missed);
+  const [resumed, setResumed] = useState(session.resumed);
   const [autoPlay, setAutoPlay] = useState(true);
   const [furigana, setFurigana] = useState(settings.showFurigana);
   const requeued = useRef(new Map());
+  const graded = useRef(new Set(session.graded));
   const inputRef = useRef(null);
 
   const item = queue[pos];
@@ -47,17 +87,32 @@ export default function StudyRunner({
 
   // Dựng lại phiên khi bộ thẻ đổi.
   useEffect(() => {
-    setQueue(items);
+    setQueue(session.queue);
     setPos(0);
     setRevealed(false);
     setSelected(null);
     setTyped("");
     setTypeOk(null);
     setDone(false);
-    setStats({ ok: 0, no: 0, vague: 0 });
-    setMissed([]);
+    setStats(session.stats);
+    setMissed(session.missed);
+    setResumed(session.resumed);
     requeued.current = new Map();
-  }, [items]);
+    graded.current = new Set(session.graded);
+  }, [session]);
+
+  /** Ghi nhớ tiến độ — gọi sau mỗi lượt chấm, payload chỉ gồm id nên rất nhẹ. */
+  const remember = useCallback(
+    (nextStats, nextMissed) => {
+      if (!session.key) return;
+      saveRun(session.key, {
+        graded: [...graded.current],
+        missed: nextMissed.map(cardKey),
+        stats: nextStats,
+      });
+    },
+    [session.key],
+  );
 
   // Câu nghe: tự phát khi sang thẻ mới.
   useEffect(() => {
@@ -88,15 +143,51 @@ export default function StudyRunner({
 
       const nextLength = queue.length + (requeue ? 1 : 0);
       if (requeue) setQueue((q) => [...q, wrongItem]);
-      if (pos + 1 >= nextLength) setDone(true);
-      else setPos(pos + 1);
+      if (pos + 1 >= nextLength) {
+        setDone(true);
+        if (session.key) clearRun(session.key); // hết phiên thì không còn gì để "học tiếp"
+      } else setPos(pos + 1);
 
       setRevealed(false);
       setSelected(null);
       setTyped("");
       setTypeOk(null);
     },
-    [queue, pos],
+    [queue, pos, session.key],
+  );
+
+  /** Chuyển thẻ thuần điều hướng — KHÔNG chấm, không ghi SRS. */
+  const goTo = useCallback(
+    (next) => {
+      if (next < 0 || next >= queue.length) return;
+      setPos(next);
+      setRevealed(false);
+      setSelected(null);
+      setTyped("");
+      setTypeOk(null);
+    },
+    [queue.length],
+  );
+
+  /**
+   * Một lượt chấm: cộng điểm, ghi thẻ sai và lưu tiến độ phiên. Tính giá trị mới
+   * TRƯỚC khi setState (StrictMode gọi updater hai lần) rồi mới ghi xuống lưu trữ.
+   */
+  const score = useCallback(
+    (rating) => {
+      const nextStats = {
+        ok: stats.ok + (rating === "remember" ? 1 : 0),
+        no: stats.no + (rating === "forget" ? 1 : 0),
+        vague: stats.vague + (rating === "vague" ? 1 : 0),
+      };
+      const nextMissed =
+        rating === "forget" && !missed.some((x) => x.id === item.id) ? [...missed, item] : missed;
+      graded.current.add(cardKey(item));
+      setStats(nextStats);
+      if (nextMissed !== missed) setMissed(nextMissed);
+      remember(nextStats, nextMissed);
+    },
+    [stats, missed, item, remember],
   );
 
   const commit = useCallback(
@@ -104,15 +195,10 @@ export default function StudyRunner({
       if (!item) return;
       if (srs && item.deck) rateCard(item.deck, item.id, rating);
       recordReview(1, typeof ok === "boolean" ? ok : rating !== "forget");
-      setStats((s) => ({
-        ok: s.ok + (rating === "remember" ? 1 : 0),
-        no: s.no + (rating === "forget" ? 1 : 0),
-        vague: s.vague + (rating === "vague" ? 1 : 0),
-      }));
-      if (rating === "forget") setMissed((m) => (m.some((x) => x.id === item.id) ? m : [...m, item]));
+      score(rating);
       if (autoAdvance) advance(rating === "forget" ? item : null);
     },
-    [item, srs, advance],
+    [item, srs, advance, score],
   );
 
   // ── Trả lời ────────────────────────────────────────────────────────────────
@@ -124,8 +210,7 @@ export default function StudyRunner({
     const ok = choice === item.answer;
     if (srs && item.deck) rateCard(item.deck, item.id, ok ? "remember" : "forget");
     recordReview(1, ok);
-    setStats((s) => ({ ...s, ok: s.ok + (ok ? 1 : 0), no: s.no + (ok ? 0 : 1) }));
-    if (!ok) setMissed((m) => (m.some((x) => x.id === item.id) ? m : [...m, item]));
+    score(ok ? "remember" : "forget");
   };
 
   const checkTyped = () => {
@@ -140,8 +225,7 @@ export default function StudyRunner({
     setRevealed(true);
     if (srs && item.deck) rateCard(item.deck, item.id, ok ? "remember" : "forget");
     recordReview(1, ok);
-    setStats((s) => ({ ...s, ok: s.ok + (ok ? 1 : 0), no: s.no + (ok ? 0 : 1) }));
-    if (!ok) setMissed((m) => (m.some((x) => x.id === item.id) ? m : [...m, item]));
+    score(ok ? "remember" : "forget");
   };
 
   const nextAfterReveal = () => {
@@ -160,9 +244,12 @@ export default function StudyRunner({
     setTyped("");
     setTypeOk(null);
     setDone(false);
-    setStats({ ok: 0, no: 0, vague: 0 });
+    setStats(EMPTY_STATS);
     setMissed([]);
+    setResumed(0);
     requeued.current = new Map();
+    graded.current = new Set();
+    if (session.key) clearRun(session.key);
   };
 
   // ── Phím tắt ───────────────────────────────────────────────────────────────
@@ -190,6 +277,14 @@ export default function StudyRunner({
         if (e.key === " " || e.code === "Space" || e.key === "Enter") {
           e.preventDefault();
           setRevealed((v) => !v);
+        } else if (e.key === "ArrowRight") {
+          // → : chưa lật thì hiện đáp án, đã lật thì sang thẻ sau (không chấm)
+          e.preventDefault();
+          if (revealed) goTo(pos + 1);
+          else setRevealed(true);
+        } else if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          goTo(pos - 1);
         } else if (revealed && ["1", "2", "3"].includes(e.key)) {
           e.preventDefault();
           commit(e.key === "1" ? "forget" : e.key === "2" ? "vague" : "remember");
@@ -305,7 +400,11 @@ export default function StudyRunner({
         <button className="run-exit" onClick={onExit} title="Thoát (Esc)">✕</button>
         <div className="run-top__mid">
           <div className="run-top__title">{title}</div>
-          {subtitle && <div className="run-top__sub">{subtitle}</div>}
+          {(resumed > 0 || subtitle) && (
+            <div className="run-top__sub">
+              {resumed > 0 ? `↩ Học tiếp phiên trước · đã xong ${resumed} thẻ` : subtitle}
+            </div>
+          )}
         </div>
         <div className="run-top__right">
           <span className="run-count">{pos + 1}/{queue.length}</span>
@@ -326,6 +425,15 @@ export default function StudyRunner({
             <span className={`run-badge run-badge--${status}`}>
               {status === "new" ? "🆕 Mới" : status === "mastered" ? "✅ Đã thuộc" : `📚 L${card.box}`}
             </span>
+          )}
+          {resumed > 0 && (
+            <button
+              className="run-mini"
+              onClick={() => restart()}
+              title={`Bỏ tiến độ đã lưu (${resumed} thẻ) và học lại cả bộ từ thẻ đầu`}
+            >
+              ↺ Học lại từ đầu
+            </button>
           )}
           {item.audio && audible && (
             <button
@@ -385,23 +493,58 @@ export default function StudyRunner({
 
       {/* Điều khiển */}
       {item.kind === "flash" && (
-        revealed ? (
-          <div className="run-rate">
-            <button className="run-rate__btn is-forget" onClick={() => commit("forget")}>
-              😟 Quên <kbd>1</kbd>
+        <>
+          {revealed && (
+            <div className="run-rate">
+              <button className="run-rate__btn is-forget" onClick={() => commit("forget")}>
+                😟 Quên <kbd>1</kbd>
+              </button>
+              <button className="run-rate__btn is-vague" onClick={() => commit("vague")}>
+                🤔 Mơ hồ <kbd>2</kbd>
+              </button>
+              <button className="run-rate__btn is-remember" onClick={() => commit("remember")}>
+                😎 Nhớ <kbd>3</kbd>
+              </button>
+            </div>
+          )}
+
+          {/* Lật & chuyển thẻ bằng nút — trên máy tính thì mũi tên ←/→ làm cùng việc */}
+          <div className="run-nav">
+            <button
+              className="run-navbtn"
+              onClick={() => goTo(pos - 1)}
+              disabled={pos === 0}
+              title="Thẻ trước (phím ←)"
+            >
+              ← Trước
             </button>
-            <button className="run-rate__btn is-vague" onClick={() => commit("vague")}>
-              🤔 Mơ hồ <kbd>2</kbd>
-            </button>
-            <button className="run-rate__btn is-remember" onClick={() => commit("remember")}>
-              😎 Nhớ <kbd>3</kbd>
-            </button>
+            {revealed ? (
+              <button
+                className="run-navbtn"
+                onClick={() => goTo(pos + 1)}
+                disabled={pos + 1 >= queue.length}
+                title="Sang thẻ sau, không chấm nhớ (phím →)"
+              >
+                Tiếp →
+              </button>
+            ) : (
+              <button
+                className="run-navbtn run-navbtn--reveal"
+                onClick={() => setRevealed(true)}
+                title="Hiện đáp án (phím → hoặc Space)"
+              >
+                👁 Hiện đáp án
+              </button>
+            )}
           </div>
-        ) : (
-          <div className="run-hint">
-            <kbd>Space</kbd> lật thẻ · <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> chấm nhớ · <kbd>Esc</kbd> thoát
-          </div>
-        )
+
+          {!revealed && (
+            <div className="run-hint">
+              <kbd>Space</kbd> lật thẻ · <kbd>←</kbd>/<kbd>→</kbd> chuyển thẻ ·{" "}
+              <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> chấm nhớ · <kbd>Esc</kbd> thoát
+            </div>
+          )}
+        </>
       )}
 
       {item.kind === "choice" && revealed && (
@@ -443,7 +586,9 @@ function FlashBody({ item, revealed, onFlip, furigana }) {
           <div className="run-card__label">Đáp án</div>
           <div className="run-card__frontsmall">
             {item.front}
-            {item.speak && <SpeakButton text={item.speak} />}
+            {(item.speakBack || item.speak) && (
+              <SpeakButton text={item.speakBack || item.speak} />
+            )}
           </div>
           <div className="run-card__back">{item.back}</div>
           {item.backSub && <div className="run-card__backsub">{item.backSub}</div>}

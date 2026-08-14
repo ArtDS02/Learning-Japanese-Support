@@ -274,7 +274,7 @@ export default function App() {
             <span className="header__flag">🇯🇵</span>
             <div>
               <h1 className="header__title">JLPT N5</h1>
-              <p className="header__subtitle">Tổng hợp kiến thức đầy đủ</p>
+              <p className="header__subtitle">Tổng hợp kiến thức</p>
             </div>
           </button>
 
@@ -287,7 +287,7 @@ export default function App() {
               🔍 <span className="gs-trigger__t">Tìm mọi nơi</span>
               <kbd>Ctrl K</kbd>
             </button>
-            <div className="header__badge">N5 Ready</div>
+            <div className="header__badge">ArtDS02</div>
           </div>
         </div>
       </header>
@@ -316,6 +316,7 @@ export default function App() {
 
       <footer className="footer">
         <p>🎌 がんばってください！ · Chúc bạn thi JLPT N5 thành công!</p>
+        <p>Copyright by ARTDS02</p>
       </footer>
     </div>
   );

@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import data from "../data/numbers.json";
 import { kanaToRomaji } from "../lib/romaji";
-import { getStats } from "../lib/srs";
+import { getStats, orderForStudy } from "../lib/srs";
+import { shuffle } from "../lib/random";
 import { quizSetsFor, buildQuiz } from "../lib/quizgen";
 import QuizHub from "./common/QuizHub";
+import StudyRunner from "./common/StudyRunner";
 import SpeakButton from "./common/SpeakButton";
 import "../styles/tabs/numbers.css";
 
@@ -58,6 +60,224 @@ const TIME_EXPR = [
   { jp: "毎年", hira: "まいとし", vn: "mỗi năm" },
 ];
 
+/* ── Thẻ lật ──────────────────────────────────────────────────────────────────
+   Id thẻ CỐ Ý trùng id câu hỏi của lib/quizgen.js (num: / cnt: / hour: / month: /
+   date: / wd:): cùng một kiến thức thì dùng chung một thẻ SRS, nên học flashcard
+   và làm quiz cộng dồn vào cùng tiến độ. Các bộ chỉ có ở bảng (ghép số, cách nói
+   giờ, biểu thức thời gian, từ để hỏi) dùng tiền tố riêng.
+*/
+
+const stripWarn = (s) => String(s || "").replace(/\s*⚠️/g, "").trim();
+
+const flash = (card) => ({
+  deck: "numbers",
+  kind: "flash",
+  noteKind: "numbers",
+  color: "#facc15",
+  ...card,
+});
+
+/**
+ * Thẻ có đáp án LÀ cách đọc: chỉ cho nghe sau khi lật (`speakBack`), chứ nút
+ * loa ở mặt trước thì bấm một cái là xong bài.
+ */
+const flashRead = ({ read, ...card }) => flash({ ...card, speakBack: read });
+
+function digitCards() {
+  return data.numbers.map((n, i) =>
+    flashRead({
+      id: `num:${i}`,
+      front: n.kanji,
+      frontSub: n.num.toLocaleString(),
+      back: n.hira,
+      backSub: n.romaji,
+      read: n.hira.split("/")[0], // "し/よん" đọc máy nghe rất lạ — lấy cách đọc đầu
+      tag: "Số cơ bản",
+    }),
+  );
+}
+
+function comboCards() {
+  return COMBO_NUMBERS.map((ex, i) => {
+    const hira = stripWarn(ex.hira);
+    return flashRead({
+      id: `combo:${i}`,
+      front: ex.jp,
+      frontSub: ex.n,
+      back: hira,
+      backSub: ex.hira.includes("⚠️") ? `${kanaToRomaji(hira)} · ⚠️ biến âm` : kanaToRomaji(hira),
+      read: hira,
+      tag: "Ghép số",
+    });
+  });
+}
+
+/** Nhận danh sách bộ đếm để dùng được cho cả nút flashcard trên từng bộ đếm. */
+function counterCards(counters) {
+  return counters.flatMap((c) =>
+    c.readings.map((r) => {
+      const read = stripWarn(r.read);
+      return flashRead({
+        id: `cnt:${c.id}:${r.n}`,
+        front: `${r.n}${c.suffix.replace("〜", "")}`,
+        frontSub: c.use,
+        back: read,
+        backSub: kanaToRomaji(read),
+        extra: [c.example, c.note].filter(Boolean),
+        read,
+        tag: `Bộ đếm ${c.suffix}`,
+        color: c.color,
+      });
+    }),
+  );
+}
+
+function hourCards() {
+  return data.hours.map((h, i) => {
+    const read = stripWarn(h.read);
+    return flashRead({
+      id: `hour:${i}`,
+      front: `${h.n}時`,
+      frontSub: `${h.n} giờ`,
+      back: read,
+      backSub: h.read.includes("⚠️") ? `${h.romaji} · ⚠️ giờ đặc biệt` : h.romaji,
+      read,
+      tag: "Giờ 〜時",
+      color: "#f472b6",
+    });
+  });
+}
+
+function timePhraseCards() {
+  return TIME_PHRASES.map((ex, i) =>
+    flashRead({
+      id: `tphrase:${i}`,
+      front: ex.jp,
+      back: ex.vn,
+      backSub: ex.read,
+      read: ex.read,
+      tag: "Cách nói giờ",
+      color: "#f472b6",
+    }),
+  );
+}
+
+function monthCards() {
+  return data.months.map((m, i) => {
+    const read = stripWarn(m.read);
+    return flashRead({
+      id: `month:${i}`,
+      front: m.jp,
+      frontSub: `tháng ${m.n}`,
+      back: read,
+      backSub: m.read.includes("⚠️")
+        ? `${kanaToRomaji(read)} · ⚠️ biến âm`
+        : kanaToRomaji(read),
+      read,
+      tag: "Tháng 〜月",
+      color: "#a78bfa",
+    });
+  });
+}
+
+function dateCards() {
+  return data.dates.map((d, i) =>
+    flashRead({
+      id: `date:${i}`,
+      front: d.jp,
+      frontSub: `ngày ${d.n}`,
+      back: d.read,
+      backSub: d.special
+        ? `${kanaToRomaji(d.read)} · ⚠️ bất quy tắc, học thuộc lòng`
+        : kanaToRomaji(d.read),
+      read: d.read,
+      tag: "Ngày 〜日",
+      color: d.special ? "#f472b6" : "#facc15",
+    }),
+  );
+}
+
+function weekdayCards() {
+  return data.weekdays.map((d, i) =>
+    flashRead({
+      id: `wd:${i}`,
+      front: d.jp,
+      back: d.vn,
+      backSub: `${d.hira} · ${d.romaji} · ${d.kanji_meaning}`,
+      read: d.hira,
+      tag: "Thứ trong tuần",
+      color: d.color,
+    }),
+  );
+}
+
+function timeExprCards() {
+  return TIME_EXPR.map((ex, i) =>
+    flashRead({
+      id: `texpr:${i}`,
+      front: ex.jp,
+      back: ex.vn,
+      backSub: `${ex.hira} · ${kanaToRomaji(ex.hira)}`,
+      read: ex.hira,
+      tag: "Biểu thức thời gian",
+      color: "#60a5fa",
+    }),
+  );
+}
+
+function qwordCards() {
+  return data.questionWords.map((q, i) =>
+    flash({
+      id: `qw:${i}`,
+      front: q.q,
+      frontSub: kanaToRomaji(q.q),
+      back: q.use,
+      speak: q.q.split(" / ")[0],
+      tag: "Từ để hỏi",
+      color: "#34d399",
+    }),
+  );
+}
+
+/** Bộ thẻ của từng phần — khớp với id trong SECTIONS. */
+const FLASH_SETS = {
+  numbers: () => [...digitCards(), ...comboCards()],
+  counters: () => counterCards(data.counters),
+  time: () => [...hourCards(), ...timePhraseCards()],
+  calendar: () => [...monthCards(), ...dateCards()],
+  weekdays: () => [...weekdayCards(), ...timeExprCards()],
+  rules: () => qwordCards(),
+};
+
+/**
+ * Phần đáp án ẩn được. Khi bật "Ẩn đáp án", nội dung thay bằng ••• và chỉ hiện
+ * khi nhấn — tự kiểm tra ngay trên bảng, không cần vào phiên flashcard.
+ * Tắt rồi bật lại nút ẩn để che lại toàn bộ.
+ */
+function Answer({ hidden, children }) {
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    setShown(false);
+  }, [hidden]);
+
+  if (!hidden || shown) return <>{children}</>;
+
+  return (
+    <button
+      type="button"
+      className="num-mask"
+      title="Nhấn để xem đáp án"
+      onClick={(e) => {
+        e.stopPropagation();
+        setShown(true);
+      }}
+    >
+      •••
+    </button>
+  );
+}
+
 /** Thanh luyện tập số đếm — sinh câu từ chính bảng cách đọc trong tab này. */
 function NumbersPracticeBar({ open, onToggle }) {
   const sets = quizSetsFor("numbers");
@@ -89,6 +309,33 @@ function NumbersPracticeBar({ open, onToggle }) {
 export default function NumbersTab() {
   const [section, setSection] = useState("numbers");
   const [showQuiz, setShowQuiz] = useState(false);
+  const [hideAnswers, setHideAnswers] = useState(false);
+  const [study, setStudy] = useState(null); // { label, cards }
+
+  const sectionCards = useMemo(() => FLASH_SETS[section](), [section]);
+  const allCards = useMemo(() => Object.values(FLASH_SETS).flatMap((build) => build()), []);
+  const current = SECTIONS.find((s) => s.id === section);
+  const sectionStats = getStats("numbers", sectionCards.map((c) => c.id));
+
+  const startStudy = (cards, label, { random = false } = {}) => {
+    if (!cards.length) return;
+    setStudy({
+      label,
+      cards: random ? shuffle(cards) : orderForStudy(cards, "numbers", (c) => c.id),
+    });
+  };
+
+  if (study) {
+    return (
+      <StudyRunner
+        items={study.cards}
+        title={`🎴 ${study.label}`}
+        subtitle="Space lật thẻ · chấm Quên / Mơ hồ / Nhớ — thẻ lên L4 là tính đã thuộc"
+        color="#facc15"
+        onExit={() => setStudy(null)}
+      />
+    );
+  }
 
   return (
     <div>
@@ -114,6 +361,36 @@ export default function NumbersTab() {
         ))}
       </div>
 
+      {/* Học phần đang xem: thẻ lật & tự kiểm tra ngay trên bảng */}
+      <div className="num-tools">
+        <button
+          className="num-tool num-tool--go"
+          style={{ "--c": current.color }}
+          onClick={() => startStudy(sectionCards, `${current.label} · ${sectionCards.length} thẻ`)}
+        >
+          🎴 Học flashcard ({sectionCards.length} thẻ)
+        </button>
+        <button
+          className="num-tool"
+          title="Trộn thẻ của cả 6 phần vào một phiên"
+          onClick={() => startStudy(allCards, `Trộn tất cả · ${allCards.length} thẻ`, { random: true })}
+        >
+          🔀 Trộn tất cả ({allCards.length})
+        </button>
+        <button
+          className={`num-tool num-tool--mask ${hideAnswers ? "is-on" : ""}`}
+          aria-pressed={hideAnswers}
+          title="Che cách đọc & nghĩa trong bảng — nhấn ••• ở từng ô để tự kiểm tra"
+          onClick={() => setHideAnswers((v) => !v)}
+        >
+          {hideAnswers ? "👀 Hiện đáp án" : "🙈 Ẩn đáp án"}
+        </button>
+        <span className="num-tools__stat">
+          ✅ {sectionStats.mastered} thuộc · 📚 {sectionStats.learning} đang học
+          {sectionStats.due > 0 ? ` · 📅 ${sectionStats.due} tới hạn` : ""}
+        </span>
+      </div>
+
       {/* Numbers */}
       {section === "numbers" && (
         <div>
@@ -125,8 +402,10 @@ export default function NumbersTab() {
               <div key={i} className="word-card num-cell" style={{ "--card-color": "#facc15", "--c": "#facc15", animationDelay: `${i * 40}ms` }}>
                 <div className="num-cell__jp">{n.kanji}</div>
                 <div className="num-cell__num">{n.num.toLocaleString()}</div>
-                <div className="num-cell__hira">{n.hira}</div>
-                <div className="num-cell__romaji">{n.romaji}</div>
+                <Answer hidden={hideAnswers}>
+                  <div className="num-cell__hira">{n.hira}</div>
+                  <div className="num-cell__romaji">{n.romaji}</div>
+                </Answer>
               </div>
             ))}
           </div>
@@ -141,7 +420,9 @@ export default function NumbersTab() {
                   <div key={i} className="num-ex num-ex--row">
                     <div>
                       <div className="num-ex__jp">{ex.jp}</div>
-                      <div className={`num-ex__hira ${warn ? "is-warn" : ""}`}>{hira}</div>
+                      <Answer hidden={hideAnswers}>
+                        <div className={`num-ex__hira ${warn ? "is-warn" : ""}`}>{hira}</div>
+                      </Answer>
                     </div>
                     <div className="num-ex__n">{ex.n}</div>
                   </div>
@@ -167,6 +448,15 @@ export default function NumbersTab() {
                 <div className="num-counter__head">
                   <span className="num-counter__suffix">{counter.suffix}</span>
                   <div className="num-counter__use">{counter.use}</div>
+                  <button
+                    className="num-counter__go"
+                    title={`Học riêng ${counter.readings.length} cách đọc của bộ đếm này`}
+                    onClick={() =>
+                      startStudy(counterCards([counter]), `Bộ đếm ${counter.suffix} · ${counter.use}`)
+                    }
+                  >
+                    🎴 {counter.readings.length} thẻ
+                  </button>
                 </div>
                 {counter.note && <div className="num-counter__note">{counter.note}</div>}
                 <div className="num-grid num-grid--reading">
@@ -176,8 +466,10 @@ export default function NumbersTab() {
                     return (
                       <div key={i} className={`num-reading ${warn ? "num-reading--warn" : ""}`}>
                         <div className="num-reading__n">{r.n}</div>
-                        <div className="num-reading__read">{read}</div>
-                        <div className="num-reading__romaji">{kanaToRomaji(read)}</div>
+                        <Answer hidden={hideAnswers}>
+                          <div className="num-reading__read">{read}</div>
+                          <div className="num-reading__romaji">{kanaToRomaji(read)}</div>
+                        </Answer>
                         <div className="num-reading__spk">
                           <SpeakButton text={read} size="sm" />
                         </div>
@@ -206,8 +498,10 @@ export default function NumbersTab() {
               return (
                 <div key={i} className="word-card num-cell" style={{ "--card-color": "#f472b6", "--c": "#f472b6", animationDelay: `${i * 30}ms` }}>
                   <div className="num-cell__jp">{h.n}時</div>
-                  <div className={`num-cell__read ${warn ? "is-warn" : ""}`}>{h.read.replace(" ⚠️", "")}</div>
-                  <div className="num-cell__romaji">{h.romaji}</div>
+                  <Answer hidden={hideAnswers}>
+                    <div className={`num-cell__read ${warn ? "is-warn" : ""}`}>{h.read.replace(" ⚠️", "")}</div>
+                    <div className="num-cell__romaji">{h.romaji}</div>
+                  </Answer>
                 </div>
               );
             })}
@@ -222,8 +516,10 @@ export default function NumbersTab() {
                     {ex.jp}
                     <SpeakButton text={ex.read} size="sm" />
                   </div>
-                  <div className="num-ex__read">{ex.read}</div>
-                  <div className="num-ex__vn">{ex.vn}</div>
+                  <Answer hidden={hideAnswers}>
+                    <div className="num-ex__read">{ex.read}</div>
+                    <div className="num-ex__vn">{ex.vn}</div>
+                  </Answer>
                 </div>
               ))}
             </div>
@@ -246,8 +542,10 @@ export default function NumbersTab() {
               return (
                 <div key={i} className="word-card num-cell" style={{ "--card-color": "#a78bfa", "--c": "#a78bfa", animationDelay: `${i * 25}ms` }}>
                   <div className="num-cell__jp">{m.jp}</div>
-                  <div className={`num-cell__read ${warn ? "is-warn" : ""}`}>{read}</div>
-                  <div className="num-cell__romaji">{kanaToRomaji(read)}</div>
+                  <Answer hidden={hideAnswers}>
+                    <div className={`num-cell__read ${warn ? "is-warn" : ""}`}>{read}</div>
+                    <div className="num-cell__romaji">{kanaToRomaji(read)}</div>
+                  </Answer>
                 </div>
               );
             })}
@@ -266,8 +564,10 @@ export default function NumbersTab() {
               >
                 <div className="num-cell__sub">ngày {d.n}</div>
                 <div className="num-cell__jp">{d.jp}</div>
-                <div className={`num-cell__read ${d.special ? "is-warn" : ""}`}>{d.read}</div>
-                <div className="num-cell__romaji">{kanaToRomaji(d.read)}</div>
+                <Answer hidden={hideAnswers}>
+                  <div className={`num-cell__read ${d.special ? "is-warn" : ""}`}>{d.read}</div>
+                  <div className="num-cell__romaji">{kanaToRomaji(d.read)}</div>
+                </Answer>
               </div>
             ))}
           </div>
@@ -298,7 +598,9 @@ export default function NumbersTab() {
                     <div className="num-qword__q">{q.q}</div>
                     <div className="num-qword__romaji">{kanaToRomaji(q.q)}</div>
                   </div>
-                  <span className="num-qword__use">{q.use}</span>
+                  <Answer hidden={hideAnswers}>
+                    <span className="num-qword__use">{q.use}</span>
+                  </Answer>
                 </div>
               ))}
             </div>
@@ -316,9 +618,11 @@ export default function NumbersTab() {
             {data.weekdays.map((d, i) => (
               <div key={i} className="word-card num-cell" style={{ "--card-color": d.color, "--c": d.color, animationDelay: `${i * 60}ms` }}>
                 <div className="num-cell__jp">{d.jp}</div>
-                <div className="num-cell__hira">{d.hira}</div>
-                <div className="num-cell__romaji">{d.romaji}</div>
-                <div className="num-cell__vn">{d.vn}</div>
+                <Answer hidden={hideAnswers}>
+                  <div className="num-cell__hira">{d.hira}</div>
+                  <div className="num-cell__romaji">{d.romaji}</div>
+                  <div className="num-cell__vn">{d.vn}</div>
+                </Answer>
                 <div className="num-week__tag">{d.kanji_meaning}</div>
               </div>
             ))}
@@ -330,8 +634,10 @@ export default function NumbersTab() {
               {TIME_EXPR.map((ex, i) => (
                 <div key={i} className="num-ex">
                   <div className="num-ex__jp num-ex__jp--lg">{ex.jp}</div>
-                  <div className="num-ex__read">{ex.hira}</div>
-                  <div className="num-ex__vn">{ex.vn}</div>
+                  <Answer hidden={hideAnswers}>
+                    <div className="num-ex__read">{ex.hira}</div>
+                    <div className="num-ex__vn">{ex.vn}</div>
+                  </Answer>
                 </div>
               ))}
             </div>

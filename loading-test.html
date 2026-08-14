@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARTDS — Code to Art Preloader</title>
+<style>
+  :root {
+    --bg: #050708;
+    --teal: #27e0c0;
+    --gold: #d8b56a;
+    --text: #d9e2df;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--bg);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  }
+
+  body {
+    color: var(--text);
+  }
+
+  /* ---------- PRELOADER ---------- */
+  .preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 50% 45%, rgba(26, 55, 51, .18), transparent 30%),
+      radial-gradient(circle at 50% 50%, rgba(255,255,255,.025), transparent 55%),
+      #050708;
+    transition: opacity .6s ease, visibility .6s ease;
+  }
+
+  .preloader::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .16;
+    background-image:
+      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(circle at center, black, transparent 72%);
+  }
+
+  .preloader.is-done {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .hud {
+    position: absolute;
+    inset: 0;
+    padding: 28px 34px;
+    color: rgba(220, 235, 231, .35);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  .hud__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hud__bottom {
+    position: absolute;
+    left: 34px;
+    right: 34px;
+    bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .terminal {
+    position: absolute;
+    width: min(620px, 76vw);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition:
+      opacity .35s ease,
+      transform .6s cubic-bezier(.2,.8,.2,1),
+      filter .4s ease;
+  }
+
+  .terminal.is-compiling {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.88);
+    filter: blur(6px);
+  }
+
+  .terminal__line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 30px;
+    font-size: clamp(14px, 1.3vw, 19px);
+    letter-spacing: .04em;
+    text-shadow: 0 0 18px rgba(39,224,192,.12);
+  }
+
+  .prompt {
+    color: var(--teal);
+    opacity: .85;
+  }
+
+  .code {
+    white-space: nowrap;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.1em;
+    margin-left: 3px;
+    vertical-align: -2px;
+    background: var(--teal);
+    box-shadow: 0 0 12px rgba(39,224,192,.75);
+    animation: blink .65s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .status {
+    margin-top: 16px;
+    color: rgba(217,226,223,.28);
+    font-size: 9px;
+    letter-spacing: .22em;
+  }
+
+  /* ---------- PARTICLES ---------- */
+  #particleCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  #particleCanvas.is-active {
+    opacity: 1;
+  }
+
+  /* ---------- LOGO ---------- */
+  .logo-stage {
+    position: absolute;
+    width: min(390px, 58vw);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transform: scale(.68);
+    filter: blur(8px);
+    transition:
+      opacity .5s ease,
+      transform .9s cubic-bezier(.16,1,.3,1),
+      filter .7s ease;
+  }
+
+  .logo-stage.is-visible {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+
+  .logo-stage.is-pulse {
+    transform: scale(1.06);
+  }
+
+  .logo-mark {
+    position: relative;
+    width: 66%;
+    height: 66%;
+    display: grid;
+    place-items: center;
+  }
+
+  .logo-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    filter:
+      drop-shadow(0 0 10px rgba(39,224,192,.12))
+      drop-shadow(0 18px 35px rgba(0,0,0,.65));
+  }
+
+  /* Abstract ARTDS mark made with simple SVG paths. */
+  .logo-shape {
+    fill: url(#metal);
+    stroke: rgba(255,255,255,.22);
+    stroke-width: 1.2;
+    stroke-linejoin: round;
+  }
+
+  .logo-outline {
+    fill: none;
+    stroke: rgba(39,224,192,.36);
+    stroke-width: 1.2;
+    opacity: .55;
+  }
+
+  .logo-inner {
+    fill: #080d0d;
+    stroke: rgba(255,255,255,.12);
+    stroke-width: 1;
+  }
+
+  /* Shimmer */
+  .shimmer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -42%;
+    width: 28%;
+    opacity: 0;
+    transform: skewX(-20deg);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.06) 20%,
+      rgba(255,255,255,.92) 50%,
+      rgba(39,224,192,.45) 62%,
+      transparent
+    );
+    filter: blur(3px);
+    pointer-events: none;
+  }
+
+  .logo-stage.is-shimmer .shimmer {
+    opacity: 1;
+    animation: shimmer 650ms cubic-bezier(.2,.7,.2,1) forwards;
+  }
+
+  @keyframes shimmer {
+    from { left: -42%; }
+    to { left: 125%; }
+  }
+
+  .logo-caption {
+    position: absolute;
+    bottom: -28px;
+    color: rgba(220,235,231,.42);
+    font-size: 9px;
+    letter-spacing: .38em;
+    text-indent: .38em;
+  }
+
+  /* ---------- FINAL TRANSITION ---------- */
+  .portal {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #eafffb;
+    box-shadow:
+      0 0 20px rgba(39,224,192,.9),
+      0 0 70px rgba(39,224,192,.45);
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  .portal.is-active {
+    opacity: 1;
+    animation: portal 650ms cubic-bezier(.16,1,.3,1) forwards;
+  }
+
+  @keyframes portal {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(180);
+    }
+  }
+
+  /* ---------- DEMO PAGE ---------- */
+  .site {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 40px;
+    background:
+      radial-gradient(circle at 75% 20%, rgba(39,224,192,.09), transparent 24%),
+      linear-gradient(135deg, #080b0c, #111717);
+    color: white;
+  }
+
+  .site__content {
+    max-width: 900px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .8s ease .25s, transform .8s ease .25s;
+  }
+
+  .site.is-visible .site__content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .eyebrow {
+    color: var(--teal);
+    font: 11px monospace;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 18px 0;
+    font: 700 clamp(48px, 8vw, 110px)/.9 Arial, sans-serif;
+    letter-spacing: -.06em;
+  }
+
+  .site p {
+    max-width: 580px;
+    color: rgba(255,255,255,.52);
+    font: 16px/1.8 Arial, sans-serif;
+  }
+
+  .restart {
+    margin-top: 30px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.04);
+    color: rgba(255,255,255,.75);
+    padding: 12px 18px;
+    cursor: pointer;
+    font: 11px monospace;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+  }
+
+  .restart:hover {
+    border-color: rgba(39,224,192,.6);
+    color: white;
+  }
+
+  @media (max-width: 600px) {
+    .hud { padding: 20px; }
+    .hud__bottom { left: 20px; right: 20px; bottom: 20px; }
+    .terminal { width: 86vw; }
+    .terminal__line { font-size: 12px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      transition-duration: .01ms !important;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     PRELOADER
+========================= -->
+<div class="preloader" id="preloader">
+
+  <div class="hud">
+    <div class="hud__top">
+      <span>ARTDS / SYSTEM 01</span>
+      <span id="clock">00:00:00</span>
+    </div>
+
+    <div class="hud__bottom">
+      <span id="phaseLabel">INITIALIZING EXPERIENCE</span>
+      <span>BUILD 001</span>
+    </div>
+  </div>
+
+  <!-- Code -->
+  <div class="terminal" id="terminal">
+    <div class="terminal__line">
+      <span class="prompt">&gt;</span>
+      <span class="code" id="code"></span><span class="cursor"></span>
+    </div>
+    <div class="status" id="status">INITIALIZING CREATIVITY</div>
+  </div>
+
+  <!-- Particle system -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Logo -->
+  <div class="logo-stage" id="logoStage">
+
+    <div class="logo-mark">
+      <svg class="logo-svg" viewBox="0 0 300 300" aria-label="ARTDS logo">
+        <defs>
+          <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#303a39"/>
+            <stop offset="20%" stop-color="#dfe7e4"/>
+            <stop offset="38%" stop-color="#66716e"/>
+            <stop offset="58%" stop-color="#f8fbfa"/>
+            <stop offset="75%" stop-color="#77827f"/>
+            <stop offset="100%" stop-color="#1b2423"/>
+          </linearGradient>
+          <radialGradient id="core">
+            <stop offset="0%" stop-color="#183a36"/>
+            <stop offset="100%" stop-color="#050807"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Outer geometry -->
+        <path class="logo-outline"
+          d="M150 20
+             C222 20 280 78 280 150
+             C280 222 222 280 150 280
+             C78 280 20 222 20 150
+             C20 78 78 20 150 20Z"/>
+
+        <!-- Main abstract T / D style mark -->
+        <path class="logo-shape"
+          d="M70 78
+             H230
+             V112
+             H174
+             V226
+             H126
+             V112
+             H70Z"/>
+
+        <!-- Central negative space -->
+        <path class="logo-inner"
+          d="M128 132 H172 V204 H128Z"/>
+
+        <!-- Small accent -->
+        <circle cx="150" cy="150" r="7" fill="url(#core)"
+                stroke="rgba(255,255,255,.45)" stroke-width="1"/>
+      </svg>
+
+      <div class="shimmer"></div>
+    </div>
+
+    <div class="logo-caption">CODE TO ART</div>
+  </div>
+
+  <div class="portal" id="portal"></div>
+</div>
+
+<!-- =========================
+     DEMO WEBSITE
+========================= -->
+<main class="site" id="site">
+  <section class="site__content">
+    <div class="eyebrow">Creative Developer / ARTDS</div>
+    <h1>Code becomes<br>an experience.</h1>
+    <p>
+      A small simulation of the portfolio homepage.
+      The preloader turns code into particles, particles into identity,
+      and identity into the website.
+    </p>
+    <button class="restart" id="restart">Replay preloader</button>
+  </section>
+</main>
+
+<script>
+(() => {
+  const preloader = document.getElementById("preloader");
+  const terminal = document.getElementById("terminal");
+  const codeEl = document.getElementById("code");
+  const statusEl = document.getElementById("status");
+  const phaseLabel = document.getElementById("phaseLabel");
+  const logoStage = document.getElementById("logoStage");
+  const portal = document.getElementById("portal");
+  const site = document.getElementById("site");
+  const canvas = document.getElementById("particleCanvas");
+  const ctx = canvas.getContext("2d");
+  const restart = document.getElementById("restart");
+
+  const codeText = 'const experience = build("ARTDS");';
+
+  let particles = [];
+  let animationFrame = null;
+  let startTime = 0;
+
+  function resizeCanvas() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = innerWidth * dpr;
+    canvas.height = innerHeight * dpr;
+    canvas.style.width = innerWidth + "px";
+    canvas.style.height = innerHeight + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  function updateClock() {
+    const elapsed = performance.now() - startTime;
+    const seconds = Math.max(0, elapsed / 1000);
+    document.getElementById("clock").textContent =
+      seconds.toFixed(2).padStart(5, "0");
+    if (!preloader.classList.contains("is-done")) {
+      requestAnimationFrame(updateClock);
+    }
+  }
+
+  function typeCode() {
+    return new Promise(resolve => {
+      let i = 0;
+
+      const tick = () => {
+        codeEl.textContent = codeText.slice(0, i);
+        i++;
+
+        if (i <= codeText.length) {
+          setTimeout(tick, 25);
+        } else {
+          resolve();
+        }
+      };
+
+      tick();
+    });
+  }
+
+  /*
+   * Creates a particle cloud around the center.
+   * The particles don't need to literally sample the code;
+   * visually they represent the code dissolving into data.
+   */
+  function createParticles() {
+    particles = [];
+
+    const count = Math.min(520, Math.floor(innerWidth * innerHeight / 3500));
+    const cx = innerWidth / 2;
+    const cy = innerHeight / 2;
+
+    for (let i = 0; i < count; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const radius = 40 + Math.random() * Math.min(innerWidth, innerHeight) * .27;
+
+      particles.push({
+        x: cx + Math.cos(angle) * radius,
+        y: cy + Math.sin(angle) * radius,
+        tx: cx + (Math.random() - .5) * 160,
+        ty: cy + (Math.random() - .5) * 160,
+        vx: 0,
+        vy: 0,
+        size: Math.random() * 1.6 + .4,
+        alpha: Math.random() * .55 + .25,
+        delay: Math.random() * .25
+      });
+    }
+  }
+
+  function animateParticles(duration = 650) {
+    return new Promise(resolve => {
+      const started = performance.now();
+      canvas.classList.add("is-active");
+
+      function frame(now) {
+        const elapsed = now - started;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+
+        ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+        for (const p of particles) {
+          const local = Math.max(0, Math.min(1, (progress - p.delay) / .75));
+          const localEase = 1 - Math.pow(1 - local, 3);
+
+          p.x += (p.tx - p.x) * localEase * .035;
+          p.y += (p.ty - p.y) * localEase * .035;
+
+          const alpha = p.alpha * (1 - progress * .2);
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(110, 230, 211, ${alpha})`;
+          ctx.fill();
+        }
+
+        if (progress < 1) {
+          animationFrame = requestAnimationFrame(frame);
+        } else {
+          resolve();
+        }
+      }
+
+      animationFrame = requestAnimationFrame(frame);
+    });
+  }
+
+  function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async function runPreloader() {
+    if (animationFrame) cancelAnimationFrame(animationFrame);
+
+    preloader.classList.remove("is-done");
+    site.classList.remove("is-visible");
+
+    terminal.classList.remove("is-compiling");
+    logoStage.classList.remove("is-visible", "is-shimmer", "is-pulse");
+    portal.classList.remove("is-active");
+
+    canvas.classList.remove("is-active");
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+    codeEl.textContent = "";
+    statusEl.textContent = "INITIALIZING CREATIVITY";
+    phaseLabel.textContent = "INITIALIZING EXPERIENCE";
+
+    startTime = performance.now();
+    updateClock();
+
+    // 0.00 - 0.80 : CODE
+    await wait(180);
+    await typeCode();
+
+    await wait(80);
+    statusEl.textContent = "COMPILING EXPERIENCE";
+    phaseLabel.textContent = "COMPILING";
+
+    // 0.80 - 1.30 : CODE -> PARTICLES
+    terminal.classList.add("is-compiling");
+    createParticles();
+    await animateParticles(650);
+
+    // 1.30 : PARTICLES -> LOGO
+    phaseLabel.textContent = "IDENTITY GENERATED";
+    canvas.classList.remove("is-active");
+
+    await wait(80);
+    logoStage.classList.add("is-visible");
+
+    await wait(500);
+
+    // 1.80 - 2.30 : SHIMMER
+    phaseLabel.textContent = "FINALIZING";
+    logoStage.classList.add("is-shimmer");
+
+    await wait(650);
+
+    // Final pulse
+    logoStage.classList.add("is-pulse");
+    await wait(100);
+
+    // 2.30 - 2.70 : ENTER EXPERIENCE
+    phaseLabel.textContent = "ENTER EXPERIENCE";
+    portal.classList.add("is-active");
+
+    await wait(420);
+
+    preloader.classList.add("is-done");
+    site.classList.add("is-visible");
+
+    await wait(650);
+
+    logoStage.classList.remove("is-visible");
+    portal.classList.remove("is-active");
+  }
+
+  restart.addEventListener("click", runPreloader);
+
+  runPreloader();
+})();
+</script>
+</body>
+</html>
