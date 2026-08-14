@@ -1,0 +1,78 @@
+/* ============================================================
+   JLPT N5 App — kana (bổ sung)
+   Trạng thái SRS từng chữ · nút phát âm trong ô · tiến độ theo hàng
+   Import SAU kana.css — chỉ nhắm class mới.
+   ============================================================ */
+
+/* Ô chữ: đủ chỗ cho nút loa và có viền trạng thái */
+.kana-cell {
+  position: relative;
+}
+
+.kn-cell__tools {
+  position: absolute;
+  top: 0.1875rem;
+  right: 0.1875rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.kana-cell:hover .kn-cell__tools,
+.kana-cell:focus-within .kn-cell__tools {
+  opacity: 1;
+}
+
+/* Thiết bị cảm ứng không có hover → luôn hiện nút loa */
+@media (hover: none) and (pointer: coarse) {
+  .kn-cell__tools {
+    opacity: 0.7;
+  }
+}
+
+.kana-cell.kn-learning::after,
+.kana-cell.kn-mastered::after {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  right: 0.25rem;
+  bottom: 0.1875rem;
+  height: 0.125rem;
+  border-radius: 999px;
+}
+
+.kana-cell.kn-learning::after {
+  background: var(--accent-yellow);
+}
+
+.kana-cell.kn-mastered::after {
+  background: var(--accent-green);
+}
+
+/* Tiến độ trên chip chọn hàng trong quiz */
+.qz-chip__prog {
+  display: block;
+  margin-top: 0.125rem;
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  opacity: 0.7;
+}
+
+.qz-chip__prog.is-done {
+  color: var(--accent-green);
+  opacity: 1;
+}
+
+.qz-config__hint {
+  font-weight: 400;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  margin-left: 0.25rem;
+}
+
+/* Đáp án kana kèm nút phát âm */
+.kana-quiz__answer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}

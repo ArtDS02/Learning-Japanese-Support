@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="JLPT N5">
+  <!-- Icon app cho PWA. Thiết kế full-bleed + nội dung nằm trong vùng an toàn
+       (đường tròn 80% ở giữa) nên dùng được cho cả purpose="any" và "maskable". -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14161d"/>
+      <stop offset="1" stop-color="#0a0b0f"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4757"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- Vòng sáng nhẹ cho khỏi phẳng -->
+  <circle cx="256" cy="196" r="150" fill="#ff4757" opacity="0.10"/>
+
+  <!-- Mặt trời (cờ Nhật) -->
+  <circle cx="256" cy="180" r="72" fill="#ff4757"/>
+
+  <!-- N5 -->
+  <text x="256" y="384" text-anchor="middle"
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-size="140" font-weight="800" fill="#e8eaf0" letter-spacing="4">N5</text>
+
+  <!-- Gạch nhấn -->
+  <rect x="176" y="410" width="160" height="14" rx="7" fill="url(#ink)"/>
+</svg>

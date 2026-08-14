@@ -1,56 +1,70 @@
-import { useState, useMemo, useRef, useEffect, useCallback } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import kanjiData from "../data/kanji.json";
-import { rateCard } from "../lib/srs";
-import { recordReview } from "../lib/progress";
+import { getCard, getStatus, getStats, orderForStudy, rateCard, MASTERED_BOX } from "../lib/srs";
+import { kanjiCard } from "../lib/session";
+import { vocabWithKanji } from "../lib/searchIndex";
+import { shuffle } from "../lib/random";
+import StudyRunner from "./common/StudyRunner";
+import QuizHub from "./common/QuizHub";
+import SpeakButton from "./common/SpeakButton";
+import NoteBox from "./common/NoteBox";
+import WritePad from "./common/WritePad";
+import Modal from "./common/Modal";
 import "../styles/tabs/kanji.css";
+import "../styles/tabs/kanji-extra.css";
 
-export default function KanjiTab() {
+const MARKED_KEY = "kanji_marked";
+
+/**
+ * "Đã học" nay được SUY RA từ SRS (box >= MASTERED_BOX) thay vì là một set đánh
+ * dấu tay riêng — trước đây hai nguồn này có thể mâu thuẫn nhau. Set cũ
+ * `kanji_learned` đã được chuyển vào SRS lúc khởi động (xem lib/migrate.js).
+ */
+export default function KanjiTab({ initialSearch }) {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [search, setSearch] = useState("");
-  const [selectedIdx, setSelectedIdx] = useState(null); // index in `filtered`
+  const [search, setSearch] = useState(initialSearch || "");
+  const [selectedIdx, setSelectedIdx] = useState(null);
   const [marked, setMarked] = useState(() => {
     try {
-      const saved = localStorage.getItem("kanji_marked");
+      const saved = localStorage.getItem(MARKED_KEY);
       return saved ? new Set(JSON.parse(saved)) : new Set();
     } catch {
       return new Set();
     }
-  }); // Set of kanji ids
-  const [learned, setLearned] = useState(() => {
-    try {
-      const saved = localStorage.getItem("kanji_learned");
-      return saved ? new Set(JSON.parse(saved)) : new Set();
-    } catch {
-      return new Set();
-    }
-  }); // Set of kanji ids that user marked as "đã học"
-  const [mode, setMode] = useState("browse"); // "browse" | "flashcard"
+  });
+  const [study, setStudy] = useState(null); // { list, label }
+  const [showQuiz, setShowQuiz] = useState(false);
+  const [tick, setTick] = useState(0); // buộc render lại sau khi SRS đổi
 
-  // Persist marked to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem("kanji_marked", JSON.stringify([...marked]));
-    } catch {}
+      localStorage.setItem(MARKED_KEY, JSON.stringify([...marked]));
+    } catch {
+      /* quota */
+    }
   }, [marked]);
 
-  // Persist learned to localStorage
   useEffect(() => {
-    try {
-      localStorage.setItem("kanji_learned", JSON.stringify([...learned]));
-    } catch {}
-  }, [learned]);
+    if (initialSearch) {
+      setSearch(initialSearch);
+      setActiveCategory("all");
+      setStudy(null);
+      setShowQuiz(false);
+    }
+  }, [initialSearch]);
 
   const filtered = useMemo(() => {
+    const q = search.trim().toLowerCase();
     return kanjiData.kanji.filter((k) => {
-      const matchCat =
-        activeCategory === "all" || k.category === activeCategory;
-      const q = search.toLowerCase();
+      const matchCat = activeCategory === "all" || k.category === activeCategory;
       const matchSearch =
         !q ||
         k.char.includes(q) ||
         k.meaning.toLowerCase().includes(q) ||
         k.on.toLowerCase().includes(q) ||
-        k.kun.toLowerCase().includes(q);
+        k.kun.toLowerCase().includes(q) ||
+        k.on_romaji?.toLowerCase().includes(q) ||
+        k.kun_romaji?.toLowerCase().includes(q);
       return matchCat && matchSearch;
     });
   }, [activeCategory, search]);
@@ -58,71 +72,79 @@ export default function KanjiTab() {
   const catColor = (id) =>
     kanjiData.categories.find((c) => c.id === id)?.color || "#a78bfa";
 
+  const stats = useMemo(
+    () => getStats("kanji", kanjiData.kanji.map((k) => k.id)),
+    [tick],
+  );
+
   const toggleMark = (id) => {
     setMarked((prev) => {
       const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
       return next;
     });
   };
 
-  const markAll = () => {
+  const markedList = kanjiData.kanji.filter((k) => marked.has(k.id));
+  const allFilteredMarked = filtered.length > 0 && filtered.every((k) => marked.has(k.id));
+
+  const markAll = () =>
     setMarked((prev) => {
       const next = new Set(prev);
       filtered.forEach((k) => next.add(k.id));
       return next;
     });
-  };
 
-  const unmarkAll = () => {
+  const unmarkAll = () =>
     setMarked((prev) => {
       const next = new Set(prev);
       filtered.forEach((k) => next.delete(k.id));
       return next;
     });
-  };
 
-  const toggleLearn = (id) => {
-    setLearned((prev) => {
-      const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
-      return next;
+  const startStudy = (list, label, { random = false } = {}) => {
+    if (!list.length) return;
+    setStudy({
+      label,
+      list: random ? shuffle(list) : orderForStudy(list, "kanji", (k) => k.id),
     });
   };
 
-  const clearAllLearned = () => setLearned(new Set());
+  const studyItems = useMemo(
+    () => (study ? study.list.map(kanjiCard) : []),
+    [study],
+  );
 
-  const allFilteredMarked =
-    filtered.length > 0 && filtered.every((k) => marked.has(k.id));
-
-  const markedList = kanjiData.kanji.filter((k) => marked.has(k.id));
-
-  // Keyboard navigation in modal
+  // Điều hướng bàn phím trong modal (Esc do <Modal> lo).
   useEffect(() => {
     if (selectedIdx === null) return;
     const handler = (e) => {
+      // Đang gõ ghi chú thì mũi tên phải là di chuyển con trỏ, không phải đổi chữ.
+      const t = e.target;
+      if (t instanceof HTMLElement && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+
       if (e.key === "ArrowRight" || e.key === "ArrowDown") {
         setSelectedIdx((i) => Math.min(i + 1, filtered.length - 1));
       } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
         setSelectedIdx((i) => Math.max(i - 1, 0));
-      } else if (e.key === "Escape") {
-        setSelectedIdx(null);
       }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [selectedIdx, filtered.length]);
 
-  if (mode === "flashcard") {
+  if (study) {
     return (
-      <FlashcardMode
-        deck={markedList.length > 0 ? markedList : filtered}
-        catColor={catColor}
-        onExit={() => setMode("browse")}
-        isMarkedOnly={markedList.length > 0}
-        learned={learned}
-        onToggleLearn={toggleLearn}
-        onClearLearned={clearAllLearned}
+      <StudyRunner
+        items={studyItems}
+        title={`🃏 ${study.label}`}
+        subtitle="Chấm 3 mức: Quên · Mơ hồ · Nhớ — thẻ lên L4 là tính đã thuộc"
+        color="#a78bfa"
+        onExit={() => {
+          setStudy(null);
+          setTick((t) => t + 1);
+        }}
       />
     );
   }
@@ -132,55 +154,59 @@ export default function KanjiTab() {
       <div className="section-header">
         <h2 className="section-title">🈳 Kanji N5</h2>
         <p className="section-desc">
-          {kanjiData.kanji.length} kanji · Nhấn vào kanji để xem chi tiết
-          {marked.size > 0 && (
-            <span className="k-count-mark">· ★ {marked.size} đã đánh dấu</span>
-          )}
-          {learned.size > 0 && (
-            <span className="k-count-learn">· ✓ {learned.size} đã học</span>
-          )}
+          {kanjiData.kanji.length} kanji · Nhấn vào kanji để xem chi tiết, nét viết và tập viết
+          <span className="voc-stat-inline">
+            <span style={{ color: "#34d399" }}>✅ {stats.mastered} thuộc</span>
+            <span style={{ color: "#facc15" }}>📚 {stats.learning} đang học</span>
+            {stats.due > 0 && <span style={{ color: "#22d3ee" }}>📅 {stats.due} tới hạn</span>}
+            {marked.size > 0 && <span style={{ color: "#f59e0b" }}>★ {marked.size} đánh dấu</span>}
+          </span>
         </p>
       </div>
 
-      {/* Toolbar */}
-      <div className="k-toolbar">
-        <button className="k-flashbtn" onClick={() => setMode("flashcard")}>
-          🃏 Flashcard{" "}
-          {markedList.length > 0
-            ? `(★ ${markedList.length})`
-            : `(${filtered.length})`}
+      {/* Hành động học */}
+      <div className="voc-actions">
+        <button
+          className="voc-act voc-act--primary"
+          style={{ "--c": "#a78bfa" }}
+          onClick={() => startStudy(filtered, `Flashcard (${filtered.length} kanji)`)}
+        >
+          <span className="voc-act__icon" aria-hidden="true">🃏</span>
+          <span className="voc-act__body">
+            <span className="voc-act__title">Học flashcard</span>
+            <span className="voc-act__sub">{filtered.length} kanji · ưu tiên thẻ tới hạn</span>
+          </span>
         </button>
-
-        {/* Mark all / Unmark all cho filtered hiện tại */}
-        {!allFilteredMarked ? (
-          <button
-            className="k-markbtn"
-            onClick={markAll}
-            title={`Đánh dấu tất cả ${filtered.length} kanji đang hiển thị`}
-          >
-            ★ Đánh dấu tất cả
-          </button>
-        ) : (
-          <button
-            className="k-markbtn is-on"
-            onClick={unmarkAll}
-            title={`Bỏ đánh dấu tất cả ${filtered.length} kanji đang hiển thị`}
-          >
-            ☆ Bỏ đánh dấu tất cả
-          </button>
-        )}
-
-        {/* Xóa tất cả đánh dấu đã học */}
-        {learned.size > 0 && (
-          <button
-            className="k-clearbtn"
-            onClick={clearAllLearned}
-            title="Xóa tất cả đánh dấu đã học"
-          >
-            ✓ Xóa đã học ({learned.size})
-          </button>
-        )}
+        <button
+          className="voc-act"
+          style={{ "--c": "#f59e0b" }}
+          disabled={markedList.length === 0}
+          title="Học lại những chữ bạn đã đánh dấu"
+          onClick={() => startStudy(markedList, `Kanji đã đánh dấu (${markedList.length})`)}
+        >
+          <span className="voc-act__icon" aria-hidden="true">★</span>
+          <span className="voc-act__body">
+            <span className="voc-act__title">Đã đánh dấu</span>
+            <span className="voc-act__sub">
+              {markedList.length > 0 ? `${markedList.length} kanji` : "Chưa đánh dấu chữ nào"}
+            </span>
+          </span>
+        </button>
+        <button
+          className={`voc-act ${showQuiz ? "is-on" : ""}`}
+          style={{ "--c": "#f472b6" }}
+          aria-pressed={showQuiz}
+          onClick={() => setShowQuiz((v) => !v)}
+        >
+          <span className="voc-act__icon" aria-hidden="true">🎯</span>
+          <span className="voc-act__body">
+            <span className="voc-act__title">Luyện tập</span>
+            <span className="voc-act__sub">Nghĩa → Kanji · cách đọc → Kanji</span>
+          </span>
+        </button>
       </div>
+
+      {showQuiz && <QuizHub tab="kanji" color="#a78bfa" onClose={() => setShowQuiz(false)} />}
 
       <div className="search-box">
         <span className="search-box__icon">🔍</span>
@@ -202,9 +228,7 @@ export default function KanjiTab() {
           🌐 Tất cả ({kanjiData.kanji.length})
         </button>
         {kanjiData.categories.map((cat) => {
-          const count = kanjiData.kanji.filter(
-            (k) => k.category === cat.id,
-          ).length;
+          const count = kanjiData.kanji.filter((k) => k.category === cat.id).length;
           return (
             <button
               key={cat.id}
@@ -216,6 +240,14 @@ export default function KanjiTab() {
             </button>
           );
         })}
+      </div>
+
+      <div className="k-toolbar">
+        {!allFilteredMarked ? (
+          <button className="k-markbtn" onClick={markAll}>★ Đánh dấu tất cả</button>
+        ) : (
+          <button className="k-markbtn is-on" onClick={unmarkAll}>☆ Bỏ đánh dấu tất cả</button>
+        )}
       </div>
 
       <div className="k-legend">
@@ -233,7 +265,7 @@ export default function KanjiTab() {
         </span>
         <span className="k-legend__item">
           <span className="k-legend__sym" style={{ "--c": "#22c55e" }}>✓</span>
-          Đã học
+          Đã thuộc (SRS đạt L{MASTERED_BOX})
         </span>
       </div>
 
@@ -244,60 +276,61 @@ export default function KanjiTab() {
         </div>
       ) : (
         <div className="kanji-grid">
-          {filtered.map((k, idx) => (
-            <div
-              key={k.id}
-              className="kanji-card"
-              style={{
-                "--card-color": catColor(k.category),
-                animationDelay: `${idx * 30}ms`,
-              }}
-              onClick={() => setSelectedIdx(idx)}
-            >
-              {/* Mark button */}
-              <button
-                className={`k-card__mark ${marked.has(k.id) ? "is-on" : ""}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleMark(k.id);
+          {filtered.map((k, idx) => {
+            const status = getStatus(getCard("kanji", k.id));
+            return (
+              <div
+                key={k.id}
+                className={`kanji-card kj-${status}`}
+                style={{
+                  "--card-color": catColor(k.category),
+                  animationDelay: `${Math.min(idx, 30) * 30}ms`,
                 }}
-                title={marked.has(k.id) ? "Bỏ đánh dấu" : "Đánh dấu"}
+                onClick={() => setSelectedIdx(idx)}
               >
-                ★
-              </button>
-              {/* Learned badge */}
-              {learned.has(k.id) && <div className="k-card__learned">✓</div>}
-              {/* <span className="kanji-stroke">{k.stroke}nét</span> */}
-              <span className="kanji-char">{k.char}</span>
-              <div className="kanji-meaning">{k.meaning}</div>
-              <div className="kanji-readings">
-                <span className="kanji-on">On: {k.on}</span>
-                <span className="kanji-kun">Kun: {k.kun}</span>
+                <button
+                  className={`k-card__mark ${marked.has(k.id) ? "is-on" : ""}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleMark(k.id);
+                  }}
+                  title={marked.has(k.id) ? "Bỏ đánh dấu" : "Đánh dấu"}
+                >
+                  ★
+                </button>
+                {status === "mastered" && <div className="k-card__learned">✓</div>}
+                {status === "learning" && <div className="k-card__learning">📚</div>}
+                <span className="kanji-char">{k.char}</span>
+                <div className="kanji-meaning">{k.meaning}</div>
+                <div className="kanji-readings">
+                  <span className="kanji-on">On: {k.on}</span>
+                  <span className="kanji-kun">Kun: {k.kun}</span>
+                </div>
+                <div className="kanji-readings k-readings--romaji">
+                  <span className="k-romaji">{k.on_romaji}</span>
+                  <span className="k-romaji">{k.kun_romaji}</span>
+                </div>
               </div>
-              <div className="kanji-readings k-readings--romaji">
-                <span className="k-romaji">{k.on_romaji}</span>
-                <span className="k-romaji">{k.kun_romaji}</span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
 
-      {selectedIdx !== null && (
+      {selectedIdx !== null && filtered[selectedIdx] && (
         <KanjiModal
           kanji={filtered[selectedIdx]}
           idx={selectedIdx}
           total={filtered.length}
-          onClose={() => setSelectedIdx(null)}
+          onClose={() => {
+            setSelectedIdx(null);
+            setTick((t) => t + 1);
+          }}
           onPrev={() => setSelectedIdx((i) => Math.max(i - 1, 0))}
-          onNext={() =>
-            setSelectedIdx((i) => Math.min(i + 1, filtered.length - 1))
-          }
+          onNext={() => setSelectedIdx((i) => Math.min(i + 1, filtered.length - 1))}
           catColor={catColor(filtered[selectedIdx].category)}
           isMarked={marked.has(filtered[selectedIdx].id)}
           onToggleMark={() => toggleMark(filtered[selectedIdx].id)}
-          isLearned={learned.has(filtered[selectedIdx].id)}
-          onToggleLearn={() => toggleLearn(filtered[selectedIdx].id)}
+          onRated={() => setTick((t) => t + 1)}
         />
       )}
     </div>
@@ -345,7 +378,6 @@ function StrokeOrderAnimator({ strokes, catColor }) {
           setCurrent(i + 1);
           const el = pathRefs.current[i];
           if (!el) return;
-          const len = getLen(el);
           el.setAttribute("stroke", catColor);
           el.setAttribute("stroke-width", "4.5");
           el.style.transition = `stroke-dashoffset ${STROKE_MS}ms cubic-bezier(0.3,0,0.2,1)`;
@@ -406,51 +438,13 @@ function StrokeOrderAnimator({ strokes, catColor }) {
       </div>
       <div className="k-stroke__body">
         <div className="k-stroke__canvas">
-          <svg className="k-stroke__grid"
-            viewBox="0 0 168 168"
-          >
-            <line
-              x1="84"
-              y1="0"
-              x2="84"
-              y2="168"
-              stroke={catColor}
-              strokeWidth="1"
-              strokeDasharray="5 4"
-            />
-            <line
-              x1="0"
-              y1="84"
-              x2="168"
-              y2="84"
-              stroke={catColor}
-              strokeWidth="1"
-              strokeDasharray="5 4"
-            />
-            <line
-              x1="0"
-              y1="0"
-              x2="168"
-              y2="168"
-              stroke={catColor}
-              strokeWidth="0.5"
-              strokeDasharray="3 5"
-            />
-            <line
-              x1="168"
-              y1="0"
-              x2="0"
-              y2="168"
-              stroke={catColor}
-              strokeWidth="0.5"
-              strokeDasharray="3 5"
-            />
+          <svg className="k-stroke__grid" viewBox="0 0 168 168">
+            <line x1="84" y1="0" x2="84" y2="168" stroke={catColor} strokeWidth="1" strokeDasharray="5 4" />
+            <line x1="0" y1="84" x2="168" y2="84" stroke={catColor} strokeWidth="1" strokeDasharray="5 4" />
+            <line x1="0" y1="0" x2="168" y2="168" stroke={catColor} strokeWidth="0.5" strokeDasharray="3 5" />
+            <line x1="168" y1="0" x2="0" y2="168" stroke={catColor} strokeWidth="0.5" strokeDasharray="3 5" />
           </svg>
-          <svg
-            viewBox="0 0 109 109"
-            xmlns="http://www.w3.org/2000/svg"
-            className="k-stroke__svg"
-          >
+          <svg viewBox="0 0 109 109" xmlns="http://www.w3.org/2000/svg" className="k-stroke__svg">
             {strokes.map((d, i) => (
               <path
                 key={i}
@@ -491,23 +485,35 @@ function StrokeOrderAnimator({ strokes, catColor }) {
 
 function KanjiModal({
   kanji,
+  idx,
+  total,
   onClose,
+  onPrev,
+  onNext,
   catColor,
   isMarked,
   onToggleMark,
-  isLearned,
-  onToggleLearn,
+  onRated,
 }) {
+  const [tab, setTab] = useState("info"); // info | write
+  const card = getCard("kanji", kanji.id);
+  const status = getStatus(card);
+  const related = useMemo(() => vocabWithKanji(kanji.char), [kanji.char]);
+
+  const rate = (rating) => {
+    rateCard("kanji", kanji.id, rating);
+    onRated?.();
+  };
+
   return (
-    <div className="kanji-modal-overlay" onClick={onClose}>
-      <div
-        className="kanji-modal"
-        style={{ "--c": catColor }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button className="kanji-modal__close" onClick={onClose}>
-          ✕
-        </button>
+    <Modal
+      onClose={onClose}
+      label={`Chi tiết kanji ${kanji.char} — ${kanji.meaning}`}
+      className="kanji-modal-overlay"
+      panelClassName="kanji-modal"
+      panelStyle={{ "--c": catColor }}
+    >
+        <button className="kanji-modal__close" onClick={onClose} aria-label="Đóng">✕</button>
 
         <div className="kanji-character">
           <div className="km-cat-row">
@@ -515,6 +521,7 @@ function KanjiModal({
               {kanjiData.categories.find((c) => c.id === kanji.category)?.icon}{" "}
               {kanjiData.categories.find((c) => c.id === kanji.category)?.label}
             </span>
+            <span className="km-pos">{idx + 1}/{total}</span>
           </div>
 
           <div className="kanji-modal__char">{kanji.char}</div>
@@ -522,9 +529,26 @@ function KanjiModal({
 
           <div className="stroke-number">
             <span>Số nét: {kanji.stroke}</span>
+            <span className={`km-srs km-srs--${status}`}>
+              {status === "new" ? "🆕 Chưa học" : status === "mastered" ? "✅ Đã thuộc" : `📚 Đang học · L${card.box}`}
+            </span>
           </div>
 
-          <StrokeOrderAnimator strokes={kanji.strokes} catColor={catColor} />
+          {/* Chuyển giữa xem nét mẫu và tự tập viết */}
+          <div className="km-tabs">
+            <button className={`km-tab ${tab === "info" ? "is-on" : ""}`} onClick={() => setTab("info")}>
+              ✍️ Nét mẫu
+            </button>
+            <button className={`km-tab ${tab === "write" ? "is-on" : ""}`} onClick={() => setTab("write")}>
+              🖊 Tập viết
+            </button>
+          </div>
+
+          {tab === "info" ? (
+            <StrokeOrderAnimator strokes={kanji.strokes} catColor={catColor} />
+          ) : (
+            <WritePad strokes={kanji.strokes} char={kanji.char} color={catColor} />
+          )}
 
           <div className="kanji-modal__readings">
             <div className="kanji-modal__reading-group">
@@ -540,27 +564,53 @@ function KanjiModal({
             </div>
           </div>
         </div>
+
         <div className="kanji-evidence">
-          {kanji.mnemonic && (
-            <div className="kanji-modal__mnemonic">{kanji.mnemonic}</div>
-          )}
+          {kanji.mnemonic && <div className="kanji-modal__mnemonic">{kanji.mnemonic}</div>}
 
           <div className="km-examples-label">Ví dụ từ ghép</div>
           <div className="kanji-modal__examples">
             {kanji.examples.map((ex, i) => (
               <div key={i} className="kanji-modal__example">
                 <div>
-                  <div className="kanji-modal__example-word">{ex.word}</div>
-                  <div className="kanji-modal__example-reading">
-                    {ex.reading}
+                  <div className="kanji-modal__example-word">
+                    {ex.word}
+                    <SpeakButton text={ex.reading} size="sm" />
                   </div>
+                  <div className="kanji-modal__example-reading">{ex.reading}</div>
                 </div>
                 <div className="kanji-modal__example-meaning">{ex.meaning}</div>
               </div>
             ))}
           </div>
 
-          {/* Action buttons: Mark + Learned */}
+          {/* Liên kết chéo: từ vựng N5 dùng kanji này */}
+          {related.length > 0 && (
+            <div className="km-related">
+              <div className="km-examples-label">Từ vựng N5 có chữ {kanji.char}</div>
+              <div className="km-related__list">
+                {related.map((w) => (
+                  <span key={w.id} className="km-related__item" title={w.meaning}>
+                    <strong>{w.kanji || w.japanese}</strong>
+                    <em>{w.meaning}</em>
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <NoteBox kind="kanji" id={kanji.id} placeholder="Cách nhớ riêng của bạn cho chữ này…" />
+
+          {/* Chấm thẳng vào SRS — 3 mức như mọi deck khác */}
+          <div className="km-rate">
+            <div className="km-rate__label">Bạn nhớ chữ này tới đâu?</div>
+            <div className="km-rate__btns">
+              <button className="km-rate__btn is-forget" onClick={() => rate("forget")}>😟 Quên</button>
+              <button className="km-rate__btn is-vague" onClick={() => rate("vague")}>🤔 Mơ hồ</button>
+              <button className="km-rate__btn is-remember" onClick={() => rate("remember")}>😎 Nhớ</button>
+            </div>
+          </div>
+
           <div className="km-actions">
             <button
               className={`km-actbtn km-actbtn--mark ${isMarked ? "is-on" : ""}`}
@@ -568,421 +618,14 @@ function KanjiModal({
             >
               {isMarked ? "★ Bỏ đánh dấu" : "☆ Đánh dấu"}
             </button>
-            <button
-              className={`km-actbtn km-actbtn--learn ${isLearned ? "is-on" : ""}`}
-              onClick={onToggleLearn}
-            >
-              {isLearned ? "✓ Đã học rồi" : "○ Đánh dấu đã học"}
-            </button>
+          </div>
+
+          <div className="km-nav">
+            <button className="km-navbtn" onClick={onPrev} disabled={idx === 0}>‹ Trước</button>
+            <span className="km-nav__hint">← → chuyển chữ · Esc đóng</span>
+            <button className="km-navbtn" onClick={onNext} disabled={idx >= total - 1}>Tiếp ›</button>
           </div>
         </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── Flashcard Mode ───────────────────────────────────────────────────────────
-// (Style cho .fc-* nằm trong styles/tabs/kanji.css)
-
-function FlashcardMode({
-  deck,
-  catColor,
-  onExit,
-  isMarkedOnly,
-  learned,
-  onToggleLearn,
-  onClearLearned,
-}) {
-  const [showIntro, setShowIntro] = useState(true); // màn hình chào khi vừa vào
-  const [order, setOrder] = useState(() => deck.map((_, i) => i));
-  const [cardIdx, setCardIdx] = useState(0);
-  const [flipped, setFlipped] = useState(false);
-  const [results, setResults] = useState({}); // { orderIdx: "know"|"again" }
-  const [done, setDone] = useState(false);
-  const [slideDir, setSlideDir] = useState("right"); // "right" | "left"
-  const [animKey, setAnimKey] = useState(0); // bump to retrigger slide anim
-
-  const shuffleDeck = useCallback(() => {
-    setOrder([...deck.map((_, i) => i)].sort(() => Math.random() - 0.5));
-    setCardIdx(0);
-    setFlipped(false);
-    setResults({});
-    setDone(false);
-    setShowIntro(false); // học lại thì không show intro nữa
-    setSlideDir("right");
-    setAnimKey((k) => k + 1);
-  }, [deck]);
-
-  useEffect(() => {
-    shuffleDeck();
-  }, [deck]);
-
-  // ── Keyboard handler ──────────────────────────────────────────────────────
-  useEffect(() => {
-    const handler = (e) => {
-      if (done) return;
-
-      // Flip card
-      if (
-        e.key === " " ||
-        e.key === "Enter" ||
-        e.key === "ArrowUp" ||
-        e.key === "ArrowDown"
-      ) {
-        e.preventDefault();
-
-        if (!flipped) {
-          setFlipped(true); // <-- FIX
-        } else {
-          handleAnswer("know");
-        }
-
-        return;
-      }
-
-      // Next
-      if (e.key === "ArrowRight") {
-        e.preventDefault();
-
-        if (flipped) {
-          handleAnswer("know");
-        } else {
-          goNext();
-        }
-
-        return;
-      }
-
-      // Prev / Again
-      if (e.key === "ArrowLeft") {
-        e.preventDefault();
-
-        if (flipped) {
-          handleAnswer("again");
-        } else {
-          goPrev();
-        }
-
-        return;
-      }
-
-      // Shortcuts
-      if (e.key === "1" && flipped) {
-        handleAnswer("again");
-      }
-
-      if (e.key === "2" && flipped) {
-        handleAnswer("know");
-      }
-    };
-
-    window.addEventListener("keydown", handler);
-
-    return () => {
-      window.removeEventListener("keydown", handler);
-    };
-  }, [flipped, cardIdx, order, done]);
-
-  const current = deck[order[cardIdx]];
-  const color = current ? catColor(current.category) : "#a78bfa";
-
-  const knowCount = Object.values(results).filter((r) => r === "know").length;
-  const againCount = Object.values(results).filter((r) => r === "again").length;
-  const answered = Object.keys(results).length;
-  const progress = order.length > 0 ? (answered / order.length) * 100 : 0;
-
-  function goNext() {
-    if (cardIdx >= order.length - 1) return;
-    setSlideDir("right");
-    setAnimKey((k) => k + 1);
-    setCardIdx((i) => i + 1);
-    setFlipped(false);
-  }
-
-  function goPrev() {
-    if (cardIdx <= 0) return;
-    setSlideDir("left");
-    setAnimKey((k) => k + 1);
-    setCardIdx((i) => i - 1);
-    setFlipped(false);
-  }
-
-  function handleAnswer(result) {
-    // Ghi nhận vào SRS + tiến độ: "know" = Nhớ, "again" = Quên
-    if (current) {
-      rateCard("kanji", current.id, result === "know" ? "remember" : "forget");
-      recordReview(1);
-    }
-    const newResults = { ...results, [cardIdx]: result };
-    setResults(newResults);
-    if (cardIdx + 1 >= order.length) {
-      setDone(true);
-    } else {
-      setSlideDir("right");
-      setAnimKey((k) => k + 1);
-      setCardIdx((i) => i + 1);
-      setFlipped(false);
-    }
-  }
-
-  // ── Intro screen ─────────────────────────────────────────────────────────
-  if (showIntro) {
-    const learnedInDeck = deck.filter((k) => learned.has(k.id)).length;
-    const unlearnedCount = deck.length - learnedInDeck;
-    return (
-      <div className="kfc-center">
-        <div className="kfc-emoji-lg">🃏</div>
-        <h2 className="kfc-title">
-          {isMarkedOnly ? "Ôn kanji đã đánh dấu" : "Ôn tất cả kanji"}
-        </h2>
-        <p className="kfc-sub">
-          {deck.length} thẻ sẽ được xáo ngẫu nhiên
-          {learnedInDeck > 0 && (
-            <span className="kfc-sub-learned">
-              ✓ {learnedInDeck} đã học · {unlearnedCount} còn lại
-            </span>
-          )}
-        </p>
-
-        {/* Stats nhanh */}
-        <div className="kfc-stats">
-          <div className="kfc-stat" style={{ "--c": "#a78bfa" }}>
-            <div className="kfc-stat__n">{deck.length}</div>
-            <div className="kfc-stat__l">Tổng thẻ</div>
-          </div>
-          {learnedInDeck > 0 && (
-            <div className="kfc-stat" style={{ "--c": "#22c55e" }}>
-              <div className="kfc-stat__n">{learnedInDeck}</div>
-              <div className="kfc-stat__l">Đã học</div>
-            </div>
-          )}
-        </div>
-
-        <div className="kfc-actions">
-          <button className="kfc-btn-primary" onClick={() => setShowIntro(false)}>
-            🚀 Bắt đầu học
-          </button>
-          <button className="kfc-btn-ghost" onClick={onExit}>
-            ← Quay lại
-          </button>
-        </div>
-
-        {learnedInDeck > 0 && (
-          <button className="kfc-btn-clear" onClick={onClearLearned}>
-            Xóa {learnedInDeck} đánh dấu đã học
-          </button>
-        )}
-      </div>
-    );
-  }
-
-  // ── Done screen ───────────────────────────────────────────────────────────
-  if (done) {
-    const pct = Math.round((knowCount / order.length) * 100);
-    return (
-      <div className="kfc-done">
-        <div className="kfc-emoji-xl">
-          {pct === 100 ? "🎉" : pct >= 70 ? "👏" : "💪"}
-        </div>
-        <h2 className="kfc-title kfc-title--done">Hoàn thành!</h2>
-        <p className="kfc-sub">
-          Bạn đã ôn {order.length} kanji · đạt {pct}%
-        </p>
-        <div className="kfc-stats">
-          <div className="kfc-dstat" style={{ "--c": "#22c55e" }}>
-            <div className="kfc-dstat__n">{knowCount}</div>
-            <div className="kfc-dstat__l">Đã nhớ ✓</div>
-          </div>
-          <div className="kfc-dstat" style={{ "--c": "#f59e0b" }}>
-            <div className="kfc-dstat__n">{againCount}</div>
-            <div className="kfc-dstat__l">Cần ôn lại</div>
-          </div>
-        </div>
-        <div className="kfc-actions kfc-actions--done">
-          <button className="kfc-btn-primary" onClick={shuffleDeck}>
-            🔀 Học lại (ngẫu nhiên)
-          </button>
-          <button className="kfc-btn-ghost" onClick={onExit}>
-            ← Quay lại
-          </button>
-        </div>
-        {learned.size > 0 && (
-          <button className="kfc-btn-clear" onClick={onClearLearned}>
-            Xóa tất cả {learned.size} đánh dấu đã học
-          </button>
-        )}
-      </div>
-    );
-  }
-
-  const slideClass =
-    slideDir === "right" ? "fc-slide-enter" : "fc-slide-enter-left";
-
-  return (
-    <div>
-      {/* Header */}
-      <div className="kfc-header">
-        <button className="kfc-header__back" onClick={onExit}>
-          ← Quay lại
-        </button>
-        <div className="kfc-header__center">
-          <div>{isMarkedOnly ? "★ Đã đánh dấu" : "Tất cả"}</div>
-          <div className="kfc-header__pos">
-            {cardIdx + 1} / {order.length}
-          </div>
-        </div>
-        <button className="kfc-header__shuffle" onClick={shuffleDeck} title="Xáo bài">
-          🔀
-        </button>
-      </div>
-
-      {/* Progress bar */}
-      <div className="kfc-progress" style={{ "--c": color }}>
-        <div className="kfc-progress__fill" style={{ width: `${progress}%` }} />
-      </div>
-
-      {/* Card with flip animation — wrapped in slide container */}
-      <div key={animKey} className={`${slideClass} kfc-slide`} style={{ "--c": color }}>
-        <div className="fc-scene">
-          <div
-            className={`fc-card${flipped ? " is-flipped" : ""}`}
-            onClick={() => setFlipped((f) => !f)}
-          >
-            {/* Front */}
-            <div className="fc-face fc-face--front">
-              {/* Learned badge top-right */}
-              <button
-                className={`kfc-learn-toggle ${learned.has(current.id) ? "is-on" : ""}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onToggleLearn(current.id);
-                }}
-                title={
-                  learned.has(current.id)
-                    ? "Bỏ đánh dấu đã học"
-                    : "Đánh dấu đã học"
-                }
-              >
-                {learned.has(current.id) ? "✓ Đã học" : "○ Đã học"}
-              </button>
-              <div className="kfc-char-front">{current.char}</div>
-              <div className="kfc-tap">Nhấn để xem đáp án</div>
-              <div className="fc-kbd-hint">
-                <kbd>Space</kbd> lật thẻ
-              </div>
-            </div>
-
-            {/* Back */}
-            <div className="fc-face fc-face--back">
-              <div className="kfc-back-inner">
-                <div className="kfc-char-back">{current.char}</div>
-                <div className="kfc-meaning">{current.meaning}</div>
-
-                <div className="kfc-readings">
-                  <div className="kfc-reading">
-                    <div className="kfc-reading__label">Âm On</div>
-                    <div className="kfc-reading__on">{current.on}</div>
-                    <div className="kfc-reading__romaji">{current.on_romaji}</div>
-                  </div>
-                  <div className="kfc-vdivider" />
-                  <div className="kfc-reading">
-                    <div className="kfc-reading__label">Âm Kun</div>
-                    <div className="kfc-reading__kun">{current.kun}</div>
-                    <div className="kfc-reading__romaji">{current.kun_romaji}</div>
-                  </div>
-                </div>
-
-                {current.mnemonic && (
-                  <div className="kfc-mnemonic">💡 {current.mnemonic}</div>
-                )}
-
-                <div className="kfc-examples">
-                  {current.examples.map((ex, i) => (
-                    <div key={i} className="kfc-example">
-                      <div className="kfc-example__word">{ex.word}</div>
-                      <div className="kfc-example__sub">
-                        {ex.reading} · {ex.meaning}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Controls row: prev | answer buttons | next */}
-      <div className="kfc-controls" style={{ "--c": color }}>
-        <button
-          className="fc-btn-nav"
-          onClick={goPrev}
-          disabled={cardIdx === 0}
-          title="Trước (←)"
-        >
-          ‹
-        </button>
-
-        {flipped ? (
-          <div className="kfc-answers">
-            <button
-              className="fc-answer-btn fc-answer-btn--again"
-              onClick={() => handleAnswer("again")}
-              title="Ôn lại (← hoặc 1)"
-            >
-              😅 Ôn lại
-            </button>
-            <button
-              className="fc-answer-btn fc-answer-btn--know"
-              onClick={() => handleAnswer("know")}
-              title="Đã nhớ (→ hoặc 2)"
-            >
-              ✓ Đã nhớ
-            </button>
-          </div>
-        ) : (
-          <button
-            className="kfc-flip-btn"
-            onClick={() => setFlipped(true)}
-            title="Lật thẻ (Space)"
-          >
-            Lật thẻ
-          </button>
-        )}
-
-        <button
-          className="fc-btn-nav"
-          onClick={goNext}
-          disabled={cardIdx >= order.length - 1}
-          title="Tiếp (→)"
-        >
-          ›
-        </button>
-      </div>
-
-      {/* Keyboard hints */}
-      <div className="kfc-hints">
-        {!flipped ? (
-          <span className="fc-kbd-hint">
-            <kbd>Space</kbd> lật thẻ &nbsp;·&nbsp; <kbd>←</kbd>
-            <kbd>→</kbd> chuyển
-          </span>
-        ) : (
-          <span className="fc-kbd-hint">
-            <kbd>←</kbd> ôn lại &nbsp;·&nbsp; <kbd>→</kbd> đã nhớ &nbsp;·&nbsp;{" "}
-            <kbd>1</kbd> / <kbd>2</kbd>
-          </span>
-        )}
-      </div>
-
-      {/* Mini scoreboard */}
-      <div className="kfc-scoreboard">
-        <span className="kfc-score-know">✓ {knowCount}</span>
-        <span className="kfc-score-dot">·</span>
-        <span className="kfc-score-again">↺ {againCount}</span>
-        <span className="kfc-score-dot">·</span>
-        <span className="kfc-score-left">còn {order.length - cardIdx - 1}</span>
-      </div>
-    </div>
+    </Modal>
   );
 }

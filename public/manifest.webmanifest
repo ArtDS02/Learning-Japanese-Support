@@ -1,0 +1,27 @@
+{
+  "name": "JLPT N5 — Tổng hợp kiến thức",
+  "short_name": "JLPT N5",
+  "description": "Học JLPT N5: từ vựng, kanji, kana, ngữ pháp, số đếm, nghe và bộ đề thi thử — ôn tập giãn cách (SRS) và dùng được offline.",
+  "lang": "vi",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0b0f",
+  "theme_color": "#0a0b0f",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

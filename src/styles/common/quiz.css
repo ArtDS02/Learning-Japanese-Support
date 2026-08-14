@@ -1,0 +1,178 @@
+/* ============================================================
+   JLPT N5 App — QuizHub (khối chọn bộ luyện tập)
+   ============================================================ */
+
+.qh {
+  background: var(--bg-card);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  padding: 1.125rem 1.25rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.qh__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.qh__title {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--c);
+}
+
+.qh__sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.125rem;
+  max-width: 34rem;
+}
+
+.qh__close {
+  flex: 0 0 auto;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.0625rem solid var(--bg-border);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  padding: 0.3125rem 0.625rem;
+  font-size: 0.75rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.qh__close:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+}
+
+.qh__opts {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.qh__optlabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-right: 0.125rem;
+}
+
+.qh__chip {
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  color: var(--text-secondary);
+  border-radius: 999px;
+  padding: 0.3125rem 0.75rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.qh__chip:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.qh__chip.is-on {
+  background: var(--c);
+  border-color: transparent;
+  color: #0a0b0f;
+  font-weight: 700;
+}
+
+.qh__chip--mode {
+  margin-left: auto;
+  font-family: var(--font-body);
+}
+
+.qh__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13.75rem, 1fr));
+  gap: 0.75rem;
+}
+
+.qh__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  text-align: left;
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-left: 0.1875rem solid var(--c);
+  border-radius: var(--radius-md);
+  padding: 0.875rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background var(--transition), transform 0.15s ease, border-color var(--transition);
+}
+
+.qh__card:hover:not(:disabled) {
+  background: var(--bg-card-hover);
+  transform: translateY(-0.125rem);
+}
+
+.qh__card:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.qh__card-icon {
+  font-size: 1.25rem;
+}
+
+.qh__card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+.qh__card-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.qh__card-foot {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.375rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+.qh__card-n {
+  color: var(--text-muted);
+}
+
+.qh__card-due {
+  color: var(--accent-cyan);
+}
+
+.qh__card-ok {
+  color: var(--accent-green);
+}
+
+@media (max-width: 768px) {
+  .qh {
+    padding: 1rem;
+  }
+
+  .qh__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qh__chip--mode {
+    margin-left: 0;
+  }
+}

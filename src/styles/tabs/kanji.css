@@ -5,15 +5,15 @@
 
 .kanji-grid {
 display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15.625vw, 1fr));
-  gap: 0.7292vw;
+  grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+  gap: 0.875rem;
 }
 
 .kanji-card {
 background: var(--bg-card);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   border-radius: var(--radius-lg);
-  padding: 1.0417vw 0.8333vw;
+  padding: 1.25rem 1rem;
   text-align: center;
   cursor: pointer;
   transition: all var(--transition);
@@ -32,9 +32,9 @@ content: '';
 }
 
 .kanji-card:hover {
-transform: translateY(-0.2083vw) scale(1.02);
+transform: translateY(-0.25rem) scale(1.02);
   border-color: var(--card-color, rgba(167, 139, 250, 0.4));
-  box-shadow: 0 0.4167vw 1.6667vw rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.4);
 }
 
 .kanji-card:hover::after {
@@ -42,9 +42,9 @@ opacity: 0.2;
 }
 
 .kanji-char {
-font-size: 2.7083vw;
+font-size: 3.25rem;
   line-height: 1;
-  margin-bottom: 0.4167vw;
+  margin-bottom: 0.5rem;
   transition: transform var(--transition);
   display: block;
 }
@@ -54,102 +54,107 @@ transform: scale(1.08);
 }
 
 .kanji-meaning {
-font-size: 0.7292vw;
+font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.3125vw;
+  margin-bottom: 0.375rem;
 }
 
 .kanji-readings {
 display: flex;
   flex-direction: column;
-  gap: 0.1042vw;
+  gap: 0.125rem;
 }
 
 .kanji-on {
 font-family: var(--font-mono);
-  font-size: 0.7813vw;
+  font-size: 0.9376rem;
   color: var(--accent-yellow);
 }
 
 .kanji-kun {
 font-family: var(--font-mono);
-  font-size: 0.7813vw;
+  font-size: 0.9376rem;
   color: var(--accent-cyan);
 }
 
 .kanji-stroke {
 position: absolute;
-  top: 0.5208vw;
-  right: 0.5208vw;
-  font-size: 0.5208vw;
+  top: 0.625rem;
+  right: 0.625rem;
+  font-size: 0.625rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
 }
 
+/* position/z-index/cuộn do vỏ .ovl lo (modal.css + Modal.jsx). Ở đây chỉ còn
+   phần trang trí và lưới hai cột riêng của hộp kanji. */
 .kanji-modal-overlay {
-position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(0.4167vw);
-  -webkit-backdrop-filter: blur(0.4167vw);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25vw;
-  animation: fade-in 0.2s ease;
-  overflow-y: auto;
+background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(0.5rem);
 }
 
 .kanji-modal {
 background: var(--bg-card);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   border-radius: var(--radius-xl);
-  padding: 1.6667vw;
-  width: 100%;
-  max-width: 44.7917vw;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  animation: slide-up 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 1.25vw 4.1667vw rgba(0, 0, 0, 0.55);
+  padding: 2rem;
+  max-width: 53.75rem;
+  box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.55);
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.6667vw;
+  gap: 2rem;
   align-items: start;
 }
 
+/* Đặt ô tường minh: nút đóng nay là grid item (sticky) nên nếu để tự xếp, nó
+   chiếm mất ô đầu và đẩy hai cột nội dung xuống. */
+.kanji-character {
+grid-area: 1 / 1;
+}
+
+.kanji-evidence {
+grid-area: 1 / 2;
+}
+
 .stroke-number {
-font-size: 0.6771vw;
+font-size: 0.8125rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 0.625vw;
+  margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
-  gap: 0.4167vw;
+  gap: 0.5rem;
   justify-content: center;
 }
 
+/* Sticky chứ không absolute: hộp kanji cuộn được, nút đóng dạng absolute sẽ
+   trôi khỏi màn hình ngay khi kéo xuống — trên máy màn thấp là gần như lập tức. */
 .kanji-modal__close {
-position: absolute;
-  top: 0.8333vw;
-  right: 0.8333vw;
+grid-area: 1 / 2;
+  justify-self: end;
+  align-self: start;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(0.5rem);
   border: none;
   color: var(--text-secondary);
-  width: 1.6667vw;
-  height: 1.6667vw;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 0.8333vw;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 
 .kanji-modal__close:hover {
@@ -158,25 +163,25 @@ background: rgba(255, 255, 255, 0.12);
 }
 
 .kanji-modal__char {
-font-size: 4.1667vw;
+font-size: 5rem;
   line-height: 1;
-  margin-bottom: 0.4167vw;
+  margin-bottom: 0.5rem;
   text-align: center;
   color: var(--c);
 }
 
 .kanji-modal__meaning {
 text-align: center;
-  font-size: 1.1458vw;
+  font-size: 1.375rem;
   font-weight: 700;
-  margin-bottom: 0.8333vw;
+  margin-bottom: 1rem;
 }
 
 .kanji-modal__readings {
 display: flex;
-  gap: 0.8333vw;
+  gap: 1rem;
   justify-content: center;
-  margin-bottom: 1.0417vw;
+  margin-bottom: 1.25rem;
 }
 
 .kanji-modal__reading-group {
@@ -184,28 +189,28 @@ text-align: center;
 }
 
 .kanji-modal__reading-label {
-font-size: 0.5729vw;
+font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-muted);
-  margin-bottom: 0.2083vw;
+  margin-bottom: 0.25rem;
   font-family: var(--font-mono);
 }
 
 .kanji-modal__reading-value {
 font-family: var(--font-mono);
-  font-size: 0.7292vw;
+  font-size: 0.875rem;
   font-weight: 600;
 }
 
 .kanji-modal__mnemonic {
-padding: 0.625vw 0.8333vw;
+padding: 0.75rem 1rem;
   background: rgba(250, 204, 21, 0.08);
-  border: 0.0521vw solid rgba(250, 204, 21, 0.2);
+  border: 0.0625rem solid rgba(250, 204, 21, 0.2);
   border-radius: var(--radius-md);
-  font-size: 1.0417vw;
+  font-size: 1.25rem;
   color: var(--accent-yellow);
-  margin-bottom: 1.0417vw;
+  margin-bottom: 1.25rem;
   line-height: 1.6;
 }
 
@@ -217,130 +222,45 @@ content: '💡 Ghi nhớ: ';
 .kanji-modal__examples {
 display: flex;
   flex-direction: column;
-  gap: 0.4167vw;
+  gap: 0.5rem;
 }
 
 .kanji-modal__example {
 display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5208vw 0.7292vw;
+  padding: 0.625rem 0.875rem;
   background: rgba(255, 255, 255, 0.04);
   border-radius: var(--radius-sm);
-  font-size: 0.7292vw;
+  font-size: 0.875rem;
 }
 
 .kanji-modal__example-word {
 font-weight: 600;
-  font-size: 0.8333vw;
+  font-size: 1rem;
 }
 
 .kanji-modal__example-reading {
 font-family: var(--font-mono);
-  font-size: 1.0417vw;
+  font-size: 1.25rem;
   color: var(--text-secondary);
 }
 
 .kanji-modal__example-meaning {
-font-size: 1.0417vw;
+font-size: 1.25rem;
   color: var(--text-secondary);
   font-style: italic;
 }
 
 @media (max-width: 1024px) {
 .kanji-grid {
-grid-template-columns: repeat(auto-fill, minmax(11.4583vw, 1fr));
+grid-template-columns: repeat(auto-fill, minmax(13.75rem, 1fr));
 }
 
 .kanji-modal {
 grid-template-columns: 1fr 1fr;
-      gap: 0.8333vw;
-      padding: 1.25vw;
-}
-}
-
-@media (max-width: 768px) {
-.kanji-grid {
-grid-template-columns: repeat(auto-fill, minmax(15.625vw, 1fr));
-      gap: 1.302vw;
-}
-
-.kanji-card {
-padding: 1.823vw 1.302vw;
-}
-
-.kanji-char {
-font-size: 5.208vw;
-}
-
-.kanji-meaning {
-font-size: 1.563vw;
-}
-
-.kanji-on,
-    .kanji-kun {
-font-size: 1.693vw;
-}
-
-.kanji-modal-overlay {
-padding: 1.563vw;
-      align-items: flex-end;
-      /* trượt lên từ dưới trên mobile */
-}
-
-.kanji-modal {
-grid-template-columns: 1fr;
-      padding: 2.604vw 2.083vw 3.646vw;
-      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-      max-height: 60vh;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-}
-
-.kanji-modal__char {
-font-size: 8.333vw;
-}
-
-.kanji-modal__meaning {
-font-size: 2.344vw;
-}
-
-.kanji-modal__readings {
-gap: 1.563vw;
-      flex-wrap: wrap;
-      justify-content: center;
-}
-
-.kanji-modal__mnemonic {
-font-size: 1.823vw;
-      padding: 1.302vw 1.823vw;
-}
-
-.kanji-modal__example {
-flex-direction: column;
-      gap: 0.521vw;
-      align-items: flex-start;
-      padding: 1.302vw 1.563vw;
-}
-
-.kanji-modal__example-reading,
-    .kanji-modal__example-meaning {
-font-size: 1.823vw;
-}
-}
-
-@media (max-width: 390px) {
-.kanji-grid {
-grid-template-columns: repeat(auto-fill, minmax(13.021vw, 1fr));
-      gap: 1.042vw;
-}
-
-.kanji-char {
-font-size: 4.427vw;
-}
-
-.kanji-modal__char {
-font-size: 6.771vw;
+      gap: 1rem;
+      padding: 1.5rem;
 }
 }
 
@@ -348,19 +268,19 @@ font-size: 6.771vw;
 
 .k-toolbar {
 display: flex;
-  gap: 0.4167vw;
-  margin-bottom: 0.8333vw;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 
 .k-count-mark {
-margin-left: 0.4167vw;
+margin-left: 0.5rem;
   color: #f59e0b;
   font-weight: 700;
 }
 
 .k-count-learn {
-margin-left: 0.4167vw;
+margin-left: 0.5rem;
   color: #22c55e;
   font-weight: 700;
 }
@@ -368,25 +288,25 @@ margin-left: 0.4167vw;
 .k-flashbtn {
 display: flex;
   align-items: center;
-  gap: 0.3125vw;
-  padding: 0.4167vw 0.8333vw;
-  border-radius: 1.0417vw;
-  border: 0.0781vw solid #a78bfa;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.25rem;
+  border: 0.0937rem solid #a78bfa;
   background: #a78bfa22;
   color: #a78bfa;
-  font-size: 1.0417vw;
+  font-size: 1.25rem;
   font-weight: 700;
   cursor: pointer;
   font-family: var(--font-mono);
 }
 
 .k-markbtn {
-padding: 0.4167vw 0.7292vw;
-  border-radius: 1.0417vw;
-  border: 0.0781vw solid #f59e0b44;
+padding: 0.5rem 0.875rem;
+  border-radius: 1.25rem;
+  border: 0.0937rem solid #f59e0b44;
   background: transparent;
   color: #f59e0b;
-  font-size: 1.0417vw;
+  font-size: 1.25rem;
   font-weight: 700;
   cursor: pointer;
   font-family: var(--font-mono);
@@ -397,12 +317,12 @@ background: #f59e0b22;
 }
 
 .k-clearbtn {
-padding: 0.4167vw 0.7292vw;
-  border-radius: 1.0417vw;
-  border: 0.0781vw solid #22c55e44;
+padding: 0.5rem 0.875rem;
+  border-radius: 1.25rem;
+  border: 0.0937rem solid #22c55e44;
   background: transparent;
   color: #22c55e;
-  font-size: 1.0417vw;
+  font-size: 1.25rem;
   font-weight: 700;
   cursor: pointer;
   font-family: var(--font-mono);
@@ -412,42 +332,42 @@ padding: 0.4167vw 0.7292vw;
 
 .k-legend {
 display: flex;
-  gap: 1.0417vw;
-  margin-bottom: 1.0417vw;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
   flex-wrap: wrap;
 }
 
 .k-legend__item {
-font-size: 1.0417vw;
+font-size: 1.25rem;
   color: var(--text-muted);
   display: flex;
   align-items: center;
-  gap: 0.3125vw;
+  gap: 0.375rem;
 }
 
 .k-legend__sq {
 color: var(--c);
   font-family: var(--font-mono);
-  font-size: 1.0417vw;
+  font-size: 1.25rem;
 }
 
 .k-legend__sym {
 color: var(--c);
-  font-size: 1.0417vw;
+  font-size: 1.25rem;
 }
 
 /* ── Cards ── */
 
 .k-card__mark {
 position: absolute;
-  top: 0.3125vw;
-  right: 0.3125vw;
+  top: 0.375rem;
+  right: 0.375rem;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 2.0833vw;
+  font-size: 2.5rem;
   line-height: 1;
-  padding: 0.1042vw;
+  padding: 0.125rem;
   color: var(--text-muted);
   opacity: 0.4;
   transition: all 0.2s;
@@ -461,13 +381,13 @@ color: #f59e0b;
 
 .k-card__learned {
 position: absolute;
-  top: 0.3125vw;
-  left: 0.3125vw;
+  top: 0.375rem;
+  left: 0.375rem;
   background: #22c55e22;
-  border: 0.0521vw solid #22c55e66;
-  border-radius: 1.0417vw;
-  padding: 0.0521vw 0.3125vw;
-  font-size: 0.5208vw;
+  border: 0.0625rem solid #22c55e66;
+  border-radius: 1.25rem;
+  padding: 0.0625rem 0.375rem;
+  font-size: 0.625rem;
   font-weight: 700;
   color: #22c55e;
   font-family: var(--font-mono);
@@ -475,11 +395,11 @@ position: absolute;
 }
 
 .k-readings--romaji {
-margin-top: 0.1042vw;
+margin-top: 0.125rem;
 }
 
 .k-romaji {
-font-size: 1.0417vw;
+font-size: 1.25rem;
   color: var(--text-muted);
   font-style: italic;
 }
@@ -488,13 +408,13 @@ font-size: 1.0417vw;
 
 .km-cat-row {
 text-align: center;
-  margin-bottom: 0.4167vw;
+  margin-bottom: 0.5rem;
 }
 
 .km-cat {
-font-size: 0.7813vw;
-  padding: 0.1563vw 0.5208vw;
-  border-radius: 1.0417vw;
+font-size: 0.9376rem;
+  padding: 0.1876rem 0.625rem;
+  border-radius: 1.25rem;
   background: color-mix(in srgb, var(--c) 13%, transparent);
   color: var(--c);
   font-family: var(--font-mono);
@@ -510,39 +430,39 @@ color: var(--accent-cyan);
 }
 
 .km-reading-romaji {
-font-size: 0.7813vw;
+font-size: 0.9376rem;
   color: var(--text-muted);
   font-style: italic;
-  margin-top: 0.1563vw;
+  margin-top: 0.1876rem;
 }
 
 .km-divider {
-width: 0.0521vw;
+width: 0.0625rem;
   background: var(--bg-border);
-  margin: 0 0.4167vw;
+  margin: 0 0.5rem;
 }
 
 .km-examples-label {
-font-size: 1.0417vw;
+font-size: 1.25rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 0.5208vw;
+  margin-bottom: 0.625rem;
 }
 
 .km-actions {
 display: flex;
-  gap: 0.5208vw;
-  margin-top: 0.9375vw;
+  gap: 0.625rem;
+  margin-top: 1.125rem;
   justify-content: center;
 }
 
 .km-actbtn {
 flex: 1;
-  padding: 0.5208vw 0.7292vw;
-  border-radius: 0.8333vw;
-  font-size: 0.7292vw;
+  padding: 0.625rem 0.875rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
@@ -550,7 +470,7 @@ flex: 1;
 }
 
 .km-actbtn--mark {
-border: 0.0781vw solid #f59e0b44;
+border: 0.0937rem solid #f59e0b44;
   color: #f59e0b;
 }
 
@@ -560,7 +480,7 @@ border-color: #f59e0b;
 }
 
 .km-actbtn--learn {
-border: 0.0781vw solid #22c55e44;
+border: 0.0937rem solid #22c55e44;
   color: #22c55e;
 }
 
@@ -572,27 +492,27 @@ border-color: #22c55e;
 /* ── Stroke order animator ── */
 
 .k-stroke {
-margin-bottom: 1.0417vw;
+margin-bottom: 1.25rem;
 }
 
 .k-stroke__title {
-font-size: 1.0417vw;
+font-size: 1.25rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 0.625vw;
+  margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
-  gap: 0.4167vw;
+  gap: 0.5rem;
 }
 
 .k-stroke__count {
-font-size: 1.0417vw;
+font-size: 1.25rem;
   background: color-mix(in srgb, var(--c) 13%, transparent);
   color: var(--c);
-  border-radius: 1.0417vw;
-  padding: 0.1042vw 0.4167vw;
+  border-radius: 1.25rem;
+  padding: 0.125rem 0.5rem;
   font-weight: 700;
 }
 
@@ -600,14 +520,14 @@ font-size: 1.0417vw;
 display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.625vw;
+  gap: 0.75rem;
 }
 
 .k-stroke__canvas {
-width: 8.75vw;
-  height: 8.75vw;
-  border-radius: 0.8333vw;
-  border: 0.1042vw solid color-mix(in srgb, var(--c) 27%, transparent);
+width: 10.5rem;
+  height: 10.5rem;
+  border-radius: 1rem;
+  border: 0.125rem solid color-mix(in srgb, var(--c) 27%, transparent);
   background: color-mix(in srgb, var(--c) 4%, transparent);
   position: relative;
   overflow: hidden;
@@ -629,26 +549,26 @@ width: 100%;
 
 .k-stroke__dots {
 display: flex;
-  gap: 0.2604vw;
+  gap: 0.3125rem;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 10.4167vw;
+  max-width: 12.5rem;
 }
 
 .k-stroke__dot {
-width: 1.1458vw;
-  height: 1.1458vw;
+width: 1.375rem;
+  height: 1.375rem;
   border-radius: 50%;
   background: color-mix(in srgb, var(--c) 13%, transparent);
   color: var(--c);
-  font-size: 0.5208vw;
+  font-size: 0.625rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
   transition: background 0.3s, color 0.3s;
-  border: 0.0781vw solid color-mix(in srgb, var(--c) 33%, transparent);
+  border: 0.0937rem solid color-mix(in srgb, var(--c) 33%, transparent);
 }
 
 .k-stroke__dot.is-done {
@@ -658,16 +578,16 @@ background: var(--c);
 
 .k-stroke__btns {
 display: flex;
-  gap: 0.4167vw;
+  gap: 0.5rem;
 }
 
 .k-stroke__play {
-padding: 0.3646vw 0.8333vw;
-  border-radius: 1.0417vw;
-  border: 0.0781vw solid var(--c);
+padding: 0.4375rem 1rem;
+  border-radius: 1.25rem;
+  border: 0.0937rem solid var(--c);
   background: var(--c);
   color: #0a0b0f;
-  font-size: 1.0417vw;
+  font-size: 1.25rem;
   font-weight: 700;
   cursor: pointer;
   font-family: var(--font-mono);
@@ -681,12 +601,12 @@ background: color-mix(in srgb, var(--c) 13%, transparent);
 }
 
 .k-stroke__all {
-padding: 0.3646vw 0.8333vw;
-  border-radius: 1.0417vw;
-  border: 0.0781vw solid color-mix(in srgb, var(--c) 33%, transparent);
+padding: 0.4375rem 1rem;
+  border-radius: 1.25rem;
+  border: 0.0937rem solid color-mix(in srgb, var(--c) 33%, transparent);
   background: transparent;
   color: var(--c);
-  font-size: 1.0417vw;
+  font-size: 1.25rem;
   font-weight: 700;
   cursor: pointer;
   font-family: var(--font-mono);
@@ -701,14 +621,14 @@ opacity: 0.5;
 /* ── Flashcard flip (moved from JS FLIP_STYLE) ── */
 
 .fc-scene {
-perspective: 52.0833vw;
+perspective: 62.5rem;
   width: 100%;
 }
 
 .fc-card {
 position: relative;
   width: 100%;
-  min-height: 15.625vw;
+  min-height: 18.75rem;
   transform-style: preserve-3d;
   transition: transform 0.52s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
@@ -721,25 +641,25 @@ transform: rotateY(180deg);
 .fc-face {
 position: absolute;
   inset: 0;
-  border-radius: 1.25vw;
+  border-radius: 1.5rem;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.6667vw 1.25vw;
+  padding: 2rem 1.5rem;
   overflow: hidden;
 }
 
 .fc-face--front {
-border: 0.1042vw solid color-mix(in srgb, var(--c) 27%, transparent);
+border: 0.125rem solid color-mix(in srgb, var(--c) 27%, transparent);
   background: color-mix(in srgb, var(--c) 4%, transparent);
 }
 
 .fc-face--back {
 transform: rotateY(180deg);
-  border: 0.1042vw solid color-mix(in srgb, var(--c) 40%, transparent);
+  border: 0.125rem solid color-mix(in srgb, var(--c) 40%, transparent);
   background: color-mix(in srgb, var(--c) 7%, transparent);
 }
 
@@ -753,7 +673,7 @@ animation: fc-slide-out 0.22s cubic-bezier(0.4, 0, 0.2, 1) both;
 
 @keyframes fc-slide-in {
 from {
-opacity: 0; transform: translateX(2.5vw);
+opacity: 0; transform: translateX(3rem);
 }
 
 to {
@@ -767,7 +687,7 @@ opacity: 1; transform: translateX(0);
 }
 
 to {
-opacity: 0; transform: translateX(-2.5vw);
+opacity: 0; transform: translateX(-3rem);
 }
 }
 
@@ -777,7 +697,7 @@ animation: fc-slide-in-left 0.28s cubic-bezier(0.4, 0, 0.2, 1) both;
 
 @keyframes fc-slide-in-left {
 from {
-opacity: 0; transform: translateX(-2.5vw);
+opacity: 0; transform: translateX(-3rem);
 }
 
 to {
@@ -789,13 +709,13 @@ opacity: 1; transform: translateX(0);
 display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.2917vw;
-  height: 2.2917vw;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 50%;
-  border: 0.0781vw solid var(--bg-border);
+  border: 0.0937rem solid var(--bg-border);
   background: transparent;
   cursor: pointer;
-  font-size: 0.9375vw;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--text-muted);
   transition: all 0.15s;
@@ -815,18 +735,18 @@ opacity: 0.25;
 
 .fc-answer-btn {
 flex: 1;
-  padding: 0.7292vw;
-  border-radius: 0.8333vw;
-  font-size: 0.7292vw;
+  padding: 0.875rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.15s;
-  border: 0.0781vw solid transparent;
+  border: 0.0937rem solid transparent;
 }
 
 .fc-answer-btn:hover {
 filter: brightness(1.15);
-  transform: translateY(-0.0521vw);
+  transform: translateY(-0.0625rem);
 }
 
 .fc-answer-btn:active {
@@ -834,13 +754,13 @@ transform: translateY(0);
 }
 
 .fc-answer-btn--again {
-border: 0.0781vw solid #f59e0b66;
+border: 0.0937rem solid #f59e0b66;
   background: #f59e0b22;
   color: #f59e0b;
 }
 
 .fc-answer-btn--know {
-border: 0.0781vw solid #22c55e66;
+border: 0.0937rem solid #22c55e66;
   background: #22c55e22;
   color: #22c55e;
 }
@@ -848,8 +768,8 @@ border: 0.0781vw solid #22c55e66;
 .fc-kbd-hint {
 display: inline-flex;
   align-items: center;
-  gap: 0.1563vw;
-  font-size: 0.5208vw;
+  gap: 0.1876rem;
+  font-size: 0.625rem;
   color: var(--text-muted);
   opacity: 0.6;
   font-family: var(--font-mono);
@@ -857,146 +777,146 @@ display: inline-flex;
 
 .fc-kbd-hint kbd {
 background: var(--bg-card);
-  border: 0.0521vw solid var(--bg-border);
-  border-radius: 0.2083vw;
-  padding: 0.0521vw 0.2604vw;
-  font-size: 0.4688vw;
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: 0.25rem;
+  padding: 0.0625rem 0.3125rem;
+  font-size: 0.5626rem;
 }
 
 /* ── Flashcard mode screens ── */
 
 .kfc-center {
 text-align: center;
-  padding: 2.5vw 1.25vw;
+  padding: 3rem 1.5rem;
 }
 
 .kfc-done {
 text-align: center;
-  padding: 2.0833vw 1.0417vw;
+  padding: 2.5rem 1.25rem;
 }
 
 .kfc-emoji-lg {
-font-size: 2.9167vw;
-  margin-bottom: 0.8333vw;
+font-size: 3.5rem;
+  margin-bottom: 1rem;
 }
 
 .kfc-emoji-xl {
-font-size: 3.125vw;
-  margin-bottom: 0.8333vw;
+font-size: 3.75rem;
+  margin-bottom: 1rem;
 }
 
 .kfc-title {
-font-size: 1.1458vw;
+font-size: 1.375rem;
   font-weight: 700;
-  margin-bottom: 0.4167vw;
+  margin-bottom: 0.5rem;
 }
 
 .kfc-title--done {
-margin-bottom: 0.3125vw;
+margin-bottom: 0.375rem;
 }
 
 .kfc-sub {
 color: var(--text-muted);
-  font-size: 0.7292vw;
-  margin-bottom: 1.4583vw;
+  font-size: 0.875rem;
+  margin-bottom: 1.75rem;
 }
 
 .kfc-sub-learned {
 display: block;
-  margin-top: 0.3125vw;
+  margin-top: 0.375rem;
   color: #22c55e;
 }
 
 .kfc-stats {
 display: flex;
-  gap: 0.625vw;
+  gap: 0.75rem;
   justify-content: center;
-  margin-bottom: 1.6667vw;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
 .kfc-stat {
-padding: 0.7292vw 1.1458vw;
-  border-radius: 0.7292vw;
+padding: 0.875rem 1.375rem;
+  border-radius: 0.875rem;
   background: color-mix(in srgb, var(--c) 13%, transparent);
-  border: 0.0781vw solid color-mix(in srgb, var(--c) 27%, transparent);
+  border: 0.0937rem solid color-mix(in srgb, var(--c) 27%, transparent);
 }
 
 .kfc-stat__n {
-font-size: 1.3542vw;
+font-size: 1.625rem;
   font-weight: 800;
   color: var(--c);
 }
 
 .kfc-stat__l {
-font-size: 0.5729vw;
+font-size: 0.6875rem;
   color: var(--text-muted);
-  margin-top: 0.1042vw;
+  margin-top: 0.125rem;
 }
 
 .kfc-dstat {
 text-align: center;
-  padding: 0.8333vw 1.4583vw;
-  border-radius: 0.8333vw;
+  padding: 1rem 1.75rem;
+  border-radius: 1rem;
   background: color-mix(in srgb, var(--c) 13%, transparent);
-  border: 0.0781vw solid color-mix(in srgb, var(--c) 33%, transparent);
+  border: 0.0937rem solid color-mix(in srgb, var(--c) 33%, transparent);
 }
 
 .kfc-dstat__n {
-font-size: 1.5625vw;
+font-size: 1.875rem;
   font-weight: 800;
   color: var(--c);
 }
 
 .kfc-dstat__l {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: var(--text-muted);
-  margin-top: 0.1042vw;
+  margin-top: 0.125rem;
 }
 
 .kfc-actions {
 display: flex;
-  gap: 0.5208vw;
+  gap: 0.625rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .kfc-btn-primary {
-padding: 0.625vw 1.4583vw;
-  border-radius: 1.0417vw;
-  border: 0.0781vw solid #a78bfa;
+padding: 0.75rem 1.75rem;
+  border-radius: 1.25rem;
+  border: 0.0937rem solid #a78bfa;
   background: #a78bfa;
   color: #0a0b0f;
-  font-size: 0.7813vw;
+  font-size: 0.9376rem;
   font-weight: 700;
   cursor: pointer;
 }
 
 .kfc-btn-ghost {
-padding: 0.625vw 1.1458vw;
-  border-radius: 1.0417vw;
-  border: 0.0781vw solid var(--bg-border);
+padding: 0.75rem 1.375rem;
+  border-radius: 1.25rem;
+  border: 0.0937rem solid var(--bg-border);
   background: transparent;
   color: var(--text-muted);
-  font-size: 0.7292vw;
+  font-size: 0.875rem;
   font-weight: 700;
   cursor: pointer;
 }
 
 .kfc-actions--done .kfc-btn-primary,
 .kfc-actions--done .kfc-btn-ghost {
-padding: 0.5208vw 1.1458vw;
-  font-size: 0.6771vw;
+padding: 0.625rem 1.375rem;
+  font-size: 0.8125rem;
 }
 
 .kfc-btn-clear {
-margin-top: 0.8333vw;
-  padding: 0.4167vw 0.9375vw;
-  border-radius: 1.0417vw;
-  border: 0.0781vw solid #22c55e44;
+margin-top: 1rem;
+  padding: 0.5rem 1.125rem;
+  border-radius: 1.25rem;
+  border: 0.0937rem solid #22c55e44;
   background: transparent;
   color: #22c55e;
-  font-size: 0.625vw;
+  font-size: 0.75rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -1005,7 +925,7 @@ margin-top: 0.8333vw;
 display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.7292vw;
+  margin-bottom: 0.875rem;
 }
 
 .kfc-header__back {
@@ -1013,19 +933,19 @@ background: none;
   border: none;
   cursor: pointer;
   color: var(--text-muted);
-  font-size: 0.6771vw;
+  font-size: 0.8125rem;
   font-weight: 700;
 }
 
 .kfc-header__center {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
   text-align: center;
 }
 
 .kfc-header__pos {
-font-size: 0.6771vw;
+font-size: 0.8125rem;
   font-weight: 700;
   color: var(--text-primary);
 }
@@ -1035,38 +955,38 @@ background: none;
   border: none;
   cursor: pointer;
   color: var(--text-muted);
-  font-size: 0.9375vw;
+  font-size: 1.125rem;
 }
 
 .kfc-progress {
-height: 0.2604vw;
-  border-radius: 0.2604vw;
+height: 0.3125rem;
+  border-radius: 0.3125rem;
   background: var(--bg-border);
-  margin-bottom: 1.0417vw;
+  margin-bottom: 1.25rem;
   overflow: hidden;
 }
 
 .kfc-progress__fill {
 height: 100%;
-  border-radius: 0.2604vw;
+  border-radius: 0.3125rem;
   background: linear-gradient(90deg, var(--c), color-mix(in srgb, var(--c) 80%, transparent));
   transition: width 0.5s ease;
 }
 
 .kfc-slide {
-margin-bottom: 0.8333vw;
+margin-bottom: 1rem;
 }
 
 .kfc-learn-toggle {
 position: absolute;
-  top: 0.5208vw;
-  right: 0.5208vw;
+  top: 0.625rem;
+  right: 0.625rem;
   background: transparent;
-  border: 0.0781vw solid var(--bg-border);
-  border-radius: 1.0417vw;
-  padding: 0.1563vw 0.5208vw;
+  border: 0.0937rem solid var(--bg-border);
+  border-radius: 1.25rem;
+  padding: 0.1876rem 0.625rem;
   color: var(--text-muted);
-  font-size: 0.5729vw;
+  font-size: 0.6875rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
@@ -1079,18 +999,18 @@ background: #22c55e22;
 }
 
 .kfc-char-front {
-font-size: 4.5833vw;
+font-size: 5.5rem;
   line-height: 1;
   color: var(--c);
   font-weight: 400;
-  margin-bottom: 0.625vw;
+  margin-bottom: 0.75rem;
 }
 
 .kfc-tap {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
-  margin-bottom: 0.3125vw;
+  margin-bottom: 0.375rem;
 }
 
 .kfc-back-inner {
@@ -1099,23 +1019,23 @@ text-align: center;
 }
 
 .kfc-char-back {
-font-size: 2.8125vw;
+font-size: 3.375rem;
   line-height: 1;
   color: var(--c);
-  margin-bottom: 0.4167vw;
+  margin-bottom: 0.5rem;
 }
 
 .kfc-meaning {
-font-size: 1.1458vw;
+font-size: 1.375rem;
   font-weight: 700;
-  margin-bottom: 0.7292vw;
+  margin-bottom: 0.875rem;
 }
 
 .kfc-readings {
 display: flex;
-  gap: 0.8333vw;
+  gap: 1rem;
   justify-content: center;
-  margin-bottom: 0.7292vw;
+  margin-bottom: 0.875rem;
   flex-wrap: wrap;
 }
 
@@ -1124,9 +1044,9 @@ text-align: center;
 }
 
 .kfc-reading__label {
-font-size: 0.5208vw;
+font-size: 0.625rem;
   color: var(--text-muted);
-  margin-bottom: 0.1042vw;
+  margin-bottom: 0.125rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -1134,49 +1054,49 @@ font-size: 0.5208vw;
 .kfc-reading__on {
 color: var(--accent-yellow);
   font-weight: 700;
-  font-size: 0.8333vw;
+  font-size: 1rem;
 }
 
 .kfc-reading__kun {
 color: var(--accent-cyan);
   font-weight: 700;
-  font-size: 0.8333vw;
+  font-size: 1rem;
 }
 
 .kfc-reading__romaji {
-font-size: 0.5729vw;
+font-size: 0.6875rem;
   color: var(--text-muted);
   font-style: italic;
 }
 
 .kfc-vdivider {
-width: 0.0521vw;
+width: 0.0625rem;
   background: var(--bg-border);
 }
 
 .kfc-mnemonic {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: var(--text-muted);
   font-style: italic;
   background: var(--bg-card);
-  border-radius: 0.5208vw;
-  padding: 0.4167vw 0.7292vw;
-  margin-bottom: 0.5208vw;
+  border-radius: 0.625rem;
+  padding: 0.5rem 0.875rem;
+  margin-bottom: 0.625rem;
   text-align: left;
 }
 
 .kfc-examples {
 display: flex;
-  gap: 0.4167vw;
+  gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .kfc-example {
 background: color-mix(in srgb, var(--c) 9%, transparent);
-  border-radius: 0.5208vw;
-  padding: 0.3125vw 0.625vw;
-  font-size: 0.625vw;
+  border-radius: 0.625rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
   text-align: left;
 }
 
@@ -1186,30 +1106,30 @@ font-weight: 700;
 
 .kfc-example__sub {
 color: var(--text-muted);
-  font-size: 0.5729vw;
+  font-size: 0.6875rem;
 }
 
 .kfc-controls {
 display: flex;
   align-items: center;
-  gap: 0.5208vw;
-  margin-bottom: 0.625vw;
+  gap: 0.625rem;
+  margin-bottom: 0.75rem;
 }
 
 .kfc-answers {
 flex: 1;
   display: flex;
-  gap: 0.5208vw;
+  gap: 0.625rem;
 }
 
 .kfc-flip-btn {
 flex: 1;
-  padding: 0.6771vw;
-  border-radius: 0.8333vw;
-  border: 0.0781vw solid var(--c);
+  padding: 0.8125rem;
+  border-radius: 1rem;
+  border: 0.0937rem solid var(--c);
   background: var(--c);
   color: #0a0b0f;
-  font-size: 0.6771vw;
+  font-size: 0.8125rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.15s;
@@ -1217,42 +1137,145 @@ flex: 1;
 
 .kfc-hints {
 display: flex;
-  gap: 0.7292vw;
+  gap: 0.875rem;
   justify-content: center;
-  margin-bottom: 0.8333vw;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 
 .kfc-scoreboard {
 display: flex;
-  gap: 0.8333vw;
+  gap: 1rem;
   justify-content: center;
-  padding: 0.5208vw 0;
-  border-top: 0.0521vw solid var(--bg-border);
+  padding: 0.625rem 0;
+  border-top: 0.0625rem solid var(--bg-border);
 }
 
 .kfc-score-know {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: #22c55e;
   font-family: var(--font-mono);
   font-weight: 700;
 }
 
 .kfc-score-again {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: #f59e0b;
   font-family: var(--font-mono);
   font-weight: 700;
 }
 
 .kfc-score-dot {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: var(--text-muted);
 }
 
 .kfc-score-left {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
 }
 
+
+/* ============================================================
+   MOBILE (SP) — hiệu chỉnh cho ~375px (1vw≈3.75px).
+   Đặt CUỐI file để override các rule desktop định nghĩa phía trên
+   (cùng độ ưu tiên → rule sau thắng).
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Lưới thẻ kanji: 3 cột cho dễ đọc (thay vì ~7 cột chật) */
+  .kanji-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5625rem; }
+  .kanji-card { padding: 0.7031rem 0.375rem; border-radius: 0.6094rem; }
+  .kanji-char { font-size: 2.1094rem; }
+  .kanji-meaning { font-size: 0.7969rem; }
+  .kanji-on, .kanji-kun { font-size: 0.7266rem; }
+  .k-romaji { font-size: 0.7031rem; }
+  .k-card__mark { font-size: 1.1719rem; top: 0.2344rem; right: 0.3281rem; }
+  .k-card__learned { font-size: 0.7969rem; }
+
+  /* Toolbar & chú thích */
+  .k-toolbar { gap: 0.4688rem; margin-bottom: 0.7031rem; }
+  .k-flashbtn, .k-markbtn, .k-clearbtn { font-size: 0.8203rem; padding: 0.4688rem 0.7969rem; min-height: 2.1094rem; }
+  .k-count-mark, .k-count-learn { margin-left: 0.4688rem; }
+  .k-legend { gap: 0.7031rem; }
+  .k-legend__item { font-size: 0.75rem; gap: 0.2813rem; }
+  .k-legend__sq, .k-legend__sym { font-size: 0.8438rem; }
+
+  /* Modal chi tiết — bottom sheet: khung dán đáy màn hình */
+  .kanji-modal-overlay { --ovl-pad: 0; padding: 0; }
+  .kanji-modal-overlay > .ovl__panel { margin-block: auto 0; }
+  .kanji-modal {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    padding: 1.1719rem 1.0547rem 1.6406rem;
+    /* Chừa chỗ cho thanh home của máy có tai thỏ, nhưng nền sheet vẫn chạm đáy. */
+    padding-bottom: calc(1.6406rem + env(safe-area-inset-bottom, 0px));
+    border-radius: 0.9375rem 0.9375rem 0 0;
+  }
+  /* Chừa 8% để còn thấy nền phía sau — dấu hiệu chạm ra ngoài là đóng. */
+  .kanji-modal-overlay > .kanji-modal { max-height: 92vh; max-height: 92dvh; }
+  /* Một cột: xếp lại ô cho hai khối, nút đóng nằm đè góc trên phải khối đầu. */
+  .kanji-character { grid-area: 1 / 1; }
+  .kanji-evidence { grid-area: 2 / 1; }
+  .kanji-modal__close { grid-area: 1 / 1; }
+  .kanji-modal__close { width: 2.1094rem; height: 2.1094rem; font-size: 1.0313rem; }
+  .km-cat { font-size: 0.75rem; }
+  .kanji-modal__char { font-size: 5.1563rem; }
+  .kanji-modal__meaning { font-size: 1.1719rem; }
+  .stroke-number { font-size: 0.7969rem; }
+  .kanji-modal__readings { gap: 0.9375rem; flex-wrap: wrap; justify-content: center; }
+  .kanji-modal__reading-label { font-size: 0.7031rem; }
+  .kanji-modal__reading-value { font-size: 1.1719rem; }
+  .km-reading-romaji { font-size: 0.75rem; }
+  .kanji-modal__mnemonic { font-size: 0.8438rem; padding: 0.7031rem 0.7969rem; }
+  .km-examples-label { font-size: 0.75rem; }
+  .kanji-modal__example { flex-direction: row; justify-content: space-between; gap: 0.4688rem; align-items: center; padding: 0.6094rem 0.75rem; }
+  .kanji-modal__example-word { font-size: 0.9844rem; }
+  .kanji-modal__example-reading { font-size: 0.75rem; }
+  .kanji-modal__example-meaning { font-size: 0.7969rem; }
+  .km-actbtn { font-size: 0.8438rem; padding: 0.6094rem 0.7031rem; }
+
+  /* Thứ tự nét viết */
+  .k-stroke__title { font-size: 0.8438rem; }
+  .k-stroke__count { font-size: 0.7031rem; }
+  .k-stroke__dots { gap: 0.3281rem; }
+  .k-stroke__dot { width: 1.4063rem; height: 1.4063rem; font-size: 0.7031rem; }
+  .k-stroke__play, .k-stroke__all { font-size: 0.7969rem; padding: 0.5156rem 0.8438rem; }
+
+  /* Flashcard kanji */
+  .fc-card { min-height: 10.3125rem; }
+  .kfc-char-front { font-size: 7.0313rem; }
+  .kfc-tap { font-size: 0.7031rem; }
+  .kfc-char-back { font-size: 3.5156rem; }
+  .kfc-meaning { font-size: 1.3125rem; }
+  .kfc-reading__label { font-size: 0.7031rem; }
+  .kfc-reading__on, .kfc-reading__kun { font-size: 1.0781rem; }
+  .kfc-reading__romaji { font-size: 0.75rem; }
+  .kfc-mnemonic { font-size: 0.7969rem; padding: 0.5625rem 0.7031rem; }
+  .kfc-example { font-size: 0.7969rem; padding: 0.375rem 0.7031rem; }
+  .kfc-example__sub { font-size: 0.7031rem; }
+  .kfc-learn-toggle { font-size: 0.75rem; padding: 0.3281rem 0.7031rem; }
+
+  /* Flashcard: header / intro / done / controls */
+  .kfc-header__back, .kfc-header__shuffle { font-size: 0.8438rem; }
+  .kfc-header__center { font-size: 0.7969rem; }
+  .kfc-header__pos { font-size: 0.7031rem; }
+  .kfc-title { font-size: 1.2656rem; }
+  .kfc-sub { font-size: 0.8672rem; }
+  .kfc-sub-learned { font-size: 0.75rem; }
+  .kfc-emoji-lg { font-size: 3.0469rem; }
+  .kfc-emoji-xl { font-size: 3.5156rem; }
+  .kfc-stat__n { font-size: 1.4063rem; }
+  .kfc-stat__l { font-size: 0.7031rem; }
+  .kfc-dstat__n { font-size: 1.6406rem; }
+  .kfc-dstat__l { font-size: 0.75rem; }
+  .kfc-btn-primary, .kfc-btn-ghost { font-size: 0.9375rem; padding: 0.7031rem 1.1719rem; }
+  .kfc-btn-clear { font-size: 0.7969rem; }
+  .kfc-flip-btn { font-size: 0.9375rem; padding: 0.7031rem; }
+  .fc-answer-btn { font-size: 0.9375rem; padding: 0.75rem; }
+  .fc-btn-nav { font-size: 1.4063rem; }
+  .fc-kbd-hint { font-size: 0.7031rem; }
+  .fc-kbd-hint kbd { display: none; }
+  .kfc-hints { font-size: 0.7031rem; }
+  .kfc-scoreboard { font-size: 0.7969rem; }
+}

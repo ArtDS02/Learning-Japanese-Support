@@ -1,0 +1,422 @@
+/* ============================================================
+   JLPT N5 App — progress (bổ sung)
+   Mọi deck · dự báo · thẻ hay quên · độ chính xác · sao lưu
+   Import SAU progress.css — chỉ nhắm class mới.
+   ============================================================ */
+
+/* ── Tất cả deck ── */
+
+.pgx-decks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: 0.75rem;
+}
+
+.pgx-deck {
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-left: 0.1875rem solid var(--c);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.875rem;
+}
+
+.pgx-deck__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.pgx-deck__name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.pgx-deck__pct {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--c);
+}
+
+.pgx-deck__track {
+  height: 0.3125rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0.375rem 0 0.3125rem;
+}
+
+.pgx-deck__fill {
+  height: 100%;
+  background: var(--c);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.pgx-deck__nums {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.pgx-deck__nums em {
+  font-style: normal;
+  color: var(--accent-cyan);
+}
+
+.pgx-deck__acts {
+  display: flex;
+  gap: 0.375rem;
+  margin-top: 0.5rem;
+}
+
+.pgx-mini {
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.6875rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.pgx-mini:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+}
+
+.pgx-mini--danger:hover {
+  color: var(--accent-red);
+  border-color: rgba(255, 71, 87, 0.4);
+}
+
+/* ── Dự báo ── */
+
+.pgx-forecast {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  height: 7.5rem;
+}
+
+.pgx-fc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.pgx-fc__wrap {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.pgx-fc__bar {
+  width: 100%;
+  max-width: 2.75rem;
+  background: var(--accent-cyan);
+  border-radius: 0.25rem 0.25rem 0 0;
+  transition: height 0.4s ease;
+}
+
+.pgx-fc__bar.is-today {
+  background: var(--accent-orange);
+}
+
+.pgx-fc__n {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+.pgx-fc__d {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--text-muted);
+}
+
+/* ── Thẻ hay quên ── */
+
+.pgx-hard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pgx-hardrow {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(4rem, 8rem) 1fr auto;
+  align-items: center;
+  gap: 0.625rem;
+  background: var(--bg-surface);
+  border-left: 0.1875rem solid var(--c);
+  border-radius: var(--radius-sm);
+  padding: 0.375rem 0.625rem;
+}
+
+.pgx-hardrow__deck {
+  font-size: 0.875rem;
+}
+
+.pgx-hardrow__title {
+  font-size: 1rem;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pgx-hardrow__sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pgx-hardrow__lapses {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--accent-red);
+  white-space: nowrap;
+}
+
+.pgx-hardbtn {
+  width: 100%;
+  margin-top: 0.875rem;
+  background: var(--accent-red);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.6875rem;
+  cursor: pointer;
+  transition: filter var(--transition);
+}
+
+.pgx-hardbtn:hover {
+  filter: brightness(1.1);
+}
+
+.pgx-hardbtn--inline {
+  width: auto;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  background: var(--accent-violet);
+  color: #0a0b0f;
+}
+
+/* ── Bài tập & thi thử ── */
+
+.pgx-exam {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.pgx-examstat {
+  flex: 1 1 8rem;
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.875rem;
+}
+
+.pgx-examstat__n {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.pgx-examstat__l {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+/* ── Độ chính xác theo ngày ── */
+
+.pgx-acc {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 0.0625rem solid var(--bg-border);
+}
+
+.pgx-acc__label {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.pgx-acc__row {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.pgx-acc__cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1875rem;
+}
+
+.pgx-acc__dot {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+}
+
+.pgx-acc__dot.is-good {
+  background: var(--accent-green);
+}
+
+.pgx-acc__dot.is-mid {
+  background: var(--accent-yellow);
+}
+
+.pgx-acc__dot.is-bad {
+  background: var(--accent-red);
+}
+
+.pgx-acc__dot.is-none {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pgx-acc__d {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  color: var(--text-muted);
+}
+
+.pgx-acc__legend {
+  display: flex;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.pgx-acc__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3125rem;
+}
+
+.pgx-acc__legend i {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 0.1875rem;
+}
+
+/* ── Sao lưu ── */
+
+.pgx-backup__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pgx-backup__info {
+  flex: 1 1 18rem;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.pgx-backup__keys {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.pgx-backup__btns {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pgx-btn {
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.625rem 1.125rem;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.pgx-btn:hover {
+  background: var(--bg-card-hover);
+}
+
+.pgx-btn--primary {
+  background: var(--accent-green);
+  border-color: transparent;
+  color: #0a0b0f;
+}
+
+.pgx-btn--primary:hover {
+  background: var(--accent-green);
+  filter: brightness(1.1);
+}
+
+.pgx-backup__msg {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+}
+
+.prog-note--plain {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .pgx-decks {
+    grid-template-columns: 1fr;
+  }
+
+  .pgx-hardrow {
+    grid-template-columns: 1.25rem 1fr auto;
+    row-gap: 0.125rem;
+  }
+
+  .pgx-hardrow__sub {
+    grid-column: 2 / -1;
+  }
+
+  .pgx-fc__d {
+    font-size: 0.5rem;
+  }
+
+  .pgx-backup__btns {
+    width: 100%;
+  }
+
+  .pgx-btn {
+    flex: 1;
+  }
+}

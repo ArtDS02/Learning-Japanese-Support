@@ -4,67 +4,67 @@
    ============================================================ */
 
 .num-note {
-padding: 0.625vw 0.8333vw;
+padding: 0.75rem 1rem;
   border-radius: var(--radius-md);
-  font-size: 0.6771vw;
+  font-size: 0.8125rem;
   line-height: 1.6;
-  margin-bottom: 1.0417vw;
+  margin-bottom: 1.25rem;
   color: var(--c, var(--accent-yellow));
   background: color-mix(in srgb, var(--c, #facc15) 9%, transparent);
-  border: 0.0521vw solid color-mix(in srgb, var(--c, #facc15) 28%, transparent);
+  border: 0.0625rem solid color-mix(in srgb, var(--c, #facc15) 28%, transparent);
 }
 
 .num-note--inline {
-margin: 0.7292vw 0 0;
+margin: 0.875rem 0 0;
 }
 
 .num-subtitle {
 font-family: var(--font-display);
-  font-size: 0.8854vw;
+  font-size: 1.0625rem;
   font-weight: 700;
-  margin-bottom: 0.625vw;
+  margin-bottom: 0.75rem;
   color: var(--c, var(--text-primary));
 }
 
 .num-subtitle--gap {
-margin-top: 1.4583vw;
+margin-top: 1.75rem;
 }
 
 .num-grid {
 display: grid;
-  gap: 0.625vw;
+  gap: 0.75rem;
 }
 
 .num-grid--digits,
 .num-grid--hours,
 .num-grid--cal {
-grid-template-columns: repeat(auto-fill, minmax(7.8125vw, 1fr));
+grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr));
 }
 
 .num-grid--week {
-grid-template-columns: repeat(auto-fill, minmax(11.4583vw, 1fr));
-  gap: 0.7292vw;
+grid-template-columns: repeat(auto-fill, minmax(13.75rem, 1fr));
+  gap: 0.875rem;
 }
 
 .num-grid--reading {
-grid-template-columns: repeat(auto-fill, minmax(4.7917vw, 1fr));
-  gap: 0.4167vw;
-  margin-bottom: 0.625vw;
+grid-template-columns: repeat(auto-fill, minmax(5.75rem, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .num-grid--ex {
-grid-template-columns: repeat(auto-fill, minmax(10.9375vw, 1fr));
-  gap: 0.5208vw;
+grid-template-columns: repeat(auto-fill, minmax(13.125rem, 1fr));
+  gap: 0.625rem;
 }
 
 .num-grid--rules {
-grid-template-columns: repeat(auto-fill, minmax(15.625vw, 1fr));
-  gap: 0.7292vw;
+grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+  gap: 0.875rem;
 }
 
 .num-grid--qwords {
-grid-template-columns: repeat(auto-fill, minmax(11.9792vw, 1fr));
-  gap: 0.5208vw;
+grid-template-columns: repeat(auto-fill, minmax(14.375rem, 1fr));
+  gap: 0.625rem;
 }
 
 .num-cell {
@@ -72,44 +72,44 @@ text-align: center;
 }
 
 .num-cell__jp {
-font-size: 1.3542vw;
+font-size: 1.625rem;
   font-weight: 800;
   color: var(--c, var(--accent-yellow));
-  margin-bottom: 0.2083vw;
+  margin-bottom: 0.25rem;
 }
 
 .num-grid--digits .num-cell__jp {
-font-size: 2.0833vw;
+font-size: 2.5rem;
 }
 
 .num-grid--hours .num-cell__jp,
 .num-grid--week .num-cell__jp {
-font-size: 1.5625vw;
+font-size: 1.875rem;
 }
 
 .num-cell__sub {
 font-family: var(--font-mono);
-  font-size: 0.6771vw;
+  font-size: 0.8125rem;
   color: var(--text-muted);
-  margin-bottom: 0.2083vw;
+  margin-bottom: 0.25rem;
 }
 
 .num-cell__num {
-font-size: 0.7292vw;
+font-size: 0.875rem;
   font-weight: 600;
-  margin-bottom: 0.2083vw;
+  margin-bottom: 0.25rem;
 }
 
 .num-cell__hira {
 font-family: var(--font-mono);
-  font-size: 0.6771vw;
+  font-size: 0.8125rem;
   color: var(--accent-cyan);
-  margin-bottom: 0.1042vw;
+  margin-bottom: 0.125rem;
 }
 
 .num-cell__read {
 font-family: var(--font-mono);
-  font-size: 0.8333vw;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--text-primary);
 }
@@ -121,15 +121,15 @@ color: var(--accent-pink);
 
 .num-cell__romaji {
 font-family: var(--font-mono);
-  font-size: 0.625vw;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  margin-top: 0.1042vw;
+  margin-top: 0.125rem;
 }
 
 .num-cell__vn {
-font-size: 0.8333vw;
+font-size: 1rem;
   font-weight: 700;
-  margin: 0.4167vw 0;
+  margin: 0.5rem 0;
 }
 
 .num-cell--warn {
@@ -137,9 +137,9 @@ background: rgba(244, 114, 182, 0.06);
 }
 
 .num-week__tag {
-font-size: 0.625vw;
-  padding: 0.2083vw 0.5208vw;
-  border-radius: 1.0417vw;
+font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 1.25rem;
   display: inline-block;
   color: var(--c);
   background: color-mix(in srgb, var(--c) 16%, transparent);
@@ -148,56 +148,56 @@ font-size: 0.625vw;
 .num-counters-list {
 display: flex;
   flex-direction: column;
-  gap: 1.0417vw;
+  gap: 1.25rem;
 }
 
 .num-counter__head {
 display: flex;
   align-items: center;
-  gap: 0.625vw;
-  margin-bottom: 0.625vw;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .num-counter__suffix {
 font-family: var(--font-mono);
-  font-size: 1.1458vw;
+  font-size: 1.375rem;
   font-weight: 800;
   color: var(--c);
-  padding: 0.2083vw 0.625vw;
+  padding: 0.25rem 0.75rem;
   border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--c) 14%, transparent);
-  border: 0.0521vw solid color-mix(in srgb, var(--c) 30%, transparent);
+  border: 0.0625rem solid color-mix(in srgb, var(--c) 30%, transparent);
 }
 
 .num-counter__use {
 font-weight: 600;
-  font-size: 0.7813vw;
+  font-size: 0.9376rem;
 }
 
 .num-counter__note {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: var(--accent-orange);
-  padding: 0.3125vw 0.5208vw;
+  padding: 0.375rem 0.625rem;
   background: rgba(249, 115, 22, 0.08);
   border-radius: var(--radius-sm);
-  margin-bottom: 0.625vw;
+  margin-bottom: 0.75rem;
 }
 
 .num-counter__example {
-font-size: 0.6771vw;
+font-size: 0.8125rem;
   color: var(--text-secondary);
-  padding: 0.4167vw 0.625vw;
+  padding: 0.5rem 0.75rem;
   background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-sm);
-  border-left: 0.1042vw solid var(--c);
+  border-left: 0.125rem solid var(--c);
 }
 
 .num-reading {
 text-align: center;
-  padding: 0.5208vw 0.3125vw;
+  padding: 0.625rem 0.375rem;
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.03);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
 }
 
 .num-reading--warn {
@@ -207,15 +207,15 @@ background: rgba(244, 114, 182, 0.12);
 
 .num-reading__n {
 font-family: var(--font-mono);
-  font-size: 0.625vw;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  margin-bottom: 0.1563vw;
+  margin-bottom: 0.1876rem;
 }
 
 .num-reading__read {
-font-size: 0.8333vw;
+font-size: 1rem;
   font-weight: 500;
-  margin-bottom: 0.1042vw;
+  margin-bottom: 0.125rem;
 }
 
 .num-reading--warn .num-reading__read {
@@ -225,36 +225,36 @@ color: var(--accent-pink);
 
 .num-reading__romaji {
 font-family: var(--font-mono);
-  font-size: 0.5729vw;
+  font-size: 0.6875rem;
   color: var(--text-muted);
 }
 
 .num-panel {
-margin-top: 1.4583vw;
+margin-top: 1.75rem;
   background: var(--bg-card);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   border-radius: var(--radius-lg);
-  padding: 1.25vw;
+  padding: 1.5rem;
 }
 
 .num-panel--tight {
-padding: 1.0417vw;
-  margin-top: 1.25vw;
+padding: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .num-panel__title {
 font-family: var(--font-display);
-  font-size: 0.8854vw;
+  font-size: 1.0625rem;
   font-weight: 700;
-  margin-bottom: 0.8333vw;
+  margin-bottom: 1rem;
   color: var(--c, var(--accent-yellow));
 }
 
 .num-ex {
-padding: 0.5208vw 0.7292vw;
+padding: 0.625rem 0.875rem;
   background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-sm);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
 }
 
 .num-ex--row {
@@ -266,17 +266,17 @@ display: flex;
 
 .num-ex__jp {
 font-weight: 700;
-  font-size: 0.8333vw;
-  margin-bottom: 0.1042vw;
+  font-size: 1rem;
+  margin-bottom: 0.125rem;
 }
 
 .num-ex__jp--lg {
-font-size: 0.9375vw;
+font-size: 1.125rem;
 }
 
 .num-ex__hira {
 font-family: var(--font-mono);
-  font-size: 0.6771vw;
+  font-size: 0.8125rem;
   color: var(--text-secondary);
 }
 
@@ -287,59 +287,59 @@ color: var(--accent-pink);
 
 .num-ex__read {
 font-family: var(--font-mono);
-  font-size: 0.625vw;
+  font-size: 0.75rem;
   color: var(--accent-cyan);
-  margin-bottom: 0.1042vw;
+  margin-bottom: 0.125rem;
 }
 
 .num-ex__vn {
-font-size: 0.6771vw;
+font-size: 0.8125rem;
   color: var(--text-secondary);
 }
 
 .num-ex__n {
 font-family: var(--font-mono);
-  font-size: 0.6771vw;
+  font-size: 0.8125rem;
   color: var(--accent-yellow);
   font-weight: 700;
 }
 
 .num-rule {
-border-left: 0.1563vw solid var(--c);
+border-left: 0.1876rem solid var(--c);
 }
 
 .num-rule__head {
 display: flex;
   align-items: center;
-  gap: 0.5208vw;
-  margin-bottom: 0.4167vw;
+  gap: 0.625rem;
+  margin-bottom: 0.5rem;
 }
 
 .num-rule__icon {
-font-size: 1.25vw;
+font-size: 1.5rem;
 }
 
 .num-rule__title {
 font-weight: 700;
-  font-size: 0.7813vw;
+  font-size: 0.9376rem;
   color: var(--c);
 }
 
 .num-rule__detail {
-font-size: 0.7292vw;
+font-size: 0.875rem;
   color: var(--text-secondary);
   line-height: 1.7;
 }
 
 .num-qword {
-padding: 0.625vw 0.7292vw;
+padding: 0.75rem 0.875rem;
   background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-sm);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5208vw;
+  gap: 0.625rem;
 }
 
 .num-qword__main {
@@ -348,19 +348,236 @@ min-width: 0;
 
 .num-qword__q {
 font-weight: 700;
-  font-size: 0.8333vw;
+  font-size: 1rem;
   color: var(--accent-green);
 }
 
 .num-qword__romaji {
 font-family: var(--font-mono);
-  font-size: 0.5729vw;
+  font-size: 0.6875rem;
   color: var(--text-muted);
 }
 
 .num-qword__use {
-font-size: 0.651vw;
+font-size: 0.7812rem;
   color: var(--text-secondary);
   text-align: right;
+}
+
+/* ============================================================
+   MOBILE (≤768px) — calibrated for ~375px (1vw ≈ 3.75px)
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Notes / callouts */
+  .num-note {
+    padding: 0.4688rem 0.6563rem;
+    font-size: 0.7969rem;
+    margin-bottom: 0.7031rem;
+    border-width: 0.0633rem;
+  }
+  .num-note--inline {
+    margin: 0.5859rem 0 0;
+  }
+
+  /* Subtitles */
+  .num-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 0.4688rem;
+  }
+  .num-subtitle--gap {
+    margin-top: 1.1719rem;
+  }
+
+  /* Grids — recolumn so cells aren't cramped and never overflow */
+  .num-grid {
+    gap: 0.5859rem;
+  }
+  .num-grid--digits {
+    grid-template-columns: repeat(auto-fill, minmax(4.6875rem, 1fr));
+  }
+  .num-grid--hours,
+  .num-grid--cal {
+    grid-template-columns: repeat(auto-fill, minmax(5.1563rem, 1fr));
+  }
+  .num-grid--week {
+    grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr));
+    gap: 0.5859rem;
+  }
+  .num-grid--reading {
+    grid-template-columns: repeat(auto-fill, minmax(4.6875rem, 1fr));
+    gap: 0.4219rem;
+    margin-bottom: 0.5859rem;
+  }
+  .num-grid--ex {
+    grid-template-columns: repeat(auto-fill, minmax(9.8438rem, 1fr));
+    gap: 0.5156rem;
+  }
+  .num-grid--rules {
+    grid-template-columns: 1fr;
+    gap: 0.6563rem;
+  }
+  .num-grid--qwords {
+    grid-template-columns: 1fr;
+    gap: 0.5156rem;
+  }
+
+  /* Number cells */
+  .num-cell__jp {
+    font-size: 1.4063rem;
+    margin-bottom: 0.1875rem;
+  }
+  .num-grid--digits .num-cell__jp {
+    font-size: 2.1094rem;
+  }
+  .num-grid--hours .num-cell__jp,
+  .num-grid--week .num-cell__jp {
+    font-size: 1.6406rem;
+  }
+  .num-cell__sub {
+    font-size: 0.7031rem;
+    margin-bottom: 0.1875rem;
+  }
+  .num-cell__num {
+    font-size: 0.8672rem;
+    margin-bottom: 0.1875rem;
+  }
+  .num-cell__hira {
+    font-size: 0.7734rem;
+    margin-bottom: 0.1172rem;
+  }
+  .num-cell__read {
+    font-size: 0.9375rem;
+  }
+  .num-cell__romaji {
+    font-size: 0.7031rem;
+    margin-top: 0.1172rem;
+  }
+  .num-cell__vn {
+    font-size: 0.9844rem;
+    margin: 0.375rem 0;
+  }
+  .num-week__tag {
+    font-size: 0.7031rem;
+    padding: 0.2344rem 0.6094rem;
+    border-radius: 0.9375rem;
+  }
+
+  /* Counters */
+  .num-counters-list {
+    gap: 0.7031rem;
+  }
+  .num-counter__head {
+    gap: 0.5859rem;
+    margin-bottom: 0.5859rem;
+  }
+  .num-counter__suffix {
+    font-size: 1.2891rem;
+    padding: 0.2344rem 0.6094rem;
+    border-width: 0.0633rem;
+  }
+  .num-counter__use {
+    font-size: 0.8438rem;
+  }
+  .num-counter__note {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.6094rem;
+    margin-bottom: 0.5859rem;
+  }
+  .num-counter__example {
+    font-size: 0.7969rem;
+    padding: 0.4688rem 0.6563rem;
+    border-left-width: 0.1172rem;
+  }
+
+  /* Reading cells */
+  .num-reading {
+    padding: 0.4688rem 0.3516rem;
+    border-width: 0.0633rem;
+  }
+  .num-reading__n {
+    font-size: 0.7031rem;
+    margin-bottom: 0.1406rem;
+  }
+  .num-reading__read {
+    font-size: 0.8906rem;
+    margin-bottom: 0.1172rem;
+  }
+  .num-reading__romaji {
+    font-size: 0.7031rem;
+  }
+
+  /* Panels */
+  .num-panel {
+    margin-top: 1.1719rem;
+    padding: 0.9375rem;
+  }
+  .num-panel--tight {
+    padding: 0.8203rem;
+    margin-top: 0.9375rem;
+  }
+  .num-panel__title {
+    font-size: 1.1719rem;
+    margin-bottom: 0.7031rem;
+  }
+
+  /* Example rows */
+  .num-ex {
+    padding: 0.4688rem 0.6563rem;
+    border-width: 0.0633rem;
+  }
+  .num-ex__jp {
+    font-size: 0.9375rem;
+    margin-bottom: 0.1172rem;
+  }
+  .num-ex__jp--lg {
+    font-size: 1.0781rem;
+  }
+  .num-ex__hira {
+    font-size: 0.7734rem;
+  }
+  .num-ex__read {
+    font-size: 0.7969rem;
+    margin-bottom: 0.1172rem;
+  }
+  .num-ex__vn {
+    font-size: 0.75rem;
+  }
+  .num-ex__n {
+    font-size: 0.8906rem;
+  }
+
+  /* Rules */
+  .num-rule {
+    border-left-width: 0.1875rem;
+  }
+  .num-rule__head {
+    gap: 0.5859rem;
+    margin-bottom: 0.4688rem;
+  }
+  .num-rule__icon {
+    font-size: 1.2891rem;
+  }
+  .num-rule__title {
+    font-size: 1.0313rem;
+  }
+  .num-rule__detail {
+    font-size: 0.8438rem;
+  }
+
+  /* Question words */
+  .num-qword {
+    padding: 0.5859rem 0.6563rem;
+    gap: 0.5156rem;
+    border-width: 0.0633rem;
+  }
+  .num-qword__q {
+    font-size: 0.9375rem;
+  }
+  .num-qword__romaji {
+    font-size: 0.7031rem;
+  }
+  .num-qword__use {
+    font-size: 0.75rem;
+  }
 }
 

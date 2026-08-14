@@ -1,0 +1,90 @@
+/* ============================================================
+   JLPT N5 App — vỏ hộp thoại dùng chung (.ovl)
+   Đi kèm <Modal>. Modal được portal thẳng ra <body> nên nằm cùng tầng
+   xếp chồng với header/thanh tab; z-index dưới đây mới thực sự có tác dụng.
+   ============================================================ */
+
+.ovl {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+
+  display: flex;
+  justify-content: center;
+  /* KHÔNG dùng align-items:center. Khi khung cao hơn màn hình, canh giữa bằng
+     align-items sẽ đẩy mép trên ra ngoài vùng cuộn và không tài nào kéo tới
+     được. flex-start + margin:auto ở khung cho kết quả canh giữa y hệt nhưng
+     phần tràn vẫn cuộn tới nơi. */
+  align-items: flex-start;
+
+  overflow-y: auto;
+  /* Cuộn hết hộp thoại thì dừng, không "xuyên" xuống cuộn trang nền. */
+  overscroll-behavior: contain;
+
+  padding: var(--ovl-pad);
+  animation: ovl-fade 0.16s ease;
+
+  --ovl-pad: 1.5rem;
+}
+
+@keyframes ovl-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.ovl__panel {
+  /* auto cả bốn phía = canh giữa, nhưng tự co lại khi hết chỗ (khác center). */
+  margin: auto;
+  position: relative;
+  width: 100%;
+
+  /* Trừ đúng phần đệm của lớp phủ, nếu không 90vh + 2×1.5rem sẽ vượt màn hình
+     và mép khung bị cắt trên máy có chiều cao thấp.
+     dvh: chiều cao thật khi thanh địa chỉ trình duyệt di động thu vào/nhả ra. */
+  max-height: calc(100vh - 2 * var(--ovl-pad));
+  max-height: calc(100dvh - 2 * var(--ovl-pad));
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  animation: ovl-rise 0.22s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.ovl__panel:focus {
+  outline: none;
+}
+
+@keyframes ovl-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.985);
+  }
+}
+
+/* Neo khung lên đỉnh (bảng tìm kiếm) hoặc xuống đáy (bottom sheet trên SP). */
+.ovl--top > .ovl__panel {
+  margin-block: 0 auto;
+}
+
+.ovl--bottom > .ovl__panel {
+  margin-block: auto 0;
+}
+
+/* Màn hình thấp (điện thoại xoay ngang, cửa sổ bị kéo dẹt): bớt đệm để khung
+   còn chỗ thở, và bỏ animation trượt cho đỡ chật chội. */
+@media (max-height: 34rem) {
+  .ovl {
+    --ovl-pad: 0.625rem;
+  }
+
+  .ovl__panel {
+    animation: none;
+  }
+}
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  .ovl {
+    padding-bottom: max(var(--ovl-pad), env(safe-area-inset-bottom));
+  }
+}

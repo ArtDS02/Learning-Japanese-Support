@@ -30,13 +30,13 @@
   --gradient-primary: linear-gradient(135deg, #ff4757, #a78bfa);
   --gradient-card: linear-gradient(135deg, rgba(255, 71, 87, 0.08), rgba(167, 139, 250, 0.05));
 
-  --radius-sm: 0.4167vw;
-  --radius-md: 0.625vw;
-  --radius-lg: 0.8333vw;
-  --radius-xl: 1.25vw;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 
-  --shadow-card: 0 0.2083vw 1.25vw rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 1.0417vw rgba(167, 139, 250, 0.15);
+  --shadow-card: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 1.25rem rgba(167, 139, 250, 0.15);
 
   --font-display: 'Be Vietnam Pro', sans-serif;
   --font-body: 'Noto Sans', sans-serif;
@@ -45,9 +45,18 @@
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Layout */
-  --container: 61.4583vw;
-  --header-h: 3.6458vw;
-  --focus-ring: 0 0 0 0.1042vw var(--bg-base), 0 0 0 0.2083vw var(--accent-violet);
+  --container: 73.75rem;
+  --header-h: 4.375rem;
+  --focus-ring: 0 0 0 0.125rem var(--bg-base), 0 0 0 0.25rem var(--accent-violet);
+
+  /* Thang xếp chồng — mọi z-index trong app lấy từ đây, đừng đặt số rời rạc
+     nữa. Lưu ý: .main-content có z-index nên là một stacking context; thứ gì
+     cần nổi lên trên header phải được portal ra ngoài nó (xem Modal.jsx). */
+  --z-bg: 0;
+  --z-content: 1;
+  --z-nav: 90;
+  --z-header: 100;
+  --z-overlay: 500;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -90,14 +99,14 @@ scrollbar-width: thin;
 }
 
 *::-webkit-scrollbar {
-width: 0.5208vw;
-  height: 0.5208vw;
+width: 0.625rem;
+  height: 0.625rem;
 }
 
 *::-webkit-scrollbar-thumb {
 background: rgba(255, 255, 255, 0.12);
-  border-radius: 0.5208vw;
-  border: 0.1042vw solid transparent;
+  border-radius: 0.625rem;
+  border: 0.125rem solid transparent;
   background-clip: content-box;
 }
 
@@ -110,68 +119,93 @@ body {
 background: var(--bg-base);
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 0.7813vw;
+  font-size: 0.9376rem;
   line-height: 1.7;
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  /* Lưới thẻ trên điện thoại chỉ rộng ~96px, mà romaji kiểu
+     "i(kiru)/u(mareru)/nama" không có chỗ ngắt nào — không cho xuống dòng giữa
+     từ thì nó tràn ra và bị thẻ (overflow:hidden) cắt cụt. Chỉ ngắt khi thật sự
+     không còn cách nào khác nên câu chữ bình thường không bị ảnh hưởng. */
+  overflow-wrap: break-word;
 }
 
+/* Hiệu ứng vào KHÔNG dùng transform. Phần tử có transform trở thành containing
+   block cho mọi con position:fixed bên trong: suốt nửa giây đầu, nút nổi và
+   lớp phủ sẽ bám theo .app (cao bằng cả trang) thay vì bám viewport và văng đi
+   đâu mất. Mờ dần là đủ, mà không kéo theo cái bẫy đó. */
 .app {
 min-height: 100vh;
   position: relative;
   opacity: 0;
-  transform: translateY(0.4167vw);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.45s ease;
 }
 
 .app--mounted {
 opacity: 1;
-  /* 'none' (không phải translateY(0)) để KHÔNG tạo containing block cho
-     các phần tử position:fixed bên trong — nếu không, overlay modal sẽ
-     bám theo .app (cao bằng cả trang) thay vì viewport và bị tụt xuống. */
-  transform: none;
+}
+
+/* Nhảy thẳng tới nội dung, bỏ qua 12 nút tab — chỉ hiện khi tab tới bằng phím. */
+.skip-link {
+position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: calc(var(--z-overlay) + 1);
+  transform: translateY(-200%);
+  background: var(--accent-violet);
+  color: #0a0b0f;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: transform 0.18s ease;
+}
+
+.skip-link:focus {
+transform: translateY(0);
 }
 
 .bg-orbs {
 position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: var(--z-bg);
   overflow: hidden;
 }
 
 .bg-orb {
 position: absolute;
   border-radius: 50%;
-  filter: blur(5.2083vw);
+  filter: blur(6.25rem);
   opacity: 0.12;
   animation: float 20s ease-in-out infinite;
 }
 
 .bg-orb--1 {
-width: 31.25vw;
-  height: 31.25vw;
+width: 37.5rem;
+  height: 37.5rem;
   background: #a78bfa;
-  top: -10.4167vw;
-  left: -5.2083vw;
+  top: -12.5rem;
+  left: -6.25rem;
   animation-delay: 0s;
 }
 
 .bg-orb--2 {
-width: 26.0417vw;
-  height: 26.0417vw;
+width: 31.25rem;
+  height: 31.25rem;
   background: #22d3ee;
   top: 40%;
-  right: -7.8125vw;
+  right: -9.375rem;
   animation-delay: -7s;
 }
 
 .bg-orb--3 {
-width: 20.8333vw;
-  height: 20.8333vw;
+width: 25rem;
+  height: 25rem;
   background: #ff4757;
-  bottom: -5.2083vw;
+  bottom: -6.25rem;
   left: 30%;
   animation-delay: -14s;
 }
@@ -183,23 +217,23 @@ transform: translate(0, 0) scale(1);
 }
 
 33% {
-transform: translate(1.5625vw, -1.5625vw) scale(1.05);
+transform: translate(1.875rem, -1.875rem) scale(1.05);
 }
 
 66% {
-transform: translate(-1.0417vw, 1.0417vw) scale(0.97);
+transform: translate(-1.25rem, 1.25rem) scale(0.97);
 }
 }
 
 .header {
 position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: var(--z-header);
   background: rgba(10, 11, 15, 0.85);
-  backdrop-filter: blur(1.0417vw);
-  -webkit-backdrop-filter: blur(1.0417vw);
-  border-bottom: 0.0521vw solid var(--bg-border);
-  padding: 0 1.25vw;
+  backdrop-filter: blur(1.25rem);
+  -webkit-backdrop-filter: blur(1.25rem);
+  border-bottom: 0.0625rem solid var(--bg-border);
+  padding: 0 1.5rem;
 }
 
 .header__inner {
@@ -214,11 +248,11 @@ max-width: var(--container);
 .header__logo {
 display: flex;
   align-items: center;
-  gap: 0.625vw;
+  gap: 0.75rem;
 }
 
 .header__flag {
-font-size: 1.4583vw;
+font-size: 1.75rem;
   animation: wave 2s ease-in-out infinite;
 }
 
@@ -239,7 +273,7 @@ transform: rotate(10deg);
 
 .header__title {
 font-family: var(--font-display);
-  font-size: 1.1458vw;
+  font-size: 1.375rem;
   font-weight: 800;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
@@ -249,19 +283,19 @@ font-family: var(--font-display);
 }
 
 .header__subtitle {
-font-size: 0.7292vw;
+font-size: 0.875rem;
   color: var(--text-muted);
   letter-spacing: 0.05em;
 }
 
 .header__badge {
 font-family: var(--font-mono);
-  font-size: 0.5729vw;
+  font-size: 0.6875rem;
   font-weight: 700;
   color: var(--accent-green);
-  border: 0.0521vw solid var(--accent-green);
-  padding: 0.2083vw 0.5208vw;
-  border-radius: 1.0417vw;
+  border: 0.0625rem solid var(--accent-green);
+  padding: 0.25rem 0.625rem;
+  border-radius: 1.25rem;
   letter-spacing: 0.08em;
   animation: pulse-border 2s ease-in-out infinite;
 }
@@ -273,29 +307,65 @@ box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.3);
 }
 
 50% {
-box-shadow: 0 0 0 0.2083vw rgba(52, 211, 153, 0);
+box-shadow: 0 0 0 0.25rem rgba(52, 211, 153, 0);
 }
 }
 
 .tab-nav {
 position: sticky;
-  top: var(--header-h);
-  z-index: 99;
+  /* +1px viền dưới của header, nếu không sẽ hở một vệt nội dung chạy qua khe. */
+  top: calc(var(--header-h) + 0.0625rem);
+  z-index: var(--z-nav);
   background: rgba(10, 11, 15, 0.9);
-  backdrop-filter: blur(1.0417vw);
-  -webkit-backdrop-filter: blur(1.0417vw);
-  border-bottom: 0.0521vw solid var(--bg-border);
-  padding: 0 1.25vw;
+  backdrop-filter: blur(1.25rem);
+  -webkit-backdrop-filter: blur(1.25rem);
+  border-bottom: 0.0625rem solid var(--bg-border);
+  padding: 0 1.5rem;
+}
+
+.tab-nav__wrap {
+position: relative;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+/* Vệt mờ hai mép: dấu hiệu duy nhất cho biết còn tab nằm ngoài khung. Chỉ bật
+   theo class do JS đo được, nếu không thì mép trái luôn mờ dù đã ở đầu danh sách. */
+.tab-nav__wrap::before,
+.tab-nav__wrap::after {
+content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2.25rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition);
+  z-index: 2;
+}
+
+.tab-nav__wrap::before {
+left: 0;
+  background: linear-gradient(90deg, var(--bg-base), transparent);
+}
+
+.tab-nav__wrap::after {
+right: 0;
+  background: linear-gradient(270deg, var(--bg-base), transparent);
+}
+
+.tab-nav__wrap.is-l::before,
+.tab-nav__wrap.is-r::after {
+opacity: 1;
 }
 
 .tab-nav__inner {
-max-width: var(--container);
-  margin: 0 auto;
-  display: flex;
-  gap: 0.2083vw;
+display: flex;
+  gap: 0.25rem;
   overflow-x: auto;
   scrollbar-width: none;
-  padding: 0.4167vw 0;
+  padding: 0.5rem 0;
+  scroll-padding-inline: 2.5rem;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -303,21 +373,71 @@ max-width: var(--container);
 display: none;
 }
 
+/* Nút cuộn cho người dùng chuột — thiết bị cảm ứng vuốt được nên không cần. */
+.tab-nav__arrow {
+position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.tab-nav__arrow:hover {
+background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.tab-nav__arrow--l {
+left: -0.375rem;
+}
+
+.tab-nav__arrow--r {
+right: -0.375rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.tab-nav__wrap.is-l > .tab-nav__arrow--l,
+  .tab-nav__wrap.is-r > .tab-nav__arrow--r {
+display: flex;
+}
+}
+
 .tab-btn {
 flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
   background: transparent;
-  border: 0.0521vw solid transparent;
+  border: 0.0625rem solid transparent;
   color: var(--text-secondary);
-  padding: 0.4167vw 0.8333vw;
+  padding: 0.5rem 0.875rem;
   border-radius: var(--radius-md);
   cursor: pointer;
   font-family: var(--font-body);
-  font-size: 0.7292vw;
+  font-size: 0.875rem;
   font-weight: 600;
-  transition: all var(--transition);
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
   white-space: nowrap;
 }
 
+.tab-btn__icon {
+font-size: 1rem;
+  line-height: 1;
+}
+
+/* Nhãn rút gọn chỉ dùng ở bố cục dọc trên điện thoại. */
 .tab-btn__short {
 display: none;
 }
@@ -332,63 +452,96 @@ color: var(--text-primary);
 color: var(--text-primary) !important;
   background: var(--gradient-card) !important;
   border-color: rgba(167, 139, 250, 0.3) !important;
-  box-shadow: 0 0 0.8333vw rgba(167, 139, 250, 0.1);
+  box-shadow: 0 0 1rem rgba(167, 139, 250, 0.1);
+}
+
+/* Từ tablet trở lên còn chỗ thì cho xuống dòng: thà cao thêm một hàng còn hơn
+   giấu tab ra ngoài mép. Hết cuộn ngang nên mờ mép và mũi tên cũng tắt luôn.
+   Trừ màn hình thấp: ở đó thêm một hàng đắt hơn cuộn ngang, nên rơi về nhánh
+   cuộn mặc định (đã có mờ mép + mũi tên + tự kéo tab đang chọn vào tầm nhìn). */
+@media (min-width: 48.0625rem) and (min-height: 34.0625rem) {
+.tab-nav__inner {
+flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+    /* 12 mục không vừa một hàng ở 1180px, nên hàng thứ hai là chuyện thường —
+       siết đệm dọc lại để hai hàng vẫn gọn hơn một hàng + thanh cuộn. */
+    row-gap: 0.25rem;
+    padding: 0.375rem 0;
+}
+
+.tab-btn {
+padding: 0.4375rem 0.8125rem;
+}
+
+.tab-nav__wrap::before,
+  .tab-nav__wrap::after {
+content: none;
+}
+
+.tab-nav__arrow {
+display: none !important;
+}
 }
 
 .main-content {
 position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
   max-width: var(--container);
   margin: 0 auto;
-  padding: 1.6667vw 1.25vw 4.1667vw;
+  padding: 2rem 1.5rem 5rem;
+}
+
+.main-content:focus {
+outline: none;
 }
 
 .section-header {
-margin-bottom: 1.4583vw;
+margin-bottom: 1.75rem;
 }
 
 .section-title {
 font-family: var(--font-display);
-  font-size: 1.3542vw;
+  font-size: 1.625rem;
   font-weight: 800;
-  margin-bottom: 0.2083vw;
+  margin-bottom: 0.25rem;
 }
 
 .section-desc {
 color: var(--text-secondary);
-  font-size: 0.8333vw;
+  font-size: 1rem;
 }
 
 .filter-bar {
 display: flex;
   flex-wrap: wrap;
-  gap: 0.4167vw;
-  margin-bottom: 1.25vw;
-  padding: 0.8333vw;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
   background: var(--bg-card);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   border-radius: var(--radius-lg);
 }
 
 .filter-label {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: var(--text-muted);
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  margin-right: 0.2083vw;
+  margin-right: 0.25rem;
 }
 
 .filter-btn {
 background: transparent;
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   color: var(--text-secondary);
-  padding: 0.3646vw 0.7292vw;
-  border-radius: 1.0417vw;
+  padding: 0.4375rem 0.875rem;
+  border-radius: 1.25rem;
   cursor: pointer;
-  font-size: 0.7031vw;
+  font-size: 0.8437rem;
   font-weight: 500;
   font-family: var(--font-body);
   transition: all var(--transition);
@@ -413,28 +566,28 @@ color: var(--bg-base) !important;
 
 .search-box {
 position: relative;
-  margin-bottom: 1.0417vw;
+  margin-bottom: 1.25rem;
 }
 
 .search-box__icon {
 position: absolute;
-  left: 0.7292vw;
+  left: 0.875rem;
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-muted);
-  font-size: 0.8333vw;
+  font-size: 1rem;
   pointer-events: none;
 }
 
 .search-box input {
 width: 100%;
   background: var(--bg-card);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   border-radius: var(--radius-md);
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 0.7292vw;
-  padding: 0.5729vw 0.8333vw 0.5729vw 2.0833vw;
+  font-size: 0.875rem;
+  padding: 0.6875rem 1rem 0.6875rem 2.5rem;
   outline: none;
   transition: border-color var(--transition);
 }
@@ -449,15 +602,15 @@ border-color: rgba(167, 139, 250, 0.4);
 
 .cards-grid {
 display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15.625vw, 1fr));
-  gap: 0.8333vw;
+  grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+  gap: 1rem;
 }
 
 .word-card {
 background: var(--bg-card);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   border-radius: var(--radius-lg);
-  padding: 1.0417vw;
+  padding: 1.25rem;
   cursor: pointer;
   transition: all var(--transition);
   position: relative;
@@ -468,7 +621,7 @@ background: var(--bg-card);
 @keyframes fade-up {
 from {
 opacity: 0;
-    transform: translateY(0.625vw);
+    transform: translateY(0.75rem);
 }
 
 to {
@@ -483,7 +636,7 @@ content: '';
   top: 0;
   left: 0;
   right: 0;
-  height: 0.1042vw;
+  height: 0.125rem;
   background: var(--card-color, var(--accent-violet));
   opacity: 0;
   transition: opacity var(--transition);
@@ -492,7 +645,7 @@ content: '';
 .word-card:hover {
 background: var(--bg-card-hover);
   border-color: rgba(255, 255, 255, 0.12);
-  transform: translateY(-0.1042vw);
+  transform: translateY(-0.125rem);
   box-shadow: var(--shadow-card);
 }
 
@@ -501,41 +654,41 @@ opacity: 1;
 }
 
 .word-card__jp {
-font-size: 1.5625vw;
+font-size: 1.875rem;
   font-weight: 700;
-  margin-bottom: 0.1042vw;
+  margin-bottom: 0.125rem;
   letter-spacing: 0.05em;
 }
 
 .word-card__kanji {
-font-size: 0.7813vw;
+font-size: 0.9376rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
-  margin-bottom: 0.2083vw;
-  min-height: 1.3542vw;
+  margin-bottom: 0.25rem;
+  min-height: 1.625rem;
 }
 
 .word-card__romaji {
 font-family: var(--font-mono);
-  font-size: 0.7813vw;
+  font-size: 0.9376rem;
   color: var(--text-secondary);
-  margin-bottom: 0.4167vw;
+  margin-bottom: 0.5rem;
 }
 
 .word-card__meaning {
-font-size: 0.9375vw;
+font-size: 1.125rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.4167vw;
+  margin-bottom: 0.5rem;
 }
 
 .word-card__type-badge {
 display: inline-block;
-  font-size: 0.7292vw;
+  font-size: 0.875rem;
   font-weight: 700;
-  padding: 0 0.4167vw;
-  border-radius: 1.0417vw;
-  margin-bottom: 0.5208vw;
+  padding: 0 0.5rem;
+  border-radius: 1.25rem;
+  margin-bottom: 0.625rem;
   font-family: var(--font-mono);
   letter-spacing: 0.04em;
   justify-content: center;
@@ -544,39 +697,39 @@ display: inline-block;
 }
 
 .word-card__note {
-font-size: 0.7813vw;
+font-size: 0.9376rem;
   color: var(--text-secondary);
-  padding: 0.4167vw 0.625vw;
+  padding: 0.5rem 0.75rem;
   background: rgba(255, 255, 255, 0.04);
-  border-left: 0.1042vw solid var(--card-color, var(--accent-violet));
+  border-left: 0.125rem solid var(--card-color, var(--accent-violet));
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  margin-top: 0.2083vw;
+  margin-top: 0.25rem;
 }
 
 .word-card__example {
-margin-top: 0.625vw;
-  padding: 0.5208vw 0.7292vw;
+margin-top: 0.75rem;
+  padding: 0.625rem 0.875rem;
   background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-sm);
-  font-size: 0.7813vw;
+  font-size: 0.9376rem;
 }
 
 .word-card__example-jp {
-font-size: 0.8854vw;
-  margin-bottom: 0.1042vw;
+font-size: 1.0625rem;
+  margin-bottom: 0.125rem;
   color: var(--text-primary);
 }
 
 .word-card__example-romaji {
 font-family: var(--font-mono);
-  font-size: 0.7292vw;
+  font-size: 0.875rem;
   color: var(--text-muted);
-  margin-bottom: 0.1042vw;
+  margin-bottom: 0.125rem;
 }
 
 .word-card__example-vn {
 color: var(--text-secondary);
-  font-size: 0.7813vw;
+  font-size: 0.9376rem;
   font-style: italic;
 }
 
@@ -593,7 +746,7 @@ opacity: 1;
 @keyframes slide-up {
 from {
 opacity: 0;
-    transform: translateY(1.5625vw) scale(0.95);
+    transform: translateY(1.875rem) scale(0.95);
 }
 
 to {
@@ -604,68 +757,68 @@ opacity: 1;
 
 .empty-state {
 text-align: center;
-  padding: 3.125vw 1.0417vw;
+  padding: 3.75rem 1.25rem;
   color: var(--text-muted);
 }
 
 .empty-state__icon {
-font-size: 2.5vw;
-  margin-bottom: 0.8333vw;
+font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .empty-state__text {
-font-size: 0.7813vw;
+font-size: 0.9376rem;
 }
 
 .score-display {
 display: flex;
   align-items: center;
-  gap: 0.625vw;
-  padding: 0.8333vw 1.0417vw;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
   background: var(--bg-card);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   border-radius: var(--radius-lg);
-  margin-bottom: 1.0417vw;
+  margin-bottom: 1.25rem;
   font-family: var(--font-mono);
 }
 
 .score-display__label {
 color: var(--text-muted);
-  font-size: 0.6771vw;
+  font-size: 0.8125rem;
 }
 
 .score-display__value {
-font-size: 1.0417vw;
+font-size: 1.25rem;
   font-weight: 700;
 }
 
 .score-display__bar {
 flex: 1;
-  height: 0.3125vw;
+  height: 0.375rem;
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 0.1563vw;
+  border-radius: 0.1876rem;
   overflow: hidden;
 }
 
 .score-display__fill {
 height: 100%;
-  border-radius: 0.1563vw;
+  border-radius: 0.1876rem;
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reset-btn {
 background: rgba(255, 255, 255, 0.06);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   color: var(--text-secondary);
-  padding: 0.4167vw 0.8333vw;
+  padding: 0.5rem 1rem;
   border-radius: var(--radius-md);
   cursor: pointer;
   font-family: var(--font-body);
-  font-size: 0.6771vw;
+  font-size: 0.8125rem;
   transition: all var(--transition);
   margin-left: auto;
   display: block;
-  margin-bottom: 0.8333vw;
+  margin-bottom: 1rem;
 }
 
 .reset-btn:hover {
@@ -678,70 +831,78 @@ background: rgba(255, 255, 255, 0.1);
    dùng gần hết màn hình, nếu không nội dung bị bó vào ~60% giữa trang. */
 :root {
 --container: 100%;
+  /* Khai báo ở đây thay vì đặt cứng `top` cho .tab-nav — một nguồn sự thật,
+     header cao bao nhiêu thì thanh tab dính đúng dưới đó. */
+  --header-h: 3.0469rem;
 }
 
+/* Cỡ chữ mobile hiệu chỉnh theo bề rộng ~375px (1vw≈3.75px) để dễ đọc.
+   px mục tiêu = vw × 3.75 (vd 4vw≈15px, 5.6vw≈21px). */
 body {
-font-size: 1.823vw;
+font-size: 0.9375rem;
+  line-height: 1.6;
 }
 
 .bg-orb--1 {
-width: 39.063vw;
-      height: 39.063vw;
-      top: -13.021vw;
-      left: -10.417vw;
+width: 14.0625rem; height: 14.0625rem; top: -4.2188rem; left: -3.75rem;
 }
 
 .bg-orb--2 {
-width: 32.552vw;
-      height: 32.552vw;
-      right: -10.417vw;
+width: 12.8906rem; height: 12.8906rem; right: -4.2188rem;
 }
 
 .bg-orb--3 {
-width: 26.042vw;
-      height: 26.042vw;
+width: 10.5469rem; height: 10.5469rem;
 }
 
 .header {
-padding: 0 2.083vw;
+padding: 0 0.9375rem;
 }
 
 .header__inner {
-height: 7.552vw;
-      padding: 0;
+height: 3.0469rem;
+  padding: 0;
 }
 
 .header__title {
-font-size: 2.214vw;
+font-size: 1.1719rem;
 }
 
 .header__subtitle {
-font-size: 1.432vw;
+font-size: 0.6797rem;
 }
 
 .header__flag {
-font-size: 2.865vw;
+font-size: 1.3125rem;
 }
 
 .header__badge {
-font-size: 1.302vw;
-      padding: 0.391vw 1.042vw;
+font-size: 0.6797rem;
+  padding: 0.1875rem 0.4688rem;
 }
 
 .tab-nav {
-padding: 0 1.563vw;
-      top: 7.552vw;
+padding: 0 0.5859rem;
 }
 
 .tab-nav__inner {
-gap: 0.26vw;
-      padding: 0.781vw 0;
+gap: 0.2344rem;
+  padding: 0.4219rem 0;
 }
 
+/* Trên điện thoại xếp dọc: icon trên, nhãn ngắn dưới. Trước đây chỉ còn mỗi
+   emoji nên 🈳/🔤/🔢 nhìn như nhau — không đoán được tab nào là tab nào. */
 .tab-btn {
-padding: 1.042vw 1.563vw;
-      font-size: 1.432vw;
-      border-radius: var(--radius-sm);
+flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.375rem 0.5rem;
+  min-width: 3.75rem;
+  min-height: 2.875rem;
+  border-radius: 0.625rem;
+}
+
+.tab-btn__icon {
+font-size: 1.125rem;
 }
 
 .tab-btn__label {
@@ -750,125 +911,219 @@ display: none;
 
 .tab-btn__short {
 display: block;
-      font-size: 2.604vw;
-      line-height: 1;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .main-content {
-padding: 2.344vw 1.823vw 9.375vw;
+padding: 0.9375rem 0.8203rem 5.625rem;
 }
 
 .section-title {
-font-size: 2.604vw;
+font-size: 1.3125rem;
 }
 
 .section-desc {
-font-size: 1.823vw;
+font-size: 0.8672rem;
 }
 
 .section-header {
-margin-bottom: 2.344vw;
+margin-bottom: 1.0547rem;
 }
 
 .filter-bar {
-padding: 1.563vw;
-      gap: 0.781vw;
+padding: 0.7031rem;
+  gap: 0.4688rem;
+  border-radius: 0.7031rem;
+}
+
+.filter-label {
+font-size: 0.7031rem;
 }
 
 .filter-btn {
-padding: 0.651vw 1.432vw;
-      font-size: 1.693vw;
+padding: 0.4219rem 0.7969rem;
+  font-size: 0.8203rem;
+  border-radius: 1.4063rem;
+  min-height: 1.9922rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.search-box {
+margin-bottom: 0.8203rem;
+}
+
+.search-box__icon {
+font-size: 0.9375rem;
+  left: 0.75rem;
 }
 
 .search-box input {
-font-size: 2.083vw;
-      /* tránh auto-zoom trên iOS */
-      padding: 1.302vw 1.823vw 1.302vw 4.948vw;
+font-size: 1.0078rem;
+  /* ≥16px để tránh iOS tự zoom khi focus */
+  padding: 0.7031rem 0.8203rem 0.7031rem 2.2266rem;
+  border-radius: 0.6563rem;
 }
 
 .cards-grid {
 grid-template-columns: 1fr;
-      gap: 1.563vw;
+  gap: 0.7031rem;
 }
 
 .word-card {
-padding: 2.083vw;
+padding: 0.9844rem;
+  border-radius: 0.75rem;
 }
 
 .word-card__jp {
-font-size: 3.125vw;
+font-size: 1.4531rem;
+}
+
+.word-card__kanji {
+font-size: 0.7969rem;
+  min-height: 1.0547rem;
+}
+
+.word-card__romaji {
+font-size: 0.8438rem;
 }
 
 .word-card__meaning {
-font-size: 2.083vw;
+font-size: 0.9844rem;
+}
+
+.word-card__note {
+font-size: 0.8203rem;
+  padding: 0.4688rem 0.7031rem;
+}
+
+.word-card__type-badge {
+font-size: 0.7031rem;
+}
+
+.word-card__example {
+padding: 0.6094rem 0.75rem;
 }
 
 .word-card__example-jp {
-font-size: 1.953vw;
+font-size: 0.9375rem;
+}
+
+.word-card__example-romaji {
+font-size: 0.7734rem;
+}
+
+.word-card__example-vn {
+font-size: 0.7969rem;
 }
 
 .score-display {
 flex-wrap: wrap;
-      gap: 1.042vw;
-      padding: 1.563vw 1.823vw;
+  gap: 0.5859rem;
+  padding: 0.8203rem 0.9375rem;
+}
+
+.score-display__label {
+font-size: 0.7031rem;
 }
 
 .score-display__value {
-font-size: 2.214vw;
+font-size: 1.1719rem;
 }
 
 .score-display__bar {
 min-width: 100%;
-      order: 3;
+  order: 3;
+  height: 0.3281rem;
 }
 
 .empty-state {
-padding: 5.208vw 2.083vw;
+padding: 2.8125rem 0.9375rem;
 }
 
 .empty-state__icon {
-font-size: 5.208vw;
+font-size: 2.8125rem;
 }
 
+.empty-state__text {
+font-size: 0.8906rem;
+}
+
+/* `width: 100%` cộng với lề ngang mà nơi dùng đặt thêm (vd .exm-resetall lề
+   12px) là 100% + 24px — nút tràn khỏi thẻ cha và bị cắt. Khối `width: auto`
+   tự lấp đầy phần còn lại SAU khi trừ lề, nên luôn vừa. */
 .reset-btn {
-padding: 1.042vw 1.823vw;
-      font-size: 1.563vw;
-      width: 100%;
-      text-align: center;
+padding: 0.6563rem 0.9375rem;
+  font-size: 0.8906rem;
+  width: auto;
+  text-align: center;
 }
 
 .footer {
-padding: 2.344vw 2.083vw;
-      font-size: 1.563vw;
-      margin-top: 3.646vw;
+padding: 1.1719rem 0.9375rem;
+  font-size: 0.75rem;
+  margin-top: 1.875rem;
 }
 }
 
-@media (max-width: 390px) {
+/* Máy rất hẹp: chỉ ẩn badge & siết nhẹ tab — KHÔNG thu nhỏ chữ đọc */
+@media (max-width: 360px) {
+.header__badge {
+display: none;
+}
+
+.tab-btn {
+padding: 0.4219rem 0.6094rem;
+  min-width: 3.375rem;
+}
+}
+
+/* Màn hình thấp (cửa sổ bị kéo dẹt, laptop 768p chia đôi màn): header + thanh
+   tab đang ăn mất ~27% chiều cao. Nén chúng lại để nội dung còn chỗ thở.
+   Đặt TRƯỚC khối (pointer: coarse) để thiết bị cảm ứng vẫn giữ vùng chạm 44px. */
+@media (max-height: 34rem) {
+:root {
+--header-h: 2.75rem;
+}
+
+.header__subtitle {
+display: none;
+}
+
 .header__title {
-font-size: 1.953vw;
+font-size: 1.0625rem;
+}
+
+.header__flag {
+font-size: 1.25rem;
 }
 
 .header__badge {
 display: none;
-      /* ẩn badge nếu quá chật */
+}
+
+.tab-nav__inner {
+padding: 0.25rem 0;
+  row-gap: 0.25rem;
 }
 
 .tab-btn {
-padding: 0.781vw 1.042vw;
-      font-size: 1.302vw;
+flex-direction: row;
+  gap: 0.3125rem;
+  min-width: 0;
+  min-height: 2.125rem;
+  padding: 0.3125rem 0.625rem;
+}
+
+.tab-btn__short,
+  .tab-btn__label {
+font-size: 0.75rem;
 }
 
 .main-content {
-padding: 1.823vw 1.563vw 9.375vw;
-}
-
-.word-card__jp {
-font-size: 2.604vw;
-}
-
-.section-title {
-font-size: 2.344vw;
+padding-top: 1rem;
 }
 }
 
@@ -898,18 +1153,85 @@ transform: none;
   .filter-btn,
   .choice-btn,
   .flashcard-actions button {
-min-height: 2.2917vw;
+min-height: 2.75rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Nhóm nút chữ đang cao 25–35px — dưới mức bấm thoải mái bằng ngón tay. Nới
+   bằng padding dọc chứ không phải min-height: giữ nguyên display/width nên
+   không kéo lệch bố cục sẵn có (nút `block` vẫn tràn ngang như cũ).
+
+   Tên class lặp hai lần là cố ý: CSS của từng tab được import trong chính
+   component nên nạp SAU base.css, `padding` viết tắt ở đó sẽ đè mất
+   `padding-block` này. Nhân đôi để lên 0,2,0 và thắng bất kể thứ tự nạp. */
+
+.hm-chip.hm-chip,
+  .hm-goal__btn.hm-goal__btn,
+  .hm-card__btn.hm-card__btn,
+  .voc-viewbtn.voc-viewbtn,
+  .k-markbtn.k-markbtn,
+  .k-flashbtn.k-flashbtn,
+  .k-clearbtn.k-clearbtn,
+  .kana-toolbtn.kana-toolbtn,
+  .ex-navbtn.ex-navbtn,
+  .spx-check.spx-check,
+  .pgx-mini.pgx-mini {
+padding-block: 0.625rem;
+}
+
+/* Nút icon chỉ 17–24px thì gần như không bấm trúng. Phủ một vùng chạm trong
+   suốt 2.5rem lên trên, KHÔNG đổi kích thước nhìn thấy của nút. */
+
+.wc-iconbtn,
+  .wc-bookmark,
+  .flash-bookmark,
+  .k-card__mark,
+  .sec-timer__btn,
+  .spk--sm,
+  .spk--md {
+position: relative;
+}
+
+/* .k-card__mark vốn đã position:absolute — đừng ghi đè, chỉ cần vùng phủ. */
+
+.k-card__mark {
+position: absolute;
+}
+
+.wc-iconbtn::after,
+  .wc-bookmark::after,
+  .flash-bookmark::after,
+  .k-card__mark::after,
+  .sec-timer__btn::after,
+  .spk--sm::after,
+  .spk--md::after {
+content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    transform: translate(-50%, -50%);
+}
+
+/* Hai nút này nằm sát góc thẻ, mà thẻ thì overflow:hidden — vùng phủ 2.5rem
+   sẽ thò ra ngoài và bị cắt mất một nửa. Thu về 2rem để nằm trọn trong thẻ. */
+
+.wc-bookmark::after,
+  .flash-bookmark::after,
+  .k-card__mark::after {
+width: 2rem;
+    height: 2rem;
+}
+
 /* Tăng vùng chạm cho close button */
 
 .kanji-modal__close {
-width: 2.0833vw;
-    height: 2.0833vw;
-    font-size: 0.9375vw;
+width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.125rem;
 }
 
 /* Giảm animation phức tạp để tiết kiệm pin */
@@ -922,23 +1244,23 @@ animation-duration: 30s;
 
 @supports (padding: env(safe-area-inset-top)) {
 .header {
-padding-left: max(0.8333vw, env(safe-area-inset-left));
-    padding-right: max(0.8333vw, env(safe-area-inset-right));
+padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
 }
 
 .tab-nav {
-padding-left: max(0.625vw, env(safe-area-inset-left));
-    padding-right: max(0.625vw, env(safe-area-inset-right));
+padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
 }
 
 .main-content {
-padding-left: max(0.7292vw, env(safe-area-inset-left));
-    padding-right: max(0.7292vw, env(safe-area-inset-right));
-    padding-bottom: max(3.75vw, calc(env(safe-area-inset-bottom) + 3.125vw));
+padding-left: max(0.875rem, env(safe-area-inset-left));
+    padding-right: max(0.875rem, env(safe-area-inset-right));
+    padding-bottom: max(4.5rem, calc(env(safe-area-inset-bottom) + 3.75rem));
 }
 
 .footer {
-padding-bottom: max(0.9375vw, env(safe-area-inset-bottom));
+padding-bottom: max(1.125rem, env(safe-area-inset-bottom));
 }
 }
 
@@ -951,19 +1273,19 @@ align-items: center;
 }
 
 .gap-2 {
-gap: 0.4167vw;
+gap: 0.5rem;
 }
 
 .gap-3 {
-gap: 0.625vw;
+gap: 0.75rem;
 }
 
 .mt-1 {
-margin-top: 0.2083vw;
+margin-top: 0.25rem;
 }
 
 .mt-2 {
-margin-top: 0.4167vw;
+margin-top: 0.5rem;
 }
 
 .text-muted {
@@ -971,7 +1293,7 @@ color: var(--text-muted);
 }
 
 .text-sm {
-font-size: 0.6771vw;
+font-size: 0.8125rem;
 }
 
 .font-mono {
@@ -980,11 +1302,11 @@ font-family: var(--font-mono);
 
 .footer {
 text-align: center;
-  padding: 1.25vw;
+  padding: 1.5rem;
   color: var(--text-muted);
-  font-size: 0.6771vw;
-  border-top: 0.0521vw solid var(--bg-border);
-  margin-top: 2.0833vw;
+  font-size: 0.8125rem;
+  border-top: 0.0625rem solid var(--bg-border);
+  margin-top: 2.5rem;
   position: relative;
   z-index: 1;
 }

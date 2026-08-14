@@ -1,5 +1,9 @@
 import { useState } from "react";
 import grammarData from "../data/grammar.json";
+import { getStats } from "../lib/srs";
+import { quizSetsFor, buildQuiz } from "../lib/quizgen";
+import QuizHub from "./common/QuizHub";
+import SpeakButton from "./common/SpeakButton";
 import "../styles/tabs/grammar.css";
 
 // Highlights specific text within a sentence
@@ -95,6 +99,7 @@ function ParticlesSection({ category }) {
                       highlights={[item.particle]}
                       color={item.color}
                     />
+                    <SpeakButton text={ex.jp.replace(/<|>/g, "")} size="sm" />
                   </div>
                   <div className="particle-example__romaji">
                     {ex.romaji.replace(/<|>/g, "")}
@@ -469,8 +474,52 @@ function CountersSection({ category }) {
   );
 }
 
-export default function GrammarTab() {
-  const [activeSection, setActiveSection] = useState("particles");
+/** Tổng quan luyện tập ngữ pháp — số câu sinh được và tiến độ SRS. */
+function GrammarPracticeBar({ open, onToggle }) {
+  const sets = quizSetsFor("grammar");
+  const totalQ = sets.reduce((a, s) => a + buildQuiz(s.id).length, 0);
+  const allIds = sets.flatMap((s) => buildQuiz(s.id).map((q) => q.id));
+  const stats = getStats("grammar", allIds);
+
+  return (
+    <div className="pbar">
+      <div className="pbar__info">
+        <div className="pbar__title">🎯 Luyện tập ngữ pháp</div>
+        <div className="pbar__sub">
+          {totalQ} câu được sinh tự động từ chính dữ liệu trong tab này — điền trợ từ, điền mẫu câu,
+          nhận dạng &amp; gõ dạng chia động từ/tính từ.
+        </div>
+        <div className="pbar__stats">
+          <span style={{ color: "#34d399" }}>✅ {stats.mastered} thuộc</span>
+          <span style={{ color: "#facc15" }}>📚 {stats.learning} đang học</span>
+          {stats.due > 0 && <span style={{ color: "#22d3ee" }}>📅 {stats.due} tới hạn</span>}
+        </div>
+      </div>
+      <button className={`pbar__btn ${open ? "is-on" : ""}`} onClick={onToggle}>
+        {open ? "✕ Đóng" : "Bắt đầu luyện →"}
+      </button>
+    </div>
+  );
+}
+
+/** Tìm phần chứa mục khớp từ khoá — dùng khi mở từ tìm kiếm toàn cục. */
+function sectionOf(term) {
+  if (!term) return null;
+  const t = String(term).toLowerCase();
+  for (const cat of grammarData.categories) {
+    const hit = cat.items.some((i) =>
+      [i.particle, i.pattern, i.word, i.title].some((v) => v && String(v).toLowerCase() === t),
+    );
+    if (hit) return cat.id;
+  }
+  return null;
+}
+
+export default function GrammarTab({ initialSearch }) {
+  const [activeSection, setActiveSection] = useState(
+    () => sectionOf(initialSearch) || "particles",
+  );
+  const [showQuiz, setShowQuiz] = useState(false);
 
   const sectionMap = {
     particles: (cat) => <ParticlesSection key={cat.id} category={cat} />,
@@ -492,9 +541,12 @@ export default function GrammarTab() {
       <div className="section-header">
         <h2 className="section-title">⚙️ Ngữ pháp N5</h2>
         <p className="section-desc">
-          Trợ từ, nhóm động từ, cấu trúc câu quan trọng
+          Trợ từ, nhóm động từ, cấu trúc câu quan trọng — và luyện tập ngay trên chính dữ liệu này
         </p>
       </div>
+
+      <GrammarPracticeBar open={showQuiz} onToggle={() => setShowQuiz((v) => !v)} />
+      {showQuiz && <QuizHub tab="grammar" color="#f472b6" onClose={() => setShowQuiz(false)} />}
 
       {/* Section selector */}
       <div className="filter-bar gs-section-nav">

@@ -2,7 +2,36 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import kanaData from "../data/kana.json";
 import { recordReview } from "../lib/progress";
 import { readJSON, writeJSON } from "../lib/storage";
+import { rateCard, getCard, getStatus, getStats } from "../lib/srs";
+import { kanaPool } from "../lib/session";
+import SpeakButton from "./common/SpeakButton";
 import "../styles/tabs/kana.css";
+import "../styles/tabs/kana-extra.css";
+
+/**
+ * Ghi kết quả một chữ kana vào SRS (deck "kana").
+ * Trước đây quiz kana chỉ cộng streak — độ thuộc từng chữ reset mỗi phiên;
+ * giờ mỗi chữ là một thẻ có lịch ôn giãn cách như từ vựng và kanji.
+ */
+function gradeKana(char, ok) {
+  if (char) rateCard("kana", char, ok ? "remember" : "forget");
+  recordReview(1, ok);
+}
+
+/** Một ô trong bảng chữ: kèm nút phát âm và trạng thái SRS. */
+function KanaCell({ c, delay = 0 }) {
+  if (!c.char) return <div className="kana-cell kana-cell--empty" />;
+  const status = getStatus(getCard("kana", c.char));
+  return (
+    <div className={`kana-cell kn-${status}`} style={{ animationDelay: `${delay}ms` }}>
+      <div className="kana-cell__char">{c.char}</div>
+      <div className="kana-cell__romaji">{c.romaji}</div>
+      <div className="kn-cell__tools">
+        <SpeakButton text={c.char} size="sm" />
+      </div>
+    </div>
+  );
+}
 
 const QUIZ_CFG_KEY = "kana:quiz:cfg";
 
@@ -81,11 +110,25 @@ export default function KanaTab() {
   const extended = kanaSet.extended || [];
   const modeColor = mode === "hiragana" ? "#22d3ee" : "#a78bfa";
 
+  // Độ thuộc kana nay được lưu trong SRS ⇒ hiện được ngay trên đầu tab.
+  const kanaStats = useMemo(
+    () => getStats("kana", kanaPool().map((c) => c.char)),
+    [quizMode, fillMode, mode],
+  );
+
   return (
     <div>
       <div className="section-header">
         <h2 className="section-title">🔤 Bảng chữ cái</h2>
-        <p className="section-desc">Hiragana & Katakana — nền tảng đầu tiên cần thuộc lòng</p>
+        <p className="section-desc">
+          Hiragana &amp; Katakana — nền tảng đầu tiên cần thuộc lòng
+          <span className="voc-stat-inline">
+            <span style={{ color: "#34d399" }}>✅ {kanaStats.mastered} thuộc</span>
+            <span style={{ color: "#facc15" }}>📚 {kanaStats.learning} đang học</span>
+            {kanaStats.due > 0 && <span style={{ color: "#22d3ee" }}>📅 {kanaStats.due} tới hạn</span>}
+            <span style={{ color: "#8b90a0" }}>/ {kanaStats.total} chữ</span>
+          </span>
+        </p>
       </div>
 
       {/* Mode Selector */}
@@ -167,18 +210,7 @@ export default function KanaTab() {
             </div>
             <div className="kana-grid">
               {basicChars.map((c, i) => (
-                <div
-                  key={i}
-                  className={c.char ? "kana-cell" : "kana-cell kana-cell--empty"}
-                  style={{ animationDelay: `${i * 20}ms` }}
-                >
-                  {c.char && (
-                    <>
-                      <div className="kana-cell__char">{c.char}</div>
-                      <div className="kana-cell__romaji">{c.romaji}</div>
-                    </>
-                  )}
-                </div>
+                <KanaCell key={i} c={c} delay={i * 20} />
               ))}
             </div>
           </div>
@@ -194,10 +226,7 @@ export default function KanaTab() {
               </div>
               <div className="kana-grid">
                 {dakuten.map((c, i) => (
-                  <div key={i} className="kana-cell" style={{ animationDelay: `${i * 20}ms` }}>
-                    <div className="kana-cell__char">{c.char}</div>
-                    <div className="kana-cell__romaji">{c.romaji}</div>
-                  </div>
+                  <KanaCell key={i} c={c} delay={i * 20} />
                 ))}
               </div>
             </div>
@@ -214,10 +243,7 @@ export default function KanaTab() {
               </div>
               <div className="kana-grid">
                 {yoon.map((c, i) => (
-                  <div key={i} className="kana-cell" style={{ animationDelay: `${i * 15}ms` }}>
-                    <div className="kana-cell__char">{c.char}</div>
-                    <div className="kana-cell__romaji">{c.romaji}</div>
-                  </div>
+                  <KanaCell key={i} c={c} delay={i * 15} />
                 ))}
               </div>
             </div>
@@ -234,10 +260,7 @@ export default function KanaTab() {
               </div>
               <div className="kana-grid">
                 {extended.map((c, i) => (
-                  <div key={i} className="kana-cell" style={{ animationDelay: `${i * 15}ms` }}>
-                    <div className="kana-cell__char">{c.char}</div>
-                    <div className="kana-cell__romaji">{c.romaji}</div>
-                  </div>
+                  <KanaCell key={i} c={c} delay={i * 15} />
                 ))}
               </div>
             </div>
@@ -324,7 +347,7 @@ function QuizPanel({ mode, color }) {
 
   const grade = (ok) => {
     if (!card) return;
-    recordReview(1);
+    gradeKana(card.char, ok);
     setScore((s) => ({ right: s.right + (ok ? 1 : 0), wrong: s.wrong + (ok ? 0 : 1) }));
     setAttempts((a) => a + 1);
     const ns = ok ? streak + 1 : 0;
@@ -400,18 +423,27 @@ function QuizPanel({ mode, color }) {
           </button>
         </div>
 
-        <div className="qz-config__label">Chọn hàng chữ để học</div>
+        <div className="qz-config__label">
+          Chọn hàng chữ để học
+          <span className="qz-config__hint">· số dưới mỗi hàng = đã thuộc/tổng</span>
+        </div>
         <div className="qz-chips">
-          {groups.map((g) => (
-            <button
-              key={g.key}
-              className={`qz-chip ${selected.has(g.key) ? "is-on" : ""} ${g.dakuten ? "is-dak" : ""}`}
-              onClick={() => toggleRow(g.key)}
-              title={g.chars.map((c) => c.romaji).join(" · ")}
-            >
-              {g.chars.map((c) => c.char).join("")}
-            </button>
-          ))}
+          {groups.map((g) => {
+            const s = getStats("kana", g.chars.map((c) => c.char));
+            return (
+              <button
+                key={g.key}
+                className={`qz-chip ${selected.has(g.key) ? "is-on" : ""} ${g.dakuten ? "is-dak" : ""}`}
+                onClick={() => toggleRow(g.key)}
+                title={g.chars.map((c) => c.romaji).join(" · ")}
+              >
+                {g.chars.map((c) => c.char).join("")}
+                <span className={`qz-chip__prog ${s.mastered === s.total ? "is-done" : ""}`}>
+                  {s.mastered}/{s.total}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
         <div className="qz-config__label">Chế độ</div>
@@ -517,7 +549,10 @@ function QuizPanel({ mode, color }) {
         </button>
       ) : (
         <div className="kana-quiz__result">
-          <div className="kana-quiz__answer">{card?.romaji}</div>
+          <div className="kana-quiz__answer">
+            {card?.romaji}
+            <SpeakButton text={card?.char} />
+          </div>
           <div className="qz-grade">
             <button className="qz-grade__btn is-wrong" onClick={() => grade(false)}>
               ✗ Chưa thuộc <kbd>←</kbd>
@@ -582,7 +617,7 @@ function FillRomaji({ chars, mode, color }) {
       correct: s.correct + (ok ? 1 : 0),
       wrong: s.wrong + (ok ? 0 : 1),
     }));
-    recordReview(1);
+    gradeKana(cur.char, ok);
     if (ok) setTimeout(goNext, 650); // đúng → tự chuyển
   };
 

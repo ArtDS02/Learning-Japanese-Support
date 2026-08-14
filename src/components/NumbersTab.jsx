@@ -1,6 +1,10 @@
 import { useState } from "react";
 import data from "../data/numbers.json";
 import { kanaToRomaji } from "../lib/romaji";
+import { getStats } from "../lib/srs";
+import { quizSetsFor, buildQuiz } from "../lib/quizgen";
+import QuizHub from "./common/QuizHub";
+import SpeakButton from "./common/SpeakButton";
 import "../styles/tabs/numbers.css";
 
 const SECTIONS = [
@@ -54,8 +58,37 @@ const TIME_EXPR = [
   { jp: "毎年", hira: "まいとし", vn: "mỗi năm" },
 ];
 
+/** Thanh luyện tập số đếm — sinh câu từ chính bảng cách đọc trong tab này. */
+function NumbersPracticeBar({ open, onToggle }) {
+  const sets = quizSetsFor("numbers");
+  const totalQ = sets.reduce((a, s) => a + buildQuiz(s.id).length, 0);
+  const allIds = sets.flatMap((s) => buildQuiz(s.id).map((q) => q.id));
+  const stats = getStats("numbers", allIds);
+
+  return (
+    <div className="pbar pbar--yellow">
+      <div className="pbar__info">
+        <div className="pbar__title">🎯 Luyện cách đọc</div>
+        <div className="pbar__sub">
+          {totalQ} câu sinh từ bảng bộ đếm, giờ, tháng, ngày và thứ — bao gồm toàn bộ các trường hợp
+          biến âm bất quy tắc (⚠️).
+        </div>
+        <div className="pbar__stats">
+          <span style={{ color: "#34d399" }}>✅ {stats.mastered} thuộc</span>
+          <span style={{ color: "#facc15" }}>📚 {stats.learning} đang học</span>
+          {stats.due > 0 && <span style={{ color: "#22d3ee" }}>📅 {stats.due} tới hạn</span>}
+        </div>
+      </div>
+      <button className={`pbar__btn ${open ? "is-on" : ""}`} onClick={onToggle}>
+        {open ? "✕ Đóng" : "Bắt đầu luyện →"}
+      </button>
+    </div>
+  );
+}
+
 export default function NumbersTab() {
   const [section, setSection] = useState("numbers");
+  const [showQuiz, setShowQuiz] = useState(false);
 
   return (
     <div>
@@ -63,6 +96,9 @@ export default function NumbersTab() {
         <h2 className="section-title">🔢 Số đếm & Bộ đếm</h2>
         <p className="section-desc">Số đếm, bộ đếm, giờ, ngày tháng và quy tắc đọc số</p>
       </div>
+
+      <NumbersPracticeBar open={showQuiz} onToggle={() => setShowQuiz((v) => !v)} />
+      {showQuiz && <QuizHub tab="numbers" color="#facc15" onClose={() => setShowQuiz(false)} />}
 
       <div className="filter-bar">
         <span className="filter-label">Phần:</span>
@@ -142,6 +178,9 @@ export default function NumbersTab() {
                         <div className="num-reading__n">{r.n}</div>
                         <div className="num-reading__read">{read}</div>
                         <div className="num-reading__romaji">{kanaToRomaji(read)}</div>
+                        <div className="num-reading__spk">
+                          <SpeakButton text={read} size="sm" />
+                        </div>
                       </div>
                     );
                   })}
@@ -179,7 +218,10 @@ export default function NumbersTab() {
             <div className="num-grid num-grid--ex">
               {TIME_PHRASES.map((ex, i) => (
                 <div key={i} className="num-ex">
-                  <div className="num-ex__jp">{ex.jp}</div>
+                  <div className="num-ex__jp">
+                    {ex.jp}
+                    <SpeakButton text={ex.read} size="sm" />
+                  </div>
                   <div className="num-ex__read">{ex.read}</div>
                   <div className="num-ex__vn">{ex.vn}</div>
                 </div>

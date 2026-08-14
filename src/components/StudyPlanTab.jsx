@@ -1,16 +1,136 @@
+import { useState, useMemo } from "react";
 import data from "../data/tips-exercises.json";
+import { readJSON, writeJSON } from "../lib/storage";
+import { deckPoolStats } from "../lib/session";
+import { loadHistory } from "../lib/examStore";
+import { lessonsOverview } from "../lib/lessons";
+import { getStreak, totalReviews } from "../lib/progress";
 import "../styles/tabs/studyplan.css";
+import "../styles/tabs/studyplan-extra.css";
 
 const { studyPlan } = data;
+const CHECK_KEY = "studyplan_checks_v1";
 
-export default function StudyPlanTab() {
+/**
+ * Các mốc lấy TỪ TIẾN ĐỘ THẬT (không phải tự khai).
+ * Lộ trình 12 tuần bên dưới vẫn cần người học tự tick vì data không map tuần →
+ * nội dung cụ thể; nhưng 4 mốc này thì đo được nên đo thẳng từ SRS.
+ */
+function useMilestones() {
+  return useMemo(() => {
+    const kana = deckPoolStats("kana");
+    const vocab = deckPoolStats("vocab");
+    const kanji = deckPoolStats("kanji");
+    const history = loadHistory();
+    const bestScore = history.reduce((a, h) => Math.max(a, h.score || 0), 0);
+    const passed = history.filter((h) => h.pass).length;
+
+    return [
+      {
+        id: "kana",
+        icon: "🔤",
+        label: "Thuộc bảng chữ cái",
+        color: "#34d399",
+        done: kana.mastered,
+        total: kana.total,
+        note: "Nền tảng — nên xong trong 2 tuần đầu",
+      },
+      {
+        id: "vocab",
+        icon: "📖",
+        label: "Từ vựng đã thuộc",
+        color: "#22d3ee",
+        done: vocab.mastered,
+        total: vocab.total,
+        note: "N5 thật cần ~800 từ; app đang có bộ cốt lõi",
+      },
+      {
+        id: "kanji",
+        icon: "🈳",
+        label: "Kanji đã thuộc",
+        color: "#a78bfa",
+        done: kanji.mastered,
+        total: kanji.total,
+        note: "N5 yêu cầu ~100 chữ",
+      },
+      {
+        id: "exam",
+        icon: "🎌",
+        label: "Đề thi thử đã đạt",
+        color: "#f97316",
+        done: passed,
+        total: Math.max(6, history.length || 6),
+        note: bestScore
+          ? `Điểm cao nhất: ${bestScore}/180 (cần ≥ 80)`
+          : "Chưa thi thử lần nào",
+      },
+    ];
+  }, []);
+}
+
+export default function StudyPlanTab({ onGoTo }) {
+  const [checks, setChecks] = useState(() => readJSON(CHECK_KEY, {}));
+  const milestones = useMilestones();
+  const lessons = lessonsOverview();
+  const streak = getStreak();
+  const reviews = totalReviews();
+
+  const toggle = (i) => {
+    const next = { ...checks, [i]: !checks[i] };
+    setChecks(next);
+    writeJSON(CHECK_KEY, next);
+  };
+
+  const checkedCount = studyPlan.schedule.filter((_, i) => checks[i]).length;
+
   return (
     <div>
       <div className="section-header">
         <h2 className="section-title">🗓️ Lộ trình & Phương pháp</h2>
         <p className="section-desc">
-          Kế hoạch học 3 tháng + phương pháp học hiệu quả nhất
+          Kế hoạch học 3 tháng + phương pháp học hiệu quả nhất — nay gắn với tiến độ thật của bạn
         </p>
+      </div>
+
+      {/* ── Mốc đo được từ tiến độ thật ── */}
+      <div className="spx-milestones">
+        <div className="spx-head">
+          <h3 className="spx-head__title">🎯 Bạn đang ở đâu (số liệu thật từ SRS)</h3>
+          <span className="spx-head__meta">
+            🔥 {streak} ngày liên tiếp · {reviews} lượt ôn · 📚 {lessons.done}/{lessons.total} bài từ vựng xong
+          </span>
+        </div>
+        <div className="spx-grid">
+          {milestones.map((m) => {
+            const pct = m.total ? Math.round((m.done / m.total) * 100) : 0;
+            return (
+              <div key={m.id} className="spx-card" style={{ "--c": m.color }}>
+                <div className="spx-card__top">
+                  <span className="spx-card__icon">{m.icon}</span>
+                  <span className="spx-card__pct">{pct}%</span>
+                </div>
+                <div className="spx-card__label">{m.label}</div>
+                <div className="spx-card__nums">
+                  {m.done}<span>/{m.total}</span>
+                </div>
+                <div className="spx-card__track">
+                  <div className="spx-card__fill" style={{ width: `${pct}%` }} />
+                </div>
+                <div className="spx-card__note">{m.note}</div>
+              </div>
+            );
+          })}
+        </div>
+        {onGoTo && (
+          <div className="spx-cta">
+            <button className="spx-cta__btn" onClick={() => onGoTo("home")}>
+              ▶ Mở phiên học hôm nay
+            </button>
+            <button className="spx-cta__btn spx-cta__btn--ghost" onClick={() => onGoTo("exercises")}>
+              🎌 Thi thử một đề
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Methods */}
@@ -51,7 +171,8 @@ export default function StudyPlanTab() {
           📅 Lộ trình 3 tháng (12 tuần)
         </h3>
         <p className="sp-schedule-sub">
-          Bắt đầu từ con số 0, đủ để thi N5 trong 12 tuần nếu học đều đặn
+          Bắt đầu từ con số 0, đủ để thi N5 trong 12 tuần nếu học đều đặn ·
+          <strong> đã đánh dấu xong {checkedCount}/{studyPlan.schedule.length} giai đoạn</strong>
         </p>
       </div>
 
@@ -60,7 +181,7 @@ export default function StudyPlanTab() {
           {studyPlan.schedule.map((item, i) => (
             <div
               key={i}
-              className="schedule-item"
+              className={`schedule-item ${checks[i] ? "spx-done" : ""}`}
               style={{ "--c": item.color, animationDelay: `${i * 60}ms` }}
             >
               <div className="schedule-item__dot" />
@@ -70,6 +191,14 @@ export default function StudyPlanTab() {
                 <div className="schedule-item__goal">{item.goal}</div>
                 <div className="schedule-item__daily">⏱ {item.daily}</div>
               </div>
+              <button
+                className={`spx-check ${checks[i] ? "is-on" : ""}`}
+                onClick={() => toggle(i)}
+                title={checks[i] ? "Bỏ đánh dấu hoàn thành" : "Đánh dấu đã hoàn thành"}
+                aria-pressed={!!checks[i]}
+              >
+                {checks[i] ? "✓ Xong" : "Đánh dấu xong"}
+              </button>
             </div>
           ))}
         </div>

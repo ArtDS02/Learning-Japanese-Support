@@ -1,0 +1,214 @@
+/* ============================================================
+   JLPT N5 App — kanji (bổ sung)
+   Trạng thái SRS trên thẻ · tab tập viết · chấm SRS trong modal ·
+   liên kết chéo sang từ vựng · điều hướng modal
+   Import SAU kanji.css — chỉ nhắm class mới.
+   ============================================================ */
+
+/* (.kj-act đã bỏ: màu của từng ô hành động nay do `--c` đặt tại nơi dùng.) */
+
+/* Viền trái theo trạng thái SRS để quét nhanh cả lưới */
+.kanji-card.kj-learning {
+  box-shadow: inset 0.1875rem 0 0 var(--accent-yellow);
+}
+
+.kanji-card.kj-mastered {
+  box-shadow: inset 0.1875rem 0 0 var(--accent-green);
+}
+
+.k-card__learning {
+  position: absolute;
+  top: 0.375rem;
+  left: 0.375rem;
+  font-size: 0.6875rem;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+/* ── Modal: vị trí & trạng thái ── */
+
+.km-pos {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.km-srs {
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  border: 0.0625rem solid var(--bg-border);
+  white-space: nowrap;
+}
+
+.km-srs--new {
+  color: var(--accent-blue);
+}
+
+.km-srs--learning {
+  color: var(--accent-yellow);
+}
+
+.km-srs--mastered {
+  color: var(--accent-green);
+}
+
+/* ── Tab nét mẫu / tập viết ── */
+
+.km-tabs {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: 999px;
+  padding: 0.1875rem;
+  margin: 0.875rem auto 0;
+  width: fit-content;
+}
+
+.km-tab {
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  padding: 0.375rem 0.875rem;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.km-tab.is-on {
+  background: var(--c);
+  color: #0a0b0f;
+  font-weight: 700;
+}
+
+/* ── Từ vựng liên quan ── */
+
+.km-related {
+  margin-top: 1rem;
+}
+
+.km-related__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.km-related__item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3125rem;
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.5rem;
+}
+
+.km-related__item strong {
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.km-related__item em {
+  font-style: normal;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+/* ── Chấm SRS trong modal ── */
+
+.km-rate {
+  margin-top: 1.125rem;
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0.875rem;
+}
+
+.km-rate__label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.km-rate__btns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.375rem;
+}
+
+.km-rate__btn {
+  background: var(--bg-card);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.5rem 0.25rem;
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.km-rate__btn.is-forget:hover {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+}
+
+.km-rate__btn.is-vague:hover {
+  border-color: var(--accent-yellow);
+  color: var(--accent-yellow);
+}
+
+.km-rate__btn.is-remember:hover {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
+/* ── Điều hướng modal ── */
+
+.km-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.875rem;
+  padding-top: 0.875rem;
+  border-top: 0.0625rem solid var(--bg-border);
+}
+
+.km-navbtn {
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+}
+
+.km-navbtn:hover:not(:disabled) {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.km-navbtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.km-nav__hint {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .km-nav__hint {
+    display: none;
+  }
+}

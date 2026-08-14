@@ -5,79 +5,70 @@
 
 @media (max-width: 768px) {
 .flashcard-wrapper {
-gap: 1.823vw;
+gap: 0.4273rem;
 }
 
 .flashcard {
-min-height: 33.854vw;
-      padding: 3.125vw 2.344vw;
-      border-radius: 2.344vw;
+min-height: 7.9345rem;
+      padding: 0.7324rem 0.5494rem;
+      border-radius: 0.5494rem;
 }
 
 .flashcard-jp {
-font-size: 4.948vw;
+font-size: 1.1597rem;
 }
 
 .flashcard-kanji {
-font-size: 2.604vw;
+font-size: 0.6103rem;
 }
 
 .flashcard-romaji {
-font-size: 1.953vw;
+font-size: 0.4577rem;
 }
 
 .flashcard-meaning {
-font-size: 3.646vw;
+font-size: 0.8545rem;
 }
 
 .flashcard-hint {
-margin-top: 3.125vw;
-      font-size: 1.563vw;
+margin-top: 0.7324rem;
+      font-size: 0.3663rem;
 }
 
 .flashcard-actions {
 flex-wrap: wrap;
       justify-content: center;
-      gap: 1.042vw;
+      gap: 0.2442rem;
 }
 
 .flashcard-actions button {
-padding: 1.302vw 2.604vw;
-      font-size: 1.823vw;
+padding: 0.3052rem 0.6103rem;
+      font-size: 0.4273rem;
       flex: 1;
-      min-width: 15.625vw;
+      min-width: 3.6621rem;
 }
 }
 
-@media (max-width: 390px) {
-.flashcard-jp {
-font-size: 4.167vw;
-}
-
-.flashcard-meaning {
-font-size: 3.125vw;
-}
-}
 
 .flashcard-wrapper {
 display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.0417vw;
+  gap: 1.25rem;
 }
 
 .flashcard {
 position: relative;
-  width: min(100%, 27.0833vw);
-  min-height: 16.6667vw;
+  width: min(100%, 32.5rem);
+  min-height: 20rem;
 
-  border-radius: 1.25vw;
-  padding: 1.6667vw;
+  border-radius: 1.5rem;
+  padding: 2rem;
 
   cursor: pointer;
 
   background: #111827;
-  border: 0.0521vw solid rgba(255, 255, 255, 0.08);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.08);
 
   display: flex;
   align-items: center;
@@ -87,7 +78,7 @@ position: relative;
 }
 
 .flashcard:hover {
-transform: translateY(-0.2083vw);
+transform: translateY(-0.25rem);
 }
 
 .flashcard-front,
@@ -97,35 +88,35 @@ width: 100%;
 }
 
 .flashcard-label {
-font-size: 0.625vw;
+font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
 
-  margin-bottom: 1.25vw;
+  margin-bottom: 1.5rem;
 }
 
 .flashcard-jp {
-font-size: 2.5vw;
+font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 0.625vw;
+  margin-bottom: 0.75rem;
 }
 
 .flashcard-kanji {
-font-size: 1.25vw;
+font-size: 1.5rem;
   color: #facc15;
-  margin-bottom: 0.625vw;
+  margin-bottom: 0.75rem;
 }
 
 .flashcard-romaji {
-font-size: 0.9375vw;
+font-size: 1.125rem;
   color: var(--text-muted);
 }
 
 .flashcard-meaning {
-font-size: 1.875vw;
+font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 1.25vw;
+  margin-bottom: 1.5rem;
 }
 
 .flashcard-example {
@@ -134,8 +125,8 @@ line-height: 1.7;
 }
 
 .flashcard-hint {
-margin-top: 2.0833vw;
-  font-size: 0.6771vw;
+margin-top: 2.5rem;
+  font-size: 0.8125rem;
   opacity: 0.6;
 }
 
@@ -144,25 +135,25 @@ color: var(--text-muted);
 }
 
 .flashcard-progress__ok {
-margin-left: 0.5208vw;
-  font-size: 0.5729vw;
+margin-left: 0.625rem;
+  font-size: 0.6875rem;
   color: #34d399;
 }
 
 .flashcard-progress__no {
-margin-left: 0.3125vw;
-  font-size: 0.5729vw;
+margin-left: 0.375rem;
+  font-size: 0.6875rem;
   color: #f87171;
 }
 
 .flashcard-actions {
 display: flex;
-  gap: 0.625vw;
+  gap: 0.75rem;
 }
 
 .flashcard-actions button {
-padding: 0.5208vw 0.8333vw;
-  border-radius: 0.625vw;
+padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
   border: none;
   cursor: pointer;
 }
@@ -181,13 +172,13 @@ opacity: 1;
 40% {
 opacity: 0;
     transform: scale(0.88) rotate(-8deg);
-    filter: blur(0.2083vw);
+    filter: blur(0.25rem);
 }
 
 60% {
 opacity: 0;
     transform: scale(0.88) rotate(8deg);
-    filter: blur(0.2083vw);
+    filter: blur(0.25rem);
 }
 
 100% {
@@ -198,18 +189,18 @@ opacity: 1;
 }
 
 .flashcard-keyboard-hint {
-font-size: 0.625vw;
+font-size: 0.75rem;
   opacity: 0.6;
   color: var(--text-muted);
 }
 
 .flash-mode-switch {
 display: inline-flex;
-  gap: 0.2083vw;
-  padding: 0.2083vw;
+  gap: 0.25rem;
+  padding: 0.25rem;
   background: var(--bg-card);
-  border: 0.0521vw solid var(--bg-border);
-  border-radius: 52.0313vw;
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: 62.4376rem;
 }
 
 .flash-mode-btn {
@@ -217,10 +208,10 @@ border: none;
   background: transparent;
   color: var(--text-secondary);
   font-family: var(--font-body);
-  font-size: 0.6771vw;
+  font-size: 0.8125rem;
   font-weight: 600;
-  padding: 0.3646vw 0.8333vw;
-  border-radius: 52.0313vw;
+  padding: 0.4375rem 1rem;
+  border-radius: 62.4376rem;
   cursor: pointer;
   transition: all var(--transition);
 }
@@ -231,30 +222,30 @@ background: var(--gradient-primary);
 }
 
 .flash-track {
-width: min(100%, 27.0833vw);
-  height: 0.3125vw;
+width: min(100%, 32.5rem);
+  height: 0.375rem;
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 52.0313vw;
+  border-radius: 62.4376rem;
   overflow: hidden;
 }
 
 .flash-track__fill {
 height: 100%;
   background: var(--gradient-primary);
-  border-radius: 52.0313vw;
+  border-radius: 62.4376rem;
   transition: width 0.3s ease;
 }
 
 .flash-status-badge {
 position: absolute;
-  top: 0.625vw;
-  left: 0.7292vw;
+  top: 0.75rem;
+  left: 0.875rem;
   font-family: var(--font-mono);
-  font-size: 0.5729vw;
+  font-size: 0.6875rem;
   font-weight: 700;
-  padding: 0.1563vw 0.4688vw;
-  border-radius: 52.0313vw;
-  border: 0.0521vw solid;
+  padding: 0.1876rem 0.5626rem;
+  border-radius: 62.4376rem;
+  border: 0.0625rem solid;
   z-index: 10;
   color: var(--c);
   border-color: color-mix(in srgb, var(--c) 33%, transparent);
@@ -263,12 +254,12 @@ position: absolute;
 
 .flash-bookmark {
 position: absolute;
-  top: 0.625vw;
-  right: 0.7292vw;
+  top: 0.75rem;
+  right: 0.875rem;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.0417vw;
+  font-size: 1.25rem;
   opacity: 0.25;
   transition: opacity 0.15s, transform 0.15s;
   z-index: 10;
@@ -281,8 +272,8 @@ opacity: 1;
 
 .flash-rate {
 display: flex;
-  gap: 0.5208vw;
-  width: min(100%, 27.0833vw);
+  gap: 0.625rem;
+  width: min(100%, 32.5rem);
 }
 
 .flash-rate__btn {
@@ -290,13 +281,13 @@ flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.3125vw;
-  padding: 0.7292vw 0.5208vw;
+  gap: 0.375rem;
+  padding: 0.875rem 0.625rem;
   border-radius: var(--radius-md);
-  border: 0.0521vw solid;
+  border: 0.0625rem solid;
   background: transparent;
   font-family: var(--font-body);
-  font-size: 0.7292vw;
+  font-size: 0.875rem;
   font-weight: 700;
   cursor: pointer;
   transition: all var(--transition);
@@ -304,15 +295,15 @@ flex: 1;
 
 .flash-rate__btn kbd {
 font-family: var(--font-mono);
-  font-size: 0.5208vw;
+  font-size: 0.625rem;
   opacity: 0.7;
-  border: 0.0521vw solid currentColor;
-  border-radius: 0.2083vw;
-  padding: 0 0.2083vw;
+  border: 0.0625rem solid currentColor;
+  border-radius: 0.25rem;
+  padding: 0 0.25rem;
 }
 
 .flash-rate__btn:hover {
-transform: translateY(-0.1042vw);
+transform: translateY(-0.125rem);
   filter: brightness(1.15);
 }
 
@@ -337,9 +328,9 @@ color: #34d399;
 .flashcard-actions button {
 background: rgba(255, 255, 255, 0.06);
   color: var(--text-secondary);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   font-family: var(--font-body);
-  font-size: 0.6771vw;
+  font-size: 0.8125rem;
   font-weight: 600;
   transition: all var(--transition);
 }
@@ -350,59 +341,59 @@ background: rgba(255, 255, 255, 0.12);
 }
 
 .flash-summary {
-width: min(100%, 27.0833vw);
+width: min(100%, 32.5rem);
   text-align: center;
   background: var(--bg-card);
-  border: 0.0521vw solid var(--bg-border);
+  border: 0.0625rem solid var(--bg-border);
   border-radius: var(--radius-xl);
-  padding: 2.0833vw 1.4583vw;
+  padding: 2.5rem 1.75rem;
   animation: slide-up 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .flash-summary__emoji {
-font-size: 2.8125vw;
-  margin-bottom: 0.4167vw;
+font-size: 3.375rem;
+  margin-bottom: 0.5rem;
 }
 
 .flash-summary__title {
 font-family: var(--font-display);
-  font-size: 1.1458vw;
+  font-size: 1.375rem;
   font-weight: 800;
-  margin-bottom: 0.2083vw;
+  margin-bottom: 0.25rem;
 }
 
 .flash-summary__sub {
 color: var(--text-muted);
-  font-size: 0.7292vw;
-  margin-bottom: 1.25vw;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
 }
 
 .flash-summary__stats {
 display: flex;
-  gap: 0.625vw;
+  gap: 0.75rem;
   justify-content: center;
-  margin-bottom: 1.4583vw;
+  margin-bottom: 1.75rem;
 }
 
 .flash-stat {
 flex: 1;
-  max-width: 6.7708vw;
-  padding: 0.8333vw 0.4167vw;
+  max-width: 8.125rem;
+  padding: 1rem 0.5rem;
   border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--c) 12%, transparent);
-  border: 0.0521vw solid color-mix(in srgb, var(--c) 35%, transparent);
+  border: 0.0625rem solid color-mix(in srgb, var(--c) 35%, transparent);
 }
 
 .flash-stat__n {
-font-size: 1.5625vw;
+font-size: 1.875rem;
   font-weight: 800;
   color: var(--c);
 }
 
 .flash-stat__l {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: var(--text-muted);
-  margin-top: 0.1042vw;
+  margin-top: 0.125rem;
 }
 
 .flash-restart-btn {
@@ -410,9 +401,9 @@ background: var(--gradient-primary);
   color: #fff;
   border: none;
   font-family: var(--font-body);
-  font-size: 0.7292vw;
+  font-size: 0.875rem;
   font-weight: 700;
-  padding: 0.625vw 1.4583vw;
+  padding: 0.75rem 1.75rem;
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: filter var(--transition);
@@ -425,32 +416,32 @@ filter: brightness(1.12);
 /* ── Toolbar & controls ── */
 
 .vocab-marked-count {
-margin-left: 0.4167vw;
+margin-left: 0.5rem;
   color: #facc15;
 }
 
 .vocab-results {
 color: var(--text-muted);
-  font-size: 0.6771vw;
-  margin-bottom: 0.8333vw;
+  font-size: 0.8125rem;
+  margin-bottom: 1rem;
 }
 
 .flash-controls {
 display: flex;
-  gap: 0.5208vw;
-  margin-bottom: 0.625vw;
+  gap: 0.625rem;
+  margin-bottom: 0.75rem;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
 .flash-active-bar {
-margin-bottom: 0.625vw;
+margin-bottom: 0.75rem;
 }
 
 .flash-active-bar__label {
-margin-left: 0.625vw;
-  font-size: 0.6771vw;
+margin-left: 0.75rem;
+  font-size: 0.8125rem;
   color: var(--text-muted);
 }
 
@@ -467,7 +458,7 @@ background: #27272a;
 .vocab-marked-btn.is-on {
 background: #713f12;
   color: #facc15;
-  border: 0.0521vw solid #854d0e;
+  border: 0.0625rem solid #854d0e;
   cursor: pointer;
   opacity: 1;
 }
@@ -475,7 +466,7 @@ background: #713f12;
 .vocab-marked-btn.is-off {
 background: #1c1c1f;
   color: #666;
-  border: 0.0521vw solid #333;
+  border: 0.0625rem solid #333;
   cursor: not-allowed;
   opacity: 0.5;
 }
@@ -483,7 +474,7 @@ background: #1c1c1f;
 .vocab-clear-btn {
 background: transparent;
   color: #f87171;
-  border: 0.0521vw solid #7f1d1d;
+  border: 0.0625rem solid #7f1d1d;
 }
 
 .vocab-exit-btn {
@@ -495,15 +486,15 @@ background: #facc15;
 .vocab-view-toolbar {
 display: flex;
   align-items: center;
-  gap: 0.5208vw;
-  margin-bottom: 0.8333vw;
+  gap: 0.625rem;
+  margin-bottom: 1rem;
 }
 
 .vocab-toggle-btn {
 background: #1e1b4b;
   color: #818cf8;
-  border: 0.0521vw solid #3730a3;
-  font-size: 0.9375vw;
+  border: 0.0625rem solid #3730a3;
+  font-size: 1.125rem;
 }
 
 .vocab-toggle-btn.is-on {
@@ -522,13 +513,13 @@ background: #312e81;
 display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.4167vw;
+  margin-bottom: 0.5rem;
 }
 
 .wc-cat {
-font-size: 0.5729vw;
-  padding: 0.1042vw 0.4167vw;
-  border-radius: 1.0417vw;
+font-size: 0.6875rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 1.25rem;
   background: color-mix(in srgb, var(--card-color) 13%, transparent);
   color: var(--card-color);
   font-weight: 600;
@@ -538,14 +529,14 @@ font-size: 0.5729vw;
 .wc-actions {
 display: flex;
   align-items: center;
-  gap: 0.4167vw;
+  gap: 0.5rem;
 }
 
 .wc-iconbtn {
 background: none;
   border: none;
   cursor: pointer;
-  font-size: 0.7292vw;
+  font-size: 0.875rem;
   line-height: 1;
   padding: 0;
   opacity: 0.85;
@@ -560,7 +551,7 @@ opacity: 1;
 background: none;
   border: none;
   cursor: pointer;
-  font-size: 0.8333vw;
+  font-size: 1rem;
   line-height: 1;
   padding: 0;
   opacity: 0.3;
@@ -573,26 +564,26 @@ opacity: 1;
 }
 
 .wc-caret {
-font-size: 0.8333vw;
+font-size: 1rem;
   opacity: 0.5;
 }
 
 .word-card__type-badge.is-i {
 background: rgba(250, 204, 21, 0.15);
   color: var(--accent-yellow);
-  border: 0.0521vw solid rgba(250, 204, 21, 0.3);
+  border: 0.0625rem solid rgba(250, 204, 21, 0.3);
 }
 
 .word-card__type-badge.is-na {
 background: rgba(52, 211, 153, 0.15);
   color: var(--accent-green);
-  border: 0.0521vw solid rgba(52, 211, 153, 0.3);
+  border: 0.0625rem solid rgba(52, 211, 153, 0.3);
 }
 
 .wc-hidden {
-margin-top: 0.3125vw;
-  margin-bottom: 0.2083vw;
-  font-size: 0.6771vw;
+margin-top: 0.375rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.8125rem;
   color: var(--text-muted);
   font-style: italic;
   user-select: none;
@@ -600,49 +591,98 @@ margin-top: 0.3125vw;
 
 .wc-conj {
 display: flex;
-  gap: 0.4167vw;
+  gap: 0.5rem;
   flex-wrap: wrap;
-  margin-bottom: 0.4167vw;
+  margin-bottom: 0.5rem;
 }
 
 .wc-conj__neg {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: var(--accent-red);
   font-family: var(--font-mono);
 }
 
 .wc-conj__past {
-font-size: 0.625vw;
+font-size: 0.75rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
 }
 
 .wc-ex-label {
-font-size: 0.5729vw;
+font-size: 0.6875rem;
   color: var(--text-muted);
-  margin-bottom: 0.3125vw;
+  margin-bottom: 0.375rem;
   font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
 .wc-hint {
-margin-top: 0.5208vw;
-  font-size: 0.625vw;
+margin-top: 0.625rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   font-style: italic;
 }
 
+/* ============================================================
+   MOBILE (SP) — hiệu chỉnh cho ~375px (1vw≈3.75px)
+   Đặt CUỐI file để override các block mobile cũ (cùng độ ưu tiên).
+   ============================================================ */
 @media (max-width: 768px) {
-.flash-rate {
-gap: 0.781vw;
-}
+  /* Thẻ từ — nút & nhãn nhỏ */
+  .wc-cat { font-size: 0.7031rem; padding: 0.1406rem 0.5625rem; border-radius: 0.9375rem; }
+  .wc-actions { gap: 0.5625rem; }
+  .wc-iconbtn { font-size: 1.0781rem; }
+  .wc-bookmark { font-size: 1.1719rem; }
+  .wc-caret { font-size: 0.8906rem; }
+  .wc-hidden { font-size: 0.7969rem; }
+  .wc-conj { gap: 0.4688rem; }
+  .wc-conj__neg, .wc-conj__past { font-size: 0.75rem; }
+  .wc-ex-label { font-size: 0.7031rem; }
+  .wc-hint { font-size: 0.75rem; margin-top: 0.4688rem; }
+  .vocab-results { font-size: 0.7969rem; }
+  .vocab-marked-count { margin-left: 0.4688rem; }
 
-.flash-rate__btn {
-padding: 1.563vw 0.521vw;
-      font-size: 1.693vw;
-      flex-direction: column;
-      gap: 0.391vw;
-}
+  /* Toolbar flashcard */
+  .flash-controls, .flash-active-bar { gap: 0.4688rem; margin-bottom: 0.5859rem; }
+  .flash-active-bar__label { font-size: 0.7969rem; margin-left: 0.5859rem; }
+  .vocab-toggle-btn { font-size: 0.8438rem; }
+
+  /* Chế độ SRS/ngẫu nhiên */
+  .flash-mode-btn { font-size: 0.7969rem; padding: 0.375rem 0.8438rem; }
+
+  /* Thẻ lật — chiếm gần trọn bề ngang (bỏ giới hạn 27vw) */
+  .flashcard, .flash-track, .flash-rate, .flash-summary { width: 100%; }
+  .flashcard { min-height: 10.7813rem; padding: 1.4063rem 1.0547rem; border-radius: 0.8203rem; }
+  .flashcard-label { font-size: 0.7031rem; margin-bottom: 0.7031rem; }
+  .flashcard-jp { font-size: 2.1094rem; margin-bottom: 0.5859rem; }
+  .flashcard-kanji { font-size: 1.0547rem; margin-bottom: 0.4688rem; }
+  .flashcard-romaji { font-size: 0.8438rem; }
+  .flashcard-meaning { font-size: 1.4063rem; margin-bottom: 0.7031rem; }
+  .flashcard-example { font-size: 0.8438rem; }
+  .flashcard-hint { font-size: 0.75rem; margin-top: 1.1719rem; }
+  .flashcard-keyboard-hint { font-size: 0.7031rem; }
+  .flashcard-progress { font-size: 0.8438rem; }
+  .flashcard-progress__ok, .flashcard-progress__no { font-size: 0.75rem; }
+  .flash-status-badge { font-size: 0.7031rem; top: 0.5859rem; left: 0.7031rem; padding: 0.1875rem 0.5625rem; }
+  .flash-bookmark { font-size: 1.2891rem; top: 0.4688rem; right: 0.7031rem; }
+
+  /* Nút chấm nhớ */
+  .flash-rate { gap: 0.5625rem; }
+  .flash-rate__btn { padding: 0.7969rem 0.4688rem; font-size: 0.8906rem; flex-direction: column; gap: 0.2344rem; }
+  .flash-rate__btn kbd { display: none; }
+  .flashcard-actions { flex-wrap: wrap; gap: 0.5625rem; }
+  .flashcard-actions button { padding: 0.6094rem 0.9375rem; font-size: 0.8438rem; flex: 1; min-width: 6.0938rem; }
+
+  /* Màn tổng kết */
+  .flash-summary { padding: 1.6406rem 1.1719rem; }
+  .flash-summary__emoji { font-size: 2.8125rem; margin-bottom: 0.4688rem; }
+  .flash-summary__title { font-size: 1.2656rem; }
+  .flash-summary__sub { font-size: 0.8672rem; margin-bottom: 1.1719rem; }
+  .flash-summary__stats { gap: 0.5859rem; margin-bottom: 1.1719rem; }
+  .flash-stat { max-width: none; padding: 0.75rem 0.4688rem; }
+  .flash-stat__n { font-size: 1.5234rem; }
+  .flash-stat__l { font-size: 0.7031rem; }
+  .flash-restart-btn { font-size: 0.9375rem; padding: 0.6563rem 1.4063rem; }
 }
 

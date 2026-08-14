@@ -1,0 +1,199 @@
+/* ============================================================
+   JLPT N5 App — listening (tab Nghe)
+   ============================================================ */
+
+.lst-warn {
+  background: rgba(250, 204, 21, 0.1);
+  border: 0.0625rem solid rgba(250, 204, 21, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.125rem;
+  font-size: 0.875rem;
+  color: var(--accent-yellow);
+  margin-bottom: 1.25rem;
+}
+
+.lst-warn__how {
+  margin-top: 0.625rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.lst-voice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  background: var(--bg-card);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.lst-voice__ok {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.lst-voice__rate {
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.lst-rate {
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  padding: 0.25rem 0.5625rem;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.lst-rate:hover {
+  color: var(--text-primary);
+}
+
+.lst-rate.is-on {
+  background: var(--accent-orange);
+  border-color: transparent;
+  color: #0a0b0f;
+  font-weight: 700;
+}
+
+/* ── Liên kết sang phần 聴解 của bộ đề ── */
+
+.lst-examlink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+  background: var(--bg-card);
+  border: 0.0625rem solid var(--bg-border);
+  border-left: 0.1875rem solid var(--accent-orange);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.125rem;
+  margin-bottom: 1.25rem;
+}
+
+.lst-examlink__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+.lst-examlink__sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.125rem;
+  max-width: 40rem;
+}
+
+.lst-examlink__btn {
+  background: var(--accent-orange);
+  border: none;
+  border-radius: var(--radius-md);
+  color: #0a0b0f;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.5625rem 1.125rem;
+  cursor: pointer;
+  transition: filter var(--transition);
+}
+
+.lst-examlink__btn:hover {
+  filter: brightness(1.1);
+}
+
+/* ── Shadowing ── */
+
+.lst-shadow {
+  background: var(--bg-card);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  padding: 1.125rem 1.25rem;
+}
+
+.lst-shadow__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.lst-shadow__sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0.125rem 0 0.875rem;
+  max-width: 44rem;
+  line-height: 1.6;
+}
+
+.lst-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.875rem;
+}
+
+.lst-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-md);
+  padding: 0.625rem 0.875rem;
+}
+
+.lst-line__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.lst-line__jp {
+  font-size: 1.0625rem;
+  color: var(--text-primary);
+  line-height: 2;
+}
+
+.lst-line__vn {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.lst-line__word {
+  flex: 0 0 auto;
+  font-size: 0.8125rem;
+  color: var(--accent-orange);
+  background: rgba(249, 115, 22, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 0.1875rem 0.5rem;
+  cursor: help;
+}
+
+@media (max-width: 768px) {
+  .lst-line {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .lst-line__word {
+    order: 3;
+  }
+
+  .lst-examlink__btn {
+    width: 100%;
+  }
+}

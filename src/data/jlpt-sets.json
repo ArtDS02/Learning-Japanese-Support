@@ -1051,6 +1051,125 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "JLPT1-listening",
+                    "title": "Phần 4: Nghe hiểu (聴解)",
+                    "icon": "🎧",
+                    "color": "#f97316",
+                    "timeLimit": 30,
+                    "type": "listening",
+                    "questions": [
+                        {
+                            "id": "J1L1",
+                            "kind": "課題理解",
+                            "script": [
+                                "おんな：たなかさん、あしたの かいぎは なんじからですか。",
+                                "おとこ：ごぜん 10じからです。",
+                                "おんな：わかりました。"
+                            ],
+                            "question": "会議は 何時から ですか。",
+                            "choices": [
+                                "9時",
+                                "10時",
+                                "11時",
+                                "12時"
+                            ],
+                            "answer": "10時",
+                            "explanation": "「ごぜん10じから」= từ 10 giờ sáng. 午前 = AM.",
+                            "translation": "Nữ: Anh Tanaka, cuộc họp mai từ mấy giờ? — Nam: Từ 10 giờ sáng. — Nữ: Tôi hiểu rồi."
+                        },
+                        {
+                            "id": "J1L2",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おとこ：すみません、この りんごは いくらですか。",
+                                "みせのひと：ひとつ 150えんです。",
+                                "おとこ：じゃあ、みっつ ください。"
+                            ],
+                            "question": "男の人は いくら はらいますか。",
+                            "choices": [
+                                "150円",
+                                "300円",
+                                "450円",
+                                "600円"
+                            ],
+                            "answer": "450円",
+                            "explanation": "150円 × 3 = 450円. 「みっつ」= 3 cái (bộ đếm 〜つ).",
+                            "translation": "Nam: Xin lỗi, táo này bao nhiêu? — Người bán: Một quả 150 yên. — Nam: Vậy cho tôi 3 quả."
+                        },
+                        {
+                            "id": "J1L3",
+                            "kind": "発話表現",
+                            "script": [
+                                "ともだちの いえに はいります。なんと いいますか。"
+                            ],
+                            "question": "何と 言いますか。",
+                            "choices": [
+                                "おじゃまします。",
+                                "いただきます。",
+                                "ごちそうさまでした。",
+                                "おやすみなさい。"
+                            ],
+                            "answer": "おじゃまします。",
+                            "explanation": "Khi bước vào nhà người khác nói 「おじゃまします」(xin phép làm phiền).",
+                            "translation": "Bạn vào nhà một người bạn. Bạn nói gì?"
+                        },
+                        {
+                            "id": "J1L4",
+                            "kind": "即時応答",
+                            "script": [
+                                "おんな：おしごとは なんですか。"
+                            ],
+                            "question": "何と 答えますか。",
+                            "choices": [
+                                "がくせいです。",
+                                "にほんじんです。",
+                                "とうきょうです。",
+                                "げんきです。"
+                            ],
+                            "answer": "がくせいです。",
+                            "explanation": "「おしごと」hỏi về công việc → trả lời nghề nghiệp. 「にほんじんです」là quốc tịch.",
+                            "translation": "Nữ: Công việc của bạn là gì?"
+                        },
+                        {
+                            "id": "J1L5",
+                            "kind": "課題理解",
+                            "script": [
+                                "おとこ：この でんしゃは とうきょうへ いきますか。",
+                                "えきのひと：いいえ、つぎの でんしゃです。",
+                                "おとこ：ありがとうございます。"
+                            ],
+                            "question": "男の人は これから どうしますか。",
+                            "choices": [
+                                "この電車に 乗ります",
+                                "次の電車を 待ちます",
+                                "バスで 行きます",
+                                "歩いて 行きます"
+                            ],
+                            "answer": "次の電車を 待ちます",
+                            "explanation": "Tàu này không đi Tokyo, tàu tiếp theo mới đi → phải đợi tàu sau.",
+                            "translation": "Nam: Tàu này có đi Tokyo không? — Nhân viên nhà ga: Không, là tàu tiếp theo. — Nam: Cảm ơn."
+                        },
+                        {
+                            "id": "J1L6",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おんな：きのう なにを しましたか。",
+                                "おとこ：あめでしたから、うちで えいがを みました。"
+                            ],
+                            "question": "男の人は きのう 何を しましたか。",
+                            "choices": [
+                                "映画を 見ました",
+                                "買い物を しました",
+                                "友だちに 会いました",
+                                "勉強しました"
+                            ],
+                            "answer": "映画を 見ました",
+                            "explanation": "「〜から」chỉ lý do: vì mưa nên ở nhà xem phim.",
+                            "translation": "Nữ: Hôm qua bạn làm gì? — Nam: Vì trời mưa nên tôi xem phim ở nhà."
+                        }
+                    ]
                 }
             ]
         },
@@ -2103,6 +2222,123 @@
                                     "explanation": "げつようびからきんようびはごご6じまで."
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "id": "JLPT2-listening",
+                    "title": "Phần 4: Nghe hiểu (聴解)",
+                    "icon": "🎧",
+                    "color": "#f97316",
+                    "timeLimit": 30,
+                    "type": "listening",
+                    "questions": [
+                        {
+                            "id": "J2L1",
+                            "kind": "課題理解",
+                            "script": [
+                                "おんな：すみません、ゆうびんきょくは どこですか。",
+                                "おとこ：あの ぎんこうの となりです。",
+                                "おんな：ありがとう。"
+                            ],
+                            "question": "郵便局は どこですか。",
+                            "choices": [
+                                "銀行の となり",
+                                "銀行の 前",
+                                "駅の 中",
+                                "コンビニの うしろ"
+                            ],
+                            "answer": "銀行の となり",
+                            "explanation": "「となり」= bên cạnh (sát ngay). 「前」= phía trước.",
+                            "translation": "Nữ: Xin lỗi, bưu điện ở đâu? — Nam: Bên cạnh ngân hàng kia. — Nữ: Cảm ơn."
+                        },
+                        {
+                            "id": "J2L2",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "がくせい：せんせい、しゅくだいは いつまでですか。",
+                                "せんせい：きんようびまでに だしてください。"
+                            ],
+                            "question": "宿題は いつまで ですか。",
+                            "choices": [
+                                "水曜日",
+                                "木曜日",
+                                "金曜日",
+                                "土曜日"
+                            ],
+                            "answer": "金曜日",
+                            "explanation": "「きんようび」= thứ Sáu. 「〜までに」= hạn chót trước thời điểm đó.",
+                            "translation": "Học sinh: Thưa cô, bài tập hạn đến khi nào? — Giáo viên: Hãy nộp trước thứ Sáu."
+                        },
+                        {
+                            "id": "J2L3",
+                            "kind": "発話表現",
+                            "script": [
+                                "ひるごはんを たべる まえに、なんと いいますか。"
+                            ],
+                            "question": "何と 言いますか。",
+                            "choices": [
+                                "いただきます。",
+                                "ごちそうさまでした。",
+                                "おかえりなさい。",
+                                "はじめまして。"
+                            ],
+                            "answer": "いただきます。",
+                            "explanation": "Trước khi ăn nói 「いただきます」; sau khi ăn mới nói 「ごちそうさまでした」.",
+                            "translation": "Trước khi ăn cơm trưa, bạn nói gì?"
+                        },
+                        {
+                            "id": "J2L4",
+                            "kind": "即時応答",
+                            "script": [
+                                "おとこ：この ペンを かりても いいですか。"
+                            ],
+                            "question": "何と 答えますか。",
+                            "choices": [
+                                "どうぞ。",
+                                "どうも。",
+                                "そうですか。",
+                                "おねがいします。"
+                            ],
+                            "answer": "どうぞ。",
+                            "explanation": "「〜てもいいですか」xin phép → đồng ý thì đáp 「どうぞ」.",
+                            "translation": "Nam: Tôi mượn cây bút này được không?"
+                        },
+                        {
+                            "id": "J2L5",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おんな：やまださんは どの ひとですか。",
+                                "おとこ：あの せが たかくて、めがねを かけている ひとです。"
+                            ],
+                            "question": "山田さんは どんな 人ですか。",
+                            "choices": [
+                                "背が高くて めがねを かけている",
+                                "背が低くて 帽子を かぶっている",
+                                "背が高くて 帽子を かぶっている",
+                                "背が低くて めがねを かけている"
+                            ],
+                            "answer": "背が高くて めがねを かけている",
+                            "explanation": "「せが たかい」= cao; 「めがねを かける」= đeo kính (kính dùng động từ かける).",
+                            "translation": "Nữ: Anh Yamada là người nào? — Nam: Là người cao cao, đang đeo kính kia."
+                        },
+                        {
+                            "id": "J2L6",
+                            "kind": "課題理解",
+                            "script": [
+                                "おとこ：まいあさ なんで かいしゃへ いきますか。",
+                                "おんな：でんしゃで いきます。でも きょうは バスで きました。"
+                            ],
+                            "question": "女の人は 今日 何で 来ましたか。",
+                            "choices": [
+                                "電車",
+                                "バス",
+                                "自転車",
+                                "歩いて"
+                            ],
+                            "answer": "バス",
+                            "explanation": "Bẫy: hằng ngày đi tàu, nhưng câu hỏi hỏi HÔM NAY → 「きょうは バスで」.",
+                            "translation": "Nam: Mỗi sáng bạn đi làm bằng gì? — Nữ: Tôi đi tàu. Nhưng hôm nay tôi đi xe buýt."
                         }
                     ]
                 }
@@ -3159,6 +3395,123 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "JLPT3-listening",
+                    "title": "Phần 4: Nghe hiểu (聴解)",
+                    "icon": "🎧",
+                    "color": "#f97316",
+                    "timeLimit": 30,
+                    "type": "listening",
+                    "questions": [
+                        {
+                            "id": "J3L1",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おんな：たなかさんの たんじょうびは いつですか。",
+                                "おとこ：さんがつ みっかです。"
+                            ],
+                            "question": "田中さんの 誕生日は いつですか。",
+                            "choices": [
+                                "3月3日",
+                                "3月8日",
+                                "8月3日",
+                                "3月30日"
+                            ],
+                            "answer": "3月3日",
+                            "explanation": "「さんがつ みっか」= 3月3日. Ngày 3 đọc bất quy tắc là 「みっか」.",
+                            "translation": "Nữ: Sinh nhật anh Tanaka là khi nào? — Nam: Ngày 3 tháng 3."
+                        },
+                        {
+                            "id": "J3L2",
+                            "kind": "課題理解",
+                            "script": [
+                                "みせのひと：いらっしゃいませ。",
+                                "おんな：この あおい かさを ください。いくらですか。",
+                                "みせのひと：1200えんです。"
+                            ],
+                            "question": "女の人は 何を 買いますか。",
+                            "choices": [
+                                "青い かさ",
+                                "赤い かさ",
+                                "青い ぼうし",
+                                "白い かさ"
+                            ],
+                            "answer": "青い かさ",
+                            "explanation": "「あおい」= xanh, 「かさ」= cái dù. 「〜をください」= cho tôi….",
+                            "translation": "Người bán: Xin mời. — Nữ: Cho tôi cái dù xanh này. Bao nhiêu tiền? — Người bán: 1200 yên."
+                        },
+                        {
+                            "id": "J3L3",
+                            "kind": "発話表現",
+                            "script": [
+                                "ともだちが びょうきです。なんと いいますか。"
+                            ],
+                            "question": "何と 言いますか。",
+                            "choices": [
+                                "おだいじに。",
+                                "おめでとう。",
+                                "いってきます。",
+                                "ただいま。"
+                            ],
+                            "answer": "おだいじに。",
+                            "explanation": "「おだいじに」= giữ gìn sức khoẻ nhé (nói với người đang ốm).",
+                            "translation": "Bạn của bạn bị bệnh. Bạn nói gì?"
+                        },
+                        {
+                            "id": "J3L4",
+                            "kind": "即時応答",
+                            "script": [
+                                "おんな：しゅうまつ いっしょに えいがを みませんか。"
+                            ],
+                            "question": "何と 答えますか。",
+                            "choices": [
+                                "いいですね。",
+                                "いいえ、ちがいます。",
+                                "どういたしまして。",
+                                "はじめまして。"
+                            ],
+                            "answer": "いいですね。",
+                            "explanation": "「〜ませんか」là lời mời → nhận lời bằng 「いいですね」.",
+                            "translation": "Nữ: Cuối tuần đi xem phim cùng nhau không?"
+                        },
+                        {
+                            "id": "J3L5",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おとこ：きょうしつに がくせいが なんにん いますか。",
+                                "おんな：おとこの ひとが さんにんと、おんなの ひとが よにん います。"
+                            ],
+                            "question": "教室に 学生が 何人 いますか。",
+                            "choices": [
+                                "5人",
+                                "6人",
+                                "7人",
+                                "8人"
+                            ],
+                            "answer": "7人",
+                            "explanation": "3 + 4 = 7 người. Chú ý 4 người đọc là 「よにん」, không phải 「しにん」.",
+                            "translation": "Nam: Trong lớp có mấy học sinh? — Nữ: Có 3 nam và 4 nữ."
+                        },
+                        {
+                            "id": "J3L6",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おんな：きのうの テストは どうでしたか。",
+                                "おとこ：むずかしかったですが、たのしかったです。"
+                            ],
+                            "question": "テストは どうでしたか。",
+                            "choices": [
+                                "難しかったが 楽しかった",
+                                "やさしくて 楽しかった",
+                                "難しくて つまらなかった",
+                                "やさしくて つまらなかった"
+                            ],
+                            "answer": "難しかったが 楽しかった",
+                            "explanation": "「〜かったですが」= quá khứ tính từ い + nhưng. Hai ý trái chiều.",
+                            "translation": "Nữ: Bài kiểm tra hôm qua thế nào? — Nam: Khó, nhưng mà vui."
+                        }
+                    ]
                 }
             ]
         },
@@ -4213,6 +4566,122 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "JLPT4-listening",
+                    "title": "Phần 4: Nghe hiểu (聴解)",
+                    "icon": "🎧",
+                    "color": "#f97316",
+                    "timeLimit": 30,
+                    "type": "listening",
+                    "questions": [
+                        {
+                            "id": "J4L1",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おんな：あしたの てんきは どうですか。",
+                                "おとこ：あさは あめですが、ごごから はれます。"
+                            ],
+                            "question": "明日の 午後の 天気は どうですか。",
+                            "choices": [
+                                "晴れ",
+                                "雨",
+                                "雪",
+                                "くもり"
+                            ],
+                            "answer": "晴れ",
+                            "explanation": "Sáng mưa, nhưng CHIỀU 「ごごから はれます」= từ chiều trời nắng.",
+                            "translation": "Nữ: Thời tiết mai thế nào? — Nam: Sáng mưa, nhưng từ chiều thì nắng."
+                        },
+                        {
+                            "id": "J4L2",
+                            "kind": "課題理解",
+                            "script": [
+                                "おとこ：すみません、トイレは どこですか。",
+                                "みせのひと：2かいに あります。エレベーターの まえです。"
+                            ],
+                            "question": "トイレは どこに ありますか。",
+                            "choices": [
+                                "2階",
+                                "1階",
+                                "3階",
+                                "地下"
+                            ],
+                            "answer": "2階",
+                            "explanation": "「2かい」= tầng 2. Bộ đếm 〜階 (かい).",
+                            "translation": "Nam: Xin lỗi, nhà vệ sinh ở đâu? — Nhân viên: Ở tầng 2, phía trước thang máy."
+                        },
+                        {
+                            "id": "J4L3",
+                            "kind": "発話表現",
+                            "script": [
+                                "あさ、せんせいに あいました。なんと いいますか。"
+                            ],
+                            "question": "何と 言いますか。",
+                            "choices": [
+                                "おはようございます。",
+                                "こんばんは。",
+                                "おやすみなさい。",
+                                "さようなら。"
+                            ],
+                            "answer": "おはようございます。",
+                            "explanation": "Buổi sáng chào 「おはようございます」(lịch sự, dùng với thầy cô).",
+                            "translation": "Buổi sáng bạn gặp thầy/cô. Bạn nói gì?"
+                        },
+                        {
+                            "id": "J4L4",
+                            "kind": "即時応答",
+                            "script": [
+                                "おとこ：ありがとうございました。"
+                            ],
+                            "question": "何と 答えますか。",
+                            "choices": [
+                                "どういたしまして。",
+                                "はじめまして。",
+                                "いただきます。",
+                                "しつれいします。"
+                            ],
+                            "answer": "どういたしまして。",
+                            "explanation": "Đáp lại lời cảm ơn bằng 「どういたしまして」= không có gì.",
+                            "translation": "Nam: Cảm ơn anh/chị rất nhiều."
+                        },
+                        {
+                            "id": "J4L5",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おんな：なつやすみに どこへ いきましたか。",
+                                "おとこ：うみへ いきたかったですが、やまへ いきました。"
+                            ],
+                            "question": "男の人は どこへ 行きましたか。",
+                            "choices": [
+                                "山",
+                                "海",
+                                "町",
+                                "どこも 行きませんでした"
+                            ],
+                            "answer": "山",
+                            "explanation": "Bẫy: 「うみへ いきたかった」= đã MUỐN đi biển, nhưng thực tế đi núi.",
+                            "translation": "Nữ: Nghỉ hè bạn đã đi đâu? — Nam: Tôi đã muốn đi biển nhưng lại đi núi."
+                        },
+                        {
+                            "id": "J4L6",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おんな：この かばんは だれの ですか。",
+                                "おとこ：わたしの じゃありません。きむらさんの だと おもいます。"
+                            ],
+                            "question": "かばんは だれの ですか。",
+                            "choices": [
+                                "木村さんの",
+                                "男の人の",
+                                "女の人の",
+                                "先生の"
+                            ],
+                            "answer": "木村さんの",
+                            "explanation": "「わたしの じゃありません」= không phải của tôi; 「〜だと おもいます」= tôi nghĩ là của….",
+                            "translation": "Nữ: Cái cặp này của ai? — Nam: Không phải của tôi. Tôi nghĩ là của anh Kimura."
+                        }
+                    ]
                 }
             ]
         },
@@ -4637,7 +5106,7 @@
                             "choices": [
                                 "では",
                                 "には",
-                                "には",
+                                "とは",
                                 "をは"
                             ],
                             "answer": "では",
@@ -4791,7 +5260,7 @@
                             "choices": [
                                 "てしまった",
                                 "ている",
-                                "ている",
+                                "てみる",
                                 "てある"
                             ],
                             "answer": "てしまった",
@@ -5265,6 +5734,122 @@
                                     "explanation": "ともだちもとてもよろこんでいました=bạn tôi cũng rất vui."
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "id": "JLPT5-listening",
+                    "title": "Phần 4: Nghe hiểu (聴解)",
+                    "icon": "🎧",
+                    "color": "#f97316",
+                    "timeLimit": 30,
+                    "type": "listening",
+                    "questions": [
+                        {
+                            "id": "J5L1",
+                            "kind": "課題理解",
+                            "script": [
+                                "おとこ：えいがは なんじに はじまりますか。",
+                                "おんな：7じ30ぷんです。20ぷん まえに いきましょう。"
+                            ],
+                            "question": "二人は 何時に 行きますか。",
+                            "choices": [
+                                "7時10分",
+                                "7時20分",
+                                "7時30分",
+                                "7時50分"
+                            ],
+                            "answer": "7時10分",
+                            "explanation": "7:30 trừ 20 phút = 7:10. 「20ぷん まえに」= trước đó 20 phút.",
+                            "translation": "Nam: Phim bắt đầu mấy giờ? — Nữ: 7 giờ 30. Mình đi trước 20 phút nhé."
+                        },
+                        {
+                            "id": "J5L2",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "せんせい：あしたは 8じに がっこうへ きてください。",
+                                "がくせい：はい。でんしゃが おそいですから、7じに いえを でます。"
+                            ],
+                            "question": "学生は 何時に 家を 出ますか。",
+                            "choices": [
+                                "7時",
+                                "8時",
+                                "6時",
+                                "9時"
+                            ],
+                            "answer": "7時",
+                            "explanation": "8 giờ là giờ đến trường; câu hỏi hỏi giờ RA KHỎI NHÀ → 7 giờ.",
+                            "translation": "Giáo viên: Mai hãy đến trường lúc 8 giờ. — Học sinh: Vâng. Vì tàu chậm nên em sẽ ra khỏi nhà lúc 7 giờ."
+                        },
+                        {
+                            "id": "J5L3",
+                            "kind": "発話表現",
+                            "script": [
+                                "ひとの まえを とおります。なんと いいますか。"
+                            ],
+                            "question": "何と 言いますか。",
+                            "choices": [
+                                "すみません。",
+                                "ありがとう。",
+                                "はい、どうぞ。",
+                                "こんにちは。"
+                            ],
+                            "answer": "すみません。",
+                            "explanation": "Khi đi ngang qua trước mặt người khác thì nói 「すみません」(xin phép/xin lỗi).",
+                            "translation": "Bạn đi ngang qua trước mặt người khác. Bạn nói gì?"
+                        },
+                        {
+                            "id": "J5L4",
+                            "kind": "即時応答",
+                            "script": [
+                                "おんな：コーヒーは いかがですか。"
+                            ],
+                            "question": "何と 答えますか。",
+                            "choices": [
+                                "はい、おねがいします。",
+                                "はい、そうです。",
+                                "いいえ、わかりません。",
+                                "はい、げんきです。"
+                            ],
+                            "answer": "はい、おねがいします。",
+                            "explanation": "「いかがですか」mời dùng → nhận lời bằng 「おねがいします」.",
+                            "translation": "Nữ: Anh/chị dùng cà phê nhé?"
+                        },
+                        {
+                            "id": "J5L5",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おんな：にほんごの べんきょうは どのくらい しましたか。",
+                                "おとこ：1ねんはんです。"
+                            ],
+                            "question": "男の人は どのくらい 日本語を 勉強しましたか。",
+                            "choices": [
+                                "1年半",
+                                "1年",
+                                "半年",
+                                "2年"
+                            ],
+                            "answer": "1年半",
+                            "explanation": "「1ねんはん」= 1 năm rưỡi. 半 (はん) = rưỡi.",
+                            "translation": "Nữ: Bạn học tiếng Nhật bao lâu rồi? — Nam: 1 năm rưỡi."
+                        },
+                        {
+                            "id": "J5L6",
+                            "kind": "課題理解",
+                            "script": [
+                                "おとこ：きょうは にくを かいますか。",
+                                "おんな：いいえ、さかなを かいます。やさいも かいます。"
+                            ],
+                            "question": "女の人は 何を 買いますか。",
+                            "choices": [
+                                "魚と 野菜",
+                                "肉と 野菜",
+                                "魚だけ",
+                                "肉と 魚"
+                            ],
+                            "answer": "魚と 野菜",
+                            "explanation": "「〜も」= cũng → mua cả cá và rau, không mua thịt.",
+                            "translation": "Nam: Hôm nay em mua thịt không? — Nữ: Không, em mua cá. Em cũng mua rau nữa."
                         }
                     ]
                 }
@@ -6319,6 +6904,122 @@
                                     "explanation": "にゅうじょうりょうはむりょうです。"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "id": "JLPT6-listening",
+                    "title": "Phần 4: Nghe hiểu (聴解)",
+                    "icon": "🎧",
+                    "color": "#f97316",
+                    "timeLimit": 30,
+                    "type": "listening",
+                    "questions": [
+                        {
+                            "id": "J6L1",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おんな：この ほんは いつまで かりられますか。",
+                                "としょかんのひと：ふつかかんです。"
+                            ],
+                            "question": "本は 何日間 借りられますか。",
+                            "choices": [
+                                "2日間",
+                                "3日間",
+                                "1週間",
+                                "4日間"
+                            ],
+                            "answer": "2日間",
+                            "explanation": "「ふつかかん」= 2 ngày (ngày 2 đọc 「ふつか」+ 間 = khoảng thời gian).",
+                            "translation": "Nữ: Sách này mượn được đến khi nào? — Thủ thư: Trong 2 ngày."
+                        },
+                        {
+                            "id": "J6L2",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おとこ：くうこうまで タクシーで いくら かかりますか。",
+                                "おんな：5000えんぐらいです。でんしゃなら 900えんです。"
+                            ],
+                            "question": "電車は いくら かかりますか。",
+                            "choices": [
+                                "900円",
+                                "5000円",
+                                "1900円",
+                                "500円"
+                            ],
+                            "answer": "900円",
+                            "explanation": "Bẫy số: 5000円 là taxi; câu hỏi hỏi TÀU → 900円.",
+                            "translation": "Nam: Đi taxi đến sân bay hết bao nhiêu? — Nữ: Khoảng 5000 yên. Nếu đi tàu thì 900 yên."
+                        },
+                        {
+                            "id": "J6L3",
+                            "kind": "発話表現",
+                            "script": [
+                                "レストランで みずが ほしいです。なんと いいますか。"
+                            ],
+                            "question": "何と 言いますか。",
+                            "choices": [
+                                "みずを ください。",
+                                "みずが すきです。",
+                                "みずを のみました。",
+                                "みずは いいです。"
+                            ],
+                            "answer": "みずを ください。",
+                            "explanation": "Muốn yêu cầu thứ gì thì dùng 「〜をください」.",
+                            "translation": "Ở nhà hàng bạn muốn có nước. Bạn nói gì?"
+                        },
+                        {
+                            "id": "J6L4",
+                            "kind": "即時応答",
+                            "script": [
+                                "おとこ：しゅくだいを わすれました。"
+                            ],
+                            "question": "何と 答えますか。",
+                            "choices": [
+                                "どうしてですか。",
+                                "おめでとうございます。",
+                                "いただきます。",
+                                "はい、どうぞ。"
+                            ],
+                            "answer": "どうしてですか。",
+                            "explanation": "Nghe tin không hay → hỏi lý do 「どうしてですか」.",
+                            "translation": "Nam: Tôi quên bài tập rồi."
+                        },
+                        {
+                            "id": "J6L5",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おんな：きのう だれと えいがを みましたか。",
+                                "おとこ：ひとりで みました。ともだちは いそがしかったです。"
+                            ],
+                            "question": "男の人は だれと 映画を 見ましたか。",
+                            "choices": [
+                                "一人で 見ました",
+                                "友だちと 見ました",
+                                "家族と 見ました",
+                                "見ませんでした"
+                            ],
+                            "answer": "一人で 見ました",
+                            "explanation": "「ひとりで」= một mình. Bạn thì bận nên không đi.",
+                            "translation": "Nữ: Hôm qua bạn xem phim với ai? — Nam: Tôi xem một mình. Bạn tôi bận."
+                        },
+                        {
+                            "id": "J6L6",
+                            "kind": "ポイント理解",
+                            "script": [
+                                "おんな：まいにち なんじかん べんきょうしますか。",
+                                "おとこ：へいじつは 2じかんですが、しゅうまつは 4じかんです。"
+                            ],
+                            "question": "週末は 何時間 勉強しますか。",
+                            "choices": [
+                                "4時間",
+                                "2時間",
+                                "3時間",
+                                "6時間"
+                            ],
+                            "answer": "4時間",
+                            "explanation": "「へいじつ」= ngày thường (2 tiếng); 「しゅうまつ」= cuối tuần (4 tiếng).",
+                            "translation": "Nữ: Mỗi ngày bạn học mấy tiếng? — Nam: Ngày thường 2 tiếng, còn cuối tuần 4 tiếng."
                         }
                     ]
                 }
