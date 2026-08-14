@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Ngữ pháp JLPT N5",
-    "description": "Tổng hợp các cấu trúc ngữ pháp N5",
-    "total": 84
+    "title": "Ngữ pháp JLPT N5 & N4",
+    "description": "102 cấu trúc ngữ pháp N5 (trợ từ có thêm phần N4)",
+    "total": 102
   },
   "categories": [
     {
@@ -31,7 +31,8 @@
               "vn": "Đây là sách.",
               "highlight": "は"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_ga",
@@ -39,7 +40,7 @@
           "romaji": "ga",
           "function": "Đánh dấu chủ ngữ / Nhấn mạnh",
           "color": "#f87171",
-          "detail": "が chỉ rõ AI HOẶC CÁI GÌ thực hiện hành động. Thường dùng khi hỏi/trả lời câu hỏi 'ai?', 'cái gì?' hoặc nhấn mạnh.",
+          "detail": "が chỉ rõ AI HOẶC CÁI GÌ thực hiện hành động. Thường dùng khi hỏi/trả lời câu hỏi 'ai?', 'cái gì?' hoặc nhấn mạnh. Ngoài vai trò chủ ngữ, が đứng CUỐI vế còn nghĩa là «nhưng» — trang trọng hơn けど: 「たかいですが、かいます」.",
           "examples": [
             {
               "jp": "だれ<が>きましたか？",
@@ -53,7 +54,8 @@
               "vn": "Tôi (chứ không ai khác) sẽ làm!",
               "highlight": "が"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_wo",
@@ -75,7 +77,8 @@
               "vn": "Học tiếng Nhật.",
               "highlight": "を"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_ni",
@@ -92,12 +95,13 @@
               "highlight": "に"
             },
             {
-              "jp": "3じ<に>あいましょう。",
-              "romaji": "Sanji <ni> aimashou.",
+              "jp": "さんじ<に>あいましょう。",
+              "romaji": "Sanji <ni> aimashō.",
               "vn": "Hãy gặp nhau lúc 3 giờ.",
               "highlight": "に"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_de",
@@ -119,7 +123,8 @@
               "vn": "Đi bằng xe buýt đến.",
               "highlight": "で"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_no",
@@ -141,7 +146,8 @@
               "vn": "Ẩm thực Nhật Bản",
               "highlight": "の"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_he",
@@ -163,7 +169,8 @@
               "vn": "Viết thư cho bạn.",
               "highlight": "へ"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_to",
@@ -174,9 +181,9 @@
           "detail": "と dùng để liệt kê (A と B = A và B) hoặc chỉ người đồng hành (〜と いく = đi cùng với ~).",
           "examples": [
             {
-              "jp": "ともだち<と>いきます。",
-              "romaji": "Tomodachi <to> ikimasu.",
-              "vn": "Đi cùng bạn bè.",
+              "jp": "かぞく<と>いきます。",
+              "romaji": "Kazoku <to> ikimasu.",
+              "vn": "Đi cùng gia đình.",
               "highlight": "と"
             },
             {
@@ -185,7 +192,8 @@
               "vn": "Bánh mì và trứng",
               "highlight": "と"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_mo",
@@ -193,7 +201,7 @@
           "romaji": "mo",
           "function": "Cũng",
           "color": "#86efac",
-          "detail": "も thay thế は hoặc が để diễn đạt 'cũng'. Thêm thông tin tương tự vào chủ đề đã nói.",
+          "detail": "も thay thế は hoặc が để diễn đạt 'cũng'. Thêm thông tin tương tự vào chủ đề đã nói. Sau số lượng, も mang nghĩa nhấn «tận, những»: 「さんじかんも まちました」đợi tận 3 tiếng.",
           "examples": [
             {
               "jp": "わたし<も>いきます。",
@@ -207,7 +215,8 @@
               "vn": "Cái này cũng ngon.",
               "highlight": "も"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_ka",
@@ -215,7 +224,7 @@
           "romaji": "ka",
           "function": "Dấu hỏi (cuối câu)",
           "color": "#cbd5e1",
-          "detail": "か đặt cuối câu để biến câu thành câu hỏi. Không cần đảo vị trí chủ ngữ như tiếng Anh.",
+          "detail": "か đặt cuối câu để biến câu thành câu hỏi. Không cần đảo vị trí chủ ngữ như tiếng Anh. か còn dùng để nêu lựa chọn «A hay B»: 「コーヒーか おちゃを のみます」. Trong câu hỏi thì đặt cuối câu.",
           "examples": [
             {
               "jp": "これはなんです<か>？",
@@ -229,7 +238,8 @@
               "vn": "Bạn có đi không?",
               "highlight": "か"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_kara",
@@ -246,12 +256,13 @@
               "highlight": "から"
             },
             {
-              "jp": "9じ<から>べんきょうします。",
+              "jp": "くじ<から>べんきょうします。",
               "romaji": "Kuji <kara> benkyō shimasu.",
               "vn": "Học từ 9 giờ.",
               "highlight": "から"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_made",
@@ -268,12 +279,13 @@
               "highlight": "まで"
             },
             {
-              "jp": "6じ<まで>はたらきます。",
+              "jp": "ろくじ<まで>はたらきます。",
               "romaji": "Rokuji <made> hatarakimasu.",
               "vn": "Làm việc đến 6 giờ.",
               "highlight": "まで"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_ya",
@@ -295,7 +307,8 @@
               "vn": "Học tiếng Nhật, tiếng Anh (và các thứ khác).",
               "highlight": "や"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_yo",
@@ -317,7 +330,8 @@
               "vn": "Sắp đến rồi đó.",
               "highlight": "よ"
             }
-          ]
+          ],
+          "level": "N5"
         },
         {
           "id": "p_ne",
@@ -338,6 +352,421 @@
               "romaji": "Muzukashii <ne>.",
               "vn": "Khó nhỉ?",
               "highlight": "ね"
+            }
+          ],
+          "level": "N5"
+        },
+        {
+          "id": "p_yori",
+          "particle": "より",
+          "romaji": "yori",
+          "color": "#f472b6",
+          "level": "N5",
+          "function": "So sánh: hơn ~",
+          "detail": "A は B より + tính từ = A hơn B. Câu hỏi so sánh thường là「A と B と どちらが ~ですか」, trả lời bằng「B の ほうが ~です」. より luôn đứng SAU vế bị đem ra so.",
+          "examples": [
+            {
+              "jp": "でんしゃは バス<より> はやいです。",
+              "romaji": "Densha wa basu <yori> hayai desu.",
+              "vn": "Tàu điện nhanh hơn xe buýt.",
+              "highlight": "より"
+            },
+            {
+              "jp": "きょうは きのう<より> さむいです。",
+              "romaji": "Kyō wa kinō <yori> samui desu.",
+              "vn": "Hôm nay lạnh hơn hôm qua.",
+              "highlight": "より"
+            }
+          ]
+        },
+        {
+          "id": "p_dake",
+          "particle": "だけ",
+          "romaji": "dake",
+          "color": "#34d399",
+          "level": "N5",
+          "function": "Chỉ ~, chỉ có ~",
+          "detail": "Giới hạn số lượng hoặc phạm vi, đứng sau danh từ/số lượng. だけ đi với câu KHẲNG ĐỊNH — khác しか vốn bắt buộc dùng với phủ định.",
+          "examples": [
+            {
+              "jp": "ひらがな<だけ> よめます。",
+              "romaji": "Hiragana <dake> yomemasu.",
+              "vn": "Tôi chỉ đọc được hiragana.",
+              "highlight": "だけ"
+            },
+            {
+              "jp": "ふたり<だけ> きました。",
+              "romaji": "Futari <dake> kimashita.",
+              "vn": "Chỉ có hai người đến.",
+              "highlight": "だけ"
+            }
+          ]
+        },
+        {
+          "id": "p_gurai",
+          "particle": "ぐらい",
+          "romaji": "gurai",
+          "color": "#22d3ee",
+          "level": "N5",
+          "function": "Khoảng chừng ~ (số lượng)",
+          "detail": "Đứng sau số lượng để nói mức xấp xỉ. Viết くらい cũng đúng và nghĩa như nhau. Đừng nhầm với ごろ — ごろ dùng cho MỐC thời gian (さんじごろ ~ khoảng 3 giờ), ぐらい dùng cho ĐỘ DÀI/số lượng (さんじかんぐらい ~ khoảng 3 tiếng).",
+          "examples": [
+            {
+              "jp": "えきまで じゅっぷん<ぐらい> かかります。",
+              "romaji": "Eki made juppun <gurai> kakarimasu.",
+              "vn": "Tới ga mất khoảng 10 phút.",
+              "highlight": "ぐらい"
+            },
+            {
+              "jp": "まいにち にじかん<ぐらい> べんきょうします。",
+              "romaji": "Mainichi nijikan <gurai> benkyō shimasu.",
+              "vn": "Mỗi ngày tôi học khoảng 2 tiếng.",
+              "highlight": "ぐらい"
+            }
+          ]
+        },
+        {
+          "id": "p_demo",
+          "particle": "でも",
+          "romaji": "demo",
+          "color": "#a78bfa",
+          "level": "N5",
+          "function": "Ngay cả ~ / ~ hay gì đó",
+          "detail": "Hai công dụng: (1) nhấn mạnh «ngay cả ~ cũng», (2) gợi ý nhẹ nhàng «~ hay gì đó» khi rủ rê cho đỡ áp đặt. Đầu câu, でも còn là liên từ «nhưng».",
+          "examples": [
+            {
+              "jp": "こども<でも> わかります。",
+              "romaji": "Kodomo <demo> wakarimasu.",
+              "vn": "Ngay cả trẻ con cũng hiểu.",
+              "highlight": "でも"
+            },
+            {
+              "jp": "おちゃ<でも> のみませんか。",
+              "romaji": "Ocha <demo> nomimasen ka.",
+              "vn": "Uống trà hay gì đó không?",
+              "highlight": "でも"
+            }
+          ]
+        },
+        {
+          "id": "p_nado",
+          "particle": "など",
+          "romaji": "nado",
+          "color": "#facc15",
+          "level": "N5",
+          "function": "~ vân vân, ~ chẳng hạn",
+          "detail": "Đặt sau danh sách để ngụ ý còn thứ khác nữa. Rất hay đi cùng や (liệt kê không đầy đủ): 「A や B など」.",
+          "examples": [
+            {
+              "jp": "りんごや みかん<など>を かいました。",
+              "romaji": "Ringo ya mikan <nado> o kaimashita.",
+              "vn": "Tôi đã mua táo, quýt v.v.",
+              "highlight": "など"
+            },
+            {
+              "jp": "にほんごや えいご<など>を べんきょうします。",
+              "romaji": "Nihongo ya eigo <nado> o benkyō shimasu.",
+              "vn": "Tôi học tiếng Nhật, tiếng Anh v.v.",
+              "highlight": "など"
+            }
+          ]
+        },
+        {
+          "id": "p_kedo",
+          "particle": "けど",
+          "romaji": "kedo",
+          "color": "#fb923c",
+          "level": "N5",
+          "function": "Nhưng, tuy nhiên (nối câu)",
+          "detail": "Nối hai vế trái ngược, đứng CUỐI vế đầu. けど là dạng hội thoại; trang trọng dần: けど < けれど < けれども < が. Cũng hay dùng để mở lời cho lịch sự: 「すみませんけど…」.",
+          "examples": [
+            {
+              "jp": "たかいです<けど>、かいます。",
+              "romaji": "Takai desu <kedo>, kaimasu.",
+              "vn": "Đắt nhưng tôi vẫn mua.",
+              "highlight": "けど"
+            },
+            {
+              "jp": "べんきょうしました<けど>、わかりません。",
+              "romaji": "Benkyō shimashita <kedo>, wakarimasen.",
+              "vn": "Tôi đã học nhưng không hiểu.",
+              "highlight": "けど"
+            }
+          ]
+        },
+        {
+          "id": "p_zutsu",
+          "particle": "ずつ",
+          "romaji": "zutsu",
+          "color": "#4ade80",
+          "level": "N4",
+          "function": "Mỗi ~, ~ một",
+          "detail": "Đứng sau số lượng, chỉ sự chia đều hoặc lặp lại đều đặn: mỗi người/mỗi lần bấy nhiêu.",
+          "examples": [
+            {
+              "jp": "ひとり ふたつ<ずつ> とって ください。",
+              "romaji": "Hitori futatsu <zutsu> totte kudasai.",
+              "vn": "Mỗi người lấy hai cái nhé.",
+              "highlight": "ずつ"
+            },
+            {
+              "jp": "まいにち すこし<ずつ> おぼえます。",
+              "romaji": "Mainichi sukoshi <zutsu> oboemasu.",
+              "vn": "Mỗi ngày nhớ một ít.",
+              "highlight": "ずつ"
+            }
+          ]
+        },
+        {
+          "id": "p_madeni",
+          "particle": "までに",
+          "romaji": "made ni",
+          "color": "#38bdf8",
+          "level": "N4",
+          "function": "Trước ~, chậm nhất là ~ (hạn chót)",
+          "detail": "PHÂN BIỆT VỚI まで: まで = «cho tới tận» (hành động kéo dài suốt), までに = «trước mốc đó» (hành động xảy ra một lần trước hạn). 「ごじまで はたらきます」làm việc tới 5 giờ ↔「ごじまでに かえります」về trước 5 giờ.",
+          "examples": [
+            {
+              "jp": "ごじ<までに> かえります。",
+              "romaji": "Goji <made ni> kaerimasu.",
+              "vn": "Tôi sẽ về trước 5 giờ.",
+              "highlight": "までに"
+            },
+            {
+              "jp": "あした<までに> だして ください。",
+              "romaji": "Ashita <made ni> dashite kudasai.",
+              "vn": "Hãy nộp trước ngày mai.",
+              "highlight": "までに"
+            }
+          ]
+        },
+        {
+          "id": "p_shika",
+          "particle": "しか",
+          "romaji": "shika",
+          "color": "#f87171",
+          "level": "N4",
+          "function": "Chỉ ~ (bắt buộc đi với phủ định)",
+          "detail": "Vế sau LUÔN ở thể phủ định, nhưng nghĩa vẫn là khẳng định «chỉ có». Sắc thái «ít hơn mong đợi» — khác だけ trung tính. しか thay luôn を/が: 「みずしか のみません」chứ không nói 「みずをしか」.",
+          "examples": [
+            {
+              "jp": "ひゃくえん<しか> ありません。",
+              "romaji": "Hyaku en <shika> arimasen.",
+              "vn": "Tôi chỉ có 100 yên (thôi).",
+              "highlight": "しか"
+            },
+            {
+              "jp": "にほんご<しか> はなせません。",
+              "romaji": "Nihongo <shika> hanasemasen.",
+              "vn": "Tôi chỉ nói được tiếng Nhật.",
+              "highlight": "しか"
+            }
+          ]
+        },
+        {
+          "id": "p_bakari",
+          "particle": "ばかり",
+          "romaji": "bakari",
+          "color": "#c084fc",
+          "level": "N4",
+          "function": "Toàn là ~ / vừa mới ~",
+          "detail": "Sau danh từ: «toàn là, chỉ mỗi» (thường kèm chê trách). Sau động từ thể た: «vừa mới ~ xong».",
+          "examples": [
+            {
+              "jp": "あには テレビ<ばかり> みて います。",
+              "romaji": "Ani wa terebi <bakari> mite imasu.",
+              "vn": "Anh tôi toàn xem tivi.",
+              "highlight": "ばかり"
+            },
+            {
+              "jp": "いま きた<ばかり>です。",
+              "romaji": "Ima kita <bakari> desu.",
+              "vn": "Tôi vừa mới đến.",
+              "highlight": "ばかり"
+            }
+          ]
+        },
+        {
+          "id": "p_nagara",
+          "particle": "ながら",
+          "romaji": "nagara",
+          "color": "#22d3ee",
+          "level": "N4",
+          "function": "Vừa ~ vừa ~ (cùng lúc)",
+          "detail": "Nối vào thể ます (bỏ ます): き<ます>→きながら. Hai việc do CÙNG một người làm cùng lúc; việc chính nằm ở vế sau.",
+          "examples": [
+            {
+              "jp": "おんがくを きき<ながら> べんきょうします。",
+              "romaji": "Ongaku o kiki<nagara> benkyō shimasu.",
+              "vn": "Tôi vừa nghe nhạc vừa học.",
+              "highlight": "ながら"
+            },
+            {
+              "jp": "テレビを み<ながら> ごはんを たべます。",
+              "romaji": "Terebi o mi<nagara> gohan o tabemasu.",
+              "vn": "Tôi vừa xem tivi vừa ăn cơm.",
+              "highlight": "ながら"
+            }
+          ]
+        },
+        {
+          "id": "p_noni",
+          "particle": "のに",
+          "romaji": "noni",
+          "color": "#fb7185",
+          "level": "N4",
+          "function": "Mặc dù ~ mà lại ~",
+          "detail": "Diễn tả kết quả trái với mong đợi, kèm sắc thái bất mãn/tiếc nuối — mạnh hơn けど nhiều. Sau danh từ và tính từ な thì thêm な: 「げんきなのに」.",
+          "examples": [
+            {
+              "jp": "さむい<のに> まどが あいて います。",
+              "romaji": "Samui <noni> mado ga aite imasu.",
+              "vn": "Trời lạnh vậy mà cửa sổ lại mở.",
+              "highlight": "のに"
+            },
+            {
+              "jp": "べんきょうした<のに> だめでした。",
+              "romaji": "Benkyō shita <noni> dame deshita.",
+              "vn": "Đã học vậy mà vẫn không được.",
+              "highlight": "のに"
+            }
+          ]
+        },
+        {
+          "id": "p_node",
+          "particle": "ので",
+          "romaji": "node",
+          "color": "#f59e0b",
+          "level": "N4",
+          "function": "Vì ~ nên ~ (lý do khách quan)",
+          "detail": "Nêu nguyên nhân một cách mềm, lịch sự hơn から — nên hay dùng khi xin phép hay giải thích với người trên. Sau danh từ/tính từ な thì thêm な: 「あめなので」.",
+          "examples": [
+            {
+              "jp": "あめな<ので> いきません。",
+              "romaji": "Ame na<node> ikimasen.",
+              "vn": "Vì trời mưa nên tôi không đi.",
+              "highlight": "ので"
+            },
+            {
+              "jp": "つかれた<ので> やすみます。",
+              "romaji": "Tsukareta <node> yasumimasu.",
+              "vn": "Vì mệt nên tôi nghỉ.",
+              "highlight": "ので"
+            }
+          ]
+        },
+        {
+          "id": "p_shi",
+          "particle": "し",
+          "romaji": "shi",
+          "color": "#a3e635",
+          "level": "N4",
+          "function": "Vừa ~ vừa ~ (kể nhiều lý do)",
+          "detail": "Liệt kê nhiều lý do/đặc điểm cùng chiều, ngụ ý «còn nữa chứ không chỉ thế». Thường vế cuối mới là kết luận.",
+          "examples": [
+            {
+              "jp": "この みせは やすい<し>、ちかいです。",
+              "romaji": "Kono mise wa yasui<shi>, chikai desu.",
+              "vn": "Quán này vừa rẻ vừa gần.",
+              "highlight": "し"
+            },
+            {
+              "jp": "あめだ<し>、さむい<し>、いえに います。",
+              "romaji": "Ame da<shi>, samui<shi>, ie ni imasu.",
+              "vn": "Vừa mưa vừa lạnh nên tôi ở nhà.",
+              "highlight": "し"
+            }
+          ]
+        },
+        {
+          "id": "p_toka",
+          "particle": "とか",
+          "romaji": "toka",
+          "color": "#60a5fa",
+          "level": "N4",
+          "function": "Nào là ~ nào là ~",
+          "detail": "Liệt kê ví dụ kiểu hội thoại, thân mật hơn や/など. Thường dùng thành cặp 「A とか B とか」.",
+          "examples": [
+            {
+              "jp": "やさい<とか> くだもの<とか> かいます。",
+              "romaji": "Yasai <toka> kudamono <toka> kaimasu.",
+              "vn": "Tôi mua nào là rau nào là hoa quả.",
+              "highlight": "とか"
+            },
+            {
+              "jp": "うみ<とか> やま<とか> すきです。",
+              "romaji": "Umi <toka> yama <toka> suki desu.",
+              "vn": "Tôi thích nào biển nào núi.",
+              "highlight": "とか"
+            }
+          ]
+        },
+        {
+          "id": "p_na_kinshi",
+          "particle": "な",
+          "romaji": "na",
+          "color": "#ef4444",
+          "level": "N4",
+          "function": "Cấm ~, đừng ~ (mệnh lệnh phủ định)",
+          "detail": "Gắn thẳng vào động từ thể từ điển. Rất mạnh và thô — chỉ gặp giữa bạn bè, trong biển cấm hay lời quát. Muốn lịch sự thì dùng 「~ないで ください」.",
+          "examples": [
+            {
+              "jp": "ここで たばこを すう<な>。",
+              "romaji": "Koko de tabako o suu<na>.",
+              "vn": "Cấm hút thuốc ở đây.",
+              "highlight": "な"
+            },
+            {
+              "jp": "うそを つく<な>。",
+              "romaji": "Uso o tsuku<na>.",
+              "vn": "Đừng nói dối.",
+              "highlight": "な"
+            }
+          ]
+        },
+        {
+          "id": "p_kana",
+          "particle": "かな",
+          "romaji": "kana",
+          "color": "#e879f9",
+          "level": "N4",
+          "function": "Không biết có ~ không nhỉ (tự hỏi)",
+          "detail": "Cuối câu, thể thân mật — người nói đang tự hỏi chính mình. Thêm あ thành かなあ để kéo dài sự phân vân.",
+          "examples": [
+            {
+              "jp": "あした あめ<かな>。",
+              "romaji": "Ashita ame <kana>.",
+              "vn": "Mai có mưa không nhỉ.",
+              "highlight": "かな"
+            },
+            {
+              "jp": "これで いい<かな>。",
+              "romaji": "Kore de ii <kana>.",
+              "vn": "Thế này được không nhỉ.",
+              "highlight": "かな"
+            }
+          ]
+        },
+        {
+          "id": "p_tari",
+          "particle": "たり",
+          "romaji": "tari",
+          "color": "#2dd4bf",
+          "level": "N4",
+          "function": "Nào là ~ nào là ~ (kể vài việc)",
+          "detail": "Cấu trúc 「~たり ~たり します」: kể ra vài việc tiêu biểu, ngụ ý còn việc khác. Nối vào thể た, nên động từ nào chia thành だ thì thành だり: よんだり, のんだり.",
+          "examples": [
+            {
+              "jp": "うたを うたっ<たり> おどっ<たり> します。",
+              "romaji": "Uta o utat<tari> odot<tari> shimasu.",
+              "vn": "Tôi nào là hát nào là nhảy.",
+              "highlight": "たり"
+            },
+            {
+              "jp": "にちようびは そうじを し<たり> かいものを し<たり> します。",
+              "romaji": "Nichiyōbi wa sōji o shi<tari> kaimono o shi<tari> shimasu.",
+              "vn": "Chủ nhật tôi nào dọn dẹp nào mua sắm.",
+              "highlight": "たり"
             }
           ]
         }

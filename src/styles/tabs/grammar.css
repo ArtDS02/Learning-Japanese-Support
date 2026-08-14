@@ -30,6 +30,24 @@ background: var(--bg-card);
   padding: 1.25rem;
   transition: all var(--transition);
   animation: fade-up 0.4s ease both;
+  position: relative;
+}
+
+/* Nhãn cấp độ JLPT ở góc phải thẻ trợ từ. */
+.particle-level {
+position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--lc);
+  background: color-mix(in srgb, var(--lc) 15%, transparent);
+  border: 0.0625rem solid color-mix(in srgb, var(--lc) 35%, transparent);
+  padding: 0.0625rem 0.375rem;
+  border-radius: 0.75rem;
+  line-height: 1.5;
 }
 
 .particle-card:hover {
@@ -463,6 +481,7 @@ grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
   /* Trợ từ / từ để hỏi */
   .particle-grid { grid-template-columns: 1fr; gap: 0.7031rem; }
   .particle-card { padding: 0.9375rem; border-radius: 0.7031rem; }
+  .particle-level { top: 0.5625rem; right: 0.5625rem; font-size: 0.6094rem; }
   .particle-chip { font-size: 1.4063rem; padding: 0 0.5625rem; border-radius: 0.5625rem; margin-bottom: 0.5625rem; }
   .particle-chip--word { font-size: 1.125rem; }
   .particle-function { font-size: 0.7969rem; margin-bottom: 0.4688rem; }

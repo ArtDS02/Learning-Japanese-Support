@@ -100,7 +100,7 @@ export function kanjiCard(k) {
     tab: "kanji",
     front: k.char,
     frontSub: `${k.stroke} nét`,
-    back: k.meaning,
+    back: k.hanviet ? `${k.meaning} (${k.hanviet})` : k.meaning,
     backSub: `On: ${k.on} · Kun: ${k.kun}`,
     extra: (k.examples || []).map((e) => `${e.word} (${e.reading}) — ${e.meaning}`),
     mnemonic: k.mnemonic,

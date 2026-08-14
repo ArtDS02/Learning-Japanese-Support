@@ -107,10 +107,10 @@ function buildIndex() {
       tab: "kanji",
       title: k.char,
       sub: `On: ${k.on} · Kun: ${k.kun}`,
-      meaning: k.meaning,
-      badge: c?.label,
+      meaning: k.hanviet ? `${k.meaning} · Hán Việt: ${k.hanviet}` : k.meaning,
+      badge: [k.level, c?.label].filter(Boolean).join(" · "),
       color: c?.color,
-      hay: [k.char, k.on, k.kun, k.on_romaji, k.kun_romaji, k.meaning, k.mnemonic,
+      hay: [k.char, k.on, k.kun, k.on_romaji, k.kun_romaji, k.meaning, k.hanviet, k.level, k.mnemonic,
         ...(k.examples || []).flatMap((e) => [e.word, e.reading, e.meaning])].filter(Boolean).join(" "),
     });
   });
@@ -256,7 +256,7 @@ function charMap() {
   return kanjiByChar;
 }
 
-/** Các kanji (có trong bộ 103 kanji N5) xuất hiện trong một chuỗi. */
+/** Các kanji (có trong bộ N5 + N4 của app) xuất hiện trong một chuỗi. */
 export function kanjiInText(text) {
   const map = charMap();
   const seen = new Set();

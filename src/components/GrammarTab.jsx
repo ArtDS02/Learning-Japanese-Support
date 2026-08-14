@@ -32,13 +32,30 @@ function HighlightedText({ text, highlights = [], color }) {
   );
 }
 
+const PARTICLE_LEVEL_COLOR = { N5: "#34d399", N4: "#38bdf8" };
+
 function ParticlesSection({ category }) {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [activeLevel, setActiveLevel] = useState("all");
+
+  const levels = [...new Set(category.items.map((p) => p.level).filter(Boolean))];
+
+  const pool =
+    activeLevel === "all"
+      ? category.items
+      : category.items.filter((p) => p.level === activeLevel);
 
   const filtered =
-    activeFilter === "all"
-      ? category.items
-      : category.items.filter((p) => p.id === activeFilter);
+    activeFilter === "all" ? pool : pool.filter((p) => p.id === activeFilter);
+
+  /** Đổi cấp độ: trợ từ đang chọn có thể không thuộc cấp mới → bỏ lọc riêng. */
+  const pickLevel = (lv) => {
+    setActiveLevel(lv);
+    if (activeFilter === "all") return;
+    const next =
+      lv === "all" ? category.items : category.items.filter((p) => p.level === lv);
+    if (!next.some((p) => p.id === activeFilter)) setActiveFilter("all");
+  };
 
   return (
     <div className="grammar-section">
@@ -46,6 +63,29 @@ function ParticlesSection({ category }) {
         <span className="gs-icon">{category.icon}</span>
         <span className="gs-label">{category.label}</span>
       </div>
+
+      {levels.length > 1 && (
+        <div className="filter-bar gs-filter">
+          <span className="filter-label">Cấp độ:</span>
+          <button
+            className={`filter-btn ${activeLevel === "all" ? "filter-btn--active" : ""}`}
+            style={{ "--c": category.color }}
+            onClick={() => pickLevel("all")}
+          >
+            Tất cả ({category.items.length})
+          </button>
+          {levels.map((lv) => (
+            <button
+              key={lv}
+              className={`filter-btn ${activeLevel === lv ? "filter-btn--active" : ""}`}
+              style={{ "--c": PARTICLE_LEVEL_COLOR[lv] || category.color }}
+              onClick={() => pickLevel(lv)}
+            >
+              {lv} ({category.items.filter((p) => p.level === lv).length})
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Particle quick-filter */}
       <div className="filter-bar gs-filter">
@@ -57,7 +97,7 @@ function ParticlesSection({ category }) {
         >
           Tất cả
         </button>
-        {category.items.map((item) => (
+        {pool.map((item) => (
           <button
             key={item.id}
             className={`filter-btn ${activeFilter === item.id ? "filter-btn--active" : ""}`}
@@ -78,6 +118,15 @@ function ParticlesSection({ category }) {
             className="particle-card"
             style={{ animationDelay: `${idx * 60}ms` }}
           >
+            {item.level && (
+              <span
+                className="particle-level"
+                style={{ "--lc": PARTICLE_LEVEL_COLOR[item.level] || item.color }}
+              >
+                {item.level}
+              </span>
+            )}
+
             {/* Particle chip */}
             <div className="particle-chip" style={{ "--c": item.color }}>
               {item.particle}
@@ -541,7 +590,8 @@ export default function GrammarTab({ initialSearch }) {
       <div className="section-header">
         <h2 className="section-title">⚙️ Ngữ pháp N5</h2>
         <p className="section-desc">
-          Trợ từ, nhóm động từ, cấu trúc câu quan trọng — và luyện tập ngay trên chính dữ liệu này
+          {grammarData.meta.total} mục · phần Trợ từ đã phủ cả N5 lẫn N4, các phần còn lại ở mức N5
+          — và luyện tập ngay trên chính dữ liệu này
         </p>
       </div>
 

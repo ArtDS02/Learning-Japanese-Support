@@ -20,8 +20,12 @@ const MARKED_KEY = "kanji_marked";
  * dấu tay riêng — trước đây hai nguồn này có thể mâu thuẫn nhau. Set cũ
  * `kanji_learned` đã được chuyển vào SRS lúc khởi động (xem lib/migrate.js).
  */
+const LEVELS = kanjiData.meta?.levels || ["N5", "N4"];
+const LEVEL_COLOR = { N5: "#34d399", N4: "#38bdf8" };
+
 export default function KanjiTab({ initialSearch }) {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [activeLevel, setActiveLevel] = useState("all");
   const [search, setSearch] = useState(initialSearch || "");
   const [selectedIdx, setSelectedIdx] = useState(null);
   const [marked, setMarked] = useState(() => {
@@ -53,21 +57,39 @@ export default function KanjiTab({ initialSearch }) {
     }
   }, [initialSearch]);
 
+  const inLevel = useMemo(
+    () =>
+      activeLevel === "all"
+        ? kanjiData.kanji
+        : kanjiData.kanji.filter((k) => k.level === activeLevel),
+    [activeLevel],
+  );
+
+  /** Đổi cấp độ: nhóm đang chọn có thể rỗng ở cấp mới → trả về "Tất cả". */
+  const pickLevel = (lv) => {
+    setActiveLevel(lv);
+    if (activeCategory === "all") return;
+    const pool = lv === "all" ? kanjiData.kanji : kanjiData.kanji.filter((k) => k.level === lv);
+    if (!pool.some((k) => k.category === activeCategory)) setActiveCategory("all");
+  };
+
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     return kanjiData.kanji.filter((k) => {
       const matchCat = activeCategory === "all" || k.category === activeCategory;
+      const matchLevel = activeLevel === "all" || k.level === activeLevel;
       const matchSearch =
         !q ||
         k.char.includes(q) ||
         k.meaning.toLowerCase().includes(q) ||
+        k.hanviet?.toLowerCase().includes(q) ||
         k.on.toLowerCase().includes(q) ||
         k.kun.toLowerCase().includes(q) ||
         k.on_romaji?.toLowerCase().includes(q) ||
         k.kun_romaji?.toLowerCase().includes(q);
-      return matchCat && matchSearch;
+      return matchCat && matchLevel && matchSearch;
     });
-  }, [activeCategory, search]);
+  }, [activeCategory, activeLevel, search]);
 
   const catColor = (id) =>
     kanjiData.categories.find((c) => c.id === id)?.color || "#a78bfa";
@@ -152,9 +174,11 @@ export default function KanjiTab({ initialSearch }) {
   return (
     <div>
       <div className="section-header">
-        <h2 className="section-title">🈳 Kanji N5</h2>
+        <h2 className="section-title">🈳 Kanji N5 &amp; N4</h2>
         <p className="section-desc">
-          {kanjiData.kanji.length} kanji · Nhấn vào kanji để xem chi tiết, nét viết và tập viết
+          {kanjiData.kanji.length} kanji ({LEVELS.map((lv) =>
+            `${lv}: ${kanjiData.kanji.filter((k) => k.level === lv).length}`).join(" · ")})
+          {" "}· Nhấn vào kanji để xem chi tiết, nét viết và tập viết
           <span className="voc-stat-inline">
             <span style={{ color: "#34d399" }}>✅ {stats.mastered} thuộc</span>
             <span style={{ color: "#facc15" }}>📚 {stats.learning} đang học</span>
@@ -212,10 +236,31 @@ export default function KanjiTab({ initialSearch }) {
         <span className="search-box__icon">🔍</span>
         <input
           type="text"
-          placeholder="Tìm kanji (chữ, nghĩa, cách đọc)..."
+          placeholder="Tìm kanji (chữ, nghĩa, Hán Việt, cách đọc)..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+      </div>
+
+      <div className="filter-bar">
+        <span className="filter-label">Cấp độ:</span>
+        <button
+          className={`filter-btn ${activeLevel === "all" ? "filter-btn--active" : ""}`}
+          style={{ "--c": "#a78bfa" }}
+          onClick={() => pickLevel("all")}
+        >
+          🌐 Tất cả ({kanjiData.kanji.length})
+        </button>
+        {LEVELS.map((lv) => (
+          <button
+            key={lv}
+            className={`filter-btn ${activeLevel === lv ? "filter-btn--active" : ""}`}
+            style={{ "--c": LEVEL_COLOR[lv] || "#a78bfa" }}
+            onClick={() => pickLevel(lv)}
+          >
+            {lv} ({kanjiData.kanji.filter((k) => k.level === lv).length})
+          </button>
+        ))}
       </div>
 
       <div className="filter-bar">
@@ -225,10 +270,13 @@ export default function KanjiTab({ initialSearch }) {
           style={{ "--c": "#a78bfa" }}
           onClick={() => setActiveCategory("all")}
         >
-          🌐 Tất cả ({kanjiData.kanji.length})
+          🌐 Tất cả ({inLevel.length})
         </button>
         {kanjiData.categories.map((cat) => {
-          const count = kanjiData.kanji.filter((k) => k.category === cat.id).length;
+          // Đếm theo cấp độ đang chọn — nếu không thì nút hiện số của cả bộ
+          // trong khi lưới bên dưới chỉ có một phần, rất dễ hiểu nhầm.
+          const count = inLevel.filter((k) => k.category === cat.id).length;
+          if (count === 0) return null;
           return (
             <button
               key={cat.id}
@@ -258,6 +306,10 @@ export default function KanjiTab({ initialSearch }) {
         <span className="k-legend__item">
           <span className="k-legend__sq" style={{ "--c": "var(--accent-cyan)" }}>■</span>
           Âm Kun (thuần Nhật)
+        </span>
+        <span className="k-legend__item">
+          <span className="k-legend__sq" style={{ "--c": "var(--accent-orange)" }}>■</span>
+          Âm Hán Việt
         </span>
         <span className="k-legend__item">
           <span className="k-legend__sym" style={{ "--c": "#f59e0b" }}>★</span>
@@ -298,9 +350,16 @@ export default function KanjiTab({ initialSearch }) {
                 >
                   ★
                 </button>
-                {status === "mastered" && <div className="k-card__learned">✓</div>}
-                {status === "learning" && <div className="k-card__learning">📚</div>}
+                {/* Cấp độ + trạng thái nằm chung một hàng góc trái để không đè lên nhau */}
+                <div className="k-card__tags">
+                  <span className="k-card__level" style={{ "--c": LEVEL_COLOR[k.level] }}>
+                    {k.level}
+                  </span>
+                  {status === "mastered" && <span className="k-card__learned">✓</span>}
+                  {status === "learning" && <span className="k-card__learning">📚</span>}
+                </div>
                 <span className="kanji-char">{k.char}</span>
+                {k.hanviet && <div className="kanji-hanviet">{k.hanviet}</div>}
                 <div className="kanji-meaning">{k.meaning}</div>
                 <div className="kanji-readings">
                   <span className="kanji-on">On: {k.on}</span>
@@ -517,6 +576,9 @@ function KanjiModal({
 
         <div className="kanji-character">
           <div className="km-cat-row">
+            <span className="km-level" style={{ "--lc": LEVEL_COLOR[kanji.level] }}>
+              {kanji.level}
+            </span>
             <span className="km-cat">
               {kanjiData.categories.find((c) => c.id === kanji.category)?.icon}{" "}
               {kanjiData.categories.find((c) => c.id === kanji.category)?.label}
@@ -525,6 +587,12 @@ function KanjiModal({
           </div>
 
           <div className="kanji-modal__char">{kanji.char}</div>
+          {kanji.hanviet && (
+            <div className="km-hanviet">
+              <span className="km-hanviet__label">Hán Việt</span>
+              <span className="km-hanviet__value">{kanji.hanviet}</span>
+            </div>
+          )}
           <div className="kanji-modal__meaning">{kanji.meaning}</div>
 
           <div className="stroke-number">

@@ -40,6 +40,7 @@ const LABELS = {
   color: "Màu", char: "Chữ", on: "Âm On", kun: "Âm Kun", meaning: "Nghĩa",
   stroke: "Số nét", category: "Nhóm (id)", examples: "Ví dụ", mnemonic: "Mẹo nhớ",
   strokes: "Nét SVG", on_romaji: "On (romaji)", kun_romaji: "Kun (romaji)",
+  hanviet: "Âm Hán Việt",
   words: "Từ vựng", japanese: "Tiếng Nhật", romaji: "Romaji", note: "Ghi chú",
   example: "Ví dụ", jp: "Câu Nhật", vn: "Dịch Việt", items: "Mục", particle: "Cấu trúc",
   function: "Chức năng", detail: "Chi tiết", highlight: "Nhấn mạnh", numbers: "Số",

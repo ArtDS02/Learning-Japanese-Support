@@ -69,7 +69,9 @@ export function particleCloze() {
       const m = ex.jp.match(/<([^>]+)>/);
       if (!m || m[1] !== item.particle) return; // chỉ dùng ví dụ có đánh dấu đúng
       const full = clean(ex.jp);
-      const question = ex.jp.replace(/<[^>]+>/, BLANK).replace(/[<>]/g, "");
+      // Khoét TẤT CẢ chỗ đánh dấu: mẫu 「~とか~とか」/「~たり~たり」 có hai lần
+      // đánh dấu, nếu chỉ khoét lần đầu thì lần sau lộ luôn đáp án.
+      const question = ex.jp.replace(/<[^>]+>/g, BLANK).replace(/[<>]/g, "");
       const wrong = distractors(
         all.filter((p) => p.particle !== item.particle),
         item.particle,
@@ -84,7 +86,7 @@ export function particleCloze() {
         kind: "choice",
         prompt: "Điền trợ từ thích hợp vào chỗ trống",
         question,
-        sub: ex.romaji ? clean(ex.romaji).replace(item.romaji, "___") : null,
+        sub: ex.romaji ? clean(ex.romaji).split(item.romaji).join("___") : null,
         choices: mcChoices(item.particle, wrong),
         answer: item.particle,
         explanation: `${item.particle} (${item.romaji}) — ${item.function}. ${item.detail}`,
@@ -608,7 +610,7 @@ export function listenKana() {
 
 export const QUIZ_SETS = [
   // Ngữ pháp
-  { id: "particles", tab: "grammar", deck: "grammar", icon: "🔗", label: "Điền trợ từ", desc: "Chọn trợ từ đúng cho câu — sinh từ 30 ví dụ có sẵn", gen: particleCloze },
+  { id: "particles", tab: "grammar", deck: "grammar", icon: "🔗", label: "Điền trợ từ", desc: "Chọn trợ từ đúng cho câu — sinh từ ví dụ có sẵn", gen: particleCloze },
   { id: "patterns", tab: "grammar", deck: "grammar", icon: "🧩", label: "Điền mẫu câu", desc: "Cloze theo phần được tô sáng trong 116 ví dụ mẫu câu", gen: patternCloze },
   { id: "verb-conj", tab: "grammar", deck: "grammar", icon: "🔄", label: "Nhận dạng chia động từ", desc: "Phân biệt ます / ません / ました / て của cùng một động từ", gen: verbConjugation },
   { id: "verb-type", tab: "grammar", deck: "grammar", icon: "⌨️", label: "Gõ dạng chia động từ", desc: "Tự gõ dạng chia — recall chủ động", gen: verbConjugationTyping },
@@ -629,7 +631,7 @@ export const QUIZ_SETS = [
 
   // Kanji
   { id: "kanji-mean-char", tab: "kanji", deck: "kanji", icon: "🔎", label: "Nghĩa → chọn Kanji", desc: "Đảo chiều so với flashcard", gen: kanjiMeaningToChar },
-  { id: "kanji-char-mean", tab: "kanji", deck: "kanji", icon: "🈳", label: "Kanji → chọn nghĩa", desc: "Kiểm tra nhanh 103 kanji", gen: kanjiCharToMeaning },
+  { id: "kanji-char-mean", tab: "kanji", deck: "kanji", icon: "🈳", label: "Kanji → chọn nghĩa", desc: `Kiểm tra nhanh ${kanjiData.kanji.length} kanji`, gen: kanjiCharToMeaning },
   { id: "kanji-read-char", tab: "kanji", deck: "kanji", icon: "🔉", label: "Cách đọc → chọn Kanji", desc: "Luyện âm On/Kun", gen: kanjiReadingToChar },
 
   // Nghe
