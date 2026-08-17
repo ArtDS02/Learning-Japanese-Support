@@ -1,0 +1,450 @@
+/* ============================================================
+   JLPT N5 App — Preloader "Code to Art"
+   CODE → COMPILE → PARTICLES → ARTDS LOGO → SHIMMER → VÀO TRANG
+
+   Nhịp do Preloader.jsx điều khiển: nó chỉ đổi `data-phase` trên .pl, mọi
+   chuyển động dưới đây tự chạy theo. Vì thế các animation đều gắn vào bộ
+   chọn phủ NHIỀU pha (`:not([data-phase="code"])`, `:is(...)`) — nếu tách ra
+   mỗi pha một bộ chọn thì animation-name đổi giữa chừng và animation bị chạy
+   lại từ đầu ngay giữa hiệu ứng.
+
+   (import SAU base.css trong main.jsx để thắng cascade)
+   ============================================================ */
+
+.pl {
+  /* Bảng màu riêng — cố ý KHÔNG dùng token của app: preloader là khoảnh khắc
+     thương hiệu, tông obsidian/teal/bạc không liên quan tới palette học tập. */
+  --pl-bg: #05070a;
+  --pl-teal: #4fd6c0;
+  --pl-silver: #c8d3d1;
+  --pl-dim: rgba(196, 212, 208, 0.3);
+  /* Độ đậm của lớp màu thương hiệu chồng lên mặt kim loại.
+     0 = kim loại thuần, 1 = màu logo gốc. */
+  --pl-brand: 0.5;
+
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 48%, rgba(28, 62, 58, 0.22), transparent 70%),
+    var(--pl-bg);
+  font-family: var(--font-mono);
+  opacity: 1;
+  transition: opacity 0.3s ease 0.05s;
+}
+
+.pl[data-phase='exit'] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Lưới kỹ thuật rất mờ + vignette: chỉ để nền không phẳng lì, không được nhìn ra. */
+.pl__grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.022) 0.0625rem, transparent 0.0625rem),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 0.0625rem, transparent 0.0625rem);
+  background-size: 3rem 3rem;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000, transparent 68%);
+  mask-image: radial-gradient(circle at 50% 50%, #000, transparent 68%);
+}
+
+/* ── HUD: bốn góc, cố tình mờ để không tranh chú ý với logo ── */
+
+.pl__hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: var(--pl-dim);
+  font-size: 0.5625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.pl__hud-i {
+  position: absolute;
+  animation: pl-hud 0.6s ease both;
+}
+
+.pl__hud-i--tl { top: 1.75rem; left: 2rem; }
+.pl__hud-i--tr { top: 1.75rem; right: 2rem; }
+.pl__hud-i--bl { bottom: 1.75rem; left: 2rem; }
+.pl__hud-i--br { bottom: 1.75rem; right: 2rem; }
+
+/* Bộ đếm % nhảy liên tục — khoá bề rộng bằng chữ số đều để nó không giật. */
+.pl__hud-i--br b {
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  color: rgba(196, 212, 208, 0.42);
+}
+
+@keyframes pl-hud {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Pha 1: dòng lệnh ── */
+
+/* Không đặt bề rộng cố định: ô lệnh co đúng bằng dòng chữ (nhờ .pl__ghost) rồi
+   để lưới căn giữa. Cho một bề rộng chẵn thì chữ căn trái sẽ nằm lệch hẳn sang
+   trái so với logo — mà hạt thì bay từ chữ tới logo, lệch trục là thấy ngay. */
+.pl__term {
+  grid-area: 1 / 1;
+  max-width: 88vw;
+  text-align: left;
+  transition:
+    opacity 0.34s ease,
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.4s ease;
+}
+
+/* Hết pha "code" là chữ vỡ ra: nhoè + lùi lại, đúng lúc hạt sinh ra từ nét chữ. */
+.pl:not([data-phase='code']) .pl__term {
+  opacity: 0;
+  transform: scale(0.965);
+  filter: blur(0.375rem);
+  pointer-events: none;
+}
+
+.pl__line {
+  font-size: clamp(0.875rem, 1.45vw, 1.3125rem);
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: rgba(228, 238, 235, 0.88);
+  white-space: nowrap;
+}
+
+.pl__prompt {
+  margin-right: 0.6875rem;
+  color: var(--pl-teal);
+  opacity: 0.9;
+  text-shadow: 0 0 0.75rem rgba(79, 214, 192, 0.35);
+}
+
+/* Bản sao vô hình của cả dòng lệnh: nó giữ sẵn đúng bề rộng cuối cùng, nên chữ
+   gõ tới đâu khung cũng đứng yên tới đó. Đo bằng `ch` thì lúc JetBrains Mono
+   tải xong bề rộng sẽ nhảy một nhịp giữa lúc đang gõ. */
+.pl__type {
+  position: relative;
+  display: inline-block;
+}
+
+.pl__ghost {
+  visibility: hidden;
+}
+
+.pl__live {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.pl__code {
+  text-shadow: 0 0 1.125rem rgba(160, 220, 210, 0.14);
+}
+
+.pl__caret {
+  display: inline-block;
+  width: 0.45em;
+  height: 1.05em;
+  margin-left: 0.18em;
+  vertical-align: -0.18em;
+  background: var(--pl-teal);
+  box-shadow: 0 0 0.625rem rgba(79, 214, 192, 0.55);
+  animation: pl-blink 0.7s steps(1) infinite;
+}
+
+@keyframes pl-blink {
+  50% { opacity: 0; }
+}
+
+.pl__status {
+  margin-top: 0.875rem;
+  color: var(--pl-dim);
+  font-size: 0.5625rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ── Pha 2: hạt ── */
+
+.pl__canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ── Pha 3–4: logo ── */
+
+.pl__logo {
+  grid-area: 1 / 1;
+  position: relative;
+  width: min(15rem, 46vw);
+  aspect-ratio: 1;
+  opacity: 0;
+}
+
+/* Một animation duy nhất lo cả hiện hình lẫn cú nảy cuối: gộp lại thì không có
+   khoảnh khắc nào transform bị hai animation tranh nhau. */
+.pl:not([data-phase='code']):not([data-phase='compile']) .pl__logo {
+  animation: pl-logo 1.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes pl-logo {
+  0% {
+    opacity: 0;
+    transform: scale(0.86);
+    filter: blur(0.5rem);
+  }
+  22% { opacity: 1; }
+  34% {
+    transform: scale(1);
+    filter: blur(0);
+  }
+  74% { transform: scale(1); }
+  /* ≈2.30s — nảy rất nhẹ, chỉ 2.5% */
+  82% { transform: scale(1.025); }
+  100% {
+    opacity: 1;
+    transform: scale(1.012);
+    filter: blur(0);
+  }
+}
+
+.pl__mark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0.5rem 1.75rem rgba(0, 0, 0, 0.6));
+}
+
+/* Nét viền chạy quanh vành logo trước khi bề mặt kim loại hiện ra. */
+.pl__ring {
+  fill: none;
+  stroke: var(--pl-teal);
+  stroke-width: 0.9;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  opacity: 0;
+  transform: rotate(-90deg);
+  transform-origin: 60px 60px;
+}
+
+.pl:not([data-phase='code']):not([data-phase='compile']) .pl__ring {
+  animation: pl-ring 1.1s cubic-bezier(0.3, 0.9, 0.3, 1) both;
+}
+
+@keyframes pl-ring {
+  0% { stroke-dashoffset: 100; opacity: 0; }
+  14% { opacity: 0.55; }
+  /* ≈1.74s — viền khép kín đúng lúc vệt sáng bắt đầu quét */
+  46% { stroke-dashoffset: 0; opacity: 0.45; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+/* BẮT BUỘC: <mask> mặc định cắt theo ĐỘ SÁNG. Logo có mảng tối và các vệt lốm
+   đốm, cắt theo độ sáng thì mặt kim loại lộ ra loang lổ và mất hẳn phần vành
+   xanh đậm. Cắt theo alpha mới ra đúng silhouette (đã đo: IoU 0,93 so với file
+   gốc, không sót pixel nào). Safari < 15.4 không hiểu thuộc tính này và rơi về
+   luminance — logo vẫn nhận ra được, chỉ rỗ hơn. */
+.pl__cut {
+  mask-type: alpha;
+}
+
+.pl__surface {
+  opacity: 0;
+}
+
+.pl:not([data-phase='code']):not([data-phase='compile']) .pl__surface {
+  animation: pl-surface 0.34s ease both;
+}
+
+@keyframes pl-surface {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Lớp phủ tối tan dần = graphite → bạc → kim loại. Dùng opacity chứ không dùng
+   filter: brightness() vì phía trên còn <mask>, chồng thêm filter là chồng thêm
+   một lớp raster cho mỗi khung hình. */
+.pl__dim {
+  opacity: 1;
+}
+
+.pl:not([data-phase='code']):not([data-phase='compile']) .pl__dim {
+  animation: pl-dim 0.85s cubic-bezier(0.33, 0, 0.2, 1) both;
+}
+
+@keyframes pl-dim {
+  0% { opacity: 0.97; }
+  22% { opacity: 0.82; }
+  100% { opacity: 0; }
+}
+
+/* Vệt sáng quét chéo — CHẠY ĐÚNG MỘT LẦN, không lặp. */
+.pl__shine {
+  opacity: 0;
+  transform: rotate(14deg) translateX(0);
+}
+
+.pl:is([data-phase='shine'], [data-phase='exit']) .pl__shine {
+  animation: pl-sweep 0.56s cubic-bezier(0.36, 0, 0.26, 1) both;
+}
+
+@keyframes pl-sweep {
+  0% { opacity: 0; transform: rotate(14deg) translateX(0); }
+  14% { opacity: 1; }
+  84% { opacity: 1; }
+  100% { opacity: 0; transform: rotate(14deg) translateX(205px); }
+}
+
+/* Màu thương hiệu chồng lên mặt kim loại — hạ bão hoà để không chói. */
+.pl__brand {
+  opacity: 0;
+  filter: saturate(0.7) brightness(0.9);
+  transition: opacity 0.7s ease;
+}
+
+.pl:is([data-phase='shine'], [data-phase='exit']) .pl__brand {
+  opacity: var(--pl-brand);
+}
+
+.pl__tag {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.75rem;
+  text-align: center;
+  color: var(--pl-dim);
+  font-size: 0.5rem;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.pl:not([data-phase='code']):not([data-phase='compile']) .pl__tag {
+  animation: pl-hud 0.7s ease 0.45s both;
+}
+
+/* ── Pha 5: quầng sáng teal mềm, KHÔNG có khung trắng nào ── */
+
+.pl__portal {
+  grid-area: 1 / 1;
+  width: 46vmax;
+  height: 46vmax;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.1);
+  background: radial-gradient(
+    circle closest-side,
+    rgba(190, 255, 246, 0.5),
+    rgba(120, 238, 214, 0.26) 26%,
+    rgba(79, 214, 192, 0.1) 48%,
+    rgba(79, 214, 192, 0) 70%
+  );
+}
+
+.pl[data-phase='exit'] .pl__portal {
+  animation: pl-portal 0.46s cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+@keyframes pl-portal {
+  0% { opacity: 0; transform: scale(0.1); }
+  24% { opacity: 0.9; }
+  100% { opacity: 0; transform: scale(2.6); }
+}
+
+/* ── Trang chủ hiện ra sau khi preloader tắt ──
+   KHÔNG đặt transform lên .app: xem ghi chú trong base.css — .app có transform
+   thì mọi con position:fixed (nút nổi, lớp phủ, .bg-orbs) sẽ bám vào .app cao
+   bằng cả trang thay vì bám viewport. Nên chỉ ba khối nội dung được nâng lên,
+   còn .app thuần mờ dần. Class này bị gỡ ngay khi animation xong (App.jsx). */
+
+.app--reveal {
+  transition-duration: 0.85s;
+}
+
+.app--reveal .header__inner,
+.app--reveal .main-content,
+.app--reveal .footer {
+  animation: pl-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.app--reveal .main-content { animation-delay: 0.06s; }
+.app--reveal .footer { animation-delay: 0.1s; }
+
+@keyframes pl-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.5625rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Điện thoại ── */
+
+@media (max-width: 768px) {
+  .pl__line {
+    font-size: 0.7969rem;
+    letter-spacing: 0.02em;
+  }
+
+  .pl__logo {
+    width: min(11.25rem, 54vw);
+  }
+
+  .pl__hud {
+    font-size: 0.5156rem;
+    letter-spacing: 0.16em;
+  }
+
+  .pl__hud-i--tl, .pl__hud-i--tr { top: 1.125rem; }
+  .pl__hud-i--bl, .pl__hud-i--br { bottom: 1.125rem; }
+  .pl__hud-i--tl, .pl__hud-i--bl { left: 1.125rem; }
+  .pl__hud-i--tr, .pl__hud-i--br { right: 1.125rem; }
+
+  .pl__grid {
+    background-size: 2rem 2rem;
+  }
+
+  .pl__tag {
+    bottom: -1.375rem;
+    font-size: 0.4688rem;
+    letter-spacing: 0.34em;
+  }
+}
+
+/* Máy rất hẹp: dòng lệnh 33 ký tự không thể vừa — bỏ hẳn HUD trên đầu cho thoáng
+   và siết chữ lại thay vì để nó tràn ngang. */
+@media (max-width: 360px) {
+  .pl__line {
+    font-size: 0.6875rem;
+  }
+
+  .pl__hud-i--tr {
+    display: none;
+  }
+}
+
+/* Cửa sổ dẹt: logo 15rem sẽ chạm mép trên–dưới. */
+@media (max-height: 34rem) {
+  .pl__logo {
+    width: min(9.375rem, 40vh);
+  }
+
+  .pl__hud-i--tl, .pl__hud-i--tr { top: 1rem; }
+  .pl__hud-i--bl, .pl__hud-i--br { bottom: 1rem; }
+}

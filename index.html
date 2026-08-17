@@ -16,6 +16,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="JLPT N5" />
+
+    <!-- Nền obsidian ngay từ khung hình đầu: CSS của app nạp qua JS nên trước
+         khi nó tới, trang trắng loá một nhịp rồi mới đen — nhìn như lỗi. -->
+    <style>
+      html { background: #05070a; }
+    </style>
   </head>
   <body>
     <div id="root"></div>

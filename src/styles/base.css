@@ -57,6 +57,8 @@
   --z-nav: 90;
   --z-header: 100;
   --z-overlay: 500;
+  /* Preloader phủ lên tất cả, kể cả lớp phủ — nó là màn hình đầu tiên. */
+  --z-preloader: 900;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -298,6 +300,7 @@ font-family: var(--font-mono);
   border-radius: 1.25rem;
   letter-spacing: 0.08em;
   animation: pulse-border 2s ease-in-out infinite;
+  text-decoration: none;
 }
 
 @keyframes pulse-border {

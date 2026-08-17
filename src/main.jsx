@@ -8,6 +8,8 @@ import './styles/base.css'
 import './styles/common/modal.css'
 // ui.css phải nằm SAU base.css để thắng cascade (xem ghi chú trong file).
 import './styles/common/ui.css'
+// preloader.css cũng phải sau base.css: nó chỉnh lại .app lúc trang chủ hiện ra.
+import './styles/common/preloader.css'
 
 // Chuyển dữ liệu người dùng sang mô hình tiến độ mới (nếu cần) trước khi render.
 runMigrations()

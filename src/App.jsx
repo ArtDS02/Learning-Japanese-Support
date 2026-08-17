@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef, lazy, Suspense } from "react";
+import Preloader from "./components/common/Preloader";
 
 // Tìm kiếm toàn cục cũng lazy: chỉ mục của nó đọc mọi file data, để import tĩnh
 // là kéo toàn bộ JSON vào bundle đầu tiên — đúng thứ vừa tách ra.
@@ -40,6 +41,22 @@ const TABS = [
 ];
 
 const VALID = new Set(TABS.map((t) => t.id));
+
+// Preloader thương hiệu chỉ chạy MỘT LẦN mỗi phiên trình duyệt. App này để học
+// hằng ngày, mở lại chục lần một buổi — lần nào cũng bắt ngồi xem 2,7 giây thì
+// nó thành vật cản chứ không còn là ấn tượng. Đổi thành `false` nếu muốn chạy
+// lại ở mọi lần tải trang.
+const PRELOADER_ONCE_PER_SESSION = true;
+const PRELOADER_KEY = "artds-preloader-seen";
+
+function shouldPreload() {
+  if (!PRELOADER_ONCE_PER_SESSION) return true;
+  try {
+    return !sessionStorage.getItem(PRELOADER_KEY);
+  } catch {
+    return true; // chế độ riêng tư chặn sessionStorage — cứ chạy như bình thường
+  }
+}
 
 /**
  * Thanh chuyển tab.
@@ -195,14 +212,37 @@ export default function App() {
     return saved && VALID.has(saved) ? saved : "home";
   });
   const [mounted, setMounted] = useState(false);
+  const [preloading, setPreloading] = useState(shouldPreload);
+  const [revealing, setRevealing] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   // Khi mở một kết quả từ tìm kiếm toàn cục: nhảy tab + mang theo từ khoá.
   const [jump, setJump] = useState(null); // { tab, q, n }
 
+  // Trang chỉ hiện sau khi preloader xong. Nó chạy đè lên trên nên trong lúc đó
+  // các tab vẫn tải bình thường ở dưới — hết preloader là nội dung đã sẵn sàng.
   useEffect(() => {
+    if (preloading) return undefined;
     const t = setTimeout(() => setMounted(true), 50);
     return () => clearTimeout(t);
+  }, [preloading]);
+
+  const onPreloaded = useCallback(() => {
+    try {
+      sessionStorage.setItem(PRELOADER_KEY, "1");
+    } catch {
+      /* không lưu được thì phiên sau xem lại — không đáng để chặn app */
+    }
+    setPreloading(false);
+    setRevealing(true);
   }, []);
+
+  // Gỡ class ngay khi hiệu ứng nâng nội dung chạy xong: nó dùng transform, mà
+  // transform còn bám lại thì .header/.footer thành containing block vô ích.
+  useEffect(() => {
+    if (!revealing) return undefined;
+    const t = setTimeout(() => setRevealing(false), 950);
+    return () => clearTimeout(t);
+  }, [revealing]);
 
   useEffect(() => {
     localStorage.setItem("jlpt-active-tab", activeTab);
@@ -255,69 +295,73 @@ export default function App() {
   };
 
   return (
-    <div className={`app ${mounted ? "app--mounted" : ""}`}>
-      <a className="skip-link" href="#tabpanel">Bỏ qua thanh điều hướng</a>
+    <>
+      {preloading && <Preloader onDone={onPreloaded} />}
 
-      <div className="bg-orbs">
-        <div className="bg-orb bg-orb--1" />
-        <div className="bg-orb bg-orb--2" />
-        <div className="bg-orb bg-orb--3" />
-      </div>
+      <div className={`app ${mounted ? "app--mounted" : ""} ${revealing ? "app--reveal" : ""}`}>
+        <a className="skip-link" href="#tabpanel">Bỏ qua thanh điều hướng</a>
 
-      <header className="header">
-        <div className="header__inner">
-          <button
-            className="header__logo header__logo--btn"
-            onClick={() => goTo("home")}
-            title="Về trang Học hôm nay"
-          >
-            <span className="header__flag">🇯🇵</span>
-            <div>
-              <h1 className="header__title">JLPT N5</h1>
-              <p className="header__subtitle">Tổng hợp kiến thức</p>
-            </div>
-          </button>
-
-          <div className="header__right">
-            <button
-              className="gs-trigger"
-              onClick={() => setSearchOpen(true)}
-              aria-label="Tìm kiếm toàn bộ nội dung"
-            >
-              🔍 <span className="gs-trigger__t">Tìm mọi nơi</span>
-              <kbd>Ctrl K</kbd>
-            </button>
-            <div className="header__badge">ArtDS02</div>
-          </div>
+        <div className="bg-orbs">
+          <div className="bg-orb bg-orb--1" />
+          <div className="bg-orb bg-orb--2" />
+          <div className="bg-orb bg-orb--3" />
         </div>
-      </header>
 
-      <TabNav activeTab={activeTab} onSelect={goTo} />
+        <header className="header">
+          <div className="header__inner">
+            <button
+              className="header__logo header__logo--btn"
+              onClick={() => goTo("home")}
+              title="Về trang Học hôm nay"
+            >
+              <span className="header__flag">🇯🇵</span>
+              <div>
+                <h1 className="header__title">JLPT N5</h1>
+                <p className="header__subtitle">Tổng hợp kiến thức</p>
+              </div>
+            </button>
 
-      <main
-        className="main-content"
-        id="tabpanel"
-        role="tabpanel"
-        aria-labelledby={`tab-${activeTab}`}
-        tabIndex={-1}
-      >
-        <Suspense fallback={<div className="tab-loading">Đang tải…</div>}>
-          <div key={`${activeTab}:${jumped ? jump.n : 0}`}>{renderTab()}</div>
-        </Suspense>
-      </main>
+            <div className="header__right">
+              <button
+                className="gs-trigger"
+                onClick={() => setSearchOpen(true)}
+                aria-label="Tìm kiếm toàn bộ nội dung"
+              >
+                🔍 <span className="gs-trigger__t">Tìm mọi nơi</span>
+                <kbd>Ctrl K</kbd>
+              </button>
+              <a href="https://portfolio-5728c.web.app/" className="header__badge">ArtDS02</a>
+            </div>
+          </div>
+        </header>
 
-      {searchOpen && (
-        <Suspense fallback={null}>
-          <GlobalSearch open onClose={() => setSearchOpen(false)} onJump={onJump} />
-        </Suspense>
-      )}
+        <TabNav activeTab={activeTab} onSelect={goTo} />
 
-      <BackToTop />
+        <main
+          className="main-content"
+          id="tabpanel"
+          role="tabpanel"
+          aria-labelledby={`tab-${activeTab}`}
+          tabIndex={-1}
+        >
+          <Suspense fallback={<div className="tab-loading">Đang tải…</div>}>
+            <div key={`${activeTab}:${jumped ? jump.n : 0}`}>{renderTab()}</div>
+          </Suspense>
+        </main>
 
-      <footer className="footer">
-        <p>🎌 がんばってください！ · Chúc bạn thi JLPT N5 thành công!</p>
-        <p>Copyright by ARTDS02</p>
-      </footer>
-    </div>
+        {searchOpen && (
+          <Suspense fallback={null}>
+            <GlobalSearch open onClose={() => setSearchOpen(false)} onJump={onJump} />
+          </Suspense>
+        )}
+
+        <BackToTop />
+
+        <footer className="footer">
+          <p>🎌 がんばってください！ · Chúc bạn thi JLPT N5 thành công!</p>
+          <p>Copyright by ARTDS02</p>
+        </footer>
+      </div>
+    </>
   );
 }
