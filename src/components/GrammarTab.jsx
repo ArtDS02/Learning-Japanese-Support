@@ -34,9 +34,132 @@ function HighlightedText({ text, highlights = [], color }) {
 
 const PARTICLE_LEVEL_COLOR = { N5: "#34d399", N4: "#38bdf8" };
 
+const NOTE_META = {
+  warn: { icon: "⚠️", label: "Dễ sai" },
+  compare: { icon: "⚖️", label: "Phân biệt" },
+  tip: { icon: "💡", label: "Mẹo" },
+};
+
+/**
+ * Tô sáng ĐÚNG chỗ được đánh dấu 〈…〉 trong data, không phải mọi lần trợ từ xuất
+ * hiện: 「にちようびに…」chỉ tô chữ に làm trợ từ, không tô に trong にちようび.
+ */
+function MarkedText({ text, color }) {
+  const parts = text.split(/<([^>]+)>/); // vị trí lẻ = phần được đánh dấu
+  return (
+    <span>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <mark key={i} className="highlight" style={{ "--c": color }}>
+            {part}
+          </mark>
+        ) : (
+          <span key={i}>{part}</span>
+        ),
+      )}
+    </span>
+  );
+}
+
+/** Một câu ví dụ của trợ từ — dùng cho cả ví dụ cơ bản và ví dụ trong từng cách dùng. */
+function ParticleExample({ ex, particle, color }) {
+  const jp = ex.jp.replace(/<|>/g, "");
+  const marked = /<[^>]+>/.test(ex.jp);
+  return (
+    <div className="particle-example">
+      <div className="particle-example__jp">
+        {marked ? (
+          <MarkedText text={ex.jp} color={color} />
+        ) : (
+          <HighlightedText text={jp} highlights={[particle]} color={color} />
+        )}
+        <SpeakButton text={jp} size="sm" />
+      </div>
+      {ex.romaji && (
+        <div className="particle-example__romaji">{ex.romaji.replace(/<|>/g, "")}</div>
+      )}
+      <div className="particle-example__vn">→ {ex.vn}</div>
+    </div>
+  );
+}
+
+/**
+ * Phần kiến thức sâu của một trợ từ: từng chức năng (theo Minna no Nihongo) và
+ * những điểm dễ sai. Mặc định gập lại để lưới thẻ còn dễ quét; lọc còn một trợ
+ * từ thì mở sẵn vì lúc đó người học đang muốn đọc kỹ đúng trợ từ đó.
+ */
+function ParticleDeep({ item, open, onToggle }) {
+  const uses = item.uses || [];
+  const notes = item.notes || [];
+  if (!uses.length && !notes.length) return null;
+
+  return (
+    <>
+      {/* Không có onToggle = đang mở bắt buộc (lọc còn một trợ từ) → khỏi cần nút. */}
+      {onToggle && (
+        <button
+          className="pt-more"
+          style={{ "--c": item.color }}
+          onClick={onToggle}
+          aria-expanded={open}
+        >
+          {open
+            ? "▴ Thu gọn"
+            : `▾ ${uses.length} cách dùng · ${notes.length} điểm cần lưu ý`}
+        </button>
+      )}
+
+      {open && (
+        <div className="pt-deep">
+          {uses.length > 0 && (
+            <div className="pt-block">
+              <div className="pt-block__title">📚 Các cách dùng</div>
+              {uses.map((u, i) => (
+                <div className="pt-use" key={i} style={{ "--c": item.color }}>
+                  <div className="pt-use__head">
+                    <span className="pt-use__n">{i + 1}</span>
+                    <span className="pt-use__label">{u.label}</span>
+                    {u.level && <span className="pt-use__tag pt-use__tag--lv">{u.level}</span>}
+                    {u.minna && <span className="pt-use__tag">Minna · {u.minna}</span>}
+                  </div>
+                  {u.pattern && <div className="pt-use__pattern">{u.pattern}</div>}
+                  {u.detail && <div className="pt-use__detail">{u.detail}</div>}
+                  <div className="particle-examples">
+                    {u.examples.map((ex, j) => (
+                      <ParticleExample key={j} ex={ex} particle={item.particle} color={item.color} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {notes.length > 0 && (
+            <div className="pt-block">
+              <div className="pt-block__title">🎯 Điểm cần lưu ý khi dùng</div>
+              <div className="pt-notes">
+                {notes.map((n, i) => {
+                  const meta = NOTE_META[n.kind] || NOTE_META.tip;
+                  return (
+                    <div className={`pt-note is-${n.kind || "tip"}`} key={i}>
+                      <span className="pt-note__icon" title={meta.label}>{meta.icon}</span>
+                      <span className="pt-note__text">{n.text}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </>
+  );
+}
+
 function ParticlesSection({ category }) {
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeLevel, setActiveLevel] = useState("all");
+  const [opened, setOpened] = useState(() => new Set());
 
   const levels = [...new Set(category.items.map((p) => p.level).filter(Boolean))];
 
@@ -112,10 +235,14 @@ function ParticlesSection({ category }) {
       </div>
 
       <div className="particle-grid">
-        {filtered.map((item, idx) => (
+        {filtered.map((item, idx) => {
+          // Lọc còn đúng một trợ từ → mở sẵn phần kiến thức sâu.
+          const forced = filtered.length === 1;
+          const open = forced || opened.has(item.id);
+          return (
           <div
             key={item.id}
-            className="particle-card"
+            className={`particle-card ${open ? "is-open" : ""}`}
             style={{ animationDelay: `${idx * 60}ms` }}
           >
             {item.level && (
@@ -141,24 +268,28 @@ function ParticlesSection({ category }) {
             {/* Examples */}
             <div className="particle-examples">
               {item.examples.map((ex, i) => (
-                <div key={i} className="particle-example">
-                  <div className="particle-example__jp">
-                    <HighlightedText
-                      text={ex.jp.replace(/<|>/g, "")}
-                      highlights={[item.particle]}
-                      color={item.color}
-                    />
-                    <SpeakButton text={ex.jp.replace(/<|>/g, "")} size="sm" />
-                  </div>
-                  <div className="particle-example__romaji">
-                    {ex.romaji.replace(/<|>/g, "")}
-                  </div>
-                  <div className="particle-example__vn">→ {ex.vn}</div>
-                </div>
+                <ParticleExample key={i} ex={ex} particle={item.particle} color={item.color} />
               ))}
             </div>
+
+            <ParticleDeep
+              item={item}
+              open={open}
+              onToggle={
+                forced
+                  ? null
+                  : () =>
+                setOpened((prev) => {
+                  const next = new Set(prev);
+                  if (next.has(item.id)) next.delete(item.id);
+                  else next.add(item.id);
+                  return next;
+                })
+              }
+            />
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -590,8 +721,9 @@ export default function GrammarTab({ initialSearch }) {
       <div className="section-header">
         <h2 className="section-title">⚙️ Ngữ pháp N5</h2>
         <p className="section-desc">
-          {grammarData.meta.total} mục · phần Trợ từ đã phủ cả N5 lẫn N4, các phần còn lại ở mức N5
-          — và luyện tập ngay trên chính dữ liệu này
+          {grammarData.meta.total} mục · phần Trợ từ đã phủ cả N5 lẫn N4, mỗi trợ từ có đủ các cách
+          dùng theo Minna no Nihongo kèm điểm cần lưu ý (bấm “cách dùng” trên thẻ để mở) — và luyện
+          tập ngay trên chính dữ liệu này
         </p>
       </div>
 

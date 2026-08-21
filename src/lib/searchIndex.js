@@ -73,11 +73,13 @@ function buildIndex() {
         id: w.id,
         tab: "vocabulary",
         title: w.japanese,
-        sub: [w.kanji, w.romaji].filter(Boolean).join(" · "),
+        sub: [w.kanji, w.masu, w.romaji].filter(Boolean).join(" · "),
         meaning: w.meaning,
         badge: c.label,
         color: c.color,
-        hay: [w.japanese, w.kanji, w.romaji, w.meaning, c.label, w.note].filter(Boolean).join(" "),
+        hay: [w.japanese, w.kanji, w.masu, w.romaji, w.meaning, c.label, w.note]
+          .filter(Boolean)
+          .join(" "),
       });
     });
   });
@@ -123,7 +125,11 @@ function buildIndex() {
           kind: "grammar", icon: "🔗", id: item.id, tab: "grammar",
           title: item.particle, sub: `/ ${item.romaji} /`, meaning: item.function,
           badge: cat.label, color: item.color,
-          hay: [item.particle, item.romaji, item.function, item.detail].join(" "),
+          // Cả nhãn cách dùng và lời lưu ý đều tra được — đó là chỗ chứa nhiều
+          // kiến thức nhất của thẻ trợ từ.
+          hay: [item.particle, item.romaji, item.function, item.detail,
+            ...(item.uses || []).map((u) => `${u.label} ${u.pattern || ""} ${u.detail || ""}`),
+            ...(item.notes || []).map((n) => n.text)].join(" "),
         });
       } else if (item.pattern) {
         add({

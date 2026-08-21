@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { rateCard, getCard, getStatus } from "../../lib/srs";
 import { recordReview } from "../../lib/progress";
 import { matchesKana } from "../../lib/romaji";
+import { shuffle } from "../../lib/random";
 import { loadSettings } from "../../lib/userdata";
 import { cardKey, sessionKey, loadRun, saveRun, clearRun } from "../../lib/runstate";
 import { speak, ttsSupported, hasJaVoice } from "../../lib/tts";
@@ -170,6 +171,26 @@ export default function StudyRunner({
   );
 
   /**
+   * Xáo trộn những thẻ CHƯA học tới (từ vị trí hiện tại trở đi). Thẻ đã đi qua
+   * giữ nguyên chỗ nên số thứ tự "x/y" và điểm phiên không bị nhảy; SRS cũng
+   * không bị ảnh hưởng vì đây chỉ là thứ tự trong một phiên.
+   * Tính mảng mới TRƯỚC khi setState — updater phải thuần (StrictMode gọi 2 lần).
+   */
+  const shuffleRest = useCallback(() => {
+    // Câu chọn/gõ đã hiện đáp án là đã chấm điểm: giữ nó đúng chỗ, chỉ xáo từ thẻ
+    // SAU nó — nếu không nó bị đẩy ra sau và người học phải trả lời (bị chấm) lần nữa.
+    const scored = revealed && item?.kind !== "flash";
+    const from = scored ? pos + 1 : pos;
+    if (queue.length - from < 2) return;
+    setQueue([...queue.slice(0, from), ...shuffle(queue.slice(from))]);
+    if (scored) return; // đang xem đáp án — để nguyên màn hình, bấm "Tiếp theo" như thường
+    setRevealed(false);
+    setSelected(null);
+    setTyped("");
+    setTypeOk(null);
+  }, [queue, pos, revealed, item]);
+
+  /**
    * Một lượt chấm: cộng điểm, ghi thẻ sai và lưu tiến độ phiên. Tính giá trị mới
    * TRƯỚC khi setState (StrictMode gọi updater hai lần) rồi mới ghi xuống lưu trữ.
    */
@@ -235,9 +256,9 @@ export default function StudyRunner({
     advance(wasWrong ? item : null);
   };
 
-  const restart = (only) => {
+  const restart = (only, { shuffled = false } = {}) => {
     const base = only === "missed" && missed.length ? missed : items;
-    setQueue(base);
+    setQueue(shuffled ? shuffle(base) : base);
     setPos(0);
     setRevealed(false);
     setSelected(null);
@@ -271,6 +292,13 @@ export default function StudyRunner({
         return;
       }
       if (typing) return;
+
+      // S = xáo trộn phần còn lại (dùng được ở cả thẻ lật và câu chọn đáp án)
+      if (e.key === "s" || e.key === "S") {
+        e.preventDefault();
+        shuffleRest();
+        return;
+      }
 
       if (item.kind === "flash") {
         // e.code phòng trường hợp layout/IME báo e.key khác " "
@@ -381,6 +409,13 @@ export default function StudyRunner({
             </button>
           )}
           <button className="run-btn" onClick={() => restart()}>🔁 Học lại từ đầu</button>
+          <button
+            className="run-btn"
+            onClick={() => restart(null, { shuffled: true })}
+            title="Học lại cả bộ với thứ tự ngẫu nhiên"
+          >
+            🔀 Xáo trộn & học lại
+          </button>
           <button className="run-btn run-btn--ghost" onClick={onExit}>← Quay lại</button>
         </div>
       </div>
@@ -392,6 +427,9 @@ export default function StudyRunner({
   const card = srs && item.deck ? getCard(item.deck, item.id) : null;
   const status = card ? getStatus(card) : null;
   const pct = Math.round((pos / queue.length) * 100);
+  // Còn ít nhất 2 thẻ chưa tới thì xáo mới có ý nghĩa (xem shuffleRest).
+  const canShuffle =
+    queue.length - (revealed && item.kind !== "flash" ? pos + 1 : pos) > 1;
 
   return (
     <div className="runner" style={{ "--c": item.color || color }}>
@@ -433,6 +471,15 @@ export default function StudyRunner({
               title={`Bỏ tiến độ đã lưu (${resumed} thẻ) và học lại cả bộ từ thẻ đầu`}
             >
               ↺ Học lại từ đầu
+            </button>
+          )}
+          {canShuffle && (
+            <button
+              className="run-mini"
+              onClick={shuffleRest}
+              title="Xáo trộn thứ tự các thẻ còn lại (phím S) — điểm và tiến độ giữ nguyên"
+            >
+              🔀 Xáo trộn
             </button>
           )}
           {item.audio && audible && (
@@ -541,7 +588,8 @@ export default function StudyRunner({
           {!revealed && (
             <div className="run-hint">
               <kbd>Space</kbd> lật thẻ · <kbd>←</kbd>/<kbd>→</kbd> chuyển thẻ ·{" "}
-              <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> chấm nhớ · <kbd>Esc</kbd> thoát
+              <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> chấm nhớ · <kbd>S</kbd> xáo trộn ·{" "}
+              <kbd>Esc</kbd> thoát
             </div>
           )}
         </>

@@ -671,6 +671,16 @@ font-size: 0.9376rem;
   min-height: 1.625rem;
 }
 
+/* Thể ます — Minna no Nihongo dạy động từ ở thể này, còn data gốc lưu thể từ
+   điển, nên phải hiện cả hai để tra được theo hình thức đã học. */
+.word-card__masu {
+font-size: 0.9376rem;
+  font-family: var(--font-mono);
+  color: var(--card-color, var(--text-secondary));
+  margin-bottom: 0.25rem;
+  opacity: 0.85;
+}
+
 .word-card__romaji {
 font-family: var(--font-mono);
   font-size: 0.9376rem;
@@ -987,6 +997,10 @@ font-size: 1.4531rem;
 .word-card__kanji {
 font-size: 0.7969rem;
   min-height: 1.0547rem;
+}
+
+.word-card__masu {
+font-size: 0.7969rem;
 }
 
 .word-card__romaji {

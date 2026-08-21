@@ -65,7 +65,12 @@ export function particleCloze() {
   const out = [];
 
   all.forEach((item) => {
-    item.examples.forEach((ex, i) => {
+    /**
+     * `key` phải khác nhau giữa ví dụ cơ bản và ví dụ của từng cách dùng, vì id
+     * chính là khoá SRS — trùng id là hai câu khác nhau dùng chung một thẻ.
+     * `why` là dòng giải thích riêng của cách dùng đó (nếu có).
+     */
+    const push = (ex, key, why) => {
       const m = ex.jp.match(/<([^>]+)>/);
       if (!m || m[1] !== item.particle) return; // chỉ dùng ví dụ có đánh dấu đúng
       const full = clean(ex.jp);
@@ -81,7 +86,7 @@ export function particleCloze() {
       if (wrong.length < 2) return;
 
       out.push({
-        id: `${item.id}#${i}`,
+        id: `${item.id}#${key}`,
         deck: "grammar",
         kind: "choice",
         prompt: "Điền trợ từ thích hợp vào chỗ trống",
@@ -89,12 +94,18 @@ export function particleCloze() {
         sub: ex.romaji ? clean(ex.romaji).split(item.romaji).join("___") : null,
         choices: mcChoices(item.particle, wrong),
         answer: item.particle,
-        explanation: `${item.particle} (${item.romaji}) — ${item.function}. ${item.detail}`,
+        explanation: `${item.particle} (${item.romaji}) — ${why || item.function}. ${item.detail}`,
         translation: ex.vn,
         speak: full,
         tag: `Trợ từ ${item.particle}`,
       });
-    });
+    };
+
+    item.examples.forEach((ex, i) => push(ex, i));
+    // Ví dụ của từng cách dùng (uses) cũng là câu có đánh dấu trợ từ → dùng luôn.
+    (item.uses || []).forEach((u, ui) =>
+      (u.examples || []).forEach((ex, i) => push(ex, `u${ui}_${i}`, u.label)),
+    );
   });
   return out;
 }

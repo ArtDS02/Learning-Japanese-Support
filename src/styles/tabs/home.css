@@ -460,6 +460,7 @@
   font-family: inherit;
   cursor: pointer;
   transition: background var(--transition);
+  width: max-content;
 }
 
 .hm-deck:hover {

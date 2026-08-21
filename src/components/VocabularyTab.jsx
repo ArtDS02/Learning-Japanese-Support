@@ -46,6 +46,7 @@ export default function VocabularyTab({ initialSearch }) {
   const [markedIds, setMarkedIds] = useState(() => loadMarked());
   const [hideMeanings, setHideMeanings] = useState(false);
   const [view, setView] = useState("cards"); // cards | lessons
+  const [minnaLesson, setMinnaLesson] = useState(null); // null | 1..25
   const [study, setStudy] = useState(null); // { words, label, reverse }
   const [showQuiz, setShowQuiz] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
@@ -83,15 +84,24 @@ export default function VocabularyTab({ initialSearch }) {
     const q = search.trim().toLowerCase();
     return allWords.filter((w) => {
       const matchCat = activeCategory === "all" || w.categoryId === activeCategory;
+      const matchMinna = !minnaLesson || w.minna?.includes(minnaLesson);
       const matchSearch =
         !q ||
         w.japanese?.toLowerCase().includes(q) ||
         w.romaji?.toLowerCase().includes(q) ||
         w.meaning?.toLowerCase().includes(q) ||
-        w.kanji?.toLowerCase().includes(q);
-      return matchCat && matchSearch;
+        w.kanji?.toLowerCase().includes(q) ||
+        w.masu?.toLowerCase().includes(q);
+      return matchCat && matchMinna && matchSearch;
     });
-  }, [allWords, activeCategory, search]);
+  }, [allWords, activeCategory, minnaLesson, search]);
+
+  // Số từ mỗi bài Minna — dùng cho nhãn trên chip, tính một lần.
+  const minnaCounts = useMemo(() => {
+    const c = {};
+    allWords.forEach((w) => (w.minna || []).forEach((n) => (c[n] = (c[n] || 0) + 1)));
+    return c;
+  }, [allWords]);
 
   const markedWords = useMemo(
     () => filtered.filter((w) => markedIds.has(w.id)),
@@ -269,6 +279,35 @@ export default function VocabularyTab({ initialSearch }) {
         )}
       </div>
 
+      {/* Lọc theo bài Minna no Nihongo I. Một từ có thể thuộc nhiều bài, và các
+          từ của một bài nằm rải ở nhiều chủ đề — nên đây là bộ lọc riêng chứ
+          không phải một "chủ đề". */}
+      <div className="filter-bar voc-minna-bar">
+        <span className="filter-label">Minna Bài:</span>
+        <button
+          className={`filter-btn ${minnaLesson === null ? "filter-btn--active" : ""}`}
+          style={{ "--c": "#a78bfa" }}
+          onClick={() => setMinnaLesson(null)}
+        >
+          🌐 Không lọc
+        </button>
+        {Array.from({ length: 25 }, (_, i) => i + 1).map((n) => (
+          <button
+            key={n}
+            className={`filter-btn ${minnaLesson === n ? "filter-btn--active" : ""}`}
+            style={{ "--c": "#38bdf8" }}
+            title={`Từ vựng bài ${n} — Minna no Nihongo I`}
+            onClick={() => {
+              setMinnaLesson(minnaLesson === n ? null : n);
+              setActiveCategory("all");
+              setView("cards");
+            }}
+          >
+            {n} ({minnaCounts[n] || 0})
+          </button>
+        ))}
+      </div>
+
       {/* Chế độ xem + công cụ */}
       <div className="voc-viewbar">
         <div className="voc-viewswitch">
@@ -318,6 +357,13 @@ export default function VocabularyTab({ initialSearch }) {
             setCustomTick((t) => t + 1);
           }}
         />
+      )}
+
+      {minnaLesson && (
+        <p className="vocab-results">
+          📕 Minna no Nihongo I — Bài {minnaLesson}: {minnaCounts[minnaLesson] || 0} từ (gộp từ mọi
+          chủ đề). Số đếm, giờ và bộ đếm của bài nằm ở tab <strong>Số đếm</strong>.
+        </p>
       )}
 
       {search && (
@@ -401,6 +447,11 @@ function WordCard({
     >
       <div className="wc-top">
         <span className="wc-cat">{word.categoryLabel}</span>
+        {word.minna?.length > 0 && (
+          <span className="wc-minna" title="Xuất hiện ở bài này trong Minna no Nihongo I">
+            Minna {word.minna.join("・")}
+          </span>
+        )}
         <div className="wc-actions">
           <span className="wc-status" title={meta.title} style={{ "--c": meta.color }}>
             {meta.label}
@@ -430,6 +481,8 @@ function WordCard({
       ) : (
         <div className="word-card__kanji"></div>
       )}
+
+      {word.masu && <div className="word-card__masu">thể ます: {word.masu}</div>}
 
       <div className="word-card__romaji">{word.romaji}</div>
 
