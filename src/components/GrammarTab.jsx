@@ -4,6 +4,7 @@ import { getStats } from "../lib/srs";
 import { quizSetsFor, buildQuiz } from "../lib/quizgen";
 import QuizHub from "./common/QuizHub";
 import SpeakButton from "./common/SpeakButton";
+import FilterRow from "./common/FilterRow";
 import "../styles/tabs/grammar.css";
 
 // Highlights specific text within a sentence
@@ -187,51 +188,51 @@ function ParticlesSection({ category }) {
         <span className="gs-label">{category.label}</span>
       </div>
 
-      {levels.length > 1 && (
-        <div className="filter-bar gs-filter">
-          <span className="filter-label">Cấp độ:</span>
-          <button
-            className={`filter-btn ${activeLevel === "all" ? "filter-btn--active" : ""}`}
-            style={{ "--c": category.color }}
-            onClick={() => pickLevel("all")}
-          >
-            Tất cả ({category.items.length})
-          </button>
-          {levels.map((lv) => (
+      <div className="filters">
+        {levels.length > 1 && (
+          <FilterRow label="Cấp độ">
             <button
-              key={lv}
-              className={`filter-btn ${activeLevel === lv ? "filter-btn--active" : ""}`}
-              style={{ "--c": PARTICLE_LEVEL_COLOR[lv] || category.color }}
-              onClick={() => pickLevel(lv)}
+              className={`filter-btn ${activeLevel === "all" ? "filter-btn--active" : ""}`}
+              style={{ "--c": category.color }}
+              onClick={() => pickLevel("all")}
             >
-              {lv} ({category.items.filter((p) => p.level === lv).length})
+              Tất cả ({category.items.length})
+            </button>
+            {levels.map((lv) => (
+              <button
+                key={lv}
+                className={`filter-btn ${activeLevel === lv ? "filter-btn--active" : ""}`}
+                style={{ "--c": PARTICLE_LEVEL_COLOR[lv] || category.color }}
+                onClick={() => pickLevel(lv)}
+              >
+                {lv} ({category.items.filter((p) => p.level === lv).length})
+              </button>
+            ))}
+          </FilterRow>
+        )}
+
+        {/* Particle quick-filter */}
+        <FilterRow label="Lọc">
+          <button
+            className={`filter-btn ${activeFilter === "all" ? "filter-btn--active" : ""}`}
+            style={{ "--c": category.color }}
+            onClick={() => setActiveFilter("all")}
+          >
+            Tất cả
+          </button>
+          {pool.map((item) => (
+            <button
+              key={item.id}
+              className={`filter-btn ${activeFilter === item.id ? "filter-btn--active" : ""}`}
+              style={{ "--c": item.color }}
+              onClick={() =>
+                setActiveFilter(item.id === activeFilter ? "all" : item.id)
+              }
+            >
+              {item.particle}
             </button>
           ))}
-        </div>
-      )}
-
-      {/* Particle quick-filter */}
-      <div className="filter-bar gs-filter">
-        <span className="filter-label">Lọc:</span>
-        <button
-          className={`filter-btn ${activeFilter === "all" ? "filter-btn--active" : ""}`}
-          style={{ "--c": category.color }}
-          onClick={() => setActiveFilter("all")}
-        >
-          Tất cả
-        </button>
-        {pool.map((item) => (
-          <button
-            key={item.id}
-            className={`filter-btn ${activeFilter === item.id ? "filter-btn--active" : ""}`}
-            style={{ "--c": item.color }}
-            onClick={() =>
-              setActiveFilter(item.id === activeFilter ? "all" : item.id)
-            }
-          >
-            {item.particle}
-          </button>
-        ))}
+        </FilterRow>
       </div>
 
       <div className="particle-grid">
@@ -731,18 +732,19 @@ export default function GrammarTab({ initialSearch }) {
       {showQuiz && <QuizHub tab="grammar" color="#f472b6" onClose={() => setShowQuiz(false)} />}
 
       {/* Section selector */}
-      <div className="filter-bar gs-section-nav">
-        <span className="filter-label">Phần:</span>
-        {sections.map((sec) => (
-          <button
-            key={sec.id}
-            className={`filter-btn ${activeSection === sec.id ? "filter-btn--active" : ""}`}
-            style={{ "--c": sec.color }}
-            onClick={() => setActiveSection(sec.id)}
-          >
-            {sec.icon} {sec.label}
-          </button>
-        ))}
+      <div className="filters gs-section-nav">
+        <FilterRow label="Phần">
+          {sections.map((sec) => (
+            <button
+              key={sec.id}
+              className={`filter-btn ${activeSection === sec.id ? "filter-btn--active" : ""}`}
+              style={{ "--c": sec.color }}
+              onClick={() => setActiveSection(sec.id)}
+            >
+              {sec.icon} {sec.label}
+            </button>
+          ))}
+        </FilterRow>
       </div>
 
       {sections

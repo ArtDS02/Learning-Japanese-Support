@@ -21,6 +21,7 @@ export const DECKS = [
   { id: "kana", label: "Kana", icon: "🔤", color: "#34d399", tab: "kana" },
   { id: "grammar", label: "Ngữ pháp", icon: "⚙️", color: "#f472b6", tab: "grammar" },
   { id: "numbers", label: "Số đếm", icon: "🔢", color: "#facc15", tab: "numbers" },
+  { id: "modifiers", label: "Từ bổ nghĩa", icon: "🎨", color: "#22d3ee", tab: "modifiers" },
   { id: "listening", label: "Nghe", icon: "🎧", color: "#f97316", tab: "listening" },
   { id: "exam", label: "Câu sai (đề thi)", icon: "📕", color: "#ff4757", tab: "exercises" },
 ];

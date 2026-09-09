@@ -13,6 +13,7 @@ const GrammarTab = lazy(() => import("./components/GrammarTab"));
 const KanjiTab = lazy(() => import("./components/KanjiTab"));
 const KanaTab = lazy(() => import("./components/KanaTab"));
 const NumbersTab = lazy(() => import("./components/NumbersTab"));
+const ModifiersTab = lazy(() => import("./components/ModifiersTab"));
 const ListeningTab = lazy(() => import("./components/ListeningTab"));
 const TipsTab = lazy(() => import("./components/TipsTab"));
 const ExercisesTab = lazy(() => import("./components/ExercisesTab"));
@@ -32,6 +33,7 @@ const TABS = [
   { id: "kanji",      icon: "🈳", label: "Kanji" },
   { id: "kana",       icon: "🔤", label: "Kana" },
   { id: "numbers",    icon: "🔢", label: "Số đếm" },
+  { id: "modifiers",  icon: "🎨", label: "Từ bổ nghĩa", short: "Bổ nghĩa" },
   { id: "listening",  icon: "🎧", label: "Nghe" },
   { id: "tips",       icon: "💡", label: "Mẹo thi" },
   { id: "exercises",  icon: "✏️", label: "Bài tập" },
@@ -61,7 +63,7 @@ function shouldPreload() {
 /**
  * Thanh chuyển tab.
  *
- * 12 tab không bao giờ vừa một hàng trên điện thoại, nên phần tràn phải *nhìn
+ * 13 tab không bao giờ vừa một hàng trên điện thoại, nên phần tràn phải *nhìn
  * ra được* thay vì bị cắt cụt im lặng: mờ dần hai mép để báo còn nội dung, nút
  * mũi tên cho người dùng chuột, và tab đang chọn luôn tự trượt vào tầm nhìn.
  * Từ 769px trở lên thì cho xuống dòng — còn chỗ thì hiện hết, khỏi cuộn.
@@ -284,6 +286,7 @@ export default function App() {
       case "kanji":      return <KanjiTab initialSearch={initialSearch} />;
       case "kana":       return <KanaTab />;
       case "numbers":    return <NumbersTab />;
+      case "modifiers":  return <ModifiersTab initialSearch={initialSearch} />;
       case "listening":  return <ListeningTab onGoTo={goTo} />;
       case "tips":       return <TipsTab />;
       case "exercises":  return <ExercisesTab />;

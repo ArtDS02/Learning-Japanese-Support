@@ -1,0 +1,787 @@
+{
+  "meta": {
+    "title": "Từ bổ nghĩa JLPT N5–N4",
+    "description": "Những từ dùng để bổ nghĩa cho động từ, tính từ, danh từ hoặc bổ sung thông tin cho cả câu — chia theo ý nghĩa/chức năng, ghi rõ từ loại thật của từng từ (không gộp tất cả thành 副詞)."
+  },
+  "posMeta": {
+    "adv":      { "jp": "副詞",     "kana": "ふくし",       "vn": "Trạng từ",            "short": "副詞",   "color": "#22d3ee" },
+    "i-adj":    { "jp": "形容詞",   "kana": "けいようし",   "vn": "Tính từ い",           "short": "形容詞", "color": "#facc15" },
+    "na-adj":   { "jp": "な形容詞", "kana": "なけいようし", "vn": "Tính từ な",           "short": "な形",   "color": "#f472b6" },
+    "noun":     { "jp": "名詞",     "kana": "めいし",       "vn": "Danh từ",             "short": "名詞",   "color": "#a78bfa" },
+    "rentai":   { "jp": "連体詞",   "kana": "れんたいし",   "vn": "Từ bổ nghĩa danh từ",  "short": "連体詞", "color": "#34d399" },
+    "particle": { "jp": "助詞",     "kana": "じょし",       "vn": "Trợ từ",              "short": "助詞",   "color": "#f97316" },
+    "conj":     { "jp": "接続詞",   "kana": "せつぞくし",   "vn": "Liên từ",             "short": "接続詞", "color": "#60a5fa" },
+    "other":    { "jp": "その他",   "kana": "そのた",       "vn": "Loại khác (cụm ghép)", "short": "その他", "color": "#8b90a0" }
+  },
+  "groups": [
+    {
+      "id": "deg",
+      "label": "Mức độ",
+      "jp": "程度",
+      "icon": "📶",
+      "color": "#ff4757",
+      "desc": "Cho biết tính chất/hành động ở mức nào — mạnh hay yếu, nhiều hay ít.",
+      "tips": [
+        "Từ chỉ mức độ đứng TRƯỚC từ nó bổ nghĩa: とても＋おいしい, もっと＋ゆっくり.",
+        "あまり và ぜんぜん bắt buộc đi với động từ/tính từ PHỦ ĐỊNH."
+      ],
+      "words": [
+        { "id": "deg1", "jp": "とても", "hira": "とても", "romaji": "totemo", "vn": "rất, vô cùng", "pos": "adv", "modifies": "Tính từ / Trạng từ", "level": "N5", "key": true,
+          "ex": { "jp": "この ケーキは とても おいしいです。", "vn": "Cái bánh này rất ngon." },
+          "note": "Không nói とても〜ない. Câu phủ định phải đổi sang あまり〜ない." },
+        { "id": "deg2", "jp": "大変", "hira": "たいへん", "romaji": "taihen", "vn": "rất, vô cùng (trang trọng)", "pos": "adv", "posNote": "cũng là な形容詞: 大変な = vất vả", "modifies": "Tính từ / Trạng từ", "level": "N4",
+          "ex": { "jp": "大変 ありがとうございました。", "vn": "Vô cùng cảm ơn anh/chị." },
+          "note": "Mang nghĩa “vất vả” thì là な形容詞: 大変な 仕事 (công việc vất vả)." },
+        { "id": "deg3", "jp": "すごく", "hira": "すごく", "romaji": "sugoku", "vn": "cực kỳ, siêu (khẩu ngữ)", "pos": "i-adj", "posNote": "dạng 〜く (連用形) của すごい", "modifies": "Tính từ / Động từ", "level": "N4",
+          "ex": { "jp": "この 映画は すごく おもしろかった。", "vn": "Phim này cực kỳ hay." },
+          "note": "Thân mật. Bài viết và bài thi nên dùng とても." },
+        { "id": "deg4", "jp": "ちょっと", "hira": "ちょっと", "romaji": "chotto", "vn": "một chút, hơi (khẩu ngữ)", "pos": "adv", "modifies": "Tính từ / Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "ちょっと 待って ください。", "vn": "Đợi một chút." },
+          "note": "Còn dùng để từ chối nhẹ: 「今日は ちょっと…」= Hôm nay hơi bất tiện." },
+        { "id": "deg5", "jp": "あまり", "hira": "あまり", "romaji": "amari", "vn": "không ... lắm (kèm phủ định)", "pos": "adv", "modifies": "Tính từ / Động từ", "level": "N5", "key": true, "also": ["freq"],
+          "ex": { "jp": "この 本は あまり おもしろくないです。", "vn": "Sách này không hay lắm." },
+          "note": "Khẩu ngữ nói あんまり. Về tần suất thì nghĩa là “ít khi”: あまり 行きません." },
+        { "id": "deg6", "jp": "全然", "hira": "ぜんぜん", "romaji": "zenzen", "vn": "hoàn toàn không", "pos": "adv", "modifies": "Tính từ / Động từ", "level": "N5", "key": true, "also": ["freq"],
+          "ex": { "jp": "お酒は 全然 飲みません。", "vn": "Tôi hoàn toàn không uống rượu." },
+          "note": "Mạnh hơn あまり (0% so với “ít”). Chuẩn mực luôn đi với phủ định." },
+        { "id": "deg7", "jp": "もっと", "hira": "もっと", "romaji": "motto", "vn": "hơn nữa, thêm nữa", "pos": "adv", "modifies": "Tính từ / Động từ", "level": "N5", "key": true, "also": ["exec"],
+          "ex": { "jp": "もっと ゆっくり 話して ください。", "vn": "Hãy nói chậm hơn nữa." } },
+        { "id": "deg8", "jp": "ずっと", "hira": "ずっと", "romaji": "zutto", "vn": "... hơn nhiều; suốt", "pos": "adv", "modifies": "Tính từ / Động từ", "level": "N4", "also": ["time"],
+          "ex": { "jp": "東京は 大阪より ずっと 大きいです。", "vn": "Tokyo lớn hơn Osaka rất nhiều." },
+          "note": "Hai nghĩa: (1) vượt trội khi so sánh, (2) liên tục suốt — ずっと 待って いました." },
+        { "id": "deg9", "jp": "かなり", "hira": "かなり", "romaji": "kanari", "vn": "khá, tương đối nhiều", "pos": "adv", "modifies": "Tính từ / Động từ", "level": "N4",
+          "ex": { "jp": "この 漢字は かなり 難しいです。", "vn": "Chữ Kanji này khá khó." } },
+        { "id": "deg10", "jp": "結構", "hira": "けっこう", "romaji": "kekkō", "vn": "khá (hơn mình tưởng)", "pos": "adv", "posNote": "cũng là な形容詞: 結構です", "modifies": "Tính từ / Động từ", "level": "N4",
+          "ex": { "jp": "この 店は 結構 高いですね。", "vn": "Quán này khá đắt nhỉ." },
+          "note": "「結構です」khi được mời = “Thôi, không cần đâu”." },
+        { "id": "deg11", "jp": "なかなか", "hira": "なかなか", "romaji": "nakanaka", "vn": "khá là; mãi mà không (+ phủ định)", "pos": "adv", "modifies": "Tính từ / Động từ", "level": "N4",
+          "ex": { "jp": "日本語が なかなか 上手に なりません。", "vn": "Tiếng Nhật mãi mà không giỏi lên được." },
+          "note": "Khẳng định = “khá là” (なかなか おいしい); phủ định = “mãi vẫn không”." },
+        { "id": "deg12", "jp": "だいぶ", "hira": "だいぶ", "romaji": "daibu", "vn": "kha khá, đã ... nhiều", "pos": "adv", "modifies": "Tính từ / Động từ", "level": "N4",
+          "ex": { "jp": "日本語が だいぶ 分かるように なりました。", "vn": "Tôi đã hiểu tiếng Nhật kha khá." } },
+        { "id": "deg13", "jp": "本当に", "hira": "ほんとうに", "romaji": "hontō ni", "vn": "thật sự, thật là", "pos": "noun", "posNote": "名詞「本当」＋に", "modifies": "Cả câu / Tính từ", "level": "N5",
+          "ex": { "jp": "本当に すみませんでした。", "vn": "Tôi thật sự xin lỗi." } },
+        { "id": "deg14", "jp": "そんなに", "hira": "そんなに", "romaji": "sonna ni", "vn": "đến mức đó (thường + phủ định)", "pos": "adv", "modifies": "Tính từ / Động từ", "level": "N4",
+          "ex": { "jp": "そんなに 高くないです。", "vn": "Không đắt đến thế đâu." },
+          "note": "Cùng bộ: こんなに (mức này), あんなに (mức kia), どんなに (mức nào)." },
+        { "id": "deg15", "jp": "一番", "hira": "いちばん", "romaji": "ichiban", "vn": "nhất (so sánh nhất)", "pos": "noun", "posNote": "名詞 dùng như 副詞", "modifies": "Tính từ / Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "くだものの 中で りんごが 一番 好きです。", "vn": "Trong các loại quả tôi thích táo nhất." },
+          "note": "Mẫu: 「〜の 中で ... が 一番 ＋ tính từ」." },
+        { "id": "deg16", "jp": "特に", "hira": "とくに", "romaji": "toku ni", "vn": "đặc biệt là", "pos": "adv", "modifies": "Cả câu", "level": "N4",
+          "ex": { "jp": "特に 夏は 暑いです。", "vn": "Đặc biệt là mùa hè thì nóng." } }
+      ]
+    },
+    {
+      "id": "qty",
+      "label": "Số lượng",
+      "jp": "数量",
+      "icon": "📊",
+      "color": "#f97316",
+      "desc": "Cho biết nhiều hay ít, hết hay còn — bổ nghĩa cho động từ, đôi khi cho danh từ.",
+      "tips": [
+        "Bổ nghĩa động từ thì đứng trước động từ: たくさん 食べます.",
+        "Muốn bổ nghĩa DANH TỪ phải thêm の: たくさんの 人 (rất nhiều người)."
+      ],
+      "words": [
+        { "id": "qty1", "jp": "たくさん", "hira": "たくさん", "romaji": "takusan", "vn": "nhiều", "pos": "adv", "posNote": "cũng dùng như 名詞: たくさんの＋N", "modifies": "Động từ / Danh từ", "level": "N5", "key": true,
+          "ex": { "jp": "本を たくさん 読みました。", "vn": "Tôi đã đọc rất nhiều sách." },
+          "note": "Bổ nghĩa danh từ thì thêm の: たくさんの 人が 来ました." },
+        { "id": "qty2", "jp": "いっぱい", "hira": "いっぱい", "romaji": "ippai", "vn": "đầy, nhiều (khẩu ngữ)", "pos": "adv", "posNote": "vừa là 名詞 vừa là 副詞", "modifies": "Động từ / Danh từ", "level": "N5",
+          "ex": { "jp": "おなかが いっぱいです。", "vn": "Tôi no rồi (bụng đầy)." },
+          "note": "Gốc nghĩa “đầy tràn” nên nhấn vào ĐẦY/CHẬT chỗ; たくさん chỉ nhấn số lượng lớn." },
+        { "id": "qty3", "jp": "少し", "hira": "すこし", "romaji": "sukoshi", "vn": "một chút, một ít", "pos": "adv", "modifies": "Động từ / Tính từ", "level": "N5", "key": true, "also": ["deg"],
+          "ex": { "jp": "塩を 少し 入れて ください。", "vn": "Cho vào một chút muối." },
+          "note": "Bản trung tính/lịch sự của ちょっと — dùng trong văn viết và khi nói với người trên." },
+        { "id": "qty4", "jp": "ほとんど", "hira": "ほとんど", "romaji": "hotondo", "vn": "hầu hết; hầu như không (+ phủ định)", "pos": "adv", "posNote": "vừa là 名詞 vừa là 副詞", "modifies": "Động từ / Danh từ", "level": "N4", "key": true, "also": ["scope"],
+          "ex": { "jp": "宿題は ほとんど 終わりました。", "vn": "Bài tập tôi làm gần xong hết rồi." },
+          "note": "Với phủ định thành “hầu như không”: ほとんど 食べませんでした." },
+        { "id": "qty5", "jp": "全部", "hira": "ぜんぶ", "romaji": "zenbu", "vn": "toàn bộ, tất cả", "pos": "noun", "posNote": "名詞 dùng như 副詞", "modifies": "Động từ / Danh từ", "level": "N5", "key": true, "also": ["scope"],
+          "ex": { "jp": "全部 食べました。", "vn": "Tôi đã ăn hết tất cả." },
+          "note": "Dùng cho ĐỒ VẬT và số lượng; nói về NGƯỜI thì dùng みんな / 全員." },
+        { "id": "qty6", "jp": "みんな", "hira": "みんな", "romaji": "minna", "vn": "mọi người; tất cả", "pos": "noun", "posNote": "名詞 dùng như 副詞; lịch sự: 皆さん", "modifies": "Động từ / Danh từ", "level": "N5", "key": true, "also": ["scope"],
+          "ex": { "jp": "みんな 来ました。", "vn": "Mọi người đã đến cả." } },
+        { "id": "qty7", "jp": "大勢", "hira": "おおぜい", "romaji": "ōzei", "vn": "đông (người)", "pos": "noun", "posNote": "名詞 dùng như 副詞", "modifies": "Động từ / Danh từ", "level": "N5",
+          "ex": { "jp": "公園に 子どもが 大勢 います。", "vn": "Trong công viên có rất đông trẻ con." },
+          "note": "CHỈ dùng cho người. Đồ vật thì dùng たくさん." },
+        { "id": "qty8", "jp": "半分", "hira": "はんぶん", "romaji": "hanbun", "vn": "một nửa", "pos": "noun", "modifies": "Động từ / Danh từ", "level": "N5",
+          "ex": { "jp": "ケーキを 半分 食べました。", "vn": "Tôi đã ăn một nửa cái bánh." } },
+        { "id": "qty9", "jp": "だいたい", "hira": "だいたい", "romaji": "daitai", "vn": "đại khái, khoảng, gần như", "pos": "adv", "modifies": "Động từ / Danh từ", "level": "N4", "also": ["exec"],
+          "ex": { "jp": "だいたい 分かりました。", "vn": "Tôi hiểu đại khái rồi." } },
+        { "id": "qty10", "jp": "十分", "hira": "じゅうぶん", "romaji": "jūbun", "vn": "đủ, đầy đủ", "pos": "adv", "posNote": "cũng là な形容詞: 十分な", "modifies": "Động từ / Tính từ", "level": "N4", "also": ["exec"],
+          "ex": { "jp": "時間は 十分 あります。", "vn": "Thời gian thì có đủ." },
+          "note": "⚠️ Cùng chữ 十分 nhưng đọc じゅっぷん thì nghĩa là “10 phút”. Nghĩa “đủ” còn viết là 充分." },
+        { "id": "qty11", "jp": "約", "hira": "やく", "romaji": "yaku", "vn": "khoảng (đứng trước số)", "pos": "adv", "posNote": "副詞/接頭語", "modifies": "Số từ", "level": "N4",
+          "ex": { "jp": "約 30分 かかります。", "vn": "Mất khoảng 30 phút." },
+          "note": "約 đứng TRƯỚC số, ぐらい đứng SAU số. Không dùng cả hai cùng lúc." },
+        { "id": "qty12", "jp": "ぐらい・くらい", "hira": "ぐらい", "romaji": "gurai / kurai", "vn": "khoảng (số lượng, mức độ)", "pos": "particle", "modifies": "Số từ / Danh từ", "level": "N5", "key": true,
+          "ex": { "jp": "1時間ぐらい 待ちました。", "vn": "Tôi đã đợi khoảng 1 tiếng." },
+          "note": "ĐỘ DÀI dùng ぐらい (3時間ぐらい); MỐC thời gian dùng ごろ (3時ごろ)." },
+        { "id": "qty13", "jp": "ずつ", "hira": "ずつ", "romaji": "zutsu", "vn": "mỗi ... (chia đều)", "pos": "particle", "modifies": "Số từ", "level": "N4",
+          "ex": { "jp": "一人 3枚ずつ 取って ください。", "vn": "Mỗi người lấy 3 tờ." } },
+        { "id": "qty14", "jp": "もう少し", "hira": "もうすこし", "romaji": "mō sukoshi", "vn": "thêm một chút nữa", "pos": "adv", "modifies": "Động từ / Tính từ", "level": "N5",
+          "ex": { "jp": "もう少し 大きい 声で お願いします。", "vn": "Xin nói to hơn một chút." },
+          "note": "Khẩu ngữ: もうちょっと. Cùng bộ: もう一度 (một lần nữa), もう一つ (một cái nữa)." }
+      ]
+    },
+    {
+      "id": "freq",
+      "label": "Tần suất",
+      "jp": "頻度",
+      "icon": "🔁",
+      "color": "#22d3ee",
+      "desc": "Cho biết việc đó xảy ra thường xuyên đến đâu.",
+      "tips": [
+        "Thang tần suất: いつも ＞ よく ＞ たいてい ＞ ときどき ＞ たまに ＞ あまり〜ない ＞ ぜんぜん〜ない.",
+        "Thường đứng đầu câu hoặc ngay trước động từ: 私は いつも 6時に 起きます."
+      ],
+      "words": [
+        { "id": "frq1", "jp": "いつも", "hira": "いつも", "romaji": "itsumo", "vn": "luôn luôn, lúc nào cũng", "pos": "adv", "modifies": "Động từ", "level": "N5", "key": true, "also": ["time"],
+          "ex": { "jp": "母は いつも 6時に 起きます。", "vn": "Mẹ tôi luôn thức dậy lúc 6 giờ." },
+          "note": "Gần như 100% số lần. 「いつもは〜ない」= “bình thường thì không”." },
+        { "id": "frq2", "jp": "よく", "hira": "よく", "romaji": "yoku", "vn": "thường xuyên; kỹ, rõ", "pos": "adv", "posNote": "gốc là 形容詞「よい」の連用形", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "姉は よく 映画を 見ます。", "vn": "Chị tôi thường xem phim." },
+          "note": "Hai nghĩa: tần suất (“thường”) và chất lượng (“kỹ/rõ”) — よく 分かりました = Tôi hiểu rõ rồi." },
+        { "id": "frq3", "jp": "時々", "hira": "ときどき", "romaji": "tokidoki", "vn": "thỉnh thoảng", "pos": "adv", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "時々 日本の 音楽を 聞きます。", "vn": "Thỉnh thoảng tôi nghe nhạc Nhật." } },
+        { "id": "frq4", "jp": "たまに", "hira": "たまに", "romaji": "tama ni", "vn": "hiếm khi, thỉnh thoảng lắm mới", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "たまに 外で 食べます。", "vn": "Thỉnh thoảng lắm tôi mới ăn ngoài." },
+          "note": "Ít hơn 時々." },
+        { "id": "frq5", "jp": "たいてい", "hira": "たいてい", "romaji": "taitei", "vn": "thường thì, đa phần", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "日曜日は たいてい 家に います。", "vn": "Chủ nhật thường thì tôi ở nhà." } },
+        { "id": "frq6", "jp": "毎日", "hira": "まいにち", "romaji": "mainichi", "vn": "hằng ngày", "pos": "noun", "posNote": "名詞 dùng như 副詞", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "毎日 日本語を 勉強します。", "vn": "Ngày nào tôi cũng học tiếng Nhật." },
+          "note": "Cùng bộ 毎〜: 毎週 (mỗi tuần), 毎月 (mỗi tháng), 毎年 (mỗi năm), 毎朝, 毎晩." },
+        { "id": "frq7", "jp": "めったに", "hira": "めったに", "romaji": "metta ni", "vn": "hầu như không bao giờ (+ phủ định)", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "めったに 病気に なりません。", "vn": "Tôi hầu như không bao giờ bị bệnh." } },
+        { "id": "frq8", "jp": "何度も", "hira": "なんども", "romaji": "nando mo", "vn": "nhiều lần", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "何度も 練習しました。", "vn": "Tôi đã luyện tập nhiều lần." },
+          "note": "Cùng bộ: 何回も. Phủ định tương ứng là 一度も〜ません." },
+        { "id": "frq9", "jp": "一度も", "hira": "いちども", "romaji": "ichido mo", "vn": "chưa một lần nào (+ phủ định)", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "一度も 行った ことが ありません。", "vn": "Tôi chưa từng đi lần nào." } },
+        { "id": "frq10", "jp": "普通", "hira": "ふつう", "romaji": "futsū", "vn": "bình thường thì", "pos": "noun", "posNote": "名詞/な形容詞, dùng như 副詞", "modifies": "Động từ / Danh từ", "level": "N4",
+          "ex": { "jp": "普通 8時に 家を 出ます。", "vn": "Bình thường tôi ra khỏi nhà lúc 8 giờ." } }
+      ]
+    },
+    {
+      "id": "time",
+      "label": "Thời gian",
+      "jp": "時",
+      "icon": "⏰",
+      "color": "#facc15",
+      "desc": "Định vị hành động trong thời gian — đã/chưa, ngay/lát nữa, trước/sau.",
+      "tips": [
+        "Nhóm này bổ nghĩa cho CẢ CÂU, thường đứng đầu câu hoặc trước động từ.",
+        "Ngày, giờ, thứ cụ thể (今日, 3時, 月曜日…) xem tab Số đếm và tab Từ vựng."
+      ],
+      "words": [
+        { "id": "tim1", "jp": "今", "hira": "いま", "romaji": "ima", "vn": "bây giờ", "pos": "noun", "modifies": "Cả câu", "level": "N5", "key": true,
+          "ex": { "jp": "今 何を して いますか。", "vn": "Bây giờ bạn đang làm gì?" },
+          "note": "Là 名詞 nên ghép được với trợ từ: 今から (từ giờ), 今まで (đến giờ)." },
+        { "id": "tim2", "jp": "もう", "hira": "もう", "romaji": "mō", "vn": "đã ... rồi; không còn nữa (+ phủ định)", "pos": "adv", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "もう 昼ごはんを 食べました。", "vn": "Tôi đã ăn cơm trưa rồi." },
+          "note": "Phủ định = “không còn nữa”: もう 飲みません. Còn もう＋số = “thêm nữa”: もう 一杯." },
+        { "id": "tim3", "jp": "まだ", "hira": "まだ", "romaji": "mada", "vn": "vẫn còn; chưa (+ phủ định)", "pos": "adv", "modifies": "Động từ / Tính từ", "level": "N5", "key": true,
+          "ex": { "jp": "まだ 雨が 降って います。", "vn": "Trời vẫn còn đang mưa." },
+          "note": "「まだです」= “Chưa” — câu trả lời ngắn cho 「もう〜ましたか」." },
+        { "id": "tim4", "jp": "すぐ（に）", "hira": "すぐ（に）", "romaji": "sugu (ni)", "vn": "ngay lập tức", "pos": "adv", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "すぐ 行きます。", "vn": "Tôi đi ngay đây." } },
+        { "id": "tim5", "jp": "後で", "hira": "あとで", "romaji": "ato de", "vn": "để sau, lát nữa", "pos": "other", "posNote": "名詞「後」＋助詞「で」", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "後で 電話します。", "vn": "Lát nữa tôi gọi điện." },
+          "note": "“Sau khi làm X” là mẫu ngữ pháp Vた＋あとで (N4)." },
+        { "id": "tim6", "jp": "先に", "hira": "さきに", "romaji": "saki ni", "vn": "trước (làm trước người khác)", "pos": "noun", "posNote": "名詞「先」＋に", "modifies": "Động từ", "level": "N4", "also": ["order"],
+          "ex": { "jp": "お先に 失礼します。", "vn": "Tôi xin phép về trước." } },
+        { "id": "tim7", "jp": "前に", "hira": "まえに", "romaji": "mae ni", "vn": "trước đây, hồi trước", "pos": "other", "posNote": "名詞「前」＋助詞「に」", "modifies": "Động từ", "level": "N5",
+          "ex": { "jp": "前に 一度 会いました。", "vn": "Trước đây tôi đã gặp một lần." },
+          "note": "Cũng là mẫu “trước khi”: Vるまえに / Nのまえに 手を 洗います." },
+        { "id": "tim8", "jp": "これから", "hira": "これから", "romaji": "kore kara", "vn": "từ giờ trở đi", "pos": "other", "posNote": "代名詞「これ」＋助詞「から」", "modifies": "Cả câu", "level": "N5",
+          "ex": { "jp": "これから 気を つけます。", "vn": "Từ giờ tôi sẽ cẩn thận." } },
+        { "id": "tim9", "jp": "さっき", "hira": "さっき", "romaji": "sakki", "vn": "vừa mới đây (khẩu ngữ)", "pos": "noun", "modifies": "Cả câu", "level": "N4",
+          "ex": { "jp": "さっき 田中さんが 来ました。", "vn": "Anh Tanaka vừa mới đến." } },
+        { "id": "tim10", "jp": "そろそろ", "hira": "そろそろ", "romaji": "soro soro", "vn": "đến lúc ... rồi, sắp", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "そろそろ 帰りましょう。", "vn": "Đến lúc về rồi, ta về thôi." } },
+        { "id": "tim11", "jp": "もうすぐ", "hira": "もうすぐ", "romaji": "mō sugu", "vn": "sắp, chẳng bao lâu nữa", "pos": "adv", "modifies": "Cả câu", "level": "N5",
+          "ex": { "jp": "もうすぐ 夏休みです。", "vn": "Sắp đến nghỉ hè rồi." } },
+        { "id": "tim12", "jp": "初めて", "hira": "はじめて", "romaji": "hajimete", "vn": "lần đầu tiên", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "初めて 日本へ 行きました。", "vn": "Tôi đi Nhật lần đầu tiên." },
+          "note": "Khác 初めに (= trước hết, chỉ trình tự)." },
+        { "id": "tim13", "jp": "ちょうど", "hira": "ちょうど", "romaji": "chōdo", "vn": "đúng, vừa đúng lúc", "pos": "adv", "modifies": "Cả câu / Số từ", "level": "N4",
+          "ex": { "jp": "ちょうど 3時です。", "vn": "Đúng 3 giờ." } },
+        { "id": "tim14", "jp": "急に", "hira": "きゅうに", "romaji": "kyū ni", "vn": "bỗng nhiên, gấp", "pos": "na-adj", "posNote": "な形容詞「急な」＋に", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "急に 雨が 降って きました。", "vn": "Trời bỗng nhiên đổ mưa." } },
+        { "id": "tim15", "jp": "やっと", "hira": "やっと", "romaji": "yatto", "vn": "cuối cùng cũng (điều mong đợi)", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "やっと 宿題が 終わりました。", "vn": "Cuối cùng cũng làm xong bài tập." } },
+        { "id": "tim16", "jp": "しばらく", "hira": "しばらく", "romaji": "shibaraku", "vn": "một lúc, một thời gian", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "しばらく お待ち ください。", "vn": "Xin đợi một lát." } },
+        { "id": "tim17", "jp": "いつか", "hira": "いつか", "romaji": "itsuka", "vn": "một lúc nào đó", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "いつか 日本に 住みたいです。", "vn": "Một lúc nào đó tôi muốn sống ở Nhật." } },
+        { "id": "tim18", "jp": "ごろ", "hira": "ごろ", "romaji": "goro", "vn": "khoảng (mốc thời gian)", "pos": "particle", "posNote": "助詞/接尾語, gắn sau mốc thời gian", "modifies": "Danh từ chỉ thời điểm", "level": "N5", "key": true,
+          "ex": { "jp": "3時ごろ 着きます。", "vn": "Tôi đến khoảng 3 giờ." },
+          "note": "3時ごろ (khoảng 3 giờ) ≠ 3時間ぐらい (khoảng 3 tiếng)." }
+      ]
+    },
+    {
+      "id": "pos",
+      "label": "Vị trí",
+      "jp": "位置",
+      "icon": "🧭",
+      "color": "#34d399",
+      "desc": "Danh từ chỉ vị trí — cho biết vật/người ở đâu so với vật khác.",
+      "tips": [
+        "Đều là 名詞, KHÔNG phải 副詞. Mẫu chuẩn: 「Ａの＋位置詞＋に/で/の」.",
+        "つくえの 上に 本が あります (に = nơi tồn tại) · つくえの 上で 食べます (で = nơi diễn ra hành động) · つくえの 上の 本 (の = định ngữ cho danh từ)."
+      ],
+      "words": [
+        { "id": "pos1", "jp": "上", "hira": "うえ", "romaji": "ue", "vn": "trên, phía trên", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5", "key": true,
+          "ex": { "jp": "つくえの 上に 本が あります。", "vn": "Trên bàn có quyển sách." } },
+        { "id": "pos2", "jp": "下", "hira": "した", "romaji": "shita", "vn": "dưới, phía dưới", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5", "key": true,
+          "ex": { "jp": "いすの 下に ねこが います。", "vn": "Dưới ghế có con mèo." } },
+        { "id": "pos3", "jp": "前", "hira": "まえ", "romaji": "mae", "vn": "phía trước", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5", "key": true, "also": ["time"],
+          "ex": { "jp": "駅の 前で 待って います。", "vn": "Tôi đang đợi ở trước nhà ga." },
+          "note": "Cũng chỉ thời gian “trước”: 3年前 (3 năm trước), 前に (hồi trước)." },
+        { "id": "pos4", "jp": "後ろ", "hira": "うしろ", "romaji": "ushiro", "vn": "phía sau", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5", "key": true,
+          "ex": { "jp": "家の 後ろに 川が あります。", "vn": "Phía sau nhà có con sông." },
+          "note": "後ろ = phía sau về KHÔNG GIAN; 後で = sau về THỜI GIAN." },
+        { "id": "pos5", "jp": "中", "hira": "なか", "romaji": "naka", "vn": "bên trong, ở giữa", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5", "key": true,
+          "ex": { "jp": "かばんの 中に 何が ありますか。", "vn": "Trong cặp có gì?" },
+          "note": "Cũng dùng cho phạm vi so sánh: 「〜の 中で 一番…」." },
+        { "id": "pos6", "jp": "外", "hira": "そと", "romaji": "soto", "vn": "bên ngoài", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5", "key": true,
+          "ex": { "jp": "外は 寒いですね。", "vn": "Bên ngoài lạnh nhỉ." } },
+        { "id": "pos7", "jp": "隣", "hira": "となり", "romaji": "tonari", "vn": "bên cạnh (sát ngay, cùng loại)", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5", "key": true,
+          "ex": { "jp": "銀行は 郵便局の 隣です。", "vn": "Ngân hàng ở cạnh bưu điện." },
+          "note": "隣 = sát ngay bên và cùng loại (nhà–nhà, người–người); そば/近く chỉ “gần đó” chung." },
+        { "id": "pos8", "jp": "近く", "hira": "ちかく", "romaji": "chikaku", "vn": "gần, khu vực gần", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5", "key": true,
+          "ex": { "jp": "駅の 近くに スーパーが あります。", "vn": "Gần nhà ga có siêu thị." } },
+        { "id": "pos9", "jp": "間", "hira": "あいだ", "romaji": "aida", "vn": "khoảng giữa (hai vật)", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5", "key": true,
+          "ex": { "jp": "銀行と 病院の 間に コンビニが あります。", "vn": "Giữa ngân hàng và bệnh viện có cửa hàng tiện lợi." },
+          "note": "Mẫu 「ＡとＢの 間に」. Với thời gian: 「〜の 間」= trong lúc." },
+        { "id": "pos10", "jp": "右", "hira": "みぎ", "romaji": "migi", "vn": "bên phải", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5",
+          "ex": { "jp": "次の 交差点を 右に 曲がって ください。", "vn": "Hãy rẽ phải ở ngã tư tiếp theo." } },
+        { "id": "pos11", "jp": "左", "hira": "ひだり", "romaji": "hidari", "vn": "bên trái", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5",
+          "ex": { "jp": "銀行は 左に あります。", "vn": "Ngân hàng ở bên trái." } },
+        { "id": "pos12", "jp": "横", "hira": "よこ", "romaji": "yoko", "vn": "bên cạnh (theo chiều ngang)", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N5",
+          "ex": { "jp": "テレビの 横に 花が あります。", "vn": "Bên cạnh TV có bình hoa." } },
+        { "id": "pos13", "jp": "そば", "hira": "そば", "romaji": "soba", "vn": "gần bên, kề bên", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N4",
+          "ex": { "jp": "私の そばに いて ください。", "vn": "Hãy ở bên cạnh tôi." } },
+        { "id": "pos14", "jp": "向こう", "hira": "むこう", "romaji": "mukō", "vn": "phía bên kia, đối diện", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N4",
+          "ex": { "jp": "道の 向こうに 公園が あります。", "vn": "Bên kia đường có công viên." } },
+        { "id": "pos15", "jp": "周り", "hira": "まわり", "romaji": "mawari", "vn": "xung quanh", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N4",
+          "ex": { "jp": "池の 周りを 歩きました。", "vn": "Tôi đã đi quanh cái hồ." } },
+        { "id": "pos16", "jp": "真ん中", "hira": "まんなか", "romaji": "man-naka", "vn": "chính giữa", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N4",
+          "ex": { "jp": "部屋の 真ん中に テーブルが あります。", "vn": "Chính giữa phòng có cái bàn." } },
+        { "id": "pos17", "jp": "裏", "hira": "うら", "romaji": "ura", "vn": "mặt sau, phía sau", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N4",
+          "ex": { "jp": "紙の 裏に 名前を 書いて ください。", "vn": "Hãy viết tên vào mặt sau tờ giấy." } },
+        { "id": "pos18", "jp": "表", "hira": "おもて", "romaji": "omote", "vn": "mặt trước, mặt ngoài", "pos": "noun", "modifies": "Quan hệ vị trí (Nの＋…)", "level": "N4",
+          "ex": { "jp": "表に 住所を 書きます。", "vn": "Viết địa chỉ ở mặt trước." },
+          "note": "Chữ 表 đọc ひょう thì nghĩa khác: 表 (bảng biểu)." }
+      ]
+    },
+    {
+      "id": "manner",
+      "label": "Cách thức",
+      "jp": "様態",
+      "icon": "🏃",
+      "color": "#a78bfa",
+      "desc": "Cho biết hành động được làm NHƯ THẾ NÀO — nhanh/chậm, một mình/cùng nhau, giỏi/khéo.",
+      "tips": [
+        "Quy tắc biến thành trạng từ: い形容詞 → 〜く (はやい→はやく) · な形容詞 → 〜に (しずかな→しずかに) · 名詞 → 〜で/〜に (ひとり→ひとりで).",
+        "Vì thế nhiều “trạng từ” trong nhóm này thực chất là TÍNH TỪ hoặc DANH TỪ đang ở dạng bổ nghĩa."
+      ],
+      "words": [
+        { "id": "man1", "jp": "ゆっくり", "hira": "ゆっくり", "romaji": "yukkuri", "vn": "chậm rãi, từ tốn", "pos": "adv", "modifies": "Động từ", "level": "N5", "key": true, "also": ["exec"],
+          "ex": { "jp": "ゆっくり 話して ください。", "vn": "Hãy nói chậm lại." },
+          "note": "Cũng nghĩa “thoải mái, nghỉ ngơi”: ゆっくり 休んで ください." },
+        { "id": "man2", "jp": "早く・速く", "hira": "はやく", "romaji": "hayaku", "vn": "sớm; nhanh", "pos": "i-adj", "posNote": "dạng 〜く của 早い (sớm) / 速い (nhanh)", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "早く 起きて ください。", "vn": "Hãy thức dậy sớm." },
+          "note": "早い = sớm (thời điểm); 速い = nhanh (tốc độ). Nói/chạy nhanh dùng 速く." },
+        { "id": "man3", "jp": "一緒に", "hira": "いっしょに", "romaji": "issho ni", "vn": "cùng nhau", "pos": "noun", "posNote": "名詞「一緒」＋に", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "一緒に 帰りましょう。", "vn": "Cùng về nhé." } },
+        { "id": "man4", "jp": "一人で", "hira": "ひとりで", "romaji": "hitori de", "vn": "một mình", "pos": "noun", "posNote": "名詞「一人」＋で", "modifies": "Động từ", "level": "N5",
+          "ex": { "jp": "一人で 旅行しました。", "vn": "Tôi đã đi du lịch một mình." } },
+        { "id": "man5", "jp": "上手に", "hira": "じょうずに", "romaji": "jōzu ni", "vn": "giỏi, thành thạo", "pos": "na-adj", "posNote": "な形容詞「上手な」＋に", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "姉は 上手に 歌います。", "vn": "Chị tôi hát giỏi." },
+          "note": "Không dùng để tự khen mình. Nói về mình thì 「うまく なりました」hoặc 「〜が できます」." },
+        { "id": "man6", "jp": "きれいに", "hira": "きれいに", "romaji": "kirei ni", "vn": "sạch sẽ; đẹp đẽ", "pos": "na-adj", "posNote": "な形容詞「きれいな」＋に", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "部屋を きれいに 掃除しました。", "vn": "Tôi đã dọn phòng sạch sẽ." },
+          "note": "きれい tuy kết thúc bằng い nhưng là な形容詞 — きれいな 部屋, không phải きれいい." },
+        { "id": "man7", "jp": "静かに", "hira": "しずかに", "romaji": "shizuka ni", "vn": "yên tĩnh, nhẹ nhàng", "pos": "na-adj", "posNote": "な形容詞「静かな」＋に", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "静かに して ください。", "vn": "Hãy giữ yên lặng." } },
+        { "id": "man8", "jp": "まっすぐ", "hira": "まっすぐ", "romaji": "massugu", "vn": "thẳng", "pos": "adv", "modifies": "Động từ", "level": "N5",
+          "ex": { "jp": "この 道を まっすぐ 行って ください。", "vn": "Hãy đi thẳng con đường này." } },
+        { "id": "man9", "jp": "遅く", "hira": "おそく", "romaji": "osoku", "vn": "muộn; chậm", "pos": "i-adj", "posNote": "dạng 〜く của 遅い", "modifies": "Động từ", "level": "N5",
+          "ex": { "jp": "昨日は 遅く 寝ました。", "vn": "Hôm qua tôi ngủ muộn." } },
+        { "id": "man10", "jp": "楽しく", "hira": "たのしく", "romaji": "tanoshiku", "vn": "vui vẻ", "pos": "i-adj", "posNote": "dạng 〜く của 楽しい", "modifies": "Động từ", "level": "N5",
+          "ex": { "jp": "みんなで 楽しく 話しました。", "vn": "Mọi người đã nói chuyện vui vẻ." } },
+        { "id": "man11", "jp": "大きく", "hira": "おおきく", "romaji": "ōkiku", "vn": "to, lớn (ra)", "pos": "i-adj", "posNote": "dạng 〜く của 大きい", "modifies": "Động từ", "level": "N5",
+          "ex": { "jp": "大きく 書いて ください。", "vn": "Hãy viết to lên." },
+          "note": "Bổ nghĩa danh từ thì dùng 大きい／大きな (xem nhóm Chỉ định)." },
+        { "id": "man12", "jp": "親切に", "hira": "しんせつに", "romaji": "shinsetsu ni", "vn": "tử tế, tốt bụng", "pos": "na-adj", "posNote": "な形容詞「親切な」＋に", "modifies": "Động từ", "level": "N5",
+          "ex": { "jp": "店員さんは 親切に 教えて くれました。", "vn": "Nhân viên đã chỉ cho tôi rất tử tế." } },
+        { "id": "man13", "jp": "うまく", "hira": "うまく", "romaji": "umaku", "vn": "giỏi; suôn sẻ, ổn", "pos": "i-adj", "posNote": "dạng 〜く của うまい", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "試験は うまく いきました。", "vn": "Kỳ thi diễn ra suôn sẻ." },
+          "note": "「うまく いく」= suôn sẻ — cách nói rất thông dụng." },
+        { "id": "man14", "jp": "だんだん", "hira": "だんだん", "romaji": "dandan", "vn": "dần dần", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "だんだん 寒く なりました。", "vn": "Trời dần dần lạnh đi." },
+          "note": "Rất hay đi với mẫu 「〜く/〜に なる」." },
+        { "id": "man15", "jp": "どんどん", "hira": "どんどん", "romaji": "dondon", "vn": "liên tục, ào ào (nhanh và mạnh)", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "値段が どんどん 上がって います。", "vn": "Giá cả liên tục tăng." } },
+        { "id": "man16", "jp": "自由に", "hira": "じゆうに", "romaji": "jiyū ni", "vn": "tự do, thoải mái", "pos": "na-adj", "posNote": "な形容詞「自由な」＋に", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "自由に 使って ください。", "vn": "Hãy dùng thoải mái." } }
+      ]
+    },
+    {
+      "id": "order",
+      "label": "Trình tự",
+      "jp": "順序",
+      "icon": "🔢",
+      "color": "#60a5fa",
+      "desc": "Sắp xếp các bước, các việc theo thứ tự trước – sau.",
+      "tips": [
+        "Chuỗi mẫu khi kể các bước: まず → 次に → それから → 最後に.",
+        "それから / そして là 接続詞 (nối câu), còn 次に / 最後に là 名詞＋に."
+      ],
+      "words": [
+        { "id": "ord1", "jp": "まず", "hira": "まず", "romaji": "mazu", "vn": "trước tiên, đầu tiên", "pos": "adv", "modifies": "Cả câu", "level": "N4", "key": true,
+          "ex": { "jp": "まず 手を 洗います。", "vn": "Trước tiên hãy rửa tay." } },
+        { "id": "ord2", "jp": "初めに", "hira": "はじめに", "romaji": "hajime ni", "vn": "mở đầu, đầu tiên", "pos": "noun", "posNote": "名詞「初め」＋に", "modifies": "Cả câu", "level": "N4",
+          "ex": { "jp": "初めに 自己紹介を します。", "vn": "Đầu tiên tôi xin tự giới thiệu." },
+          "note": "初めに = trình tự; 初めて = lần đầu tiên trong đời." },
+        { "id": "ord3", "jp": "最初に", "hira": "さいしょに", "romaji": "saisho ni", "vn": "đầu tiên (trong dãy)", "pos": "noun", "posNote": "名詞「最初」＋に", "modifies": "Cả câu", "level": "N4",
+          "ex": { "jp": "最初に この ボタンを 押します。", "vn": "Đầu tiên bấm nút này." } },
+        { "id": "ord4", "jp": "次に", "hira": "つぎに", "romaji": "tsugi ni", "vn": "tiếp theo", "pos": "noun", "posNote": "名詞「次」＋に", "modifies": "Cả câu", "level": "N4", "key": true,
+          "ex": { "jp": "次に お湯を 入れます。", "vn": "Tiếp theo cho nước nóng vào." },
+          "note": "Bổ nghĩa danh từ thì dùng 次の: 次の 電車 (chuyến tàu tiếp theo)." },
+        { "id": "ord5", "jp": "それから", "hira": "それから", "romaji": "sore kara", "vn": "sau đó, rồi", "pos": "conj", "modifies": "Cả câu", "level": "N5", "key": true,
+          "ex": { "jp": "朝ごはんを 食べました。それから 学校へ 行きました。", "vn": "Tôi đã ăn sáng. Sau đó đi đến trường." },
+          "note": "Nối hai việc theo THỜI GIAN trước–sau." },
+        { "id": "ord6", "jp": "そして", "hira": "そして", "romaji": "soshite", "vn": "và, và rồi", "pos": "conj", "modifies": "Cả câu", "level": "N5", "key": true,
+          "ex": { "jp": "部屋は 広いです。そして 明るいです。", "vn": "Phòng thì rộng. Và sáng nữa." },
+          "note": "Dùng để CỘNG THÊM thông tin cùng loại, không nhất thiết theo thời gian." },
+        { "id": "ord7", "jp": "最後に", "hira": "さいごに", "romaji": "saigo ni", "vn": "cuối cùng", "pos": "noun", "posNote": "名詞「最後」＋に", "modifies": "Cả câu", "level": "N4", "key": true,
+          "ex": { "jp": "最後に 塩を 入れます。", "vn": "Cuối cùng cho muối vào." } },
+        { "id": "ord8", "jp": "その後", "hira": "そのあと", "romaji": "sono ato", "vn": "sau đó", "pos": "noun", "posNote": "連体詞「その」＋名詞「後」", "modifies": "Cả câu", "level": "N4",
+          "ex": { "jp": "その後、何を しましたか。", "vn": "Sau đó bạn đã làm gì?" },
+          "note": "Văn viết và văn trang trọng đọc là そのご; hội thoại thường đọc そのあと." }
+      ]
+    },
+    {
+      "id": "scope",
+      "label": "Phạm vi & Giới hạn",
+      "jp": "範囲・限定",
+      "icon": "🎯",
+      "color": "#f472b6",
+      "desc": "Khoanh vùng đối tượng: chỉ có bấy nhiêu, tất cả, hay chẳng có gì.",
+      "tips": [
+        "だけ / しか / ばかり là 助詞 nên đứng SAU danh từ, không đứng trước.",
+        "しか luôn kéo theo động từ PHỦ ĐỊNH; だけ thì không."
+      ],
+      "words": [
+        { "id": "scp1", "jp": "だけ", "hira": "だけ", "romaji": "dake", "vn": "chỉ, chỉ có", "pos": "particle", "modifies": "Danh từ / Số từ", "level": "N5", "key": true,
+          "ex": { "jp": "水だけ 飲みます。", "vn": "Tôi chỉ uống nước." },
+          "note": "Trung tính, không kèm cảm xúc. Thay được cho を/が: りんごだけ 食べます." },
+        { "id": "scp2", "jp": "しか〜ない", "hira": "しか", "romaji": "shika ~ nai", "vn": "chỉ (kèm phủ định, hàm ý “ít quá”)", "pos": "particle", "modifies": "Danh từ / Số từ", "level": "N4", "key": true,
+          "ex": { "jp": "水しか 飲みません。", "vn": "Tôi chỉ uống nước (chứ chẳng có gì khác)." },
+          "note": "Bắt buộc động từ phủ định. Sắc thái “chỉ có bấy nhiêu, không đủ”." },
+        { "id": "scp3", "jp": "ばかり", "hira": "ばかり", "romaji": "bakari", "vn": "chỉ toàn là; vừa mới", "pos": "particle", "modifies": "Danh từ / Động từ", "level": "N4",
+          "ex": { "jp": "弟は ゲームばかり して います。", "vn": "Em trai tôi chỉ toàn chơi game." },
+          "note": "Vた＋ばかり = “vừa mới xong”: 食べたばかりです." },
+        { "id": "scp4", "jp": "全員", "hira": "ぜんいん", "romaji": "zen'in", "vn": "toàn bộ thành viên", "pos": "noun", "modifies": "Động từ / Danh từ", "level": "N4",
+          "ex": { "jp": "全員 来ましたか。", "vn": "Tất cả mọi người đã đến chưa?" },
+          "note": "Trang trọng hơn みんな, dùng cho một nhóm xác định." },
+        { "id": "scp5", "jp": "他に", "hira": "ほかに", "romaji": "hoka ni", "vn": "khác, ngoài ra còn", "pos": "noun", "posNote": "名詞「他」＋に", "modifies": "Cả câu / Danh từ", "level": "N4",
+          "ex": { "jp": "他に 質問は ありませんか。", "vn": "Còn câu hỏi nào khác không?" } },
+        { "id": "scp6", "jp": "以外", "hira": "いがい", "romaji": "igai", "vn": "ngoài ... ra", "pos": "noun", "modifies": "Danh từ", "level": "N4",
+          "ex": { "jp": "日曜日以外は 働いて います。", "vn": "Ngoài chủ nhật thì tôi đều làm việc." },
+          "note": "Gắn trực tiếp sau danh từ: N＋以外." },
+        { "id": "scp7", "jp": "何も", "hira": "なにも", "romaji": "nani mo", "vn": "chẳng gì cả (+ phủ định)", "pos": "other", "posNote": "代名詞「何」＋助詞「も」", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "何も 食べませんでした。", "vn": "Tôi chẳng ăn gì cả." } },
+        { "id": "scp8", "jp": "誰も", "hira": "だれも", "romaji": "dare mo", "vn": "chẳng ai cả (+ phủ định)", "pos": "other", "posNote": "代名詞「誰」＋助詞「も」", "modifies": "Động từ", "level": "N5",
+          "ex": { "jp": "教室に 誰も いません。", "vn": "Trong lớp chẳng có ai." } },
+        { "id": "scp9", "jp": "どこも", "hira": "どこも", "romaji": "doko mo", "vn": "chẳng đâu (+ phủ định)", "pos": "other", "posNote": "代名詞「どこ」＋助詞「も」", "modifies": "Động từ", "level": "N5",
+          "ex": { "jp": "どこも 行きませんでした。", "vn": "Tôi chẳng đi đâu cả." } },
+        { "id": "scp10", "jp": "何でも", "hira": "なんでも", "romaji": "nan demo", "vn": "cái gì cũng", "pos": "other", "posNote": "代名詞「何」＋助詞「でも」", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "弟は 何でも 食べます。", "vn": "Em trai tôi cái gì cũng ăn." },
+          "note": "Bộ 「疑問詞＋でも」: 誰でも (ai cũng), どこでも (đâu cũng), いつでも (lúc nào cũng)." }
+      ]
+    },
+    {
+      "id": "det",
+      "label": "Chỉ định cho danh từ",
+      "jp": "連体修飾",
+      "icon": "🔖",
+      "color": "#2dd4bf",
+      "desc": "Những từ chỉ đứng TRƯỚC danh từ để bổ nghĩa cho nó.",
+      "tips": [
+        "連体詞 không chia, không cần thêm の hay な: この 本 ✓ / この の 本 ✗ / こんなな 店 ✗.",
+        "Bộ こそあど: この (này) – その (đó) – あの (kia) – どの (nào). Đứng một mình (không có danh từ) thì phải dùng これ/それ/あれ/どれ."
+      ],
+      "words": [
+        { "id": "det1", "jp": "この", "hira": "この", "romaji": "kono", "vn": "... này (gần người nói)", "pos": "rentai", "modifies": "Danh từ", "level": "N5", "key": true,
+          "ex": { "jp": "この 本は 私のです。", "vn": "Quyển sách này là của tôi." },
+          "note": "Luôn kèm danh từ. Không có danh từ thì dùng これ: これは 本です." },
+        { "id": "det2", "jp": "その", "hira": "その", "romaji": "sono", "vn": "... đó (gần người nghe)", "pos": "rentai", "modifies": "Danh từ", "level": "N5", "key": true,
+          "ex": { "jp": "その かばんは いくらですか。", "vn": "Cái cặp đó bao nhiêu tiền?" } },
+        { "id": "det3", "jp": "あの", "hira": "あの", "romaji": "ano", "vn": "... kia (xa cả hai người)", "pos": "rentai", "modifies": "Danh từ", "level": "N5", "key": true,
+          "ex": { "jp": "あの 人は 田中さんです。", "vn": "Người kia là anh Tanaka." } },
+        { "id": "det4", "jp": "どの", "hira": "どの", "romaji": "dono", "vn": "... nào", "pos": "rentai", "modifies": "Danh từ", "level": "N5", "key": true,
+          "ex": { "jp": "どの 電車に 乗りますか。", "vn": "Bạn đi tàu nào?" } },
+        { "id": "det5", "jp": "こんな", "hira": "こんな", "romaji": "konna", "vn": "... như thế này", "pos": "rentai", "modifies": "Danh từ", "level": "N5", "key": true,
+          "ex": { "jp": "こんな 店は 初めてです。", "vn": "Quán như thế này thì lần đầu tôi thấy." },
+          "note": "この = chỉ vật cụ thể; こんな = chỉ LOẠI/tính chất." },
+        { "id": "det6", "jp": "そんな", "hira": "そんな", "romaji": "sonna", "vn": "... như thế đó", "pos": "rentai", "modifies": "Danh từ", "level": "N5",
+          "ex": { "jp": "そんな こと 言わないで ください。", "vn": "Đừng nói những chuyện như thế." } },
+        { "id": "det7", "jp": "あんな", "hira": "あんな", "romaji": "anna", "vn": "... như thế kia", "pos": "rentai", "modifies": "Danh từ", "level": "N5",
+          "ex": { "jp": "あんな 家に 住みたいです。", "vn": "Tôi muốn sống trong ngôi nhà như thế kia." } },
+        { "id": "det8", "jp": "どんな", "hira": "どんな", "romaji": "donna", "vn": "... như thế nào, loại nào", "pos": "rentai", "modifies": "Danh từ", "level": "N5", "key": true,
+          "ex": { "jp": "どんな 音楽が 好きですか。", "vn": "Bạn thích loại nhạc nào?" } },
+        { "id": "det9", "jp": "同じ", "hira": "おなじ", "romaji": "onaji", "vn": "giống nhau, cùng", "pos": "rentai", "modifies": "Danh từ", "level": "N5", "key": true,
+          "ex": { "jp": "私と 同じ かばんですね。", "vn": "Cùng loại cặp với tôi nhỉ." },
+          "note": "Đặc biệt: 同じ＋N, KHÔNG thêm な/の (同じ 人 ✓ / 同じな 人 ✗). Làm vị ngữ thì 「〜と 同じです」." },
+        { "id": "det10", "jp": "大きな", "hira": "おおきな", "romaji": "ōkina", "vn": "to, lớn", "pos": "rentai", "modifies": "Danh từ", "level": "N5",
+          "ex": { "jp": "公園に 大きな 木が あります。", "vn": "Trong công viên có một cây to." },
+          "note": "大きな CHỈ dùng trước danh từ; làm vị ngữ phải dùng 大きい: この 木は 大きいです." },
+        { "id": "det11", "jp": "小さな", "hira": "ちいさな", "romaji": "chiisana", "vn": "nhỏ, bé", "pos": "rentai", "modifies": "Danh từ", "level": "N5",
+          "ex": { "jp": "小さな 声で 話しました。", "vn": "Tôi đã nói bằng giọng nhỏ." } },
+        { "id": "det12", "jp": "いろいろな", "hira": "いろいろな", "romaji": "iroiro na", "vn": "nhiều loại, đa dạng", "pos": "na-adj", "posNote": "な形容詞; bỏ な thì thành 副詞", "modifies": "Danh từ", "level": "N5", "key": true,
+          "ex": { "jp": "いろいろな 国の 料理を 食べました。", "vn": "Tôi đã ăn món ăn của nhiều nước khác nhau." },
+          "note": "Khẩu ngữ hay nói いろんな. Dạng 副詞: いろいろ 考えました." },
+        { "id": "det13", "jp": "ある", "hira": "ある", "romaji": "aru", "vn": "một ... nào đó", "pos": "rentai", "modifies": "Danh từ", "level": "N4",
+          "ex": { "jp": "ある 日、友達に 会いました。", "vn": "Một ngày nọ, tôi gặp một người bạn." },
+          "note": "Khác động từ ある (có). Ở đây là 連体詞, chỉ đứng trước danh từ." },
+        { "id": "det14", "jp": "別の", "hira": "べつの", "romaji": "betsu no", "vn": "... khác", "pos": "other", "posNote": "名詞/な形容詞「別」＋の", "modifies": "Danh từ", "level": "N4",
+          "ex": { "jp": "別の 店で 買いました。", "vn": "Tôi mua ở một quán khác." } },
+        { "id": "det15", "jp": "次の", "hira": "つぎの", "romaji": "tsugi no", "vn": "... tiếp theo", "pos": "other", "posNote": "名詞「次」＋の", "modifies": "Danh từ", "level": "N5",
+          "ex": { "jp": "次の 駅で 降ります。", "vn": "Tôi xuống ở ga tiếp theo." } }
+      ]
+    },
+    {
+      "id": "exec",
+      "label": "Trạng thái thực hiện",
+      "jp": "実行の度合い",
+      "icon": "✅",
+      "color": "#a3e635",
+      "desc": "Việc đó được làm tới đâu, làm lại hay chưa, làm cho tử tế hay không.",
+      "tips": [
+        "Nhóm này đứng ngay trước động từ và rất hay đi với 〜てください / 〜ましょう.",
+        "Đừng lẫn また (lại) với まだ (vẫn/chưa) — chỉ khác dấu ten ten."
+      ],
+      "words": [
+        { "id": "exe1", "jp": "ちゃんと", "hira": "ちゃんと", "romaji": "chanto", "vn": "đúng cách, tử tế, đầy đủ", "pos": "adv", "modifies": "Động từ", "level": "N4", "key": true,
+          "ex": { "jp": "ちゃんと 勉強して ください。", "vn": "Hãy học hành cho tử tế." },
+          "note": "Khẩu ngữ, nhấn “làm đúng như phải làm”. Trang trọng hơn: きちんと." },
+        { "id": "exe2", "jp": "しっかり", "hira": "しっかり", "romaji": "shikkari", "vn": "chắc chắn, vững vàng, cho kỹ", "pos": "adv", "modifies": "Động từ", "level": "N4", "key": true,
+          "ex": { "jp": "しっかり 覚えて ください。", "vn": "Hãy nhớ cho chắc." },
+          "note": "Nhấn ĐỘ CHẮC/lực; ちゃんと nhấn ĐÚNG QUY CÁCH." },
+        { "id": "exe3", "jp": "きちんと", "hira": "きちんと", "romaji": "kichinto", "vn": "ngăn nắp, đúng quy cách", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "靴を きちんと 並べて ください。", "vn": "Hãy xếp giày cho ngay ngắn." } },
+        { "id": "exe4", "jp": "ぜひ", "hira": "ぜひ", "romaji": "zehi", "vn": "nhất định (mong muốn, mời mọc)", "pos": "adv", "modifies": "Động từ", "level": "N4", "key": true,
+          "ex": { "jp": "ぜひ 遊びに 来て ください。", "vn": "Nhất định hãy đến chơi nhé." },
+          "note": "Đi với 〜てください / 〜たい. KHÔNG dùng cho dự đoán — dự đoán dùng きっと." },
+        { "id": "exe5", "jp": "また", "hira": "また", "romaji": "mata", "vn": "lại, lần nữa", "pos": "adv", "modifies": "Động từ", "level": "N5", "key": true,
+          "ex": { "jp": "また 来ます。", "vn": "Tôi sẽ lại đến." },
+          "note": "また ≠ まだ. また = lặp lại; まだ = vẫn còn/chưa." },
+        { "id": "exe6", "jp": "もう一度", "hira": "もういちど", "romaji": "mō ichido", "vn": "một lần nữa", "pos": "adv", "modifies": "Động từ", "level": "N5",
+          "ex": { "jp": "もう一度 言って ください。", "vn": "Xin nói lại một lần nữa." } },
+        { "id": "exe7", "jp": "できるだけ", "hira": "できるだけ", "romaji": "dekiru dake", "vn": "hết sức có thể, càng ... càng tốt", "pos": "adv", "modifies": "Động từ / Tính từ", "level": "N4",
+          "ex": { "jp": "できるだけ 早く 来て ください。", "vn": "Hãy đến càng sớm càng tốt." } },
+        { "id": "exe8", "jp": "なるべく", "hira": "なるべく", "romaji": "narubeku", "vn": "nếu có thể thì", "pos": "adv", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "なるべく 日本語で 話しましょう。", "vn": "Nếu được thì ta nói bằng tiếng Nhật." },
+          "note": "Gần nghĩa できるだけ nhưng nhẹ hơn, không ép." },
+        { "id": "exe9", "jp": "まだまだ", "hira": "まだまだ", "romaji": "mada mada", "vn": "còn lâu mới, vẫn còn nhiều", "pos": "adv", "modifies": "Động từ / Tính từ", "level": "N4",
+          "ex": { "jp": "日本語は まだまだです。", "vn": "Tiếng Nhật của tôi thì còn lâu mới được." },
+          "note": "Câu khiêm tốn quen dùng khi bị khen." }
+      ]
+    },
+    {
+      "id": "attitude",
+      "label": "Chắc chắn & Thái độ",
+      "jp": "確信・話者の態度",
+      "icon": "💭",
+      "color": "#fb7185",
+      "desc": "Bổ nghĩa cho CẢ CÂU — cho biết người nói tin chắc đến mức nào.",
+      "tips": [
+        "Thang độ chắc chắn: 必ず / 絶対に ＞ きっと ＞ 多分 ＞ どうも.",
+        "Nhóm này thường đi kèm đuôi 〜でしょう / 〜と 思います / 〜そうです."
+      ],
+      "words": [
+        { "id": "att1", "jp": "多分", "hira": "たぶん", "romaji": "tabun", "vn": "có lẽ, chắc là", "pos": "adv", "modifies": "Cả câu", "level": "N5", "key": true,
+          "ex": { "jp": "多分 明日 雨が 降るでしょう。", "vn": "Có lẽ mai trời sẽ mưa." },
+          "note": "Độ chắc khoảng 60–70%, hay đi với 〜でしょう / 〜と 思います." },
+        { "id": "att2", "jp": "きっと", "hira": "きっと", "romaji": "kitto", "vn": "chắc chắn là (người nói tin vậy)", "pos": "adv", "modifies": "Cả câu", "level": "N4", "key": true,
+          "ex": { "jp": "きっと 来ますよ。", "vn": "Chắc chắn anh ấy sẽ đến." },
+          "note": "Là NIỀM TIN của người nói về việc chưa xảy ra." },
+        { "id": "att3", "jp": "必ず", "hira": "かならず", "romaji": "kanarazu", "vn": "nhất định, không có ngoại lệ", "pos": "adv", "modifies": "Động từ", "level": "N4", "key": true,
+          "ex": { "jp": "必ず 連絡して ください。", "vn": "Nhất định hãy liên lạc nhé." },
+          "note": "Quy tắc/việc luôn xảy ra hoặc yêu cầu bắt buộc — khách quan hơn きっと." },
+        { "id": "att4", "jp": "絶対に", "hira": "ぜったいに", "romaji": "zettai ni", "vn": "tuyệt đối", "pos": "noun", "posNote": "名詞「絶対」＋に", "modifies": "Động từ", "level": "N4",
+          "ex": { "jp": "絶対に 忘れません。", "vn": "Tôi tuyệt đối không quên." } },
+        { "id": "att5", "jp": "もちろん", "hira": "もちろん", "romaji": "mochiron", "vn": "tất nhiên", "pos": "adv", "modifies": "Cả câu", "level": "N4", "key": true,
+          "ex": { "jp": "もちろん 手伝います。", "vn": "Tất nhiên là tôi sẽ giúp." } },
+        { "id": "att6", "jp": "やっぱり・やはり", "hira": "やっぱり", "romaji": "yappari / yahari", "vn": "quả đúng như đã nghĩ", "pos": "adv", "modifies": "Cả câu", "level": "N4",
+          "ex": { "jp": "やっぱり 田中さんは 来ませんでした。", "vn": "Quả đúng là anh Tanaka không đến." },
+          "note": "やはり là dạng chuẩn/văn viết, やっぱり là khẩu ngữ." },
+        { "id": "att7", "jp": "実は", "hira": "じつは", "romaji": "jitsu wa", "vn": "thật ra là", "pos": "other", "posNote": "名詞「実」＋助詞「は」", "modifies": "Cả câu", "level": "N4",
+          "ex": { "jp": "実は 私も 知りませんでした。", "vn": "Thật ra tôi cũng không biết." } },
+        { "id": "att8", "jp": "確かに", "hira": "たしかに", "romaji": "tashika ni", "vn": "đúng là, chắc chắn là", "pos": "na-adj", "posNote": "な形容詞「確かな」＋に", "modifies": "Cả câu", "level": "N4",
+          "ex": { "jp": "確かに そう 言いました。", "vn": "Đúng là tôi đã nói vậy." } },
+        { "id": "att9", "jp": "どうも", "hira": "どうも", "romaji": "dōmo", "vn": "có vẻ như, sao ấy", "pos": "adv", "modifies": "Cả câu", "level": "N4",
+          "ex": { "jp": "どうも 風邪を ひいたようです。", "vn": "Có vẻ như tôi bị cảm rồi." },
+          "note": "Cũng dùng làm lời cảm ơn ngắn: どうも ありがとう." }
+      ]
+    }
+  ],
+  "confusables": [
+    {
+      "id": "cf1", "title": "とても vs すごく", "level": "N5", "color": "#ff4757",
+      "items": [
+        { "w": "とても", "pos": "副詞", "vn": "rất — TRUNG TÍNH, dùng được cả văn nói, văn viết và bài thi" },
+        { "w": "すごく", "pos": "形容詞「すごい」の連用形", "vn": "cực kỳ — KHẨU NGỮ, cảm xúc mạnh, nói với bạn bè" }
+      ],
+      "detail": "Nghĩa gần như nhau, khác ở sắc thái và văn cảnh. Về từ loại: とても là 副詞 thật, còn すごく là dạng 〜く của tính từ すごい. Bài thi và email trang trọng nên dùng とても.",
+      "ex": [
+        { "jp": "この 料理は とても おいしいです。", "vn": "Món này rất ngon. (dùng được mọi hoàn cảnh)", "ok": true },
+        { "jp": "この 料理 すごく おいしい！", "vn": "Món này ngon cực! (nói với bạn bè)", "ok": true },
+        { "jp": "とても おいしくないです。", "vn": "Sai — phủ định phải dùng あまり おいしくないです。", "ok": false }
+      ]
+    },
+    {
+      "id": "cf2", "title": "たくさん vs いっぱい", "level": "N5", "color": "#f97316",
+      "items": [
+        { "w": "たくさん", "pos": "副詞 (cũng dùng như 名詞)", "vn": "nhiều — trung tính, nhấn SỐ LƯỢNG lớn" },
+        { "w": "いっぱい", "pos": "名詞/副詞", "vn": "đầy — khẩu ngữ, nhấn ĐẦY/CHẬT một không gian" }
+      ],
+      "detail": "たくさん dùng được cả nói và viết. いっぱい thân mật hơn, gốc nghĩa “đầy tràn” nên hay dùng với vật chứa. Nói “no rồi” thì chỉ có いっぱい.",
+      "ex": [
+        { "jp": "人が たくさん います。／ 人が いっぱい います。", "vn": "Có rất nhiều người. (cả hai đều được)", "ok": true },
+        { "jp": "おなかが いっぱいです。", "vn": "Tôi no rồi.", "ok": true },
+        { "jp": "おなかが たくさんです。", "vn": "Sai — không nói như vậy.", "ok": false }
+      ]
+    },
+    {
+      "id": "cf3", "title": "少し vs ちょっと", "level": "N5", "color": "#facc15",
+      "items": [
+        { "w": "少し", "pos": "副詞", "vn": "một chút — trung tính/lịch sự, dùng được văn viết" },
+        { "w": "ちょっと", "pos": "副詞", "vn": "một chút — khẩu ngữ, thân mật; còn dùng để gọi hoặc từ chối nhẹ" }
+      ],
+      "detail": "Nghĩa giống nhau, khác mức lịch sự. Bài thi và email dùng 少し. ちょっと có thêm chức năng xã giao mà 少し không có.",
+      "ex": [
+        { "jp": "少し お待ち ください。", "vn": "Xin đợi một chút. (lịch sự)", "ok": true },
+        { "jp": "ちょっと 待って。", "vn": "Đợi tí. (bạn bè)", "ok": true },
+        { "jp": "「一緒に 行きませんか」「今日は ちょっと…」", "vn": "“Cùng đi không?” “Hôm nay thì hơi…” — cách từ chối nhẹ nhàng.", "ok": true }
+      ]
+    },
+    {
+      "id": "cf4", "title": "いつも vs よく", "level": "N5", "color": "#22d3ee",
+      "items": [
+        { "w": "いつも", "pos": "副詞", "vn": "luôn luôn — gần 100%, lần nào cũng vậy" },
+        { "w": "よく", "pos": "副詞", "vn": "thường xuyên — nhiều lần, nhưng không phải mọi lần" }
+      ],
+      "detail": "いつも nhấn “không có ngoại lệ”, よく nhấn “nhiều lần”. よく còn nghĩa thứ hai là “kỹ/rõ” mà いつも không có.",
+      "ex": [
+        { "jp": "私は いつも 電車で 行きます。", "vn": "Tôi lần nào cũng đi bằng tàu.", "ok": true },
+        { "jp": "私は よく 映画を 見ます。", "vn": "Tôi thường xem phim.", "ok": true },
+        { "jp": "よく 聞いて ください。", "vn": "Hãy nghe cho kỹ. (nghĩa “kỹ” — không thay bằng いつも được)", "ok": true }
+      ]
+    },
+    {
+      "id": "cf5", "title": "あまり vs 全然", "level": "N5", "color": "#ff4757",
+      "items": [
+        { "w": "あまり〜ない", "pos": "副詞", "vn": "không ... lắm — vẫn còn một chút" },
+        { "w": "全然〜ない", "pos": "副詞", "vn": "hoàn toàn không — 0%" }
+      ],
+      "detail": "Cả hai bắt buộc đi với phủ định, khác nhau ở mức độ. Về tần suất: あまり 行きません (ít đi) so với 全然 行きません (không bao giờ đi).",
+      "ex": [
+        { "jp": "辛い 物は あまり 食べません。", "vn": "Tôi ít ăn đồ cay.", "ok": true },
+        { "jp": "辛い 物は 全然 食べません。", "vn": "Tôi hoàn toàn không ăn đồ cay.", "ok": true },
+        { "jp": "全然 おいしいです。", "vn": "Khẩu ngữ giới trẻ mới có cách nói này — đi thi thì tính là sai.", "ok": false }
+      ]
+    },
+    {
+      "id": "cf6", "title": "もう vs まだ", "level": "N5", "color": "#facc15",
+      "items": [
+        { "w": "もう", "pos": "副詞", "vn": "đã ... rồi — trạng thái ĐÃ đổi" },
+        { "w": "まだ", "pos": "副詞", "vn": "vẫn còn / chưa — trạng thái CHƯA đổi" }
+      ],
+      "detail": "Cặp hỏi–đáp chuẩn: 「もう 食べましたか」→「はい、もう 食べました」／「いいえ、まだ 食べて いません」. Lưu ý: câu trả lời phủ định dùng まだ〜て いません, KHÔNG dùng quá khứ phủ định.",
+      "ex": [
+        { "jp": "もう 宿題を しました。", "vn": "Tôi đã làm bài tập rồi.", "ok": true },
+        { "jp": "まだ 宿題を して いません。", "vn": "Tôi vẫn chưa làm bài tập.", "ok": true },
+        { "jp": "まだ 宿題を しませんでした。", "vn": "Sai — phải là まだ して いません。", "ok": false }
+      ]
+    },
+    {
+      "id": "cf7", "title": "上手 vs うまい", "level": "N5", "color": "#a78bfa",
+      "items": [
+        { "w": "上手（な）", "pos": "な形容詞", "vn": "giỏi — lịch sự, dùng để khen NGƯỜI KHÁC" },
+        { "w": "うまい", "pos": "形容詞", "vn": "giỏi; ngon — khẩu ngữ, thân mật" }
+      ],
+      "detail": "上手 không dùng để tự nói về mình (nghe như tự cao). うまい thân mật và có thêm nghĩa “ngon”. Dạng bổ nghĩa động từ: 上手に 歌う / うまく 歌う.",
+      "ex": [
+        { "jp": "田中さんは 日本語が 上手です。", "vn": "Anh Tanaka giỏi tiếng Nhật. (khen người khác)", "ok": true },
+        { "jp": "少し うまく なりました。", "vn": "Tôi khá lên một chút rồi. (nói về mình)", "ok": true },
+        { "jp": "私は 日本語が 上手です。", "vn": "Nghe tự cao — nên nói 少し 話せます。", "ok": false }
+      ]
+    },
+    {
+      "id": "cf8", "title": "上 vs 上に (vai trò của trợ từ)", "level": "N5", "color": "#34d399",
+      "items": [
+        { "w": "上", "pos": "名詞", "vn": "bản thân nó chỉ là danh từ vị trí" },
+        { "w": "上に", "pos": "名詞＋助詞", "vn": "に đánh dấu nơi TỒN TẠI / nơi ĐẶT vào" },
+        { "w": "上で", "pos": "名詞＋助詞", "vn": "で đánh dấu nơi DIỄN RA hành động" },
+        { "w": "上の", "pos": "名詞＋助詞", "vn": "の biến vị trí thành định ngữ cho danh từ" }
+      ],
+      "detail": "Mọi danh từ vị trí (上・下・前・中…) đều theo cùng quy tắc: trợ từ đi sau nó mới quyết định vai trò trong câu.",
+      "ex": [
+        { "jp": "本は つくえの 上です。", "vn": "Sách ở trên bàn. (上 làm vị ngữ với です)", "ok": true },
+        { "jp": "つくえの 上に 本が あります。", "vn": "Trên bàn có quyển sách. (に = nơi tồn tại)", "ok": true },
+        { "jp": "つくえの 上で 食べます。", "vn": "Tôi ăn trên bàn. (で = nơi diễn ra hành động)", "ok": true },
+        { "jp": "つくえの 上の 本を 取って ください。", "vn": "Lấy giúp tôi quyển sách ở trên bàn. (の = định ngữ)", "ok": true }
+      ]
+    },
+    {
+      "id": "cf9", "title": "だけ vs しか", "level": "N4", "color": "#f472b6",
+      "items": [
+        { "w": "だけ", "pos": "助詞", "vn": "chỉ — trung tính, động từ KHẲNG ĐỊNH" },
+        { "w": "しか〜ない", "pos": "助詞", "vn": "chỉ — bắt buộc PHỦ ĐỊNH, hàm ý “ít quá”" }
+      ],
+      "detail": "100円だけ あります = chỉ có 100 yên (nói bình thường). 100円しか ありません = chỉ có 100 yên thôi (ít quá, không đủ).",
+      "ex": [
+        { "jp": "水だけ 飲みます。", "vn": "Tôi chỉ uống nước.", "ok": true },
+        { "jp": "水しか 飲みません。", "vn": "Tôi chỉ uống nước (chẳng có gì khác).", "ok": true },
+        { "jp": "水しか 飲みます。", "vn": "Sai — しか phải đi với động từ phủ định.", "ok": false }
+      ]
+    },
+    {
+      "id": "cf10", "title": "また vs まだ", "level": "N5", "color": "#a3e635",
+      "items": [
+        { "w": "また", "pos": "副詞", "vn": "lại, lần nữa — sự LẶP LẠI" },
+        { "w": "まだ", "pos": "副詞", "vn": "vẫn còn / chưa — trạng thái CHƯA đổi" }
+      ],
+      "detail": "Chỉ khác một dấu ten ten (゛) nhưng nghĩa khác hoàn toàn — đây là lỗi rất phổ biến. Nhớ: また = “lại nữa”, まだ = “chưa / vẫn”.",
+      "ex": [
+        { "jp": "また 来ます。", "vn": "Tôi sẽ lại đến.", "ok": true },
+        { "jp": "まだ 来ません。", "vn": "Vẫn chưa đến.", "ok": true },
+        { "jp": "また 来ません。", "vn": "Không sai ngữ pháp, nhưng nghĩa là “lại không đến nữa” — khác hẳn ý muốn nói.", "ok": false }
+      ]
+    },
+    {
+      "id": "cf11", "title": "ぐらい vs ごろ", "level": "N5", "color": "#facc15",
+      "items": [
+        { "w": "ぐらい・くらい", "pos": "助詞", "vn": "khoảng — ĐỘ DÀI, số lượng" },
+        { "w": "ごろ", "pos": "助詞/接尾語", "vn": "khoảng — MỐC thời gian" }
+      ],
+      "detail": "3時ごろ = khoảng 3 giờ (một điểm). 3時間ぐらい = khoảng 3 tiếng (một khoảng). Với số lượng thì chỉ dùng ぐらい: 10人ぐらい.",
+      "ex": [
+        { "jp": "3時ごろ 会いましょう。", "vn": "Khoảng 3 giờ mình gặp nhau nhé.", "ok": true },
+        { "jp": "3時間ぐらい 勉強しました。", "vn": "Tôi đã học khoảng 3 tiếng.", "ok": true },
+        { "jp": "3時間ごろ 勉強しました。", "vn": "Sai — độ dài thời gian phải dùng ぐらい。", "ok": false }
+      ]
+    },
+    {
+      "id": "cf12", "title": "全部 vs みんな vs 全員", "level": "N5", "color": "#f97316",
+      "items": [
+        { "w": "全部", "pos": "名詞", "vn": "toàn bộ — dùng cho ĐỒ VẬT, số lượng, phần việc" },
+        { "w": "みんな", "pos": "名詞", "vn": "mọi người, tất cả — thiên về NGƯỜI, thân mật" },
+        { "w": "全員", "pos": "名詞", "vn": "toàn bộ thành viên — nhóm xác định, trang trọng" }
+      ],
+      "detail": "Dạng lịch sự của みんな là 皆さん. Trong thông báo, văn bản thì 全員 tự nhiên hơn みんな.",
+      "ex": [
+        { "jp": "宿題を 全部 しました。", "vn": "Tôi đã làm hết bài tập.", "ok": true },
+        { "jp": "クラスの みんなが 来ました。", "vn": "Cả lớp đều đến.", "ok": true },
+        { "jp": "全員 集まって ください。", "vn": "Xin toàn thể tập trung. (thông báo)", "ok": true }
+      ]
+    },
+    {
+      "id": "cf13", "title": "必ず vs きっと vs 多分", "level": "N4", "color": "#fb7185",
+      "items": [
+        { "w": "必ず", "pos": "副詞", "vn": "nhất định — khách quan, quy tắc/bắt buộc, không ngoại lệ" },
+        { "w": "きっと", "pos": "副詞", "vn": "chắc chắn — chủ quan, niềm tin của người nói" },
+        { "w": "多分", "pos": "副詞", "vn": "có lẽ — độ chắc thấp hơn (60–70%)" }
+      ],
+      "detail": "Yêu cầu, quy định thì dùng 必ず. Dự đoán về người khác thì きっと / 多分. Riêng ぜひ chỉ dùng cho MONG MUỐN và lời mời, không dùng cho dự đoán.",
+      "ex": [
+        { "jp": "明日 必ず 持って きて ください。", "vn": "Mai nhất định phải mang đến. (bắt buộc)", "ok": true },
+        { "jp": "彼は きっと 来ますよ。", "vn": "Anh ấy chắc chắn sẽ đến. (tôi tin vậy)", "ok": true },
+        { "jp": "多分 来ないと 思います。", "vn": "Tôi nghĩ có lẽ anh ấy không đến.", "ok": true }
+      ]
+    },
+    {
+      "id": "cf14", "title": "この vs これ vs こんな", "level": "N5", "color": "#2dd4bf",
+      "items": [
+        { "w": "この＋N", "pos": "連体詞", "vn": "... này — BẮT BUỘC có danh từ đi sau" },
+        { "w": "これ", "pos": "代名詞", "vn": "cái này — đứng một mình, không kèm danh từ" },
+        { "w": "こんな＋N", "pos": "連体詞", "vn": "... như thế này — chỉ LOẠI/tính chất, không chỉ vật cụ thể" }
+      ],
+      "detail": "Cả bộ こそあど đều theo quy tắc này: この/その/あの/どの ＋ danh từ, còn これ/それ/あれ/どれ đứng riêng.",
+      "ex": [
+        { "jp": "この 本は 私のです。／ これは 私の 本です。", "vn": "Quyển sách này của tôi. / Cái này là sách của tôi.", "ok": true },
+        { "jp": "こんな 本が 好きです。", "vn": "Tôi thích loại sách như thế này.", "ok": true },
+        { "jp": "この は 本です。", "vn": "Sai — không có danh từ thì phải dùng これ。", "ok": false }
+      ]
+    },
+    {
+      "id": "cf15", "title": "そして vs それから", "level": "N5", "color": "#60a5fa",
+      "items": [
+        { "w": "そして", "pos": "接続詞", "vn": "và, và rồi — CỘNG THÊM thông tin cùng loại" },
+        { "w": "それから", "pos": "接続詞", "vn": "sau đó — nhấn THỨ TỰ thời gian trước–sau" }
+      ],
+      "detail": "Kể các bước, các việc theo thời gian thì dùng それから. Liệt kê tính chất, thông tin song song thì dùng そして.",
+      "ex": [
+        { "jp": "部屋は 広いです。そして 明るいです。", "vn": "Phòng thì rộng. Và sáng nữa. (hai tính chất)", "ok": true },
+        { "jp": "顔を 洗いました。それから 朝ごはんを 食べました。", "vn": "Tôi rửa mặt. Sau đó ăn sáng. (việc trước – việc sau)", "ok": true }
+      ]
+    },
+    {
+      "id": "cf16", "title": "ちゃんと vs しっかり", "level": "N4", "color": "#a3e635",
+      "items": [
+        { "w": "ちゃんと", "pos": "副詞", "vn": "đúng cách, đầy đủ như phải làm" },
+        { "w": "しっかり", "pos": "副詞", "vn": "chắc, kỹ, dồn lực vào" }
+      ],
+      "detail": "Nhiều câu dùng được cả hai, nhưng “giữ cho chắc” thì chỉ có しっかり, còn “làm cho đúng quy cách” thì ちゃんと tự nhiên hơn.",
+      "ex": [
+        { "jp": "ちゃんと 宿題を 出して ください。", "vn": "Hãy nộp bài tập cho đầy đủ, đúng hạn.", "ok": true },
+        { "jp": "しっかり 持って ください。", "vn": "Hãy giữ cho chắc.", "ok": true },
+        { "jp": "しっかり 覚えて ください。", "vn": "Hãy nhớ cho kỹ.", "ok": true }
+      ]
+    },
+    {
+      "id": "cf17", "title": "早く vs 速く", "level": "N5", "color": "#22d3ee",
+      "items": [
+        { "w": "早く", "pos": "形容詞「早い」の連用形", "vn": "sớm — về THỜI ĐIỂM" },
+        { "w": "速く", "pos": "形容詞「速い」の連用形", "vn": "nhanh — về TỐC ĐỘ" }
+      ],
+      "detail": "Cùng đọc はやく nên chỉ phân biệt được qua chữ Kanji — đây là dạng câu hỏi hay gặp trong phần chữ Hán của đề thi.",
+      "ex": [
+        { "jp": "早く 寝ましょう。", "vn": "Ngủ sớm thôi.", "ok": true },
+        { "jp": "もっと 速く 走って ください。", "vn": "Hãy chạy nhanh hơn.", "ok": true },
+        { "jp": "早く 来て ください。", "vn": "Hãy đến sớm/đến nhanh lên. (nhấn thời điểm)", "ok": true }
+      ]
+    },
+    {
+      "id": "cf18", "title": "隣 vs 横 vs 近く・そば", "level": "N5", "color": "#34d399",
+      "items": [
+        { "w": "隣", "pos": "名詞", "vn": "sát ngay bên, thường là CÙNG LOẠI (nhà–nhà, người–người)" },
+        { "w": "横", "pos": "名詞", "vn": "bên cạnh theo chiều ngang, không cần cùng loại" },
+        { "w": "近く・そば", "pos": "名詞", "vn": "gần đó — không cần sát bên" }
+      ],
+      "detail": "Chọn từ theo mức độ “sát” và việc hai vật có cùng loại hay không.",
+      "ex": [
+        { "jp": "私の 隣に 座って ください。", "vn": "Hãy ngồi cạnh tôi. (người – người)", "ok": true },
+        { "jp": "テレビの 横に 花が あります。", "vn": "Bên cạnh TV có bình hoa. (khác loại → 横)", "ok": true },
+        { "jp": "駅の 近くに 住んで います。", "vn": "Tôi sống gần nhà ga. (gần, không sát)", "ok": true }
+      ]
+    },
+    {
+      "id": "cf19", "title": "大きい vs 大きな", "level": "N5", "color": "#2dd4bf",
+      "items": [
+        { "w": "大きい", "pos": "形容詞", "vn": "to — làm được cả VỊ NGỮ và bổ nghĩa danh từ" },
+        { "w": "大きな", "pos": "連体詞", "vn": "to — CHỈ bổ nghĩa danh từ, không làm vị ngữ" }
+      ],
+      "detail": "大きい 家 = 大きな 家 (đều đúng). Nhưng vị ngữ thì chỉ dùng 大きい. 大きな nghe văn vẻ/cảm xúc hơn. Cặp 小さい / 小さな cũng vậy.",
+      "ex": [
+        { "jp": "大きな 声で 読んで ください。", "vn": "Hãy đọc to lên.", "ok": true },
+        { "jp": "この 家は 大きいです。", "vn": "Ngôi nhà này to.", "ok": true },
+        { "jp": "この 家は 大きなです。", "vn": "Sai — 大きな không làm vị ngữ được.", "ok": false }
+      ]
+    }
+  ]
+}

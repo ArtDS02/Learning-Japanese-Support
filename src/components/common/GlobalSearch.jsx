@@ -8,6 +8,7 @@ const KIND_LABEL = {
   grammar: "Ngữ pháp",
   numbers: "Số đếm",
   kana: "Kana",
+  modifiers: "Từ bổ nghĩa",
 };
 
 /**
@@ -89,7 +90,7 @@ export default function GlobalSearch({ open, onClose, onJump }) {
       </div>
 
       <div className="gs-filters">
-        {["all", "vocab", "kanji", "grammar", "numbers", "kana"].map((k) => (
+        {["all", "vocab", "kanji", "grammar", "numbers", "kana", "modifiers"].map((k) => (
           <button
             key={k}
             className={`gs-filter ${kind === k ? "is-on" : ""}`}

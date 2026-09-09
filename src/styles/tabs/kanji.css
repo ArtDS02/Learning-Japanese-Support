@@ -376,6 +376,174 @@ padding: 0.5rem 0.875rem;
   font-family: var(--font-mono);
 }
 
+/* ── Xuất tập viết PDF ── */
+
+/* Nút chung: cùng chiều cao, bo góc, icon canh giữa — dễ bấm, dễ đọc */
+.k-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 0.625rem;
+  border: 0.0937rem solid transparent;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  transition: transform 0.08s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.k-btn:active { transform: translateY(0.0625rem); }
+.k-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.k-btn:disabled:active { transform: none; }
+
+/* Nút "Đánh dấu tất cả" — tông cam */
+.k-btn--mark {
+  border-color: #f59e0b66;
+  background: #f59e0b18;
+  color: #f59e0b;
+}
+.k-btn--mark:hover { background: #f59e0b28; }
+
+/* Nút bật/tắt chế độ xuất — tông tím */
+.k-btn--print {
+  border-color: #a78bfa66;
+  background: #a78bfa18;
+  color: #a78bfa;
+}
+.k-btn--print:hover { background: #a78bfa28; }
+.k-btn--print.is-on {
+  background: #a78bfa;
+  border-color: #a78bfa;
+  color: #fff;
+}
+
+/* Nút chính (Xuất PDF) — nền đặc, nổi bật nhất */
+.k-btn--primary {
+  border-color: #a78bfa;
+  background: #a78bfa;
+  color: #fff;
+  box-shadow: 0 0.125rem 0.5rem #a78bfa55;
+}
+.k-btn--primary:hover:not(:disabled) { background: #9575f0; }
+
+/* Nút phụ — viền nhạt */
+.k-btn--soft {
+  border-color: var(--border, #ffffff22);
+  background: transparent;
+  color: var(--text, #e8eaf0);
+}
+.k-btn--soft:hover:not(:disabled) { background: #ffffff10; }
+
+.k-btn--ghost {
+  border-color: transparent;
+  background: transparent;
+  color: var(--text-muted, #9ca3af);
+}
+.k-btn--ghost:hover { color: #a78bfa; background: #a78bfa14; }
+
+/* Spinner nhỏ khi đang tạo PDF */
+.k-spin {
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 0.125rem solid #ffffff66;
+  border-top-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: k-spin 0.7s linear infinite;
+}
+@keyframes k-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Thanh xuất PDF — panel gom trạng thái + hành động */
+.k-printbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border: 0.0937rem solid #a78bfa44;
+  border-radius: 0.875rem;
+  background: linear-gradient(180deg, #a78bfa14, #a78bfa08);
+}
+
+.k-printbar__info {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.k-printbar__count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+  border-radius: 0.625rem;
+  background: #a78bfa;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+}
+.k-printbar__label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--text, #e8eaf0);
+}
+.k-printbar__label small {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--text-muted, #9ca3af);
+}
+
+.k-printbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.k-printbar__sep {
+  width: 0.0625rem;
+  align-self: stretch;
+  margin: 0.125rem 0.125rem;
+  background: #ffffff22;
+}
+
+/* Ô check chọn để in (thay cho nút ★ khi ở chế độ chọn) */
+.k-card__pick {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.375rem;
+  border: 0.125rem solid #a78bfa88;
+  background: var(--bg-card, #1e1e2e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #fff;
+  z-index: 100;
+}
+.k-card__pick.is-on {
+  background: #a78bfa;
+  border-color: #a78bfa;
+}
+
+.kanji-card.kj-picked {
+  outline: 0.1875rem solid #a78bfa;
+  outline-offset: -0.1875rem;
+}
+
 /* ── Legend ── */
 
 .k-legend {
@@ -1247,6 +1415,234 @@ font-size: 0.75rem;
   font-family: var(--font-mono);
 }
 
+/* ── Bộ thủ & thành phần (khối tách chữ trong modal) ── */
+.km-decomp {
+  margin-bottom: 1.25rem;
+}
+
+.km-decomp__pieces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.km-piece {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+  border-radius: 0.75rem;
+  border: 0.0937rem solid var(--bg-border);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s, transform 0.08s;
+}
+
+.km-piece:hover {
+  border-color: var(--c);
+  background: color-mix(in srgb, var(--c) 8%, transparent);
+}
+
+.km-piece:active {
+  transform: translateY(0.0625rem);
+}
+
+.km-piece.is-radical {
+  border-color: color-mix(in srgb, var(--c) 45%, transparent);
+  background: color-mix(in srgb, var(--c) 10%, transparent);
+}
+
+.km-piece__char {
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--c);
+  min-width: 1.75rem;
+  text-align: center;
+}
+
+.km-piece__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625rem;
+}
+
+.km-piece__hv {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: var(--accent-orange);
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
+}
+
+.km-piece__tag {
+  font-size: 0.5625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: color-mix(in srgb, var(--c) 20%, transparent);
+  color: var(--c);
+  padding: 0.0625rem 0.25rem;
+  border-radius: 0.625rem;
+  font-weight: 800;
+}
+
+.km-piece__mean {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.km-decomp__hint {
+  margin-top: 0.5rem;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Lọc phụ theo bộ thủ (thu gọn) ── */
+.k-radfilter {
+  margin-bottom: 1rem;
+  border: 0.0937rem solid var(--bg-border);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+
+.k-radfilter__summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0.875rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  list-style: none;
+}
+
+.k-radfilter__summary::-webkit-details-marker {
+  display: none;
+}
+
+.k-radfilter__summary::before {
+  content: "▸";
+  color: var(--text-muted);
+  transition: transform 0.15s;
+}
+
+.k-radfilter[open] .k-radfilter__summary::before {
+  transform: rotate(90deg);
+}
+
+.k-radfilter__hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.k-radfilter__active {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #a78bfa;
+  background: #a78bfa1e;
+  border: 0.0625rem solid #a78bfa55;
+  padding: 0.125rem 0.25rem 0.125rem 0.5rem;
+  border-radius: 1rem;
+}
+
+.k-radfilter__clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  background: #a78bfa33;
+  cursor: pointer;
+  font-size: 0.6875rem;
+}
+
+.k-radfilter__clear:hover {
+  background: #a78bfa66;
+}
+
+.k-radfilter__cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  padding: 0 0.875rem 0.875rem;
+  max-height: 15rem;
+  overflow-y: auto;
+}
+
+.k-radchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3125rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.625rem;
+  border: 0.0625rem solid var(--bg-border);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.k-radchip:hover {
+  border-color: #a78bfa;
+  background: #a78bfa14;
+}
+
+.k-radchip.is-on {
+  border-color: #a78bfa;
+  background: #a78bfa2b;
+}
+
+.k-radchip__char {
+  font-size: 1.0625rem;
+  color: var(--text-primary);
+}
+
+.k-radchip__hv {
+  font-size: 0.75rem;
+  color: var(--accent-orange);
+  font-weight: 700;
+}
+
+.k-radchip__n {
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  background: var(--bg-border);
+  border-radius: 0.625rem;
+  padding: 0 0.3125rem;
+}
+
+/* Khi khối lọc bộ thủ nằm trong bảng lọc gộp .filters: bỏ viền/nền/bo/lề riêng
+   để hoà thành một hàng của panel (vạch ngăn phía trên do .filters > * + * lo). */
+.filters .k-radfilter {
+  border: none;
+  background: none;
+  border-radius: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.filters .k-radfilter__summary {
+  padding: 0.75rem 0;
+}
+
+.filters .k-radfilter__cloud {
+  padding: 0 0 0.75rem;
+}
+
 
 /* ============================================================
    MOBILE (SP) — hiệu chỉnh cho ~375px (1vw≈3.75px).
@@ -1270,6 +1666,14 @@ font-size: 0.75rem;
   /* Toolbar & chú thích */
   .k-toolbar { gap: 0.4688rem; margin-bottom: 0.7031rem; }
   .k-flashbtn, .k-markbtn, .k-clearbtn { font-size: 0.8203rem; padding: 0.4688rem 0.7969rem; min-height: 2.1094rem; }
+
+  /* Nút & thanh xuất PDF trên SP: nút giãn đều, thanh xếp dọc */
+  .k-toolbar .k-btn { flex: 1 1 auto; justify-content: center; }
+  .k-btn { font-size: 0.8438rem; min-height: 2.375rem; padding: 0 0.75rem; }
+  .k-printbar { gap: 0.625rem; padding: 0.625rem 0.75rem; }
+  .k-printbar__actions { margin-left: 0; width: 100%; }
+  .k-printbar__actions .k-btn { flex: 1 1 auto; justify-content: center; }
+  .k-printbar__sep { display: none; }
   .k-count-mark, .k-count-learn { margin-left: 0.4688rem; }
   .k-legend { gap: 0.7031rem; }
   .k-legend__item { font-size: 0.75rem; gap: 0.2813rem; }
@@ -1312,6 +1716,16 @@ font-size: 0.75rem;
   .kanji-modal__example-reading { font-size: 0.75rem; }
   .kanji-modal__example-meaning { font-size: 0.7969rem; }
   .km-actbtn { font-size: 0.8438rem; padding: 0.6094rem 0.7031rem; }
+
+  /* Bộ thủ & thành phần + lọc bộ thủ */
+  .km-piece { gap: 0.4688rem; padding: 0.4219rem 0.6094rem 0.4219rem 0.4219rem; }
+  .km-piece__char { font-size: 1.5rem; min-width: 1.5rem; }
+  .km-piece__hv { font-size: 0.7969rem; }
+  .km-piece__mean { font-size: 0.7031rem; }
+  .k-radfilter__summary { font-size: 0.8438rem; }
+  .k-radfilter__cloud { max-height: 11.25rem; }
+  .k-radchip__char { font-size: 1rem; }
+  .k-radchip__hv { font-size: 0.7031rem; }
 
   /* Thứ tự nét viết */
   .k-stroke__title { font-size: 0.8438rem; }

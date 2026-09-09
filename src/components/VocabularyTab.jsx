@@ -16,6 +16,7 @@ import QuizHub from "./common/QuizHub";
 import SpeakButton from "./common/SpeakButton";
 import NoteBox from "./common/NoteBox";
 import Ruby from "./common/Ruby";
+import FilterRow from "./common/FilterRow";
 import "../styles/tabs/vocabulary.css";
 import "../styles/tabs/vocabulary-extra.css";
 
@@ -237,75 +238,75 @@ export default function VocabularyTab({ initialSearch }) {
 
       {showQuiz && <QuizHub tab="vocabulary" color="#22d3ee" onClose={() => setShowQuiz(false)} />}
 
-      {/* Tìm kiếm */}
-      <div className="search-box">
-        <span className="search-box__icon">🔍</span>
-        <input
-          type="text"
-          placeholder="Tìm kiếm từ vựng (tiếng Nhật, romaji, nghĩa tiếng Việt)..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
+      {/* Bảng lọc gộp: tìm kiếm + chủ đề + bài Minna trong một khối */}
+      <div className="filters">
+        <div className="search-box">
+          <span className="search-box__icon">🔍</span>
+          <input
+            type="text"
+            placeholder="Tìm kiếm từ vựng (tiếng Nhật, romaji, nghĩa tiếng Việt)..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
 
-      {/* Lọc chủ đề */}
-      <div className="filter-bar">
-        <span className="filter-label">Chủ đề:</span>
-        <button
-          className={`filter-btn ${activeCategory === "all" ? "filter-btn--active" : ""}`}
-          style={{ "--c": "#a78bfa" }}
-          onClick={() => setActiveCategory("all")}
-        >
-          🌐 Tất cả ({allWords.length})
-        </button>
-        {vocabData.categories.map((cat) => (
+        {/* Lọc chủ đề */}
+        <FilterRow label="Chủ đề">
           <button
-            key={cat.id}
-            className={`filter-btn ${activeCategory === cat.id ? "filter-btn--active" : ""}`}
-            style={{ "--c": cat.color }}
-            onClick={() => setActiveCategory(cat.id)}
+            className={`filter-btn ${activeCategory === "all" ? "filter-btn--active" : ""}`}
+            style={{ "--c": "#a78bfa" }}
+            onClick={() => setActiveCategory("all")}
           >
-            {cat.icon} {cat.label} ({cat.words.length})
+            🌐 Tất cả ({allWords.length})
           </button>
-        ))}
-        {custom.length > 0 && (
-          <button
-            className={`filter-btn ${activeCategory === "my-cards" ? "filter-btn--active" : ""}`}
-            style={{ "--c": "#f472b6" }}
-            onClick={() => setActiveCategory("my-cards")}
-          >
-            ⭐ Thẻ của tôi ({custom.length})
-          </button>
-        )}
-      </div>
+          {vocabData.categories.map((cat) => (
+            <button
+              key={cat.id}
+              className={`filter-btn ${activeCategory === cat.id ? "filter-btn--active" : ""}`}
+              style={{ "--c": cat.color }}
+              onClick={() => setActiveCategory(cat.id)}
+            >
+              {cat.icon} {cat.label} ({cat.words.length})
+            </button>
+          ))}
+          {custom.length > 0 && (
+            <button
+              className={`filter-btn ${activeCategory === "my-cards" ? "filter-btn--active" : ""}`}
+              style={{ "--c": "#f472b6" }}
+              onClick={() => setActiveCategory("my-cards")}
+            >
+              ⭐ Thẻ của tôi ({custom.length})
+            </button>
+          )}
+        </FilterRow>
 
-      {/* Lọc theo bài Minna no Nihongo I. Một từ có thể thuộc nhiều bài, và các
-          từ của một bài nằm rải ở nhiều chủ đề — nên đây là bộ lọc riêng chứ
-          không phải một "chủ đề". */}
-      <div className="filter-bar voc-minna-bar">
-        <span className="filter-label">Minna Bài:</span>
-        <button
-          className={`filter-btn ${minnaLesson === null ? "filter-btn--active" : ""}`}
-          style={{ "--c": "#a78bfa" }}
-          onClick={() => setMinnaLesson(null)}
-        >
-          🌐 Không lọc
-        </button>
-        {Array.from({ length: 25 }, (_, i) => i + 1).map((n) => (
+        {/* Lọc theo bài Minna no Nihongo I. Một từ có thể thuộc nhiều bài, và các
+            từ của một bài nằm rải ở nhiều chủ đề — nên đây là bộ lọc riêng chứ
+            không phải một "chủ đề". 25 bài nên thu gọn còn 2 dòng, mở khi cần. */}
+        <FilterRow label="Minna">
           <button
-            key={n}
-            className={`filter-btn ${minnaLesson === n ? "filter-btn--active" : ""}`}
-            style={{ "--c": "#38bdf8" }}
-            title={`Từ vựng bài ${n} — Minna no Nihongo I`}
-            onClick={() => {
-              setMinnaLesson(minnaLesson === n ? null : n);
-              setActiveCategory("all");
-              setView("cards");
-            }}
+            className={`filter-btn ${minnaLesson === null ? "filter-btn--active" : ""}`}
+            style={{ "--c": "#a78bfa" }}
+            onClick={() => setMinnaLesson(null)}
           >
-            {n} ({minnaCounts[n] || 0})
+            🌐 Không lọc
           </button>
-        ))}
+          {Array.from({ length: 25 }, (_, i) => i + 1).map((n) => (
+            <button
+              key={n}
+              className={`filter-btn ${minnaLesson === n ? "filter-btn--active" : ""}`}
+              style={{ "--c": "#38bdf8" }}
+              title={`Từ vựng bài ${n} — Minna no Nihongo I`}
+              onClick={() => {
+                setMinnaLesson(minnaLesson === n ? null : n);
+                setActiveCategory("all");
+                setView("cards");
+              }}
+            >
+              {n} ({minnaCounts[n] || 0})
+            </button>
+          ))}
+        </FilterRow>
       </div>
 
       {/* Chế độ xem + công cụ */}

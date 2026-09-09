@@ -11,6 +11,7 @@ import kanjiData from "../data/kanji.json";
 import grammarData from "../data/grammar.json";
 import numbersData from "../data/numbers.json";
 import kanaData from "../data/kana.json";
+import modifiersData from "../data/modifiers.json";
 import { customAsWords } from "./userdata";
 
 const KANJI_RE = /[一-鿿]/;
@@ -203,6 +204,31 @@ function buildIndex() {
       hay: [`${h.n}時`, h.read, h.romaji, `${h.n} gio`].join(" "),
     }),
   );
+
+  // ── Từ bổ nghĩa ──
+  // Cả từ loại lẫn đối tượng được bổ nghĩa đều vào `hay`: tra "連体詞" hay
+  // "danh từ vị trí" cũng ra đúng nhóm từ, không cần biết chúng nằm ở tab nào.
+  modifiersData.groups.forEach((g) => {
+    g.words.forEach((w) => {
+      const p = modifiersData.posMeta[w.pos];
+      add({
+        kind: "modifiers", icon: "🎨", id: w.id, tab: "modifiers",
+        title: w.jp, sub: [w.hira !== w.jp ? w.hira : null, w.romaji].filter(Boolean).join(" · "),
+        meaning: w.vn, badge: `${g.label} · ${p?.jp || ""}`.trim(), color: g.color,
+        hay: [w.jp, w.hira, w.romaji, w.vn, w.modifies, w.note, w.posNote, g.label, g.jp,
+          p?.jp, p?.kana, p?.vn, w.level, w.ex?.jp, w.ex?.vn].filter(Boolean).join(" "),
+      });
+    });
+  });
+  modifiersData.confusables.forEach((c) => {
+    add({
+      kind: "modifiers", icon: "⚠️", id: c.id, tab: "modifiers",
+      title: c.title, sub: c.items.map((i) => i.w).join(" / "),
+      meaning: c.detail, badge: "Từ dễ nhầm", color: c.color,
+      hay: ["Từ dễ nhầm", c.title, c.detail, c.level,
+        ...c.items.flatMap((i) => [i.w, i.pos, i.vn])].filter(Boolean).join(" "),
+    });
+  });
 
   // ── Kana ──
   (kanaData.commonKatakanaWords || []).forEach((w, i) =>

@@ -22,6 +22,10 @@ import {
   accuracyOverall,
 } from "../lib/progress";
 import { deckPoolStats, describeCard, buildHardSession, kanaPool } from "../lib/session";
+// Deck "modifiers" được tra ở đây thay vì trong lib/session.js: session.js chạy
+// ngay khi mở app nên không được kéo thêm ~80KB data của tab Từ bổ nghĩa vào
+// lần tải đầu (xem ghi chú trong lib/modifiers.js).
+import { describeModifier, modifierPoolStats } from "../lib/modifiers";
 import { loadSettings } from "../lib/userdata";
 import { loadHistory, mistakeEntries } from "../lib/examStore";
 import { noteCount, loadCustomCards } from "../lib/userdata";
@@ -211,7 +215,12 @@ export default function ProgressTab({ onGoTo }) {
         <div className="pgx-decks">
           {DECKS.map((d) => {
             const s = deckStats[d.id];
-            const pool = ["vocab", "kanji", "kana"].includes(d.id) ? deckPoolStats(d.id) : null;
+            const pool =
+              d.id === "modifiers"
+                ? modifierPoolStats()
+                : ["vocab", "kanji", "kana"].includes(d.id)
+                  ? deckPoolStats(d.id)
+                  : null;
             const totalCards = pool ? pool.total : s.seen;
             const pct = totalCards ? Math.round((s.mastered / totalCards) * 100) : 0;
             return (
@@ -290,7 +299,8 @@ export default function ProgressTab({ onGoTo }) {
           <>
             <div className="pgx-hard">
               {hardest.map(({ deck, id, card }) => {
-                const info = describeCard(deck, id, mistakes);
+                const info =
+                  deck === "modifiers" ? describeModifier(id) : describeCard(deck, id, mistakes);
                 const meta = deckMeta(deck);
                 return (
                   <div key={`${deck}:${id}`} className="pgx-hardrow" style={{ "--c": meta.color }}>

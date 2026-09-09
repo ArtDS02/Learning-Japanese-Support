@@ -4,12 +4,15 @@ import { getCard, getStatus, getStats, orderForStudy, rateCard, MASTERED_BOX } f
 import { kanjiCard } from "../lib/session";
 import { vocabWithKanji } from "../lib/searchIndex";
 import { shuffle } from "../lib/random";
+import { openKanjiPracticeSheet } from "../lib/kanjiSheet";
+import { exportKanjiPdf } from "../lib/kanjiPdf";
 import StudyRunner from "./common/StudyRunner";
 import QuizHub from "./common/QuizHub";
 import SpeakButton from "./common/SpeakButton";
 import NoteBox from "./common/NoteBox";
 import WritePad from "./common/WritePad";
 import Modal from "./common/Modal";
+import FilterRow from "./common/FilterRow";
 import "../styles/tabs/kanji.css";
 import "../styles/tabs/kanji-extra.css";
 
@@ -26,6 +29,7 @@ const LEVEL_COLOR = { N5: "#34d399", N4: "#38bdf8" };
 export default function KanjiTab({ initialSearch }) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [activeLevel, setActiveLevel] = useState("all");
+  const [radicalFilter, setRadicalFilter] = useState("all"); // lọc phụ theo bộ thủ
   const [search, setSearch] = useState(initialSearch || "");
   const [selectedIdx, setSelectedIdx] = useState(null);
   const [marked, setMarked] = useState(() => {
@@ -38,6 +42,9 @@ export default function KanjiTab({ initialSearch }) {
   });
   const [study, setStudy] = useState(null); // { list, label }
   const [showQuiz, setShowQuiz] = useState(false);
+  const [printMode, setPrintMode] = useState(false); // chọn kanji để xuất tập viết
+  const [printSel, setPrintSel] = useState(() => new Set());
+  const [pdfBusy, setPdfBusy] = useState(false); // đang tạo file PDF
   const [tick, setTick] = useState(0); // buộc render lại sau khi SRS đổi
 
   useEffect(() => {
@@ -68,9 +75,15 @@ export default function KanjiTab({ initialSearch }) {
   /** Đổi cấp độ: nhóm đang chọn có thể rỗng ở cấp mới → trả về "Tất cả". */
   const pickLevel = (lv) => {
     setActiveLevel(lv);
-    if (activeCategory === "all") return;
     const pool = lv === "all" ? kanjiData.kanji : kanjiData.kanji.filter((k) => k.level === lv);
-    if (!pool.some((k) => k.category === activeCategory)) setActiveCategory("all");
+    if (activeCategory !== "all" && !pool.some((k) => k.category === activeCategory)) setActiveCategory("all");
+    // Bộ thủ đang lọc có thể không còn chữ nào ở cấp mới → về "tất cả".
+    if (
+      radicalFilter !== "all" &&
+      !pool.some((k) => k.radical?.char === radicalFilter || k.components?.some((c) => c.char === radicalFilter))
+    ) {
+      setRadicalFilter("all");
+    }
   };
 
   const filtered = useMemo(() => {
@@ -78,6 +91,12 @@ export default function KanjiTab({ initialSearch }) {
     return kanjiData.kanji.filter((k) => {
       const matchCat = activeCategory === "all" || k.category === activeCategory;
       const matchLevel = activeLevel === "all" || k.level === activeLevel;
+      // Bộ thủ khớp cả khi là bộ chính HOẶC là thành phần cấu tạo — để "lọc chữ
+      // có chứa 子" cũng ra kết quả, không chỉ chữ lấy 子 làm bộ.
+      const matchRadical =
+        radicalFilter === "all" ||
+        k.radical?.char === radicalFilter ||
+        k.components?.some((c) => c.char === radicalFilter);
       const matchSearch =
         !q ||
         k.char.includes(q) ||
@@ -87,9 +106,28 @@ export default function KanjiTab({ initialSearch }) {
         k.kun.toLowerCase().includes(q) ||
         k.on_romaji?.toLowerCase().includes(q) ||
         k.kun_romaji?.toLowerCase().includes(q);
-      return matchCat && matchLevel && matchSearch;
+      return matchCat && matchLevel && matchRadical && matchSearch;
     });
-  }, [activeCategory, activeLevel, search]);
+  }, [activeCategory, activeLevel, radicalFilter, search]);
+
+  /** Nhóm bộ thủ để dựng hàng lọc phụ: mỗi bộ kèm Hán Việt + số chữ (trong cấp
+   *  độ đang chọn). Đếm theo cùng luật khớp với filter (bộ chính hoặc thành phần). */
+  const radicalGroups = useMemo(() => {
+    const map = new Map();
+    for (const k of inLevel) {
+      const r = k.radical;
+      if (r?.char && !map.has(r.char)) {
+        map.set(r.char, { char: r.char, hanviet: r.hanviet, meaning: r.meaning, variantOf: r.variantOf, count: 0 });
+      }
+    }
+    for (const k of inLevel) {
+      const chars = new Set([k.radical?.char, ...(k.components || []).map((c) => c.char)].filter(Boolean));
+      for (const ch of chars) if (map.has(ch)) map.get(ch).count++;
+    }
+    return [...map.values()].sort((a, b) => b.count - a.count || (a.hanviet || "").localeCompare(b.hanviet || ""));
+  }, [inLevel]);
+
+  const radicalInfo = radicalFilter === "all" ? null : radicalGroups.find((r) => r.char === radicalFilter);
 
   const catColor = (id) =>
     kanjiData.categories.find((c) => c.id === id)?.color || "#a78bfa";
@@ -124,6 +162,46 @@ export default function KanjiTab({ initialSearch }) {
       filtered.forEach((k) => next.delete(k.id));
       return next;
     });
+
+  // ── Xuất tập viết PDF ──────────────────────────────────────────────────────
+  const togglePrintSel = (id) =>
+    setPrintSel((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+
+  const selectAllFiltered = () =>
+    setPrintSel((prev) => {
+      const next = new Set(prev);
+      filtered.forEach((k) => next.add(k.id));
+      return next;
+    });
+
+  const clearPrintSel = () => setPrintSel(new Set());
+
+  // Mở hộp thoại IN (người dùng tự chọn máy in / lưu PDF thủ công).
+  const printList = (list) => {
+    if (!list.length) return;
+    openKanjiPracticeSheet(list, { title: "Tập viết Kanji N5 & N4" });
+  };
+
+  // TẢI THẲNG file PDF về máy — không cần thao tác in.
+  const downloadPdf = async (list) => {
+    if (!list.length || pdfBusy) return;
+    setPdfBusy(true);
+    try {
+      await exportKanjiPdf(list, { title: "Tập viết Kanji N5 & N4" });
+    } catch (err) {
+      console.error(err);
+      alert("Không tạo được PDF. Bạn thử lại hoặc dùng nút In nhé.");
+    } finally {
+      setPdfBusy(false);
+    }
+  };
+
+  const selectedKanji = () => kanjiData.kanji.filter((k) => printSel.has(k.id));
 
   const startStudy = (list, label, { random = false } = {}) => {
     if (!list.length) return;
@@ -232,71 +310,198 @@ export default function KanjiTab({ initialSearch }) {
 
       {showQuiz && <QuizHub tab="kanji" color="#a78bfa" onClose={() => setShowQuiz(false)} />}
 
-      <div className="search-box">
-        <span className="search-box__icon">🔍</span>
-        <input
-          type="text"
-          placeholder="Tìm kanji (chữ, nghĩa, Hán Việt, cách đọc)..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
+      {/* Bảng lọc gộp: tìm kiếm + cấp độ + nhóm + bộ thủ trong một khối */}
+      <div className="filters">
+        <div className="search-box">
+          <span className="search-box__icon">🔍</span>
+          <input
+            type="text"
+            placeholder="Tìm kanji (chữ, nghĩa, Hán Việt, cách đọc)..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
 
-      <div className="filter-bar">
-        <span className="filter-label">Cấp độ:</span>
-        <button
-          className={`filter-btn ${activeLevel === "all" ? "filter-btn--active" : ""}`}
-          style={{ "--c": "#a78bfa" }}
-          onClick={() => pickLevel("all")}
-        >
-          🌐 Tất cả ({kanjiData.kanji.length})
-        </button>
-        {LEVELS.map((lv) => (
+        <FilterRow label="Cấp độ">
           <button
-            key={lv}
-            className={`filter-btn ${activeLevel === lv ? "filter-btn--active" : ""}`}
-            style={{ "--c": LEVEL_COLOR[lv] || "#a78bfa" }}
-            onClick={() => pickLevel(lv)}
+            className={`filter-btn ${activeLevel === "all" ? "filter-btn--active" : ""}`}
+            style={{ "--c": "#a78bfa" }}
+            onClick={() => pickLevel("all")}
           >
-            {lv} ({kanjiData.kanji.filter((k) => k.level === lv).length})
+            🌐 Tất cả ({kanjiData.kanji.length})
           </button>
-        ))}
-      </div>
-
-      <div className="filter-bar">
-        <span className="filter-label">Nhóm:</span>
-        <button
-          className={`filter-btn ${activeCategory === "all" ? "filter-btn--active" : ""}`}
-          style={{ "--c": "#a78bfa" }}
-          onClick={() => setActiveCategory("all")}
-        >
-          🌐 Tất cả ({inLevel.length})
-        </button>
-        {kanjiData.categories.map((cat) => {
-          // Đếm theo cấp độ đang chọn — nếu không thì nút hiện số của cả bộ
-          // trong khi lưới bên dưới chỉ có một phần, rất dễ hiểu nhầm.
-          const count = inLevel.filter((k) => k.category === cat.id).length;
-          if (count === 0) return null;
-          return (
+          {LEVELS.map((lv) => (
             <button
-              key={cat.id}
-              className={`filter-btn ${activeCategory === cat.id ? "filter-btn--active" : ""}`}
-              style={{ "--c": cat.color }}
-              onClick={() => setActiveCategory(cat.id)}
+              key={lv}
+              className={`filter-btn ${activeLevel === lv ? "filter-btn--active" : ""}`}
+              style={{ "--c": LEVEL_COLOR[lv] || "#a78bfa" }}
+              onClick={() => pickLevel(lv)}
             >
-              {cat.icon} {cat.label} ({count})
+              {lv} ({kanjiData.kanji.filter((k) => k.level === lv).length})
             </button>
-          );
-        })}
+          ))}
+        </FilterRow>
+
+        <FilterRow label="Nhóm">
+          <button
+            className={`filter-btn ${activeCategory === "all" ? "filter-btn--active" : ""}`}
+            style={{ "--c": "#a78bfa" }}
+            onClick={() => setActiveCategory("all")}
+          >
+            🌐 Tất cả ({inLevel.length})
+          </button>
+          {kanjiData.categories.map((cat) => {
+            // Đếm theo cấp độ đang chọn — nếu không thì nút hiện số của cả bộ
+            // trong khi lưới bên dưới chỉ có một phần, rất dễ hiểu nhầm.
+            const count = inLevel.filter((k) => k.category === cat.id).length;
+            if (count === 0) return null;
+            return (
+              <button
+                key={cat.id}
+                className={`filter-btn ${activeCategory === cat.id ? "filter-btn--active" : ""}`}
+                style={{ "--c": cat.color }}
+                onClick={() => setActiveCategory(cat.id)}
+              >
+                {cat.icon} {cat.label} ({count})
+              </button>
+            );
+          })}
+        </FilterRow>
+
+      {/* Lọc phụ theo bộ thủ — thu gọn, mở khi cần. Bộ thủ là công cụ giải mã,
+          nên để dạng optional chứ không phải cách duyệt chính. */}
+      <details className="k-radfilter">
+        <summary className="k-radfilter__summary">
+          <span>🧩 Lọc theo bộ thủ</span>
+          {radicalInfo ? (
+            <span className="k-radfilter__active">
+              {radicalInfo.char} · {radicalInfo.hanviet}
+              <span
+                className="k-radfilter__clear"
+                role="button"
+                tabIndex={0}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setRadicalFilter("all");
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setRadicalFilter("all");
+                  }
+                }}
+                title="Bỏ lọc bộ thủ"
+              >
+                ✕
+              </span>
+            </span>
+          ) : (
+            <span className="k-radfilter__hint">{radicalGroups.length} bộ</span>
+          )}
+        </summary>
+        <div className="k-radfilter__cloud">
+          {radicalGroups.map((r) => (
+            <button
+              key={r.char}
+              className={`k-radchip ${radicalFilter === r.char ? "is-on" : ""}`}
+              onClick={() => setRadicalFilter(radicalFilter === r.char ? "all" : r.char)}
+              title={`${r.hanviet}${r.variantOf ? ` (bộ ${r.variantOf})` : ""} — ${r.meaning}`}
+            >
+              <span className="k-radchip__char">{r.char}</span>
+              <span className="k-radchip__hv">{r.hanviet}</span>
+              <span className="k-radchip__n">{r.count}</span>
+            </button>
+          ))}
+        </div>
+      </details>
       </div>
 
       <div className="k-toolbar">
         {!allFilteredMarked ? (
-          <button className="k-markbtn" onClick={markAll}>★ Đánh dấu tất cả</button>
+          <button className="k-btn k-btn--mark" onClick={markAll}>
+            <span aria-hidden="true">★</span> Đánh dấu tất cả
+          </button>
         ) : (
-          <button className="k-markbtn is-on" onClick={unmarkAll}>☆ Bỏ đánh dấu tất cả</button>
+          <button className="k-btn k-btn--mark is-on" onClick={unmarkAll}>
+            <span aria-hidden="true">☆</span> Bỏ đánh dấu tất cả
+          </button>
         )}
+
+        <button
+          className={`k-btn k-btn--print ${printMode ? "is-on" : ""}`}
+          onClick={() => setPrintMode((v) => !v)}
+          title="Chọn kanji rồi xuất PDF tập viết để in"
+        >
+          <span aria-hidden="true">🖨️</span>
+          {printMode ? "Đóng chế độ chọn" : "Xuất tập viết PDF"}
+        </button>
       </div>
+
+      {printMode && (
+        <div className="k-printbar" role="region" aria-label="Xuất tập viết PDF">
+          <div className="k-printbar__info">
+            <span className="k-printbar__count">{printSel.size}</span>
+            <span className="k-printbar__label">
+              {printSel.size > 0 ? "kanji đã chọn" : "chưa chọn chữ nào"}
+              <small>Nhấn vào ô kanji bên dưới để chọn/bỏ</small>
+            </span>
+          </div>
+
+          <div className="k-printbar__actions">
+            <button
+              className="k-btn k-btn--primary"
+              disabled={printSel.size === 0 || pdfBusy}
+              onClick={() => downloadPdf(selectedKanji())}
+              title="Tạo và tải thẳng file PDF về máy"
+            >
+              {pdfBusy ? (
+                <>
+                  <span className="k-spin" aria-hidden="true" /> Đang tạo…
+                </>
+              ) : (
+                <>
+                  <span aria-hidden="true">⬇️</span> Xuất PDF
+                  {printSel.size > 0 ? ` (${printSel.size})` : ""}
+                </>
+              )}
+            </button>
+            <button
+              className="k-btn k-btn--soft"
+              disabled={printSel.size === 0 || pdfBusy}
+              onClick={() => printList(selectedKanji())}
+              title="Mở hộp thoại in để tự chọn máy in"
+            >
+              🖨️ In
+            </button>
+
+            <span className="k-printbar__sep" aria-hidden="true" />
+
+            <button
+              className="k-btn k-btn--soft"
+              disabled={pdfBusy}
+              onClick={selectAllFiltered}
+              title={`Chọn toàn bộ ${filtered.length} chữ đang hiển thị`}
+            >
+              ✓ Chọn hết ({filtered.length})
+            </button>
+            <button
+              className="k-btn k-btn--soft"
+              disabled={printSel.size === 0 || pdfBusy}
+              onClick={clearPrintSel}
+            >
+              ✕ Bỏ chọn
+            </button>
+            <button
+              className="k-btn k-btn--ghost"
+              disabled={pdfBusy}
+              onClick={() => downloadPdf(filtered)}
+              title="Tải PDF toàn bộ danh sách đang lọc, không cần chọn tay"
+            >
+              📚 Xuất cả bộ lọc
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="k-legend">
         <span className="k-legend__item">
@@ -333,23 +538,36 @@ export default function KanjiTab({ initialSearch }) {
             return (
               <div
                 key={k.id}
-                className={`kanji-card kj-${status}`}
+                className={`kanji-card kj-${status} ${
+                  printMode && printSel.has(k.id) ? "kj-picked" : ""
+                }`}
                 style={{
                   "--card-color": catColor(k.category),
                   animationDelay: `${Math.min(idx, 30) * 30}ms`,
                 }}
-                onClick={() => setSelectedIdx(idx)}
+                onClick={() =>
+                  printMode ? togglePrintSel(k.id) : setSelectedIdx(idx)
+                }
               >
-                <button
-                  className={`k-card__mark ${marked.has(k.id) ? "is-on" : ""}`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleMark(k.id);
-                  }}
-                  title={marked.has(k.id) ? "Bỏ đánh dấu" : "Đánh dấu"}
-                >
-                  ★
-                </button>
+                {printMode ? (
+                  <span
+                    className={`k-card__pick ${printSel.has(k.id) ? "is-on" : ""}`}
+                    aria-hidden="true"
+                  >
+                    {printSel.has(k.id) ? "✓" : ""}
+                  </span>
+                ) : (
+                  <button
+                    className={`k-card__mark ${marked.has(k.id) ? "is-on" : ""}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleMark(k.id);
+                    }}
+                    title={marked.has(k.id) ? "Bỏ đánh dấu" : "Đánh dấu"}
+                  >
+                    ★
+                  </button>
+                )}
                 {/* Cấp độ + trạng thái nằm chung một hàng góc trái để không đè lên nhau */}
                 <div className="k-card__tags">
                   <span className="k-card__level" style={{ "--c": LEVEL_COLOR[k.level] }}>
@@ -390,6 +608,11 @@ export default function KanjiTab({ initialSearch }) {
           isMarked={marked.has(filtered[selectedIdx].id)}
           onToggleMark={() => toggleMark(filtered[selectedIdx].id)}
           onRated={() => setTick((t) => t + 1)}
+          onFilterRadical={(ch) => {
+            setSelectedIdx(null);
+            setActiveCategory("all");
+            setRadicalFilter(ch);
+          }}
         />
       )}
     </div>
@@ -553,11 +776,27 @@ function KanjiModal({
   isMarked,
   onToggleMark,
   onRated,
+  onFilterRadical,
 }) {
   const [tab, setTab] = useState("info"); // info | write
   const card = getCard("kanji", kanji.id);
   const status = getStatus(card);
   const related = useMemo(() => vocabWithKanji(kanji.char), [kanji.char]);
+
+  // Tách chữ thành các mảnh có nghĩa. Đảm bảo bộ thủ luôn xuất hiện: nếu bộ là
+  // một chữ khác mà KanjiVG không tách ra ở cấp 1 (来→木, 合→人) thì chèn thêm;
+  // nếu bộ chính là chính chữ đó (見, 立…) thì để nguyên các thành phần con.
+  const pieces = (() => {
+    const comps = kanji.components ? [...kanji.components] : [];
+    const r = kanji.radical;
+    if (r && r.char !== kanji.char && !comps.some((c) => c.char === r.char)) {
+      comps.unshift({ char: r.char, hanviet: r.hanviet, meaning: r.meaning, isRadical: true });
+    }
+    if (!comps.length && r) {
+      comps.push({ char: r.char, hanviet: r.hanviet, meaning: r.meaning, isRadical: true });
+    }
+    return comps;
+  })();
 
   const rate = (rating) => {
     rateCard("kanji", kanji.id, rating);
@@ -634,6 +873,35 @@ function KanjiModal({
         </div>
 
         <div className="kanji-evidence">
+          {/* 🧩 Bộ thủ & thành phần — công cụ "hiểu theo bộ thủ": tách chữ thành
+              các mảnh có nghĩa, bấm được để xem chữ khác cùng bộ. */}
+          {kanji.radical && pieces.length > 0 && (
+            <div className="km-decomp">
+              <div className="km-examples-label">🧩 Bộ thủ &amp; thành phần</div>
+              <div className="km-decomp__pieces">
+                {pieces.map((p, i) => (
+                  <button
+                    key={p.char + i}
+                    className={`km-piece ${p.isRadical ? "is-radical" : ""}`}
+                    onClick={() => onFilterRadical?.(p.char)}
+                    title={`Xem các kanji khác có ${p.char}`}
+                  >
+                    <span className="km-piece__char">{p.char}</span>
+                    <span className="km-piece__meta">
+                      <span className="km-piece__hv">
+                        {p.isRadical && <span className="km-piece__tag">bộ</span>}
+                        {p.hanviet}
+                        {p.isRadical && kanji.radical.variantOf ? ` · ${kanji.radical.variantOf}` : ""}
+                      </span>
+                      {p.meaning && <span className="km-piece__mean">{p.meaning}</span>}
+                    </span>
+                  </button>
+                ))}
+              </div>
+              <div className="km-decomp__hint">Bấm một mảnh để lọc các kanji khác cùng bộ →</div>
+            </div>
+          )}
+
           {kanji.mnemonic && <div className="kanji-modal__mnemonic">{kanji.mnemonic}</div>}
 
           <div className="km-examples-label">Ví dụ từ ghép</div>

@@ -547,12 +547,6 @@ display: flex;
   margin-left: auto;
 }
 
-/* Hàng lọc 25 bài Minna — chip số nên gọn hơn chip chủ đề. */
-.voc-minna-bar .filter-btn {
-padding: 0.25rem 0.5rem;
-  font-size: 0.8125rem;
-}
-
 .wc-iconbtn {
 background: none;
   border: none;
@@ -653,7 +647,6 @@ margin-top: 0.625rem;
   /* Thẻ từ — nút & nhãn nhỏ */
   .wc-cat { font-size: 0.7031rem; padding: 0.1406rem 0.5625rem; border-radius: 0.9375rem; }
   .wc-minna { font-size: 0.7031rem; padding: 0.1406rem 0.5625rem; border-radius: 0.9375rem; }
-  .voc-minna-bar .filter-btn { padding: 0.2344rem 0.4688rem; font-size: 0.7969rem; }
   .wc-actions { gap: 0.5625rem; }
   .wc-iconbtn { font-size: 1.0781rem; }
   .wc-bookmark { font-size: 1.1719rem; }

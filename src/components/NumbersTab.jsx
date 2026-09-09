@@ -7,6 +7,7 @@ import { quizSetsFor, buildQuiz } from "../lib/quizgen";
 import QuizHub from "./common/QuizHub";
 import StudyRunner from "./common/StudyRunner";
 import SpeakButton from "./common/SpeakButton";
+import FilterRow from "./common/FilterRow";
 import "../styles/tabs/numbers.css";
 
 const SECTIONS = [
@@ -347,18 +348,19 @@ export default function NumbersTab() {
       <NumbersPracticeBar open={showQuiz} onToggle={() => setShowQuiz((v) => !v)} />
       {showQuiz && <QuizHub tab="numbers" color="#facc15" onClose={() => setShowQuiz(false)} />}
 
-      <div className="filter-bar">
-        <span className="filter-label">Phần:</span>
-        {SECTIONS.map((s) => (
-          <button
-            key={s.id}
-            className={`filter-btn ${section === s.id ? "filter-btn--active" : ""}`}
-            style={section === s.id ? { background: s.color, color: "#0a0b0f" } : {}}
-            onClick={() => setSection(s.id)}
-          >
-            {s.label}
-          </button>
-        ))}
+      <div className="filters">
+        <FilterRow label="Phần">
+          {SECTIONS.map((s) => (
+            <button
+              key={s.id}
+              className={`filter-btn ${section === s.id ? "filter-btn--active" : ""}`}
+              style={section === s.id ? { background: s.color, color: "#0a0b0f" } : {}}
+              onClick={() => setSection(s.id)}
+            >
+              {s.label}
+            </button>
+          ))}
+        </FilterRow>
       </div>
 
       {/* Học phần đang xem: thẻ lật & tự kiểm tra ngay trên bảng */}

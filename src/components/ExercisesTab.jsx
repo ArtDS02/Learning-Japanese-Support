@@ -24,6 +24,7 @@ import { loadSettings } from "../lib/userdata";
 import StudyRunner from "./common/StudyRunner";
 import SpeakButton from "./common/SpeakButton";
 import Ruby from "./common/Ruby";
+import FilterRow from "./common/FilterRow";
 import "../styles/tabs/exercises.css";
 import "../styles/tabs/exercises-extra.css";
 // Dùng .qh__close và .qh__chip của quiz.css nhưng không render QuizHub — không
@@ -932,46 +933,47 @@ export default function ExercisesTab() {
         </button>
       </div>
 
-      {/* Chọn bộ đề */}
-      <div className="filter-bar exam-tab">
-        <span className="filter-label">Bộ đề:</span>
-        <button
-          className={`filter-btn ${activeExam === "all" ? "filter-btn--active" : ""}`}
-          style={{ "--c": "#a78bfa" }}
-          onClick={() => setActiveExam("all")}
-        >
-          🌐 Tất cả
-        </button>
-        {examSets.map((exam) => (
+      {/* Bảng lọc gộp: chọn bộ đề + phần thi */}
+      <div className="filters">
+        {/* Chọn bộ đề */}
+        <FilterRow label="Bộ đề" className="exam-tab">
           <button
-            key={exam.id}
-            className={`filter-btn ${activeExam === exam.id ? "filter-btn--active" : ""}`}
-            onClick={() => setActiveExam(exam.id)}
+            className={`filter-btn ${activeExam === "all" ? "filter-btn--active" : ""}`}
+            style={{ "--c": "#a78bfa" }}
+            onClick={() => setActiveExam("all")}
           >
-            🎌 {exam.id}
+            🌐 Tất cả
           </button>
-        ))}
-      </div>
+          {examSets.map((exam) => (
+            <button
+              key={exam.id}
+              className={`filter-btn ${activeExam === exam.id ? "filter-btn--active" : ""}`}
+              onClick={() => setActiveExam(exam.id)}
+            >
+              🎌 {exam.id}
+            </button>
+          ))}
+        </FilterRow>
 
-      {/* Chọn phần thi */}
-      <div className="filter-bar ex-filter-gap">
-        <span className="filter-label">Phần thi:</span>
-        {[
-          { id: "all", label: "🌐 Tất cả", c: "#94a3b8" },
-          { id: "vocab", label: "📖 Từ vựng", c: "#22d3ee" },
-          { id: "grammar", label: "⚙️ Ngữ pháp", c: "#a78bfa" },
-          { id: "reading", label: "📰 Đọc hiểu", c: "#34d399" },
-          { id: "listening", label: "🎧 Nghe", c: "#f97316" },
-        ].map((t) => (
-          <button
-            key={t.id}
-            className={`filter-btn ${activeSectionType === t.id ? "filter-btn--active" : ""}`}
-            style={{ "--c": t.c }}
-            onClick={() => setActiveSectionType(t.id)}
-          >
-            {t.label}
-          </button>
-        ))}
+        {/* Chọn phần thi */}
+        <FilterRow label="Phần thi">
+          {[
+            { id: "all", label: "🌐 Tất cả", c: "#94a3b8" },
+            { id: "vocab", label: "📖 Từ vựng", c: "#22d3ee" },
+            { id: "grammar", label: "⚙️ Ngữ pháp", c: "#a78bfa" },
+            { id: "reading", label: "📰 Đọc hiểu", c: "#34d399" },
+            { id: "listening", label: "🎧 Nghe", c: "#f97316" },
+          ].map((t) => (
+            <button
+              key={t.id}
+              className={`filter-btn ${activeSectionType === t.id ? "filter-btn--active" : ""}`}
+              style={{ "--c": t.c }}
+              onClick={() => setActiveSectionType(t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </FilterRow>
       </div>
 
       <div>

@@ -5,6 +5,7 @@ import { readJSON, writeJSON } from "../lib/storage";
 import { rateCard, getCard, getStatus, getStats } from "../lib/srs";
 import { kanaPool } from "../lib/session";
 import SpeakButton from "./common/SpeakButton";
+import FilterRow from "./common/FilterRow";
 import "../styles/tabs/kana.css";
 import "../styles/tabs/kana-extra.css";
 
@@ -132,40 +133,45 @@ export default function KanaTab() {
       </div>
 
       {/* Mode Selector */}
-      <div className="filter-bar">
-        <span className="filter-label">Loại:</span>
-        {[
-          { id: "hiragana", label: "あ Hiragana", color: "#22d3ee" },
-          { id: "katakana", label: "ア Katakana", color: "#a78bfa" },
-          { id: "katakana-words", label: "🌏 Từ Katakana", color: "#f97316" },
-        ].map(m => (
-          <button
-            key={m.id}
-            className={`filter-btn ${mode === m.id ? "filter-btn--active" : ""}`}
-            style={{ "--c": m.color }}
-            onClick={() => { setMode(m.id); setQuizMode(false); setFillMode(false); }}
-          >
-            {m.label}
-          </button>
-        ))}
-        {mode !== "katakana-words" && (
-          <div className="kana-tools">
+      <div className="filters">
+        <FilterRow
+          label="Loại"
+          tools={
+            mode !== "katakana-words" && (
+              <div className="kana-tools">
+                <button
+                  className={`kana-toolbtn ${fillMode ? "is-active" : ""}`}
+                  style={{ "--c": "var(--accent-violet)" }}
+                  onClick={() => { setFillMode((v) => !v); setQuizMode(false); }}
+                >
+                  {fillMode ? "✕ Thoát" : "✍️ Điền romaji"}
+                </button>
+                <button
+                  className={`kana-toolbtn ${quizMode ? "is-active" : ""}`}
+                  style={{ "--c": "var(--accent-green)" }}
+                  onClick={quizMode ? () => setQuizMode(false) : () => { setQuizMode(true); setFillMode(false); }}
+                >
+                  {quizMode ? "✕ Thoát Quiz" : "🎯 Quiz"}
+                </button>
+              </div>
+            )
+          }
+        >
+          {[
+            { id: "hiragana", label: "あ Hiragana", color: "#22d3ee" },
+            { id: "katakana", label: "ア Katakana", color: "#a78bfa" },
+            { id: "katakana-words", label: "🌏 Từ Katakana", color: "#f97316" },
+          ].map(m => (
             <button
-              className={`kana-toolbtn ${fillMode ? "is-active" : ""}`}
-              style={{ "--c": "var(--accent-violet)" }}
-              onClick={() => { setFillMode((v) => !v); setQuizMode(false); }}
+              key={m.id}
+              className={`filter-btn ${mode === m.id ? "filter-btn--active" : ""}`}
+              style={{ "--c": m.color }}
+              onClick={() => { setMode(m.id); setQuizMode(false); setFillMode(false); }}
             >
-              {fillMode ? "✕ Thoát" : "✍️ Điền romaji"}
+              {m.label}
             </button>
-            <button
-              className={`kana-toolbtn ${quizMode ? "is-active" : ""}`}
-              style={{ "--c": "var(--accent-green)" }}
-              onClick={quizMode ? () => setQuizMode(false) : () => { setQuizMode(true); setFillMode(false); }}
-            >
-              {quizMode ? "✕ Thoát Quiz" : "🎯 Quiz"}
-            </button>
-          </div>
-        )}
+          ))}
+        </FilterRow>
       </div>
 
       {/* Quiz Mode */}
