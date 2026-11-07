@@ -30,6 +30,7 @@ import { loadSettings } from "../lib/userdata";
 import { loadHistory, mistakeEntries } from "../lib/examStore";
 import { noteCount, loadCustomCards } from "../lib/userdata";
 import { downloadBackup, readBackupFile, importData, wipeAll, OWNED_KEYS } from "../lib/backup";
+import { ANKI_DECKS, ANKI_FILTERS, ANKI_COLUMNS, ankiItems, downloadAnki } from "../lib/ankiExport";
 import StudyRunner from "./common/StudyRunner";
 import { useDataVersion } from "../lib/useDataVersion";
 import "../styles/tabs/progress.css";
@@ -53,6 +54,68 @@ function StatCard({ icon, value, label, color, sub }) {
       <div className="prog-stat__value">{value}</div>
       <div className="prog-stat__label">{label}</div>
       {sub != null && <div className="prog-stat__sub">{sub}</div>}
+    </div>
+  );
+}
+
+/**
+ * Xuất thẻ sang Anki. Nằm trong khối "Sao lưu & chuyển máy" vì cùng một nhu cầu:
+ * mang dữ liệu học ra khỏi trình duyệt này.
+ */
+function AnkiExport() {
+  const [deck, setDeck] = useState("vocab");
+  const [filter, setFilter] = useState("all");
+  const deckInfo = ANKI_DECKS.find((d) => d.id === deck);
+  // Bộ không có đánh dấu ⭐ thì lọc "đã đánh dấu" luôn ra 0 thẻ ⇒ quay về "Tất cả".
+  const activeFilter = filter === "marked" && !deckInfo.markKey ? "all" : filter;
+  const count = ankiItems(deck, activeFilter).length;
+
+  return (
+    <div className="pgx-anki">
+      <div className="pgx-anki__title">🃏 Xuất thẻ sang Anki</div>
+      <div className="pgx-anki__row">
+        {ANKI_DECKS.map((d) => (
+          <button
+            key={d.id}
+            className={`pgx-chip ${deck === d.id ? "is-on" : ""}`}
+            onClick={() => setDeck(d.id)}
+          >
+            {d.icon} {d.label}
+          </button>
+        ))}
+      </div>
+      <div className="pgx-anki__row">
+        {ANKI_FILTERS.map((f) => (
+          <button
+            key={f.id}
+            className={`pgx-chip ${activeFilter === f.id ? "is-on" : ""}`}
+            onClick={() => setFilter(f.id)}
+            disabled={f.id === "marked" && !deckInfo.markKey}
+            title={f.id === "marked" && !deckInfo.markKey ? "Bộ này không có đánh dấu ⭐" : undefined}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+      <div className="pgx-anki__row">
+        <button
+          className="pgx-btn pgx-btn--primary"
+          onClick={() => downloadAnki(deck, activeFilter)}
+          disabled={count === 0}
+        >
+          ⬇ Xuất {count} thẻ (.txt)
+        </button>
+      </div>
+      <ol className="pgx-anki__steps">
+        <li>Mở Anki trên máy tính → <strong>File → Import</strong> → chọn file vừa tải.</li>
+        <li>
+          Chọn loại thẻ có ít nhất 2 trường (ví dụ <em>Basic</em>) và deck muốn nhập vào. Các cột theo
+          thứ tự: {ANKI_COLUMNS.join(" · ")}.
+        </li>
+        <li>
+          Bấm <strong>Import</strong>. Tags (jlpt-n5, loại thẻ, chủ đề) được gắn sẵn để lọc trong Anki.
+        </li>
+      </ol>
     </div>
   );
 }
@@ -513,6 +576,8 @@ export default function ProgressTab({ onGoTo }) {
           </div>
         )}
         {importMsg && <div className="pgx-backup__msg">{importMsg}</div>}
+
+        <AnkiExport />
       </div>
 
       {/* ── Giải thích + xoá ── */}

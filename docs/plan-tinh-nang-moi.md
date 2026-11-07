@@ -36,7 +36,7 @@ Trạng thái:
 | F8 | Vuốt thẻ trên điện thoại + chỉnh cỡ chữ | S | ⬜ Chưa làm |
 | F9 | Lịch hoạt động cả năm + huy hiệu thành tích | M | ⬜ Chưa làm |
 | F10 | Bảng điểm yếu tổng hợp | M | ⬜ Chưa làm |
-| F11 | Xuất CSV để nhập vào Anki | S | ⬜ Chưa làm |
+| F11 | Xuất CSV để nhập vào Anki | S | ✅ Đã xong |
 
 S ≈ một buổi ngắn · M ≈ một buổi · L ≈ nhiều buổi / rủi ro cao.
 
@@ -382,6 +382,11 @@ lần hai; xoá toàn bộ dữ liệu thì huy hiệu cũng bị xoá.
 ---
 
 ## F11. Xuất CSV để nhập vào Anki
+
+> ✅ **Đã xong** (2026-11-08). `lib/ankiExport.js` (`buildAnkiTsv`, `ankiItems`, `downloadAnki`),
+> khối "🃏 Xuất thẻ sang Anki" trong "Sao lưu & chuyển máy" (`ProgressTab.jsx`). File `.txt`
+> (TSV, BOM, CRLF). Không thêm dòng tên cột vì Anki chỉ hiểu chỉ thị `#khoá:giá trị`; tên cột
+> nằm trong hướng dẫn trên UI. Từ bổ nghĩa không có đánh dấu ⭐ ⇒ nút lọc đó bị tắt.
 
 **Mục tiêu.** Người học muốn ôn tiếp ở Anki (hoặc app khác) có thể mang thẻ đi.
 
