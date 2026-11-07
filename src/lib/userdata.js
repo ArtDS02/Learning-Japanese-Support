@@ -3,7 +3,7 @@
 //   notes_v1        { "vocab:g1": "cách nhớ của tôi…", "kanji:k1": "…" }
 //   custom_cards_v1 [ { id, japanese, kanji, romaji, meaning, note, example } ]
 //   settings_v1     { dailyGoal, newPerDay, reminderOn, reminderTime, autoSpeak,
-//                     showFurigana, examDate, autoNewPerDay }
+//                     showFurigana, examDate, autoNewPerDay, fontScale }
 
 import { readJSON, writeJSON, dayKey, dayDiff } from "./storage";
 
@@ -140,7 +140,27 @@ const DEFAULT_SETTINGS = {
   showFurigana: true,
   examDate: "", // "YYYY-MM-DD" — trống = chưa đặt ngày thi
   autoNewPerDay: false, // true = số thẻ mới/ngày tự tính theo ngày thi (lib/session.js examPlan)
+  fontScale: 1, // cỡ chữ tiếng Nhật: một trong FONT_SCALES
 };
+
+/** Các mức cỡ chữ tiếng Nhật cho người mắt kém / màn hình nhỏ. */
+export const FONT_SCALES = [
+  { v: 0.9, label: "Nhỏ" },
+  { v: 1, label: "Vừa" },
+  { v: 1.15, label: "Lớn" },
+  { v: 1.3, label: "Rất lớn" },
+];
+
+/**
+ * Ghi hệ số cỡ chữ lên :root (biến CSS --jp-scale). Giá trị lạ (dữ liệu cũ, file
+ * sao lưu sửa tay) bị chặn về khoảng hợp lệ để không làm vỡ bố cục.
+ */
+export function applyFontScale(scale = loadSettings().fontScale) {
+  if (typeof document === "undefined") return;
+  const n = Number(scale);
+  const v = Number.isFinite(n) ? Math.min(1.3, Math.max(0.9, n)) : 1;
+  document.documentElement.style.setProperty("--jp-scale", String(v));
+}
 
 /**
  * Hai mốc thi JLPT gần nhất (tính từ ngày mai): JLPT tổ chức vào Chủ nhật đầu

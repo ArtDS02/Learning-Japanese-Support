@@ -511,6 +511,7 @@ function Runner({
           item={item}
           revealed={revealed}
           onFlip={() => setRevealed((v) => !v)}
+          onRate={(rating) => commit(rating)}
           furigana={furigana}
         />
       )}
@@ -620,9 +621,128 @@ function Runner({
 
 // ── Thẻ lật ──────────────────────────────────────────────────────────────────
 
-function FlashBody({ item, revealed, onFlip, furigana }) {
+// Vuốt để chấm (chỉ cảm ứng / bút, chỉ SAU khi lật): ← Quên · → Nhớ · ↑ Mơ hồ.
+// Ôn trên điện thoại thường chỉ rảnh một tay — với ngón cái, vuốt dễ hơn nhắm
+// trúng ba nút nhỏ phía dưới. Chuột và bàn phím giữ nguyên như cũ.
+const SWIPE_PX = 60;
+const SWIPE_HINT_KEY = "swipe_hint_seen_v1";
+const SWIPE_LABEL = { forget: "😟 Quên", vague: "🤔 Mơ hồ", remember: "😎 Nhớ" };
+
+/** Hướng vuốt → mức chấm; chưa đủ ngưỡng hoặc vuốt xuống thì null (thẻ bật về). */
+function swipeRating(dx, dy) {
+  if (Math.abs(dx) >= Math.abs(dy)) {
+    if (dx <= -SWIPE_PX) return "forget";
+    if (dx >= SWIPE_PX) return "remember";
+  } else if (dy <= -SWIPE_PX) return "vague";
+  return null;
+}
+
+function readHintSeen() {
+  try {
+    return localStorage.getItem(SWIPE_HINT_KEY) === "1";
+  } catch {
+    return true; // không đọc được bộ nhớ thì thôi khỏi gợi ý, đừng hiện mãi
+  }
+}
+
+function FlashBody({ item, revealed, onFlip, onRate, furigana }) {
+  const [drag, setDrag] = useState(null); // { id, x0, y0, dx, dy } khi đang vuốt
+  const [hintSeen, setHintSeen] = useState(readHintSeen);
+  // Vừa kéo thì trình duyệt vẫn bắn "click" lúc nhả tay — cờ này chặn lật thẻ nhầm.
+  // Chỉ ghi trong handler sự kiện, không ghi trong lúc render.
+  const dragged = useRef(false);
+  const touchDevice = useMemo(
+    () => typeof window !== "undefined" && window.matchMedia?.("(pointer: coarse)").matches,
+    [],
+  );
+  const canSwipe = revealed && !!onRate;
+
+  const seeHint = () => {
+    setHintSeen(true);
+    try {
+      localStorage.setItem(SWIPE_HINT_KEY, "1");
+    } catch {
+      /* chế độ riêng tư — chỉ là gợi ý, bỏ qua */
+    }
+  };
+
+  const onPointerDown = (e) => {
+    // Xoá cờ ở MỌI lần chạm, trước mọi điều kiện: vuốt xong trình duyệt thường
+    // không bắn "click", nên cờ của lần vuốt trước sẽ nuốt mất cú chạm lật thẻ sau.
+    dragged.current = false;
+    if (!canSwipe || e.pointerType === "mouse") return;
+    // Bấm nút đọc / link bên trong thẻ: để nút tự xử lý. Bắt pointer vào thẻ ở
+    // đây sẽ cướp mất "click" của nút.
+    if (e.target.closest?.("button, a, input, textarea")) return;
+    try {
+      // Giữ sự kiện về thẻ cả khi ngón tay trượt ra ngoài mép thẻ.
+      e.currentTarget.setPointerCapture?.(e.pointerId);
+    } catch {
+      /* pointer không còn hoạt động — vẫn vuốt được, chỉ là không bắt ngoài thẻ */
+    }
+    setDrag({ id: e.pointerId, x0: e.clientX, y0: e.clientY, dx: 0, dy: 0 });
+  };
+
+  const onPointerMove = (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const dx = e.clientX - drag.x0;
+    const dy = e.clientY - drag.y0;
+    if (Math.hypot(dx, dy) > 8) dragged.current = true;
+    setDrag({ ...drag, dx, dy });
+  };
+
+  const onPointerUp = (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const rating = swipeRating(drag.dx, drag.dy);
+    setDrag(null);
+    if (rating) {
+      if (!hintSeen) seeHint();
+      onRate(rating);
+    }
+  };
+
+  const onClick = () => {
+    if (dragged.current) {
+      dragged.current = false;
+      return;
+    }
+    onFlip();
+  };
+
+  const preview = drag ? swipeRating(drag.dx, drag.dy) : null;
+  const style = drag
+    ? { transform: `translate(${drag.dx}px, ${drag.dy}px) rotate(${drag.dx / 20}deg)`, transition: "none" }
+    : undefined;
+
   return (
-    <div className={`run-card ${revealed ? "is-revealed" : ""}`} onClick={onFlip}>
+    <>
+      {canSwipe && touchDevice && !hintSeen && (
+        <div className="run-swipehint">
+          <span>👆 Vuốt thẻ để chấm: ← Quên · ↑ Mơ hồ · → Nhớ</span>
+          <button className="run-swipehint__x" onClick={seeHint} aria-label="Ẩn gợi ý">
+            ✕
+          </button>
+        </div>
+      )}
+      <div
+        className={`run-card ${revealed ? "is-revealed" : ""} ${canSwipe ? "is-swipeable" : ""}`}
+        style={style}
+        onClick={onClick}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={() => setDrag(null)}
+      >
+        {preview && <div className={`run-swipe run-swipe--${preview}`}>{SWIPE_LABEL[preview]}</div>}
+        <FlashFaces item={item} revealed={revealed} furigana={furigana} />
+      </div>
+    </>
+  );
+}
+
+function FlashFaces({ item, revealed, furigana }) {
+  return (
+    <>
       {!revealed ? (
         <div className="run-card__face">
           <div className="run-card__label">{item.tag || "Thẻ"}</div>
@@ -664,7 +784,7 @@ function FlashBody({ item, revealed, onFlip, furigana }) {
           )}
         </div>
       )}
-    </div>
+    </>
   );
 }
 

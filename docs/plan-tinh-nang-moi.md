@@ -33,7 +33,7 @@ Trạng thái:
 | F5 | Luyện kanji dễ nhầm theo bộ thủ | M | ✅ Đã xong |
 | F6 | Kiểm tra thứ tự & hướng nét khi tập viết | M–L | ⬜ Chưa làm |
 | F7 | Phát hiện thẻ "khó nhớ dai dẳng" (leech) | S–M | ⬜ Chưa làm |
-| F8 | Vuốt thẻ trên điện thoại + chỉnh cỡ chữ | S | ⬜ Chưa làm |
+| F8 | Vuốt thẻ trên điện thoại + chỉnh cỡ chữ | S | ✅ Đã xong |
 | F9 | Lịch hoạt động cả năm + huy hiệu thành tích | M | ⬜ Chưa làm |
 | F10 | Bảng điểm yếu tổng hợp | M | ⬜ Chưa làm |
 | F11 | Xuất CSV để nhập vào Anki | S | ✅ Đã xong |
@@ -336,6 +336,13 @@ hôm nay và không được đếm "tới hạn"; sao lưu/nhập giữ cờ `s
 ---
 
 ## F8. Vuốt thẻ trên điện thoại + chỉnh cỡ chữ
+
+> ✅ **Đã xong** (2026-11-08). `FlashBody` (StudyRunner.jsx): chỉ cảm ứng/bút, chỉ sau khi lật;
+> ← Quên · → Nhớ · ↑ Mơ hồ, ngưỡng 60px, thẻ nghiêng theo ngón tay, chưa đủ ngưỡng thì bật về;
+> gợi ý lần đầu (`swipe_hint_seen_v1`, đã thêm vào `OWNED_KEYS`). `touch-action: none` chỉ trên
+> thẻ đã lật ở màn cảm ứng. Cỡ chữ: `settings_v1.fontScale` → `--jp-scale` (`applyFontScale` ở
+> `userdata.js`, gọi trong `App.jsx` lúc nạp + khi cài đặt đổi); áp cho thẻ lật, câu hỏi, phương án,
+> ô kanji, modal kanji, bảng kana (gồm bản CSS điện thoại) — `kanji.css`, `kana.css` cũng được sửa.
 
 **Mục tiêu.** Ôn bằng một tay trên điện thoại; người mắt kém / màn nhỏ phóng to chữ Nhật.
 

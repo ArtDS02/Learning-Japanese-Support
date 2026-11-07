@@ -42,7 +42,7 @@ opacity: 0.2;
 }
 
 .kanji-char {
-font-size: 3.25rem;
+font-size: calc(3.25rem * var(--jp-scale, 1));
   line-height: 1;
   margin-bottom: 0.5rem;
   transition: transform var(--transition);
@@ -211,7 +211,7 @@ background: rgba(255, 255, 255, 0.12);
 }
 
 .kanji-modal__char {
-font-size: 5rem;
+font-size: calc(5rem * var(--jp-scale, 1));
   line-height: 1;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -1659,7 +1659,7 @@ font-size: 0.75rem;
   /* Lưới thẻ kanji: 3 cột cho dễ đọc (thay vì ~7 cột chật) */
   .kanji-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5625rem; }
   .kanji-card { padding: 0.7031rem 0.375rem; border-radius: 0.6094rem; }
-  .kanji-char { font-size: 2.1094rem; }
+  .kanji-char { font-size: calc(2.1094rem * var(--jp-scale, 1)); }
   .kanji-hanviet { font-size: 0.7266rem; margin-bottom: 0.1875rem; }
   .kanji-meaning { font-size: 0.7969rem; }
   .kanji-on, .kanji-kun { font-size: 0.7266rem; }
@@ -1705,7 +1705,7 @@ font-size: 0.75rem;
   .kanji-modal__close { width: 2.1094rem; height: 2.1094rem; font-size: 1.0313rem; }
   .km-cat { font-size: 0.75rem; }
   .km-level { font-size: 0.75rem; padding: 0.125rem 0.4688rem; }
-  .kanji-modal__char { font-size: 5.1563rem; }
+  .kanji-modal__char { font-size: calc(5.1563rem * var(--jp-scale, 1)); }
   .km-hanviet { gap: 0.375rem; }
   .km-hanviet__label { font-size: 0.7031rem; }
   .km-hanviet__value { font-size: 1.0313rem; }

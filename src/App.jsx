@@ -2,6 +2,10 @@ import { useState, useEffect, useCallback, useRef, lazy, Suspense } from "react"
 import Preloader from "./components/common/Preloader";
 import ErrorBoundary from "./components/common/ErrorBoundary";
 import { startReminder } from "./lib/reminder";
+import { applyFontScale, subscribeUserData } from "./lib/userdata";
+
+// Áp cỡ chữ ngay khi nạp module (trước lần vẽ đầu) để không thấy chữ nhảy cỡ.
+applyFontScale();
 
 // Tìm kiếm toàn cục cũng lazy: chỉ mục của nó đọc mọi file data, để import tĩnh
 // là kéo toàn bộ JSON vào bundle đầu tiên — đúng thứ vừa tách ra.
@@ -265,6 +269,9 @@ export default function App() {
 
   // Nhắc học chạy ở cấp App để hoạt động dù đang mở tab nào.
   useEffect(() => startReminder(), []);
+
+  // Cài đặt đổi (ô cỡ chữ ở trang chủ, tab trình duyệt khác, nhập sao lưu) → áp lại cỡ chữ.
+  useEffect(() => subscribeUserData(() => applyFontScale()), []);
 
   // Ctrl/⌘ + K mở tìm kiếm toàn cục ở bất kỳ tab nào.
   useEffect(() => {

@@ -287,7 +287,7 @@ font-size: 0.6875rem;
 }
 
 .kana-quiz__char {
-font-size: 6.25rem;
+font-size: calc(6.25rem * var(--jp-scale, 1));
   line-height: 1;
   margin-bottom: 2rem;
   color: var(--c);
@@ -414,7 +414,7 @@ transform: none;
 }
 
 .kana-cell__char {
-font-size: 1.75rem;
+font-size: calc(1.75rem * var(--jp-scale, 1));
   margin-bottom: 0.25rem;
   color: var(--c);
 }
@@ -750,7 +750,7 @@ background: rgba(255, 255, 255, 0.12);
   .kana-section__title { font-size: 0.9844rem; margin-bottom: 0.7031rem; }
   .kana-grid { gap: 0.4219rem; }
   .kana-cell { padding: 0.6094rem 0.2344rem; border-radius: 0.5156rem; }
-  .kana-cell__char { font-size: 1.5469rem; margin-bottom: 0.2344rem; }
+  .kana-cell__char { font-size: calc(1.5469rem * var(--jp-scale, 1)); margin-bottom: 0.2344rem; }
   .kana-cell__romaji { font-size: 0.7031rem; }
   .kana-dakuten-note { font-size: 0.75rem; padding: 0.5625rem 0.7031rem; margin-bottom: 0.7031rem; }
 
@@ -803,7 +803,7 @@ background: rgba(255, 255, 255, 0.12);
   /* ── Quiz: thẻ lật (dùng chung .kana-quiz + biến thể v2) ── */
   .kana-quiz { padding: 1.4063rem 1.0547rem; margin-bottom: 1.1719rem; }
   .kana-quiz__prompt { font-size: 0.7031rem; margin-bottom: 0.9375rem; }
-  .kana-quiz__char { font-size: 3.5156rem; margin-bottom: 1.1719rem; }
+  .kana-quiz__char { font-size: calc(3.5156rem * var(--jp-scale, 1)); margin-bottom: 1.1719rem; }
   .kana-quiz__reveal { font-size: 0.9375rem; padding: 0.7031rem 1.6406rem; }
   .kana-quiz__answer { font-size: 1.7578rem; margin-bottom: 0.9375rem; }
 
@@ -824,7 +824,7 @@ background: rgba(255, 255, 255, 0.12);
 /* Điện thoại rất nhỏ (≤360px) — nới thêm chút cho dễ chạm */
 @media (max-width: 360px) {
   .qz-chip { font-size: 1.3594rem; }
-  .kana-cell__char { font-size: 1.6406rem; }
+  .kana-cell__char { font-size: calc(1.6406rem * var(--jp-scale, 1)); }
   .qz-grade__btn { font-size: 0.9844rem; }
 }
 

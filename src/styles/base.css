@@ -46,6 +46,10 @@
   --font-body: "Noto Sans", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
+  /* Hệ số cỡ chữ tiếng Nhật (settings_v1.fontScale) — App.jsx ghi đè trên :root.
+     Chỉ áp vào chữ Nhật lớn (thẻ lật, câu hỏi, ô kanji, bảng kana), không phóng cả giao diện. */
+  --jp-scale: 1;
+
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Layout */

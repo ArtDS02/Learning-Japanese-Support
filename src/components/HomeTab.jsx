@@ -10,7 +10,7 @@ import {
   accuracyOverall,
   recentActivity,
 } from "../lib/progress";
-import { loadSettings, saveSettings, suggestedExamDates } from "../lib/userdata";
+import { loadSettings, saveSettings, suggestedExamDates, FONT_SCALES } from "../lib/userdata";
 import { nextLesson, lessonsOverview } from "../lib/lessons";
 import { useDataVersion } from "../lib/useDataVersion";
 import StudyRunner from "./common/StudyRunner";
@@ -500,6 +500,24 @@ function GoalSettings({ settings, plan, onChange, onClose }) {
             ? `Theo ngày thi: ~${plan.perDay} thẻ mới/ngày` +
               (plan.capped ? ` (vượt trần, mỗi ngày chỉ mở tối đa ${plan.quota}).` : ".")
             : "Cần đặt ngày thi (trong tương lai) thì mới tự tính được; chưa có thì dùng số thẻ mới chọn ở trên."}
+        </div>
+      </div>
+
+      <div className="hm-settings__row">
+        <label>Cỡ chữ tiếng Nhật</label>
+        <div className="hm-settings__chips">
+          {FONT_SCALES.map((f) => (
+            <button
+              key={f.v}
+              className={`qh__chip ${Number(settings.fontScale || 1) === f.v ? "is-on" : ""}`}
+              onClick={() => onChange({ fontScale: f.v })}
+            >
+              <span lang="ja" style={{ fontSize: `${f.v}em` }}>あ</span> {f.label}
+            </button>
+          ))}
+        </div>
+        <div className="hm-settings__hint">
+          Phóng to chữ Nhật trên thẻ lật, câu hỏi, ô kanji và bảng kana — áp dụng cho toàn app.
         </div>
       </div>
 

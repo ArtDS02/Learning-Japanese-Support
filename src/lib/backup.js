@@ -31,6 +31,7 @@ export const OWNED_KEYS = [
   "daily_new_v1", // số thẻ mới đã mở trong ngày (giới hạn thẻ mới/ngày)
   "n5.numbers.counterView", // cách xem bảng bộ đếm
   "migrations_done_v1", // cờ di trú dữ liệu — mang theo để không di trú lại
+  "swipe_hint_seen_v1", // đã xem gợi ý vuốt thẻ (để máy mới khỏi hiện lại)
   "jlpt-active-tab",
 ];
 

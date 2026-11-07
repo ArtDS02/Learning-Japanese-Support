@@ -171,6 +171,66 @@
   transform: scale(0.995);
 }
 
+/* Thẻ đã lật trên màn cảm ứng: vuốt để chấm. touch-action: none để trình duyệt
+   không cuộn trang khi ngón tay kéo trên thẻ (vẫn cuộn được ở ngoài thẻ). */
+.run-card.is-swipeable {
+  position: relative;
+}
+
+@media (pointer: coarse) {
+  .run-card.is-swipeable {
+    touch-action: none;
+    user-select: none;
+  }
+}
+
+.run-swipe {
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  pointer-events: none;
+  background: var(--bg-surface);
+  border: 0.125rem solid currentColor;
+}
+
+.run-swipe--forget {
+  color: #ff6b81;
+}
+
+.run-swipe--vague {
+  color: #facc15;
+}
+
+.run-swipe--remember {
+  color: #34d399;
+}
+
+.run-swipehint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: rgba(167, 139, 250, 0.1);
+  border: 0.0625rem solid rgba(167, 139, 250, 0.3);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.run-swipehint__x {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
 .run-card__face {
   width: 100%;
 }
@@ -185,7 +245,7 @@
 
 .run-card__front {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: calc(2.5rem * var(--jp-scale, 1));
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.25;
@@ -210,7 +270,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-size: 1.375rem;
+  font-size: calc(1.375rem * var(--jp-scale, 1));
   font-weight: 600;
   color: var(--text-secondary);
   margin-bottom: 0.5rem;
@@ -218,7 +278,7 @@
 
 .run-card__back {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: calc(1.5rem * var(--jp-scale, 1));
   font-weight: 700;
   color: var(--c);
   line-height: 1.35;
@@ -250,7 +310,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
+  font-size: calc(1rem * var(--jp-scale, 1));
   color: var(--text-primary);
   line-height: 2;
 }
@@ -295,7 +355,7 @@
 }
 
 .run-q__text {
-  font-size: 1.375rem;
+  font-size: calc(1.375rem * var(--jp-scale, 1));
   color: var(--text-primary);
   line-height: 2.1;
   display: flex;
@@ -363,6 +423,8 @@
 .run-choice__t {
   flex: 1;
   word-break: break-word;
+  /* Phương án hay là chữ Nhật (大・犬・太) — phóng theo cỡ chữ người học chọn. */
+  font-size: calc(1em * var(--jp-scale, 1));
 }
 
 .run-choice.is-correct {
@@ -485,7 +547,7 @@
 }
 
 .run-compare__jp {
-  font-size: 1.125rem;
+  font-size: calc(1.125rem * var(--jp-scale, 1));
   color: var(--text-primary);
 }
 
@@ -511,7 +573,7 @@
 }
 
 .run-audio__script {
-  font-size: 1.125rem;
+  font-size: calc(1.125rem * var(--jp-scale, 1));
   color: var(--text-primary);
   line-height: 2;
 }
@@ -801,11 +863,11 @@
   }
 
   .run-card__front {
-    font-size: 2.125rem;
+    font-size: calc(2.125rem * var(--jp-scale, 1));
   }
 
   .run-q__text {
-    font-size: 1.1875rem;
+    font-size: calc(1.1875rem * var(--jp-scale, 1));
   }
 
   .run-rate {
