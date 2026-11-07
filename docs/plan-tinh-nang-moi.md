@@ -27,7 +27,7 @@ Trạng thái:
 | ID | Tính năng | Công sức | Trạng thái |
 |---|---|---|---|
 | F1 | Lịch ôn FSRS | L | ⬜ Chưa làm |
-| F2 | Đếm ngược ngày thi + tự gợi ý số thẻ mới/ngày | S | ⬜ Chưa làm |
+| F2 | Đếm ngược ngày thi + tự gợi ý số thẻ mới/ngày | S | ✅ Đã xong |
 | F3 | Luyện nghe cặp âm dễ nhầm (trường âm, っ) | M | ⬜ Chưa làm |
 | F4 | Shadowing có chấm điểm bằng nhận giọng nói | M | ⬜ Chưa làm |
 | F5 | Luyện kanji dễ nhầm theo bộ thủ | M | ⬜ Chưa làm |
@@ -174,6 +174,11 @@ phần giải thích "Cách hoạt động" ở `ProgressTab.jsx` và `getForeca
 ---
 
 ## F2. Đếm ngược ngày thi + tự gợi ý số thẻ mới/ngày
+
+> ✅ **Đã xong** (2026-11-08). `examPlan()` / `newPerDayFor()` / `AUTO_NEW_CAP = 40` ở
+> `lib/session.js`; `suggestedExamDates()` ở `lib/userdata.js`; thẻ `ExamCountdown` + ô
+> cài đặt ở `HomeTab.jsx`. Ngày thi = hôm nay hoặc đã qua ⇒ ẩn đếm ngược, về `newPerDay`.
+> Thẻ chưa học tính theo đầu ngày (cộng `newIntroducedToday()`) để hạn mức không tụt khi đang học.
 
 **Mục tiêu.** Người học đặt ngày thi; app cho biết còn bao nhiêu ngày và **cần học bao
 nhiêu thẻ mới mỗi ngày** để kịp học hết trước ngày thi (chừa thời gian ôn).

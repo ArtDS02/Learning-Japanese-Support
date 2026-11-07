@@ -5,8 +5,9 @@
 //
 //   1. Thẻ tới hạn (mọi deck) — ưu tiên cao nhất
 //   2. Câu sai trong Sổ tay lỗi đã tới hạn
-//   3. Thẻ mới, giới hạn theo cài đặt `newPerDay` — tính theo NGÀY (đã mở bao
-//      nhiêu thẻ mới hôm nay thì trừ đi), không phải theo từng phiên.
+//   3. Thẻ mới, giới hạn theo cài đặt `newPerDay` (hoặc con số tự tính theo ngày
+//      thi khi bật `autoNewPerDay`) — tính theo NGÀY (đã mở bao nhiêu thẻ mới
+//      hôm nay thì trừ đi), không phải theo từng phiên.
 //   4. Thẻ tới hạn của ngữ pháp / số đếm / nghe / từ bổ nghĩa — dựng ở
 //      lib/sessionExtra.js (nặng) và được phía gọi truyền vào qua `extra`.
 //
@@ -17,6 +18,7 @@ import kanjiData from "../data/kanji.json";
 import kanaData from "../data/kana.json";
 import { dueItems, newItems, getCard, getStatus, newIntroducedToday } from "./srs";
 import { loadSettings, customAsWords } from "./userdata";
+import { dayKey, dayDiff } from "./storage";
 import { shuffle } from "./random";
 
 // Chủ ý KHÔNG import examStore ở đây: file đó kéo theo ~186KB dữ liệu 6 bộ đề,
@@ -150,9 +152,69 @@ export function mistakeCard(entry) {
 
 // ── Dựng phiên ───────────────────────────────────────────────────────────────
 
+// ── Đếm ngược ngày thi ───────────────────────────────────────────────────────
+
+// Trần của số thẻ mới tự tính: ngày thi quá gần mà còn nhiều thẻ thì công thức có
+// thể ra vài trăm thẻ/ngày — mở chừng đó là ngày mai ngập thẻ ôn, phản tác dụng.
+export const AUTO_NEW_CAP = 40;
+
+/** Số thẻ chưa học của đúng tập mà phiên hôm nay mở thẻ mới (vocab + kanji + kana). */
+function unlearnedCount() {
+  return (
+    newItems(vocabPool(), "vocab", (w) => w.id).length +
+    newItems(kanjiPool(), "kanji", (k) => k.id).length +
+    newItems(kanaPool(), "kana", (c) => c.char).length
+  );
+}
+
+/**
+ * Kế hoạch theo ngày thi: còn bao nhiêu ngày, cần mở bao nhiêu thẻ mới mỗi ngày.
+ * Trả về null khi chưa đặt ngày thi hoặc ngày thi đã tới / đã qua (khỏi hiện
+ * đếm ngược, và không bao giờ chia cho 0).
+ *
+ *   cần = ceil(thẻ_chưa_học / max(1, ngày_còn − ngày_dự_phòng_ôn))
+ *   ngày_dự_phòng_ôn = min(14, 20% ngày_còn)  — mấy ngày cuối chỉ ôn, không học mới.
+ *
+ * `ngày_còn` tính cả hôm nay (thi ngày mai ⇒ còn 1 ngày học là hôm nay).
+ * Thẻ chưa học lấy theo ĐẦU NGÀY (cộng lại số thẻ đã mở hôm nay): nếu không, học
+ * xong vài thẻ là con số "cần/ngày" tụt theo và hạn mức hôm nay bị tính hụt.
+ * `unlearned` cho phép phía gọi truyền số đã đếm sẵn để khỏi duyệt pool lần nữa.
+ */
+export function examPlan(settings = loadSettings(), unlearned = unlearnedCount()) {
+  const examDate = settings.examDate;
+  if (!examDate || !/^\d{4}-\d{2}-\d{2}$/.test(examDate)) return null;
+  const daysLeft = dayDiff(examDate, dayKey());
+  if (!(daysLeft > 0)) return null; // NaN (ngày hỏng) cũng rơi vào đây
+  const buffer = Math.min(14, Math.floor(daysLeft * 0.2));
+  const learnDays = Math.max(1, daysLeft - buffer);
+  const perDay = Math.ceil((unlearned + newIntroducedToday()) / learnDays);
+  return {
+    examDate,
+    daysLeft,
+    buffer,
+    learnDays,
+    unlearned,
+    perDay,
+    quota: Math.min(AUTO_NEW_CAP, perDay),
+    capped: perDay > AUTO_NEW_CAP,
+  };
+}
+
+/**
+ * Số thẻ mới mỗi ngày đang áp dụng: con số tự tính theo ngày thi nếu bật
+ * `autoNewPerDay` và có ngày thi hợp lệ, ngược lại là `newPerDay` người học chọn.
+ */
+export function newPerDayFor(settings = loadSettings(), plan) {
+  if (settings.autoNewPerDay) {
+    const p = plan === undefined ? examPlan(settings) : plan;
+    if (p) return p.quota;
+  }
+  return settings.newPerDay || 0;
+}
+
 /** Số thẻ mới còn được mở trong hôm nay. */
-export function newQuotaLeft(settings = loadSettings()) {
-  return Math.max(0, (settings.newPerDay || 0) - newIntroducedToday());
+export function newQuotaLeft(settings = loadSettings(), plan) {
+  return Math.max(0, newPerDayFor(settings, plan) - newIntroducedToday());
 }
 
 /**
@@ -188,13 +250,16 @@ export function todayOverview({ mistakes = [], extra = [] } = {}) {
   });
 
   const due = dueVocab + dueKanji + dueKana + dueMistakes + extra.length;
-  const fresh = Math.min(newQuotaLeft(s), newVocab + newKanji + newKana);
+  const plan = examPlan(s, newVocab + newKanji + newKana);
+  const fresh = Math.min(newQuotaLeft(s, plan), newVocab + newKanji + newKana);
 
   return {
     due,
     new: fresh,
     total: due + fresh,
     breakdown,
+    plan, // examPlan() — null khi chưa đặt ngày thi / ngày thi đã qua
+    newPerDay: newPerDayFor(s, plan),
     // ~6 giây/thẻ là nhịp trung bình của một phiên flashcard
     minutes: Math.max(1, Math.round(((due + fresh) * 6) / 60)),
   };

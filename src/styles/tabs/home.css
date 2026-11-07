@@ -216,6 +216,40 @@
   background: rgba(255, 255, 255, 0.12);
 }
 
+/* ── Đếm ngược ngày thi ── */
+
+.hm-exam {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 0.0625rem solid rgba(249, 115, 22, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 0.875rem 1.125rem;
+}
+
+.hm-exam__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.hm-exam__title {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+.hm-exam__title strong {
+  color: #f97316;
+}
+
+.hm-exam__sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  line-height: 1.5;
+}
+
 /* ── Cài đặt ── */
 
 .hm-settings {
@@ -533,5 +567,11 @@
 
   .hm-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hm-exam {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.625rem;
   }
 }

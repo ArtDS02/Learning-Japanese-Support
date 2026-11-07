@@ -10,7 +10,7 @@ import {
   accuracyOverall,
   recentActivity,
 } from "../lib/progress";
-import { loadSettings, saveSettings } from "../lib/userdata";
+import { loadSettings, saveSettings, suggestedExamDates } from "../lib/userdata";
 import { nextLesson, lessonsOverview } from "../lib/lessons";
 import { useDataVersion } from "../lib/useDataVersion";
 import StudyRunner from "./common/StudyRunner";
@@ -141,7 +141,7 @@ export default function HomeTab({ onGoTo }) {
                   {meta.icon} {meta.label}
                   <span className="hm-chip__n">
                     {/* 🆕 = số thẻ chưa học CÒN LẠI của phần đó. Mỗi ngày chỉ
-                        mở tối đa `newPerDay` thẻ mới cho mọi phần cộng lại. */}
+                        mở tối đa `overview.newPerDay` thẻ mới cho mọi phần cộng lại. */}
                     {b.due > 0 && `📅${b.due}`}
                     {b.due > 0 && b.new > 0 && " "}
                     {b.new > 0 && `🆕${b.new}`}
@@ -176,9 +176,18 @@ export default function HomeTab({ onGoTo }) {
         </div>
       </div>
 
+      {overview.plan && (
+        <ExamCountdown
+          plan={overview.plan}
+          auto={!!settings.autoNewPerDay}
+          onOpenSettings={() => setShowSettings(true)}
+        />
+      )}
+
       {showSettings && (
         <GoalSettings
           settings={settings}
+          plan={overview.plan}
           onChange={(patch) => setSettings(saveSettings(patch))}
           onClose={() => setShowSettings(false)}
         />
@@ -337,9 +346,53 @@ export default function HomeTab({ onGoTo }) {
   );
 }
 
+/* ── Đếm ngược ngày thi ──────────────────────────────────────────────────── */
+
+/** "2027-07-04" → "04/07/2027" (cách viết ngày quen thuộc của người Việt). */
+const viDate = (key) => key.split("-").reverse().join("/");
+
+function ExamCountdown({ plan, auto, onOpenSettings }) {
+  return (
+    <div className="hm-exam">
+      <div className="hm-exam__main">
+        <div className="hm-exam__title">
+          ⏳ Còn <strong>{plan.daysLeft}</strong> ngày tới kỳ thi
+          {plan.unlearned > 0 && (
+            <>
+              {" "}· cần ~<strong>{plan.perDay}</strong> thẻ mới/ngày
+            </>
+          )}
+        </div>
+        <div className="hm-exam__sub">
+          {plan.unlearned > 0 ? (
+            <>
+              Học hết {plan.unlearned} thẻ chưa học (từ vựng, kanji, kana) trong {plan.learnDays} ngày,
+              {plan.buffer > 0 ? ` chừa ${plan.buffer} ngày cuối chỉ để ôn` : " không còn ngày dự phòng để ôn"}
+              {" "}— thi ngày {viDate(plan.examDate)}.
+            </>
+          ) : (
+            <>Đã mở hết thẻ mới — từ giờ tới ngày {viDate(plan.examDate)} chỉ cần ôn đều mỗi ngày.</>
+          )}
+          {plan.unlearned > 0 &&
+            (auto
+              ? plan.capped
+                ? ` Đang tự điều chỉnh, nhưng mỗi ngày mở tối đa ${plan.quota} thẻ để không ngập thẻ ôn.`
+                : " Phiên hôm nay đang tự dùng con số này."
+              : " Bật “tự điều chỉnh” để phiên hôm nay tự dùng con số này.")}
+        </div>
+      </div>
+      <button className="hm-goal__btn" onClick={onOpenSettings}>
+        📅 Đổi ngày thi
+      </button>
+    </div>
+  );
+}
+
 /* ── Cài đặt mục tiêu & nhắc học ─────────────────────────────────────────── */
 
-function GoalSettings({ settings, onChange, onClose }) {
+function GoalSettings({ settings, plan, onChange, onClose }) {
+  const suggested = suggestedExamDates();
+  const autoActive = settings.autoNewPerDay && !!plan;
   const [notifState, setNotifState] = useState(
     typeof Notification === "undefined" ? "unsupported" : Notification.permission,
   );
@@ -387,7 +440,66 @@ function GoalSettings({ settings, onChange, onClose }) {
           ))}
         </div>
         <div className="hm-settings__hint">
-          Thêm nhiều thẻ mới hôm nay = nhiều thẻ phải ôn trong những ngày tới. 10–15 là nhịp bền.
+          {autoActive
+            ? "Đang tự điều chỉnh theo ngày thi — con số chọn ở đây chỉ dùng khi tắt tự điều chỉnh."
+            : "Thêm nhiều thẻ mới hôm nay = nhiều thẻ phải ôn trong những ngày tới. 10–15 là nhịp bền."}
+        </div>
+      </div>
+
+      <div className="hm-settings__row">
+        <label htmlFor="hm-exam-date">Ngày thi</label>
+        <div className="hm-settings__chips">
+          <input
+            id="hm-exam-date"
+            type="date"
+            className="hm-settings__time"
+            value={settings.examDate || ""}
+            onChange={(e) => onChange({ examDate: e.target.value })}
+          />
+          {suggested.map((d) => (
+            <button
+              key={d}
+              className={`qh__chip ${settings.examDate === d ? "is-on" : ""}`}
+              onClick={() => onChange({ examDate: d })}
+              title="Chủ nhật đầu tiên của tháng 7 / tháng 12 — ngày thi JLPT thường lệ"
+            >
+              JLPT {viDate(d)}
+            </button>
+          ))}
+          {settings.examDate && (
+            <button className="qh__chip" onClick={() => onChange({ examDate: "" })}>
+              Bỏ ngày thi
+            </button>
+          )}
+        </div>
+        <div className="hm-settings__hint">
+          {settings.examDate && !plan
+            ? "Ngày thi này đã qua (hoặc là hôm nay) — chọn kỳ thi tiếp theo để xem đếm ngược."
+            : "Gợi ý là Chủ nhật đầu tiên của tháng 7 và tháng 12 (lịch JLPT thường lệ) — hãy đối chiếu lịch chính thức nơi bạn thi."}
+        </div>
+      </div>
+
+      <div className="hm-settings__row">
+        <label>Tự điều chỉnh số thẻ mới theo ngày thi</label>
+        <div className="hm-settings__chips">
+          <button
+            className={`qh__chip ${settings.autoNewPerDay ? "is-on" : ""}`}
+            onClick={() => onChange({ autoNewPerDay: true })}
+          >
+            Bật
+          </button>
+          <button
+            className={`qh__chip ${!settings.autoNewPerDay ? "is-on" : ""}`}
+            onClick={() => onChange({ autoNewPerDay: false })}
+          >
+            Tắt
+          </button>
+        </div>
+        <div className="hm-settings__hint">
+          {plan
+            ? `Theo ngày thi: ~${plan.perDay} thẻ mới/ngày` +
+              (plan.capped ? ` (vượt trần, mỗi ngày chỉ mở tối đa ${plan.quota}).` : ".")
+            : "Cần đặt ngày thi (trong tương lai) thì mới tự tính được; chưa có thì dùng số thẻ mới chọn ở trên."}
         </div>
       </div>
 

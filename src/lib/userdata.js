@@ -2,9 +2,10 @@
 //
 //   notes_v1        { "vocab:g1": "cách nhớ của tôi…", "kanji:k1": "…" }
 //   custom_cards_v1 [ { id, japanese, kanji, romaji, meaning, note, example } ]
-//   settings_v1     { dailyGoal, reminderOn, reminderTime, autoSpeak, showFurigana }
+//   settings_v1     { dailyGoal, newPerDay, reminderOn, reminderTime, autoSpeak,
+//                     showFurigana, examDate, autoNewPerDay }
 
-import { readJSON, writeJSON } from "./storage";
+import { readJSON, writeJSON, dayKey, dayDiff } from "./storage";
 
 const NOTES_KEY = "notes_v1";
 const CARDS_KEY = "custom_cards_v1";
@@ -137,7 +138,28 @@ const DEFAULT_SETTINGS = {
   reminderTime: "20:00",
   autoSpeak: false, // tự đọc khi lật thẻ
   showFurigana: true,
+  examDate: "", // "YYYY-MM-DD" — trống = chưa đặt ngày thi
+  autoNewPerDay: false, // true = số thẻ mới/ngày tự tính theo ngày thi (lib/session.js examPlan)
 };
+
+/**
+ * Hai mốc thi JLPT gần nhất (tính từ ngày mai): JLPT tổ chức vào Chủ nhật đầu
+ * tiên của tháng 7 và tháng 12. Tính bằng code thay vì ghi cứng để không bao
+ * giờ "hết hạn"; đây chỉ là gợi ý, người học vẫn tự chọn ngày khác được.
+ */
+export function suggestedExamDates(today = dayKey()) {
+  const year = Number(today.slice(0, 4));
+  const out = [];
+  for (let y = year; y <= year + 1; y += 1) {
+    for (const month of [6, 11]) {
+      const d = new Date(y, month, 1);
+      d.setDate(1 + ((7 - d.getDay()) % 7)); // getDay() 0 = Chủ nhật
+      const key = dayKey(d);
+      if (dayDiff(key, today) > 0) out.push(key);
+    }
+  }
+  return out.slice(0, 2);
+}
 
 export function loadSettings() {
   return { ...DEFAULT_SETTINGS, ...readJSON(SETTINGS_KEY, {}) };
