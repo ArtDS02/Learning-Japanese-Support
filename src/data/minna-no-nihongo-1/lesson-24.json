@@ -1,0 +1,727 @@
+{
+  "lesson": 24,
+  "title": "Cho và nhận hành động",
+  "titleJp": "手伝って くれますか",
+  "topic": "くれます · Vて あげます · Vて もらいます · Vて くれます · だれが / N が",
+  "description": "Học xong bài này bạn nói đúng hướng 「cho – nhận」: người khác cho mình đồ vật (くれます), mình làm giúp người khác (Vて あげます), mình được người khác giúp (Vて もらいます), người khác làm giúp mình (Vて くれます) — kèm lòng biết ơn đúng kiểu người Nhật.",
+  "objectives": [
+    "Dùng くれます khi người khác cho mình (hoặc người nhà mình) đồ vật.",
+    "Nói mình làm gì đó cho người khác bằng Vて あげます — và biết khi nào không nên dùng.",
+    "Nói mình được ai làm cho việc gì bằng Vて もらいます.",
+    "Nói ai đó làm cho mình việc gì bằng Vて くれます.",
+    "Hỏi và trả lời 「ai làm」 bằng だれが / N が."
+  ],
+  "keyPoints": [
+    "あげます: cho đi (hướng ra khỏi 「tôi」). くれます: cho TÔI (hướng về phía 「tôi」). もらいます: tôi nhận.",
+    "Không bao giờ nói 「người khác あげます cho tôi」 — hướng về phía tôi phải là くれます.",
+    "Vて あげます / もらいます / くれます: cho – nhận một HÀNH ĐỘNG, kèm ý 「giúp」, 「ơn」.",
+    "Vて もらいます: chủ ngữ là người NHẬN; người làm đi với に. Vて くれます: chủ ngữ là người LÀM.",
+    "Trợ từ giữ nguyên theo động từ gốc: 友達を 送って あげます, おばあさんの 荷物を 持って あげます.",
+    "Nói trực tiếp 〜て あげます với người trên nghe kể ơn → dùng 〜ましょうか.",
+    "Từ để hỏi làm chủ ngữ dùng が: だれが 来ましたか → ワンさんが 来ました."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L24-G1",
+      "title": "N1 は わたしに N2 を くれます",
+      "meaning": "N1 cho tôi N2",
+      "why": "Ở bài 7 bạn đã học あげます (cho) và もらいます (nhận). Nhưng khi người khác cho CHÍNH MÌNH, tiếng Nhật bắt buộc dùng くれます — nói あげます là sai hướng.",
+      "when": [
+        "Người khác tặng / cho mình cái gì.",
+        "Người khác cho người nhà mình (em gái, con…) — vẫn là 「phía mình」 nên dùng くれます."
+      ],
+      "formula": "N1(người khác) は わたしに N2(vật) を くれます",
+      "parts": [
+        { "part": "N1", "role": "Người cho (người khác, không phải 「tôi」)." },
+        { "part": "わたしに", "role": "Người nhận là tôi (hoặc người nhà tôi). Thường được lược vì đã rõ." },
+        { "part": "N2 を", "role": "Vật được cho." },
+        { "part": "くれます", "role": "Cho (hướng VỀ PHÍA tôi)." }
+      ],
+      "memoryTip": {
+        "emoji": "🎁",
+        "hook": "Quà bay VỀ PHÍA TÔI → 「くれます」; bay ĐI khỏi tôi → 「あげます」!",
+        "meaning": "→ 佐藤さんは わたしに 本を くれました / わたしは 佐藤さんに 本を あげました."
+      },
+      "examples": [
+        {
+          "jp": "佐藤さんは わたしに クリスマスカードを くれました。",
+          "romaji": "Satō-san wa watashi ni kurisumasu kādo o kuremashita.",
+          "vi": "Chị Sato đã tặng tôi tấm thiệp Giáng sinh.",
+          "context": "Bạn bè",
+          "breakdown": [
+            { "jp": "佐藤さんは", "vi": "chị Sato (người cho)" },
+            { "jp": "わたしに", "vi": "cho tôi" },
+            { "jp": "くれました", "vi": "đã cho (về phía tôi)" }
+          ]
+        },
+        {
+          "jp": "母は わたしに セーターを くれました。",
+          "romaji": "Haha wa watashi ni sētā o kuremashita.",
+          "vi": "Mẹ đã cho tôi cái áo len.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "山田さんが 妹に お菓子を くれました。",
+          "romaji": "Yamada-san ga imōto ni okashi o kuremashita.",
+          "vi": "Anh Yamada đã cho em gái tôi bánh kẹo.",
+          "context": "Hàng xóm",
+          "note": "Em gái tôi thuộc 「phía tôi」 → vẫn dùng くれました."
+        },
+        {
+          "jp": "この 時計は 父が くれました。",
+          "romaji": "Kono tokei wa chichi ga kuremashita.",
+          "vi": "Chiếc đồng hồ này là bố tôi tặng.",
+          "context": "Gia đình",
+          "note": "わたしに được lược vì đã rõ người nhận là tôi."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "佐藤さんは わたしに 本を あげました。",
+          "right": "佐藤さんは わたしに 本を くれました。",
+          "explain": "Người khác cho TÔI → くれます. あげます chỉ dùng khi hướng cho đi ra khỏi phía tôi."
+        },
+        {
+          "wrong": "わたしは 佐藤さんに 本を くれました。",
+          "right": "わたしは 佐藤さんに 本を あげました。",
+          "explain": "Tôi cho người khác → あげます. くれます không bao giờ có chủ ngữ là わたし."
+        }
+      ]
+    },
+    {
+      "id": "L24-G2",
+      "title": "Vて あげます — làm (gì đó) cho người khác",
+      "meaning": "(Tôi / ai đó) làm V cho người khác",
+      "why": "Để kể mình đã giúp ai việc gì: 「tôi cho Kimura mượn sách」, 「tôi dạy em trai hát」. Hành động được 「tặng」 như một món quà.",
+      "when": [
+        "Kể lại việc mình (hoặc người khác) đã làm giúp ai đó.",
+        "Nói với người ngang hàng / nhỏ hơn. Với người trên, KHÔNG nói trực tiếp 〜て あげます mà dùng 〜ましょうか (bài 14)."
+      ],
+      "formula": "N1 は N2(người) に / を / の … Vて あげます",
+      "parts": [
+        { "part": "N1", "role": "Người làm giúp (thường là わたし)." },
+        { "part": "Vて", "role": "Hành động làm cho người khác." },
+        { "part": "あげます", "role": "Cho đi — hướng ra khỏi người làm, về phía người được giúp." },
+        { "part": "Trợ từ", "role": "Giữ theo động từ gốc: 木村さんに 本を 貸す, 友達を 駅まで 送る, おばあさんの 荷物を 持つ." }
+      ],
+      "memoryTip": {
+        "emoji": "🤲",
+        "hook": "Tôi 「tặng」 người ta một hành động → Vて + あげます!",
+        "meaning": "→ Làm gì đó CHO người khác (hướng ra khỏi tôi)."
+      },
+      "examples": [
+        {
+          "jp": "わたしは 木村さんに 本を 貸して あげました。",
+          "romaji": "Watashi wa Kimura-san ni hon o kashite agemashita.",
+          "vi": "Tôi đã cho chị Kimura mượn sách.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "わたしは 友達を 駅まで 送って あげました。",
+          "romaji": "Watashi wa tomodachi o eki made okutte agemashita.",
+          "vi": "Tôi đã đưa bạn ra tận ga.",
+          "context": "Bạn bè",
+          "note": "送る (đưa tiễn ai) đi với を → 友達を 送って あげました."
+        },
+        {
+          "jp": "弟に 日本の 歌を 教えて あげました。",
+          "romaji": "Otōto ni Nihon no uta o oshiete agemashita.",
+          "vi": "Tôi đã dạy em trai một bài hát Nhật.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "電車で おばあさんの 荷物を 持って あげました。",
+          "romaji": "Densha de obāsan no nimotsu o motte agemashita.",
+          "vi": "Trên tàu, tôi đã xách hành lý giúp một bà cụ.",
+          "context": "Đi tàu",
+          "note": "持つ đi với を (hành lý); người được giúp nối bằng の: おばあさんの 荷物."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "（Nói với trưởng phòng）部長、荷物を 持って あげます。",
+          "right": "部長、荷物を 持ちましょうか。",
+          "explain": "Nói thẳng 〜て あげます với người trên nghe như kể ơn, thiếu lịch sự. Đề nghị giúp → 〜ましょうか."
+        },
+        {
+          "wrong": "わたしは 友達に 駅まで 送って あげました。",
+          "right": "わたしは 友達を 駅まで 送って あげました。",
+          "explain": "Trợ từ giữ theo động từ gốc: 送る (đưa tiễn) đi với を người."
+        }
+      ]
+    },
+    {
+      "id": "L24-G3",
+      "title": "Vて もらいます — được (ai) làm cho",
+      "meaning": "(Tôi) được N làm V cho / nhờ N làm V",
+      "why": "Để kể mình được người khác giúp và bày tỏ lòng biết ơn: 「tôi được anh Yamada chỉ đường」. Người Nhật rất hay dùng mẫu này thay vì chỉ nói 「anh ấy đã chỉ đường」.",
+      "when": [
+        "Kể mình được ai giúp việc gì (nhìn từ phía người NHẬN).",
+        "Thể hiện sự biết ơn với người đã giúp mình."
+      ],
+      "formula": "N1(người nhận) は N2(người làm) に Vて もらいます",
+      "parts": [
+        { "part": "N1 は", "role": "Người NHẬN sự giúp đỡ — thường là わたし (hay được lược)." },
+        { "part": "N2 に", "role": "Người THỰC HIỆN hành động." },
+        { "part": "Vて", "role": "Hành động được làm cho." },
+        { "part": "もらいます", "role": "Nhận (hành động)." }
+      ],
+      "memoryTip": {
+        "emoji": "🙏",
+        "hook": "もらう = tôi NHẬN — người làm giúp đứng sau 「に」!",
+        "meaning": "→ わたしは 山田さんに 教えて もらいました = tôi được anh Yamada chỉ cho."
+      },
+      "examples": [
+        {
+          "jp": "わたしは 山田さんに 駅までの 道を 教えて もらいました。",
+          "romaji": "Watashi wa Yamada-san ni eki made no michi o oshiete moraimashita.",
+          "vi": "Tôi được anh Yamada chỉ đường đến ga.",
+          "context": "Hỏi đường",
+          "breakdown": [
+            { "jp": "わたしは", "vi": "tôi (người nhận)" },
+            { "jp": "山田さんに", "vi": "anh Yamada (người làm)" },
+            { "jp": "教えて もらいました", "vi": "được chỉ cho" }
+          ]
+        },
+        {
+          "jp": "佐藤さんに 引っ越しを 手伝って もらいました。",
+          "romaji": "Satō-san ni hikkoshi o tetsudatte moraimashita.",
+          "vi": "Tôi được chị Sato giúp chuyển nhà.",
+          "context": "Chuyển nhà"
+        },
+        {
+          "jp": "わたしは 父に 自転車を 直して もらいました。",
+          "romaji": "Watashi wa chichi ni jitensha o naoshite moraimashita.",
+          "vi": "Tôi được bố sửa xe đạp cho.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "友達に 写真を 撮って もらいました。",
+          "romaji": "Tomodachi ni shashin o totte moraimashita.",
+          "vi": "Tôi được bạn chụp ảnh cho.",
+          "context": "Du lịch"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "（Ý muốn nói: anh Yamada chỉ đường cho tôi）山田さんは わたしに 道を 教えて もらいました。",
+          "right": "わたしは 山田さんに 道を 教えて もらいました。",
+          "explain": "Với もらいます, chủ ngữ là người NHẬN (tôi), người làm đi với に. Câu sai có nghĩa ngược: 「Yamada được tôi chỉ đường」."
+        },
+        {
+          "wrong": "わたしは 山田さんが 道を 教えて もらいました。",
+          "right": "わたしは 山田さんに 道を 教えて もらいました。",
+          "explain": "Người thực hiện hành động trong câu もらいます đánh dấu bằng に."
+        }
+      ]
+    },
+    {
+      "id": "L24-G4",
+      "title": "Vて くれます — (ai đó) làm cho tôi",
+      "meaning": "N làm V cho tôi (kèm lòng biết ơn)",
+      "why": "Cùng sự việc với Vて もらいます nhưng nhìn từ phía người LÀM: 「anh Kimura cho tôi mượn ô」. Dùng くれます thể hiện mình biết ơn — nói 「貸しました」 trơn thì nghe lạnh lùng.",
+      "when": [
+        "Kể người khác đã làm giúp mình (hoặc người nhà mình) việc gì.",
+        "Nhấn mạnh người đã giúp là ai (thường đi với が)."
+      ],
+      "formula": "N1(người làm) は / が わたしに Vて くれます",
+      "parts": [
+        { "part": "N1", "role": "Người THỰC HIỆN hành động (người khác, không phải tôi)." },
+        { "part": "わたしに", "role": "Tôi — thường được lược. Trợ từ vẫn giữ theo động từ gốc (わたしを 送って くれます…)." },
+        { "part": "Vて くれます", "role": "Làm cho — hướng VỀ PHÍA tôi, kèm lòng biết ơn." }
+      ],
+      "memoryTip": {
+        "emoji": "💝",
+        "hook": "Ai đó làm cho TÔI → Vて + くれます (kèm lời cảm ơn)!",
+        "meaning": "→ Giống くれます (đồ vật), chỉ là món quà ở đây là một hành động."
+      },
+      "examples": [
+        {
+          "jp": "木村さんが 傘を 貸して くれました。",
+          "romaji": "Kimura-san ga kasa o kashite kuremashita.",
+          "vi": "Chị Kimura đã cho tôi mượn ô.",
+          "context": "Trời mưa ở công ty"
+        },
+        {
+          "jp": "母は わたしに セーターを 送って くれました。",
+          "romaji": "Haha wa watashi ni sētā o okutte kuremashita.",
+          "vi": "Mẹ đã gửi áo len cho tôi.",
+          "context": "Du học sinh xa nhà"
+        },
+        {
+          "jp": "ワンさんが 病院まで 連れて 行って くれました。",
+          "romaji": "Wan-san ga byōin made tsurete itte kuremashita.",
+          "vi": "Anh Wang đã đưa tôi đến tận bệnh viện.",
+          "context": "Bị ốm"
+        },
+        {
+          "jp": "店の 人が 荷物を 車まで 運んで くれました。",
+          "romaji": "Mise no hito ga nimotsu o kuruma made hakonde kuremashita.",
+          "vi": "Nhân viên cửa hàng đã mang đồ ra tận xe cho tôi.",
+          "context": "Mua sắm"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "木村さんは わたしに 傘を 貸して あげました。",
+          "right": "木村さんは わたしに 傘を 貸して くれました。",
+          "explain": "Người khác làm cho TÔI → くれます. あげます chỉ dùng khi hướng ra khỏi tôi."
+        },
+        {
+          "wrong": "わたしは 木村さんに 傘を 貸して くれました。",
+          "right": "わたしは 木村さんに 傘を 貸して もらいました。",
+          "explain": "Chủ ngữ là わたし (người nhận) → もらいます. くれます không có chủ ngữ là わたし."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: một sự việc – ba cách nói",
+          "text": "Cùng việc 「Kimura cho tôi mượn ô」: nhìn từ phía Kimura → 木村さんは わたしに 傘を 貸して くれました. Nhìn từ phía tôi → わたしは 木村さんに 傘を 貸して もらいました. Còn khi TÔI cho Kimura mượn → わたしは 木村さんに 傘を 貸して あげました.",
+          "examples": [
+            {
+              "jp": "わたしは 木村さんに 傘を 貸して もらいました。",
+              "romaji": "Watashi wa Kimura-san ni kasa o kashite moraimashita.",
+              "vi": "Tôi được chị Kimura cho mượn ô."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L24-G5",
+      "title": "だれが V か · N が V — chủ ngữ là thông tin mới",
+      "meaning": "Ai (đã) làm…? — N (đã) làm…",
+      "why": "Khi hỏi 「AI làm」, từ để hỏi làm chủ ngữ phải đi với が, và câu trả lời cũng dùng が. Mẫu này đi rất nhiều với くれます: 「Ai tặng cái này?」 — 「Bố tôi tặng」.",
+      "when": [
+        "Hỏi ai là người thực hiện hành động: だれが 〜か.",
+        "Trả lời câu hỏi だれが: N が 〜.",
+        "Giới thiệu người làm như thông tin mới: 「Cà vạt đẹp nhỉ」 — 「Vợ tôi mua cho đấy」."
+      ],
+      "formula": "だれが V か。 → N が V。",
+      "parts": [
+        { "part": "だれが", "role": "Từ để hỏi làm chủ ngữ luôn đi với が (không bao giờ だれは)." },
+        { "part": "N が", "role": "Trả lời — người thực hiện là thông tin mới, trọng tâm của câu → が." },
+        { "part": "V", "role": "Hành động (thường giữ nguyên từ câu hỏi)." }
+      ],
+      "memoryTip": {
+        "emoji": "❓",
+        "hook": "Hỏi 「だれが」 thì đáp 「〜が」 — không bao giờ 「だれは」!",
+        "meaning": "→ だれが 来ましたか。 …ワンさんが 来ました。"
+      },
+      "examples": [
+        {
+          "jp": "だれが この 絵を かきましたか。 …カリナさんが かきました。",
+          "romaji": "Dare ga kono e o kakimashita ka. … Karina-san ga kakimashita.",
+          "vi": "Ai đã vẽ bức tranh này? …Karina vẽ.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "だれが 手伝いに 行きますか。 …ワンさんが 行きます。",
+          "romaji": "Dare ga tetsudai ni ikimasu ka. … Wan-san ga ikimasu.",
+          "vi": "Ai sẽ đi giúp? …Anh Wang sẽ đi.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "だれが ワインを くれましたか。 …木村さんが くれました。",
+          "romaji": "Dare ga wain o kuremashita ka. … Kimura-san ga kuremashita.",
+          "vi": "Ai đã tặng rượu vang vậy? …Chị Kimura tặng.",
+          "context": "Sau bữa tiệc"
+        },
+        {
+          "jp": "すてきな ネクタイですね。 …ええ、妻が 買って くれました。",
+          "romaji": "Suteki na nekutai desu ne. … Ē, tsuma ga katte kuremashita.",
+          "vi": "Cà vạt đẹp quá nhỉ. …Vâng, vợ tôi mua cho đấy.",
+          "context": "Ở văn phòng",
+          "note": "Người mua (妻) là thông tin mới → が."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "だれは 来ましたか。",
+          "right": "だれが 来ましたか。",
+          "explain": "Từ để hỏi (だれ, 何, どれ…) làm chủ ngữ luôn đi với が."
+        },
+        {
+          "wrong": "だれが この 絵を かきましたか。 …カリナさんは かきました。",
+          "right": "…カリナさんが かきました。",
+          "explain": "Câu trả lời cho だれが là thông tin mới → dùng が, không dùng は."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "N1 は わたしに N2 を くれます", "meaning": "N1 cho tôi N2 (hướng về phía tôi)", "example": "佐藤さんは わたしに カードを くれました。" },
+    { "pattern": "Vて あげます", "meaning": "Làm V cho người khác", "example": "木村さんに 本を 貸して あげました。" },
+    { "pattern": "N に Vて もらいます", "meaning": "Được N làm V cho", "example": "山田さんに 道を 教えて もらいました。" },
+    { "pattern": "N が Vて くれます", "meaning": "N làm V cho tôi", "example": "木村さんが 傘を 貸して くれました。" },
+    { "pattern": "だれが V か → N が V", "meaning": "Ai làm? — N làm (chủ ngữ mới dùng が)", "example": "だれが 来ましたか。 …ワンさんが 来ました。" }
+  ],
+  "exercises": [
+    {
+      "id": "L24-E01",
+      "type": "choice",
+      "grammarPoint": "L24-G1",
+      "question": "Chọn động từ đúng: 「佐藤さんは わたしに 本を ＿＿。」 (Chị Sato cho tôi sách.)",
+      "options": ["くれました", "あげました", "もらいました"],
+      "answer": "くれました",
+      "explanation": "Người khác cho TÔI → くれます. あげます là cho đi, もらいます là nhận (chủ ngữ là người nhận)."
+    },
+    {
+      "id": "L24-E02",
+      "type": "fix",
+      "grammarPoint": "L24-G1",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしは 佐藤さんに 花を くれました。",
+      "options": [
+        "わたしは 佐藤さんに 花を あげました。",
+        "わたしは 佐藤さんを 花を くれました。",
+        "わたしは 佐藤さんに 花が くれました。",
+        "わたしに 佐藤さんは 花を あげました。"
+      ],
+      "answer": "わたしは 佐藤さんに 花を あげました。",
+      "explanation": "Tôi cho người khác → あげます. くれます không bao giờ có chủ ngữ là わたし."
+    },
+    {
+      "id": "L24-E03",
+      "type": "vi-jp",
+      "grammarPoint": "L24-G1",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Bố đã tặng tôi một chiếc đồng hồ.",
+      "options": [
+        "父は わたしに 時計を くれました。",
+        "父は わたしに 時計を あげました。",
+        "父は わたしに 時計を もらいました。",
+        "わたしは 父に 時計を くれました。"
+      ],
+      "answer": "父は わたしに 時計を くれました。",
+      "explanation": "Người khác (父) cho tôi → N1 は わたしに N2 を くれます."
+    },
+    {
+      "id": "L24-E04",
+      "type": "situation",
+      "grammarPoint": "L24-G1",
+      "question": "Đồng nghiệp khen: 「すてきな かばんですね」. Cái túi là mẹ bạn tặng. Bạn đáp:",
+      "options": [
+        "ええ、母が くれました。",
+        "ええ、母が あげました。",
+        "ええ、母に くれました。",
+        "ええ、母が もらいました。"
+      ],
+      "answer": "ええ、母が くれました。",
+      "explanation": "Mẹ (người cho) → が; cho tôi → くれました."
+    },
+    {
+      "id": "L24-E05",
+      "type": "identify",
+      "grammarPoint": "L24-G1",
+      "question": "Trong câu này, món quà đi theo hướng nào?",
+      "jp": "山田さんが 妹に お菓子を くれました。",
+      "romaji": "Yamada-san ga imōto ni okashi o kuremashita.",
+      "vi": "Anh Yamada đã cho em gái tôi bánh kẹo.",
+      "options": [
+        "Từ anh Yamada → em gái tôi (phía tôi)",
+        "Từ em gái tôi → anh Yamada",
+        "Từ tôi → anh Yamada",
+        "Từ anh Yamada → em gái của anh ấy"
+      ],
+      "answer": "Từ anh Yamada → em gái tôi (phía tôi)",
+      "explanation": "くれます = cho về phía 「tôi」. 妹 ở đây là em gái của người nói (người nhà mình)."
+    },
+    {
+      "id": "L24-E06",
+      "type": "fill",
+      "grammarPoint": "L24-G2",
+      "question": "Gõ phần còn thiếu (kana).",
+      "jp": "わたしは 木村さんに 本を 貸して ＿＿。",
+      "vi": "Tôi đã cho chị Kimura mượn sách.",
+      "answer": "あげました",
+      "hint": "Tôi làm cho người khác",
+      "explanation": "Tôi làm giúp người khác → Vて あげます. Quá khứ: あげました."
+    },
+    {
+      "id": "L24-E07",
+      "type": "situation",
+      "grammarPoint": "L24-G2",
+      "question": "Trưởng phòng đang xách một thùng hàng nặng. Bạn muốn đề nghị xách giúp. Bạn nói:",
+      "options": [
+        "部長、持ちましょうか。",
+        "部長、持って あげます。",
+        "部長、持って くれます。",
+        "部長、持って もらいます。"
+      ],
+      "answer": "部長、持ちましょうか。",
+      "explanation": "Nói thẳng 〜て あげます với người trên nghe như kể ơn. Đề nghị giúp lịch sự → 〜ましょうか."
+    },
+    {
+      "id": "L24-E08",
+      "type": "jp-vi",
+      "grammarPoint": "L24-G2",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "弟に 日本の 歌を 教えて あげました。",
+      "romaji": "Otōto ni Nihon no uta o oshiete agemashita.",
+      "options": [
+        "Tôi đã dạy em trai một bài hát Nhật.",
+        "Em trai đã dạy tôi một bài hát Nhật.",
+        "Tôi được em trai dạy một bài hát Nhật.",
+        "Em trai tôi đã hát một bài hát Nhật."
+      ],
+      "answer": "Tôi đã dạy em trai một bài hát Nhật.",
+      "explanation": "Vて あげます: tôi làm cho người khác. 弟に = cho em trai."
+    },
+    {
+      "id": "L24-E09",
+      "type": "fix",
+      "grammarPoint": "L24-G2",
+      "question": "Câu sau bị sai trợ từ. Chọn cách sửa đúng.",
+      "jp": "わたしは 友達に 駅まで 送って あげました。",
+      "options": [
+        "わたしは 友達を 駅まで 送って あげました。",
+        "わたしは 友達が 駅まで 送って あげました。",
+        "わたしは 友達に 駅を 送って あげました。",
+        "わたしは 友達で 駅まで 送って あげました。"
+      ],
+      "answer": "わたしは 友達を 駅まで 送って あげました。",
+      "explanation": "Trợ từ giữ theo động từ gốc: 送る (đưa tiễn ai) → 人を 送る."
+    },
+    {
+      "id": "L24-E10",
+      "type": "order",
+      "grammarPoint": "L24-G2",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi đã cho chị Kimura mượn sách.",
+      "tokens": ["わたしは", "木村さんに", "本を", "貸して", "あげました"],
+      "accept": [["わたしは", "本を", "木村さんに", "貸して", "あげました"]],
+      "explanation": "Người làm は + người được giúp に + vật を + Vて あげました."
+    },
+    {
+      "id": "L24-E11",
+      "type": "particle",
+      "grammarPoint": "L24-G3",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "わたしは 山田さん＿＿ 道を 教えて もらいました。",
+      "romaji": "Watashi wa Yamada-san ___ michi o oshiete moraimashita.",
+      "vi": "Tôi được anh Yamada chỉ đường cho.",
+      "options": ["に", "が", "を", "で"],
+      "answer": "に",
+      "explanation": "Vて もらいます: người thực hiện hành động đi với に."
+    },
+    {
+      "id": "L24-E12",
+      "type": "fix",
+      "grammarPoint": "L24-G3",
+      "question": "Bạn muốn nói 「Tôi được anh Yamada chỉ đường」 nhưng viết sai. Chọn cách sửa đúng.",
+      "jp": "山田さんは わたしに 道を 教えて もらいました。",
+      "options": [
+        "わたしは 山田さんに 道を 教えて もらいました。",
+        "わたしは 山田さんに 道を 教えて くれました。",
+        "山田さんは わたしに 道を 教えて あげました。",
+        "わたしは 山田さんが 道を 教えて もらいました。"
+      ],
+      "answer": "わたしは 山田さんに 道を 教えて もらいました。",
+      "explanation": "もらいます: chủ ngữ là người NHẬN (わたしは), người làm đi với に."
+    },
+    {
+      "id": "L24-E13",
+      "type": "vi-jp",
+      "grammarPoint": "L24-G3",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tôi được bạn chụp ảnh cho.",
+      "options": [
+        "友達に 写真を 撮って もらいました。",
+        "友達に 写真を 撮って あげました。",
+        "友達が 写真を 撮って もらいました。",
+        "友達を 写真に 撮って くれました。"
+      ],
+      "answer": "友達に 写真を 撮って もらいました。",
+      "explanation": "Tôi (được lược) là người nhận → 友達に + Vて もらいました."
+    },
+    {
+      "id": "L24-E14",
+      "type": "choice",
+      "grammarPoint": "L24-G3",
+      "question": "「わたしは 父に 自転車を 直して もらいました。」 — Ai là người sửa xe đạp?",
+      "options": ["Bố", "Tôi", "Cả hai", "Thợ sửa xe"],
+      "answer": "Bố",
+      "explanation": "Trong Vて もらいます, người đi với に (父に) là người thực hiện hành động."
+    },
+    {
+      "id": "L24-E15",
+      "type": "fill",
+      "grammarPoint": "L24-G3",
+      "question": "Gõ phần còn thiếu (kana).",
+      "jp": "わたしは 佐藤さんに 引っ越しを 手伝って ＿＿。",
+      "vi": "Tôi được chị Sato giúp chuyển nhà.",
+      "answer": "もらいました",
+      "hint": "Tôi là người nhận sự giúp đỡ",
+      "explanation": "Chủ ngữ わたし là người nhận, 佐藤さんに là người làm → Vて もらいました."
+    },
+    {
+      "id": "L24-E16",
+      "type": "choice",
+      "grammarPoint": "L24-G4",
+      "question": "Chọn từ đúng: 「木村さんが 傘を 貸して ＿＿。」 (Chị Kimura đã cho tôi mượn ô.)",
+      "options": ["くれました", "あげました", "もらいました"],
+      "answer": "くれました",
+      "explanation": "Người khác (木村さんが) làm cho tôi → Vて くれます."
+    },
+    {
+      "id": "L24-E17",
+      "type": "fix",
+      "grammarPoint": "L24-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "ワンさんは わたしに 傘を 貸して あげました。",
+      "options": [
+        "ワンさんは わたしに 傘を 貸して くれました。",
+        "ワンさんは わたしに 傘を 貸して もらいました。",
+        "ワンさんは わたしを 傘を 貸して くれました。",
+        "ワンさんに わたしは 傘を 貸して あげました。"
+      ],
+      "answer": "ワンさんは わたしに 傘を 貸して くれました。",
+      "explanation": "Hành động hướng về phía tôi → くれます, không dùng あげます."
+    },
+    {
+      "id": "L24-E18",
+      "type": "pattern",
+      "grammarPoint": "L24-G4",
+      "question": "Câu nào CÙNG NGHĨA với 「わたしは 木村さんに 傘を 貸して もらいました」?",
+      "options": [
+        "木村さんは わたしに 傘を 貸して くれました。",
+        "木村さんは わたしに 傘を 貸して あげました。",
+        "わたしは 木村さんに 傘を 貸して あげました。",
+        "木村さんは わたしに 傘を 貸して もらいました。"
+      ],
+      "answer": "木村さんは わたしに 傘を 貸して くれました。",
+      "explanation": "Cùng một việc: nhìn từ phía tôi → もらいます; nhìn từ phía người làm (木村さん) → くれます."
+    },
+    {
+      "id": "L24-E19",
+      "type": "jp-vi",
+      "grammarPoint": "L24-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "店の 人が 荷物を 車まで 運んで くれました。",
+      "romaji": "Mise no hito ga nimotsu o kuruma made hakonde kuremashita.",
+      "options": [
+        "Nhân viên cửa hàng đã mang đồ ra tận xe cho tôi.",
+        "Tôi đã mang đồ ra xe giúp nhân viên cửa hàng.",
+        "Tôi được mang đồ ra xe của cửa hàng.",
+        "Nhân viên cửa hàng đã chở đồ bằng xe."
+      ],
+      "answer": "Nhân viên cửa hàng đã mang đồ ra tận xe cho tôi.",
+      "explanation": "N が Vて くれました: người đó làm cho tôi. 車まで = đến tận xe."
+    },
+    {
+      "id": "L24-E20",
+      "type": "situation",
+      "grammarPoint": "L24-G4",
+      "question": "Bạn bị ốm, anh Wang đã đưa bạn đến bệnh viện. Kể lại với đồng nghiệp, bạn nói:",
+      "options": [
+        "ワンさんが 病院まで 連れて 行って くれました。",
+        "ワンさんが 病院まで 連れて 行って あげました。",
+        "ワンさんが 病院まで 連れて 行って もらいました。",
+        "ワンさんに 病院まで 連れて 行って くれました。"
+      ],
+      "answer": "ワンさんが 病院まで 連れて 行って くれました。",
+      "explanation": "Người khác làm cho mình → N が Vて くれました (thể hiện lòng biết ơn)."
+    },
+    {
+      "id": "L24-E21",
+      "type": "particle",
+      "grammarPoint": "L24-G5",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "だれ＿＿ この 絵を かきましたか。",
+      "romaji": "Dare ___ kono e o kakimashita ka.",
+      "vi": "Ai đã vẽ bức tranh này?",
+      "options": ["が", "は", "を", "に"],
+      "answer": "が",
+      "explanation": "Từ để hỏi làm chủ ngữ luôn đi với が: だれが."
+    },
+    {
+      "id": "L24-E22",
+      "type": "fix",
+      "grammarPoint": "L24-G5",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "だれは パーティーに 来ましたか。",
+      "options": [
+        "だれが パーティーに 来ましたか。",
+        "だれを パーティーに 来ましたか。",
+        "だれに パーティーに 来ましたか。",
+        "だれも パーティーに 来ましたか。"
+      ],
+      "answer": "だれが パーティーに 来ましたか。",
+      "explanation": "Hỏi 「ai」 làm chủ ngữ → だれが, không dùng だれは."
+    },
+    {
+      "id": "L24-E23",
+      "type": "situation",
+      "grammarPoint": "L24-G5",
+      "question": "Sếp hỏi 「だれが 手伝いに 行きますか」. Anh Wang sẽ đi. Bạn trả lời:",
+      "options": [
+        "ワンさんが 行きます。",
+        "ワンさんは 行きます。",
+        "ワンさんを 行きます。",
+        "ワンさんに 行きます。"
+      ],
+      "answer": "ワンさんが 行きます。",
+      "explanation": "Trả lời câu hỏi だれが → người đó là thông tin mới → N が."
+    },
+    {
+      "id": "L24-E24",
+      "type": "jp-vi",
+      "grammarPoint": "L24-G5",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "すてきな ネクタイですね。 …ええ、妻が 買って くれました。",
+      "romaji": "Suteki na nekutai desu ne. … Ē, tsuma ga katte kuremashita.",
+      "options": [
+        "Cà vạt đẹp quá nhỉ. …Vâng, vợ tôi mua cho đấy.",
+        "Cà vạt đẹp quá nhỉ. …Vâng, tôi mua cho vợ đấy.",
+        "Cà vạt đẹp quá nhỉ. …Vâng, tôi được vợ cho tiền mua.",
+        "Cà vạt đẹp quá nhỉ. …Vâng, vợ tôi thích nó."
+      ],
+      "answer": "Cà vạt đẹp quá nhỉ. …Vâng, vợ tôi mua cho đấy.",
+      "explanation": "妻が (người làm, thông tin mới) + 買って くれました (mua cho tôi)."
+    },
+    {
+      "id": "L24-E25",
+      "type": "order",
+      "grammarPoint": "L24-G5",
+      "question": "Sắp xếp thành câu hỏi đúng.",
+      "vi": "Ai đã tặng bạn bó hoa này?",
+      "tokens": ["だれが", "この 花を", "くれましたか"],
+      "accept": [["この 花を", "だれが", "くれましたか"]],
+      "explanation": "だれが (chủ ngữ hỏi) + vật を + くれましたか (cho về phía người được hỏi — ở đây là 「bạn」, người nghe)."
+    },
+    {
+      "id": "L24-E26",
+      "type": "identify",
+      "grammarPoint": "L24-G3",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "わたしは 友達に 日本語の 手紙を 直して もらいました。",
+      "romaji": "Watashi wa tomodachi ni Nihongo no tegami o naoshite moraimashita.",
+      "vi": "Tôi được bạn sửa lá thư tiếng Nhật cho.",
+      "options": [
+        "Vて もらいます (được ai làm cho)",
+        "Vて あげます (làm cho người khác)",
+        "Vて くれます (ai làm cho tôi)",
+        "くれます (ai cho tôi đồ vật)"
+      ],
+      "answer": "Vて もらいます (được ai làm cho)",
+      "explanation": "Chủ ngữ わたし (người nhận) + 友達に (người làm) + Vて もらいました."
+    },
+    {
+      "id": "L24-E27",
+      "type": "vi-jp",
+      "grammarPoint": "L24-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tôi đã dẫn bạn đi tham quan Kyoto.",
+      "options": [
+        "わたしは 友達に 京都を 案内して あげました。",
+        "わたしは 友達に 京都を 案内して くれました。",
+        "友達は わたしに 京都を 案内して あげました。",
+        "わたしは 友達に 京都を 案内して もらいました。"
+      ],
+      "answer": "わたしは 友達に 京都を 案内して あげました。",
+      "explanation": "Tôi làm cho người khác → Vて あげます. もらいました sẽ thành 「tôi được bạn dẫn đi」 — ngược nghĩa."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 24 }
+}

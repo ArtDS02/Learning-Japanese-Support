@@ -1,0 +1,753 @@
+{
+  "lesson": 4,
+  "title": "Thời gian & sinh hoạt hằng ngày",
+  "titleJp": "今 何時ですか",
+  "topic": "Giờ giấc · động từ ます · làm gì lúc mấy giờ · từ… đến… · và · 〜ね",
+  "description": "Học xong bài này bạn nói được bây giờ là mấy giờ, kể lịch sinh hoạt (dậy, làm việc, học, ngủ lúc mấy giờ), nói về quá khứ – hiện tại bằng động từ ます, và phản hồi tự nhiên với 〜ね.",
+  "objectives": [
+    "Nói và hỏi giờ: 今 〜時〜分です / 今 何時ですか.",
+    "Chia động từ ở 4 dạng: Vます / Vません / Vました / Vませんでした.",
+    "Dùng に để chỉ thời điểm hành động, và biết khi nào KHÔNG dùng に.",
+    "Nói khoảng thời gian 「từ… đến…」 bằng から / まで.",
+    "Nối hai danh từ bằng と (và).",
+    "Dùng 〜ね để đồng cảm hoặc xác nhận."
+  ],
+  "keyPoints": [
+    "Đọc giờ cần nhớ: 4時 よじ, 7時 しちじ, 9時 くじ. Đọc phút: ふん / ぷん (10分 じゅっぷん).",
+    "Vます = hiện tại (thói quen) và tương lai; Vました = quá khứ; phủ định thêm ません / ませんでした.",
+    "Thời gian có con số (6時, 7時半…) + に. Từ chỉ thời gian tương đối (今日, あした, きのう, 毎朝…) KHÔNG có に.",
+    "N1 から N2 まで = từ N1 đến N2; có thể đứng trước động từ hoặc trước です.",
+    "と chỉ nối DANH TỪ với danh từ, không nối câu hay động từ.",
+    "ね = 「nhỉ / nhé」: đồng cảm, hoặc xác nhận điều mình nghĩ là đúng. か = hỏi điều chưa biết."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L04-G1",
+      "title": "今 〜時〜分です — nói giờ",
+      "meaning": "Bây giờ là … giờ … phút",
+      "why": "Hỏi giờ, hẹn giờ, xem giờ tàu chạy… là việc làm mỗi ngày khi sống ở Nhật.",
+      "when": [
+        "Hỏi / nói giờ hiện tại: 今 何時ですか.",
+        "Nói giờ ở nơi khác: ニューヨークは 今 何時ですか."
+      ],
+      "formula": "今 〜時〜分です\n今 何時ですか",
+      "parts": [
+        { "part": "今 (いま)", "role": "Bây giờ." },
+        { "part": "〜時 (じ)", "role": "Giờ. Hỏi: 何時 (なんじ)." },
+        { "part": "〜分 (ふん / ぷん)", "role": "Phút. Hỏi: 何分 (なんぷん)." },
+        { "part": "半 (はん)", "role": "Rưỡi (30 phút): 4時半." }
+      ],
+      "memoryTip": {
+        "emoji": "⏰",
+        "hook": "4 giờ là 「よ」, 9 giờ là 「く」 — đừng đọc よん, きゅう!",
+        "meaning": "→ 4時 よじ, 9時 くじ, 7時 しちじ."
+      },
+      "examples": [
+        {
+          "jp": "今 何時ですか。 …7時10分です。",
+          "romaji": "Ima nan-ji desu ka. … Shichi-ji juppun desu.",
+          "vi": "Bây giờ là mấy giờ? …7 giờ 10 phút.",
+          "context": "Hỏi giờ",
+          "breakdown": [
+            { "jp": "今", "vi": "bây giờ" },
+            { "jp": "何時", "vi": "mấy giờ" },
+            { "jp": "7時", "vi": "7 giờ (しちじ)" },
+            { "jp": "10分", "vi": "10 phút (じゅっぷん)" }
+          ]
+        },
+        {
+          "jp": "今 4時半です。",
+          "romaji": "Ima yo-ji han desu.",
+          "vi": "Bây giờ là 4 giờ rưỡi.",
+          "context": "Ở văn phòng"
+        },
+        {
+          "jp": "今 9時15分です。",
+          "romaji": "Ima ku-ji jūgo-fun desu.",
+          "vi": "Bây giờ là 9 giờ 15 phút.",
+          "context": "Lớp học"
+        },
+        {
+          "jp": "ニューヨークは 今 何時ですか。 …午前 2時です。",
+          "romaji": "Nyūyōku wa ima nan-ji desu ka. … Gozen ni-ji desu.",
+          "vi": "Ở New York bây giờ là mấy giờ? …2 giờ sáng.",
+          "context": "Gọi điện cho bạn ở nước ngoài",
+          "note": "午前 (ごぜん) = sáng (AM), 午後 (ごご) = chiều (PM), đứng TRƯỚC giờ."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "4時 → よんじ / 9時 → きゅうじ",
+          "right": "4時 → よじ / 9時 → くじ",
+          "explain": "Giờ có cách đọc riêng: 4 giờ là よじ, 9 giờ là くじ, 7 giờ là しちじ."
+        },
+        {
+          "wrong": "何時は 今ですか。",
+          "right": "今 何時ですか。",
+          "explain": "Từ để hỏi không đứng trước は. Câu hỏi giờ cố định: 今 何時ですか."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: đọc phút",
+          "text": "1分 いっぷん · 2分 にふん · 3分 さんぷん · 4分 よんぷん · 5分 ごふん · 6分 ろっぷん · 7分 ななふん · 8分 はっぷん · 9分 きゅうふん · 10分 じゅっぷん · 15分 じゅうごふん · 30分 さんじゅっぷん (= 半)."
+        }
+      ]
+    },
+    {
+      "id": "L04-G2",
+      "title": "Vます / Vません / Vました / Vませんでした",
+      "meaning": "Làm / không làm / đã làm / đã không làm",
+      "why": "Động từ đuôi ます là dạng lịch sự dùng hằng ngày. Chỉ cần đổi đuôi là nói được hiện tại, tương lai, quá khứ, khẳng định, phủ định.",
+      "when": [
+        "Vます: thói quen hằng ngày hoặc việc sẽ làm (hiện tại / tương lai).",
+        "Vません: không làm (thói quen / tương lai).",
+        "Vました: đã làm (quá khứ).",
+        "Vませんでした: đã không làm (quá khứ)."
+      ],
+      "formula": "V ます → V ません\nV ました → V ませんでした",
+      "parts": [
+        { "part": "〜ます", "role": "Khẳng định, hiện tại / tương lai: 起きます (thức dậy)." },
+        { "part": "〜ません", "role": "Phủ định, hiện tại / tương lai: 起きません." },
+        { "part": "〜ました", "role": "Khẳng định, quá khứ: 起きました." },
+        { "part": "〜ませんでした", "role": "Phủ định, quá khứ: 起きませんでした." }
+      ],
+      "memoryTip": {
+        "emoji": "🔄",
+        "hook": "Chỉ thay ĐUÔI: ます · ません · ました · ませんでした!",
+        "meaning": "→ Phần đầu (起き, 働き, 勉強し…) giữ nguyên, chỉ đổi đuôi."
+      },
+      "examples": [
+        {
+          "jp": "わたしは 毎日 勉強します。",
+          "romaji": "Watashi wa mainichi benkyō shimasu.",
+          "vi": "Tôi học bài mỗi ngày.",
+          "context": "Thói quen",
+          "breakdown": [
+            { "jp": "毎日", "vi": "mỗi ngày" },
+            { "jp": "勉強します", "vi": "học (thói quen)" }
+          ]
+        },
+        {
+          "jp": "日曜日は 働きません。",
+          "romaji": "Nichiyōbi wa hatarakimasen.",
+          "vi": "Chủ nhật thì tôi không làm việc.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "けさ 6時に 起きました。",
+          "romaji": "Kesa roku-ji ni okimashita.",
+          "vi": "Sáng nay tôi đã dậy lúc 6 giờ.",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "きのう 勉強しましたか。 …いいえ、勉強しませんでした。",
+          "romaji": "Kinō benkyō shimashita ka. … Iie, benkyō shimasen deshita.",
+          "vi": "Hôm qua bạn có học bài không? …Không, tôi đã không học.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "あした 休みますか。 …はい、休みます。",
+          "romaji": "Ashita yasumimasu ka. … Hai, yasumimasu.",
+          "vi": "Ngày mai anh có nghỉ không? …Vâng, tôi nghỉ.",
+          "context": "Công việc",
+          "note": "Vます nói cả tương lai: あした 休みます = ngày mai (sẽ) nghỉ."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "きのう 11時に 寝ます。",
+          "right": "きのう 11時に 寝ました。",
+          "explain": "きのう là quá khứ → phải dùng đuôi ました."
+        },
+        {
+          "wrong": "きのう 働きませんでしたか。 …いいえ、働きません。",
+          "right": "きのう 働きましたか。 …いいえ、働きませんでした。",
+          "explain": "Phủ định trong quá khứ là ませんでした, không phải ません."
+        }
+      ]
+    },
+    {
+      "id": "L04-G3",
+      "title": "N (thời gian) に V",
+      "meaning": "Làm V vào lúc N",
+      "why": "Để nói hành động xảy ra vào thời điểm nào: 「Dậy LÚC 6 giờ」, 「Họp xong LÚC 4 giờ」.",
+      "when": [
+        "Thời gian có CON SỐ: 6時に, 7時半に, 何時に → bắt buộc có に.",
+        "Thứ trong tuần: 日曜日[に] — に có hoặc không đều được.",
+        "Thời gian tương đối: 今日, あした, きのう, けさ, 今晩, 毎朝, 毎晩, 毎日, いつ → KHÔNG dùng に."
+      ],
+      "formula": "N (thời gian) に V\n何時に V ますか",
+      "parts": [
+        { "part": "N (thời gian)", "role": "Thời điểm cụ thể: 6時, 7時半…" },
+        { "part": "に", "role": "「vào lúc」 — đánh dấu thời điểm hành động xảy ra." },
+        { "part": "V", "role": "Động từ (起きます, 寝ます, 終わります…)." }
+      ],
+      "memoryTip": {
+        "emoji": "📌",
+        "hook": "Có CON SỐ thì ghim 「に」, không số thì thôi!",
+        "meaning": "→ 6時に 起きます, nhưng あした 起きます, 毎朝 起きます (không に)."
+      },
+      "examples": [
+        {
+          "jp": "毎朝 6時半に 起きます。",
+          "romaji": "Maiasa roku-ji han ni okimasu.",
+          "vi": "Mỗi sáng tôi dậy lúc 6 giờ rưỡi.",
+          "context": "Sinh hoạt",
+          "breakdown": [
+            { "jp": "毎朝", "vi": "mỗi sáng (không có に)" },
+            { "jp": "6時半に", "vi": "lúc 6 giờ rưỡi" },
+            { "jp": "起きます", "vi": "thức dậy" }
+          ]
+        },
+        {
+          "jp": "会議は 何時に 終わりますか。 …4時に 終わります。",
+          "romaji": "Kaigi wa nan-ji ni owarimasu ka. … Yo-ji ni owarimasu.",
+          "vi": "Cuộc họp kết thúc lúc mấy giờ? …Kết thúc lúc 4 giờ.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "毎晩 11時に 寝ます。",
+          "romaji": "Maiban jūichi-ji ni nemasu.",
+          "vi": "Tối nào tôi cũng ngủ lúc 11 giờ.",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "あした 勉強します。",
+          "romaji": "Ashita benkyō shimasu.",
+          "vi": "Ngày mai tôi sẽ học.",
+          "context": "Kế hoạch",
+          "note": "あした là thời gian tương đối → không có に."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "あしたに 勉強します。",
+          "right": "あした 勉強します。",
+          "explain": "あした, きのう, 今日, 毎朝… không đi với に."
+        },
+        {
+          "wrong": "6時 起きます。",
+          "right": "6時に 起きます。",
+          "explain": "Giờ có con số phải có に để chỉ 「vào lúc」."
+        },
+        {
+          "wrong": "毎晩に 11時に 寝ます。",
+          "right": "毎晩 11時に 寝ます。",
+          "explain": "毎晩 (mỗi tối) không có に; chỉ 11時 mới cần に."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: thứ trong tuần",
+          "text": "月曜日 (げつようび) · 火曜日 (かようび) · 水曜日 (すいようび) · 木曜日 (もくようび) · 金曜日 (きんようび) · 土曜日 (どようび) · 日曜日 (にちようび). Với thứ, に có thể dùng hoặc bỏ: 日曜日[に] 休みます.",
+          "examples": [
+            {
+              "jp": "金曜日に 働きます。",
+              "romaji": "Kin'yōbi ni hatarakimasu.",
+              "vi": "Thứ Sáu tôi làm việc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L04-G4",
+      "title": "N1 から N2 まで",
+      "meaning": "Từ N1 đến N2",
+      "why": "Để nói giờ mở cửa, giờ làm, giờ học: 「Ngân hàng mở từ 9 giờ đến 3 giờ」.",
+      "when": [
+        "Nói khoảng thời gian làm việc, học, nghỉ.",
+        "Nói giờ mở cửa: 〜は 9時から 5時までです.",
+        "Có thể dùng riêng: 9時から (từ 9 giờ), 5時まで (đến 5 giờ)."
+      ],
+      "formula": "N1 から N2 まで V\nN は N1 から N2 までです",
+      "parts": [
+        { "part": "から", "role": "「từ」 — điểm bắt đầu." },
+        { "part": "まで", "role": "「đến」 — điểm kết thúc." },
+        { "part": "V / です", "role": "Có thể theo sau là động từ (働きます) hoặc です." }
+      ],
+      "memoryTip": {
+        "emoji": "🏁",
+        "hook": "から xuất phát → まで về đích!",
+        "meaning": "→ 9時から 5時まで = từ 9 giờ đến 5 giờ."
+      },
+      "examples": [
+        {
+          "jp": "銀行は 9時から 3時までです。",
+          "romaji": "Ginkō wa ku-ji kara san-ji made desu.",
+          "vi": "Ngân hàng mở cửa từ 9 giờ đến 3 giờ.",
+          "context": "Giờ mở cửa",
+          "breakdown": [
+            { "jp": "9時から", "vi": "từ 9 giờ" },
+            { "jp": "3時まで", "vi": "đến 3 giờ" },
+            { "jp": "です", "vi": "(là)" }
+          ]
+        },
+        {
+          "jp": "わたしは 9時から 5時まで 働きます。",
+          "romaji": "Watashi wa ku-ji kara go-ji made hatarakimasu.",
+          "vi": "Tôi làm việc từ 9 giờ đến 5 giờ.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "昼休みは 12時から 1時までです。",
+          "romaji": "Hiruyasumi wa jūni-ji kara ichi-ji made desu.",
+          "vi": "Giờ nghỉ trưa từ 12 giờ đến 1 giờ.",
+          "context": "Công ty"
+        },
+        {
+          "jp": "毎晩 11時まで 勉強します。",
+          "romaji": "Maiban jūichi-ji made benkyō shimasu.",
+          "vi": "Tối nào tôi cũng học đến 11 giờ.",
+          "context": "Ôn thi",
+          "note": "Chỉ dùng まで cũng được, không cần có から."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "9時からに 働きます。",
+          "right": "9時から 働きます。",
+          "explain": "Không thêm に sau から / まで."
+        },
+        {
+          "wrong": "(Làm từ 9 giờ đến 5 giờ) 9時まで 5時から 働きます。",
+          "right": "9時から 5時まで 働きます。",
+          "explain": "から gắn vào mốc BẮT ĐẦU, まで gắn vào mốc KẾT THÚC. Đổi chỗ là sai nghĩa."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: から / まで với địa điểm",
+          "text": "から / まで còn dùng cho nơi chốn: 東京から 大阪まで (từ Tokyo đến Osaka). Bạn sẽ gặp nhiều ở bài 5 khi nói về đi lại."
+        }
+      ]
+    },
+    {
+      "id": "L04-G5",
+      "title": "N1 と N2 — và",
+      "meaning": "N1 và N2",
+      "why": "Để liệt kê hai thứ: 「Ngày nghỉ là thứ Bảy VÀ Chủ nhật」, 「bánh mì VÀ cà phê」.",
+      "when": [
+        "Nối hai (hoặc nhiều) danh từ ngang hàng.",
+        "Chỉ nối danh từ — không nối câu, không nối động từ."
+      ],
+      "formula": "N1 と N2",
+      "parts": [
+        { "part": "N1", "role": "Danh từ thứ nhất." },
+        { "part": "と", "role": "「và」 — nối các danh từ." },
+        { "part": "N2", "role": "Danh từ thứ hai." }
+      ],
+      "memoryTip": {
+        "emoji": "➕",
+        "hook": "と là dấu cộng giữa hai DANH TỪ!",
+        "meaning": "→ 土曜日と 日曜日 = thứ Bảy + Chủ nhật."
+      },
+      "examples": [
+        {
+          "jp": "銀行の 休みは 土曜日と 日曜日です。",
+          "romaji": "Ginkō no yasumi wa doyōbi to nichiyōbi desu.",
+          "vi": "Ngày nghỉ của ngân hàng là thứ Bảy và Chủ nhật.",
+          "context": "Giờ mở cửa",
+          "breakdown": [
+            { "jp": "銀行の 休み", "vi": "ngày nghỉ của ngân hàng" },
+            { "jp": "土曜日と 日曜日", "vi": "thứ Bảy và Chủ nhật" }
+          ]
+        },
+        {
+          "jp": "わたしの 休みは 水曜日と 土曜日です。",
+          "romaji": "Watashi no yasumi wa suiyōbi to doyōbi desu.",
+          "vi": "Ngày nghỉ của tôi là thứ Tư và thứ Bảy.",
+          "context": "Làm thêm ở cửa hàng"
+        },
+        {
+          "jp": "昼ごはんは パンと コーヒーです。",
+          "romaji": "Hirugohan wa pan to kōhī desu.",
+          "vi": "Bữa trưa là bánh mì và cà phê.",
+          "context": "Ăn uống"
+        },
+        {
+          "jp": "図書館の 休みは 月曜日と 木曜日です。",
+          "romaji": "Toshokan no yasumi wa getsuyōbi to mokuyōbi desu.",
+          "vi": "Thư viện nghỉ thứ Hai và thứ Năm.",
+          "context": "Trường học"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "休みは 土曜日の 日曜日です。",
+          "right": "休みは 土曜日と 日曜日です。",
+          "explain": "の là 「của」, と mới là 「và」."
+        },
+        {
+          "wrong": "起きますと 勉強します。",
+          "right": "6時に 起きます。 7時に 勉強します。",
+          "explain": "と (và) chỉ nối DANH TỪ, không nối động từ. Ở bài này hãy tách thành hai câu; cách nối hai hành động sẽ học ở các bài sau."
+        }
+      ]
+    },
+    {
+      "id": "L04-G6",
+      "title": "〜ね — nhỉ / nhé",
+      "meaning": "…nhỉ / …nhé (đồng cảm, xác nhận)",
+      "why": "Nói chuyện tiếng Nhật mà thiếu ね sẽ nghe khô cứng. ね giúp tỏ ra mình đang lắng nghe, đồng cảm với người nói.",
+      "when": [
+        "Đồng cảm với người nghe: 大変ですね (vất vả nhỉ).",
+        "Xác nhận lại thông tin mình vừa nghe / nghĩ là đúng: 871の 6813ですね."
+      ],
+      "formula": "S ね",
+      "parts": [
+        { "part": "S", "role": "Câu (thường kết thúc bằng です / ます)." },
+        { "part": "ね", "role": "Đặt cuối câu, mong người nghe đồng tình hoặc xác nhận." }
+      ],
+      "memoryTip": {
+        "emoji": "🤝",
+        "hook": "ね = 「nhỉ」 — mời người nghe gật đầu!",
+        "meaning": "→ 大変ですね = Vất vả nhỉ. (か = hỏi điều chưa biết; ね = xác nhận / đồng cảm)"
+      },
+      "examples": [
+        {
+          "jp": "毎日 10時まで 勉強します。 …大変ですね。",
+          "romaji": "Mainichi jū-ji made benkyō shimasu. … Taihen desu ne.",
+          "vi": "Ngày nào tôi cũng học đến 10 giờ. …Vất vả nhỉ.",
+          "context": "Nói chuyện với bạn",
+          "breakdown": [
+            { "jp": "大変です", "vi": "vất vả" },
+            { "jp": "ね", "vi": "nhỉ (đồng cảm)" }
+          ]
+        },
+        {
+          "jp": "山田さんの 電話番号は 871の 6813です。 …871の 6813ですね。",
+          "romaji": "Yamada-san no denwa bangō wa hachi nana ichi no roku hachi ichi san desu. … Hachi nana ichi no roku hachi ichi san desu ne.",
+          "vi": "Số điện thoại của anh Yamada là 871-6813. …871-6813 nhỉ.",
+          "context": "Ghi số điện thoại",
+          "note": "Nhắc lại để xác nhận mình nghe đúng."
+        },
+        {
+          "jp": "会議は 3時からですね。 …はい、そうです。",
+          "romaji": "Kaigi wa san-ji kara desu ne. … Hai, sō desu.",
+          "vi": "Cuộc họp bắt đầu từ 3 giờ nhỉ. …Vâng, đúng vậy.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "あしたは 休みですね。 …ええ、休みです。",
+          "romaji": "Ashita wa yasumi desu ne. … Ee, yasumi desu.",
+          "vi": "Ngày mai được nghỉ nhỉ. …Ừ, được nghỉ.",
+          "context": "Nói chuyện với đồng nghiệp"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "(Muốn đồng cảm) 大変ですか。",
+          "right": "大変ですね。",
+          "explain": "大変ですか là HỎI 「có vất vả không?」. Muốn nói 「vất vả nhỉ」 thì dùng ね."
+        },
+        {
+          "wrong": "ね 大変です。",
+          "right": "大変ですね。",
+          "explain": "ね luôn đặt ở CUỐI câu."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "今 〜時〜分です", "meaning": "Bây giờ là … giờ … phút", "example": "今 4時半です。" },
+    { "pattern": "Vます / Vません / Vました / Vませんでした", "meaning": "Làm / không làm / đã làm / đã không làm", "example": "きのう 勉強しませんでした。" },
+    { "pattern": "N (thời gian) に V", "meaning": "Làm V vào lúc N (có số mới dùng に)", "example": "6時に 起きます。" },
+    { "pattern": "N1 から N2 まで", "meaning": "Từ N1 đến N2", "example": "9時から 5時まで 働きます。" },
+    { "pattern": "N1 と N2", "meaning": "N1 và N2 (chỉ nối danh từ)", "example": "休みは 土曜日と 日曜日です。" },
+    { "pattern": "S ね", "meaning": "…nhỉ (đồng cảm / xác nhận)", "example": "大変ですね。" }
+  ],
+  "exercises": [
+    {
+      "id": "L04-E01",
+      "type": "choice",
+      "grammarPoint": "L04-G1",
+      "question": "「4時」 đọc thế nào?",
+      "options": ["よじ", "よんじ", "しじ", "よっじ"],
+      "answer": "よじ",
+      "explanation": "4 giờ có cách đọc riêng là よじ (không phải よんじ)."
+    },
+    {
+      "id": "L04-E02",
+      "type": "fill",
+      "grammarPoint": "L04-G1",
+      "question": "Gõ từ còn thiếu (kana hoặc romaji).",
+      "jp": "今 ＿＿時ですか。 …7時です。",
+      "vi": "Bây giờ là mấy giờ? …7 giờ.",
+      "answer": "なん",
+      "accept": ["何"],
+      "explanation": "Hỏi giờ: 何時 (なんじ) = mấy giờ."
+    },
+    {
+      "id": "L04-E03",
+      "type": "jp-vi",
+      "grammarPoint": "L04-G1",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "今 9時半です。",
+      "romaji": "Ima ku-ji han desu.",
+      "options": ["Bây giờ là 9 giờ rưỡi.", "Bây giờ là 7 giờ rưỡi.", "Bây giờ là 9 giờ 15 phút.", "Bây giờ là mấy giờ?"],
+      "answer": "Bây giờ là 9 giờ rưỡi.",
+      "explanation": "9時 = くじ (9 giờ), 半 = rưỡi."
+    },
+    {
+      "id": "L04-E04",
+      "type": "order",
+      "grammarPoint": "L04-G1",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Bây giờ là 4 giờ 15 phút.",
+      "tokens": ["今", "4時", "15分", "です"],
+      "explanation": "今 + giờ + phút + です."
+    },
+    {
+      "id": "L04-E05",
+      "type": "situation",
+      "grammarPoint": "L04-G1",
+      "question": "Bạn muốn gọi điện cho bạn ở New York nhưng không biết bên đó mấy giờ. Bạn hỏi đồng nghiệp:",
+      "options": ["ニューヨークは 今 何時ですか。", "ニューヨークは 今 何時ですね。", "何時は ニューヨークですか。", "ニューヨークは 今 何ですか。"],
+      "answer": "ニューヨークは 今 何時ですか。",
+      "explanation": "Hỏi giờ: 今 何時ですか. Hỏi điều chưa biết dùng か, không dùng ね."
+    },
+    {
+      "id": "L04-E06",
+      "type": "choice",
+      "grammarPoint": "L04-G2",
+      "question": "「Hôm qua tôi đã học bài.」 Chọn dạng động từ đúng: きのう ＿＿。",
+      "options": ["勉強しました", "勉強します", "勉強しません", "勉強しませんでした"],
+      "answer": "勉強しました",
+      "explanation": "Quá khứ, khẳng định → Vました."
+    },
+    {
+      "id": "L04-E07",
+      "type": "fill",
+      "grammarPoint": "L04-G2",
+      "question": "Gõ phần đuôi còn thiếu (kana hoặc romaji).",
+      "jp": "きのう 働きましたか。 …いいえ、働き＿＿。",
+      "vi": "Hôm qua anh có làm việc không? …Không, tôi đã không làm.",
+      "answer": "ませんでした",
+      "explanation": "Phủ định trong quá khứ → đuôi ませんでした."
+    },
+    {
+      "id": "L04-E08",
+      "type": "fix",
+      "grammarPoint": "L04-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "きのう 11時に 寝ます。",
+      "options": ["きのう 11時に 寝ました。", "きのう 11時に 寝ません。", "きのうに 11時 寝ました。", "きのう 11時に 寝ますでした。"],
+      "answer": "きのう 11時に 寝ました。",
+      "explanation": "きのう (hôm qua) → quá khứ → 寝ました."
+    },
+    {
+      "id": "L04-E09",
+      "type": "pattern",
+      "grammarPoint": "L04-G2",
+      "question": "Bạn muốn kể 「Sáng nay tôi (đã) không ăn sáng」 — việc KHÔNG làm trong QUÁ KHỨ. Chọn đuôi động từ phù hợp.",
+      "options": ["Vませんでした", "Vません", "Vました", "Vます"],
+      "answer": "Vませんでした",
+      "explanation": "Quá khứ + phủ định → Vませんでした."
+    },
+    {
+      "id": "L04-E10",
+      "type": "vi-jp",
+      "grammarPoint": "L04-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Chủ nhật (hằng tuần) thì tôi không làm việc.",
+      "options": ["日曜日は 働きません。", "日曜日は 働きます。", "日曜日は 働きました。", "日曜日は 働きませんでした。"],
+      "answer": "日曜日は 働きません。",
+      "explanation": "Thói quen phủ định (hiện tại) → Vません. ませんでした chỉ một lần trong quá khứ."
+    },
+    {
+      "id": "L04-E11",
+      "type": "particle",
+      "grammarPoint": "L04-G3",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "毎朝 6時＿＿ 起きます。",
+      "romaji": "Maiasa roku-ji ___ okimasu.",
+      "vi": "Mỗi sáng tôi dậy lúc 6 giờ.",
+      "options": ["に", "の", "と", "か"],
+      "answer": "に",
+      "explanation": "Giờ có con số + に = 「vào lúc」."
+    },
+    {
+      "id": "L04-E12",
+      "type": "choice",
+      "grammarPoint": "L04-G3",
+      "question": "Câu nào ĐÚNG?",
+      "options": ["あした 勉強します。", "あしたに 勉強します。", "毎朝に 起きます。", "6時 起きます。"],
+      "answer": "あした 勉強します。",
+      "explanation": "あした, 毎朝 không đi với に; còn 6時 có con số thì bắt buộc phải có に."
+    },
+    {
+      "id": "L04-E13",
+      "type": "fix",
+      "grammarPoint": "L04-G3",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "毎晩に 11時に 寝ます。",
+      "options": ["毎晩 11時に 寝ます。", "毎晩に 11時 寝ます。", "毎晩 11時 寝ます。", "毎晩に 11時から 寝ます。"],
+      "answer": "毎晩 11時に 寝ます。",
+      "explanation": "毎晩 (mỗi tối) không có に; 11時 có con số nên cần に."
+    },
+    {
+      "id": "L04-E14",
+      "type": "situation",
+      "grammarPoint": "L04-G3",
+      "question": "Bạn muốn hỏi đồng nghiệp 「Cuộc họp sẽ kết thúc lúc mấy giờ?」:",
+      "options": ["会議は 何時に 終わりますか。", "会議は 何時 終わりますか。", "会議は 何時から 終わりますか。", "会議は 何時に 終わりますね。"],
+      "answer": "会議は 何時に 終わりますか。",
+      "explanation": "何時 (mấy giờ) là thời điểm có con số → 何時に. Câu hỏi kết thúc bằng か."
+    },
+    {
+      "id": "L04-E15",
+      "type": "identify",
+      "grammarPoint": "L04-G3",
+      "question": "Trong câu này, trợ từ に có vai trò gì?",
+      "jp": "けさ 7時に 起きました。",
+      "romaji": "Kesa shichi-ji ni okimashita.",
+      "vi": "Sáng nay tôi dậy lúc 7 giờ.",
+      "options": ["Chỉ thời điểm xảy ra hành động", "Chỉ điểm bắt đầu (từ…)", "Nối hai danh từ (và)", "Chỉ sở hữu (của)"],
+      "answer": "Chỉ thời điểm xảy ra hành động",
+      "explanation": "7時に = vào lúc 7 giờ — に đánh dấu thời điểm của hành động 起きました."
+    },
+    {
+      "id": "L04-E16",
+      "type": "particle",
+      "grammarPoint": "L04-G4",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "9時から 5時＿＿ 働きます。",
+      "romaji": "Ku-ji kara go-ji ___ hatarakimasu.",
+      "vi": "Tôi làm việc từ 9 giờ đến 5 giờ.",
+      "options": ["まで", "から", "に", "と"],
+      "answer": "まで",
+      "explanation": "Mốc kết thúc 「đến 5 giờ」 → まで."
+    },
+    {
+      "id": "L04-E17",
+      "type": "jp-vi",
+      "grammarPoint": "L04-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "銀行は 9時から 3時までです。",
+      "romaji": "Ginkō wa ku-ji kara san-ji made desu.",
+      "options": [
+        "Ngân hàng mở cửa từ 9 giờ đến 3 giờ.",
+        "Ngân hàng mở cửa từ 3 giờ đến 9 giờ.",
+        "Ngân hàng mở cửa lúc 9 giờ và 3 giờ.",
+        "Ngân hàng nghỉ từ 9 giờ đến 3 giờ."
+      ],
+      "answer": "Ngân hàng mở cửa từ 9 giờ đến 3 giờ.",
+      "explanation": "9時から = từ 9 giờ, 3時まで = đến 3 giờ."
+    },
+    {
+      "id": "L04-E18",
+      "type": "order",
+      "grammarPoint": "L04-G4",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Giờ nghỉ trưa từ 12 giờ đến 1 giờ.",
+      "tokens": ["昼休み", "は", "12時", "から", "1時", "まで", "です"],
+      "explanation": "Chủ đề + は + N1 から + N2 まで + です."
+    },
+    {
+      "id": "L04-E19",
+      "type": "fix",
+      "grammarPoint": "L04-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "9時からに 働きます。",
+      "options": ["9時から 働きます。", "9時からで 働きます。", "9時に から 働きます。", "9時からと 働きます。"],
+      "answer": "9時から 働きます。",
+      "explanation": "Không thêm trợ từ khác (に, で…) sau から."
+    },
+    {
+      "id": "L04-E20",
+      "type": "vi-jp",
+      "grammarPoint": "L04-G4",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tối nào tôi cũng học đến 11 giờ.",
+      "options": ["毎晩 11時まで 勉強します。", "毎晩 11時から 勉強します。", "毎晩 11時に 勉強します。", "毎晩に 11時まで 勉強します。"],
+      "answer": "毎晩 11時まで 勉強します。",
+      "explanation": "「đến 11 giờ」 → 11時まで. 毎晩 không có に."
+    },
+    {
+      "id": "L04-E21",
+      "type": "particle",
+      "grammarPoint": "L04-G5",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "休みは 土曜日＿＿ 日曜日です。",
+      "romaji": "Yasumi wa doyōbi ___ nichiyōbi desu.",
+      "vi": "Ngày nghỉ là thứ Bảy và Chủ nhật.",
+      "options": ["と", "の", "も", "に"],
+      "answer": "と",
+      "explanation": "Nối hai danh từ với nghĩa 「và」 → と."
+    },
+    {
+      "id": "L04-E22",
+      "type": "vi-jp",
+      "grammarPoint": "L04-G5",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Bữa trưa là bánh mì và cà phê.",
+      "options": ["昼ごはんは パンと コーヒーです。", "昼ごはんは パンの コーヒーです。", "昼ごはんは パンも コーヒーです。", "昼ごはんと パンは コーヒーです。"],
+      "answer": "昼ごはんは パンと コーヒーです。",
+      "explanation": "パンと コーヒー = bánh mì và cà phê. の là 「của」, も là 「cũng」."
+    },
+    {
+      "id": "L04-E23",
+      "type": "fix",
+      "grammarPoint": "L04-G5",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしの 休みは 水曜日の 日曜日です。",
+      "options": ["わたしの 休みは 水曜日と 日曜日です。", "わたしと 休みは 水曜日の 日曜日です。", "わたしの 休みは 水曜日に 日曜日です。", "わたしの 休みは 水曜日から 日曜日と です。"],
+      "answer": "わたしの 休みは 水曜日と 日曜日です。",
+      "explanation": "Ý muốn nói 「thứ Tư VÀ Chủ nhật」 → dùng と, không dùng の."
+    },
+    {
+      "id": "L04-E24",
+      "type": "situation",
+      "grammarPoint": "L04-G6",
+      "question": "Bạn của bạn nói 「毎日 10時まで 働きます」. Bạn muốn bày tỏ sự cảm thông 「Vất vả nhỉ」:",
+      "options": ["大変ですね。", "大変ですか。", "大変じゃ ありません。", "はい、そうです。"],
+      "answer": "大変ですね。",
+      "explanation": "Đồng cảm với người nghe → ね. 大変ですか là hỏi 「có vất vả không?」."
+    },
+    {
+      "id": "L04-E25",
+      "type": "choice",
+      "grammarPoint": "L04-G6",
+      "question": "Đồng nghiệp đọc số điện thoại 「871の 6813です」. Bạn muốn nhắc lại để xác nhận. Bạn nói:",
+      "options": ["871の 6813ですね。", "871の 6813じゃ ありません。", "何番ですか。", "871と 6813です。"],
+      "answer": "871の 6813ですね。",
+      "explanation": "Nhắc lại thông tin để xác nhận → thêm ね ở cuối câu."
+    },
+    {
+      "id": "L04-E26",
+      "type": "jp-vi",
+      "grammarPoint": "L04-G6",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "会議は 3時からですね。",
+      "romaji": "Kaigi wa san-ji kara desu ne.",
+      "options": [
+        "Cuộc họp bắt đầu từ 3 giờ nhỉ.",
+        "Cuộc họp kết thúc lúc 3 giờ nhỉ.",
+        "Cuộc họp không phải từ 3 giờ.",
+        "Cuộc họp từ 3 giờ đến mấy giờ?"
+      ],
+      "answer": "Cuộc họp bắt đầu từ 3 giờ nhỉ.",
+      "explanation": "3時から = từ 3 giờ; ね = 「nhỉ」 để xác nhận."
+    },
+    {
+      "id": "L04-E27",
+      "type": "identify",
+      "grammarPoint": "L04-G6",
+      "question": "Trong câu trả lời 「大変ですね」, ね dùng để làm gì?",
+      "jp": "毎晩 12時まで 勉強します。 …大変ですね。",
+      "romaji": "Maiban jūni-ji made benkyō shimasu. … Taihen desu ne.",
+      "vi": "Tối nào tôi cũng học đến 12 giờ. …Vất vả nhỉ.",
+      "options": [
+        "Bày tỏ sự đồng cảm với người nghe",
+        "Hỏi điều mình chưa biết",
+        "Nối hai danh từ",
+        "Chỉ thời điểm của hành động"
+      ],
+      "answer": "Bày tỏ sự đồng cảm với người nghe",
+      "explanation": "ね cuối câu = 「nhỉ」, thể hiện đồng cảm / mong người nghe đồng tình."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 4 }
+}

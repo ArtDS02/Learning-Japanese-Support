@@ -1,0 +1,742 @@
+{
+  "lesson": 23,
+  "title": "Khi… / Hễ… thì…",
+  "titleJp": "どうやって 行きますか",
+  "topic": "〜とき · Vる とき và Vた とき · V辞書形 と · N が (hiện tượng) · N(nơi) を đi qua",
+  "description": "Học xong bài này bạn nói được 「khi… thì…」, phân biệt 「trước khi / sau khi」 với とき, mô tả kết quả tất yếu 「hễ bấm nút là…」, và chỉ đường bằng tiếng Nhật: 「qua cầu, rẽ phải ở góc thứ hai thì thấy bưu điện」.",
+  "objectives": [
+    "Nối câu bằng 〜とき với động từ, tính từ, danh từ.",
+    "Phân biệt V辞書形 とき (việc chính xảy ra trước) và Vた とき (việc chính xảy ra sau).",
+    "Dùng V辞書形 と、〜 để nói kết quả tất yếu, cách dùng máy móc, chỉ đường.",
+    "Dùng が cho chủ thể của hiện tượng / trạng thái trong mệnh đề と, とき.",
+    "Dùng を với động từ di chuyển qua nơi chốn: 橋を 渡ります, 角を 曲がります."
+  ],
+  "keyPoints": [
+    "とき là danh từ → nối như danh từ: Vる / Vない / いA / なAな / Nの + とき.",
+    "V辞書形 とき: hành động trong mệnh đề とき CHƯA xong. Vた とき: ĐÃ xong rồi việc chính mới xảy ra.",
+    "Thì của câu chính (quá khứ hay hiện tại) không quyết định dùng Vる hay Vた trước とき.",
+    "V辞書形 と、B: hễ A thì B xảy ra (tự nhiên, tất yếu). Vế B KHÔNG dùng mong muốn, rủ rê, nhờ vả.",
+    "Trong mệnh đề と / とき, chủ thể của hiện tượng dùng が: 音が 小さい とき, 切符が 出ます.",
+    "Đi QUA / đi DỌC nơi nào → を: 道を 渡ります, 公園を 散歩します, 角を 曲がります."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L23-G1",
+      "title": "普通形 とき、〜",
+      "meaning": "Khi…, (thì)…",
+      "why": "Để nói một việc xảy ra vào thời điểm / trong hoàn cảnh nào: 「Khi đau đầu hãy uống thuốc này」, 「Hồi nhỏ tôi hay bơi ở sông」. Đây là mẫu cực kỳ thường gặp trong đời sống.",
+      "when": [
+        "Nói việc cần làm trong một hoàn cảnh: khi mượn sách, khi không hiểu, khi đau đầu.",
+        "Nói về một giai đoạn trong quá khứ: hồi nhỏ, hồi còn là sinh viên.",
+        "Rủ rê / đề nghị vào lúc thuận tiện: khi nào rảnh thì…"
+      ],
+      "formula": "V辞書形 / Vない + とき\nいA + とき\nなA な + とき\nN の + とき\n、〜 (câu chính)",
+      "parts": [
+        { "part": "V / いA", "role": "Nối thẳng vào とき: 借りる とき, わからない とき, 痛い とき." },
+        { "part": "なA な", "role": "Tính từ な giữ な: 暇な とき, 元気な とき." },
+        { "part": "N の", "role": "Danh từ thêm の: 子どもの とき, 雨の とき." },
+        { "part": "とき", "role": "Danh từ 「lúc, khi」 — vì là danh từ nên cách nối giống bổ nghĩa danh từ (bài 22)." },
+        { "part": "、〜", "role": "Câu chính: việc xảy ra / cần làm vào lúc đó." }
+      ],
+      "memoryTip": {
+        "emoji": "🕰️",
+        "hook": "とき là danh từ — nên nối như danh từ: なAな とき, Nの とき!",
+        "meaning": "→ 暇な とき, 子どもの とき (không nói 暇だ とき, 子ども とき)."
+      },
+      "examples": [
+        {
+          "jp": "図書館で 本を 借りる とき、カードが 要ります。",
+          "romaji": "Toshokan de hon o kariru toki, kādo ga irimasu.",
+          "vi": "Khi mượn sách ở thư viện thì cần thẻ.",
+          "context": "Trường học",
+          "breakdown": [
+            { "jp": "本を 借りる", "vi": "mượn sách" },
+            { "jp": "とき", "vi": "khi" },
+            { "jp": "カードが 要ります", "vi": "cần thẻ" }
+          ]
+        },
+        {
+          "jp": "使い方が わからない とき、わたしに 聞いて ください。",
+          "romaji": "Tsukaikata ga wakaranai toki, watashi ni kiite kudasai.",
+          "vi": "Khi không biết cách dùng thì hãy hỏi tôi.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "頭が 痛い とき、この 薬を 飲んで ください。",
+          "romaji": "Atama ga itai toki, kono kusuri o nonde kudasai.",
+          "vi": "Khi đau đầu thì hãy uống thuốc này.",
+          "context": "Bệnh viện, hiệu thuốc"
+        },
+        {
+          "jp": "暇な とき、うちへ 遊びに 来ませんか。",
+          "romaji": "Hima na toki, uchi e asobi ni kimasen ka.",
+          "vi": "Khi nào rảnh, anh đến nhà tôi chơi nhé?",
+          "context": "Rủ rê"
+        },
+        {
+          "jp": "子どもの とき、よく 川で 泳ぎました。",
+          "romaji": "Kodomo no toki, yoku kawa de oyogimashita.",
+          "vi": "Hồi nhỏ tôi hay bơi ở sông.",
+          "context": "Kể chuyện gia đình"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "暇だ とき、うちへ 来て ください。",
+          "right": "暇な とき、うちへ 来て ください。",
+          "explain": "Trước とき (danh từ), tính từ な dùng な, không dùng だ."
+        },
+        {
+          "wrong": "子ども とき、よく 川で 泳ぎました。",
+          "right": "子どもの とき、よく 川で 泳ぎました。",
+          "explain": "Danh từ + の + とき. Thiếu の là sai."
+        },
+        {
+          "wrong": "頭が 痛いの とき、薬を 飲みます。",
+          "right": "頭が 痛い とき、薬を 飲みます。",
+          "explain": "Tính từ い nối thẳng vào とき, không thêm の."
+        }
+      ]
+    },
+    {
+      "id": "L23-G2",
+      "title": "V辞書形 とき vs Vた とき",
+      "meaning": "Khi (sắp / trước khi) làm V… vs Khi (đã / sau khi) làm V xong…",
+      "why": "Cùng là 「khi về nước」, nhưng mua quà TRƯỚC khi về (ở Nhật) hay SAU khi về (ở Việt Nam) là hai chuyện khác nhau. Tiếng Nhật phân biệt bằng 帰る とき và 帰った とき.",
+      "when": [
+        "V辞書形 とき: việc chính xảy ra TRƯỚC khi hành động V hoàn thành (hoặc trong lúc làm V).",
+        "Vた とき: việc chính xảy ra SAU khi hành động V đã hoàn thành.",
+        "Chào hỏi theo tình huống: 出かける とき 「行って きます」, 帰った とき 「ただいま」."
+      ],
+      "formula": "V辞書形 とき、〜 → câu chính xảy ra trước khi V xong\nVた とき、〜 → câu chính xảy ra sau khi V xong",
+      "parts": [
+        { "part": "V辞書形 とき", "role": "Hành động V CHƯA hoàn thành: 帰る とき = lúc sắp về, trên đường về." },
+        { "part": "Vた とき", "role": "Hành động V ĐÃ hoàn thành: 帰った とき = lúc đã về tới nơi." },
+        { "part": "Thì của câu chính", "role": "Không ảnh hưởng: câu chính quá khứ vẫn có thể dùng 帰る とき, câu chính hiện tại vẫn có thể dùng 帰った とき." }
+      ],
+      "memoryTip": {
+        "emoji": "✈️",
+        "hook": "帰る とき = còn đứng ở sân bay Nhật; 帰った とき = đã về tới Việt Nam!",
+        "meaning": "→ V辞書形 とき: trước khi V xong. Vた とき: sau khi V xong."
+      },
+      "examples": [
+        {
+          "jp": "国へ 帰る とき、かばんを 買いました。",
+          "romaji": "Kuni e kaeru toki, kaban o kaimashita.",
+          "vi": "Lúc sắp về nước, tôi đã mua một cái túi.",
+          "context": "Du lịch",
+          "note": "Mua TRƯỚC khi về → mua ở Nhật (dù câu chính là quá khứ vẫn dùng 帰る)."
+        },
+        {
+          "jp": "国へ 帰った とき、かばんを 買いました。",
+          "romaji": "Kuni e kaetta toki, kaban o kaimashita.",
+          "vi": "Lúc đã về đến nước, tôi đã mua một cái túi.",
+          "context": "Du lịch",
+          "note": "Mua SAU khi về tới → mua ở nước mình."
+        },
+        {
+          "jp": "出かける とき、「行って きます」と 言います。",
+          "romaji": "Dekakeru toki, 'Itte kimasu' to iimasu.",
+          "vi": "Khi ra khỏi nhà thì nói 「Con đi đây」.",
+          "context": "Sinh hoạt gia đình"
+        },
+        {
+          "jp": "うちへ 帰った とき、「ただいま」と 言います。",
+          "romaji": "Uchi e kaetta toki, 'Tadaima' to iimasu.",
+          "vi": "Khi về đến nhà thì nói 「Con về rồi đây」.",
+          "context": "Sinh hoạt gia đình"
+        },
+        {
+          "jp": "寝る とき、「お休みなさい」と 言います。",
+          "romaji": "Neru toki, 'Oyasuminasai' to iimasu.",
+          "vi": "Khi đi ngủ thì nói 「Chúc ngủ ngon」.",
+          "context": "Sinh hoạt gia đình"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "ご飯を 食べた とき、「いただきます」と 言います。",
+          "right": "ご飯を 食べる とき、「いただきます」と 言います。",
+          "explain": "「いただきます」 nói TRƯỚC khi ăn → 食べる とき. Sau khi ăn xong mới nói 「ごちそうさま」 (食べた とき)."
+        },
+        {
+          "wrong": "（Mua quà ở Nhật trước khi về）国へ 帰った とき、お土産を 買いました。",
+          "right": "国へ 帰る とき、お土産を 買いました。",
+          "explain": "Đừng thấy câu chính là quá khứ mà dùng Vた. Mua trước khi về → 帰る とき."
+        }
+      ]
+    },
+    {
+      "id": "L23-G3",
+      "title": "V辞書形 と、〜 — hễ… thì…",
+      "meaning": "Hễ (cứ) V thì… / V thì sẽ…",
+      "why": "Để nói kết quả tất yếu, tự nhiên của một hành động: 「bấm nút này thì tiền thừa chạy ra」, 「rẽ phải thì có bưu điện」. Rất hay dùng khi hướng dẫn dùng máy móc và chỉ đường.",
+      "when": [
+        "Hướng dẫn cách dùng máy móc: bấm, vặn, bỏ tiền vào…",
+        "Chỉ đường: đi thẳng / rẽ phải thì thấy…",
+        "Quy luật tự nhiên: đến mùa xuân thì trời ấm."
+      ],
+      "formula": "V辞書形 (Vない) と、〜 (kết quả tất yếu)",
+      "parts": [
+        { "part": "V辞書形 / Vない", "role": "Điều kiện — luôn ở thể từ điển (hoặc thể ない), không dùng thể た." },
+        { "part": "と", "role": "「hễ… thì」 — nối điều kiện với kết quả." },
+        { "part": "、〜", "role": "Kết quả tự nhiên, tất yếu. KHÔNG dùng mong muốn (〜たい), rủ rê (〜ましょう), nhờ vả (〜て ください)." }
+      ],
+      "memoryTip": {
+        "emoji": "🔘",
+        "hook": "Bấm nút 「と」 → kết quả tự bật ra!",
+        "meaning": "→ A と、B: hễ A là B xảy ra (tự nhiên, máy móc, chỉ đường)."
+      },
+      "examples": [
+        {
+          "jp": "この ボタンを 押すと、お釣りが 出ます。",
+          "romaji": "Kono botan o osu to, otsuri ga demasu.",
+          "vi": "Bấm nút này thì tiền thừa sẽ ra.",
+          "context": "Máy bán hàng tự động",
+          "breakdown": [
+            { "jp": "押す", "vi": "bấm (thể từ điển)" },
+            { "jp": "と", "vi": "hễ… thì" },
+            { "jp": "お釣りが 出ます", "vi": "tiền thừa ra" }
+          ]
+        },
+        {
+          "jp": "これを 回すと、音が 大きく なります。",
+          "romaji": "Kore o mawasu to, oto ga ōkiku narimasu.",
+          "vi": "Vặn cái này thì âm thanh to lên.",
+          "context": "Dùng máy móc"
+        },
+        {
+          "jp": "右へ 曲がると、郵便局が あります。",
+          "romaji": "Migi e magaru to, yūbinkyoku ga arimasu.",
+          "vi": "Rẽ phải thì có bưu điện.",
+          "context": "Chỉ đường"
+        },
+        {
+          "jp": "この 道を まっすぐ 行くと、左に 駅が あります。",
+          "romaji": "Kono michi o massugu iku to, hidari ni eki ga arimasu.",
+          "vi": "Đi thẳng đường này thì bên trái có nhà ga.",
+          "context": "Chỉ đường"
+        },
+        {
+          "jp": "春に なると、暖かく なります。",
+          "romaji": "Haru ni naru to, atatakaku narimasu.",
+          "vi": "Hễ sang xuân là trời ấm lên.",
+          "context": "Thời tiết"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "この ボタンを 押したと、お釣りが 出ます。",
+          "right": "この ボタンを 押すと、お釣りが 出ます。",
+          "explain": "Trước と luôn dùng thể từ điển (hoặc thể ない), không dùng thể た."
+        },
+        {
+          "wrong": "駅に 着くと、電話して ください。",
+          "right": "駅に 着いたら、電話して ください。（〜たら — bài 25）",
+          "explain": "Vế sau của と không được là lời nhờ vả, rủ rê hay mong muốn. Trường hợp này dùng 〜たら (bài 25)."
+        }
+      ]
+    },
+    {
+      "id": "L23-G4",
+      "title": "N が A / V — chủ thể của hiện tượng, trạng thái",
+      "meaning": "(Cái gì) thế nào / xảy ra — đánh dấu bằng が",
+      "why": "Khi mô tả một hiện tượng, trạng thái diễn ra trước mắt (âm thanh nhỏ, vé chạy ra, máy chạy), đặc biệt trong mệnh đề と và とき, chủ thể được đánh dấu bằng が chứ không phải は.",
+      "when": [
+        "Mô tả kết quả xảy ra khi dùng máy: 切符が 出ます, 機械が 動きます.",
+        "Mô tả trạng thái trong mệnh đề とき: 音が 小さい とき, 天気が いい とき."
+      ],
+      "formula": "N が いA / なA / V (hiện tượng, trạng thái)\n〜と、N が V / 〜 N が A とき",
+      "parts": [
+        { "part": "N", "role": "Sự vật đang thay đổi / đang ở trạng thái nào đó: 音, 切符, 機械, 天気…" },
+        { "part": "が", "role": "Đánh dấu chủ thể của hiện tượng. Trong mệnh đề と / とき không dùng は." },
+        { "part": "A / V", "role": "Trạng thái hoặc hiện tượng: 小さい, いい, 出ます, 動きます." }
+      ],
+      "memoryTip": {
+        "emoji": "👀",
+        "hook": "Tả cái gì 「đang xảy ra trước mắt」 → dùng 「が」!",
+        "meaning": "→ 切符が 出ます (vé chạy ra), 音が 小さい (tiếng nhỏ) — giống 雨が 降って います (bài 14)."
+      },
+      "examples": [
+        {
+          "jp": "お金を 入れると、切符が 出ます。",
+          "romaji": "Okane o ireru to, kippu ga demasu.",
+          "vi": "Bỏ tiền vào thì vé sẽ chạy ra.",
+          "context": "Mua vé tàu"
+        },
+        {
+          "jp": "この ボタンを 押すと、機械が 動きます。",
+          "romaji": "Kono botan o osu to, kikai ga ugokimasu.",
+          "vi": "Bấm nút này thì máy sẽ chạy.",
+          "context": "Nhà máy, công việc"
+        },
+        {
+          "jp": "音が 小さい とき、これを 回して ください。",
+          "romaji": "Oto ga chiisai toki, kore o mawashite kudasai.",
+          "vi": "Khi tiếng nhỏ thì hãy vặn cái này.",
+          "context": "Dùng máy móc"
+        },
+        {
+          "jp": "天気が いい とき、公園を 散歩します。",
+          "romaji": "Tenki ga ii toki, kōen o sanpo shimasu.",
+          "vi": "Khi trời đẹp, tôi đi dạo trong công viên.",
+          "context": "Sinh hoạt"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "音は 小さい とき、これを 回して ください。",
+          "right": "音が 小さい とき、これを 回して ください。",
+          "explain": "Chủ thể bên trong mệnh đề とき dùng が, không dùng は (giống mệnh đề bổ nghĩa ở bài 22)."
+        },
+        {
+          "wrong": "お金を 入れると、切符を 出ます。",
+          "right": "お金を 入れると、切符が 出ます。",
+          "explain": "出ます (ra, chạy ra) là nội động từ — vé TỰ chạy ra → 切符が 出ます."
+        }
+      ]
+    },
+    {
+      "id": "L23-G5",
+      "title": "N(nơi) を + động từ di chuyển",
+      "meaning": "Đi qua / đi dọc / rẽ ở (nơi nào)",
+      "why": "Khi chỉ đường hay kể chuyện đi lại, bạn cần nói 「băng qua đường」, 「qua cầu」, 「rẽ ở góc」, 「đi dạo trong công viên」. Nơi mình đi qua / đi dọc được đánh dấu bằng を — khác với へ (hướng tới) và で (nơi làm việc gì).",
+      "when": [
+        "Băng qua: 道を 渡ります, 橋を 渡ります.",
+        "Rẽ ở chỗ nào: 角を 曲がります, 交差点を 曲がります.",
+        "Đi dọc / đi khắp một nơi: 公園を 散歩します, 道を 歩きます."
+      ],
+      "formula": "N(nơi) を 渡ります / 曲がります / 歩きます / 散歩します",
+      "parts": [
+        { "part": "N(nơi)", "role": "Nơi được đi qua / đi dọc: 道, 橋, 角, 交差点, 公園." },
+        { "part": "を", "role": "Chỉ nơi mà chuyển động đi xuyên qua / dọc theo." },
+        { "part": "Động từ di chuyển", "role": "渡る (băng qua), 曲がる (rẽ), 歩く (đi bộ), 散歩する (đi dạo)." }
+      ],
+      "memoryTip": {
+        "emoji": "🚶",
+        "hook": "Đi QUA / đi DỌC chỗ nào → chỗ đó 「を」!",
+        "meaning": "→ 橋を 渡ります, 角を 曲がります. Còn hướng rẽ (phải / trái) thì dùng へ / に."
+      },
+      "examples": [
+        {
+          "jp": "あの 橋を 渡って ください。",
+          "romaji": "Ano hashi o watatte kudasai.",
+          "vi": "Hãy đi qua cây cầu kia.",
+          "context": "Chỉ đường"
+        },
+        {
+          "jp": "2つ目の 角を 右へ 曲がって ください。",
+          "romaji": "Futatsu-me no kado o migi e magatte kudasai.",
+          "vi": "Hãy rẽ phải ở góc phố thứ hai.",
+          "context": "Chỉ đường",
+          "breakdown": [
+            { "jp": "2つ目の 角", "vi": "góc phố thứ hai" },
+            { "jp": "を", "vi": "(nơi rẽ)" },
+            { "jp": "右へ", "vi": "sang phải (hướng)" },
+            { "jp": "曲がって ください", "vi": "hãy rẽ" }
+          ]
+        },
+        {
+          "jp": "毎朝 公園を 散歩します。",
+          "romaji": "Maiasa kōen o sanpo shimasu.",
+          "vi": "Sáng nào tôi cũng đi dạo trong công viên.",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "道を 渡る とき、車に 気を つけて ください。",
+          "romaji": "Michi o wataru toki, kuruma ni ki o tsukete kudasai.",
+          "vi": "Khi băng qua đường, hãy cẩn thận xe ô tô.",
+          "context": "An toàn giao thông"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "橋に 渡ります。",
+          "right": "橋を 渡ります。",
+          "explain": "Cây cầu là nơi mình đi xuyên qua → を, không phải に."
+        },
+        {
+          "wrong": "2つ目の 角に 右へ 曲がって ください。",
+          "right": "2つ目の 角を 右へ 曲がって ください。",
+          "explain": "Chỗ rẽ (góc phố) dùng を; hướng rẽ (phải / trái) dùng へ hoặc に."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "普通形 とき、〜", "meaning": "Khi… (なAな / Nの + とき)", "example": "暇な とき、うちへ 遊びに 来ませんか。" },
+    { "pattern": "V辞書形 とき / Vた とき", "meaning": "Trước khi V xong / sau khi V xong", "example": "国へ 帰る とき、かばんを 買いました。" },
+    { "pattern": "V辞書形 と、〜", "meaning": "Hễ V thì… (kết quả tất yếu, chỉ đường)", "example": "この ボタンを 押すと、お釣りが 出ます。" },
+    { "pattern": "N が A / V", "meaning": "Chủ thể của hiện tượng, trạng thái (trong と / とき)", "example": "お金を 入れると、切符が 出ます。" },
+    { "pattern": "N(nơi) を V di chuyển", "meaning": "Đi qua / rẽ ở / đi dọc nơi nào", "example": "橋を 渡ります。" }
+  ],
+  "exercises": [
+    {
+      "id": "L23-E01",
+      "type": "choice",
+      "grammarPoint": "L23-G1",
+      "question": "Chọn cách nói đúng cho 「khi rảnh」.",
+      "options": ["暇な とき", "暇だ とき", "暇の とき", "暇い とき"],
+      "answer": "暇な とき",
+      "explanation": "暇 là tính từ な → なAな + とき."
+    },
+    {
+      "id": "L23-E02",
+      "type": "fix",
+      "grammarPoint": "L23-G1",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "子ども とき、よく 川で 泳ぎました。",
+      "options": [
+        "子どもの とき、よく 川で 泳ぎました。",
+        "子どもな とき、よく 川で 泳ぎました。",
+        "子どもだ とき、よく 川で 泳ぎました。",
+        "子どもで とき、よく 川で 泳ぎました。"
+      ],
+      "answer": "子どもの とき、よく 川で 泳ぎました。",
+      "explanation": "Danh từ + の + とき."
+    },
+    {
+      "id": "L23-E03",
+      "type": "fill",
+      "grammarPoint": "L23-G1",
+      "question": "Đổi từ trong ngoặc cho phù hợp, gõ vào chỗ trống.",
+      "jp": "頭が ＿＿ とき、この 薬を 飲んで ください。（痛いです）",
+      "vi": "Khi đau đầu thì hãy uống thuốc này.",
+      "answer": "いたい",
+      "accept": ["痛い"],
+      "explanation": "Tính từ い nối thẳng vào とき (bỏ です): 痛い とき."
+    },
+    {
+      "id": "L23-E04",
+      "type": "vi-jp",
+      "grammarPoint": "L23-G1",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Khi không biết cách dùng thì hãy hỏi tôi.",
+      "options": [
+        "使い方が わからない とき、わたしに 聞いて ください。",
+        "使い方が わからないの とき、わたしに 聞いて ください。",
+        "使い方が わかりません とき、わたしに 聞いて ください。",
+        "使い方が わからないだ とき、わたしに 聞いて ください。"
+      ],
+      "answer": "使い方が わからない とき、わたしに 聞いて ください。",
+      "explanation": "Vない nối thẳng vào とき. Không dùng ます, không thêm の hay だ."
+    },
+    {
+      "id": "L23-E05",
+      "type": "jp-vi",
+      "grammarPoint": "L23-G1",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "図書館で 本を 借りる とき、カードが 要ります。",
+      "romaji": "Toshokan de hon o kariru toki, kādo ga irimasu.",
+      "options": [
+        "Khi mượn sách ở thư viện thì cần thẻ.",
+        "Khi mượn sách ở thư viện thì không cần thẻ.",
+        "Tôi đã làm thẻ khi mượn sách ở thư viện.",
+        "Hễ có thẻ là mượn được sách ở thư viện."
+      ],
+      "answer": "Khi mượn sách ở thư viện thì cần thẻ.",
+      "explanation": "〜とき = khi; 要ります = cần."
+    },
+    {
+      "id": "L23-E06",
+      "type": "order",
+      "grammarPoint": "L23-G1",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Khi nào rảnh, anh đến nhà tôi chơi nhé?",
+      "tokens": ["暇な", "とき、", "うちへ", "遊びに", "来ませんか"],
+      "explanation": "暇な とき (khi rảnh) đứng đầu, rồi câu rủ rê うちへ 遊びに 来ませんか."
+    },
+    {
+      "id": "L23-E07",
+      "type": "choice",
+      "grammarPoint": "L23-G2",
+      "question": "「国へ 帰る とき、かばんを 買いました。」 — Người này mua túi ở đâu?",
+      "options": [
+        "Ở Nhật, trước khi về nước",
+        "Ở nước mình, sau khi về tới",
+        "Trên máy bay, sau khi đã về",
+        "Không mua được túi"
+      ],
+      "answer": "Ở Nhật, trước khi về nước",
+      "explanation": "V辞書形 とき: việc chính (mua) xảy ra trước khi hành động 帰る hoàn thành."
+    },
+    {
+      "id": "L23-E08",
+      "type": "fix",
+      "grammarPoint": "L23-G2",
+      "question": "Câu sau sai về nghĩa. Chọn cách sửa đúng.",
+      "jp": "ご飯を 食べた とき、「いただきます」と 言います。",
+      "options": [
+        "ご飯を 食べる とき、「いただきます」と 言います。",
+        "ご飯を 食べて とき、「いただきます」と 言います。",
+        "ご飯を 食べたの とき、「いただきます」と 言います。",
+        "ご飯を 食べます とき、「いただきます」と 言います。"
+      ],
+      "answer": "ご飯を 食べる とき、「いただきます」と 言います。",
+      "explanation": "「いただきます」 nói TRƯỚC khi ăn → 食べる とき (thể từ điển)."
+    },
+    {
+      "id": "L23-E09",
+      "type": "situation",
+      "grammarPoint": "L23-G2",
+      "question": "Bạn giải thích cho bạn người Việt: 「Khi về đến nhà, người Nhật nói ただいま」. Câu đúng:",
+      "options": [
+        "うちへ 帰った とき、「ただいま」と 言います。",
+        "うちへ 帰る とき、「ただいま」と 言います。",
+        "うちへ 帰りました とき、「ただいま」と 言います。",
+        "うちへ 帰ったの とき、「ただいま」と 言います。"
+      ],
+      "answer": "うちへ 帰った とき、「ただいま」と 言います。",
+      "explanation": "Nói ただいま SAU khi đã về tới nhà → Vた とき."
+    },
+    {
+      "id": "L23-E10",
+      "type": "fill",
+      "grammarPoint": "L23-G2",
+      "question": "Đổi động từ trong ngoặc cho phù hợp, gõ vào chỗ trống.",
+      "jp": "うちを ＿＿ とき、「行って きます」と 言います。（出ます）",
+      "vi": "Khi ra khỏi nhà thì nói 「Con đi đây」.",
+      "answer": "でる",
+      "accept": ["出る"],
+      "hint": "Nói trước khi ra khỏi nhà",
+      "explanation": "「行って きます」 nói lúc sắp ra khỏi nhà → thể từ điển 出る とき."
+    },
+    {
+      "id": "L23-E11",
+      "type": "identify",
+      "grammarPoint": "L23-G2",
+      "question": "「国へ 帰った とき、友達に 会いました。」 — Việc gặp bạn xảy ra khi nào?",
+      "jp": "国へ 帰った とき、友達に 会いました。",
+      "romaji": "Kuni e kaetta toki, tomodachi ni aimashita.",
+      "vi": "Lúc về tới nước, tôi đã gặp bạn bè.",
+      "options": [
+        "Sau khi đã về tới nước (Vた とき)",
+        "Trước khi về nước (V辞書形 とき)",
+        "Trong lúc đang ở Nhật",
+        "Không rõ thời điểm"
+      ],
+      "answer": "Sau khi đã về tới nước (Vた とき)",
+      "explanation": "Vた とき: hành động 帰る đã hoàn thành, rồi mới gặp bạn."
+    },
+    {
+      "id": "L23-E12",
+      "type": "particle",
+      "grammarPoint": "L23-G3",
+      "question": "Chọn từ điền vào chỗ trống.",
+      "jp": "この ボタンを 押す＿＿、お釣りが 出ます。",
+      "romaji": "Kono botan o osu ___, otsuri ga demasu.",
+      "vi": "Bấm nút này thì tiền thừa sẽ ra.",
+      "options": ["と", "を", "が", "で"],
+      "answer": "と",
+      "explanation": "V辞書形 と、〜: hễ làm V thì kết quả tất yếu xảy ra."
+    },
+    {
+      "id": "L23-E13",
+      "type": "choice",
+      "grammarPoint": "L23-G3",
+      "question": "Câu nào dùng と SAI?",
+      "options": [
+        "駅に 着くと、電話して ください。",
+        "右へ 曲がると、郵便局が あります。",
+        "これを 回すと、音が 大きく なります。",
+        "春に なると、暖かく なります。"
+      ],
+      "answer": "駅に 着くと、電話して ください。",
+      "explanation": "Vế sau của と không được là lời nhờ vả (〜て ください). Ba câu còn lại là kết quả tự nhiên / chỉ đường."
+    },
+    {
+      "id": "L23-E14",
+      "type": "fix",
+      "grammarPoint": "L23-G3",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "この ボタンを 押したと、お釣りが 出ます。",
+      "options": [
+        "この ボタンを 押すと、お釣りが 出ます。",
+        "この ボタンを 押しますと、お釣りを 出ます。",
+        "この ボタンを 押すの と、お釣りが 出ます。",
+        "この ボタンを 押しと、お釣りが 出ます。"
+      ],
+      "answer": "この ボタンを 押すと、お釣りが 出ます。",
+      "explanation": "Trước と dùng thể từ điển: 押す と."
+    },
+    {
+      "id": "L23-E15",
+      "type": "vi-jp",
+      "grammarPoint": "L23-G3",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Rẽ phải thì có bưu điện.",
+      "options": [
+        "右へ 曲がると、郵便局が あります。",
+        "右へ 曲がったと、郵便局が あります。",
+        "右を 曲がると、郵便局を あります。",
+        "右へ 曲がると、郵便局が います。"
+      ],
+      "answer": "右へ 曲がると、郵便局が あります。",
+      "explanation": "Chỉ đường: V辞書形 と + nơi chốn が あります. Hướng rẽ dùng へ."
+    },
+    {
+      "id": "L23-E16",
+      "type": "pattern",
+      "grammarPoint": "L23-G3",
+      "question": "Bạn hướng dẫn người mới: 「Hễ bấm nút này thì máy chạy」. Chọn mẫu phù hợp.",
+      "options": [
+        "V辞書形 と、〜",
+        "V辞書形 時間が あります",
+        "普通形 と 思います",
+        "普通形 と 言います"
+      ],
+      "answer": "V辞書形 と、〜",
+      "explanation": "Kết quả tất yếu khi dùng máy → V辞書形 と、〜: この ボタンを 押すと、機械が 動きます."
+    },
+    {
+      "id": "L23-E17",
+      "type": "particle",
+      "grammarPoint": "L23-G4",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "お金を 入れると、切符＿＿ 出ます。",
+      "romaji": "Okane o ireru to, kippu ___ demasu.",
+      "vi": "Bỏ tiền vào thì vé sẽ chạy ra.",
+      "options": ["が", "を", "に", "で"],
+      "answer": "が",
+      "explanation": "Vé tự chạy ra (hiện tượng) → chủ thể đánh dấu bằng が: 切符が 出ます."
+    },
+    {
+      "id": "L23-E18",
+      "type": "fix",
+      "grammarPoint": "L23-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "音は 小さい とき、これを 回して ください。",
+      "options": [
+        "音が 小さい とき、これを 回して ください。",
+        "音を 小さい とき、これを 回して ください。",
+        "音が 小さいの とき、これを 回して ください。",
+        "音に 小さい とき、これを 回して ください。"
+      ],
+      "answer": "音が 小さい とき、これを 回して ください。",
+      "explanation": "Chủ thể của trạng thái bên trong mệnh đề とき dùng が. Tính từ い nối thẳng vào とき."
+    },
+    {
+      "id": "L23-E19",
+      "type": "jp-vi",
+      "grammarPoint": "L23-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "この ボタンを 押すと、機械が 動きます。",
+      "romaji": "Kono botan o osu to, kikai ga ugokimasu.",
+      "options": [
+        "Bấm nút này thì máy sẽ chạy.",
+        "Khi máy chạy thì hãy bấm nút này.",
+        "Máy chạy rồi thì không bấm nút này.",
+        "Tôi nghĩ bấm nút này thì máy sẽ chạy."
+      ],
+      "answer": "Bấm nút này thì máy sẽ chạy.",
+      "explanation": "〜と = hễ… thì; 機械が 動きます = máy chạy (hiện tượng, dùng が)."
+    },
+    {
+      "id": "L23-E20",
+      "type": "particle",
+      "grammarPoint": "L23-G4",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "天気＿＿ いい とき、公園を 散歩します。",
+      "romaji": "Tenki ___ ii toki, kōen o sanpo shimasu.",
+      "vi": "Khi trời đẹp, tôi đi dạo trong công viên.",
+      "options": ["が", "を", "で", "に"],
+      "answer": "が",
+      "explanation": "Trạng thái trong mệnh đề とき: chủ thể (天気) dùng が."
+    },
+    {
+      "id": "L23-E21",
+      "type": "particle",
+      "grammarPoint": "L23-G5",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "あの 橋＿＿ 渡って ください。",
+      "romaji": "Ano hashi ___ watatte kudasai.",
+      "vi": "Hãy đi qua cây cầu kia.",
+      "options": ["を", "に", "で", "が"],
+      "answer": "を",
+      "explanation": "Nơi mình đi xuyên qua → を: 橋を 渡ります."
+    },
+    {
+      "id": "L23-E22",
+      "type": "particle",
+      "grammarPoint": "L23-G5",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "2つ目の 角＿＿ 右へ 曲がって ください。",
+      "romaji": "Futatsu-me no kado ___ migi e magatte kudasai.",
+      "vi": "Hãy rẽ phải ở góc phố thứ hai.",
+      "options": ["を", "で", "が", "の"],
+      "answer": "を",
+      "explanation": "Chỗ rẽ (góc phố) dùng を: 角を 曲がります. Hướng rẽ (右) dùng へ."
+    },
+    {
+      "id": "L23-E23",
+      "type": "fix",
+      "grammarPoint": "L23-G5",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "毎朝 公園に 散歩します。",
+      "options": [
+        "毎朝 公園を 散歩します。",
+        "毎朝 公園が 散歩します。",
+        "毎朝 公園へ 散歩を します。",
+        "毎朝 公園の 散歩します。"
+      ],
+      "answer": "毎朝 公園を 散歩します。",
+      "explanation": "Đi dạo khắp / dọc một nơi → nơi đó dùng を: 公園を 散歩します."
+    },
+    {
+      "id": "L23-E24",
+      "type": "vi-jp",
+      "grammarPoint": "L23-G5",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Khi băng qua đường, hãy cẩn thận xe ô tô.",
+      "options": [
+        "道を 渡る とき、車に 気を つけて ください。",
+        "道に 渡る とき、車に 気を つけて ください。",
+        "道で 渡る とき、車に 気を つけて ください。",
+        "道を 渡った とき、車に 気を つけて ください。"
+      ],
+      "answer": "道を 渡る とき、車に 気を つけて ください。",
+      "explanation": "Băng qua đường → 道を 渡る. Cẩn thận TRONG LÚC chưa qua xong → thể từ điển 渡る とき."
+    },
+    {
+      "id": "L23-E25",
+      "type": "order",
+      "grammarPoint": "L23-G5",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Hãy rẽ phải ở góc phố thứ hai.",
+      "tokens": ["2つ目の", "角を", "右へ", "曲がって ください"],
+      "explanation": "Nơi rẽ (角を) + hướng rẽ (右へ) + 曲がって ください."
+    },
+    {
+      "id": "L23-E26",
+      "type": "situation",
+      "grammarPoint": "L23-G5",
+      "question": "Một du khách hỏi đường. Bạn muốn nói: 「Hãy đi qua cây cầu kia rồi rẽ trái」. Câu đúng:",
+      "options": [
+        "あの 橋を 渡って、左へ 曲がって ください。",
+        "あの 橋に 渡って、左へ 曲がって ください。",
+        "あの 橋で 渡って、左へ 曲がって ください。",
+        "あの 橋が 渡って、左へ 曲がって ください。"
+      ],
+      "answer": "あの 橋を 渡って、左へ 曲がって ください。",
+      "explanation": "Cầu là nơi đi xuyên qua → 橋を 渡ります. Hướng rẽ dùng へ."
+    },
+    {
+      "id": "L23-E27",
+      "type": "identify",
+      "grammarPoint": "L23-G1",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "子どもの とき、よく 川で 泳ぎました。",
+      "romaji": "Kodomo no toki, yoku kawa de oyogimashita.",
+      "vi": "Hồi nhỏ tôi hay bơi ở sông.",
+      "options": [
+        "N の とき、〜 (khi…)",
+        "V辞書形 と、〜 (hễ… thì)",
+        "N(nơi) を V (đi qua)",
+        "〜と 言います (trích dẫn)"
+      ],
+      "answer": "N の とき、〜 (khi…)",
+      "explanation": "子ども (danh từ) + の + とき = hồi còn nhỏ."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 23 }
+}

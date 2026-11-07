@@ -1,0 +1,744 @@
+{
+  "lesson": 12,
+  "title": "Quá khứ của tính từ và so sánh",
+  "titleJp": "祇園祭は どうでしたか",
+  "topic": "Kể lại cảm nhận (đã vui, đã lạnh…) · so sánh hơn · chọn 1 trong 2 · nhất",
+  "description": "Học xong bài này bạn kể được chuyến đi, bữa tiệc, bài thi đã thế nào; so sánh hai thứ (A hơn B), hỏi 「cái nào hơn」 và 「cái gì … nhất」.",
+  "objectives": [
+    "Chia quá khứ danh từ / tính từ な: でした / じゃ ありませんでした.",
+    "Chia quá khứ tính từ い: 〜かったです / 〜くなかったです (いい → よかったです).",
+    "So sánh hơn: N1 は N2 より A です.",
+    "Hỏi chọn 1 trong 2: N1 と N2 と どちらが A ですか → N1 の ほうが A です / どちらも.",
+    "Hỏi và nói 「nhất」: N[の 中]で 何 / どこ / だれ / いつ が いちばん A ですか."
+  ],
+  "keyPoints": [
+    "Danh từ, tính từ な: です → でした; じゃ ありません → じゃ ありませんでした.",
+    "Tính từ い: bỏ い + かったです; phủ định: bỏ い + くなかったです. いい → よかったです / よくなかったです.",
+    "より gắn sau vật bị đem ra so (bên 「kém hơn」): ベトナムは 日本より 暑いです.",
+    "Chọn giữa HAI thứ dùng どちら; trả lời 〜の ほうが…, cả hai: どちらも.",
+    "Từ để hỏi làm chủ ngữ đi với が: どちらが, 何が, だれが.",
+    "Phạm vi so sánh nhất đi với で: 1年で, 家族で, 日本料理の 中で."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L12-G1",
+      "title": "Quá khứ N / なA: でした / じゃ ありませんでした",
+      "meaning": "(đã) là… / (đã) không phải là…",
+      "why": "Để kể chuyện đã qua: 「Hôm qua trời mưa」, 「Bài thi dễ」, 「Hôm qua không phải ngày nghỉ」 — kể lại chuyến đi, cuối tuần đều cần.",
+      "when": [
+        "Kể về thời tiết, sự kiện, ngày tháng trong quá khứ (danh từ).",
+        "Kể cảm nhận đã qua với tính từ な: 静かでした, 簡単でした."
+      ],
+      "formula": "N / なA + でした\nN / なA + じゃ ありませんでした",
+      "parts": [
+        { "part": "でした", "role": "Quá khứ của です." },
+        { "part": "じゃ ありませんでした", "role": "Quá khứ phủ định (= じゃ ありません + でした)." }
+      ],
+      "memoryTip": {
+        "emoji": "⏪",
+        "hook": "「です」 lùi về quá khứ thành 「でした」!",
+        "meaning": "→ 雨です → 雨でした; じゃ ありません → じゃ ありませんでした."
+      },
+      "examples": [
+        {
+          "jp": "昨日は 雨でした。",
+          "romaji": "Kinō wa ame deshita.",
+          "vi": "Hôm qua trời mưa.",
+          "context": "Thời tiết",
+          "breakdown": [
+            { "jp": "昨日", "vi": "hôm qua" },
+            { "jp": "雨", "vi": "mưa (danh từ)" },
+            { "jp": "でした", "vi": "(đã) là — quá khứ" }
+          ]
+        },
+        {
+          "jp": "試験は 簡単でした。",
+          "romaji": "Shiken wa kantan deshita.",
+          "vi": "Bài thi (đã) dễ.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "京都は 静かでしたか。 …いいえ、静かじゃ ありませんでした。",
+          "romaji": "Kyōto wa shizuka deshita ka. … Iie, shizuka ja arimasen deshita.",
+          "vi": "Kyoto có yên tĩnh không? …Không, không yên tĩnh.",
+          "context": "Du lịch"
+        },
+        {
+          "jp": "先週の 土曜日は 休みじゃ ありませんでした。",
+          "romaji": "Senshū no doyōbi wa yasumi ja arimasen deshita.",
+          "vi": "Thứ Bảy tuần trước không phải là ngày nghỉ.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "パーティーは にぎやかでした。",
+          "romaji": "Pātī wa nigiyaka deshita.",
+          "vi": "Bữa tiệc (đã) rất náo nhiệt.",
+          "context": "Bạn bè"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "昨日は 休みじゃ ありません。",
+          "right": "昨日は 休みじゃ ありませんでした。",
+          "explain": "Nói về hôm qua thì phải dùng quá khứ: thêm でした vào sau じゃ ありません."
+        },
+        {
+          "wrong": "試験は 簡単かったです。",
+          "right": "試験は 簡単でした。",
+          "explain": "簡単 là tính từ な → quá khứ là でした. 〜かった chỉ dành cho tính từ い."
+        }
+      ]
+    },
+    {
+      "id": "L12-G2",
+      "title": "Quá khứ いA: 〜かったです / 〜くなかったです",
+      "meaning": "(đã) … / (đã) không …",
+      "why": "Để kể cảm nhận đã qua với tính từ い: 「Chuyến đi vui」, 「Hôm qua lạnh」, 「Bài thi không khó」. Tính từ い chia khác hẳn tính từ な.",
+      "when": [
+        "Trả lời 〜は どうでしたか (… đã thế nào?).",
+        "Kể lại thời tiết, món ăn, chuyến đi đã qua."
+      ],
+      "formula": "いA (bỏ い) + かったです\nいA (bỏ い) + くなかったです\nいい → よかったです / よくなかったです",
+      "parts": [
+        { "part": "〜かったです", "role": "Quá khứ khẳng định: 楽しい → 楽しかったです." },
+        { "part": "〜くなかったです", "role": "Quá khứ phủ định: 楽しい → 楽しくなかったです." },
+        { "part": "よかったです", "role": "Ngoại lệ: いい → よかったです (phủ định: よくなかったです)." }
+      ],
+      "memoryTip": {
+        "emoji": "✂️",
+        "hook": "Cắt 「い」, gắn 「かった」 — quá khứ tới liền!",
+        "meaning": "→ 楽しい → 楽しかったです; phủ định: 〜くなかったです; いい → よかったです."
+      },
+      "examples": [
+        {
+          "jp": "旅行は どうでしたか。 …とても 楽しかったです。",
+          "romaji": "Ryokō wa dō deshita ka. … Totemo tanoshikatta desu.",
+          "vi": "Chuyến du lịch thế nào? …Rất vui.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "どうでしたか", "vi": "(đã) thế nào?" },
+            { "jp": "楽しかったです", "vi": "(đã) vui — quá khứ của 楽しい" }
+          ]
+        },
+        {
+          "jp": "昨日は 寒かったです。",
+          "romaji": "Kinō wa samukatta desu.",
+          "vi": "Hôm qua lạnh.",
+          "context": "Thời tiết"
+        },
+        {
+          "jp": "試験は 難しくなかったです。",
+          "romaji": "Shiken wa muzukashikunakatta desu.",
+          "vi": "Bài thi không khó.",
+          "context": "Trường học",
+          "breakdown": [
+            { "jp": "難しい", "vi": "khó" },
+            { "jp": "難しくなかったです", "vi": "(đã) không khó" }
+          ]
+        },
+        {
+          "jp": "北海道の 天気は よかったです。",
+          "romaji": "Hokkaidō no tenki wa yokatta desu.",
+          "vi": "Thời tiết ở Hokkaido đẹp.",
+          "context": "Du lịch",
+          "note": "いい → よかったです (không nói いかったです)."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "旅行は 楽しいでした。",
+          "right": "旅行は 楽しかったです。",
+          "explain": "Tính từ い không dùng でした. Phải đổi đuôi: 楽しい → 楽しかったです."
+        },
+        {
+          "wrong": "天気は いかったです。",
+          "right": "天気は よかったです。",
+          "explain": "いい là ngoại lệ: quá khứ luôn là よかったです."
+        },
+        {
+          "wrong": "昨日は 寒いじゃ ありませんでした。",
+          "right": "昨日は 寒くなかったです。",
+          "explain": "Tính từ い phủ định quá khứ: bỏ い + くなかったです."
+        }
+      ]
+    },
+    {
+      "id": "L12-G3",
+      "title": "N1 は N2 より A です",
+      "meaning": "N1 … hơn N2",
+      "why": "Để so sánh hai thứ: 「Việt Nam nóng hơn Nhật」, 「Shinkansen nhanh hơn xe buýt」 — rất hay dùng khi nói về quê hương, mua sắm.",
+      "when": [
+        "So sánh hai người, hai vật, hai nơi.",
+        "Nói N1 có đặc điểm A nhiều hơn N2."
+      ],
+      "formula": "N1 は N2 より A です",
+      "parts": [
+        { "part": "N1 は", "role": "Chủ đề — thứ có đặc điểm A NHIỀU hơn." },
+        { "part": "N2 より", "role": "「so với N2」 — thứ bị đem ra so, có ít đặc điểm A hơn." },
+        { "part": "A です", "role": "Tính từ (không cần thêm chữ 「hơn」)." }
+      ],
+      "memoryTip": {
+        "emoji": "⚖️",
+        "hook": "「より」 bám vào bên kém hơn!",
+        "meaning": "→ ベトナムは 日本より 暑いです: Nhật (có より) kém nóng hơn → Việt Nam nóng hơn."
+      },
+      "examples": [
+        {
+          "jp": "ベトナムは 日本より 暑いです。",
+          "romaji": "Betonamu wa Nihon yori atsui desu.",
+          "vi": "Việt Nam nóng hơn Nhật Bản.",
+          "context": "Thời tiết",
+          "breakdown": [
+            { "jp": "ベトナムは", "vi": "Việt Nam (bên hơn)" },
+            { "jp": "日本より", "vi": "so với Nhật Bản" },
+            { "jp": "暑いです", "vi": "nóng" }
+          ]
+        },
+        {
+          "jp": "新幹線は バスより 速いです。",
+          "romaji": "Shinkansen wa basu yori hayai desu.",
+          "vi": "Shinkansen nhanh hơn xe buýt.",
+          "context": "Đi tàu"
+        },
+        {
+          "jp": "東京は 大阪より 人が 多いです。",
+          "romaji": "Tōkyō wa Ōsaka yori hito ga ōi desu.",
+          "vi": "Tokyo đông người hơn Osaka.",
+          "context": "Du lịch",
+          "note": "人が 多い = đông người (người thì nhiều)."
+        },
+        {
+          "jp": "今日は 昨日より 涼しいです。",
+          "romaji": "Kyō wa kinō yori suzushii desu.",
+          "vi": "Hôm nay mát hơn hôm qua.",
+          "context": "Thời tiết"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "ベトナムは 日本から 暑いです。",
+          "right": "ベトナムは 日本より 暑いです。",
+          "explain": "「hơn (so với)」 là より. から là 「từ」 hoặc 「vì」."
+        },
+        {
+          "wrong": "(Muốn nói Việt Nam nóng hơn) 日本は ベトナムより 暑いです。",
+          "right": "ベトナムは 日本より 暑いです。",
+          "explain": "より gắn vào bên KÉM hơn. Câu sai lại có nghĩa 「Nhật nóng hơn Việt Nam」."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: ずっと",
+          "text": "Thêm ずっと trước tính từ để nói 「hơn nhiều」.",
+          "examples": [
+            {
+              "jp": "新幹線は バスより ずっと 速いです。",
+              "romaji": "Shinkansen wa basu yori zutto hayai desu.",
+              "vi": "Shinkansen nhanh hơn xe buýt nhiều."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L12-G4",
+      "title": "N1 と N2 と どちらが A ですか — N1 の ほうが A です",
+      "meaning": "N1 và N2, cái nào … hơn? — N1 … hơn",
+      "why": "Để hỏi người khác chọn 1 trong 2: 「Cà phê hay trà, cái nào ngon hơn?」 — dùng khi mời, khi mua sắm, khi tìm hiểu sở thích.",
+      "when": [
+        "Hỏi chọn giữa HAI thứ.",
+        "Trả lời: N の ほうが A です; nếu như nhau: どちらも A です."
+      ],
+      "formula": "N1 と N2 と どちらが A ですか\n→ N1 の ほうが A です\n→ どちらも A です",
+      "parts": [
+        { "part": "N1 と N2 と", "role": "Hai thứ được đem ra chọn (と sau cả hai)." },
+        { "part": "どちらが", "role": "「cái nào」 (giữa 2 thứ) — từ để hỏi làm chủ ngữ nên đi với が." },
+        { "part": "N の ほうが", "role": "「phía N thì… hơn」 — câu trả lời chọn một bên." },
+        { "part": "どちらも", "role": "「cả hai」 — khi hai thứ như nhau." }
+      ],
+      "memoryTip": {
+        "emoji": "✌️",
+        "hook": "Hai lựa chọn → 「どちら」; bên được chọn → 「〜の ほう」!",
+        "meaning": "→ サッカーと 野球と どちらが…? …サッカーの ほうが…"
+      },
+      "examples": [
+        {
+          "jp": "サッカーと 野球と どちらが おもしろいですか。 …サッカーの ほうが おもしろいです。",
+          "romaji": "Sakkā to yakyū to dochira ga omoshiroi desu ka. … Sakkā no hō ga omoshiroi desu.",
+          "vi": "Bóng đá và bóng chày, môn nào hay hơn? …Bóng đá hay hơn.",
+          "context": "Thể thao",
+          "breakdown": [
+            { "jp": "どちらが", "vi": "cái nào (trong 2)" },
+            { "jp": "サッカーの ほうが", "vi": "bóng đá thì (hơn)" }
+          ]
+        },
+        {
+          "jp": "北海道と 東京と どちらが 寒いですか。 …北海道の ほうが 寒いです。",
+          "romaji": "Hokkaidō to Tōkyō to dochira ga samui desu ka. … Hokkaidō no hō ga samui desu.",
+          "vi": "Hokkaido và Tokyo, nơi nào lạnh hơn? …Hokkaido lạnh hơn.",
+          "context": "Du lịch"
+        },
+        {
+          "jp": "肉と 魚と どちらが 好きですか。 …どちらも 好きです。",
+          "romaji": "Niku to sakana to dochira ga suki desu ka. … Dochira mo suki desu.",
+          "vi": "Thịt và cá, bạn thích món nào hơn? …Tôi thích cả hai.",
+          "context": "Nhà hàng"
+        },
+        {
+          "jp": "コーヒーと 紅茶と どちらが いいですか。 …紅茶の ほうが いいです。",
+          "romaji": "Kōhī to kōcha to dochira ga ii desu ka. … Kōcha no hō ga ii desu.",
+          "vi": "Cà phê và hồng trà, anh dùng gì? …Tôi dùng hồng trà.",
+          "context": "Quán cà phê"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "サッカーと 野球と どれが おもしろいですか。",
+          "right": "サッカーと 野球と どちらが おもしろいですか。",
+          "explain": "Chọn giữa HAI thứ dùng どちら; どれ dùng khi có từ 3 thứ trở lên."
+        },
+        {
+          "wrong": "北海道が ほうが 寒いです。",
+          "right": "北海道の ほうが 寒いです。",
+          "explain": "Danh từ nối với ほう bằng の: N の ほうが."
+        },
+        {
+          "wrong": "肉と 魚と どちらは 好きですか。",
+          "right": "肉と 魚と どちらが 好きですか。",
+          "explain": "Từ để hỏi làm chủ ngữ đi với が, không đi với は."
+        }
+      ]
+    },
+    {
+      "id": "L12-G5",
+      "title": "N[の 中]で 何 / どこ / だれ / いつ が いちばん A ですか",
+      "meaning": "Trong N, cái gì / ở đâu / ai / khi nào … nhất?",
+      "why": "Để nói và hỏi về cái 「nhất」: 「Món Nhật nào ngon nhất?」, 「Tháng nào lạnh nhất?」 — so sánh trong một nhóm từ 3 thứ trở lên.",
+      "when": [
+        "Hỏi cái nhất trong một phạm vi (nhóm, thời gian, nơi chốn).",
+        "Chọn từ để hỏi theo đối tượng: 何 (vật), どこ (nơi), だれ (người), いつ (thời gian)."
+      ],
+      "formula": "N[の 中]で 何 / どこ / だれ / いつ が いちばん A ですか\n→ X が いちばん A です",
+      "parts": [
+        { "part": "N[の 中]で", "role": "Phạm vi so sánh — 「trong số N」. Liệt kê nhiều thứ thì dùng N1 と N2 と N3 の 中で." },
+        { "part": "何 / どこ / だれ / いつ が", "role": "Từ để hỏi (chủ ngữ) + が." },
+        { "part": "いちばん", "role": "「nhất」 — đặt trước tính từ." }
+      ],
+      "memoryTip": {
+        "emoji": "🥇",
+        "hook": "Số 1 là 「いちばん」, phạm vi đứng trước 「で」!",
+        "meaning": "→ 1年で いつが いちばん 寒いですか (trong 1 năm, khi nào lạnh nhất?)."
+      },
+      "examples": [
+        {
+          "jp": "日本料理の 中で 何が いちばん おいしいですか。 …てんぷらが いちばん おいしいです。",
+          "romaji": "Nihon-ryōri no naka de nani ga ichiban oishii desu ka. … Tenpura ga ichiban oishii desu.",
+          "vi": "Trong các món Nhật, món nào ngon nhất? …Tempura ngon nhất.",
+          "context": "Nhà hàng",
+          "breakdown": [
+            { "jp": "日本料理の 中で", "vi": "trong số các món Nhật" },
+            { "jp": "何が", "vi": "cái gì" },
+            { "jp": "いちばん", "vi": "nhất" }
+          ]
+        },
+        {
+          "jp": "1年で いつが いちばん 寒いですか。 …2月が いちばん 寒いです。",
+          "romaji": "Ichi-nen de itsu ga ichiban samui desu ka. … Ni-gatsu ga ichiban samui desu.",
+          "vi": "Trong một năm, khi nào lạnh nhất? …Tháng 2 lạnh nhất.",
+          "context": "Thời tiết"
+        },
+        {
+          "jp": "家族で だれが いちばん 料理が 上手ですか。 …母が いちばん 上手です。",
+          "romaji": "Kazoku de dare ga ichiban ryōri ga jōzu desu ka. … Haha ga ichiban jōzu desu.",
+          "vi": "Trong nhà, ai nấu ăn giỏi nhất? …Mẹ tôi giỏi nhất.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "日本で どこが いちばん にぎやかですか。 …東京が いちばん にぎやかです。",
+          "romaji": "Nihon de doko ga ichiban nigiyaka desu ka. … Tōkyō ga ichiban nigiyaka desu.",
+          "vi": "Ở Nhật, nơi nào náo nhiệt nhất? …Tokyo náo nhiệt nhất.",
+          "context": "Du lịch"
+        },
+        {
+          "jp": "すしと てんぷらと すきやきの 中で 何が いちばん 好きですか。 …すしが いちばん 好きです。",
+          "romaji": "Sushi to tenpura to sukiyaki no naka de nani ga ichiban suki desu ka. … Sushi ga ichiban suki desu.",
+          "vi": "Trong sushi, tempura và sukiyaki, bạn thích món nào nhất? …Tôi thích sushi nhất.",
+          "context": "Nhà hàng"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "日本料理の 中で 何は いちばん おいしいですか。",
+          "right": "日本料理の 中で 何が いちばん おいしいですか。",
+          "explain": "Từ để hỏi làm chủ ngữ đi với が."
+        },
+        {
+          "wrong": "1年に いつが いちばん 寒いですか。",
+          "right": "1年で いつが いちばん 寒いですか。",
+          "explain": "Phạm vi so sánh nhất dùng で (trong phạm vi…), không dùng に."
+        },
+        {
+          "wrong": "家族で 何が いちばん 料理が 上手ですか。",
+          "right": "家族で だれが いちばん 料理が 上手ですか。",
+          "explain": "Hỏi người → だれ; 何 chỉ dùng cho đồ vật."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "N / なA でした / じゃ ありませんでした", "meaning": "(đã) là… / (đã) không…", "example": "昨日は 雨でした。" },
+    { "pattern": "いA かったです / くなかったです", "meaning": "(đã) … / (đã) không … (いい → よかった)", "example": "旅行は 楽しかったです。" },
+    { "pattern": "N1 は N2 より A です", "meaning": "N1 … hơn N2", "example": "ベトナムは 日本より 暑いです。" },
+    { "pattern": "N1 と N2 と どちらが A ですか", "meaning": "Cái nào … hơn? → N の ほうが / どちらも", "example": "サッカーの ほうが おもしろいです。" },
+    { "pattern": "N[の 中]で 何が いちばん A ですか", "meaning": "Trong N, cái gì … nhất?", "example": "1年で いつが いちばん 寒いですか。" }
+  ],
+  "exercises": [
+    {
+      "id": "L12-E01",
+      "type": "fill",
+      "grammarPoint": "L12-G1",
+      "question": "Gõ phần còn thiếu để thành câu quá khứ (kana).",
+      "jp": "昨日は 雨＿＿。",
+      "vi": "Hôm qua trời mưa.",
+      "answer": "でした",
+      "explanation": "Danh từ ở quá khứ: です → でした."
+    },
+    {
+      "id": "L12-E02",
+      "type": "fix",
+      "grammarPoint": "L12-G1",
+      "question": "Muốn nói 「Hôm qua không phải là ngày nghỉ」 nhưng câu sau sai thì. Chọn câu đúng.",
+      "jp": "昨日は 休みじゃ ありません。",
+      "options": [
+        "昨日は 休みじゃ ありませんでした。",
+        "昨日は 休みじゃ なかったです でした。",
+        "昨日は 休みくなかったです。",
+        "昨日は 休みでしたじゃ ありません。"
+      ],
+      "answer": "昨日は 休みじゃ ありませんでした。",
+      "explanation": "Danh từ quá khứ phủ định: じゃ ありませんでした."
+    },
+    {
+      "id": "L12-E03",
+      "type": "vi-jp",
+      "grammarPoint": "L12-G1",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Bài thi (đã) dễ.",
+      "options": [
+        "試験は 簡単でした。",
+        "試験は 簡単かったです。",
+        "試験は 簡単なでした。",
+        "試験は 簡単です。"
+      ],
+      "answer": "試験は 簡単でした。",
+      "explanation": "簡単 là tính từ な → quá khứ: 簡単でした (không có な, không dùng かった)."
+    },
+    {
+      "id": "L12-E04",
+      "type": "choice",
+      "grammarPoint": "L12-G1",
+      "question": "Dạng quá khứ phủ định của 「静かです」 là gì?",
+      "options": [
+        "静かじゃ ありませんでした",
+        "静かくなかったです",
+        "静かでしたじゃ ありません",
+        "静かじゃ ありません"
+      ],
+      "answer": "静かじゃ ありませんでした",
+      "explanation": "静か là tính từ な → quá khứ phủ định: じゃ ありませんでした."
+    },
+    {
+      "id": "L12-E05",
+      "type": "jp-vi",
+      "grammarPoint": "L12-G1",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "京都は 静かでしたか。 …いいえ、静かじゃ ありませんでした。",
+      "romaji": "Kyōto wa shizuka deshita ka. … Iie, shizuka ja arimasen deshita.",
+      "options": [
+        "Kyoto có yên tĩnh không? …Không, không yên tĩnh.",
+        "Kyoto có yên tĩnh không? …Có, rất yên tĩnh.",
+        "Kyoto có đẹp không? …Không, không đẹp.",
+        "Kyoto thế nào? …Yên tĩnh."
+      ],
+      "answer": "Kyoto có yên tĩnh không? …Không, không yên tĩnh.",
+      "explanation": "静かでした = (đã) yên tĩnh; 静かじゃ ありませんでした = (đã) không yên tĩnh."
+    },
+    {
+      "id": "L12-E06",
+      "type": "choice",
+      "grammarPoint": "L12-G2",
+      "question": "Dạng quá khứ của 「楽しいです」 là gì?",
+      "options": ["楽しかったです", "楽しいでした", "楽しでした", "楽しいかったです"],
+      "answer": "楽しかったです",
+      "explanation": "Tính từ い: bỏ い + かったです."
+    },
+    {
+      "id": "L12-E07",
+      "type": "fix",
+      "grammarPoint": "L12-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "北海道の 天気は いかったです。",
+      "options": [
+        "北海道の 天気は よかったです。",
+        "北海道の 天気は いいでした。",
+        "北海道の 天気は いくかったです。",
+        "北海道の 天気は よいでした。"
+      ],
+      "answer": "北海道の 天気は よかったです。",
+      "explanation": "いい là ngoại lệ: quá khứ là よかったです."
+    },
+    {
+      "id": "L12-E08",
+      "type": "fill",
+      "grammarPoint": "L12-G2",
+      "question": "Gõ phần còn thiếu để thành câu quá khứ (kana).",
+      "jp": "昨日は 寒＿＿です。",
+      "vi": "Hôm qua lạnh.",
+      "answer": "かった",
+      "explanation": "寒い → bỏ い + かったです → 寒かったです."
+    },
+    {
+      "id": "L12-E09",
+      "type": "situation",
+      "grammarPoint": "L12-G2",
+      "question": "Đồng nghiệp hỏi 「旅行は どうでしたか」. Chuyến đi không vui lắm. Bạn đáp:",
+      "options": [
+        "あまり 楽しくなかったです。",
+        "あまり 楽しかったです。",
+        "あまり 楽しいじゃ ありませんでした。",
+        "あまり 楽しくないでした。"
+      ],
+      "answer": "あまり 楽しくなかったです。",
+      "explanation": "あまり + phủ định; tính từ い quá khứ phủ định: 楽しくなかったです."
+    },
+    {
+      "id": "L12-E10",
+      "type": "order",
+      "grammarPoint": "L12-G2",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Bài thi hôm qua không khó.",
+      "tokens": ["昨日の", "試験", "は", "難しくなかったです"],
+      "explanation": "難しい → quá khứ phủ định: 難しくなかったです."
+    },
+    {
+      "id": "L12-E11",
+      "type": "particle",
+      "grammarPoint": "L12-G3",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "ベトナムは 日本＿＿ 暑いです。",
+      "romaji": "Betonamu wa Nihon ___ atsui desu.",
+      "vi": "Việt Nam nóng hơn Nhật Bản.",
+      "options": ["より", "から", "の", "で"],
+      "answer": "より",
+      "explanation": "「hơn (so với)」 = より, gắn sau vật bị đem ra so."
+    },
+    {
+      "id": "L12-E12",
+      "type": "jp-vi",
+      "grammarPoint": "L12-G3",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "新幹線は バスより 速いです。",
+      "romaji": "Shinkansen wa basu yori hayai desu.",
+      "options": [
+        "Shinkansen nhanh hơn xe buýt.",
+        "Xe buýt nhanh hơn Shinkansen.",
+        "Shinkansen nhanh nhất.",
+        "Shinkansen và xe buýt nhanh như nhau."
+      ],
+      "answer": "Shinkansen nhanh hơn xe buýt.",
+      "explanation": "より gắn vào バス (bên kém) → Shinkansen nhanh hơn."
+    },
+    {
+      "id": "L12-E13",
+      "type": "order",
+      "grammarPoint": "L12-G3",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Hôm nay mát hơn hôm qua.",
+      "tokens": ["今日", "は", "昨日", "より", "涼しいです"],
+      "accept": [["昨日", "より", "今日", "は", "涼しいです"]],
+      "explanation": "N1 は N2 より A です."
+    },
+    {
+      "id": "L12-E14",
+      "type": "fix",
+      "grammarPoint": "L12-G3",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "ベトナムは 日本から 暑いです。",
+      "options": [
+        "ベトナムは 日本より 暑いです。",
+        "ベトナムは 日本の ほう 暑いです。",
+        "ベトナムより 日本が 暑いです から。",
+        "ベトナムは 日本まで 暑いです。"
+      ],
+      "answer": "ベトナムは 日本より 暑いです。",
+      "explanation": "So sánh hơn dùng より; から là 「từ」 hoặc 「vì」."
+    },
+    {
+      "id": "L12-E15",
+      "type": "vi-jp",
+      "grammarPoint": "L12-G3",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tokyo đông người hơn Osaka.",
+      "options": [
+        "東京は 大阪より 人が 多いです。",
+        "大阪は 東京より 人が 多いです。",
+        "東京は 大阪から 人が 多いです。",
+        "東京は 大阪より 人を 多いです。"
+      ],
+      "answer": "東京は 大阪より 人が 多いです。",
+      "explanation": "Bên hơn (東京) làm chủ đề は; bên kém (大阪) + より."
+    },
+    {
+      "id": "L12-E16",
+      "type": "choice",
+      "grammarPoint": "L12-G4",
+      "question": "Chọn từ để hỏi điền vào chỗ trống: 「サッカーと 野球と ＿＿が おもしろいですか。」",
+      "jp": "サッカーと 野球と ＿＿が おもしろいですか。",
+      "vi": "Bóng đá và bóng chày, môn nào hay hơn?",
+      "options": ["どちら", "どこ", "だれ", "いつ"],
+      "answer": "どちら",
+      "explanation": "Chọn 1 trong 2 thứ → どちら."
+    },
+    {
+      "id": "L12-E17",
+      "type": "fill",
+      "grammarPoint": "L12-G4",
+      "question": "Gõ từ còn thiếu (kana).",
+      "jp": "…サッカーの ＿＿が おもしろいです。",
+      "vi": "…Bóng đá hay hơn.",
+      "answer": "ほう",
+      "accept": ["方"],
+      "explanation": "Trả lời câu hỏi どちら: N の ほうが A です."
+    },
+    {
+      "id": "L12-E18",
+      "type": "situation",
+      "grammarPoint": "L12-G4",
+      "question": "Bạn được hỏi 「肉と 魚と どちらが 好きですか」. Bạn thích cả hai. Bạn đáp:",
+      "options": [
+        "どちらも 好きです。",
+        "どちらが 好きです。",
+        "肉の ほうが 魚です。",
+        "いいえ、好きです。"
+      ],
+      "answer": "どちらも 好きです。",
+      "explanation": "Cả hai như nhau → どちらも."
+    },
+    {
+      "id": "L12-E19",
+      "type": "fix",
+      "grammarPoint": "L12-G4",
+      "question": "Câu trả lời sau bị sai. Chọn cách sửa đúng.",
+      "jp": "北海道と 東京と どちらが 寒いですか。 …北海道が ほうが 寒いです。",
+      "options": [
+        "…北海道の ほうが 寒いです。",
+        "…北海道は ほうが 寒いです。",
+        "…北海道より ほうが 寒いです。",
+        "…どちらが 寒いです。"
+      ],
+      "answer": "…北海道の ほうが 寒いです。",
+      "explanation": "Danh từ + の + ほうが: 北海道の ほうが 寒いです."
+    },
+    {
+      "id": "L12-E20",
+      "type": "identify",
+      "grammarPoint": "L12-G4",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "コーヒーと 紅茶と どちらが いいですか。",
+      "romaji": "Kōhī to kōcha to dochira ga ii desu ka.",
+      "vi": "Cà phê và hồng trà, anh dùng gì?",
+      "options": [
+        "N1 と N2 と どちらが A ですか (chọn 1 trong 2)",
+        "N1 は N2 より A です (so sánh hơn)",
+        "N[の 中]で 何が いちばん A ですか (nhất)",
+        "N は どうでしたか (hỏi cảm nhận quá khứ)"
+      ],
+      "answer": "N1 と N2 と どちらが A ですか (chọn 1 trong 2)",
+      "explanation": "Hai thứ nối bằng と… と + どちらが → hỏi chọn 1 trong 2."
+    },
+    {
+      "id": "L12-E21",
+      "type": "particle",
+      "grammarPoint": "L12-G5",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "1年＿＿ いつが いちばん 寒いですか。",
+      "romaji": "Ichi-nen ___ itsu ga ichiban samui desu ka.",
+      "vi": "Trong một năm, khi nào lạnh nhất?",
+      "options": ["で", "に", "を", "へ"],
+      "answer": "で",
+      "explanation": "Phạm vi so sánh nhất dùng で: 1年で."
+    },
+    {
+      "id": "L12-E22",
+      "type": "choice",
+      "grammarPoint": "L12-G5",
+      "question": "Chọn từ để hỏi điền vào chỗ trống: 「家族で ＿＿が いちばん 料理が 上手ですか。」",
+      "jp": "家族で ＿＿が いちばん 料理が 上手ですか。",
+      "vi": "Trong nhà, ai nấu ăn giỏi nhất?",
+      "options": ["だれ", "何", "どこ", "いつ"],
+      "answer": "だれ",
+      "explanation": "Hỏi người → だれ."
+    },
+    {
+      "id": "L12-E23",
+      "type": "vi-jp",
+      "grammarPoint": "L12-G5",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Ở Nhật, nơi nào náo nhiệt nhất?",
+      "options": [
+        "日本で どこが いちばん にぎやかですか。",
+        "日本で どこは いちばん にぎやかですか。",
+        "日本で 何が いちばん にぎやかですか。",
+        "日本で どちらが にぎやかですか。"
+      ],
+      "answer": "日本で どこが いちばん にぎやかですか。",
+      "explanation": "Hỏi nơi chốn → どこ + が; 「nhất」 = いちばん."
+    },
+    {
+      "id": "L12-E24",
+      "type": "jp-vi",
+      "grammarPoint": "L12-G5",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "すしと てんぷらと すきやきの 中で 何が いちばん 好きですか。",
+      "romaji": "Sushi to tenpura to sukiyaki no naka de nani ga ichiban suki desu ka.",
+      "options": [
+        "Trong sushi, tempura và sukiyaki, bạn thích món nào nhất?",
+        "Sushi, tempura và sukiyaki, bạn có thích không?",
+        "Sushi ngon hơn tempura và sukiyaki phải không?",
+        "Bạn thích sushi hay tempura hơn?"
+      ],
+      "answer": "Trong sushi, tempura và sukiyaki, bạn thích món nào nhất?",
+      "explanation": "〜の 中で 何が いちばん = trong số …, cái gì … nhất."
+    },
+    {
+      "id": "L12-E25",
+      "type": "pattern",
+      "grammarPoint": "L12-G5",
+      "question": "Muốn hỏi 「Trong một năm, khi nào nóng nhất?」, chọn mẫu phù hợp.",
+      "options": [
+        "N[の 中]で いつが いちばん A ですか",
+        "N1 と N2 と どちらが A ですか",
+        "N1 は N2 より A です",
+        "N は どうでしたか"
+      ],
+      "answer": "N[の 中]で いつが いちばん A ですか",
+      "explanation": "「nhất」 trong một phạm vi → 〜で + từ để hỏi が + いちばん."
+    },
+    {
+      "id": "L12-E26",
+      "type": "fix",
+      "grammarPoint": "L12-G5",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "日本料理の 中で 何は いちばん おいしいですか。",
+      "options": [
+        "日本料理の 中で 何が いちばん おいしいですか。",
+        "日本料理の 中に 何は いちばん おいしいですか。",
+        "日本料理の 中で 何を いちばん おいしいですか。",
+        "日本料理の 中で どちらは いちばん おいしいですか。"
+      ],
+      "answer": "日本料理の 中で 何が いちばん おいしいですか。",
+      "explanation": "Từ để hỏi làm chủ ngữ đi với が; phạm vi dùng で."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 12 }
+}

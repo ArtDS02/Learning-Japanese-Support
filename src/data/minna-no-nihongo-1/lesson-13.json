@@ -1,0 +1,755 @@
+{
+  "lesson": 13,
+  "title": "Mong muốn và mục đích",
+  "titleJp": "別々に お願いします",
+  "topic": "Muốn có · muốn làm · đi đâu để làm gì · đâu đó / cái gì đó · kính ngữ ご〜",
+  "description": "Học xong bài này bạn nói được mình muốn có gì, muốn làm gì, đi đâu để làm gì; hỏi 「có đi đâu không / có ăn gì không」 và hiểu cách nói lịch sự ご注文, ご家族.",
+  "objectives": [
+    "Nói muốn có đồ vật: N が 欲しいです.",
+    "Nói muốn làm gì: Vます → Vたいです.",
+    "Nói đi / đến / về đâu để làm gì: Nơi へ Vます(bỏ ます) に 行きます.",
+    "Dùng どこか (đâu đó) và 何か (cái gì đó).",
+    "Nhận biết kính ngữ ご〜 trước danh từ của người khác."
+  ],
+  "keyPoints": [
+    "欲しい = muốn CÓ (đồ vật); 〜たい = muốn LÀM (hành động). Cả hai chia như tính từ い: 欲しくないです, 行きたくないです.",
+    "Đối tượng của 欲しい dùng が: 車が 欲しいです.",
+    "Mục đích: V bỏ ます + に, hoặc danh từ hành động + に (買い物に, 勉強に), rồi 行きます / 来ます / 帰ります.",
+    "どこか / 何か → câu hỏi có/không, trả lời はい / いいえ. Trợ từ へ, を sau どこか, 何か có thể lược.",
+    "Không dùng 欲しいですか / 〜たいですか để hỏi trực tiếp người trên — mời thì dùng いかがですか.",
+    "ご〜 đặt trước danh từ liên quan đến người khác để tỏ ý kính trọng; không dùng cho mình."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L13-G1",
+      "title": "N が 欲しいです",
+      "meaning": "(Tôi) muốn có N",
+      "why": "Để nói mình muốn có một thứ gì: 「Tôi muốn có xe hơi」, 「Tôi muốn có bạn」 — nói về ước muốn, quà sinh nhật, mua sắm.",
+      "when": [
+        "Nói mong muốn có đồ vật / người (bạn bè, con cái…) của bản thân.",
+        "Hỏi bạn bè, người ngang hàng muốn có gì: 何が 欲しいですか."
+      ],
+      "formula": "(わたしは) N が 欲しいです\nPhủ định: N は 欲しくないです",
+      "parts": [
+        { "part": "N が", "role": "Thứ mình muốn có — dùng が (không dùng を)." },
+        { "part": "欲しい", "role": "「muốn có」 — là tính từ い: 欲しくないです (không muốn), 欲しかったです (đã muốn)." }
+      ],
+      "memoryTip": {
+        "emoji": "🎁",
+        "hook": "Muốn CÓ món đồ → 「が 欲しい」!",
+        "meaning": "→ 車が 欲しいです. Muốn LÀM gì thì dùng 〜たい (G2)."
+      },
+      "examples": [
+        {
+          "jp": "わたしは 友達が 欲しいです。",
+          "romaji": "Watashi wa tomodachi ga hoshii desu.",
+          "vi": "Tôi muốn có bạn.",
+          "context": "Cuộc sống ở Nhật",
+          "breakdown": [
+            { "jp": "友達が", "vi": "bạn bè (đối tượng)" },
+            { "jp": "欲しいです", "vi": "muốn có" }
+          ]
+        },
+        {
+          "jp": "今 何が いちばん 欲しいですか。 …車が 欲しいです。",
+          "romaji": "Ima nani ga ichiban hoshii desu ka. … Kuruma ga hoshii desu.",
+          "vi": "Bây giờ bạn muốn có gì nhất? …Tôi muốn có xe hơi.",
+          "context": "Bạn bè"
+        },
+        {
+          "jp": "誕生日に 何が 欲しいですか。 …時計が 欲しいです。",
+          "romaji": "Tanjōbi ni nani ga hoshii desu ka. … Tokei ga hoshii desu.",
+          "vi": "Sinh nhật bạn muốn quà gì? …Tôi muốn có đồng hồ.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "今は 何も 欲しくないです。",
+          "romaji": "Ima wa nani mo hoshikunai desu.",
+          "vi": "Bây giờ tôi không muốn có gì cả.",
+          "context": "Mua sắm",
+          "note": "欲しい là tính từ い → phủ định 欲しくないです."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "わたしは 車を 欲しいです。",
+          "right": "わたしは 車が 欲しいです。",
+          "explain": "欲しい là tính từ, đối tượng của nó dùng が."
+        },
+        {
+          "wrong": "新しい パソコンは 欲しいじゃ ありません。",
+          "right": "新しい パソコンは 欲しくないです。",
+          "explain": "欲しい là tính từ い → phủ định: bỏ い + くないです."
+        },
+        {
+          "wrong": "先生、コーヒーが 欲しいですか。",
+          "right": "先生、コーヒーは いかがですか。",
+          "explain": "Hỏi thẳng mong muốn của người trên là thiếu lịch sự. Khi mời, dùng いかがですか."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: chỉ dùng cho mình (và người nghe)",
+          "text": "欲しいです dùng cho mong muốn của chính mình, hoặc khi hỏi bạn bè. Không dùng để nói trực tiếp mong muốn của người thứ ba như ミラーさんは 車が 欲しいです — cách nói cho người thứ ba sẽ học sau."
+        }
+      ]
+    },
+    {
+      "id": "L13-G2",
+      "title": "Vます → Vたいです",
+      "meaning": "(Tôi) muốn làm V",
+      "why": "Để nói mình muốn làm gì: 「Tôi muốn đi Okinawa」, 「Tôi muốn ăn tempura」 — nói kế hoạch, ước mơ, gọi món.",
+      "when": [
+        "Nói mong muốn thực hiện một hành động của bản thân.",
+        "Hỏi bạn bè muốn làm gì: 何を 食べたいですか."
+      ],
+      "formula": "V (bỏ ます) + たいです\nPhủ định: V (bỏ ます) + たくないです",
+      "parts": [
+        { "part": "V bỏ ます", "role": "Thân động từ: 行きます → 行き, 食べます → 食べ, 勉強します → 勉強し." },
+        { "part": "たいです", "role": "「muốn」 — chia như tính từ い: たくないです (không muốn), たかったです (đã muốn)." }
+      ],
+      "memoryTip": {
+        "emoji": "🏃",
+        "hook": "Muốn LÀM gì → bỏ 「ます」, gắn 「たい」!",
+        "meaning": "→ 行きます → 行きたいです; phủ định: 行きたくないです."
+      },
+      "examples": [
+        {
+          "jp": "沖縄へ 行きたいです。",
+          "romaji": "Okinawa e ikitai desu.",
+          "vi": "Tôi muốn đi Okinawa.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "行きます", "vi": "đi" },
+            { "jp": "行きたいです", "vi": "muốn đi (bỏ ます + たいです)" }
+          ]
+        },
+        {
+          "jp": "何を 食べたいですか。 …てんぷらを 食べたいです。",
+          "romaji": "Nani o tabetai desu ka. … Tenpura o tabetai desu.",
+          "vi": "Bạn muốn ăn gì? …Tôi muốn ăn tempura.",
+          "context": "Nhà hàng"
+        },
+        {
+          "jp": "日本で 何を 勉強したいですか。 …美術を 勉強したいです。",
+          "romaji": "Nihon de nani o benkyō shitai desu ka. … Bijutsu o benkyō shitai desu.",
+          "vi": "Bạn muốn học gì ở Nhật? …Tôi muốn học mỹ thuật.",
+          "context": "Du học"
+        },
+        {
+          "jp": "疲れましたから、何も したくないです。",
+          "romaji": "Tsukaremashita kara, nani mo shitakunai desu.",
+          "vi": "Vì mệt nên tôi không muốn làm gì cả.",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "週末は うちで 休みたいです。",
+          "romaji": "Shūmatsu wa uchi de yasumitai desu.",
+          "vi": "Cuối tuần tôi muốn nghỉ ở nhà.",
+          "context": "Thời gian"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "沖縄へ 行きますたいです。",
+          "right": "沖縄へ 行きたいです。",
+          "explain": "Phải bỏ ます trước khi gắn たい."
+        },
+        {
+          "wrong": "肉は 食べたいじゃ ありません。",
+          "right": "肉は 食べたくないです。",
+          "explain": "〜たい chia như tính từ い → phủ định: 〜たくないです."
+        },
+        {
+          "wrong": "わたしは 車が 欲しいたいです。",
+          "right": "わたしは 車が 欲しいです。 / 車を 買いたいです。",
+          "explain": "欲しい đã có nghĩa là 「muốn có」, không gắn thêm たい. Muốn làm hành động 「mua」 thì dùng 買いたいです."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: を có thể đổi thành が",
+          "text": "Với 〜たい, trợ từ を có thể đổi thành が mà nghĩa không đổi: てんぷらを 食べたいです = てんぷらが 食べたいです. Các trợ từ khác (へ, に, で) thì giữ nguyên.",
+          "examples": [
+            {
+              "jp": "冷たい ビールが 飲みたいです。",
+              "romaji": "Tsumetai bīru ga nomitai desu.",
+              "vi": "Tôi muốn uống bia lạnh."
+            }
+          ]
+        },
+        {
+          "title": "📌 Kiến thức bổ sung: không hỏi người trên bằng 〜たいですか",
+          "text": "Giống 欲しい, 〜たいです dùng cho bản thân và hỏi bạn bè. Với thầy cô, cấp trên, câu 先生、飲みたいですか nghe thiếu lịch sự — hãy dùng いかがですか khi mời."
+        }
+      ]
+    },
+    {
+      "id": "L13-G3",
+      "title": "Nơi へ Vます(bỏ ます) / N に 行きます・来ます・帰ります",
+      "meaning": "Đi / đến / về (nơi) để làm V",
+      "why": "Để nói mục đích của việc đi lại: 「Đi Kobe để ăn đồ Ấn」, 「Đến Nhật để học mỹ thuật」 — cực kỳ hay dùng khi kể kế hoạch.",
+      "when": [
+        "Nói mục đích khi đi, đến, về một nơi nào đó.",
+        "Dùng với động từ (食べに, 迎えに) hoặc danh từ chỉ hành động (買い物に, 勉強に, 食事に)."
+      ],
+      "formula": "Nơi へ V (bỏ ます) に 行きます / 来ます / 帰ります\nNơi へ N (hành động) に 行きます / 来ます / 帰ります",
+      "parts": [
+        { "part": "Nơi へ", "role": "Nơi đến (bài 5)." },
+        { "part": "V bỏ ます", "role": "Hành động là mục đích: 食べます → 食べ, 迎えます → 迎え." },
+        { "part": "N (hành động)", "role": "Danh từ chỉ hoạt động: 買い物, 勉強, 食事, 釣り…" },
+        { "part": "に", "role": "Đánh dấu MỤC ĐÍCH: 「để…」." },
+        { "part": "行きます / 来ます / 帰ります", "role": "Động từ di chuyển đứng cuối câu." }
+      ],
+      "memoryTip": {
+        "emoji": "🎯",
+        "hook": "Đi để làm gì? Bỏ ます, thêm 「に」, rồi mới 「行きます」!",
+        "meaning": "→ 食べます → 食べに 行きます (đi để ăn); 買い物に 行きます (đi mua sắm)."
+      },
+      "examples": [
+        {
+          "jp": "神戸へ インド料理を 食べに 行きます。",
+          "romaji": "Kōbe e Indo-ryōri o tabe ni ikimasu.",
+          "vi": "Tôi đi Kobe để ăn món Ấn Độ.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "神戸へ", "vi": "đến Kobe" },
+            { "jp": "インド料理を 食べに", "vi": "để ăn món Ấn Độ" },
+            { "jp": "行きます", "vi": "đi" }
+          ]
+        },
+        {
+          "jp": "デパートへ 買い物に 行きます。",
+          "romaji": "Depāto e kaimono ni ikimasu.",
+          "vi": "Tôi đi trung tâm thương mại để mua sắm.",
+          "context": "Mua sắm",
+          "note": "買い物 là danh từ hành động → 買い物に. Cũng có thể nói 買い物しに."
+        },
+        {
+          "jp": "日本へ 美術の 勉強に 来ました。",
+          "romaji": "Nihon e bijutsu no benkyō ni kimashita.",
+          "vi": "Tôi đã đến Nhật để học mỹ thuật.",
+          "context": "Du học"
+        },
+        {
+          "jp": "うちへ 昼ごはんを 食べに 帰ります。",
+          "romaji": "Uchi e hirugohan o tabe ni kaerimasu.",
+          "vi": "Tôi về nhà để ăn trưa.",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "空港へ 友達を 迎えに 行きます。",
+          "romaji": "Kūkō e tomodachi o mukae ni ikimasu.",
+          "vi": "Tôi ra sân bay để đón bạn.",
+          "context": "Đi lại"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "神戸へ インド料理を 食べますに 行きます。",
+          "right": "神戸へ インド料理を 食べに 行きます。",
+          "explain": "Phải bỏ ます trước に: 食べます → 食べに."
+        },
+        {
+          "wrong": "デパートへ 買い物を 行きます。",
+          "right": "デパートへ 買い物に 行きます。",
+          "explain": "Mục đích đánh dấu bằng に, không dùng を."
+        }
+      ]
+    },
+    {
+      "id": "L13-G4",
+      "title": "どこか / 何か",
+      "meaning": "đâu đó / cái gì đó",
+      "why": "Để hỏi chung chung 「có đi đâu không?」, 「có ăn gì không?」 hoặc nói 「muốn uống gì đó」 khi chưa xác định cụ thể.",
+      "when": [
+        "Hỏi có/không về nơi chốn, sự vật chưa xác định: どこか 行きましたか.",
+        "Nói mong muốn chung chung: 何か 飲みたいです."
+      ],
+      "formula": "どこか[へ] V\n何か[を] V\n→ はい、〜 / いいえ、どこ[へ]も・何も 〜ません",
+      "parts": [
+        { "part": "どこか", "role": "「đâu đó, một nơi nào đó」. Trợ từ へ phía sau có thể lược." },
+        { "part": "何か", "role": "「cái gì đó」. Trợ từ を phía sau có thể lược." },
+        { "part": "はい / いいえ", "role": "Câu hỏi có どこか / 何か là câu có/không → trả lời bằng はい / いいえ trước." }
+      ],
+      "memoryTip": {
+        "emoji": "🎲",
+        "hook": "Thêm 「か」 = 「… nào đó」 — hỏi có/không, đáp はい / いいえ!",
+        "meaning": "→ どこか = đâu đó, 何か = cái gì đó. Phủ định: どこも, 何も."
+      },
+      "examples": [
+        {
+          "jp": "冬休みは どこか 行きましたか。 …はい、北海道へ 行きました。",
+          "romaji": "Fuyuyasumi wa dokoka ikimashita ka. … Hai, Hokkaidō e ikimashita.",
+          "vi": "Nghỉ đông bạn có đi đâu không? …Có, tôi đã đi Hokkaido.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "どこか", "vi": "đâu đó" },
+            { "jp": "はい", "vi": "có (trả lời có/không)" }
+          ]
+        },
+        {
+          "jp": "のどが かわきましたから、何か 飲みたいです。",
+          "romaji": "Nodo ga kawakimashita kara, nanika nomitai desu.",
+          "vi": "Vì khát nước nên tôi muốn uống gì đó.",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "おなかが すきましたから、何か 食べたいです。",
+          "romaji": "Onaka ga sukimashita kara, nanika tabetai desu.",
+          "vi": "Vì đói bụng nên tôi muốn ăn gì đó.",
+          "context": "Nhà hàng"
+        },
+        {
+          "jp": "週末 どこか 行きましたか。 …いいえ、どこも 行きませんでした。",
+          "romaji": "Shūmatsu dokoka ikimashita ka. … Iie, doko mo ikimasen deshita.",
+          "vi": "Cuối tuần bạn có đi đâu không? …Không, tôi không đi đâu cả.",
+          "context": "Thời gian"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "何か 食べましたか。 …いいえ、何か 食べませんでした。",
+          "right": "何か 食べましたか。 …いいえ、何も 食べませんでした。",
+          "explain": "Trả lời phủ định 「không … gì cả」 dùng 何も (bài 6), không dùng 何か."
+        },
+        {
+          "wrong": "どこか 行きましたか。 …どこか 行きました。",
+          "right": "どこか 行きましたか。 …はい、北海道へ 行きました。",
+          "explain": "どこか hỏi có/không → trả lời はい / いいえ, rồi nói nơi cụ thể nếu muốn."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: どこか và どこへ",
+          "text": "どこへ 行きましたか = 「Bạn đã đi ĐÂU?」 (biết là có đi, hỏi nơi). どこか 行きましたか = 「Bạn có đi đâu KHÔNG?」 (chưa biết có đi hay không)."
+        }
+      ]
+    },
+    {
+      "id": "L13-G5",
+      "title": "ご〜 (ご注文, ご家族…)",
+      "meaning": "Tiền tố kính ngữ trước danh từ",
+      "why": "Nhân viên nhà hàng, cửa hàng nói ご注文は? (Quý khách gọi món gì?) — bạn cần hiểu, và biết dùng khi hỏi lịch sự về gia đình, anh chị em của người khác.",
+      "when": [
+        "Nói về sự vật, người liên quan đến người nghe / người khác để tỏ kính trọng: ご家族, ご主人, ご兄弟.",
+        "Nhân viên phục vụ nói với khách: ご注文は?"
+      ],
+      "formula": "ご + N (của người khác)",
+      "parts": [
+        { "part": "ご", "role": "Tiền tố kính ngữ. Chỉ dùng cho người khác, KHÔNG dùng cho bản thân / gia đình mình." }
+      ],
+      "memoryTip": {
+        "emoji": "🎩",
+        "hook": "「ご」 là chiếc mũ lịch sự — chỉ đội cho người khác!",
+        "meaning": "→ ご家族 (gia đình anh/chị); gia đình mình chỉ nói 家族."
+      },
+      "examples": [
+        {
+          "jp": "ご注文は? …牛どんを お願いします。",
+          "romaji": "Go-chūmon wa? … Gyūdon o onegai shimasu.",
+          "vi": "Quý khách gọi món gì ạ? …Cho tôi một bát cơm thịt bò.",
+          "context": "Nhà hàng",
+          "breakdown": [
+            { "jp": "ご注文", "vi": "món quý khách gọi (kính ngữ)" },
+            { "jp": "牛どん", "vi": "cơm thịt bò" }
+          ]
+        },
+        {
+          "jp": "ご家族は お元気ですか。",
+          "romaji": "Go-kazoku wa o-genki desu ka.",
+          "vi": "Gia đình anh có khỏe không?",
+          "context": "Hỏi thăm"
+        },
+        {
+          "jp": "ご兄弟は 何人ですか。 …3人です。",
+          "romaji": "Go-kyōdai wa nan-nin desu ka. … San-nin desu.",
+          "vi": "Anh chị có mấy anh chị em? …3 người.",
+          "context": "Làm quen"
+        },
+        {
+          "jp": "ご主人は 会社員ですか。",
+          "romaji": "Go-shujin wa kaishain desu ka.",
+          "vi": "Chồng chị là nhân viên công ty phải không?",
+          "context": "Làm quen"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "わたしの ご家族は ベトナムに います。",
+          "right": "わたしの 家族は ベトナムに います。",
+          "explain": "ご là kính ngữ cho người khác, không dùng cho gia đình mình."
+        },
+        {
+          "wrong": "ご名前は 何ですか。",
+          "right": "お名前は 何ですか。",
+          "explain": "Không phải từ nào cũng dùng ご. Nhiều từ dùng お: お名前, お国, お仕事. Hãy học thuộc theo từng từ."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: ご và お",
+          "text": "Thường ご đứng trước từ gốc Hán (ご注文, ご家族, ご住所), お đứng trước từ thuần Nhật (お名前, お国). Quy tắc có ngoại lệ (お電話, お元気), nên cứ nhớ theo cụm."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "N が 欲しいです", "meaning": "Tôi muốn có N", "example": "車が 欲しいです。" },
+    { "pattern": "V(bỏ ます) たいです", "meaning": "Tôi muốn làm V (phủ định: たくないです)", "example": "沖縄へ 行きたいです。" },
+    { "pattern": "Nơi へ V(bỏ ます)/N に 行きます", "meaning": "Đi (nơi) để làm V", "example": "デパートへ 買い物に 行きます。" },
+    { "pattern": "どこか / 何か", "meaning": "đâu đó / cái gì đó (hỏi có/không)", "example": "何か 飲みたいです。" },
+    { "pattern": "ご〜", "meaning": "kính ngữ trước danh từ của người khác", "example": "ご注文は?" }
+  ],
+  "exercises": [
+    {
+      "id": "L13-E01",
+      "type": "particle",
+      "grammarPoint": "L13-G1",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "わたしは 車＿＿ 欲しいです。",
+      "romaji": "Watashi wa kuruma ___ hoshii desu.",
+      "vi": "Tôi muốn có xe hơi.",
+      "options": ["が", "を", "に", "で"],
+      "answer": "が",
+      "explanation": "Đối tượng của 欲しい đánh dấu bằng が."
+    },
+    {
+      "id": "L13-E02",
+      "type": "fix",
+      "grammarPoint": "L13-G1",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "新しい パソコンは 欲しいじゃ ありません。",
+      "options": [
+        "新しい パソコンは 欲しくないです。",
+        "新しい パソコンは 欲しいないです。",
+        "新しい パソコンは 欲しかったじゃ ありません。",
+        "新しい パソコンは 欲しくじゃ ありません。"
+      ],
+      "answer": "新しい パソコンは 欲しくないです。",
+      "explanation": "欲しい là tính từ い → phủ định: 欲しくないです."
+    },
+    {
+      "id": "L13-E03",
+      "type": "vi-jp",
+      "grammarPoint": "L13-G1",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tôi muốn có bạn.",
+      "options": [
+        "わたしは 友達が 欲しいです。",
+        "わたしは 友達を 欲しいです。",
+        "わたしは 友達が 欲しいたいです。",
+        "わたしは 友達が 欲しいでした。"
+      ],
+      "answer": "わたしは 友達が 欲しいです。",
+      "explanation": "Muốn có → N が 欲しいです."
+    },
+    {
+      "id": "L13-E04",
+      "type": "situation",
+      "grammarPoint": "L13-G1",
+      "question": "Bạn thân hỏi 「誕生日に 何が 欲しいですか」. Bạn muốn có một chiếc đồng hồ. Bạn đáp:",
+      "options": [
+        "時計が 欲しいです。",
+        "時計を 欲しいです。",
+        "時計が 欲しいたいです。",
+        "時計は 欲しくないです。"
+      ],
+      "answer": "時計が 欲しいです。",
+      "explanation": "Muốn có đồ vật → N が 欲しいです."
+    },
+    {
+      "id": "L13-E05",
+      "type": "situation",
+      "grammarPoint": "L13-G1",
+      "question": "Bạn muốn mời thầy giáo uống cà phê một cách lịch sự. Bạn nói:",
+      "options": [
+        "先生、コーヒーは いかがですか。",
+        "先生、コーヒーが 欲しいですか。",
+        "先生、コーヒーを 飲みたいですか。",
+        "先生、コーヒーが 欲しいです。"
+      ],
+      "answer": "先生、コーヒーは いかがですか。",
+      "explanation": "Không hỏi thẳng mong muốn của người trên bằng 欲しいですか / 〜たいですか. Khi mời dùng いかがですか."
+    },
+    {
+      "id": "L13-E06",
+      "type": "fill",
+      "grammarPoint": "L13-G2",
+      "question": "Gõ phần còn thiếu (kana).",
+      "jp": "沖縄へ 行き＿＿です。",
+      "vi": "Tôi muốn đi Okinawa.",
+      "answer": "たい",
+      "explanation": "Muốn làm → V bỏ ます + たいです: 行きたいです."
+    },
+    {
+      "id": "L13-E07",
+      "type": "choice",
+      "grammarPoint": "L13-G2",
+      "question": "Dạng phủ định của 「食べたいです」 là gì?",
+      "options": ["食べたくないです", "食べたいじゃ ありません", "食べないたいです", "食べたいくないです"],
+      "answer": "食べたくないです",
+      "explanation": "〜たい chia như tính từ い: bỏ い + くないです → 食べたくないです."
+    },
+    {
+      "id": "L13-E08",
+      "type": "fix",
+      "grammarPoint": "L13-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "日本で 美術を 勉強しますたいです。",
+      "options": [
+        "日本で 美術を 勉強したいです。",
+        "日本で 美術を 勉強するたいです。",
+        "日本で 美術が 勉強しますたいです。",
+        "日本で 美術を 勉強したいでした。"
+      ],
+      "answer": "日本で 美術を 勉強したいです。",
+      "explanation": "Bỏ ます trước たい: 勉強します → 勉強したいです."
+    },
+    {
+      "id": "L13-E09",
+      "type": "order",
+      "grammarPoint": "L13-G2",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi muốn ăn tempura.",
+      "tokens": ["わたし", "は", "てんぷら", "を", "食べたいです"],
+      "explanation": "N を + V(bỏ ます)たいです."
+    },
+    {
+      "id": "L13-E10",
+      "type": "jp-vi",
+      "grammarPoint": "L13-G2",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "疲れましたから、何も したくないです。",
+      "romaji": "Tsukaremashita kara, nani mo shitakunai desu.",
+      "options": [
+        "Vì mệt nên tôi không muốn làm gì cả.",
+        "Vì mệt nên tôi muốn làm gì đó.",
+        "Tôi mệt nhưng vẫn muốn làm việc.",
+        "Vì không làm gì nên tôi mệt."
+      ],
+      "answer": "Vì mệt nên tôi không muốn làm gì cả.",
+      "explanation": "〜から = vì; 何も したくないです = không muốn làm gì cả."
+    },
+    {
+      "id": "L13-E11",
+      "type": "identify",
+      "grammarPoint": "L13-G2",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "週末は うちで 休みたいです。",
+      "romaji": "Shūmatsu wa uchi de yasumitai desu.",
+      "vi": "Cuối tuần tôi muốn nghỉ ở nhà.",
+      "options": [
+        "V(bỏ ます) たいです (muốn làm)",
+        "N が 欲しいです (muốn có)",
+        "V(bỏ ます) に 行きます (đi để làm)",
+        "何か (cái gì đó)"
+      ],
+      "answer": "V(bỏ ます) たいです (muốn làm)",
+      "explanation": "休みます → 休みたいです = muốn nghỉ."
+    },
+    {
+      "id": "L13-E12",
+      "type": "particle",
+      "grammarPoint": "L13-G3",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "デパートへ 買い物＿＿ 行きます。",
+      "romaji": "Depāto e kaimono ___ ikimasu.",
+      "vi": "Tôi đi trung tâm thương mại để mua sắm.",
+      "options": ["に", "を", "で", "へ"],
+      "answer": "に",
+      "explanation": "Mục đích của việc đi → danh từ hành động + に + 行きます."
+    },
+    {
+      "id": "L13-E13",
+      "type": "fill",
+      "grammarPoint": "L13-G3",
+      "question": "Gõ dạng động từ còn thiếu (「ăn」, kana).",
+      "jp": "神戸へ インド料理を ＿＿に 行きます。",
+      "vi": "Tôi đi Kobe để ăn món Ấn Độ.",
+      "answer": "たべ",
+      "accept": ["食べ"],
+      "hint": "食べます bỏ ます",
+      "explanation": "Mục đích: V bỏ ます + に → 食べに 行きます."
+    },
+    {
+      "id": "L13-E14",
+      "type": "fix",
+      "grammarPoint": "L13-G3",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "空港へ 友達を 迎えますに 行きます。",
+      "options": [
+        "空港へ 友達を 迎えに 行きます。",
+        "空港へ 友達を 迎えを 行きます。",
+        "空港に 友達を 迎えへ 行きます。",
+        "空港へ 友達を 迎えたいに 行きます。"
+      ],
+      "answer": "空港へ 友達を 迎えに 行きます。",
+      "explanation": "Bỏ ます rồi mới gắn に: 迎えます → 迎えに."
+    },
+    {
+      "id": "L13-E15",
+      "type": "vi-jp",
+      "grammarPoint": "L13-G3",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tôi đã đến Nhật để học mỹ thuật.",
+      "options": [
+        "日本へ 美術の 勉強に 来ました。",
+        "日本へ 美術の 勉強を 来ました。",
+        "日本に 美術の 勉強へ 来ました。",
+        "日本へ 美術を 勉強しますに 来ました。"
+      ],
+      "answer": "日本へ 美術の 勉強に 来ました。",
+      "explanation": "Danh từ hành động (勉強) + に = mục đích; nơi đến + へ."
+    },
+    {
+      "id": "L13-E16",
+      "type": "order",
+      "grammarPoint": "L13-G3",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi về nhà để ăn trưa.",
+      "tokens": ["うち", "へ", "昼ごはん", "を", "食べ", "に", "帰ります"],
+      "accept": [["昼ごはん", "を", "食べ", "に", "うち", "へ", "帰ります"]],
+      "explanation": "Nơi へ + (N を) V bỏ ます + に + 帰ります."
+    },
+    {
+      "id": "L13-E17",
+      "type": "situation",
+      "grammarPoint": "L13-G3",
+      "question": "Bạn bè hỏi 「日曜日 何を しますか」. Bạn định ra sông câu cá. Bạn đáp:",
+      "options": [
+        "川へ 釣りに 行きます。",
+        "川へ 釣りを 行きます。",
+        "川で 釣りへ 行きます。",
+        "川へ 釣りますに 行きます。"
+      ],
+      "answer": "川へ 釣りに 行きます。",
+      "explanation": "Nơi へ + danh từ hành động (釣り) + に + 行きます."
+    },
+    {
+      "id": "L13-E18",
+      "type": "choice",
+      "grammarPoint": "L13-G4",
+      "question": "「冬休みは どこか 行きましたか。」 — câu trả lời nào tự nhiên nhất?",
+      "options": [
+        "はい、北海道へ 行きました。",
+        "どこか 行きました。",
+        "いいえ、北海道へ 行きました。",
+        "はい、どこも 行きませんでした。"
+      ],
+      "answer": "はい、北海道へ 行きました。",
+      "explanation": "どこか hỏi có/không → はい + nơi cụ thể. いいえ phải đi với phủ định (どこも 行きませんでした)."
+    },
+    {
+      "id": "L13-E19",
+      "type": "fix",
+      "grammarPoint": "L13-G4",
+      "question": "Câu trả lời sau bị sai. Chọn cách sửa đúng.",
+      "jp": "何か 食べましたか。 …いいえ、何か 食べませんでした。",
+      "options": [
+        "…いいえ、何も 食べませんでした。",
+        "…いいえ、何か 食べました。",
+        "…はい、何も 食べませんでした。",
+        "…いいえ、何を 食べませんでした。"
+      ],
+      "answer": "…いいえ、何も 食べませんでした。",
+      "explanation": "Phủ định 「không … gì cả」 dùng 何も + động từ phủ định."
+    },
+    {
+      "id": "L13-E20",
+      "type": "fill",
+      "grammarPoint": "L13-G4",
+      "question": "Gõ chữ còn thiếu (kana).",
+      "jp": "のどが かわきましたから、何＿＿ 飲みたいです。",
+      "vi": "Vì khát nước nên tôi muốn uống gì đó.",
+      "answer": "か",
+      "explanation": "何か = cái gì đó (chưa xác định)."
+    },
+    {
+      "id": "L13-E21",
+      "type": "jp-vi",
+      "grammarPoint": "L13-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "おなかが すきましたから、何か 食べたいです。",
+      "romaji": "Onaka ga sukimashita kara, nanika tabetai desu.",
+      "options": [
+        "Vì đói bụng nên tôi muốn ăn gì đó.",
+        "Vì đói bụng nên tôi đã ăn rồi.",
+        "Bạn muốn ăn gì?",
+        "Vì no bụng nên tôi không muốn ăn gì."
+      ],
+      "answer": "Vì đói bụng nên tôi muốn ăn gì đó.",
+      "explanation": "おなかが すきました = đói bụng; 何か 食べたいです = muốn ăn gì đó."
+    },
+    {
+      "id": "L13-E22",
+      "type": "pattern",
+      "grammarPoint": "L13-G4",
+      "question": "Bạn chưa biết bạn mình cuối tuần có đi chơi hay không, và muốn hỏi 「Cuối tuần có đi đâu không?」. Chọn mẫu phù hợp.",
+      "options": [
+        "どこか[へ] V か (có đi đâu không?)",
+        "どこへ V か (đã đi đâu?)",
+        "Nơi へ V(bỏ ます) に 行きます",
+        "N が 欲しいです"
+      ],
+      "answer": "どこか[へ] V か (có đi đâu không?)",
+      "explanation": "Chưa biết có đi hay không → hỏi có/không bằng どこか. どこへ là hỏi nơi khi đã biết có đi."
+    },
+    {
+      "id": "L13-E23",
+      "type": "situation",
+      "grammarPoint": "L13-G5",
+      "question": "Bạn làm thêm ở nhà hàng và muốn hỏi khách gọi món gì một cách lịch sự. Bạn nói:",
+      "options": ["ご注文は?", "お注文は?", "わたしの ご注文は?", "注文ごは?"],
+      "answer": "ご注文は?",
+      "explanation": "Nhân viên hỏi khách: ご注文は? — ご là tiền tố kính ngữ của 注文."
+    },
+    {
+      "id": "L13-E24",
+      "type": "fix",
+      "grammarPoint": "L13-G5",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしの ご家族は ベトナムに います。",
+      "options": [
+        "わたしの 家族は ベトナムに います。",
+        "わたしの お家族は ベトナムに います。",
+        "わたしの ご家族は ベトナムに あります。",
+        "わたしは ご家族の ベトナムに います。"
+      ],
+      "answer": "わたしの 家族は ベトナムに います。",
+      "explanation": "Không dùng kính ngữ ご cho gia đình mình."
+    },
+    {
+      "id": "L13-E25",
+      "type": "choice",
+      "grammarPoint": "L13-G5",
+      "question": "Bạn muốn hỏi lịch sự một đồng nghiệp lớn tuổi 「Anh có mấy anh chị em?」. Câu nào đúng?",
+      "options": [
+        "ご兄弟は 何人ですか。",
+        "お兄弟は 何人ですか。",
+        "ご兄弟は 何台ですか。",
+        "兄弟ごは 何人ですか。"
+      ],
+      "answer": "ご兄弟は 何人ですか。",
+      "explanation": "Anh chị em của người khác → ご兄弟; đếm người dùng 何人."
+    },
+    {
+      "id": "L13-E26",
+      "type": "identify",
+      "grammarPoint": "L13-G5",
+      "question": "Trong câu 「ご主人は 会社員ですか」, chữ ご có tác dụng gì?",
+      "jp": "ご主人は 会社員ですか。",
+      "romaji": "Go-shujin wa kaishain desu ka.",
+      "vi": "Chồng chị là nhân viên công ty phải không?",
+      "options": [
+        "Kính ngữ — nói về chồng của người khác",
+        "Chỉ chồng của chính mình",
+        "Biến câu thành câu hỏi",
+        "Chỉ số nhiều"
+      ],
+      "answer": "Kính ngữ — nói về chồng của người khác",
+      "explanation": "ご主人 = chồng (của người nghe / người khác), có ご để tỏ kính trọng."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 13 }
+}

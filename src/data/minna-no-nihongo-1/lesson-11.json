@@ -1,0 +1,818 @@
+{
+  "lesson": 11,
+  "title": "Số lượng và khoảng thời gian",
+  "titleJp": "これ、お願いします",
+  "topic": "Đếm đồ vật, người, máy móc, tờ giấy, số lần · bao lâu · mấy lần · chỉ…",
+  "description": "Học xong bài này bạn đếm được đồ vật, người, xe, tem; nói mua bao nhiêu, học bao lâu, mấy lần một tuần — và dùng だけ để nói 「chỉ… thôi」.",
+  "objectives": [
+    "Đếm đồ vật bằng ひとつ〜とお và hỏi bằng いくつ.",
+    "Dùng đúng trợ số từ 〜人, 〜台, 〜枚, 〜回 và hỏi 何人, 何台, 何枚, 何回.",
+    "Đặt lượng từ đúng chỗ: りんごを 4つ 買いました.",
+    "Nói khoảng thời gian 〜時間, 〜日, 〜週間, 〜か月, 〜年; hỏi どのくらい, trả lời 〜ぐらい.",
+    "Nói tần suất: 1週間に 2回.",
+    "Dùng だけ để giới hạn: 日曜日だけ, 1人だけ."
+  ],
+  "keyPoints": [
+    "ひとつ・ふたつ・みっつ・よっつ・いつつ・むっつ・ななつ・やっつ・ここのつ・とお; từ 11 trở đi nói số trơn.",
+    "Người: ひとり, ふたり, rồi 〜にん (4人 = よにん). Máy móc, xe: 〜台. Vật mỏng phẳng: 〜枚. Số lần: 〜回 (1回 = いっかい).",
+    "Lượng từ đứng SAU trợ từ, TRƯỚC động từ và không có trợ từ đi kèm: 切手を 2枚 買いました.",
+    "Khoảng thời gian (bao lâu) không đi với に: 3年 勉強しました.",
+    "Tần suất: khung thời gian に số lần: 1か月に 2回.",
+    "だけ = chỉ… thôi, đặt ngay sau thứ được giới hạn."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L11-G1",
+      "title": "ひとつ〜とお (〜つ) / いくつ",
+      "meaning": "một cái… mười cái / mấy cái?",
+      "why": "Khi mua trái cây, gọi đồ ăn, đếm đồ vật không có trợ số từ riêng, người Nhật dùng bộ đếm chung 〜つ — dùng ở cửa hàng, nhà hàng hằng ngày.",
+      "when": [
+        "Đếm đồ vật nói chung (trái cây, trứng, món ăn, đồ vật nhỏ…) từ 1 đến 10.",
+        "Hỏi số lượng đồ vật: いくつ (mấy cái)."
+      ],
+      "formula": "ひとつ・ふたつ・みっつ・よっつ・いつつ\nむっつ・ななつ・やっつ・ここのつ・とお\nいくつ？ (mấy cái?)",
+      "parts": [
+        { "part": "1つ〜9つ", "role": "ひとつ, ふたつ, みっつ, よっつ, いつつ, むっつ, ななつ, やっつ, ここのつ — đều có đuôi つ." },
+        { "part": "10", "role": "とお — KHÔNG có つ." },
+        { "part": "11〜", "role": "Từ 11 trở đi đọc số trơn: じゅういち, じゅうに…" },
+        { "part": "いくつ", "role": "「mấy cái」 — hỏi số lượng đồ vật đếm bằng 〜つ." }
+      ],
+      "memoryTip": {
+        "emoji": "🔢",
+        "hook": "1 đến 9 đuôi 「つ」, đến 10 là 「とお」 — hết bộ!",
+        "meaning": "→ ひとつ…ここのつ, とお; từ 11 nói số trơn."
+      },
+      "examples": [
+        {
+          "jp": "りんごを 4つ 買いました。",
+          "romaji": "Ringo o yottsu kaimashita.",
+          "vi": "Tôi đã mua 4 quả táo.",
+          "context": "Mua sắm",
+          "breakdown": [
+            { "jp": "りんご", "vi": "quả táo" },
+            { "jp": "4つ", "vi": "4 cái (よっつ)" },
+            { "jp": "買いました", "vi": "đã mua" }
+          ]
+        },
+        {
+          "jp": "みかんを いくつ 買いましたか。 …8つ 買いました。",
+          "romaji": "Mikan o ikutsu kaimashita ka. … Yattsu kaimashita.",
+          "vi": "Bạn đã mua mấy quả quýt? …Tôi đã mua 8 quả.",
+          "context": "Chợ"
+        },
+        {
+          "jp": "冷蔵庫に 卵が 3つ あります。",
+          "romaji": "Reizōko ni tamago ga mittsu arimasu.",
+          "vi": "Trong tủ lạnh có 3 quả trứng.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "アイスクリームを 2つ ください。",
+          "romaji": "Aisukurīmu o futatsu kudasai.",
+          "vi": "Cho tôi 2 cây kem.",
+          "context": "Quán ăn"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "4つ = よんつ",
+          "right": "4つ = よっつ",
+          "explain": "Bộ đếm 〜つ dùng số kiểu Nhật cổ: ひと, ふた, みっ, よっ… Không đọc よんつ."
+        },
+        {
+          "wrong": "10つ = じゅうつ",
+          "right": "10 = とお",
+          "explain": "Mười đồ vật là とお, không có つ."
+        }
+      ]
+    },
+    {
+      "id": "L11-G2",
+      "title": "Trợ số từ 〜人 / 〜台 / 〜枚 / 〜回",
+      "meaning": "… người / … chiếc (máy, xe) / … tờ, tấm / … lần",
+      "why": "Tiếng Nhật đếm mỗi loại vật bằng một đuôi riêng, giống tiếng Việt nói 「con」, 「chiếc」, 「tờ」. Dùng sai đuôi thì nghe rất lạ.",
+      "when": [
+        "〜人: đếm người (gia đình mấy người, lớp có mấy học sinh).",
+        "〜台: đếm máy móc, xe cộ (xe hơi, máy tính, TV).",
+        "〜枚: đếm vật mỏng, phẳng (giấy, tem, áo sơ mi, đĩa CD).",
+        "〜回: đếm số lần."
+      ],
+      "formula": "số + 人 / 台 / 枚 / 回\nHỏi: 何人 / 何台 / 何枚 / 何回",
+      "parts": [
+        { "part": "〜人", "role": "1人 ひとり, 2人 ふたり, 3人 さんにん, 4人 よにん, 5人 ごにん, 7人 ななにん/しちにん… 何人 なんにん." },
+        { "part": "〜台", "role": "1台 いちだい, 2台 にだい, 3台 さんだい, 4台 よんだい… 何台 なんだい." },
+        { "part": "〜枚", "role": "1枚 いちまい, 2枚 にまい, 3枚 さんまい, 4枚 よんまい… 何枚 なんまい." },
+        { "part": "〜回", "role": "1回 いっかい, 2回 にかい, 3回 さんかい, 6回 ろっかい, 8回 はっかい, 10回 じゅっかい… 何回 なんかい." }
+      ],
+      "memoryTip": {
+        "emoji": "🧍",
+        "hook": "Người 「人」, máy 「台」, giấy 「枚」, lần 「回」!",
+        "meaning": "→ 学生が 3人, 車が 2台, 切手を 5枚, 2回. Nhớ đọc riêng: ひとり, ふたり, よにん, いっかい."
+      },
+      "examples": [
+        {
+          "jp": "外国人の 学生が 2人 います。",
+          "romaji": "Gaikokujin no gakusei ga futari imasu.",
+          "vi": "Có 2 sinh viên người nước ngoài.",
+          "context": "Trường học",
+          "breakdown": [
+            { "jp": "外国人", "vi": "người nước ngoài" },
+            { "jp": "2人", "vi": "2 người (ふたり)" }
+          ]
+        },
+        {
+          "jp": "家族は 何人ですか。 …4人です。",
+          "romaji": "Kazoku wa nan-nin desu ka. … Yo-nin desu.",
+          "vi": "Gia đình bạn có mấy người? …4 người.",
+          "context": "Gia đình",
+          "note": "4人 đọc là よにん (không đọc よんにん)."
+        },
+        {
+          "jp": "80円の 切手を 5枚 ください。",
+          "romaji": "Hachijū-en no kitte o go-mai kudasai.",
+          "vi": "Cho tôi 5 con tem loại 80 yên.",
+          "context": "Bưu điện",
+          "breakdown": [
+            { "jp": "切手", "vi": "tem" },
+            { "jp": "5枚", "vi": "5 tờ/tấm (vật mỏng)" }
+          ]
+        },
+        {
+          "jp": "事務所に パソコンが 何台 ありますか。 …10台 あります。",
+          "romaji": "Jimusho ni pasokon ga nan-dai arimasu ka. … Jū-dai arimasu.",
+          "vi": "Trong văn phòng có mấy cái máy tính? …Có 10 cái.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "わたしは 北海道へ 1回 行きました。",
+          "romaji": "Watashi wa Hokkaidō e ikkai ikimashita.",
+          "vi": "Tôi đã đi Hokkaido 1 lần.",
+          "context": "Du lịch",
+          "note": "1回 đọc là いっかい."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "1人 = いちにん",
+          "right": "1人 = ひとり, 2人 = ふたり",
+          "explain": "Hai số đầu đọc đặc biệt. Từ 3 trở đi mới là 〜にん (さんにん), riêng 4人 = よにん."
+        },
+        {
+          "wrong": "教室に 学生が 3つ います。",
+          "right": "教室に 学生が 3人 います。",
+          "explain": "Đếm người phải dùng 〜人, không dùng 〜つ."
+        },
+        {
+          "wrong": "1回 = いちかい",
+          "right": "1回 = いっかい",
+          "explain": "1, 6, 8, 10 đi với 回 bị biến âm: いっかい, ろっかい, はっかい, じゅっかい."
+        }
+      ]
+    },
+    {
+      "id": "L11-G3",
+      "title": "Vị trí lượng từ: N を / が + lượng từ + V",
+      "meaning": "(làm gì) bao nhiêu N",
+      "why": "Tiếng Việt nói 「mua 4 quả táo」 (số trước danh từ), còn tiếng Nhật thường đặt số lượng SAU danh từ + trợ từ, ngay trước động từ. Không nắm vị trí này thì câu rất lủng củng.",
+      "when": [
+        "Nói mua / ăn / có bao nhiêu thứ gì đó.",
+        "Gọi món, mua hàng: 〜を 2つ ください."
+      ],
+      "formula": "N を + lượng từ + V   (りんごを 4つ 買いました)\nN が + lượng từ + あります / います",
+      "parts": [
+        { "part": "N を / N が", "role": "Danh từ + trợ từ như bình thường." },
+        { "part": "Lượng từ", "role": "Số + trợ số từ (4つ, 3人, 2枚…). KHÔNG gắn trợ từ sau lượng từ." },
+        { "part": "V", "role": "Động từ đứng cuối câu." }
+      ],
+      "memoryTip": {
+        "emoji": "🥪",
+        "hook": "Lượng từ là nhân bánh: kẹp giữa trợ từ và động từ!",
+        "meaning": "→ りんごを 4つ 買いました (không thêm trợ từ sau 4つ)."
+      },
+      "examples": [
+        {
+          "jp": "みかんを 5つ 食べました。",
+          "romaji": "Mikan o itsutsu tabemashita.",
+          "vi": "Tôi đã ăn 5 quả quýt.",
+          "context": "Sinh hoạt",
+          "breakdown": [
+            { "jp": "みかんを", "vi": "quýt (tân ngữ)" },
+            { "jp": "5つ", "vi": "5 quả" },
+            { "jp": "食べました", "vi": "đã ăn" }
+          ]
+        },
+        {
+          "jp": "教室に 学生が 3人 います。",
+          "romaji": "Kyōshitsu ni gakusei ga san-nin imasu.",
+          "vi": "Trong lớp có 3 học sinh.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "郵便局で 切手を 2枚 買いました。",
+          "romaji": "Yūbinkyoku de kitte o ni-mai kaimashita.",
+          "vi": "Tôi đã mua 2 con tem ở bưu điện.",
+          "context": "Bưu điện"
+        },
+        {
+          "jp": "会社に 車が 5台 あります。",
+          "romaji": "Kaisha ni kuruma ga go-dai arimasu.",
+          "vi": "Ở công ty có 5 chiếc xe.",
+          "context": "Công việc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "りんごを 4つを 買いました。",
+          "right": "りんごを 4つ 買いました。",
+          "explain": "Lượng từ đứng một mình, không gắn trợ từ を sau nó."
+        },
+        {
+          "wrong": "りんごを 買いました 4つ。",
+          "right": "りんごを 4つ 買いました。",
+          "explain": "Động từ luôn đứng cuối câu; lượng từ đặt ngay trước động từ."
+        }
+      ]
+    },
+    {
+      "id": "L11-G4",
+      "title": "Khoảng thời gian: 〜時間 / 〜日 / 〜週間 / 〜か月 / 〜年 — どのくらい / 〜ぐらい",
+      "meaning": "… tiếng / ngày / tuần / tháng / năm — bao lâu? / khoảng…",
+      "why": "Để nói mình học bao lâu, đi mất bao lâu, làm việc mấy tiếng — và hỏi lại người khác.",
+      "when": [
+        "Nói độ dài thời gian của một hành động: 3年 勉強しました.",
+        "Hỏi mất bao lâu: どのくらい かかりますか.",
+        "Nói con số ước chừng: 30分ぐらい (khoảng 30 phút)."
+      ],
+      "formula": "Khoảng thời gian + V   (3年 勉強しました)\nどのくらい + V か\nsố + ぐらい (khoảng)",
+      "parts": [
+        { "part": "〜時間", "role": "… tiếng: 1時間 いちじかん, 4時間 よじかん, 9時間 くじかん." },
+        { "part": "〜日", "role": "… ngày: 1日 いちにち, 2日 ふつか, 3日 みっか, 4日 よっか, 5日 いつか, 10日 とおか." },
+        { "part": "〜週間", "role": "… tuần: 1週間 いっしゅうかん, 2週間 にしゅうかん." },
+        { "part": "〜か月", "role": "… tháng: 1か月 いっかげつ, 2か月 にかげつ, 6か月 ろっかげつ." },
+        { "part": "〜年", "role": "… năm: 1年 いちねん, 4年 よねん." },
+        { "part": "どのくらい", "role": "「bao lâu / bao nhiêu」 — hỏi độ dài, mức độ." },
+        { "part": "〜ぐらい", "role": "「khoảng」 — gắn sau con số (cũng nói 〜くらい)." },
+        { "part": "かかります", "role": "「mất, tốn」 (thời gian, tiền)." }
+      ],
+      "memoryTip": {
+        "emoji": "⏳",
+        "hook": "Kéo dài bao lâu thì không cần 「に」!",
+        "meaning": "→ 3年 勉強しました, 2時間 かかります (khác thời điểm: 7時に 起きます)."
+      },
+      "examples": [
+        {
+          "jp": "国で 2か月 日本語を 勉強しました。",
+          "romaji": "Kuni de ni-kagetsu Nihongo o benkyō shimashita.",
+          "vi": "Tôi đã học tiếng Nhật 2 tháng ở nước tôi.",
+          "context": "Trường học",
+          "breakdown": [
+            { "jp": "国で", "vi": "ở nước (mình)" },
+            { "jp": "2か月", "vi": "2 tháng (khoảng thời gian)" }
+          ]
+        },
+        {
+          "jp": "どのくらい 日本語を 勉強しましたか。 …3年 勉強しました。",
+          "romaji": "Dono kurai Nihongo o benkyō shimashita ka. … San-nen benkyō shimashita.",
+          "vi": "Bạn đã học tiếng Nhật bao lâu? …Tôi đã học 3 năm.",
+          "context": "Làm quen"
+        },
+        {
+          "jp": "大阪から 東京まで 新幹線で どのくらい かかりますか。 …2時間半 かかります。",
+          "romaji": "Ōsaka kara Tōkyō made Shinkansen de dono kurai kakarimasu ka. … Ni-jikan han kakarimasu.",
+          "vi": "Từ Osaka đến Tokyo đi Shinkansen mất bao lâu? …Mất 2 tiếng rưỡi.",
+          "context": "Đi tàu"
+        },
+        {
+          "jp": "うちから 会社まで 30分ぐらい かかります。",
+          "romaji": "Uchi kara kaisha made sanjuppun gurai kakarimasu.",
+          "vi": "Từ nhà đến công ty mất khoảng 30 phút.",
+          "context": "Đi làm"
+        },
+        {
+          "jp": "毎日 8時間 働きます。",
+          "romaji": "Mainichi hachi-jikan hatarakimasu.",
+          "vi": "Mỗi ngày tôi làm việc 8 tiếng.",
+          "context": "Công việc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "3年に 日本語を 勉強しました。",
+          "right": "3年 日本語を 勉強しました。",
+          "explain": "Khoảng thời gian (trong bao lâu) không đi với に. に chỉ dùng cho thời điểm (7時に, 日曜日に)."
+        },
+        {
+          "wrong": "東京まで 2時 かかります。",
+          "right": "東京まで 2時間 かかります。",
+          "explain": "2時 là 「2 giờ」 (thời điểm); 2時間 là 「2 tiếng」 (khoảng thời gian)."
+        },
+        {
+          "wrong": "1日 (một ngày, khoảng thời gian) = ついたち",
+          "right": "1日 (một ngày) = いちにち",
+          "explain": "ついたち là 「ngày mùng 1」 (ngày tháng). Nói độ dài 「1 ngày」 đọc là いちにち."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: ぐらい và ごろ",
+          "text": "ぐらい dùng với khoảng thời gian / số lượng: 30分ぐらい (khoảng 30 phút). ごろ dùng với thời điểm: 7時ごろ (khoảng 7 giờ) — bạn sẽ gặp ở bài 13."
+        }
+      ]
+    },
+    {
+      "id": "L11-G5",
+      "title": "Khung thời gian に 〜回",
+      "meaning": "… lần trong (một khoảng thời gian)",
+      "why": "Để nói tần suất: 「2 lần một tháng」, 「3 lần một tuần」 — nói về thói quen, lịch tập, lịch học.",
+      "when": [
+        "Nói thói quen: đi xem phim, về quê, chơi thể thao bao nhiêu lần.",
+        "Hỏi: 1週間に 何回 〜か."
+      ],
+      "formula": "Khung thời gian に + số lần 回 + V",
+      "parts": [
+        { "part": "Khung thời gian", "role": "1日 (1 ngày), 1週間 (1 tuần), 1か月 (1 tháng), 1年 (1 năm)…" },
+        { "part": "に", "role": "「trong (mỗi)」 — bắt buộc có." },
+        { "part": "〜回", "role": "Số lần: 1回 いっかい, 2回 にかい, 3回 さんかい…" }
+      ],
+      "memoryTip": {
+        "emoji": "📅",
+        "hook": "「Bao lâu」 に 「mấy lần」!",
+        "meaning": "→ 1週間に 2回 = 2 lần một tuần (khung thời gian đứng trước に)."
+      },
+      "examples": [
+        {
+          "jp": "1か月に 2回 映画を 見ます。",
+          "romaji": "Ikkagetsu ni ni-kai eiga o mimasu.",
+          "vi": "Tôi xem phim 2 lần một tháng.",
+          "context": "Giải trí",
+          "breakdown": [
+            { "jp": "1か月に", "vi": "trong 1 tháng" },
+            { "jp": "2回", "vi": "2 lần" }
+          ]
+        },
+        {
+          "jp": "1週間に 3回 日本語を 勉強します。",
+          "romaji": "Isshūkan ni san-kai Nihongo o benkyō shimasu.",
+          "vi": "Tôi học tiếng Nhật 3 lần một tuần.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "1年に 1回 国へ 帰ります。",
+          "romaji": "Ichi-nen ni ikkai kuni e kaerimasu.",
+          "vi": "Mỗi năm tôi về nước 1 lần.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "1週間に 何回 スポーツを しますか。 …2回 します。",
+          "romaji": "Isshūkan ni nan-kai supōtsu o shimasu ka. … Ni-kai shimasu.",
+          "vi": "Bạn chơi thể thao mấy lần một tuần? …2 lần.",
+          "context": "Sức khỏe"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "1週間 3回 日本語を 勉強します。",
+          "right": "1週間に 3回 日本語を 勉強します。",
+          "explain": "Nói tần suất phải có に sau khung thời gian."
+        },
+        {
+          "wrong": "3回に 1週間 日本語を 勉強します。",
+          "right": "1週間に 3回 日本語を 勉強します。",
+          "explain": "Khung thời gian đứng trước に, số lần đứng sau."
+        }
+      ]
+    },
+    {
+      "id": "L11-G6",
+      "title": "Lượng từ / N だけ",
+      "meaning": "chỉ… (thôi)",
+      "why": "Để nhấn mạnh 「không hơn」: 「Chỉ nghỉ Chủ nhật」, 「Chỉ có 1 người nước ngoài」.",
+      "when": [
+        "Giới hạn số lượng: 1人だけ, 5分だけ.",
+        "Giới hạn sự vật / thời gian: 日曜日だけ, ひらがなだけ."
+      ],
+      "formula": "N / lượng từ + だけ",
+      "parts": [
+        { "part": "だけ", "role": "「chỉ… thôi」 — gắn ngay SAU từ bị giới hạn." }
+      ],
+      "memoryTip": {
+        "emoji": "☝️",
+        "hook": "「だけ」 = chỉ… thôi — dán ngay sau thứ bị giới hạn!",
+        "meaning": "→ 日曜日だけ (chỉ Chủ nhật), 1人だけ (chỉ 1 người)."
+      },
+      "examples": [
+        {
+          "jp": "休みは 日曜日だけです。",
+          "romaji": "Yasumi wa nichiyōbi dake desu.",
+          "vi": "Ngày nghỉ chỉ có Chủ nhật thôi.",
+          "context": "Công việc",
+          "breakdown": [
+            { "jp": "休み", "vi": "ngày nghỉ" },
+            { "jp": "日曜日だけ", "vi": "chỉ Chủ nhật" }
+          ]
+        },
+        {
+          "jp": "外国人の 社員が 1人だけ います。",
+          "romaji": "Gaikokujin no shain ga hitori dake imasu.",
+          "vi": "Chỉ có 1 nhân viên người nước ngoài.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "5分だけ 休みます。",
+          "romaji": "Go-fun dake yasumimasu.",
+          "vi": "Tôi nghỉ chỉ 5 phút thôi.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "わたしは ひらがなだけ わかります。",
+          "romaji": "Watashi wa hiragana dake wakarimasu.",
+          "vi": "Tôi chỉ hiểu hiragana thôi.",
+          "context": "Trường học"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "休みは だけ 日曜日です。",
+          "right": "休みは 日曜日だけです。",
+          "explain": "だけ đứng SAU từ bị giới hạn, không đứng trước như chữ 「chỉ」 tiếng Việt."
+        },
+        {
+          "wrong": "外国人の 社員が 1つだけ います。",
+          "right": "外国人の 社員が 1人だけ います。",
+          "explain": "Đếm người dùng 〜人; だけ vẫn gắn sau lượng từ đúng."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "ひとつ〜とお / いくつ", "meaning": "đếm đồ vật chung / mấy cái?", "example": "りんごを 4つ 買いました。" },
+    { "pattern": "〜人 / 〜台 / 〜枚 / 〜回", "meaning": "người / máy, xe / vật mỏng / số lần", "example": "切手を 5枚 ください。" },
+    { "pattern": "N を lượng từ V", "meaning": "lượng từ đứng sau trợ từ, trước động từ", "example": "学生が 3人 います。" },
+    { "pattern": "どのくらい / 〜ぐらい", "meaning": "bao lâu? / khoảng…", "example": "30分ぐらい かかります。" },
+    { "pattern": "Khung thời gian に 〜回", "meaning": "… lần trong …", "example": "1か月に 2回 映画を 見ます。" },
+    { "pattern": "N / lượng từ だけ", "meaning": "chỉ… thôi", "example": "休みは 日曜日だけです。" }
+  ],
+  "exercises": [
+    {
+      "id": "L11-E01",
+      "type": "choice",
+      "grammarPoint": "L11-G1",
+      "question": "「4つ」 (4 cái) đọc là gì?",
+      "options": ["よっつ", "よんつ", "しつ", "よつ"],
+      "answer": "よっつ",
+      "explanation": "Bộ đếm 〜つ: ひとつ, ふたつ, みっつ, よっつ…"
+    },
+    {
+      "id": "L11-E02",
+      "type": "fill",
+      "grammarPoint": "L11-G1",
+      "question": "Gõ cách đếm 「3 quả」 (kana).",
+      "jp": "りんごを ＿＿ 買いました。",
+      "vi": "Tôi đã mua 3 quả táo.",
+      "answer": "みっつ",
+      "accept": ["3つ", "三つ"],
+      "explanation": "3 đồ vật = みっつ (3つ)."
+    },
+    {
+      "id": "L11-E03",
+      "type": "situation",
+      "grammarPoint": "L11-G1",
+      "question": "Ở quán, bạn muốn gọi 2 cây kem. Bạn nói:",
+      "options": [
+        "アイスクリームを 2つ ください。",
+        "アイスクリームを 2人 ください。",
+        "アイスクリームを 2枚 ください。",
+        "アイスクリームを 2回 ください。"
+      ],
+      "answer": "アイスクリームを 2つ ください。",
+      "explanation": "Món ăn, đồ vật chung đếm bằng 〜つ: ふたつ."
+    },
+    {
+      "id": "L11-E04",
+      "type": "jp-vi",
+      "grammarPoint": "L11-G1",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "みかんを いくつ 買いましたか。",
+      "romaji": "Mikan o ikutsu kaimashita ka.",
+      "options": [
+        "Bạn đã mua mấy quả quýt?",
+        "Bạn đã mua quýt ở đâu?",
+        "Quýt giá bao nhiêu tiền?",
+        "Bạn đã mua quýt mấy lần?"
+      ],
+      "answer": "Bạn đã mua mấy quả quýt?",
+      "explanation": "いくつ = mấy cái (hỏi số lượng đồ vật). Hỏi giá là いくら."
+    },
+    {
+      "id": "L11-E05",
+      "type": "choice",
+      "grammarPoint": "L11-G2",
+      "question": "「1人」 (1 người) đọc là gì?",
+      "options": ["ひとり", "いちにん", "ひとにん", "いちり"],
+      "answer": "ひとり",
+      "explanation": "1人 = ひとり, 2人 = ふたり — hai cách đọc đặc biệt."
+    },
+    {
+      "id": "L11-E06",
+      "type": "choice",
+      "grammarPoint": "L11-G2",
+      "question": "Chọn trợ số từ đúng: 「80円の 切手を 5＿＿ ください。」",
+      "jp": "80円の 切手を 5＿＿ ください。",
+      "vi": "Cho tôi 5 con tem loại 80 yên.",
+      "options": ["枚", "台", "人", "回"],
+      "answer": "枚",
+      "explanation": "Tem là vật mỏng, phẳng → 〜枚 (5枚 ごまい)."
+    },
+    {
+      "id": "L11-E07",
+      "type": "fix",
+      "grammarPoint": "L11-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "教室に 学生が 3つ います。",
+      "options": [
+        "教室に 学生が 3人 います。",
+        "教室に 学生が 3台 います。",
+        "教室に 学生が 3つ あります。",
+        "教室に 学生が 3枚 います。"
+      ],
+      "answer": "教室に 学生が 3人 います。",
+      "explanation": "Đếm người dùng 〜人 (3人 さんにん), người thì dùng います."
+    },
+    {
+      "id": "L11-E08",
+      "type": "vi-jp",
+      "grammarPoint": "L11-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Gia đình bạn có mấy người?",
+      "options": [
+        "家族は 何人ですか。",
+        "家族は いくつですか。",
+        "家族は 何台ですか。",
+        "家族は 何枚ですか。"
+      ],
+      "answer": "家族は 何人ですか。",
+      "explanation": "Hỏi số người → 何人 (なんにん)."
+    },
+    {
+      "id": "L11-E09",
+      "type": "choice",
+      "grammarPoint": "L11-G2",
+      "question": "「4人」 (4 người) đọc là gì?",
+      "options": ["よにん", "よんにん", "しにん", "よっつにん"],
+      "answer": "よにん",
+      "explanation": "4人 đọc là よにん — ngoại lệ cần nhớ."
+    },
+    {
+      "id": "L11-E10",
+      "type": "fill",
+      "grammarPoint": "L11-G2",
+      "question": "Gõ trợ số từ còn thiếu (kana).",
+      "jp": "うちに 車が 2＿＿ あります。",
+      "vi": "Nhà tôi có 2 chiếc xe hơi.",
+      "answer": "だい",
+      "accept": ["台"],
+      "hint": "đếm máy móc, xe cộ",
+      "explanation": "Xe cộ, máy móc đếm bằng 〜台: 2台 (にだい)."
+    },
+    {
+      "id": "L11-E11",
+      "type": "order",
+      "grammarPoint": "L11-G3",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi đã mua 4 quả táo.",
+      "tokens": ["りんご", "を", "4つ", "買いました"],
+      "explanation": "N を + lượng từ + động từ."
+    },
+    {
+      "id": "L11-E12",
+      "type": "fix",
+      "grammarPoint": "L11-G3",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "りんごを 4つを 買いました。",
+      "options": [
+        "りんごを 4つ 買いました。",
+        "りんごを 買いました 4つ。",
+        "りんご 4つを を 買いました。",
+        "りんごが 4つを 買いました。"
+      ],
+      "answer": "りんごを 4つ 買いました。",
+      "explanation": "Lượng từ không mang trợ từ; nó đứng ngay trước động từ."
+    },
+    {
+      "id": "L11-E13",
+      "type": "choice",
+      "grammarPoint": "L11-G3",
+      "question": "Câu nào đặt lượng từ đúng chỗ?",
+      "options": [
+        "教室に 学生が 3人 います。",
+        "教室に 学生が います 3人。",
+        "教室に 学生を 3人 います。",
+        "教室に 学生が 3人が います。"
+      ],
+      "answer": "教室に 学生が 3人 います。",
+      "explanation": "N が + lượng từ + động từ; lượng từ không gắn trợ từ và không đứng sau động từ."
+    },
+    {
+      "id": "L11-E14",
+      "type": "jp-vi",
+      "grammarPoint": "L11-G3",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "郵便局で 切手を 2枚 買いました。",
+      "romaji": "Yūbinkyoku de kitte o ni-mai kaimashita.",
+      "options": [
+        "Tôi đã mua 2 con tem ở bưu điện.",
+        "Tôi đã mua tem ở bưu điện 2 lần.",
+        "Tôi đã đi bưu điện 2 lần.",
+        "Tôi đã mua 2 cái phong bì ở bưu điện."
+      ],
+      "answer": "Tôi đã mua 2 con tem ở bưu điện.",
+      "explanation": "切手を 2枚 = 2 con tem (〜枚 đếm vật mỏng). 2 lần sẽ là 2回."
+    },
+    {
+      "id": "L11-E15",
+      "type": "choice",
+      "grammarPoint": "L11-G4",
+      "question": "「どのくらい 日本語を 勉強しましたか。」 — câu trả lời nào đúng?",
+      "options": [
+        "3年 勉強しました。",
+        "3年に 勉強しました。",
+        "3時に 勉強しました。",
+        "3年ですか。"
+      ],
+      "answer": "3年 勉強しました。",
+      "explanation": "どのくらい hỏi khoảng thời gian → trả lời 3年 (không có に)."
+    },
+    {
+      "id": "L11-E16",
+      "type": "fill",
+      "grammarPoint": "L11-G4",
+      "question": "Gõ từ còn thiếu mang nghĩa 「khoảng」 (kana).",
+      "jp": "うちから 会社まで 30分＿＿ かかります。",
+      "vi": "Từ nhà đến công ty mất khoảng 30 phút.",
+      "answer": "ぐらい",
+      "accept": ["くらい"],
+      "explanation": "Số lượng / khoảng thời gian + ぐらい = khoảng…"
+    },
+    {
+      "id": "L11-E17",
+      "type": "vi-jp",
+      "grammarPoint": "L11-G4",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Từ Osaka đến Tokyo đi Shinkansen mất bao lâu?",
+      "options": [
+        "大阪から 東京まで 新幹線で どのくらい かかりますか。",
+        "大阪から 東京まで 新幹線で 何時 かかりますか。",
+        "大阪から 東京まで 新幹線で どのくらい ありますか。",
+        "大阪から 東京まで 新幹線で いくつ かかりますか。"
+      ],
+      "answer": "大阪から 東京まで 新幹線で どのくらい かかりますか。",
+      "explanation": "Hỏi mất bao lâu → どのくらい かかりますか. 何時 là 「mấy giờ」 (thời điểm)."
+    },
+    {
+      "id": "L11-E18",
+      "type": "choice",
+      "grammarPoint": "L11-G4",
+      "question": "「1週間」 (1 tuần) đọc là gì?",
+      "options": ["いっしゅうかん", "いちしゅうかん", "ひとしゅうかん", "いっしゅう"],
+      "answer": "いっしゅうかん",
+      "explanation": "1 + 週間 bị biến âm thành いっしゅうかん."
+    },
+    {
+      "id": "L11-E19",
+      "type": "fix",
+      "grammarPoint": "L11-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "毎日 8時間に 働きます。",
+      "options": [
+        "毎日 8時間 働きます。",
+        "毎日 8時に 働きます 間。",
+        "毎日に 8時間に 働きます。",
+        "毎日 8時間を 働きます。"
+      ],
+      "answer": "毎日 8時間 働きます。",
+      "explanation": "Khoảng thời gian (8 tiếng) không đi với trợ từ に."
+    },
+    {
+      "id": "L11-E20",
+      "type": "choice",
+      "grammarPoint": "L11-G4",
+      "question": "「2日」 với nghĩa 「2 ngày」 (khoảng thời gian) đọc là gì?",
+      "options": ["ふつか", "ににち", "ふたにち", "ふたか"],
+      "answer": "ふつか",
+      "explanation": "2日 = ふつか (vừa là 「ngày mùng 2」 vừa là 「2 ngày」)."
+    },
+    {
+      "id": "L11-E21",
+      "type": "particle",
+      "grammarPoint": "L11-G5",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "1か月＿＿ 2回 映画を 見ます。",
+      "romaji": "Ikkagetsu ___ ni-kai eiga o mimasu.",
+      "vi": "Tôi xem phim 2 lần một tháng.",
+      "options": ["に", "で", "を", "が"],
+      "answer": "に",
+      "explanation": "Tần suất: khung thời gian に + số lần."
+    },
+    {
+      "id": "L11-E22",
+      "type": "jp-vi",
+      "grammarPoint": "L11-G5",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "1週間に 3回 日本語を 勉強します。",
+      "romaji": "Isshūkan ni san-kai Nihongo o benkyō shimasu.",
+      "options": [
+        "Tôi học tiếng Nhật 3 lần một tuần.",
+        "Tôi học tiếng Nhật 1 lần trong 3 tuần.",
+        "Tôi học tiếng Nhật trong 3 tuần.",
+        "Tôi học tiếng Nhật 3 tiếng mỗi ngày."
+      ],
+      "answer": "Tôi học tiếng Nhật 3 lần một tuần.",
+      "explanation": "1週間に 3回 = trong 1 tuần 3 lần."
+    },
+    {
+      "id": "L11-E23",
+      "type": "order",
+      "grammarPoint": "L11-G5",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Mỗi năm tôi về nước 1 lần.",
+      "tokens": ["1年", "に", "1回", "国", "へ", "帰ります"],
+      "accept": [["国", "へ", "1年", "に", "1回", "帰ります"], ["1年", "に", "国", "へ", "1回", "帰ります"]],
+      "explanation": "Khung thời gian に + số lần; động từ ở cuối."
+    },
+    {
+      "id": "L11-E24",
+      "type": "pattern",
+      "grammarPoint": "L11-G5",
+      "question": "Muốn nói 「Tôi đi bơi 2 lần một tuần」, chọn mẫu phù hợp.",
+      "options": [
+        "Khung thời gian に 〜回",
+        "Khoảng thời gian + V (không に)",
+        "N / lượng từ だけ",
+        "どのくらい 〜か"
+      ],
+      "answer": "Khung thời gian に 〜回",
+      "explanation": "Tần suất (mấy lần trong bao lâu) → 1週間に 2回."
+    },
+    {
+      "id": "L11-E25",
+      "type": "particle",
+      "grammarPoint": "L11-G6",
+      "question": "Chọn từ điền vào chỗ trống.",
+      "jp": "休みは 日曜日＿＿です。",
+      "romaji": "Yasumi wa nichiyōbi ___ desu.",
+      "vi": "Ngày nghỉ chỉ có Chủ nhật thôi.",
+      "options": ["だけ", "や", "も", "に"],
+      "answer": "だけ",
+      "explanation": "「chỉ… thôi」 → だけ, gắn ngay sau từ bị giới hạn."
+    },
+    {
+      "id": "L11-E26",
+      "type": "jp-vi",
+      "grammarPoint": "L11-G6",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "わたしは ひらがなだけ わかります。",
+      "romaji": "Watashi wa hiragana dake wakarimasu.",
+      "options": [
+        "Tôi chỉ hiểu hiragana thôi.",
+        "Tôi cũng hiểu hiragana.",
+        "Tôi không hiểu hiragana.",
+        "Tôi hiểu hiragana, katakana, v.v."
+      ],
+      "answer": "Tôi chỉ hiểu hiragana thôi.",
+      "explanation": "だけ = chỉ… thôi."
+    },
+    {
+      "id": "L11-E27",
+      "type": "vi-jp",
+      "grammarPoint": "L11-G6",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Chỉ có 1 nhân viên người nước ngoài.",
+      "options": [
+        "外国人の 社員が 1人だけ います。",
+        "外国人の 社員が 1人だけ あります。",
+        "外国人の 社員が 1つだけ います。",
+        "外国人の 社員が だけ 1人 います。"
+      ],
+      "answer": "外国人の 社員が 1人だけ います。",
+      "explanation": "Người → 〜人 và います; だけ gắn sau lượng từ."
+    },
+    {
+      "id": "L11-E28",
+      "type": "identify",
+      "grammarPoint": "L11-G6",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "5分だけ 休みます。",
+      "romaji": "Go-fun dake yasumimasu.",
+      "vi": "Tôi nghỉ chỉ 5 phút thôi.",
+      "options": [
+        "Lượng từ だけ (chỉ… thôi)",
+        "Khung thời gian に 〜回 (tần suất)",
+        "〜ぐらい (khoảng)",
+        "いくつ (mấy cái)"
+      ],
+      "answer": "Lượng từ だけ (chỉ… thôi)",
+      "explanation": "だけ sau 5分 → chỉ 5 phút thôi."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 11 }
+}

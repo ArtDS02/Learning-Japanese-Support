@@ -1,0 +1,396 @@
+{
+  "book": "Minna no Nihongo I",
+  "range": [
+    1,
+    25
+  ],
+  "lessons": [
+    {
+      "lesson": 1,
+      "title": "Giới thiệu bản thân",
+      "titleJp": "はじめまして",
+      "topic": "Chào hỏi · tên · nghề nghiệp · quốc tịch · nơi làm việc",
+      "gpCount": 6,
+      "exCount": 29,
+      "points": [
+        "N1 は N2 です",
+        "N1 は N2 じゃ ありません",
+        "S か — câu hỏi có/không",
+        "N も — cũng",
+        "N1 の N2 — thuộc về / của",
+        "〜さん"
+      ]
+    },
+    {
+      "lesson": 2,
+      "title": "Đồ vật quanh ta",
+      "titleJp": "これは 何ですか",
+      "topic": "Chỉ đồ vật · hỏi 「cái gì」 · của ai · về cái gì · câu hỏi lựa chọn",
+      "gpCount": 6,
+      "exCount": 28,
+      "points": [
+        "これ / それ / あれ は N です",
+        "この / その / あの N",
+        "そうです / そうじゃ ありません / そうですか",
+        "S1か、S2か — câu hỏi lựa chọn",
+        "N1 の N2 — nội dung / sở hữu · だれの, 何の",
+        "の thay danh từ — わたしのです"
+      ]
+    },
+    {
+      "lesson": 3,
+      "title": "Nơi chốn & mua sắm",
+      "titleJp": "ここは どこですか",
+      "topic": "Chỉ nơi chốn · hỏi 「ở đâu」 · hàng nước nào · hỏi giá",
+      "gpCount": 6,
+      "exCount": 27,
+      "points": [
+        "ここ / そこ / あそこ · こちら / そちら / あちら",
+        "N は nơi chốn です",
+        "どこ / どちら — ở đâu",
+        "N1 の N2 — xuất xứ · どこの",
+        "N は いくらですか — hỏi giá",
+        "お〜 — tiếp đầu ngữ lịch sự"
+      ]
+    },
+    {
+      "lesson": 4,
+      "title": "Thời gian & sinh hoạt hằng ngày",
+      "titleJp": "今 何時ですか",
+      "topic": "Giờ giấc · động từ ます · làm gì lúc mấy giờ · từ… đến… · và · 〜ね",
+      "gpCount": 6,
+      "exCount": 27,
+      "points": [
+        "今 〜時〜分です — nói giờ",
+        "Vます / Vません / Vました / Vませんでした",
+        "N (thời gian) に V",
+        "N1 から N2 まで",
+        "N1 と N2 — và",
+        "〜ね — nhỉ / nhé"
+      ]
+    },
+    {
+      "lesson": 5,
+      "title": "Đi lại",
+      "titleJp": "甲子園へ 行きますか",
+      "topic": "Đi · đến · về · bằng phương tiện gì · với ai · khi nào · 〜よ",
+      "gpCount": 6,
+      "exCount": 27,
+      "points": [
+        "N (nơi chốn) へ 行きます / 来ます / 帰ります",
+        "どこ[へ]も 行きません",
+        "N (phương tiện) で 行きます · 歩いて",
+        "N (người) と V · 一人で",
+        "いつ — khi nào",
+        "〜よ — báo thông tin mới"
+      ]
+    },
+    {
+      "lesson": 6,
+      "title": "Hành động hằng ngày & rủ rê",
+      "titleJp": "いっしょに 行きませんか",
+      "topic": "Ăn · uống · đọc · xem · làm · ở đâu · mời · rủ cùng làm",
+      "gpCount": 6,
+      "exCount": 26,
+      "points": [
+        "N を V (tha động từ)",
+        "N を します",
+        "何を しますか · なに / なん",
+        "N (nơi chốn) で V",
+        "V ませんか — mời",
+        "V ましょう — rủ cùng làm"
+      ]
+    },
+    {
+      "lesson": 7,
+      "title": "Cho & nhận",
+      "titleJp": "もう 食べましたか",
+      "topic": "Bằng dụng cụ gì · nói bằng tiếng gì · cho / cho mượn / dạy · nhận / mượn / học · đã … chưa",
+      "gpCount": 5,
+      "exCount": 26,
+      "points": [
+        "N (dụng cụ / phương tiện) で V",
+        "「Từ / câu」は 〜語で 何ですか",
+        "N (người) に あげます / 貸します / 教えます",
+        "N (người) に / から もらいます / 借ります / 習います",
+        "もう V ました · いいえ、まだです"
+      ]
+    },
+    {
+      "lesson": 8,
+      "title": "Tính từ い và な",
+      "titleJp": "そろそろ 失礼します",
+      "topic": "Miêu tả người, vật, nơi chốn · khen chê · hỏi cảm nhận",
+      "gpCount": 7,
+      "exCount": 30,
+      "points": [
+        "N は なA です / N は いA です",
+        "Phủ định: なA じゃ ありません / いA くないです",
+        "なA な N / いA N — tính từ bổ nghĩa danh từ",
+        "とても / あまり〜ない",
+        "N は どうですか / N1 は どんな N2 ですか",
+        "S1 が、S2 (nhưng) / そして (và)",
+        "どれ — cái nào"
+      ]
+    },
+    {
+      "lesson": 9,
+      "title": "Sở thích và khả năng",
+      "titleJp": "残念ですが",
+      "topic": "Thích / ghét · giỏi / kém · hiểu · có · nói lý do",
+      "gpCount": 6,
+      "exCount": 27,
+      "points": [
+        "N が あります / N が わかります",
+        "N が 好きです / きらいです / 上手です / 下手です",
+        "どんな N が 好きですか",
+        "Trạng từ mức độ: よく / だいたい / たくさん / 少し / あまり〜ない / 全然〜ない",
+        "S1 から、S2",
+        "どうして — tại sao"
+      ]
+    },
+    {
+      "lesson": 10,
+      "title": "Tồn tại và vị trí",
+      "titleJp": "ナンプラー、ありますか",
+      "topic": "Có ai / có gì ở đâu · ở đâu · vị trí trên, dưới, trong, cạnh…",
+      "gpCount": 5,
+      "exCount": 26,
+      "points": [
+        "Nơi に N が あります / います",
+        "N は Nơi に あります / います",
+        "N1 の 上 / 下 / 前 / 後ろ / 中 / 隣 … — vị trí",
+        "N1 や N2 [など]",
+        "N ですか — nhắc lại để xác nhận"
+      ]
+    },
+    {
+      "lesson": 11,
+      "title": "Số lượng và khoảng thời gian",
+      "titleJp": "これ、お願いします",
+      "topic": "Đếm đồ vật, người, máy móc, tờ giấy, số lần · bao lâu · mấy lần · chỉ…",
+      "gpCount": 6,
+      "exCount": 28,
+      "points": [
+        "ひとつ〜とお (〜つ) / いくつ",
+        "Trợ số từ 〜人 / 〜台 / 〜枚 / 〜回",
+        "Vị trí lượng từ: N を / が + lượng từ + V",
+        "Khoảng thời gian: 〜時間 / 〜日 / 〜週間 / 〜か月 / 〜年 — どのくらい / 〜ぐらい",
+        "Khung thời gian に 〜回",
+        "Lượng từ / N だけ"
+      ]
+    },
+    {
+      "lesson": 12,
+      "title": "Quá khứ của tính từ và so sánh",
+      "titleJp": "祇園祭は どうでしたか",
+      "topic": "Kể lại cảm nhận (đã vui, đã lạnh…) · so sánh hơn · chọn 1 trong 2 · nhất",
+      "gpCount": 5,
+      "exCount": 26,
+      "points": [
+        "Quá khứ N / なA: でした / じゃ ありませんでした",
+        "Quá khứ いA: 〜かったです / 〜くなかったです",
+        "N1 は N2 より A です",
+        "N1 と N2 と どちらが A ですか — N1 の ほうが A です",
+        "N[の 中]で 何 / どこ / だれ / いつ が いちばん A ですか"
+      ]
+    },
+    {
+      "lesson": 13,
+      "title": "Mong muốn và mục đích",
+      "titleJp": "別々に お願いします",
+      "topic": "Muốn có · muốn làm · đi đâu để làm gì · đâu đó / cái gì đó · kính ngữ ご〜",
+      "gpCount": 5,
+      "exCount": 26,
+      "points": [
+        "N が 欲しいです",
+        "Vます → Vたいです",
+        "Nơi へ Vます(bỏ ます) / N に 行きます・来ます・帰ります",
+        "どこか / 何か",
+        "ご〜 (ご注文, ご家族…)"
+      ]
+    },
+    {
+      "lesson": 14,
+      "title": "Thể て — nhờ vả, đang làm, đề nghị giúp",
+      "titleJp": "みどり町まで お願いします",
+      "topic": "3 nhóm động từ · thể て · Vて ください · Vて います · Vましょうか · N が V",
+      "gpCount": 6,
+      "exCount": 27,
+      "points": [
+        "3 nhóm động từ",
+        "Cách chia thể て",
+        "Vて ください",
+        "Vて います (đang làm)",
+        "Vましょうか (đề nghị giúp)",
+        "N が V (miêu tả hiện tượng)"
+      ]
+    },
+    {
+      "lesson": 15,
+      "title": "Xin phép, cấm đoán và trạng thái",
+      "titleJp": "ご家族は？",
+      "topic": "Vても いいですか · Vては いけません · Vて います (trạng thái, nghề nghiệp) · 知って います / 知りません",
+      "gpCount": 5,
+      "exCount": 25,
+      "points": [
+        "Vても いいですか / Vても いいです",
+        "Vては いけません",
+        "Vて います (trạng thái kết quả)",
+        "Vて います (thói quen, nghề nghiệp)",
+        "知って います / 知りません"
+      ]
+    },
+    {
+      "lesson": 16,
+      "title": "Nối câu — làm lần lượt, miêu tả người và vật",
+      "titleJp": "使い方を 教えて ください",
+      "topic": "V1て、V2 · い/な-A, N nối câu · V1てから、V2 · N1は N2が A · どうやって · どれ / どの N",
+      "gpCount": 6,
+      "exCount": 26,
+      "points": [
+        "V1て、V2て、V3 (chuỗi hành động)",
+        "いA → くて / なA・N → で (nối tính từ, danh từ)",
+        "V1て から、V2",
+        "N1 は N2 が A",
+        "どうやって",
+        "どれ / どの N"
+      ]
+    },
+    {
+      "lesson": 17,
+      "title": "Thể ない — xin đừng, phải, không cần",
+      "titleJp": "どう しましたか",
+      "topic": "Thể ない · Vないで ください · Vなければ なりません · Vなくても いいです · N(tân ngữ) は V · までに",
+      "gpCount": 6,
+      "exCount": 26,
+      "points": [
+        "Cách chia thể ない",
+        "Vないで ください",
+        "Vなければ なりません",
+        "Vなくても いいです",
+        "N (tân ngữ) は V",
+        "N (thời gian) までに V"
+      ]
+    },
+    {
+      "lesson": 18,
+      "title": "Thể từ điển — có thể, sở thích, trước khi",
+      "titleJp": "趣味は 何ですか",
+      "topic": "Thể từ điển · ことが できます · 趣味は 〜ことです · 〜まえに · なかなか〜ない · ぜひ",
+      "gpCount": 6,
+      "exCount": 25,
+      "points": [
+        "Cách chia thể từ điển (辞書形)",
+        "N / V辞書形 こと が できます",
+        "わたしの 趣味は N / V辞書形 こと です",
+        "V1辞書形 / Nの / lượng từ (thời gian) まえに、V2",
+        "なかなか 〜ない",
+        "ぜひ"
+      ]
+    },
+    {
+      "lesson": 19,
+      "title": "Thể た — kinh nghiệm, liệt kê, trở nên",
+      "titleJp": "ダイエットは あしたから します",
+      "topic": "Thể た · Vた ことが あります · Vたり、Vたり します · 〜く / 〜に なります",
+      "gpCount": 4,
+      "exCount": 25,
+      "points": [
+        "Cách chia thể た",
+        "Vた ことが あります",
+        "Vたり、Vたり します",
+        "いA (bỏ い) → く / なA・N → に + なります"
+      ]
+    },
+    {
+      "lesson": 20,
+      "title": "Thể thông thường",
+      "titleJp": "夏休みは どう するの？",
+      "topic": "Lịch sự vs thân mật · 普通形 của động từ, tính từ, danh từ · hội thoại với bạn bè",
+      "gpCount": 5,
+      "exCount": 26,
+      "points": [
+        "丁寧体 và 普通体 — lịch sự và thông thường",
+        "普通形 của động từ — Vる / Vない / Vた / Vなかった",
+        "普通形 của tính từ và danh từ",
+        "Hội thoại thân mật — câu hỏi lên giọng, うん / ううん, lược trợ từ",
+        "〜けど — nhưng (thân mật)"
+      ]
+    },
+    {
+      "lesson": 21,
+      "title": "Nêu ý kiến và trích dẫn",
+      "titleJp": "わたしも そう 思います",
+      "topic": "〜と 思います · 〜について どう 思いますか · 〜と 言います · 〜でしょう？ · sự kiện diễn ra ở đâu",
+      "gpCount": 6,
+      "exCount": 26,
+      "points": [
+        "普通形 と 思います — suy đoán",
+        "〜と 思います (ý kiến) · N について どう 思いますか",
+        "「câu」と 言います · 普通形 と 言います",
+        "普通形 でしょう？ — xác nhận",
+        "N1(nơi) で N2 が あります — sự kiện diễn ra",
+        "N(dịp / tình huống) で"
+      ]
+    },
+    {
+      "lesson": 22,
+      "title": "Mệnh đề bổ nghĩa danh từ",
+      "titleJp": "どんな アパートが いいですか",
+      "topic": "Mệnh đề + danh từ · chủ ngữ trong mệnh đề dùng が · V辞書形 時間 / 約束 / 用事",
+      "gpCount": 4,
+      "exCount": 26,
+      "points": [
+        "Mệnh đề (普通形) + N",
+        "Chủ ngữ trong mệnh đề: N が V + N",
+        "[Mệnh đề + N] ở mọi vị trí trong câu",
+        "V辞書形 時間 / 約束 / 用事 が あります"
+      ]
+    },
+    {
+      "lesson": 23,
+      "title": "Khi… / Hễ… thì…",
+      "titleJp": "どうやって 行きますか",
+      "topic": "〜とき · Vる とき và Vた とき · V辞書形 と · N が (hiện tượng) · N(nơi) を đi qua",
+      "gpCount": 5,
+      "exCount": 27,
+      "points": [
+        "普通形 とき、〜",
+        "V辞書形 とき vs Vた とき",
+        "V辞書形 と、〜 — hễ… thì…",
+        "N が A / V — chủ thể của hiện tượng, trạng thái",
+        "N(nơi) を + động từ di chuyển"
+      ]
+    },
+    {
+      "lesson": 24,
+      "title": "Cho và nhận hành động",
+      "titleJp": "手伝って くれますか",
+      "topic": "くれます · Vて あげます · Vて もらいます · Vて くれます · だれが / N が",
+      "gpCount": 5,
+      "exCount": 27,
+      "points": [
+        "N1 は わたしに N2 を くれます",
+        "Vて あげます — làm (gì đó) cho người khác",
+        "Vて もらいます — được (ai) làm cho",
+        "Vて くれます — (ai đó) làm cho tôi",
+        "だれが V か · N が V — chủ ngữ là thông tin mới"
+      ]
+    },
+    {
+      "lesson": 25,
+      "title": "Giả định và nhượng bộ",
+      "titleJp": "いろいろ お世話に なりました",
+      "topic": "〜たら (nếu) · Vたら (sau khi) · 〜ても (dù… cũng) · もし · いくら",
+      "gpCount": 4,
+      "exCount": 27,
+      "points": [
+        "〜たら、〜 — nếu… thì…",
+        "Vたら、〜 — sau khi / khi (việc chắc chắn xảy ra)",
+        "〜ても、〜 — dù… cũng…",
+        "もし 〜たら · いくら 〜ても"
+      ]
+    }
+  ]
+}

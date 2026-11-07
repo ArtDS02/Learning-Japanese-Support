@@ -1,0 +1,726 @@
+{
+  "lesson": 3,
+  "title": "Nơi chốn & mua sắm",
+  "titleJp": "ここは どこですか",
+  "topic": "Chỉ nơi chốn · hỏi 「ở đâu」 · hàng nước nào · hỏi giá",
+  "description": "Học xong bài này bạn chỉ được chỗ này – chỗ đó – chỗ kia, hỏi đường đến nhà vệ sinh, thang máy, hỏi đồ vật sản xuất ở nước nào và hỏi giá khi đi mua sắm.",
+  "objectives": [
+    "Dùng ここ / そこ / あそこ (và dạng lịch sự こちら / そちら / あちら) để chỉ nơi chốn.",
+    "Nói một người / vật đang ở đâu: N は nơi chốn です.",
+    "Hỏi 「ở đâu」 bằng どこ / どちら, hỏi tên công ty, trường, đất nước.",
+    "Nói đồ vật của nước nào, hãng nào: 日本の 車, どこの 時計.",
+    "Hỏi giá bằng いくらですか và đọc được giá 〜円.",
+    "Dùng お〜 để nói lịch sự về người nghe: お国."
+  ],
+  "keyPoints": [
+    "ここ = chỗ người nói, そこ = chỗ người nghe, あそこ = chỗ xa cả hai.",
+    "こちら / そちら / あちら = hướng này / đó / kia, đồng thời là cách nói LỊCH SỰ của ここ / そこ / あそこ.",
+    "Hỏi vị trí: N は どこですか. Từ để hỏi không đứng trước は.",
+    "どこの N = N của nước nào / hãng nào (xuất xứ).",
+    "いくら = bao nhiêu tiền. Chú ý biến âm: 300 さんびゃく, 600 ろっぴゃく, 800 はっぴゃく, 3.000 さんぜん.",
+    "お〜 gắn vào đồ của NGƯỜI KHÁC để tỏ kính trọng, không dùng cho đồ của mình."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L03-G1",
+      "title": "ここ / そこ / あそこ · こちら / そちら / あちら",
+      "meaning": "Chỗ này / chỗ đó / chỗ kia · (lịch sự) phía này / phía đó / phía kia",
+      "why": "Để chỉ nơi chốn khi đi học, đi làm, đi mua sắm: 「Đây là nhà ăn」, 「Thang máy ở phía kia ạ」.",
+      "when": [
+        "Chỗ mình đang đứng → ここ; chỗ người nghe đang đứng → そこ; chỗ xa cả hai → あそこ.",
+        "Chỉ hướng, hoặc nói lịch sự (nhân viên với khách, với cấp trên) → こちら / そちら / あちら."
+      ],
+      "formula": "ここ / そこ / あそこ は N (nơi chốn) です\nこちら / そちら / あちら (lịch sự)",
+      "parts": [
+        { "part": "ここ", "role": "Chỗ này — nơi người nói đang ở." },
+        { "part": "そこ", "role": "Chỗ đó — nơi người nghe đang ở." },
+        { "part": "あそこ", "role": "Chỗ kia — xa cả hai người." },
+        { "part": "こちら / そちら / あちら", "role": "Phía này / đó / kia — chỉ hướng, và là cách nói lịch sự của ここ / そこ / あそこ." }
+      ],
+      "memoryTip": {
+        "emoji": "📍",
+        "hook": "これ → ここ: đổi 「れ」 thành 「こ」 là từ ĐỒ VẬT sang CHỖ!",
+        "meaning": "→ これ / それ / あれ (cái) ↔ ここ / そこ / あそこ (chỗ). Lưu ý: chỗ kia là あそこ, không phải あこ."
+      },
+      "examples": [
+        {
+          "jp": "ここは 食堂です。",
+          "romaji": "Koko wa shokudō desu.",
+          "vi": "Đây là nhà ăn.",
+          "context": "Trường học — đang đứng trong nhà ăn",
+          "breakdown": [
+            { "jp": "ここ", "vi": "chỗ này" },
+            { "jp": "は", "vi": "(chủ đề)" },
+            { "jp": "食堂", "vi": "nhà ăn" },
+            { "jp": "です", "vi": "là" }
+          ]
+        },
+        {
+          "jp": "あそこは 会議室です。",
+          "romaji": "Asoko wa kaigishitsu desu.",
+          "vi": "Chỗ kia là phòng họp.",
+          "context": "Công ty — chỉ căn phòng ở cuối hành lang"
+        },
+        {
+          "jp": "こちらは 受付です。",
+          "romaji": "Kochira wa uketsuke desu.",
+          "vi": "Đây là quầy lễ tân ạ.",
+          "context": "Khách sạn — nhân viên nói với khách",
+          "note": "こちら lịch sự hơn ここ."
+        },
+        {
+          "jp": "エレベーターは あちらです。",
+          "romaji": "Erebētā wa achira desu.",
+          "vi": "Thang máy ở phía kia ạ.",
+          "context": "Siêu thị / trung tâm thương mại"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "あこは 教室です。",
+          "right": "あそこは 教室です。",
+          "explain": "Bộ ここ / そこ không theo đúng quy luật: chỗ kia là あそこ (không phải あこ)."
+        },
+        {
+          "wrong": "(Đang đứng trong nhà ăn) あそこは 食堂です。",
+          "right": "ここは 食堂です。",
+          "explain": "Nơi mình đang đứng là ここ. あそこ chỉ nơi ở xa cả hai người."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: khi hai người đứng cùng một chỗ",
+          "text": "Nếu người nói và người nghe đứng cạnh nhau, cả khu vực quanh hai người là ここ, chỗ hơi xa là そこ, chỗ xa hẳn là あそこ."
+        }
+      ]
+    },
+    {
+      "id": "L03-G2",
+      "title": "N は nơi chốn です",
+      "meaning": "N ở (nơi chốn)",
+      "why": "Để nói hoặc hỏi một vật / một người đang ở đâu: 「Nhà vệ sinh ở đằng kia」, 「Anh Yamada ở văn phòng」.",
+      "when": [
+        "Chỉ đường cho người khác trong trường, công ty, cửa hàng.",
+        "Nói một người đang ở đâu: 山田さんは 事務所です."
+      ],
+      "formula": "N は nơi chốn です\nN は どこですか",
+      "parts": [
+        { "part": "N", "role": "Người / vật / địa điểm mình đang nói tới (chủ đề)." },
+        { "part": "は", "role": "Trợ từ chủ đề (đọc 「wa」)." },
+        { "part": "nơi chốn", "role": "ここ / そこ / あそこ, tên phòng, tên tầng (2階)…" },
+        { "part": "です", "role": "Ở đây mang nghĩa 「ở」." }
+      ],
+      "memoryTip": {
+        "emoji": "🗺️",
+        "hook": "Thứ cần tìm đứng trước 「は」, chỗ của nó đứng trước 「です」!",
+        "meaning": "→ お手洗いは あそこです = Nhà vệ sinh ở đằng kia."
+      },
+      "examples": [
+        {
+          "jp": "お手洗いは あそこです。",
+          "romaji": "Otearai wa asoko desu.",
+          "vi": "Nhà vệ sinh ở đằng kia.",
+          "context": "Nhà hàng",
+          "breakdown": [
+            { "jp": "お手洗い", "vi": "nhà vệ sinh (lịch sự)" },
+            { "jp": "は", "vi": "(chủ đề)" },
+            { "jp": "あそこ", "vi": "chỗ kia" },
+            { "jp": "です", "vi": "ở" }
+          ]
+        },
+        {
+          "jp": "山田さんは 事務所です。",
+          "romaji": "Yamada-san wa jimusho desu.",
+          "vi": "Anh Yamada ở văn phòng.",
+          "context": "Công ty"
+        },
+        {
+          "jp": "電話は 2階です。",
+          "romaji": "Denwa wa ni-kai desu.",
+          "vi": "Điện thoại ở tầng 2.",
+          "context": "Tòa nhà công ty"
+        },
+        {
+          "jp": "自動販売機は ロビーです。",
+          "romaji": "Jidōhanbaiki wa robī desu.",
+          "vi": "Máy bán hàng tự động ở sảnh.",
+          "context": "Khách sạn"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "2階は 電話です。",
+          "right": "電話は 2階です。",
+          "explain": "Thứ cần tìm (電話) làm chủ đề, đứng trước は. Câu sai nghĩa là 「Tầng 2 là điện thoại」."
+        },
+        {
+          "wrong": "お手洗いの あそこです。",
+          "right": "お手洗いは あそこです。",
+          "explain": "Chủ đề của câu dùng は. の chỉ nối hai danh từ, không dùng ở đây."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: đếm tầng 〜階",
+          "text": "1階 (いっかい), 2階 (にかい), 3階 (さんがい — biến âm!), 4階 (よんかい), 地下 (ちか: tầng hầm). Hỏi tầng mấy: 何階 (なんがい).",
+          "examples": [
+            {
+              "jp": "靴売り場は 何階ですか。 …地下1階です。",
+              "romaji": "Kutsu uriba wa nan-gai desu ka. … Chika ikkai desu.",
+              "vi": "Quầy giày ở tầng mấy? …Ở tầng hầm 1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L03-G3",
+      "title": "どこ / どちら — ở đâu",
+      "meaning": "Ở đâu / phía nào (どちら lịch sự hơn)",
+      "why": "Câu hỏi sống còn khi đi lạc, đi mua sắm, đến công ty mới — và cũng dùng để hỏi tên trường, công ty, đất nước.",
+      "when": [
+        "Hỏi vị trí: お手洗いは どこですか.",
+        "Hỏi lịch sự (với khách, người lớn) hoặc hỏi hướng: エレベーターは どちらですか.",
+        "Hỏi tên nước, công ty, trường của người khác: 会社は どこですか / お国は どちらですか."
+      ],
+      "formula": "N は どこですか\nN は どちらですか (lịch sự)",
+      "parts": [
+        { "part": "どこ", "role": "Ở đâu — hỏi nơi chốn." },
+        { "part": "どちら", "role": "Phía nào / ở đâu — lịch sự hơn どこ." },
+        { "part": "N は", "role": "Thứ mình muốn tìm, đặt làm chủ đề." }
+      ],
+      "memoryTip": {
+        "emoji": "🧭",
+        "hook": "Lạc đường? Hỏi ngay 「〜は どこですか」!",
+        "meaning": "→ Nói với khách / người lớn thì đổi どこ thành どちら cho lịch sự."
+      },
+      "examples": [
+        {
+          "jp": "お手洗いは どこですか。 …あそこです。",
+          "romaji": "Otearai wa doko desu ka. … Asoko desu.",
+          "vi": "Nhà vệ sinh ở đâu ạ? …Ở đằng kia.",
+          "context": "Nhà ga"
+        },
+        {
+          "jp": "エレベーターは どちらですか。 …あちらです。",
+          "romaji": "Erebētā wa dochira desu ka. … Achira desu.",
+          "vi": "Thang máy ở phía nào ạ? …Ở phía kia ạ.",
+          "context": "Trung tâm thương mại"
+        },
+        {
+          "jp": "会社は どこですか。 …IMCです。",
+          "romaji": "Kaisha wa doko desu ka. … IMC desu.",
+          "vi": "Anh làm ở công ty nào? …Công ty IMC.",
+          "context": "Làm quen",
+          "note": "Hỏi TÊN công ty, trường… người Nhật cũng dùng どこ / どちら, không dùng 何."
+        },
+        {
+          "jp": "お国は どちらですか。 …ベトナムです。",
+          "romaji": "Okuni wa dochira desu ka. … Betonamu desu.",
+          "vi": "Anh/chị là người nước nào ạ? …Việt Nam ạ.",
+          "context": "Lớp học tiếng Nhật"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "どこは お手洗いですか。",
+          "right": "お手洗いは どこですか。",
+          "explain": "Từ để hỏi (どこ, 何, だれ…) không đứng trước は. Thứ cần tìm làm chủ đề, どこ đặt trước です."
+        },
+        {
+          "wrong": "会社は 何ですか。",
+          "right": "会社は どこですか。",
+          "explain": "Muốn hỏi 「làm ở công ty nào」 → dùng どこ / どちら. 何 là hỏi 「cái gì」."
+        }
+      ]
+    },
+    {
+      "id": "L03-G4",
+      "title": "N1 の N2 — xuất xứ · どこの",
+      "meaning": "N2 của nước / hãng N1 · N2 của nước nào, hãng nào?",
+      "why": "Khi mua sắm hay tặng quà, ta hay hỏi và nói hàng của nước nào, hãng nào: 「xe Nhật」, 「rượu vang Ý」.",
+      "when": [
+        "Nói nơi sản xuất: 日本の 車 (xe Nhật), イタリアの ワイン (rượu vang Ý).",
+        "Nói hãng sản xuất: IMCの コンピューター.",
+        "Hỏi xuất xứ: どこの N ですか."
+      ],
+      "formula": "N1 (nước / hãng) の N2\nどこの N ですか",
+      "parts": [
+        { "part": "N1", "role": "Nước hoặc công ty sản xuất." },
+        { "part": "の", "role": "Nối hai danh từ." },
+        { "part": "N2", "role": "Sản phẩm (danh từ chính)." },
+        { "part": "どこの", "role": "Hỏi 「của nước nào / hãng nào」." }
+      ],
+      "memoryTip": {
+        "emoji": "🏭",
+        "hook": "Hàng ở đâu ra? → 「どこの」!",
+        "meaning": "→ どこの 車ですか → 日本の 車です. (だれの = của ai, 何の = về cái gì)"
+      },
+      "examples": [
+        {
+          "jp": "これは 日本の 車です。",
+          "romaji": "Kore wa Nihon no kuruma desu.",
+          "vi": "Đây là xe ô tô Nhật.",
+          "context": "Mua sắm",
+          "breakdown": [
+            { "jp": "日本", "vi": "Nhật Bản (nơi sản xuất)" },
+            { "jp": "の", "vi": "của" },
+            { "jp": "車", "vi": "ô tô" }
+          ]
+        },
+        {
+          "jp": "これは どこの ワインですか。 …イタリアの ワインです。",
+          "romaji": "Kore wa doko no wain desu ka. … Itaria no wain desu.",
+          "vi": "Đây là rượu vang của nước nào? …Rượu vang Ý.",
+          "context": "Cửa hàng rượu ở trung tâm thương mại"
+        },
+        {
+          "jp": "それは どこの コンピューターですか。 …IMCの コンピューターです。",
+          "romaji": "Sore wa doko no konpyūtā desu ka. … IMC no konpyūtā desu.",
+          "vi": "Đó là máy tính của hãng nào? …Máy tính của hãng IMC.",
+          "context": "Cửa hàng điện máy"
+        },
+        {
+          "jp": "これは ベトナムの コーヒーです。",
+          "romaji": "Kore wa Betonamu no kōhī desu.",
+          "vi": "Đây là cà phê Việt Nam.",
+          "context": "Tặng quà đồng nghiệp"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "これは 車の 日本です。",
+          "right": "これは 日本の 車です。",
+          "explain": "Sản phẩm (車) là danh từ chính, đứng sau の."
+        },
+        {
+          "wrong": "これは どこの 時計ですか。 …わたしの 時計です。",
+          "right": "これは どこの 時計ですか。 …スイスの 時計です。",
+          "explain": "どこの hỏi xuất xứ (nước / hãng). Muốn hỏi 「của ai」 thì dùng だれの."
+        }
+      ]
+    },
+    {
+      "id": "L03-G5",
+      "title": "N は いくらですか — hỏi giá",
+      "meaning": "N bao nhiêu tiền?",
+      "why": "Không thể đi chợ, mua sắm ở Nhật mà không hỏi giá!",
+      "when": [
+        "Hỏi giá đồ ở cửa hàng, siêu thị, quầy lưu niệm.",
+        "Trả lời bằng số tiền + 円 (えん — yên)."
+      ],
+      "formula": "N は いくらですか。\n→ 〜円です。",
+      "parts": [
+        { "part": "N は", "role": "Món đồ muốn hỏi giá (thường đi với この / その / あの)." },
+        { "part": "いくら", "role": "Bao nhiêu (tiền)." },
+        { "part": "〜円 (えん)", "role": "Đơn vị tiền Nhật: yên." }
+      ],
+      "memoryTip": {
+        "emoji": "💴",
+        "hook": "Móc ví ra là hỏi 「いくら?」!",
+        "meaning": "→ この 傘は いくらですか = Cái ô này bao nhiêu tiền?"
+      },
+      "examples": [
+        {
+          "jp": "この ネクタイは いくらですか。 …1,500円です。",
+          "romaji": "Kono nekutai wa ikura desu ka. … Sen gohyaku-en desu.",
+          "vi": "Cái cà vạt này bao nhiêu tiền? …1.500 yên.",
+          "context": "Trung tâm thương mại"
+        },
+        {
+          "jp": "あの 傘は いくらですか。 …800円です。",
+          "romaji": "Ano kasa wa ikura desu ka. … Happyaku-en desu.",
+          "vi": "Cái ô kia bao nhiêu tiền? …800 yên.",
+          "context": "Cửa hàng tiện lợi",
+          "note": "800 đọc là はっぴゃく (biến âm), không phải はちひゃく."
+        },
+        {
+          "jp": "その 時計は いくらですか。 …3,800円です。",
+          "romaji": "Sono tokei wa ikura desu ka. … Sanzen happyaku-en desu.",
+          "vi": "Chiếc đồng hồ đó bao nhiêu tiền? …3.800 yên.",
+          "context": "Mua sắm — đồng hồ đang ở tay người bán"
+        },
+        {
+          "jp": "この ワインは いくらですか。 …10,000円です。",
+          "romaji": "Kono wain wa ikura desu ka. … Ichiman-en desu.",
+          "vi": "Chai rượu vang này bao nhiêu tiền? …10.000 yên.",
+          "context": "Mua quà",
+          "note": "10.000 = いちまん (1 vạn). Người Nhật đếm theo vạn (万), không theo nghìn."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "いくらは この 傘ですか。",
+          "right": "この 傘は いくらですか。",
+          "explain": "Món đồ làm chủ đề đứng trước は; いくら đứng trước です."
+        },
+        {
+          "wrong": "10,000円 → まんえん",
+          "right": "10,000円 → いちまんえん",
+          "explain": "Khác với 100 (ひゃく) và 1.000 (せん), số 10.000 phải có いち: いちまん."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: số tiền hay biến âm",
+          "text": "300 さんびゃく · 600 ろっぴゃく · 800 はっぴゃく · 3,000 さんぜん · 8,000 はっせん · 10,000 いちまん. Hỏi 「tầng mấy?」 dùng 何階, nhưng hỏi giá thì luôn dùng いくら."
+        }
+      ]
+    },
+    {
+      "id": "L03-G6",
+      "title": "お〜 — tiếp đầu ngữ lịch sự",
+      "meaning": "(của anh / chị) — thể hiện kính trọng",
+      "why": "Người Nhật gắn お vào trước một số danh từ liên quan đến người nghe để tỏ sự tôn trọng — giống thêm 「quý」 trong 「quý quốc」.",
+      "when": [
+        "Hỏi về nước, tên… của người khác: お国は どちらですか.",
+        "Một số từ luôn đi với お như một cách nói đẹp: お手洗い (nhà vệ sinh)."
+      ],
+      "formula": "お + N (của người nghe)",
+      "parts": [
+        { "part": "お", "role": "Tiếp đầu ngữ kính trọng / lịch sự." },
+        { "part": "N", "role": "Danh từ liên quan đến người nghe (国, 名前…)." }
+      ],
+      "memoryTip": {
+        "emoji": "🎀",
+        "hook": "Hỏi nước NGƯỜI TA → お国; nói nước MÌNH → 国!",
+        "meaning": "→ お tỏ kính trọng với người nghe, nên không gắn vào đồ của mình (giống さん)."
+      },
+      "examples": [
+        {
+          "jp": "お国は どちらですか。 …ベトナムです。",
+          "romaji": "Okuni wa dochira desu ka. … Betonamu desu.",
+          "vi": "Anh/chị là người nước nào ạ? …Việt Nam ạ.",
+          "context": "Làm quen ở lớp học",
+          "breakdown": [
+            { "jp": "お国", "vi": "đất nước (của anh/chị) — kính trọng" },
+            { "jp": "どちら", "vi": "ở đâu (lịch sự)" }
+          ]
+        },
+        {
+          "jp": "すみません。 お手洗いは どちらですか。",
+          "romaji": "Sumimasen. Otearai wa dochira desu ka.",
+          "vi": "Xin lỗi, nhà vệ sinh ở phía nào ạ?",
+          "context": "Nhà hàng"
+        },
+        {
+          "jp": "お名前は？ …ミラーです。",
+          "romaji": "Onamae wa? … Mirā desu.",
+          "vi": "Tên anh là gì ạ? …Tôi là Miller.",
+          "context": "Quầy lễ tân",
+          "note": "Hỏi tên người khác: お名前. Trả lời về mình không thêm お hay さん."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "わたしの お国は ベトナムです。",
+          "right": "わたしの 国は ベトナムです。",
+          "explain": "お tỏ kính trọng với người khác, không dùng cho nước của chính mình."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "ここ / そこ / あそこ · こちら / そちら / あちら", "meaning": "Chỗ này / đó / kia (こちら… lịch sự, chỉ hướng)", "example": "ここは 食堂です。" },
+    { "pattern": "N は nơi chốn です", "meaning": "N ở (nơi chốn)", "example": "お手洗いは あそこです。" },
+    { "pattern": "N は どこ / どちら ですか", "meaning": "N ở đâu? (どちら lịch sự)", "example": "エレベーターは どちらですか。" },
+    { "pattern": "N1 の N2 · どこの N", "meaning": "N2 của nước / hãng N1 · của nước nào?", "example": "これは 日本の 車です。" },
+    { "pattern": "N は いくらですか", "meaning": "N bao nhiêu tiền? → 〜円です", "example": "この 傘は いくらですか。" },
+    { "pattern": "お〜", "meaning": "Kính trọng người nghe (không dùng cho mình)", "example": "お国は どちらですか。" }
+  ],
+  "exercises": [
+    {
+      "id": "L03-E01",
+      "type": "choice",
+      "grammarPoint": "L03-G1",
+      "question": "Bạn đang đứng TRONG nhà ăn và giới thiệu cho bạn mới: 「Đây là nhà ăn」. Câu nào đúng?",
+      "options": ["ここは 食堂です。", "あそこは 食堂です。", "そこは 食堂です。", "この 食堂です。"],
+      "answer": "ここは 食堂です。",
+      "explanation": "Nơi người nói đang ở → ここ."
+    },
+    {
+      "id": "L03-E02",
+      "type": "fill",
+      "grammarPoint": "L03-G1",
+      "question": "Quầy lễ tân ở xa cả bạn và người nghe. Gõ từ còn thiếu (kana hoặc romaji).",
+      "jp": "＿＿は 受付です。",
+      "vi": "Chỗ kia là quầy lễ tân.",
+      "answer": "あそこ",
+      "accept": ["あちら"],
+      "hint": "「chỗ kia」",
+      "explanation": "Nơi xa cả hai người → あそこ (lịch sự: あちら)."
+    },
+    {
+      "id": "L03-E03",
+      "type": "jp-vi",
+      "grammarPoint": "L03-G1",
+      "question": "Nhân viên cửa hàng nói câu này. Nghĩa là gì?",
+      "jp": "エレベーターは あちらです。",
+      "romaji": "Erebētā wa achira desu.",
+      "options": ["Thang máy ở phía kia ạ.", "Thang máy ở chỗ này ạ.", "Phía kia là thang cuốn ạ.", "Thang máy ở đâu ạ?"],
+      "answer": "Thang máy ở phía kia ạ.",
+      "explanation": "あちら = phía kia (lịch sự của あそこ). エレベーター = thang máy."
+    },
+    {
+      "id": "L03-E04",
+      "type": "situation",
+      "grammarPoint": "L03-G1",
+      "question": "Bạn là nhân viên khách sạn, muốn lịch sự chỉ cho khách: 「Phòng họp ở phía kia ạ」. Bạn nói:",
+      "options": ["会議室は あちらです。", "会議室は あのです。", "あちらは 会議室ですか。", "会議室は どちらですか。"],
+      "answer": "会議室は あちらです。",
+      "explanation": "Chỉ hướng lịch sự → あちら. あの phải có danh từ sau; hai câu còn lại là câu hỏi."
+    },
+    {
+      "id": "L03-E05",
+      "type": "particle",
+      "grammarPoint": "L03-G2",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "お手洗い＿＿ あそこです。",
+      "romaji": "Otearai ___ asoko desu.",
+      "vi": "Nhà vệ sinh ở đằng kia.",
+      "options": ["は", "の", "も", "か"],
+      "answer": "は",
+      "explanation": "お手洗い là chủ đề (thứ cần tìm) → は. Mẫu: N は nơi chốn です."
+    },
+    {
+      "id": "L03-E06",
+      "type": "order",
+      "grammarPoint": "L03-G2",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Anh Yamada ở văn phòng.",
+      "tokens": ["山田さん", "は", "事務所", "です"],
+      "explanation": "Người được nói tới + は + nơi chốn + です."
+    },
+    {
+      "id": "L03-E07",
+      "type": "vi-jp",
+      "grammarPoint": "L03-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Điện thoại ở tầng 2.",
+      "options": ["電話は 2階です。", "2階は 電話です。", "電話の 2階です。", "電話は 2階ですか。"],
+      "answer": "電話は 2階です。",
+      "explanation": "Thứ cần tìm (電話) làm chủ đề trước は, vị trí (2階) đứng trước です."
+    },
+    {
+      "id": "L03-E08",
+      "type": "fix",
+      "grammarPoint": "L03-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "食堂の あそこです。",
+      "options": ["食堂は あそこです。", "食堂も あそこですか。", "あそこの 食堂です。", "食堂は あそこの です。"],
+      "answer": "食堂は あそこです。",
+      "explanation": "Nói 「nhà ăn ở đằng kia」 → 食堂 làm chủ đề với は, không dùng の."
+    },
+    {
+      "id": "L03-E09",
+      "type": "identify",
+      "grammarPoint": "L03-G2",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "自動販売機は ロビーです。",
+      "romaji": "Jidōhanbaiki wa robī desu.",
+      "vi": "Máy bán hàng tự động ở sảnh.",
+      "options": [
+        "N は nơi chốn です (N ở đâu)",
+        "N1 の N2 (xuất xứ)",
+        "N は いくらですか (hỏi giá)",
+        "お〜 (tiếp đầu ngữ lịch sự)"
+      ],
+      "answer": "N は nơi chốn です (N ở đâu)",
+      "explanation": "ロビー là nơi chốn → câu nói máy bán hàng tự động ở đâu."
+    },
+    {
+      "id": "L03-E10",
+      "type": "choice",
+      "grammarPoint": "L03-G3",
+      "question": "Bạn muốn hỏi 「Nhà vệ sinh ở đâu?」. Câu nào đúng?",
+      "options": ["お手洗いは どこですか。", "どこは お手洗いですか。", "お手洗いは 何ですか。", "お手洗いは だれですか。"],
+      "answer": "お手洗いは どこですか。",
+      "explanation": "Hỏi vị trí: N は どこですか. Từ để hỏi không đứng trước は."
+    },
+    {
+      "id": "L03-E11",
+      "type": "fill",
+      "grammarPoint": "L03-G3",
+      "question": "Gõ từ để hỏi còn thiếu (kana hoặc romaji).",
+      "jp": "会社は ＿＿ですか。 …IMCです。",
+      "vi": "Anh làm ở công ty nào? …Công ty IMC.",
+      "answer": "どこ",
+      "accept": ["どちら"],
+      "explanation": "Hỏi tên công ty, trường, nước → どこ (lịch sự: どちら), không dùng 何."
+    },
+    {
+      "id": "L03-E12",
+      "type": "jp-vi",
+      "grammarPoint": "L03-G3",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "大学は どちらですか。 …富士大学です。",
+      "romaji": "Daigaku wa dochira desu ka. … Fuji Daigaku desu.",
+      "options": [
+        "Bạn học trường đại học nào? …Đại học Fuji.",
+        "Trường đại học là cái gì? …Là Fuji.",
+        "Đây có phải trường đại học không? …Là Đại học Fuji.",
+        "Đại học Fuji ở tầng mấy? …Ở phía kia."
+      ],
+      "answer": "Bạn học trường đại học nào? …Đại học Fuji.",
+      "explanation": "どちら (lịch sự của どこ) dùng để hỏi tên trường, và câu trả lời là tên trường."
+    },
+    {
+      "id": "L03-E13",
+      "type": "situation",
+      "grammarPoint": "L03-G3",
+      "question": "Ở lớp tiếng Nhật, bạn muốn hỏi lịch sự một người mới quen 「Anh/chị là người nước nào?」:",
+      "options": ["お国は どちらですか。", "お国は 何ですか。", "お国は だれですか。", "わたしの 国は どちらですか。"],
+      "answer": "お国は どちらですか。",
+      "explanation": "Hỏi tên nước → どちら (lịch sự), お国 = đất nước của người nghe."
+    },
+    {
+      "id": "L03-E14",
+      "type": "pattern",
+      "grammarPoint": "L03-G3",
+      "question": "Ở trung tâm thương mại, bạn muốn hỏi nhân viên thật lịch sự thang máy ở phía nào. Chọn mẫu phù hợp.",
+      "options": ["N は どちらですか", "N は 何ですか", "N は いくらですか", "どこの N ですか"],
+      "answer": "N は どちらですか",
+      "explanation": "Hỏi vị trí, hướng một cách lịch sự → どちら: エレベーターは どちらですか."
+    },
+    {
+      "id": "L03-E15",
+      "type": "particle",
+      "grammarPoint": "L03-G4",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "これは 日本＿＿ 車です。",
+      "romaji": "Kore wa Nihon ___ kuruma desu.",
+      "vi": "Đây là xe ô tô Nhật.",
+      "options": ["の", "は", "も", "か"],
+      "answer": "の",
+      "explanation": "Nối nơi sản xuất (日本) với sản phẩm (車) → N1 の N2."
+    },
+    {
+      "id": "L03-E16",
+      "type": "choice",
+      "grammarPoint": "L03-G4",
+      "question": "「これは どこの 時計ですか。」 — câu trả lời nào đúng?",
+      "options": ["スイスの 時計です。", "わたしの 時計です。", "時計の スイスです。", "はい、時計です。"],
+      "answer": "スイスの 時計です。",
+      "explanation": "どこの hỏi xuất xứ (nước / hãng) → スイスの 時計 (đồng hồ Thụy Sĩ). わたしの trả lời cho だれの."
+    },
+    {
+      "id": "L03-E17",
+      "type": "vi-jp",
+      "grammarPoint": "L03-G4",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Đây là rượu vang của nước nào?",
+      "options": ["これは どこの ワインですか。", "これは どこ ワインですか。", "これは ワインの どこですか。", "これは だれの ワインですか。"],
+      "answer": "これは どこの ワインですか。",
+      "explanation": "Hỏi xuất xứ → どこの + danh từ (phải có の). だれの là hỏi 「của ai」."
+    },
+    {
+      "id": "L03-E18",
+      "type": "fix",
+      "grammarPoint": "L03-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "これは 車の ドイツです。",
+      "options": ["これは ドイツの 車です。", "これは ドイツ 車の です。", "これの ドイツは 車です。", "これは 車も ドイツです。"],
+      "answer": "これは ドイツの 車です。",
+      "explanation": "Sản phẩm (車) là danh từ chính, đứng SAU の: ドイツの 車 = xe Đức."
+    },
+    {
+      "id": "L03-E19",
+      "type": "jp-vi",
+      "grammarPoint": "L03-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "それは IMCの コンピューターです。",
+      "romaji": "Sore wa IMC no konpyūtā desu.",
+      "options": [
+        "Đó là máy tính của hãng IMC.",
+        "Đó là công ty máy tính IMC.",
+        "IMC là máy tính đó.",
+        "Đó có phải máy tính của IMC không?"
+      ],
+      "answer": "Đó là máy tính của hãng IMC.",
+      "explanation": "IMCの コンピューター = máy tính do hãng IMC làm ra; danh từ chính là コンピューター."
+    },
+    {
+      "id": "L03-E20",
+      "type": "choice",
+      "grammarPoint": "L03-G5",
+      "question": "Bạn cầm một cái cà vạt, muốn hỏi giá. Câu nào đúng?",
+      "options": ["この ネクタイは いくらですか。", "この ネクタイは 何ですか。", "この ネクタイは どこですか。", "これ ネクタイは いくらですか。"],
+      "answer": "この ネクタイは いくらですか。",
+      "explanation": "Hỏi giá → いくらですか. Có danh từ ネクタイ phía sau → この, không dùng これ."
+    },
+    {
+      "id": "L03-E21",
+      "type": "fill",
+      "grammarPoint": "L03-G5",
+      "question": "Gõ từ để hỏi còn thiếu (kana hoặc romaji).",
+      "jp": "この 傘は ＿＿ですか。 …1,500円です。",
+      "vi": "Cái ô này bao nhiêu tiền? …1.500 yên.",
+      "answer": "いくら",
+      "explanation": "Câu trả lời là giá tiền → câu hỏi dùng いくら (bao nhiêu tiền)."
+    },
+    {
+      "id": "L03-E22",
+      "type": "choice",
+      "grammarPoint": "L03-G5",
+      "question": "「300円」 đọc thế nào?",
+      "options": ["さんびゃくえん", "さんひゃくえん", "さんぴゃくえん", "さんぜんえん"],
+      "answer": "さんびゃくえん",
+      "explanation": "300 biến âm thành さんびゃく. さんぜん là 3.000."
+    },
+    {
+      "id": "L03-E23",
+      "type": "order",
+      "grammarPoint": "L03-G5",
+      "question": "Sắp xếp thành câu hỏi đúng.",
+      "vi": "Cái cặp đó bao nhiêu tiền?",
+      "tokens": ["その", "かばん", "は", "いくら", "ですか"],
+      "explanation": "Món đồ (その かばん) + は + いくら + ですか."
+    },
+    {
+      "id": "L03-E24",
+      "type": "situation",
+      "grammarPoint": "L03-G5",
+      "question": "Người bán hàng đang cầm một chiếc đồng hồ trên tay. Bạn muốn hỏi giá chiếc đồng hồ đó:",
+      "options": ["その 時計は いくらですか。", "この 時計は いくらですか。", "その 時計は どこですか。", "その 時計は だれのですか。"],
+      "answer": "その 時計は いくらですか。",
+      "explanation": "Vật ở gần người nghe → その; hỏi giá → いくらですか."
+    },
+    {
+      "id": "L03-E25",
+      "type": "choice",
+      "grammarPoint": "L03-G6",
+      "question": "Một người hỏi bạn 「お国は どちらですか。」. Bạn là người Việt Nam. Trả lời thế nào?",
+      "options": ["ベトナムです。", "わたしの お国は ベトナムです。", "はい、ベトナムです。", "お国は ベトナムさんです。"],
+      "answer": "ベトナムです。",
+      "explanation": "Trả lời thẳng tên nước. Không gắn お vào nước của mình, và câu hỏi どちら không trả lời bằng はい."
+    },
+    {
+      "id": "L03-E26",
+      "type": "fix",
+      "grammarPoint": "L03-G6",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしの お国は ベトナムです。",
+      "options": ["わたしの 国は ベトナムです。", "わたしの お国は ベトナムですか。", "わたしは お国の ベトナムです。", "お国の わたしは ベトナムです。"],
+      "answer": "わたしの 国は ベトナムです。",
+      "explanation": "お thể hiện kính trọng người nghe nên không dùng cho đồ / nước của chính mình."
+    },
+    {
+      "id": "L03-E27",
+      "type": "identify",
+      "grammarPoint": "L03-G6",
+      "question": "Chữ お ở đầu câu này có tác dụng gì?",
+      "jp": "お国は どちらですか。",
+      "romaji": "Okuni wa dochira desu ka.",
+      "vi": "Anh/chị là người nước nào ạ?",
+      "options": [
+        "Tỏ sự kính trọng với người nghe (đất nước của anh/chị)",
+        "Có nghĩa là 「của tôi」",
+        "Biến câu thành câu hỏi",
+        "Có nghĩa là 「cũng」"
+      ],
+      "answer": "Tỏ sự kính trọng với người nghe (đất nước của anh/chị)",
+      "explanation": "お là tiếp đầu ngữ lịch sự, gắn vào danh từ liên quan đến người nghe."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 3 }
+}

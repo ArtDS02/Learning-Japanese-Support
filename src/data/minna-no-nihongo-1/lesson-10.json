@@ -1,0 +1,724 @@
+{
+  "lesson": 10,
+  "title": "Tồn tại và vị trí",
+  "titleJp": "ナンプラー、ありますか",
+  "topic": "Có ai / có gì ở đâu · ở đâu · vị trí trên, dưới, trong, cạnh…",
+  "description": "Học xong bài này bạn nói được ở đâu có ai, có cái gì; hỏi và chỉ đường, chỉ chỗ đồ vật (trên bàn, cạnh ngân hàng, gần ga…) và kể vài thứ tiêu biểu bằng や〜など.",
+  "objectives": [
+    "Phân biệt あります (đồ vật, cây cối) và います (người, động vật).",
+    "Nói 「ở … có …」 bằng Nơi に N が あります / います.",
+    "Nói 「N ở …」 bằng N は Nơi に あります / います.",
+    "Dùng từ chỉ vị trí: 上, 下, 前, 後ろ, 右, 左, 中, 外, 隣, 近く, 間.",
+    "Liệt kê vài thứ tiêu biểu bằng N1 や N2 など.",
+    "Nhắc lại danh từ + ですか để xác nhận trước khi trả lời."
+  ],
+  "keyPoints": [
+    "います: người, động vật (có sự sống, tự di chuyển). あります: đồ vật, cây cối, xe cộ, sự kiện.",
+    "Nơi tồn tại đánh dấu bằng に (không phải で).",
+    "Nơi に N が あります: nhấn vào 「có CÁI GÌ」. N は Nơi に あります: nhấn vào 「Ở ĐÂU」.",
+    "Từ để hỏi làm chủ ngữ đi với が: だれが いますか, 何が ありますか.",
+    "Vị trí: vật mốc の + từ vị trí: 机の 上 (trên bàn). 間 dùng: N1 と N2 の 間.",
+    "と liệt kê đủ hết; や liệt kê vài thứ tiêu biểu (thêm など = vân vân)."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L10-G1",
+      "title": "Nơi に N が あります / います",
+      "meaning": "Ở (nơi) có N",
+      "why": "Để nói ở một chỗ nào đó có ai, có cái gì: 「Ở công viên có trẻ con」, 「Tầng 1 có cửa hàng tiện lợi」. Tiếng Nhật dùng HAI động từ khác nhau cho người/vật — đây là điểm hay nhầm nhất.",
+      "when": [
+        "Miêu tả những gì có ở một nơi (phòng, công viên, tòa nhà).",
+        "Hỏi ở đâu đó có ai / có gì: だれが いますか, 何が ありますか."
+      ],
+      "formula": "Nơi に N が あります   (đồ vật, cây cối)\nNơi に N が います   (người, động vật)",
+      "parts": [
+        { "part": "Nơi に", "role": "Nơi chốn tồn tại — dùng に." },
+        { "part": "N が", "role": "Người/vật tồn tại — thông tin mới, dùng が. Từ để hỏi cũng dùng が: だれが, 何が." },
+        { "part": "あります", "role": "Có (đồ vật, cây cối, xe cộ — thứ không có sự sống hoặc không tự đi lại)." },
+        { "part": "います", "role": "Có, ở (người, động vật)." }
+      ],
+      "memoryTip": {
+        "emoji": "🐶",
+        "hook": "Có hơi thở, tự đi được → 「います」!",
+        "meaning": "→ người, chó mèo: います; đồ vật, cây cối (kể cả xe cộ): あります."
+      },
+      "examples": [
+        {
+          "jp": "公園に 子どもが います。",
+          "romaji": "Kōen ni kodomo ga imasu.",
+          "vi": "Ở công viên có trẻ con.",
+          "context": "Ngoài trời",
+          "breakdown": [
+            { "jp": "公園に", "vi": "ở công viên" },
+            { "jp": "子どもが", "vi": "trẻ con" },
+            { "jp": "います", "vi": "có (người)" }
+          ]
+        },
+        {
+          "jp": "1階に コンビニが あります。",
+          "romaji": "Ikkai ni konbini ga arimasu.",
+          "vi": "Ở tầng 1 có cửa hàng tiện lợi.",
+          "context": "Tòa nhà",
+          "breakdown": [
+            { "jp": "1階に", "vi": "ở tầng 1" },
+            { "jp": "コンビニが", "vi": "cửa hàng tiện lợi" },
+            { "jp": "あります", "vi": "có (vật)" }
+          ]
+        },
+        {
+          "jp": "うちに 犬が います。",
+          "romaji": "Uchi ni inu ga imasu.",
+          "vi": "Nhà tôi có con chó.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "教室に だれが いますか。 …ワンさんが います。",
+          "romaji": "Kyōshitsu ni dare ga imasu ka. … Wan-san ga imasu.",
+          "vi": "Trong lớp học có ai? …Có anh Wang.",
+          "context": "Trường học",
+          "note": "Từ để hỏi (だれ, 何) làm chủ ngữ luôn đi với が."
+        },
+        {
+          "jp": "あそこに 木が あります。",
+          "romaji": "Asoko ni ki ga arimasu.",
+          "vi": "Ở đằng kia có cái cây.",
+          "context": "Ngoài trời",
+          "note": "Cây cối dù là sinh vật nhưng không tự đi lại → あります."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "うちに 犬が あります。",
+          "right": "うちに 犬が います。",
+          "explain": "Động vật dùng います, không dùng あります."
+        },
+        {
+          "wrong": "あそこに 木が います。",
+          "right": "あそこに 木が あります。",
+          "explain": "Cây cối, hoa lá dùng あります."
+        },
+        {
+          "wrong": "教室に だれは いますか。",
+          "right": "教室に だれが いますか。",
+          "explain": "Từ để hỏi làm chủ ngữ không đi với は, phải dùng が."
+        }
+      ]
+    },
+    {
+      "id": "L10-G2",
+      "title": "N は Nơi に あります / います",
+      "meaning": "N ở (nơi)",
+      "why": "Khi đã biết người/vật đó là gì và muốn nói hoặc hỏi nó Ở ĐÂU: 「Nhà vệ sinh ở đâu?」, 「Anh Miller đang ở phòng họp」.",
+      "when": [
+        "Hỏi / chỉ chỗ của một người, vật cụ thể mà cả hai đã biết.",
+        "Hỏi: N は どこに ありますか / いますか."
+      ],
+      "formula": "N は Nơi に あります / います\nN は どこに ありますか / いますか",
+      "parts": [
+        { "part": "N は", "role": "Người/vật đã biết, là chủ đề." },
+        { "part": "Nơi に", "role": "Thông tin chính: chỗ của N (dùng に)." },
+        { "part": "あります / います", "role": "Vẫn theo quy tắc: vật → あります, người/động vật → います." }
+      ],
+      "memoryTip": {
+        "emoji": "📍",
+        "hook": "Tồn tại ở đâu thì 「に」 chỗ đó!",
+        "meaning": "→ Nơi tồn tại dùng に, không dùng で: 千葉県に あります."
+      },
+      "examples": [
+        {
+          "jp": "東京ディズニーランドは 千葉県に あります。",
+          "romaji": "Tōkyō Dizunīrando wa Chiba-ken ni arimasu.",
+          "vi": "Tokyo Disneyland ở tỉnh Chiba.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "東京ディズニーランドは", "vi": "Tokyo Disneyland (chủ đề)" },
+            { "jp": "千葉県に", "vi": "ở tỉnh Chiba" },
+            { "jp": "あります", "vi": "có, ở (vật)" }
+          ]
+        },
+        {
+          "jp": "ミラーさんは 会議室に います。",
+          "romaji": "Mirā-san wa kaigishitsu ni imasu.",
+          "vi": "Anh Miller đang ở phòng họp.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "トイレは どこに ありますか。 …あそこに あります。",
+          "romaji": "Toire wa doko ni arimasu ka. … Asoko ni arimasu.",
+          "vi": "Nhà vệ sinh ở đâu? …Ở đằng kia.",
+          "context": "Nhà hàng"
+        },
+        {
+          "jp": "家族は ベトナムに います。",
+          "romaji": "Kazoku wa Betonamu ni imasu.",
+          "vi": "Gia đình tôi ở Việt Nam.",
+          "context": "Gia đình"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "家族は ベトナムで います。",
+          "right": "家族は ベトナムに います。",
+          "explain": "Nơi TỒN TẠI dùng に. で là nơi diễn ra HÀNH ĐỘNG (bài 6: 図書館で 勉強します)."
+        },
+        {
+          "wrong": "トイレは どこが ありますか。",
+          "right": "トイレは どこに ありますか。",
+          "explain": "Hỏi chỗ tồn tại → どこに (ở đâu)."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: cách nói ngắn N は Nơi です",
+          "text": "Hỏi chỗ ngắn gọn có thể dùng mẫu bài 3: トイレは どこですか。 …あそこです。 Nghĩa tương tự 〜に あります."
+        },
+        {
+          "title": "📌 Kiến thức bổ sung: は hay が?",
+          "text": "公園に 子どもが います → người nghe chưa biết có gì, thông tin mới là 「trẻ con」. 子どもは 公園に います → đã nói về bọn trẻ, thông tin mới là 「ở công viên」."
+        }
+      ]
+    },
+    {
+      "id": "L10-G3",
+      "title": "N1 の 上 / 下 / 前 / 後ろ / 中 / 隣 … — vị trí",
+      "meaning": "trên / dưới / trước / sau / trong / cạnh… N1",
+      "why": "Để chỉ chính xác chỗ của đồ vật, tòa nhà: 「trên bàn」, 「cạnh ngân hàng」, 「gần ga」 — cần khi tìm đồ, hỏi đường.",
+      "when": [
+        "Chỉ chỗ đồ vật trong phòng: 机の 上, かばんの 中.",
+        "Chỉ vị trí tòa nhà, cửa hàng khi hỏi đường: 銀行の 隣, 駅の 近く."
+      ],
+      "formula": "N1 (vật mốc) の 上 / 下 / 前 / 後ろ / 右 / 左 / 中 / 外 / 隣 / 近く\nN1 と N2 の 間",
+      "parts": [
+        { "part": "N1 の", "role": "Vật làm mốc, đứng TRƯỚC の." },
+        { "part": "上・下", "role": "うえ: trên · した: dưới." },
+        { "part": "前・後ろ", "role": "まえ: trước · うしろ: sau." },
+        { "part": "右・左", "role": "みぎ: phải · ひだり: trái." },
+        { "part": "中・外", "role": "なか: trong · そと: ngoài." },
+        { "part": "隣・近く", "role": "となり: ngay bên cạnh · ちかく: gần." },
+        { "part": "間", "role": "あいだ: ở giữa — dùng với hai mốc: N1 と N2 の 間." }
+      ],
+      "memoryTip": {
+        "emoji": "📦",
+        "hook": "Mốc đứng trước 「の」, vị trí đứng sau!",
+        "meaning": "→ 机の 上 = trên bàn (tiếng Việt nói 「trên」 trước, tiếng Nhật nói sau)."
+      },
+      "examples": [
+        {
+          "jp": "机の 上に 写真が あります。",
+          "romaji": "Tsukue no ue ni shashin ga arimasu.",
+          "vi": "Trên bàn có tấm ảnh.",
+          "context": "Trong phòng",
+          "breakdown": [
+            { "jp": "机の 上に", "vi": "ở trên bàn" },
+            { "jp": "写真", "vi": "tấm ảnh" }
+          ]
+        },
+        {
+          "jp": "郵便局は 銀行の 隣に あります。",
+          "romaji": "Yūbinkyoku wa ginkō no tonari ni arimasu.",
+          "vi": "Bưu điện ở ngay cạnh ngân hàng.",
+          "context": "Hỏi đường"
+        },
+        {
+          "jp": "かばんの 中に 何が ありますか。 …辞書と ノートが あります。",
+          "romaji": "Kaban no naka ni nani ga arimasu ka. … Jisho to nōto ga arimasu.",
+          "vi": "Trong cặp có gì? …Có từ điển và vở.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "本屋は 花屋と スーパーの 間に あります。",
+          "romaji": "Hon'ya wa hanaya to sūpā no aida ni arimasu.",
+          "vi": "Hiệu sách ở giữa cửa hàng hoa và siêu thị.",
+          "context": "Mua sắm",
+          "breakdown": [
+            { "jp": "花屋と スーパーの 間", "vi": "giữa cửa hàng hoa và siêu thị" }
+          ]
+        },
+        {
+          "jp": "駅の 近くに スーパーが あります。",
+          "romaji": "Eki no chikaku ni sūpā ga arimasu.",
+          "vi": "Gần ga có siêu thị.",
+          "context": "Đi tàu"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "上の 机に 本が あります。",
+          "right": "机の 上に 本が あります。",
+          "explain": "Vật mốc (机) đứng trước の, từ vị trí (上) đứng sau. 上の 机 lại có nghĩa là 「cái bàn ở trên」."
+        },
+        {
+          "wrong": "本屋は 花屋の スーパーの 間に あります。",
+          "right": "本屋は 花屋と スーパーの 間に あります。",
+          "explain": "間 cần hai mốc, nối bằng と: N1 と N2 の 間."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: 隣 và 近く",
+          "text": "隣 là sát ngay bên cạnh (thường cùng loại: nhà cạnh nhà, người ngồi cạnh). 近く chỉ là 「gần」, có thể cách vài trăm mét."
+        }
+      ]
+    },
+    {
+      "id": "L10-G4",
+      "title": "N1 や N2 [など]",
+      "meaning": "N1, N2, v.v. (kể vài thứ tiêu biểu)",
+      "why": "Khi có nhiều thứ, bạn không cần kể hết — chỉ nêu vài ví dụ: 「Trong tủ lạnh có trứng, sữa…」.",
+      "when": [
+        "Liệt kê vài thứ tiêu biểu, ngầm hiểu vẫn còn thứ khác.",
+        "Thêm など vào cuối để nhấn 「vân vân」."
+      ],
+      "formula": "N1 や N2 [など]",
+      "parts": [
+        { "part": "や", "role": "Nối các danh từ, chỉ là ví dụ — còn thứ khác nữa." },
+        { "part": "など", "role": "「vân vân」 — đặt sau danh từ cuối cùng (có thể lược)." },
+        { "part": "と (so sánh)", "role": "と liệt kê ĐẦY ĐỦ, không còn gì khác." }
+      ],
+      "memoryTip": {
+        "emoji": "🧺",
+        "hook": "「や」 = bốc vài món làm ví dụ, trong giỏ còn nữa!",
+        "meaning": "→ と: kể đủ hết; や (〜など): kể vài thứ tiêu biểu."
+      },
+      "examples": [
+        {
+          "jp": "箱の 中に 手紙や 写真が あります。",
+          "romaji": "Hako no naka ni tegami ya shashin ga arimasu.",
+          "vi": "Trong hộp có thư, ảnh (và những thứ khác).",
+          "context": "Trong phòng",
+          "breakdown": [
+            { "jp": "手紙や 写真", "vi": "thư, ảnh… (còn thứ khác)" }
+          ]
+        },
+        {
+          "jp": "冷蔵庫の 中に 卵や 牛乳などが あります。",
+          "romaji": "Reizōko no naka ni tamago ya gyūnyū nado ga arimasu.",
+          "vi": "Trong tủ lạnh có trứng, sữa, v.v.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "部屋に 机や いすなどが あります。",
+          "romaji": "Heya ni tsukue ya isu nado ga arimasu.",
+          "vi": "Trong phòng có bàn, ghế, v.v.",
+          "context": "Nơi ở"
+        },
+        {
+          "jp": "公園に 子どもや 犬が います。",
+          "romaji": "Kōen ni kodomo ya inu ga imasu.",
+          "vi": "Ở công viên có trẻ con, chó (và những thứ khác).",
+          "context": "Ngoài trời"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "卵や 牛乳や などが あります。",
+          "right": "卵や 牛乳などが あります。",
+          "explain": "など gắn thẳng vào danh từ cuối, không có や trước など."
+        },
+        {
+          "explain": "Nếu trong hộp CHỈ có thư và ảnh thôi, dùng と (手紙と 写真) chứ không dùng や."
+        }
+      ]
+    },
+    {
+      "id": "L10-G5",
+      "title": "N ですか — nhắc lại để xác nhận",
+      "meaning": "N à? (để tôi xem nào…)",
+      "why": "Khi được hỏi, người Nhật hay nhắc lại từ khóa + ですか để xác nhận mình nghe đúng, rồi mới trả lời — nghe tự nhiên và lịch sự.",
+      "when": [
+        "Có người hỏi đường, hỏi đồ vật — nhắc lại rồi trả lời.",
+        "Cần một chút thời gian để nghĩ câu trả lời."
+      ],
+      "formula": "(Người kia hỏi về N) → N ですか。 + câu trả lời",
+      "parts": [
+        { "part": "N", "role": "Danh từ chính mà người kia vừa hỏi." },
+        { "part": "ですか", "role": "Đọc XUỐNG giọng nhẹ — không phải câu hỏi mới, chỉ để xác nhận." }
+      ],
+      "memoryTip": {
+        "emoji": "🔁",
+        "hook": "Nghe gì, nhắc lại + 「ですか」 cho chắc!",
+        "meaning": "→ 郵便局ですか。… = 「Bưu điện à?」 rồi mới chỉ đường."
+      },
+      "examples": [
+        {
+          "jp": "すみません。 郵便局は どこに ありますか。 …郵便局ですか。 あの 銀行の 隣です。",
+          "romaji": "Sumimasen. Yūbinkyoku wa doko ni arimasu ka. … Yūbinkyoku desu ka. Ano ginkō no tonari desu.",
+          "vi": "Xin lỗi, bưu điện ở đâu ạ? …Bưu điện à? Ở ngay cạnh ngân hàng kia.",
+          "context": "Hỏi đường"
+        },
+        {
+          "jp": "ナンプラー、ありますか。 …ナンプラーですか。 あちらの 棚の 下に あります。",
+          "romaji": "Nanpurā, arimasu ka. … Nanpurā desu ka. Achira no tana no shita ni arimasu.",
+          "vi": "Có nước mắm Thái không ạ? …Nước mắm à? Ở kệ dưới đằng kia.",
+          "context": "Siêu thị"
+        },
+        {
+          "jp": "木村さんは いますか。 …木村さんですか。 今 会議室に います。",
+          "romaji": "Kimura-san wa imasu ka. … Kimura-san desu ka. Ima kaigishitsu ni imasu.",
+          "vi": "Chị Kimura có ở đây không? …Chị Kimura à? Bây giờ chị ấy đang ở phòng họp.",
+          "context": "Văn phòng"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "郵便局は どこですか。 …どこですか。 あの 銀行の 隣です。",
+          "right": "郵便局は どこですか。 …郵便局ですか。 あの 銀行の 隣です。",
+          "explain": "Nhắc lại DANH TỪ được hỏi (郵便局), không nhắc lại từ để hỏi (どこ)."
+        },
+        {
+          "explain": "〜ですか ở đây đọc xuống giọng. Người hỏi không cần đáp はい / いいえ — người trả lời nói tiếp luôn."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "Nơi に N が あります / います", "meaning": "Ở (nơi) có N (vật: あります, người/động vật: います)", "example": "公園に 子どもが います。" },
+    { "pattern": "N は Nơi に あります / います", "meaning": "N ở (nơi)", "example": "ミラーさんは 会議室に います。" },
+    { "pattern": "N1 の 上 / 下 / 中 / 隣 …", "meaning": "trên / dưới / trong / cạnh N1", "example": "机の 上に 写真が あります。" },
+    { "pattern": "N1 や N2 [など]", "meaning": "N1, N2, v.v. (kể vài thứ)", "example": "卵や 牛乳などが あります。" },
+    { "pattern": "N ですか (nhắc lại)", "meaning": "N à? (xác nhận rồi trả lời)", "example": "郵便局ですか。 あの 銀行の 隣です。" }
+  ],
+  "exercises": [
+    {
+      "id": "L10-E01",
+      "type": "choice",
+      "grammarPoint": "L10-G1",
+      "question": "Chọn động từ điền vào chỗ trống: 「公園に 子どもが ＿＿。」",
+      "jp": "公園に 子どもが ＿＿。",
+      "vi": "Ở công viên có trẻ con.",
+      "options": ["います", "あります", "わかります", "です"],
+      "answer": "います",
+      "explanation": "Người (子ども) → います."
+    },
+    {
+      "id": "L10-E02",
+      "type": "choice",
+      "grammarPoint": "L10-G1",
+      "question": "Nói 「Ở đằng kia có cái cây」, động từ nào đúng? 「あそこに 木が ＿＿。」",
+      "jp": "あそこに 木が ＿＿。",
+      "options": ["あります", "います", "わかります", "です"],
+      "answer": "あります",
+      "explanation": "Cây cối không tự đi lại → あります."
+    },
+    {
+      "id": "L10-E03",
+      "type": "fix",
+      "grammarPoint": "L10-G1",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "うちに 犬が あります。",
+      "options": [
+        "うちに 犬が います。",
+        "うちで 犬が あります。",
+        "うちに 犬を います。",
+        "うちに 犬は ありますか。"
+      ],
+      "answer": "うちに 犬が います。",
+      "explanation": "Động vật (犬) dùng います; nơi tồn tại dùng に, vật tồn tại dùng が."
+    },
+    {
+      "id": "L10-E04",
+      "type": "particle",
+      "grammarPoint": "L10-G1",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "あそこに 佐藤さん＿＿ います。",
+      "romaji": "Asoko ni Satō-san ___ imasu.",
+      "vi": "Ở đằng kia có chị Sato.",
+      "options": ["が", "を", "で", "へ"],
+      "answer": "が",
+      "explanation": "Mẫu Nơi に N が います — người/vật tồn tại đánh dấu bằng が."
+    },
+    {
+      "id": "L10-E05",
+      "type": "vi-jp",
+      "grammarPoint": "L10-G1",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Ở tầng 1 có cửa hàng tiện lợi.",
+      "options": [
+        "1階に コンビニが あります。",
+        "1階に コンビニが います。",
+        "1階で コンビニが あります。",
+        "1階に コンビニを あります。"
+      ],
+      "answer": "1階に コンビニが あります。",
+      "explanation": "Nơi tồn tại + に, vật + が, đồ vật/tòa nhà → あります."
+    },
+    {
+      "id": "L10-E06",
+      "type": "situation",
+      "grammarPoint": "L10-G1",
+      "question": "Bạn đứng ngoài lớp và muốn hỏi 「Trong lớp có ai không?」. Bạn nói:",
+      "options": [
+        "教室に だれが いますか。",
+        "教室に だれが ありますか。",
+        "教室に だれは いますか。",
+        "教室で だれが いますか。"
+      ],
+      "answer": "教室に だれが いますか。",
+      "explanation": "Hỏi người → だれ + が + います; nơi tồn tại dùng に."
+    },
+    {
+      "id": "L10-E07",
+      "type": "particle",
+      "grammarPoint": "L10-G2",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "東京ディズニーランドは 千葉県＿＿ あります。",
+      "romaji": "Tōkyō Dizunīrando wa Chiba-ken ___ arimasu.",
+      "vi": "Tokyo Disneyland ở tỉnh Chiba.",
+      "options": ["に", "で", "を", "が"],
+      "answer": "に",
+      "explanation": "Nơi tồn tại đi với あります / います dùng に."
+    },
+    {
+      "id": "L10-E08",
+      "type": "order",
+      "grammarPoint": "L10-G2",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Anh Miller đang ở phòng họp.",
+      "tokens": ["ミラーさん", "は", "会議室", "に", "います"],
+      "explanation": "N は + Nơi に + います (người → います)."
+    },
+    {
+      "id": "L10-E09",
+      "type": "jp-vi",
+      "grammarPoint": "L10-G2",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "トイレは どこに ありますか。 …あそこに あります。",
+      "romaji": "Toire wa doko ni arimasu ka. … Asoko ni arimasu.",
+      "options": [
+        "Nhà vệ sinh ở đâu? …Ở đằng kia.",
+        "Ở đằng kia có gì? …Có nhà vệ sinh.",
+        "Có nhà vệ sinh không? …Không có.",
+        "Nhà vệ sinh thế nào? …Sạch lắm."
+      ],
+      "answer": "Nhà vệ sinh ở đâu? …Ở đằng kia.",
+      "explanation": "N は どこに ありますか = N ở đâu?"
+    },
+    {
+      "id": "L10-E10",
+      "type": "fix",
+      "grammarPoint": "L10-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "家族は ベトナムで います。",
+      "options": [
+        "家族は ベトナムに います。",
+        "家族は ベトナムに あります。",
+        "家族は ベトナムへ います。",
+        "家族を ベトナムに います。"
+      ],
+      "answer": "家族は ベトナムに います。",
+      "explanation": "Nơi tồn tại dùng に (で là nơi diễn ra hành động). Người → います."
+    },
+    {
+      "id": "L10-E11",
+      "type": "identify",
+      "grammarPoint": "L10-G2",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "佐藤さんは 事務所に います。",
+      "romaji": "Satō-san wa jimusho ni imasu.",
+      "vi": "Chị Sato đang ở văn phòng.",
+      "options": [
+        "N は Nơi に います (N ở đâu)",
+        "Nơi に N が います (ở đâu có ai)",
+        "N1 や N2 など (liệt kê)",
+        "N ですか (nhắc lại xác nhận)"
+      ],
+      "answer": "N は Nơi に います (N ở đâu)",
+      "explanation": "佐藤さん là chủ đề (は), thông tin chính là chỗ: 事務所に."
+    },
+    {
+      "id": "L10-E12",
+      "type": "choice",
+      "grammarPoint": "L10-G3",
+      "question": "Chọn từ điền vào chỗ trống: 「机の ＿＿に 写真が あります。」 (Trên bàn có tấm ảnh.)",
+      "jp": "机の ＿＿に 写真が あります。",
+      "vi": "Trên bàn có tấm ảnh.",
+      "options": ["上", "下", "中", "後ろ"],
+      "answer": "上",
+      "explanation": "上 (うえ) = trên. 下 = dưới, 中 = trong, 後ろ = sau."
+    },
+    {
+      "id": "L10-E13",
+      "type": "fill",
+      "grammarPoint": "L10-G3",
+      "question": "Gõ từ chỉ vị trí còn thiếu (kana).",
+      "jp": "郵便局は 銀行の ＿＿に あります。",
+      "vi": "Bưu điện ở ngay cạnh ngân hàng.",
+      "answer": "となり",
+      "accept": ["隣"],
+      "hint": "ngay bên cạnh",
+      "explanation": "隣 (となり) = ngay bên cạnh: 銀行の 隣."
+    },
+    {
+      "id": "L10-E14",
+      "type": "order",
+      "grammarPoint": "L10-G3",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Dưới cái ghế có con mèo.",
+      "tokens": ["いす", "の", "下", "に", "猫", "が", "います"],
+      "explanation": "Vật mốc の 下 に + N が + います (mèo → います)."
+    },
+    {
+      "id": "L10-E15",
+      "type": "fix",
+      "grammarPoint": "L10-G3",
+      "question": "Muốn nói 「Trên bàn có quyển sách」 nhưng câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "上の 机に 本が あります。",
+      "options": [
+        "机の 上に 本が あります。",
+        "机に 上の 本が あります。",
+        "机の 上で 本が あります。",
+        "机の 上に 本が います。"
+      ],
+      "answer": "机の 上に 本が あります。",
+      "explanation": "Vật mốc (机) + の + vị trí (上) + に. Sách là đồ vật → あります."
+    },
+    {
+      "id": "L10-E16",
+      "type": "particle",
+      "grammarPoint": "L10-G3",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "本屋は 花屋＿＿ スーパーの 間に あります。",
+      "romaji": "Hon'ya wa hanaya ___ sūpā no aida ni arimasu.",
+      "vi": "Hiệu sách ở giữa cửa hàng hoa và siêu thị.",
+      "options": ["と", "の", "に", "を"],
+      "answer": "と",
+      "explanation": "間 cần hai mốc nối bằng と: N1 と N2 の 間."
+    },
+    {
+      "id": "L10-E17",
+      "type": "jp-vi",
+      "grammarPoint": "L10-G3",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "駅の 近くに スーパーが あります。",
+      "romaji": "Eki no chikaku ni sūpā ga arimasu.",
+      "options": [
+        "Gần ga có siêu thị.",
+        "Trong ga có siêu thị.",
+        "Siêu thị ở trước ga.",
+        "Gần siêu thị có nhà ga."
+      ],
+      "answer": "Gần ga có siêu thị.",
+      "explanation": "駅の 近く = gần ga (mốc là 駅); thứ tồn tại là スーパー."
+    },
+    {
+      "id": "L10-E18",
+      "type": "particle",
+      "grammarPoint": "L10-G4",
+      "question": "Chọn trợ từ điền vào chỗ trống (trong hộp còn nhiều thứ khác nữa).",
+      "jp": "箱の 中に 手紙＿＿ 写真が あります。",
+      "romaji": "Hako no naka ni tegami ___ shashin ga arimasu.",
+      "vi": "Trong hộp có thư, ảnh (và những thứ khác).",
+      "options": ["や", "の", "に", "を"],
+      "answer": "や",
+      "explanation": "Kể vài thứ tiêu biểu, còn thứ khác → N1 や N2."
+    },
+    {
+      "id": "L10-E19",
+      "type": "choice",
+      "grammarPoint": "L10-G4",
+      "question": "Câu nào cho biết trong tủ lạnh CÒN những thứ khác ngoài trứng và sữa?",
+      "options": [
+        "冷蔵庫の 中に 卵や 牛乳などが あります。",
+        "冷蔵庫の 中に 卵と 牛乳が あります。",
+        "冷蔵庫の 中に 卵が あります。",
+        "冷蔵庫の 中に 牛乳が ありません。"
+      ],
+      "answer": "冷蔵庫の 中に 卵や 牛乳などが あります。",
+      "explanation": "や〜など = liệt kê vài thứ, ngầm hiểu còn thứ khác. と thì liệt kê đầy đủ."
+    },
+    {
+      "id": "L10-E20",
+      "type": "fix",
+      "grammarPoint": "L10-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "冷蔵庫の 中に 卵や 牛乳や などが あります。",
+      "options": [
+        "冷蔵庫の 中に 卵や 牛乳などが あります。",
+        "冷蔵庫の 中に 卵など 牛乳が あります。",
+        "冷蔵庫の 中に 卵や 牛乳などが います。",
+        "冷蔵庫の 中に などや 卵や 牛乳が あります。"
+      ],
+      "answer": "冷蔵庫の 中に 卵や 牛乳などが あります。",
+      "explanation": "など gắn thẳng vào danh từ cuối: N1 や N2 など."
+    },
+    {
+      "id": "L10-E21",
+      "type": "vi-jp",
+      "grammarPoint": "L10-G4",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Trong phòng có bàn, ghế, v.v.",
+      "options": [
+        "部屋に 机や いすなどが あります。",
+        "部屋に 机や いすなどが います。",
+        "部屋に 机など いすが あります。",
+        "部屋で 机や いすなどが あります。"
+      ],
+      "answer": "部屋に 机や いすなどが あります。",
+      "explanation": "N1 や N2 など; đồ vật → あります; nơi tồn tại dùng に."
+    },
+    {
+      "id": "L10-E22",
+      "type": "pattern",
+      "grammarPoint": "L10-G4",
+      "question": "Muốn kể VÀI món tiêu biểu trong cặp (ngầm hiểu còn nữa), chọn mẫu phù hợp.",
+      "options": ["N1 や N2 など", "N1 と N2", "N1 の N2", "N1 は N2 です"],
+      "answer": "N1 や N2 など",
+      "explanation": "や〜など = kể vài thứ tiêu biểu; と = kể đầy đủ."
+    },
+    {
+      "id": "L10-E23",
+      "type": "situation",
+      "grammarPoint": "L10-G5",
+      "question": "Một người lạ hỏi bạn 「すみません、郵便局は どこに ありますか」. Bạn muốn xác nhận lại rồi chỉ đường. Bạn nói:",
+      "options": [
+        "郵便局ですか。 あの 銀行の 隣です。",
+        "どこですか。 あの 銀行の 隣です。",
+        "郵便局ですか。 はい、そうです。",
+        "郵便局は どうですか。 銀行の 隣です。"
+      ],
+      "answer": "郵便局ですか。 あの 銀行の 隣です。",
+      "explanation": "Nhắc lại danh từ được hỏi + ですか để xác nhận, rồi trả lời vị trí."
+    },
+    {
+      "id": "L10-E24",
+      "type": "identify",
+      "grammarPoint": "L10-G5",
+      "question": "Trong hội thoại sau, 「ナンプラーですか」 dùng để làm gì?",
+      "jp": "ナンプラー、ありますか。 …ナンプラーですか。 あちらの 棚の 下に あります。",
+      "romaji": "Nanpurā, arimasu ka. … Nanpurā desu ka. Achira no tana no shita ni arimasu.",
+      "vi": "Có nước mắm Thái không ạ? …Nước mắm à? Ở kệ dưới đằng kia.",
+      "options": [
+        "Nhắc lại để xác nhận trước khi trả lời",
+        "Hỏi nước mắm là gì",
+        "Hỏi khách có muốn mua không",
+        "Nói rằng cửa hàng không có nước mắm"
+      ],
+      "answer": "Nhắc lại để xác nhận trước khi trả lời",
+      "explanation": "Nhân viên nhắc lại từ khóa + ですか (xuống giọng) để xác nhận, rồi chỉ chỗ."
+    },
+    {
+      "id": "L10-E25",
+      "type": "choice",
+      "grammarPoint": "L10-G5",
+      "question": "Trong câu 「郵便局ですか。 あの 銀行の 隣です。」, phần 「郵便局ですか」 thường được đọc thế nào?",
+      "options": [
+        "Xuống giọng nhẹ (chỉ để xác nhận)",
+        "Lên giọng mạnh như một câu hỏi mới",
+        "Đọc rồi chờ người kia trả lời はい",
+        "Bỏ か, chỉ nói 郵便局です"
+      ],
+      "answer": "Xuống giọng nhẹ (chỉ để xác nhận)",
+      "explanation": "Đây không phải câu hỏi thật, chỉ là nhắc lại để xác nhận nên đọc xuống giọng và nói tiếp luôn."
+    },
+    {
+      "id": "L10-E26",
+      "type": "order",
+      "grammarPoint": "L10-G5",
+      "question": "Sắp xếp thành câu trả lời đúng.",
+      "vi": "(Được hỏi chị Kimura có ở đây không) Chị Kimura à? Chị ấy đang ở phòng họp.",
+      "tokens": ["木村さん", "ですか。", "会議室", "に", "います"],
+      "explanation": "Nhắc lại tên + ですか。 rồi trả lời: Nơi に います."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 10 }
+}

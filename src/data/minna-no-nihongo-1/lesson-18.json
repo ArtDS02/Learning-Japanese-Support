@@ -1,0 +1,761 @@
+{
+  "lesson": 18,
+  "title": "Thể từ điển — có thể, sở thích, trước khi",
+  "titleJp": "趣味は 何ですか",
+  "topic": "Thể từ điển · ことが できます · 趣味は 〜ことです · 〜まえに · なかなか〜ない · ぜひ",
+  "description": "Học xong bài này bạn chia được thể từ điển, nói mình có thể làm gì (「tôi đọc được kanji」, 「ở sân bay đổi tiền được」), kể sở thích, nói 「trước khi…」 và bày tỏ mong muốn tha thiết với ぜひ.",
+  "objectives": [
+    "Chia đúng thể từ điển (辞書形) của động từ nhóm I, II, III.",
+    "Nói năng lực hoặc khả năng ở một nơi bằng N / V辞書形 こと が できます.",
+    "Kể sở thích bằng わたしの 趣味は N / V辞書形 こと です.",
+    "Nói 「trước khi…」 bằng V辞書形 / Nの / lượng từ thời gian + まえに.",
+    "Dùng なかなか〜ない (mãi mà không…) và ぜひ (nhất định, rất mong)."
+  ],
+  "keyPoints": [
+    "Thể từ điển nhóm I: âm hàng い trước ます → hàng う (書きます → 書く, 買います → 買う).",
+    "Nhóm II: bỏ ます + る (食べる, 見る). Nhóm III: する, 来る (くる).",
+    "Thêm こと sau thể từ điển để biến động từ thành danh từ: 読む こと = việc đọc.",
+    "できます đi với が: 日本語が できます, 読む ことが できます.",
+    "まえに luôn đi sau thể TỪ ĐIỂN, kể cả khi câu ở quá khứ. Danh từ thì thêm の, lượng từ thời gian thì không.",
+    "なかなか đi với phủ định: なかなか 来ません = mãi mà không đến.",
+    "ぜひ đi với mong muốn / lời mời: ぜひ 〜たいです, ぜひ 〜て ください."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L18-G1",
+      "title": "Cách chia thể từ điển (辞書形)",
+      "meaning": "Dạng nguyên thể của động từ (dạng tra trong từ điển)",
+      "why": "Từ điển ghi động từ ở dạng này (書く, 食べる). Nó cũng là gốc cho nhiều mẫu câu: ことが できます, 趣味は 〜ことです, 〜まえに ở bài này.",
+      "when": [
+        "Ghép với こと, まえに và nhiều mẫu ở các bài sau.",
+        "Tra từ điển: gặp 飲む phải biết thể ます là 飲みます."
+      ],
+      "formula": "Nhóm I: âm hàng い trước ます → hàng う\n　かきます → かく, のみます → のむ, かいます → かう, かえります → かえる\nNhóm II: bỏ ます + る　(たべます → たべる, みます → みる)\nNhóm III: します → する, 来ます → 来る (くる)",
+      "parts": [
+        { "part": "Nhóm I", "role": "Đổi âm trước ます từ hàng い sang hàng う: き→く, ぎ→ぐ, し→す, ち→つ, に→ぬ, び→ぶ, み→む, り→る, い→う." },
+        { "part": "Nhóm II", "role": "Bỏ ます, thêm る." },
+        { "part": "Nhóm III", "role": "する; 来る đọc là 「kuru」." }
+      ],
+      "memoryTip": {
+        "emoji": "📖",
+        "hook": "Hàng い trượt xuống hàng う — nhóm II cứ thêm 「る」!",
+        "meaning": "→ 書き → 書く, 飲み → 飲む; 食べ → 食べる; する, くる."
+      },
+      "examples": [
+        {
+          "jp": "書きます → 書く ・ 急ぎます → 急ぐ ・ 話します → 話す",
+          "romaji": "Kakimasu → kaku, isogimasu → isogu, hanashimasu → hanasu",
+          "vi": "viết, vội, nói — Nhóm I (き→く, ぎ→ぐ, し→す)",
+          "context": "Nhóm I"
+        },
+        {
+          "jp": "待ちます → 待つ ・ 飲みます → 飲む ・ 遊びます → 遊ぶ",
+          "romaji": "Machimasu → matsu, nomimasu → nomu, asobimasu → asobu",
+          "vi": "đợi, uống, chơi — Nhóm I (ち→つ, み→む, び→ぶ)",
+          "context": "Nhóm I"
+        },
+        {
+          "jp": "買います → 買う ・ 帰ります → 帰る ・ 行きます → 行く",
+          "romaji": "Kaimasu → kau, kaerimasu → kaeru, ikimasu → iku",
+          "vi": "mua, về, đi — Nhóm I (い→う, り→る, き→く)",
+          "context": "Nhóm I",
+          "note": "帰る, 入る, 知る, 走る có đuôi る nhưng là nhóm I — nhớ nhìn thể ます (帰ります có り)."
+        },
+        {
+          "jp": "食べます → 食べる ・ 見ます → 見る ・ 起きます → 起きる",
+          "romaji": "Tabemasu → taberu, mimasu → miru, okimasu → okiru",
+          "vi": "ăn, xem, thức dậy — Nhóm II",
+          "context": "Nhóm II"
+        },
+        {
+          "jp": "します → する ・ 来ます → 来る ・ 勉強します → 勉強する",
+          "romaji": "Shimasu → suru, kimasu → kuru, benkyō shimasu → benkyō suru",
+          "vi": "làm, đến, học — Nhóm III",
+          "context": "Nhóm III",
+          "note": "来る đọc là くる."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "買る",
+          "right": "買う",
+          "explain": "Âm い trước ます → う: 買います → 買う."
+        },
+        {
+          "wrong": "見む",
+          "right": "見る",
+          "explain": "見ます là nhóm II → bỏ ます + る."
+        },
+        {
+          "wrong": "来る (đọc きる)",
+          "right": "来る (đọc くる)",
+          "explain": "Nhóm III bất quy tắc: 来ます (kimasu) → 来る (kuru)."
+        },
+        {
+          "explain": "帰る, 入る, 知る, 走る trông giống nhóm II (đuôi る) nhưng là nhóm I. Khi chia sang thể て / ない phải theo nhóm I: 帰って, 帰らない."
+        }
+      ]
+    },
+    {
+      "id": "L18-G2",
+      "title": "N / V辞書形 こと が できます",
+      "meaning": "Có thể (làm được) N / V",
+      "why": "Để nói năng lực của một người (「Tôi chơi được piano」) hoặc khả năng làm gì ở một nơi (「Ở sân bay có thể đổi tiền」).",
+      "when": [
+        "Năng lực: biết bơi, biết đọc kanji, biết nói tiếng Nhật.",
+        "Khả năng / sự cho phép ở một nơi hay tình huống: 「Có thể trả bằng thẻ không?」."
+      ],
+      "formula": "N が できます\nV辞書形 こと が できます",
+      "parts": [
+        { "part": "N が", "role": "Danh từ chỉ kỹ năng / hoạt động: 日本語, 運転, スキー… Luôn dùng が." },
+        { "part": "V辞書形 こと", "role": "こと biến động từ thành danh từ: 読む こと = việc đọc." },
+        { "part": "が できます", "role": "「có thể, làm được」. Phủ định: できません." }
+      ],
+      "memoryTip": {
+        "emoji": "💪",
+        "hook": "Thể từ điển + 「ことが できます」 = làm ĐƯỢC!",
+        "meaning": "→ 読む ことが できます = đọc được."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんは 漢字を 読む ことが できます。",
+          "romaji": "Mirā-san wa kanji o yomu koto ga dekimasu.",
+          "vi": "Anh Miller đọc được chữ Hán.",
+          "context": "Năng lực",
+          "breakdown": [
+            { "jp": "漢字を 読む", "vi": "đọc chữ Hán (thể từ điển)" },
+            { "jp": "ことが", "vi": "việc… (danh từ hoá)" },
+            { "jp": "できます", "vi": "có thể" }
+          ]
+        },
+        {
+          "jp": "わたしは 日本語が できます。",
+          "romaji": "Watashi wa Nihongo ga dekimasu.",
+          "vi": "Tôi biết tiếng Nhật.",
+          "context": "Năng lực (N が できます)"
+        },
+        {
+          "jp": "わたしは ピアノを 弾く ことが できます。",
+          "romaji": "Watashi wa piano o hiku koto ga dekimasu.",
+          "vi": "Tôi chơi được đàn piano.",
+          "context": "Sở thích"
+        },
+        {
+          "jp": "空港で お金を 換える ことが できます。",
+          "romaji": "Kūkō de okane o kaeru koto ga dekimasu.",
+          "vi": "Ở sân bay có thể đổi tiền.",
+          "context": "Du lịch (khả năng ở nơi đó)"
+        },
+        {
+          "jp": "カードで 払う ことが できますか。 …すみません、できません。",
+          "romaji": "Kādo de harau koto ga dekimasu ka. … Sumimasen, dekimasen.",
+          "vi": "Có thể trả bằng thẻ không? …Xin lỗi, không được ạ.",
+          "context": "Nhà hàng"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "漢字を 読みます ことが できます。",
+          "right": "漢字を 読む ことが できます。",
+          "explain": "こと đi sau thể TỪ ĐIỂN, không đi sau thể ます."
+        },
+        {
+          "wrong": "わたしは 日本語を できます。",
+          "right": "わたしは 日本語が できます。",
+          "explain": "できます luôn đi với が."
+        },
+        {
+          "wrong": "ピアノを 弾く ことを できます。",
+          "right": "ピアノを 弾く ことが できます。",
+          "explain": "Tân ngữ của 弾く là ピアノを, nhưng cả cụm 「弾く こと」 đi với が できます."
+        }
+      ]
+    },
+    {
+      "id": "L18-G3",
+      "title": "わたしの 趣味は N / V辞書形 こと です",
+      "meaning": "Sở thích của tôi là N / là (việc) V",
+      "why": "Kể sở thích là chủ đề làm quen phổ biến. Khi sở thích là một hành động (đọc sách, chụp ảnh), phải biến động từ thành danh từ bằng こと.",
+      "when": [
+        "Giới thiệu bản thân, phỏng vấn, làm quen.",
+        "Hỏi người khác: 趣味は 何ですか."
+      ],
+      "formula": "わたしの 趣味は N です\nわたしの 趣味は V辞書形 こと です",
+      "parts": [
+        { "part": "趣味", "role": "Sở thích." },
+        { "part": "N", "role": "Danh từ chỉ sở thích: 音楽, 旅行, スポーツ…" },
+        { "part": "V辞書形 こと", "role": "Nói cụ thể hơn: 写真を 撮る こと (việc chụp ảnh)." }
+      ],
+      "memoryTip": {
+        "emoji": "🎨",
+        "hook": "Sở thích là động từ? Gắn 「こと」 cho nó thành danh từ!",
+        "meaning": "→ 趣味は 写真を 撮る ことです (không nói 撮ります です)."
+      },
+      "examples": [
+        {
+          "jp": "わたしの 趣味は 音楽です。",
+          "romaji": "Watashi no shumi wa ongaku desu.",
+          "vi": "Sở thích của tôi là âm nhạc.",
+          "context": "Làm quen"
+        },
+        {
+          "jp": "わたしの 趣味は 写真を 撮る ことです。",
+          "romaji": "Watashi no shumi wa shashin o toru koto desu.",
+          "vi": "Sở thích của tôi là chụp ảnh.",
+          "context": "Làm quen",
+          "breakdown": [
+            { "jp": "趣味は", "vi": "sở thích thì" },
+            { "jp": "写真を 撮る こと", "vi": "việc chụp ảnh" },
+            { "jp": "です", "vi": "là" }
+          ]
+        },
+        {
+          "jp": "趣味は 何ですか。 …本を 読む ことです。",
+          "romaji": "Shumi wa nan desu ka. … Hon o yomu koto desu.",
+          "vi": "Sở thích của bạn là gì? …Là đọc sách.",
+          "context": "Phỏng vấn"
+        },
+        {
+          "jp": "父の 趣味は 旅行です。",
+          "romaji": "Chichi no shumi wa ryokō desu.",
+          "vi": "Sở thích của bố tôi là du lịch.",
+          "context": "Gia đình"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "わたしの 趣味は 写真を 撮ります。",
+          "right": "わたしの 趣味は 写真を 撮る ことです。",
+          "explain": "「Sở thích LÀ…」 → cần danh từ + です. Động từ phải thêm こと."
+        },
+        {
+          "wrong": "わたしの 趣味は 本を 読むです。",
+          "right": "わたしの 趣味は 本を 読む ことです。",
+          "explain": "Không gắn です thẳng sau động từ ở đây — cần こと ở giữa."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: nói cụ thể hơn",
+          "text": "Chỉ nói 「趣味は 音楽です」 thì hơi chung chung. Người Nhật hay nói cụ thể: 趣味は 音楽を 聞く ことです (nghe nhạc) hoặc 趣味は ギターを 弾く ことです (chơi guitar)."
+        }
+      ]
+    },
+    {
+      "id": "L18-G4",
+      "title": "V1辞書形 / Nの / lượng từ (thời gian) まえに、V2",
+      "meaning": "Trước khi V1 / trước N / cách đây (bao lâu), V2",
+      "why": "Để nói thứ tự 「làm V2 trước rồi mới V1」: rửa tay trước bữa ăn, đọc sách trước khi ngủ, học tiếng Nhật trước khi sang Nhật.",
+      "when": [
+        "Thói quen: 「Trước khi ngủ tôi đọc sách」.",
+        "Chuẩn bị trước sự kiện: 「Trước cuộc họp tôi đi photo tài liệu」.",
+        "Nói khoảng thời gian trước: 「1 tiếng trước anh ấy đã ra ngoài」."
+      ],
+      "formula": "V1辞書形 まえに、V2\nN の まえに、V2\nLượng từ thời gian まえに、V2",
+      "parts": [
+        { "part": "V1辞書形", "role": "Luôn là thể TỪ ĐIỂN (việc V1 chưa xảy ra khi làm V2), kể cả khi câu ở quá khứ." },
+        { "part": "N の", "role": "Danh từ chỉ hành động / sự kiện + の: 食事の, 会議の." },
+        { "part": "Lượng từ thời gian", "role": "1時間, 3年… + まえに, KHÔNG có の." },
+        { "part": "V2", "role": "Việc làm trước; quyết định thì của câu." }
+      ],
+      "memoryTip": {
+        "emoji": "⏮️",
+        "hook": "Việc CHƯA xảy ra → thể từ điển + 「まえに」!",
+        "meaning": "→ 寝る まえに = trước khi ngủ (dù câu là quá khứ cũng vẫn 寝る)."
+      },
+      "examples": [
+        {
+          "jp": "寝る まえに、本を 読みます。",
+          "romaji": "Neru mae ni, hon o yomimasu.",
+          "vi": "Trước khi ngủ, tôi đọc sách.",
+          "context": "Sinh hoạt",
+          "breakdown": [
+            { "jp": "寝る", "vi": "ngủ (thể từ điển)" },
+            { "jp": "まえに", "vi": "trước khi" },
+            { "jp": "本を 読みます", "vi": "đọc sách" }
+          ]
+        },
+        {
+          "jp": "食事の まえに、手を 洗います。",
+          "romaji": "Shokuji no mae ni, te o araimasu.",
+          "vi": "Trước bữa ăn, tôi rửa tay.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "日本へ 来る まえに、ハノイで 日本語を 勉強しました。",
+          "romaji": "Nihon e kuru mae ni, Hanoi de Nihongo o benkyō shimashita.",
+          "vi": "Trước khi sang Nhật, tôi đã học tiếng Nhật ở Hà Nội.",
+          "context": "Du học",
+          "note": "Câu ở quá khứ nhưng vẫn là 来る (thể từ điển) + まえに."
+        },
+        {
+          "jp": "会議の まえに、コピーを します。",
+          "romaji": "Kaigi no mae ni, kopī o shimasu.",
+          "vi": "Trước cuộc họp, tôi đi photo tài liệu.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "田中さんは 1時間まえに 出かけました。",
+          "romaji": "Tanaka-san wa ichi-jikan mae ni dekakemashita.",
+          "vi": "Anh Tanaka đã ra ngoài cách đây 1 tiếng.",
+          "context": "Văn phòng",
+          "note": "Lượng từ thời gian + まえに, không có の."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "寝ます まえに、本を 読みます。",
+          "right": "寝る まえに、本を 読みます。",
+          "explain": "まえに đi sau thể từ điển, không đi sau thể ます."
+        },
+        {
+          "wrong": "日本へ 来た まえに、日本語を 勉強しました。",
+          "right": "日本へ 来る まえに、日本語を 勉強しました。",
+          "explain": "Luôn dùng thể từ điển trước まえに, dù câu nói về quá khứ."
+        },
+        {
+          "wrong": "食事 まえに、手を 洗います。",
+          "right": "食事の まえに、手を 洗います。",
+          "explain": "Danh từ + の + まえに."
+        },
+        {
+          "wrong": "1時間の まえに 出かけました。",
+          "right": "1時間まえに 出かけました。",
+          "explain": "Lượng từ thời gian đi thẳng với まえに, không thêm の."
+        }
+      ]
+    },
+    {
+      "id": "L18-G5",
+      "title": "なかなか 〜ない",
+      "meaning": "Mãi mà không… / khó mà…",
+      "why": "Để diễn tả việc mong đợi mà mãi không xảy ra, hoặc rất khó thực hiện: 「Xe buýt mãi không đến」, 「Ở Nhật khó mà thấy ngựa」.",
+      "when": [
+        "Chờ đợi mãi mà chưa thấy: xe buýt, công việc chưa xong…",
+        "Việc khó thực hiện: なかなか 〜ことが できません."
+      ],
+      "formula": "なかなか V ません\nなかなか V辞書形 ことが できません",
+      "parts": [
+        { "part": "なかなか", "role": "Phó từ, đi với động từ PHỦ ĐỊNH: 「mãi mà (không)」, 「khó mà (không)」." },
+        { "part": "V ません", "role": "Động từ ở dạng phủ định." }
+      ],
+      "memoryTip": {
+        "emoji": "🐢",
+        "hook": "「なかなか 〜ない」 = chờ mãi mà KHÔNG…!",
+        "meaning": "→ バスが なかなか 来ません = xe buýt mãi không đến."
+      },
+      "examples": [
+        {
+          "jp": "バスが なかなか 来ません。",
+          "romaji": "Basu ga nakanaka kimasen.",
+          "vi": "Xe buýt mãi mà không đến.",
+          "context": "Đi lại"
+        },
+        {
+          "jp": "日本では なかなか 馬を 見る ことが できません。",
+          "romaji": "Nihon de wa nakanaka uma o miru koto ga dekimasen.",
+          "vi": "Ở Nhật khó mà nhìn thấy ngựa.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "なかなか", "vi": "mãi mà / khó mà" },
+            { "jp": "見る ことが できません", "vi": "không thể xem" }
+          ]
+        },
+        {
+          "jp": "仕事が なかなか 終わりません。",
+          "romaji": "Shigoto ga nakanaka owarimasen.",
+          "vi": "Công việc mãi mà không xong.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "忙しくて、なかなか 国へ 帰る ことが できません。",
+          "romaji": "Isogashikute, nakanaka kuni e kaeru koto ga dekimasen.",
+          "vi": "Bận quá nên mãi mà không về nước được.",
+          "context": "Cuộc sống ở nước ngoài"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "バスが なかなか 来ます。",
+          "right": "バスが なかなか 来ません。",
+          "explain": "Với nghĩa 「mãi mà không」, なかなか phải đi với động từ phủ định."
+        },
+        {
+          "wrong": "(xe buýt không chạy tuyến này) この バスは なかなか 来ません。",
+          "right": "この バスは ここへ 来ません。",
+          "explain": "なかなか 〜ない là 「chờ mãi chưa thấy / khó thực hiện」, không phải 「hoàn toàn không」."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: なかなか + khẳng định",
+          "text": "Đi với tính từ khẳng định, なかなか lại mang nghĩa 「khá là, không tệ」: この 料理は なかなか おいしいです (Món này khá ngon đấy). Ở bài 18 chỉ cần nhớ nghĩa đi với phủ định."
+        }
+      ]
+    },
+    {
+      "id": "L18-G6",
+      "title": "ぜひ",
+      "meaning": "Nhất định, rất mong (bằng mọi giá)",
+      "why": "Để nhấn mạnh mong muốn của mình hoặc lời mời, lời nhờ tha thiết: 「Tôi rất muốn cưỡi ngựa」, 「Nhất định hãy đến nhà tôi chơi nhé」.",
+      "when": [
+        "Nhấn mạnh mong muốn: ぜひ 〜たいです.",
+        "Mời / nhờ tha thiết: ぜひ 〜て ください."
+      ],
+      "formula": "ぜひ 〜たいです\nぜひ 〜て ください",
+      "parts": [
+        { "part": "ぜひ", "role": "Phó từ nhấn mạnh mong muốn, lời mời. Đi với たい, て ください; không đi với phủ định hay câu kể sự thật." }
+      ],
+      "memoryTip": {
+        "emoji": "💖",
+        "hook": "「ぜひ」 + たい / て ください = rất rất mong!",
+        "meaning": "→ ぜひ 来て ください = nhất định hãy đến nhé!"
+      },
+      "examples": [
+        {
+          "jp": "北海道で ぜひ 馬に 乗りたいです。",
+          "romaji": "Hokkaidō de zehi uma ni noritai desu.",
+          "vi": "Ở Hokkaido tôi rất muốn được cưỡi ngựa.",
+          "context": "Du lịch"
+        },
+        {
+          "jp": "ぜひ わたしの うちへ 来て ください。",
+          "romaji": "Zehi watashi no uchi e kite kudasai.",
+          "vi": "Nhất định hãy đến nhà tôi chơi nhé.",
+          "context": "Mời bạn bè"
+        },
+        {
+          "jp": "ぜひ ベトナムへ 遊びに 来て ください。",
+          "romaji": "Zehi Betonamu e asobi ni kite kudasai.",
+          "vi": "Nhất định hãy sang Việt Nam chơi nhé.",
+          "context": "Mời bạn người Nhật"
+        },
+        {
+          "jp": "いつか ぜひ 富士山に 登りたいです。",
+          "romaji": "Itsuka zehi Fujisan ni noboritai desu.",
+          "vi": "Một ngày nào đó tôi nhất định muốn leo núi Phú Sĩ.",
+          "context": "Ước mơ"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "あした ぜひ 行きません。",
+          "right": "あした ぜひ 行きたいです。",
+          "explain": "ぜひ nhấn mạnh mong muốn → không đi với phủ định."
+        },
+        {
+          "wrong": "きのう ぜひ 京都へ 行きました。",
+          "right": "きのう 京都へ 行きました。",
+          "explain": "Câu chỉ kể sự việc đã xảy ra, không có mong muốn / lời mời → không dùng ぜひ."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "Thể từ điển", "meaning": "Nhóm I: hàng い → う; II: bỏ ます + る; III: する, 来る", "example": "書きます → 書く、食べます → 食べる" },
+    { "pattern": "N / V辞書形 ことが できます", "meaning": "Có thể V", "example": "ミラーさんは 漢字を 読む ことが できます。" },
+    { "pattern": "趣味は V辞書形 ことです", "meaning": "Sở thích là (việc) V", "example": "わたしの 趣味は 写真を 撮る ことです。" },
+    { "pattern": "V辞書形 / Nの まえに", "meaning": "Trước khi V / trước N", "example": "寝る まえに、本を 読みます。" },
+    { "pattern": "なかなか 〜ません", "meaning": "Mãi mà không…", "example": "バスが なかなか 来ません。" },
+    { "pattern": "ぜひ 〜たいです / 〜て ください", "meaning": "Nhất định, rất mong", "example": "ぜひ わたしの うちへ 来て ください。" }
+  ],
+  "exercises": [
+    {
+      "id": "L18-E01",
+      "type": "fill",
+      "grammarPoint": "L18-G1",
+      "question": "Chia sang thể từ điển (gõ kana).",
+      "jp": "飲みます（のみます） → ＿＿",
+      "answer": "のむ",
+      "accept": ["飲む", "nomu"],
+      "explanation": "Nhóm I: み → む: のむ."
+    },
+    {
+      "id": "L18-E02",
+      "type": "fill",
+      "grammarPoint": "L18-G1",
+      "question": "Chia sang thể từ điển (gõ kana).",
+      "jp": "帰ります（かえります） → ＿＿",
+      "answer": "かえる",
+      "accept": ["帰る", "kaeru"],
+      "explanation": "Nhóm I: り → る: かえる (dù đuôi る nhưng vẫn là nhóm I)."
+    },
+    {
+      "id": "L18-E03",
+      "type": "fill",
+      "grammarPoint": "L18-G1",
+      "question": "Chia sang thể từ điển (gõ kana).",
+      "jp": "来ます（きます） → ＿＿",
+      "answer": "くる",
+      "accept": ["来る", "kuru"],
+      "explanation": "Nhóm III bất quy tắc: 来ます → 来る, đọc くる."
+    },
+    {
+      "id": "L18-E04",
+      "type": "fill",
+      "grammarPoint": "L18-G1",
+      "question": "Chia sang thể từ điển (gõ kana).",
+      "jp": "見ます（みます） → ＿＿",
+      "answer": "みる",
+      "accept": ["見る", "miru"],
+      "explanation": "見ます là nhóm II → bỏ ます + る: みる."
+    },
+    {
+      "id": "L18-E05",
+      "type": "choice",
+      "grammarPoint": "L18-G1",
+      "question": "Thể từ điển của 「買います」 (mua) là gì?",
+      "options": ["買う", "買る", "買く", "買わ"],
+      "answer": "買う",
+      "explanation": "Nhóm I: い → う: 買う (かう)."
+    },
+    {
+      "id": "L18-E06",
+      "type": "particle",
+      "grammarPoint": "L18-G2",
+      "question": "Chọn trợ từ phù hợp.",
+      "jp": "わたしは 日本語＿＿ できます。",
+      "romaji": "Watashi wa Nihongo ___ dekimasu.",
+      "vi": "Tôi biết tiếng Nhật.",
+      "options": ["が", "を", "に", "で"],
+      "answer": "が",
+      "explanation": "できます luôn đi với が: N が できます."
+    },
+    {
+      "id": "L18-E07",
+      "type": "fill",
+      "grammarPoint": "L18-G2",
+      "question": "Gõ từ còn thiếu (kana).",
+      "jp": "ミラーさんは 漢字を 読む ＿＿が できます。",
+      "vi": "Anh Miller đọc được chữ Hán.",
+      "answer": "こと",
+      "explanation": "V辞書形 + こと が できます. こと biến 読む thành danh từ."
+    },
+    {
+      "id": "L18-E08",
+      "type": "vi-jp",
+      "grammarPoint": "L18-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Ở sân bay có thể đổi tiền.",
+      "options": [
+        "空港で お金を 換える ことが できます。",
+        "空港で お金を 換えます ことが できます。",
+        "空港で お金を 換える ことを できます。",
+        "空港で お金を 換えて ことが できます。"
+      ],
+      "answer": "空港で お金を 換える ことが できます。",
+      "explanation": "Thể từ điển (換える) + ことが できます."
+    },
+    {
+      "id": "L18-E09",
+      "type": "situation",
+      "grammarPoint": "L18-G2",
+      "question": "Ở nhà hàng, bạn muốn hỏi có trả được bằng thẻ không. Bạn nói:",
+      "options": [
+        "カードで 払う ことが できますか。",
+        "カードで 払います ことが できますか。",
+        "カードを 払う ことが できますか。",
+        "カードで 払わなければ なりませんか。"
+      ],
+      "answer": "カードで 払う ことが できますか。",
+      "explanation": "Hỏi khả năng → V辞書形 ことが できますか. Phương tiện trả tiền dùng で."
+    },
+    {
+      "id": "L18-E10",
+      "type": "fix",
+      "grammarPoint": "L18-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしは ピアノを 弾きます ことが できます。",
+      "options": [
+        "わたしは ピアノを 弾く ことが できます。",
+        "わたしは ピアノを 弾く ことを できます。",
+        "わたしは ピアノが 弾きます できます。",
+        "わたしは ピアノを 弾いて ことが できます。"
+      ],
+      "answer": "わたしは ピアノを 弾く ことが できます。",
+      "explanation": "こと đi sau thể từ điển (弾く), và ことが できます dùng が."
+    },
+    {
+      "id": "L18-E11",
+      "type": "vi-jp",
+      "grammarPoint": "L18-G3",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Sở thích của tôi là đọc sách.",
+      "options": [
+        "わたしの 趣味は 本を 読む ことです。",
+        "わたしの 趣味は 本を 読みます。",
+        "わたしの 趣味は 本を 読むです。",
+        "わたしの 趣味は 本を 読む ことが できます。"
+      ],
+      "answer": "わたしの 趣味は 本を 読む ことです。",
+      "explanation": "Sở thích là hành động → V辞書形 + ことです."
+    },
+    {
+      "id": "L18-E12",
+      "type": "jp-vi",
+      "grammarPoint": "L18-G3",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "父の 趣味は 旅行です。",
+      "romaji": "Chichi no shumi wa ryokō desu.",
+      "options": [
+        "Sở thích của bố tôi là du lịch.",
+        "Bố tôi đang đi du lịch.",
+        "Bố tôi có thể đi du lịch.",
+        "Sở thích của tôi là đi du lịch với bố."
+      ],
+      "answer": "Sở thích của bố tôi là du lịch.",
+      "explanation": "N1 の 趣味は N2 です = sở thích của N1 là N2."
+    },
+    {
+      "id": "L18-E13",
+      "type": "order",
+      "grammarPoint": "L18-G3",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Sở thích của tôi là xem phim.",
+      "tokens": ["わたし", "の", "趣味", "は", "映画を 見る", "こと", "です"],
+      "explanation": "わたしの 趣味は + V辞書形 こと + です."
+    },
+    {
+      "id": "L18-E14",
+      "type": "situation",
+      "grammarPoint": "L18-G3",
+      "question": "Bạn được hỏi 「趣味は 何ですか。」. Bạn thích chụp ảnh. Bạn đáp:",
+      "options": ["写真を 撮る ことです。", "写真を 撮ります。", "写真を 撮る ことが できます。", "写真を 撮って います。"],
+      "answer": "写真を 撮る ことです。",
+      "explanation": "Trả lời 「sở thích là…」 → V辞書形 ことです. ことが できます là 「có thể」, sai ý."
+    },
+    {
+      "id": "L18-E15",
+      "type": "fill",
+      "grammarPoint": "L18-G4",
+      "question": "Gõ từ còn thiếu (kana).",
+      "jp": "寝る ＿＿、本を 読みます。",
+      "vi": "Trước khi ngủ, tôi đọc sách.",
+      "answer": "まえに",
+      "accept": ["前に", "maeni", "mae ni"],
+      "explanation": "Trước khi V = V辞書形 + まえに."
+    },
+    {
+      "id": "L18-E16",
+      "type": "particle",
+      "grammarPoint": "L18-G4",
+      "question": "Chọn trợ từ phù hợp.",
+      "jp": "食事＿＿ まえに、手を 洗います。",
+      "romaji": "Shokuji ___ mae ni, te o araimasu.",
+      "vi": "Trước bữa ăn, tôi rửa tay.",
+      "options": ["の", "を", "に", "が"],
+      "answer": "の",
+      "explanation": "Danh từ + の + まえに: 食事の まえに."
+    },
+    {
+      "id": "L18-E17",
+      "type": "fix",
+      "grammarPoint": "L18-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "日本へ 来た まえに、日本語を 勉強しました。",
+      "options": [
+        "日本へ 来る まえに、日本語を 勉強しました。",
+        "日本へ 来ます まえに、日本語を 勉強しました。",
+        "日本へ 来て まえに、日本語を 勉強しました。",
+        "日本へ 来るの まえに、日本語を 勉強しました。"
+      ],
+      "answer": "日本へ 来る まえに、日本語を 勉強しました。",
+      "explanation": "Trước まえに luôn là thể từ điển, kể cả khi câu ở quá khứ."
+    },
+    {
+      "id": "L18-E18",
+      "type": "choice",
+      "grammarPoint": "L18-G4",
+      "question": "「Anh Tanaka đã ra ngoài cách đây 1 tiếng.」 Câu nào đúng?",
+      "options": [
+        "田中さんは 1時間まえに 出かけました。",
+        "田中さんは 1時間の まえに 出かけました。",
+        "田中さんは 1時間を まえに 出かけました。",
+        "田中さんは 1時間まえで 出かけました。"
+      ],
+      "answer": "田中さんは 1時間まえに 出かけました。",
+      "explanation": "Lượng từ thời gian + まえに, không có の."
+    },
+    {
+      "id": "L18-E19",
+      "type": "jp-vi",
+      "grammarPoint": "L18-G5",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "バスが なかなか 来ません。",
+      "romaji": "Basu ga nakanaka kimasen.",
+      "options": [
+        "Xe buýt mãi mà không đến.",
+        "Xe buýt đến rất đúng giờ.",
+        "Xe buýt đã đến rồi.",
+        "Xin đừng đi xe buýt."
+      ],
+      "answer": "Xe buýt mãi mà không đến.",
+      "explanation": "なかなか + phủ định = mãi mà không…"
+    },
+    {
+      "id": "L18-E20",
+      "type": "choice",
+      "grammarPoint": "L18-G5",
+      "question": "Chọn từ điền vào chỗ trống: 「仕事が なかなか ＿＿。」",
+      "options": ["終わりません", "終わります", "終わりましょう", "終わって ください"],
+      "answer": "終わりません",
+      "explanation": "Với nghĩa 「mãi mà không」, なかなか phải đi với động từ phủ định."
+    },
+    {
+      "id": "L18-E21",
+      "type": "pattern",
+      "grammarPoint": "L18-G5",
+      "question": "Bạn muốn than 「Chờ mãi mà công việc vẫn chưa xong」. Chọn mẫu phù hợp.",
+      "options": ["なかなか 〜ません", "ぜひ 〜たいです", "〜まえに", "〜なくても いいです"],
+      "answer": "なかなか 〜ません",
+      "explanation": "Việc mong đợi mãi không xảy ra → なかなか + phủ định."
+    },
+    {
+      "id": "L18-E22",
+      "type": "fill",
+      "grammarPoint": "L18-G5",
+      "question": "Gõ từ còn thiếu (kana).",
+      "jp": "日本では なかなか 馬を 見る ことが ＿＿。",
+      "vi": "Ở Nhật khó mà nhìn thấy ngựa.",
+      "answer": "できません",
+      "explanation": "なかなか đi với phủ định: なかなか 〜ことが できません = khó mà làm được."
+    },
+    {
+      "id": "L18-E23",
+      "type": "situation",
+      "grammarPoint": "L18-G6",
+      "question": "Bạn muốn mời người bạn Nhật sang Việt Nam chơi một cách tha thiết. Bạn nói:",
+      "options": [
+        "ぜひ ベトナムへ 遊びに 来て ください。",
+        "ぜひ ベトナムへ 遊びに 来ません。",
+        "なかなか ベトナムへ 遊びに 来て ください。",
+        "ぜひ ベトナムへ 遊びに 来ないで ください。"
+      ],
+      "answer": "ぜひ ベトナムへ 遊びに 来て ください。",
+      "explanation": "Lời mời tha thiết → ぜひ 〜て ください. ぜひ không đi với phủ định."
+    },
+    {
+      "id": "L18-E24",
+      "type": "fix",
+      "grammarPoint": "L18-G6",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "あした ぜひ 行きません。",
+      "options": ["あした ぜひ 行きたいです。", "あした ぜひ 行かないです。", "あした なかなか 行きたいです。", "あした ぜひ 行きませんでした。"],
+      "answer": "あした ぜひ 行きたいです。",
+      "explanation": "ぜひ nhấn mạnh mong muốn → đi với 〜たいです, không đi với phủ định."
+    },
+    {
+      "id": "L18-E25",
+      "type": "identify",
+      "grammarPoint": "L18-G6",
+      "question": "Câu này dùng từ / mẫu nào để nhấn mạnh mong muốn?",
+      "jp": "北海道で ぜひ 馬に 乗りたいです。",
+      "romaji": "Hokkaidō de zehi uma ni noritai desu.",
+      "vi": "Ở Hokkaido tôi rất muốn được cưỡi ngựa.",
+      "options": ["ぜひ 〜たいです (rất mong)", "なかなか 〜ない (mãi mà không)", "V辞書形 まえに (trước khi)", "V辞書形 ことが できます (có thể)"],
+      "answer": "ぜひ 〜たいです (rất mong)",
+      "explanation": "ぜひ + たいです = rất muốn, nhất định muốn."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 18 }
+}

@@ -1,0 +1,616 @@
+{
+  "lesson": 19,
+  "title": "Thể た — kinh nghiệm, liệt kê, trở nên",
+  "titleJp": "ダイエットは あしたから します",
+  "topic": "Thể た · Vた ことが あります · Vたり、Vたり します · 〜く / 〜に なります",
+  "description": "Học xong bài này bạn chia được thể た, kể những trải nghiệm mình đã từng có (「Tôi đã từng leo núi Phú Sĩ」), liệt kê vài việc tiêu biểu mình làm, và nói sự thay đổi (「Trời đã lạnh」, 「Tôi muốn trở thành bác sĩ」).",
+  "objectives": [
+    "Chia đúng thể た (giống thể て: て → た, で → だ).",
+    "Kể kinh nghiệm bằng Vた ことが あります và hỏi 「đã bao giờ… chưa?」.",
+    "Liệt kê vài hành động tiêu biểu bằng Vたり、Vたり します.",
+    "Nói sự thay đổi bằng いA → く / なA・N → に + なります."
+  ],
+  "keyPoints": [
+    "Thể た = thể て đổi て → た, で → だ: 書いて → 書いた, 飲んで → 飲んだ, 行って → 行った.",
+    "Vた ことが あります = đã từng V (trải nghiệm). Không dùng cho việc hằng ngày hoặc có thời điểm cụ thể (きのう, 先週…).",
+    "Trả lời 「chưa từng」: いいえ、ありません / いいえ、一度も ありません.",
+    "Vたり、Vたり します: liệt kê vài việc tiêu biểu trong nhiều việc. Cuối cùng luôn có します (thì do します quyết định).",
+    "いA: bỏ い + く なります (寒く なります); いい → よく なります.",
+    "なA / N: + に なります (元気に なります, 医者に なります)."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L19-G1",
+      "title": "Cách chia thể た",
+      "meaning": "Dạng quá khứ thường của động từ",
+      "why": "Thể た là gốc của hai mẫu quan trọng ở bài này (たことが あります, たり〜たり). Tin vui: nếu đã thuộc thể て thì thể た gần như không cần học thêm.",
+      "when": [
+        "Ghép với ことが あります, たり〜たり します.",
+        "Ở bài 20, thể た còn là cách nói quá khứ trong văn thân mật."
+      ],
+      "formula": "Lấy thể て, đổi て → た, で → だ\n書いて → 書いた, 泳いで → 泳いだ, 飲んで → 飲んだ\n行って → 行った, 食べて → 食べた, して → した, 来て → 来た (きた)",
+      "parts": [
+        { "part": "て → た", "role": "書いて → 書いた, 待って → 待った, 話して → 話した, 見て → 見た." },
+        { "part": "で → だ", "role": "飲んで → 飲んだ, 遊んで → 遊んだ, 泳いで → 泳いだ." },
+        { "part": "Ngoại lệ giữ nguyên", "role": "行きます → 行った (giống 行って); 来ます → 来た đọc 「kita」." }
+      ],
+      "memoryTip": {
+        "emoji": "🔁",
+        "hook": "Thuộc 「て」 là có ngay 「た」: て → た, で → だ!",
+        "meaning": "→ 飲んで → 飲んだ, 行って → 行った."
+      },
+      "examples": [
+        {
+          "jp": "書きます → 書いて → 書いた ・ 急ぎます → 急いで → 急いだ",
+          "romaji": "Kakimasu → kaite → kaita, isogimasu → isoide → isoida",
+          "vi": "viết, vội — Nhóm I",
+          "context": "Nhóm I"
+        },
+        {
+          "jp": "飲みます → 飲んで → 飲んだ ・ 遊びます → 遊んで → 遊んだ",
+          "romaji": "Nomimasu → nonde → nonda, asobimasu → asonde → asonda",
+          "vi": "uống, chơi — Nhóm I (で → だ)",
+          "context": "Nhóm I"
+        },
+        {
+          "jp": "買います → 買った ・ 帰ります → 帰った ・ 行きます → 行った",
+          "romaji": "Kaimasu → katta, kaerimasu → kaetta, ikimasu → itta",
+          "vi": "mua, về, đi — Nhóm I",
+          "context": "Nhóm I",
+          "note": "行った: ngoại lệ giống thể て 行って."
+        },
+        {
+          "jp": "話します → 話した ・ 食べます → 食べた ・ 見ます → 見た",
+          "romaji": "Hanashimasu → hanashita, tabemasu → tabeta, mimasu → mita",
+          "vi": "nói (nhóm I), ăn, xem (nhóm II)",
+          "context": "Nhóm I, II"
+        },
+        {
+          "jp": "します → した ・ 来ます → 来た ・ 勉強します → 勉強した",
+          "romaji": "Shimasu → shita, kimasu → kita, benkyō shimasu → benkyō shita",
+          "vi": "làm, đến, học — Nhóm III",
+          "context": "Nhóm III"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "飲んた",
+          "right": "飲んだ",
+          "explain": "Thể て là 飲んで (có dấu) → thể た cũng có dấu: 飲んだ."
+        },
+        {
+          "wrong": "行いた",
+          "right": "行った",
+          "explain": "Ngoại lệ 行って → 行った, giống thể て."
+        },
+        {
+          "wrong": "見った",
+          "right": "見た",
+          "explain": "見ます là nhóm II → bỏ ます + た."
+        }
+      ]
+    },
+    {
+      "id": "L19-G2",
+      "title": "Vた ことが あります",
+      "meaning": "Đã từng V",
+      "why": "Để kể trải nghiệm trong đời (đã từng đi Hokkaido, đã từng mặc kimono) và hỏi người khác 「Bạn đã bao giờ… chưa?」 — chủ đề nói chuyện rất phổ biến.",
+      "when": [
+        "Kể trải nghiệm đặc biệt, không thường xuyên.",
+        "Hỏi kinh nghiệm: 〜た ことが ありますか.",
+        "KHÔNG dùng cho việc hằng ngày, hoặc việc có thời điểm cụ thể (きのう, 先週…)."
+      ],
+      "formula": "Vた こと が あります\nVた こと が ありますか\n→ はい、あります。 / いいえ、ありません。(一度も ありません)",
+      "parts": [
+        { "part": "Vた", "role": "Động từ thể た — việc đã trải qua." },
+        { "part": "こと", "role": "Danh từ hoá: 「việc đã V」." },
+        { "part": "が あります", "role": "「có」 → có trải nghiệm đó. Phủ định: ありません." }
+      ],
+      "memoryTip": {
+        "emoji": "🌏",
+        "hook": "Trải nghiệm để đời → 「た ことが あります」!",
+        "meaning": "→ 富士山に 登った ことが あります = tôi đã từng leo núi Phú Sĩ."
+      },
+      "examples": [
+        {
+          "jp": "わたしは 富士山に 登った ことが あります。",
+          "romaji": "Watashi wa Fujisan ni nobotta koto ga arimasu.",
+          "vi": "Tôi đã từng leo núi Phú Sĩ.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "登った", "vi": "đã leo (登ります → 登った)" },
+            { "jp": "ことが あります", "vi": "có trải nghiệm → đã từng" }
+          ]
+        },
+        {
+          "jp": "北海道へ 行った ことが ありますか。 …いいえ、一度も ありません。",
+          "romaji": "Hokkaidō e itta koto ga arimasu ka. … Iie, ichido mo arimasen.",
+          "vi": "Bạn đã từng đi Hokkaido chưa? …Chưa, chưa lần nào.",
+          "context": "Du lịch"
+        },
+        {
+          "jp": "すしを 食べた ことが ありますか。 …はい、あります。",
+          "romaji": "Sushi o tabeta koto ga arimasu ka. … Hai, arimasu.",
+          "vi": "Bạn đã từng ăn sushi chưa? …Rồi, tôi ăn rồi.",
+          "context": "Nhà hàng"
+        },
+        {
+          "jp": "着物を 着た ことが あります。",
+          "romaji": "Kimono o kita koto ga arimasu.",
+          "vi": "Tôi đã từng mặc kimono.",
+          "context": "Văn hoá Nhật",
+          "note": "着ます (mặc) là nhóm II → 着た (kita). Đừng lẫn với 来た (kita — đã đến)."
+        },
+        {
+          "jp": "馬に 乗った ことが ありますか。",
+          "romaji": "Uma ni notta koto ga arimasu ka.",
+          "vi": "Bạn đã từng cưỡi ngựa chưa?",
+          "context": "Làm quen"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "きのう すしを 食べた ことが あります。",
+          "right": "きのう すしを 食べました。",
+          "explain": "Có thời điểm cụ thể (きのう) → chỉ là kể lại việc đã làm, dùng Vました. たことが あります là 「trong đời từng có」."
+        },
+        {
+          "wrong": "毎朝 コーヒーを 飲んだ ことが あります。",
+          "right": "毎朝 コーヒーを 飲みます。",
+          "explain": "Việc hằng ngày không phải 「trải nghiệm」 → không dùng たことが あります."
+        },
+        {
+          "wrong": "北海道へ 行った ことが ありますか。 …いいえ、行きません。",
+          "right": "…いいえ、ありません。",
+          "explain": "Câu hỏi dùng あります thì trả lời bằng あります / ありません."
+        }
+      ]
+    },
+    {
+      "id": "L19-G3",
+      "title": "Vたり、Vたり します",
+      "meaning": "Lúc thì V1, lúc thì V2 / nào là V1, nào là V2 (liệt kê vài việc tiêu biểu)",
+      "why": "Để kể 2–3 việc tiêu biểu trong nhiều việc mình làm, mà không cần kể hết hay theo thứ tự: 「Chủ nhật tôi chơi tennis, xem phim (v.v.)」.",
+      "when": [
+        "Kể hoạt động cuối tuần, ngày nghỉ, chuyến du lịch.",
+        "Khi các hành động không cần đúng thứ tự thời gian (khác với V1て、V2 ở bài 16)."
+      ],
+      "formula": "V1たり、V2たり します\n(quá khứ: V1たり、V2たり しました)",
+      "parts": [
+        { "part": "V1たり、V2たり", "role": "Thể た + り. Là 「ví dụ tiêu biểu」, ngầm hiểu còn việc khác nữa." },
+        { "part": "します", "role": "Bắt buộc ở cuối. Thì của câu do します / しました quyết định." }
+      ],
+      "memoryTip": {
+        "emoji": "🎡",
+        "hook": "「たり、たり します」 — lúc này, lúc kia, còn nữa đấy!",
+        "meaning": "→ Liệt kê vài việc tiêu biểu, không theo thứ tự, luôn kết bằng します."
+      },
+      "examples": [
+        {
+          "jp": "日曜日は テニスを したり、映画を 見たり します。",
+          "romaji": "Nichiyōbi wa tenisu o shitari, eiga o mitari shimasu.",
+          "vi": "Chủ nhật tôi thường chơi tennis, xem phim…",
+          "context": "Cuối tuần",
+          "breakdown": [
+            { "jp": "テニスを したり", "vi": "lúc thì chơi tennis" },
+            { "jp": "映画を 見たり", "vi": "lúc thì xem phim" },
+            { "jp": "します", "vi": "(làm những việc như thế)" }
+          ]
+        },
+        {
+          "jp": "休みの 日は 掃除したり、洗濯したり します。",
+          "romaji": "Yasumi no hi wa sōji shitari, sentaku shitari shimasu.",
+          "vi": "Ngày nghỉ tôi dọn dẹp, giặt giũ…",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "京都で お寺を 見たり、写真を 撮ったり しました。",
+          "romaji": "Kyōto de otera o mitari, shashin o tottari shimashita.",
+          "vi": "Ở Kyoto tôi đã đi ngắm chùa, chụp ảnh…",
+          "context": "Du lịch",
+          "note": "Quá khứ → しました ở cuối."
+        },
+        {
+          "jp": "きのうは デパートで 買い物を したり、友達と 食事したり しました。",
+          "romaji": "Kinō wa depāto de kaimono o shitari, tomodachi to shokuji shitari shimashita.",
+          "vi": "Hôm qua tôi đi mua sắm ở trung tâm thương mại, ăn uống với bạn…",
+          "context": "Mua sắm"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "日曜日は テニスを したり、映画を 見ます。",
+          "right": "日曜日は テニスを したり、映画を 見たり します。",
+          "explain": "Cả hai động từ đều phải ở dạng たり, và cuối câu phải có します."
+        },
+        {
+          "wrong": "京都で お寺を 見たり、写真を 撮ったり ました。",
+          "right": "京都で お寺を 見たり、写真を 撮ったり しました。",
+          "explain": "Thì quá khứ gắn vào します → しました, không phải chỉ ました."
+        },
+        {
+          "wrong": "毎朝 6時に 起きたり、7時に 朝ごはんを 食べたり します。",
+          "right": "毎朝 6時に 起きて、7時に 朝ごはんを 食べます。",
+          "explain": "Chuỗi việc cố định theo thứ tự → dùng V1て、V2 (bài 16). たり dùng để nêu ví dụ tiêu biểu."
+        }
+      ]
+    },
+    {
+      "id": "L19-G4",
+      "title": "いA (bỏ い) → く / なA・N → に + なります",
+      "meaning": "Trở nên, trở thành",
+      "why": "Để nói sự thay đổi: thời tiết đổi (trời lạnh đi), sức khỏe (khỏe lại), trình độ (giỏi lên), tuổi tác, nghề nghiệp mơ ước.",
+      "when": [
+        "Thời tiết, trời đất thay đổi: 寒く なりました, 暗く なりました.",
+        "Người thay đổi: 元気に なりました, 上手に なりました.",
+        "Trở thành: 医者に なります, 25歳に なりました."
+      ],
+      "formula": "いA (bỏ い) + く なります　(寒い → 寒く なります)\n★ いい → よく なります\nなA + に なります　(元気 → 元気に なります)\nN + に なります　(医者 → 医者に なります)",
+      "parts": [
+        { "part": "〜く", "role": "Tính từ い bỏ い thêm く (giống dạng くて ở bài 16)." },
+        { "part": "〜に", "role": "Tính từ な và danh từ + に." },
+        { "part": "なります", "role": "「trở nên / trở thành」. Thường dùng なりました (đã trở nên)." }
+      ],
+      "memoryTip": {
+        "emoji": "🦋",
+        "hook": "い hoá 「く」, な・N hoá 「に」 — rồi 「なります」 là biến hình!",
+        "meaning": "→ 寒く なります / 元気に なります / 医者に なります."
+      },
+      "examples": [
+        {
+          "jp": "寒く なりましたね。",
+          "romaji": "Samuku narimashita ne.",
+          "vi": "Trời đã lạnh rồi nhỉ.",
+          "context": "Thời tiết",
+          "breakdown": [
+            { "jp": "寒く", "vi": "lạnh (寒い → 寒く)" },
+            { "jp": "なりました", "vi": "đã trở nên" }
+          ]
+        },
+        {
+          "jp": "日本語が 上手に なりました。",
+          "romaji": "Nihongo ga jōzu ni narimashita.",
+          "vi": "Tiếng Nhật (của bạn) đã giỏi lên rồi.",
+          "context": "Lớp học"
+        },
+        {
+          "jp": "薬を 飲みましたから、元気に なりました。",
+          "romaji": "Kusuri o nomimashita kara, genki ni narimashita.",
+          "vi": "Vì đã uống thuốc nên tôi khỏe lại rồi.",
+          "context": "Sức khỏe"
+        },
+        {
+          "jp": "わたしは 医者に なりたいです。",
+          "romaji": "Watashi wa isha ni naritai desu.",
+          "vi": "Tôi muốn trở thành bác sĩ.",
+          "context": "Ước mơ"
+        },
+        {
+          "jp": "天気が よく なりました。",
+          "romaji": "Tenki ga yoku narimashita.",
+          "vi": "Thời tiết đã tốt lên rồi.",
+          "context": "Thời tiết",
+          "note": "いい → よく なります."
+        },
+        {
+          "jp": "来月 25歳に なります。",
+          "romaji": "Raigetsu nijūgo-sai ni narimasu.",
+          "vi": "Tháng sau tôi sẽ tròn 25 tuổi.",
+          "context": "Tuổi tác"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "寒いに なりました。 / 寒い なりました。",
+          "right": "寒く なりました。",
+          "explain": "Tính từ い: bỏ い + く なります."
+        },
+        {
+          "wrong": "元気く なりました。",
+          "right": "元気に なりました。",
+          "explain": "元気 là tính từ な → dùng に."
+        },
+        {
+          "wrong": "天気が いく なりました。",
+          "right": "天気が よく なりました。",
+          "explain": "いい là ngoại lệ → よく なります."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "Thể た", "meaning": "Thể て đổi て → た, で → だ", "example": "飲んで → 飲んだ、行って → 行った" },
+    { "pattern": "Vた ことが あります", "meaning": "Đã từng V", "example": "富士山に 登った ことが あります。" },
+    { "pattern": "Vたり、Vたり します", "meaning": "Lúc thì V1, lúc thì V2 (liệt kê tiêu biểu)", "example": "日曜日は テニスを したり、映画を 見たり します。" },
+    { "pattern": "〜く / 〜に なります", "meaning": "Trở nên, trở thành", "example": "寒く なりました。 / 医者に なりたいです。" }
+  ],
+  "exercises": [
+    {
+      "id": "L19-E01",
+      "type": "fill",
+      "grammarPoint": "L19-G1",
+      "question": "Chia sang thể た (gõ kana).",
+      "jp": "書きます（かきます） → ＿＿",
+      "answer": "かいた",
+      "accept": ["書いた", "kaita"],
+      "explanation": "Thể て 書いて → thể た 書いた (て → た)."
+    },
+    {
+      "id": "L19-E02",
+      "type": "fill",
+      "grammarPoint": "L19-G1",
+      "question": "Chia sang thể た (gõ kana).",
+      "jp": "飲みます（のみます） → ＿＿",
+      "answer": "のんだ",
+      "accept": ["飲んだ", "nonda"],
+      "explanation": "Thể て 飲んで → thể た 飲んだ (で → だ)."
+    },
+    {
+      "id": "L19-E03",
+      "type": "fill",
+      "grammarPoint": "L19-G1",
+      "question": "Chia sang thể た (gõ kana).",
+      "jp": "行きます（いきます） → ＿＿",
+      "answer": "いった",
+      "accept": ["行った", "itta"],
+      "hint": "Ngoại lệ giống thể て",
+      "explanation": "行きます: thể て 行って (ngoại lệ) → thể た 行った."
+    },
+    {
+      "id": "L19-E04",
+      "type": "fill",
+      "grammarPoint": "L19-G1",
+      "question": "Chia sang thể た (gõ kana).",
+      "jp": "泳ぎます（およぎます） → ＿＿",
+      "answer": "およいだ",
+      "accept": ["泳いだ", "oyoida"],
+      "explanation": "Thể て 泳いで → thể た 泳いだ (で → だ)."
+    },
+    {
+      "id": "L19-E05",
+      "type": "choice",
+      "grammarPoint": "L19-G1",
+      "question": "Thể た của 「来ます」 đọc là gì?",
+      "options": ["きた", "こた", "くた", "きった"],
+      "answer": "きた",
+      "explanation": "来ます → 来て (きて) → 来た (きた)."
+    },
+    {
+      "id": "L19-E06",
+      "type": "choice",
+      "grammarPoint": "L19-G1",
+      "question": "Thể た của 「見ます」 là gì?",
+      "options": ["見た", "見った", "見んだ", "見いた"],
+      "answer": "見た",
+      "explanation": "見ます là nhóm II → bỏ ます + た: 見た."
+    },
+    {
+      "id": "L19-E07",
+      "type": "fill",
+      "grammarPoint": "L19-G2",
+      "question": "Gõ từ còn thiếu (kana).",
+      "jp": "わたしは 富士山に 登った ＿＿が あります。",
+      "vi": "Tôi đã từng leo núi Phú Sĩ.",
+      "answer": "こと",
+      "explanation": "Đã từng V = Vた こと が あります."
+    },
+    {
+      "id": "L19-E08",
+      "type": "situation",
+      "grammarPoint": "L19-G2",
+      "question": "Bạn được hỏi 「北海道へ 行った ことが ありますか。」. Bạn chưa đi bao giờ. Bạn đáp:",
+      "options": ["いいえ、一度も ありません。", "いいえ、行きません。", "はい、ありません。", "いいえ、行きましょう。"],
+      "answer": "いいえ、一度も ありません。",
+      "explanation": "Câu hỏi 〜ことが ありますか → trả lời bằng あります / ありません. 一度も ありません = chưa lần nào."
+    },
+    {
+      "id": "L19-E09",
+      "type": "fix",
+      "grammarPoint": "L19-G2",
+      "question": "Câu sau dùng sai mẫu. Chọn cách sửa đúng.",
+      "jp": "きのう すしを 食べた ことが あります。",
+      "options": ["きのう すしを 食べました。", "きのう すしを 食べる ことが あります。", "きのう すしを 食べたり します。", "きのう すしを 食べて ことが あります。"],
+      "answer": "きのう すしを 食べました。",
+      "explanation": "Có thời điểm cụ thể (きのう) → chỉ kể việc đã làm: Vました. たことが あります dùng cho trải nghiệm trong đời."
+    },
+    {
+      "id": "L19-E10",
+      "type": "vi-jp",
+      "grammarPoint": "L19-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tôi đã từng mặc kimono.",
+      "options": ["着物を 着た ことが あります。", "着物を 着る ことが あります。", "着物を 着て ことが あります。", "着物を 着た ことを あります。"],
+      "answer": "着物を 着た ことが あります。",
+      "explanation": "Đã từng = thể た (着た) + ことが あります. Thể từ điển + ことが あります mang nghĩa khác (thỉnh thoảng có lúc)."
+    },
+    {
+      "id": "L19-E11",
+      "type": "jp-vi",
+      "grammarPoint": "L19-G2",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "馬に 乗った ことが ありますか。",
+      "romaji": "Uma ni notta koto ga arimasu ka.",
+      "options": [
+        "Bạn đã từng cưỡi ngựa chưa?",
+        "Bạn có cưỡi ngựa được không?",
+        "Hôm qua bạn đã cưỡi ngựa à?",
+        "Bạn có muốn cưỡi ngựa không?"
+      ],
+      "answer": "Bạn đã từng cưỡi ngựa chưa?",
+      "explanation": "Vた ことが ありますか = đã bao giờ V chưa? (hỏi trải nghiệm)."
+    },
+    {
+      "id": "L19-E12",
+      "type": "order",
+      "grammarPoint": "L19-G2",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi đã từng ăn sushi.",
+      "tokens": ["わたしは", "すしを", "食べた", "ことが", "あります"],
+      "explanation": "Vた + ことが あります. Thể た đứng ngay trước こと."
+    },
+    {
+      "id": "L19-E13",
+      "type": "choice",
+      "grammarPoint": "L19-G2",
+      "question": "Câu nào dùng 「Vた ことが あります」 tự nhiên nhất?",
+      "options": [
+        "富士山に 登った ことが あります。",
+        "毎朝 コーヒーを 飲んだ ことが あります。",
+        "きのう 学校へ 行った ことが あります。",
+        "毎日 会社で 働いた ことが あります。"
+      ],
+      "answer": "富士山に 登った ことが あります。",
+      "explanation": "たことが あります dùng cho trải nghiệm đặc biệt. Việc hằng ngày (毎朝, 毎日) hoặc có thời điểm cụ thể (きのう) thì không dùng."
+    },
+    {
+      "id": "L19-E14",
+      "type": "fill",
+      "grammarPoint": "L19-G3",
+      "question": "Chia động từ 見ます cho đúng mẫu (gõ kana).",
+      "jp": "日曜日は テニスを したり、映画を ＿＿ します。",
+      "vi": "Chủ nhật tôi thường chơi tennis, xem phim…",
+      "answer": "みたり",
+      "accept": ["見たり", "mitari"],
+      "explanation": "V1たり、V2たり します — cả hai động từ đều ở dạng たり: 見た + り."
+    },
+    {
+      "id": "L19-E15",
+      "type": "fix",
+      "grammarPoint": "L19-G3",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "休みの 日は 掃除したり、洗濯します。",
+      "options": [
+        "休みの 日は 掃除したり、洗濯したり します。",
+        "休みの 日は 掃除したり、洗濯したり。",
+        "休みの 日は 掃除たり、洗濯たり します。",
+        "休みの 日は 掃除したり、洗濯したり なります。"
+      ],
+      "answer": "休みの 日は 掃除したり、洗濯したり します。",
+      "explanation": "Cả hai động từ đều ở dạng たり và cuối câu phải có します."
+    },
+    {
+      "id": "L19-E16",
+      "type": "jp-vi",
+      "grammarPoint": "L19-G3",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "京都で お寺を 見たり、写真を 撮ったり しました。",
+      "romaji": "Kyōto de otera o mitari, shashin o tottari shimashita.",
+      "options": [
+        "Ở Kyoto tôi đã đi ngắm chùa, chụp ảnh…",
+        "Ở Kyoto tôi muốn ngắm chùa và chụp ảnh.",
+        "Ở Kyoto không được ngắm chùa và chụp ảnh.",
+        "Ở Kyoto tôi sẽ ngắm chùa rồi chụp ảnh."
+      ],
+      "answer": "Ở Kyoto tôi đã đi ngắm chùa, chụp ảnh…",
+      "explanation": "Vたり、Vたり しました = đã làm những việc như V1, V2 (quá khứ vì しました)."
+    },
+    {
+      "id": "L19-E17",
+      "type": "situation",
+      "grammarPoint": "L19-G3",
+      "question": "Đồng nghiệp hỏi cuối tuần bạn thường làm gì. Bạn muốn kể vài việc tiêu biểu: mua sắm, xem phim. Bạn nói:",
+      "options": [
+        "買い物を したり、映画を 見たり します。",
+        "買い物を したり、映画を 見ます。",
+        "買い物を したり、映画を 見たり なります。",
+        "買い物を した ことが、映画を 見た ことが あります。"
+      ],
+      "answer": "買い物を したり、映画を 見たり します。",
+      "explanation": "Liệt kê vài hoạt động tiêu biểu → Vたり、Vたり します."
+    },
+    {
+      "id": "L19-E18",
+      "type": "pattern",
+      "grammarPoint": "L19-G3",
+      "question": "Bạn muốn kể vài việc tiêu biểu mình làm ở buổi tiệc (không cần theo thứ tự, còn việc khác nữa). Chọn mẫu phù hợp.",
+      "options": ["Vたり、Vたり します", "Vた ことが あります", "V1て から、V2", "〜く なります"],
+      "answer": "Vたり、Vたり します",
+      "explanation": "Nêu ví dụ tiêu biểu, không theo thứ tự → Vたり、Vたり します."
+    },
+    {
+      "id": "L19-E19",
+      "type": "identify",
+      "grammarPoint": "L19-G3",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "きのうは デパートで 買い物を したり、友達と 食事したり しました。",
+      "romaji": "Kinō wa depāto de kaimono o shitari, tomodachi to shokuji shitari shimashita.",
+      "vi": "Hôm qua tôi đi mua sắm ở trung tâm thương mại, ăn uống với bạn…",
+      "options": ["Vたり、Vたり します (liệt kê)", "Vた ことが あります (kinh nghiệm)", "V1て、V2 (chuỗi hành động)", "〜に なります (trở nên)"],
+      "answer": "Vたり、Vたり します (liệt kê)",
+      "explanation": "したり、食事したり しました → liệt kê vài việc tiêu biểu đã làm."
+    },
+    {
+      "id": "L19-E20",
+      "type": "fill",
+      "grammarPoint": "L19-G4",
+      "question": "Gõ phần còn thiếu (kana).",
+      "jp": "寒＿＿ なりましたね。",
+      "vi": "Trời đã lạnh rồi nhỉ.",
+      "answer": "く",
+      "explanation": "Tính từ い: bỏ い + く なります: 寒く なりました."
+    },
+    {
+      "id": "L19-E21",
+      "type": "particle",
+      "grammarPoint": "L19-G4",
+      "question": "Chọn từ phù hợp.",
+      "jp": "薬を 飲みましたから、元気＿＿ なりました。",
+      "romaji": "Kusuri o nomimashita kara, genki ___ narimashita.",
+      "vi": "Vì đã uống thuốc nên tôi khỏe lại rồi.",
+      "options": ["に", "く", "で", "が"],
+      "answer": "に",
+      "explanation": "元気 là tính từ な → 元気に なります."
+    },
+    {
+      "id": "L19-E22",
+      "type": "fix",
+      "grammarPoint": "L19-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "天気が いく なりました。",
+      "options": ["天気が よく なりました。", "天気が いいに なりました。", "天気が いい なりました。", "天気が よくて なりました。"],
+      "answer": "天気が よく なりました。",
+      "explanation": "いい là ngoại lệ: いい → よく なります."
+    },
+    {
+      "id": "L19-E23",
+      "type": "vi-jp",
+      "grammarPoint": "L19-G4",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tôi muốn trở thành bác sĩ.",
+      "options": ["わたしは 医者に なりたいです。", "わたしは 医者く なりたいです。", "わたしは 医者が なりたいです。", "わたしは 医者で なりたいです。"],
+      "answer": "わたしは 医者に なりたいです。",
+      "explanation": "Danh từ + に なります = trở thành N. なります + たい → なりたいです."
+    },
+    {
+      "id": "L19-E24",
+      "type": "jp-vi",
+      "grammarPoint": "L19-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "日本語が 上手に なりました。",
+      "romaji": "Nihongo ga jōzu ni narimashita.",
+      "options": [
+        "Tiếng Nhật đã giỏi lên rồi.",
+        "Tiếng Nhật rất giỏi.",
+        "Tôi muốn giỏi tiếng Nhật.",
+        "Tôi đã từng học tiếng Nhật."
+      ],
+      "answer": "Tiếng Nhật đã giỏi lên rồi.",
+      "explanation": "上手に なりました = đã trở nên giỏi (có sự thay đổi)."
+    },
+    {
+      "id": "L19-E25",
+      "type": "situation",
+      "grammarPoint": "L19-G4",
+      "question": "Đang chơi ở công viên thì trời tối dần. Bạn rủ bạn về. Bạn nói:",
+      "options": [
+        "暗く なりましたね。 帰りましょう。",
+        "暗いに なりましたね。 帰りましょう。",
+        "暗く しましたね。 帰りましょう。",
+        "暗く なりたいですね。 帰りましょう。"
+      ],
+      "answer": "暗く なりましたね。 帰りましょう。",
+      "explanation": "暗い (tính từ い) → 暗く なりました = trời đã tối."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 19 }
+}

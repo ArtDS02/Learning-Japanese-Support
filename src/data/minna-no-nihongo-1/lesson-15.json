@@ -1,0 +1,673 @@
+{
+  "lesson": 15,
+  "title": "Xin phép, cấm đoán và trạng thái",
+  "titleJp": "ご家族は？",
+  "topic": "Vても いいですか · Vては いけません · Vて います (trạng thái, nghề nghiệp) · 知って います / 知りません",
+  "description": "Học xong bài này bạn biết xin phép (「Tôi chụp ảnh được không?」), hiểu biển cấm, và kể về bản thân, gia đình: đã kết hôn chưa, sống ở đâu, làm việc ở đâu, có biết ai/điều gì không.",
+  "objectives": [
+    "Xin phép và cho phép bằng Vても いいですか / Vても いいです.",
+    "Nói điều bị cấm bằng Vては いけません.",
+    "Dùng Vて います để nói trạng thái kéo dài: 結婚して います, 住んで います, 持って います.",
+    "Nói nghề nghiệp, nơi làm việc, việc làm thường xuyên bằng 〜で 働いて います, 〜を 教えて います….",
+    "Dùng đúng 知って います (biết) và 知りません (không biết)."
+  ],
+  "keyPoints": [
+    "Vても いいですか = 「Tôi V có được không?」. Đáp: ええ、いいですよ / ええ、どうぞ.",
+    "Vては いけません = 「Không được V」 (ては đọc 「te wa」). Hay thấy ở nội quy, biển báo.",
+    "ても đi với いい, ては đi với いけません — đừng lẫn.",
+    "Vて います ngoài 「đang làm」 còn nghĩa: trạng thái còn lại sau một hành động (結婚して います = đã có gia đình) và thói quen / nghề nghiệp (銀行で 働いて います).",
+    "住みます dùng に: 大阪に 住んで います. 働きます dùng で: IMCで 働いて います.",
+    "Biết = 知って います, KHÔNG biết = 知りません (không nói 知って いません)."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L15-G1",
+      "title": "Vても いいですか / Vても いいです",
+      "meaning": "Tôi V có được không? / V cũng được",
+      "why": "Ở Nhật, trước khi chụp ảnh, ngồi xuống, mở cửa sổ… người ta thường xin phép. Mẫu này giúp bạn hỏi xin phép lịch sự và cho phép người khác.",
+      "when": [
+        "Xin phép trước khi làm việc gì: 「Tôi ngồi đây được không?」.",
+        "Cho phép người khác: 「Viết bằng bút chì cũng được」."
+      ],
+      "formula": "Vて も いいですか (xin phép)\n→ ええ、いいですよ。 / ええ、どうぞ。\n→ すみません、ちょっと…。\nVて も いいです (cho phép)",
+      "parts": [
+        { "part": "Vて", "role": "Động từ thể て — việc mình muốn làm." },
+        { "part": "も", "role": "「…cũng」." },
+        { "part": "いいですか", "role": "「được không?」 — ghép lại: 「V cũng được chứ?」 = xin phép." },
+        { "part": "すみません、ちょっと…", "role": "Cách từ chối nhẹ nhàng, không cần nói hết câu." }
+      ],
+      "memoryTip": {
+        "emoji": "🙋",
+        "hook": "Xin phép thì 「ても いいですか」 — 「…cũng được chứ?」",
+        "meaning": "→ 写真を 撮っても いいですか = Tôi chụp ảnh có được không?"
+      },
+      "examples": [
+        {
+          "jp": "写真を 撮っても いいですか。 …ええ、いいですよ。",
+          "romaji": "Shashin o totte mo ii desu ka. … Ē, ii desu yo.",
+          "vi": "Tôi chụp ảnh có được không? …Vâng, được chứ.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "写真を 撮って", "vi": "chụp ảnh (撮ります → 撮って)" },
+            { "jp": "も いいですか", "vi": "cũng được chứ? → có được không?" },
+            { "jp": "いいですよ", "vi": "được mà" }
+          ]
+        },
+        {
+          "jp": "この パンフレットを もらっても いいですか。 …ええ、どうぞ。",
+          "romaji": "Kono panfuretto o moratte mo ii desu ka. … Ē, dōzo.",
+          "vi": "Tôi lấy tờ giới thiệu này được không? …Vâng, xin mời.",
+          "context": "Triển lãm, cửa hàng"
+        },
+        {
+          "jp": "ここに 座っても いいですか。 …すみません、ちょっと…。",
+          "romaji": "Koko ni suwatte mo ii desu ka. … Sumimasen, chotto….",
+          "vi": "Tôi ngồi đây được không? …Xin lỗi, chỗ này thì hơi…",
+          "context": "Trên tàu, quán ăn",
+          "note": "すみません、ちょっと… là cách từ chối lịch sự kiểu Nhật — không cần nói rõ lý do."
+        },
+        {
+          "jp": "窓を 開けても いいですか。 …ええ、どうぞ。",
+          "romaji": "Mado o akete mo ii desu ka. … Ē, dōzo.",
+          "vi": "Tôi mở cửa sổ được không? …Vâng, cứ tự nhiên.",
+          "context": "Văn phòng"
+        },
+        {
+          "jp": "答えは 鉛筆で 書いても いいです。",
+          "romaji": "Kotae wa enpitsu de kaite mo ii desu.",
+          "vi": "Câu trả lời viết bằng bút chì cũng được.",
+          "context": "Trường học (cho phép)"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "写真を 撮りても いいですか。",
+          "right": "写真を 撮っても いいですか。",
+          "explain": "撮ります là nhóm I (り) → 撮って. Chia sai thể て là sai cả mẫu."
+        },
+        {
+          "wrong": "写真を 撮っても いいですか。 …いいえ、撮っては いけません。 (nói với khách, với cấp trên)",
+          "right": "写真を 撮っても いいですか。 …すみません、ちょっと…。",
+          "explain": "Đáp thẳng 「không được」 nghe khá gắt. Trong giao tiếp thường nên từ chối mềm: すみません、ちょっと…."
+        }
+      ]
+    },
+    {
+      "id": "L15-G2",
+      "title": "Vては いけません",
+      "meaning": "Không được V (cấm)",
+      "why": "Để nói hoặc hiểu các điều cấm: nội quy trường học, biển báo ở bảo tàng, quy định ở nơi làm việc.",
+      "when": [
+        "Nói quy định, luật lệ: 「Ở đây không được hút thuốc」.",
+        "Trả lời ngắn khi bị xin phép một việc bị cấm: いいえ、いけません (người có thẩm quyền nói)."
+      ],
+      "formula": "Vて は いけません",
+      "parts": [
+        { "part": "Vて", "role": "Động từ thể て — việc bị cấm." },
+        { "part": "は", "role": "Trợ từ, đọc 「wa」 → ては đọc 「te wa」." },
+        { "part": "いけません", "role": "「không được, không xong」 → cấm." }
+      ],
+      "memoryTip": {
+        "emoji": "🚫",
+        "hook": "Thấy 「ては いけません」 là thấy biển CẤM!",
+        "meaning": "→ Vては いけません = không được V. (ても đi với いい, ては đi với いけません.)"
+      },
+      "examples": [
+        {
+          "jp": "ここで たばこを 吸っては いけません。",
+          "romaji": "Koko de tabako o sutte wa ikemasen.",
+          "vi": "Không được hút thuốc ở đây.",
+          "context": "Nơi công cộng",
+          "breakdown": [
+            { "jp": "たばこを 吸って", "vi": "hút thuốc (吸います → 吸って)" },
+            { "jp": "は いけません", "vi": "không được" }
+          ]
+        },
+        {
+          "jp": "美術館で 写真を 撮っては いけません。",
+          "romaji": "Bijutsukan de shashin o totte wa ikemasen.",
+          "vi": "Không được chụp ảnh trong bảo tàng mỹ thuật.",
+          "context": "Du lịch"
+        },
+        {
+          "jp": "教室で 物を 食べては いけません。",
+          "romaji": "Kyōshitsu de mono o tabete wa ikemasen.",
+          "vi": "Không được ăn uống trong lớp học.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "すみません、ここに 車を 止めても いいですか。 …いいえ、いけません。",
+          "romaji": "Sumimasen, koko ni kuruma o tomete mo ii desu ka. … Iie, ikemasen.",
+          "vi": "Xin lỗi, tôi đỗ xe ở đây được không? …Không, không được.",
+          "context": "Bãi xe (nhân viên trả lời)",
+          "note": "Người có thẩm quyền (bảo vệ, nhân viên) có thể đáp gọn いいえ、いけません."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "ここで たばこを 吸っても いけません。",
+          "right": "ここで たばこを 吸っては いけません。",
+          "explain": "Cấm → ては いけません. ても chỉ đi với いいです (cho phép)."
+        },
+        {
+          "wrong": "Koko de tabako o sutte ha ikemasen.",
+          "right": "Koko de tabako o sutte wa ikemasen.",
+          "explain": "は trong ては là trợ từ → đọc 「wa」."
+        },
+        {
+          "explain": "Không dùng Vては いけません để nói với thầy cô, cấp trên (nghe như ra lệnh cấm). Mẫu này hợp với nội quy, biển báo, hoặc người có quyền nói với người khác."
+        }
+      ]
+    },
+    {
+      "id": "L15-G3",
+      "title": "Vて います (trạng thái kết quả)",
+      "meaning": "Đã V và trạng thái đó vẫn còn (đang có gia đình, đang sống ở…, đang có…)",
+      "why": "Một số hành động xảy ra một lần nhưng kết quả kéo dài: kết hôn, đến sống ở đâu, mua/có đồ vật, biết thông tin. Muốn nói 「hiện giờ tình trạng là vậy」 thì dùng Vて います.",
+      "when": [
+        "Tình trạng hôn nhân: 結婚して います.",
+        "Nơi đang sống: 〜に 住んで います.",
+        "Sở hữu: 〜を 持って います (có xe, có máy tính…).",
+        "Biết điều gì: 〜を 知って います."
+      ],
+      "formula": "Vて います\n(N: địa điểm) に 住んで います",
+      "parts": [
+        { "part": "Vて", "role": "Hành động đã xảy ra (kết hôn, bắt đầu sống, mua/cầm…)." },
+        { "part": "います", "role": "Kết quả của hành động đó vẫn còn tới bây giờ." },
+        { "part": "に (住みます)", "role": "Nơi sống dùng trợ từ に, không dùng で." }
+      ],
+      "memoryTip": {
+        "emoji": "📸",
+        "hook": "Làm một lần, 「ảnh chụp」 kết quả còn mãi → Vて います!",
+        "meaning": "→ 結婚して います = đã cưới và bây giờ vẫn đang có gia đình."
+      },
+      "examples": [
+        {
+          "jp": "わたしは 結婚して います。",
+          "romaji": "Watashi wa kekkon shite imasu.",
+          "vi": "Tôi đã kết hôn (hiện đang có gia đình).",
+          "context": "Gia đình",
+          "note": "Không phải 「đang làm đám cưới」!"
+        },
+        {
+          "jp": "ミラーさんは 大阪に 住んで います。",
+          "romaji": "Mirā-san wa Ōsaka ni sunde imasu.",
+          "vi": "Anh Miller đang sống ở Osaka.",
+          "context": "Nơi ở",
+          "breakdown": [
+            { "jp": "大阪に", "vi": "ở Osaka (nơi sống dùng に)" },
+            { "jp": "住んで います", "vi": "đang sống (住みます → 住んで)" }
+          ]
+        },
+        {
+          "jp": "姉は ハノイに 住んで います。",
+          "romaji": "Ane wa Hanoi ni sunde imasu.",
+          "vi": "Chị gái tôi đang sống ở Hà Nội.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "車を 持って いますか。 …いいえ、持って いません。",
+          "romaji": "Kuruma o motte imasu ka. … Iie, motte imasen.",
+          "vi": "Anh có xe hơi không? …Không, tôi không có.",
+          "context": "Sinh hoạt",
+          "note": "持って います = đang sở hữu; phủ định: 持って いません."
+        },
+        {
+          "jp": "サントスさんの 電話番号を 知って いますか。 …はい、知って います。",
+          "romaji": "Santosu-san no denwa bangō o shitte imasu ka. … Hai, shitte imasu.",
+          "vi": "Bạn có biết số điện thoại của anh Santos không? …Có, tôi biết.",
+          "context": "Công việc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "ミラーさんは 大阪で 住んで います。",
+          "right": "ミラーさんは 大阪に 住んで います。",
+          "explain": "住みます đi với に (chỗ mình 「ở lại」), không đi với で."
+        },
+        {
+          "wrong": "わたしは 結婚します。 (muốn nói 「Tôi đã có gia đình」)",
+          "right": "わたしは 結婚して います。",
+          "explain": "結婚します = SẼ kết hôn. 結婚しました = đã cưới (kể sự kiện). Nói tình trạng hiện tại → 結婚して います."
+        }
+      ]
+    },
+    {
+      "id": "L15-G4",
+      "title": "Vて います (thói quen, nghề nghiệp)",
+      "meaning": "(Thường xuyên / hiện nay) làm V — nói nghề, nơi làm, việc đang học",
+      "why": "Để giới thiệu công việc, việc học của mình và người khác: 「Tôi làm ở ngân hàng」, 「Anh tôi dạy tiếng Anh ở trường cấp ba」, và nói công ty/cửa hàng làm, bán gì.",
+      "when": [
+        "Nói nơi làm việc: 〜で 働いて います.",
+        "Nói nghề, việc học lâu dài: 〜を 教えて います, 〜を 勉強して います.",
+        "Công ty sản xuất gì, cửa hàng bán gì: 〜を 作って います, 〜を 売って います."
+      ],
+      "formula": "(nơi) で 働いて います\n(nơi) で N を Vて います",
+      "parts": [
+        { "part": "で", "role": "Nơi diễn ra công việc (công ty, trường, cửa hàng)." },
+        { "part": "Vて います", "role": "Việc làm lặp đi lặp lại, kéo dài trong hiện tại (không nhất thiết đang làm đúng lúc nói)." }
+      ],
+      "memoryTip": {
+        "emoji": "💼",
+        "hook": "Làm ở đâu thì 「で 働いて います」!",
+        "meaning": "→ IMCで 働いて います = Tôi làm việc ở công ty IMC (công việc hiện tại)."
+      },
+      "examples": [
+        {
+          "jp": "わたしは IMCで 働いて います。",
+          "romaji": "Watashi wa IMC de hataraite imasu.",
+          "vi": "Tôi làm việc ở công ty IMC.",
+          "context": "Công việc",
+          "breakdown": [
+            { "jp": "IMCで", "vi": "ở IMC (nơi làm việc)" },
+            { "jp": "働いて います", "vi": "làm việc (働きます → 働いて)" }
+          ]
+        },
+        {
+          "jp": "兄は 高校で 英語を 教えて います。",
+          "romaji": "Ani wa kōkō de Eigo o oshiete imasu.",
+          "vi": "Anh trai tôi dạy tiếng Anh ở trường cấp ba.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "カリナさんは 富士大学で 美術を 勉強して います。",
+          "romaji": "Karina-san wa Fuji Daigaku de bijutsu o benkyō shite imasu.",
+          "vi": "Karina đang học mỹ thuật ở Đại học Fuji.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "IMCは コンピューターソフトを 作って います。",
+          "romaji": "IMC wa konpyūtā sofuto o tsukutte imasu.",
+          "vi": "Công ty IMC sản xuất phần mềm máy tính.",
+          "context": "Công ty"
+        },
+        {
+          "jp": "あの スーパーで ベトナムの コーヒーを 売って います。",
+          "romaji": "Ano sūpā de Betonamu no kōhī o utte imasu.",
+          "vi": "Siêu thị kia có bán cà phê Việt Nam.",
+          "context": "Mua sắm"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "わたしは IMCに 働いて います。",
+          "right": "わたしは IMCで 働いて います。",
+          "explain": "働きます là hành động diễn ra ở đâu đó → dùng で. (Đừng lẫn với 住みます → に.)"
+        },
+        {
+          "wrong": "(giới thiệu nghề hiện tại) 兄は 高校で 英語を 教えます。",
+          "right": "兄は 高校で 英語を 教えて います。",
+          "explain": "Nói công việc đang làm hiện nay thì dùng Vて います cho tự nhiên. 教えます thường mang nghĩa 「sẽ dạy」."
+        }
+      ]
+    },
+    {
+      "id": "L15-G5",
+      "title": "知って います / 知りません",
+      "meaning": "Biết / Không biết",
+      "why": "Động từ 「biết」 rất hay dùng nhưng có bẫy: khẳng định dùng Vて います, còn phủ định lại dùng thể ます thường.",
+      "when": [
+        "Hỏi ai đó có biết người, địa chỉ, số điện thoại, cửa hàng… không.",
+        "Trả lời 「tôi biết / tôi không biết」."
+      ],
+      "formula": "N を 知って いますか\n→ はい、知って います。\n→ いいえ、知りません。",
+      "parts": [
+        { "part": "知ります", "role": "「biết」 — nhóm I (り) → thể て: 知って." },
+        { "part": "知って います", "role": "Biết (đã có thông tin trong đầu — trạng thái)." },
+        { "part": "知りません", "role": "Không biết. KHÔNG nói 知って いません." }
+      ],
+      "memoryTip": {
+        "emoji": "🧠",
+        "hook": "Biết thì dài 「知って います」, không biết thì gọn 「知りません」!",
+        "meaning": "→ Phủ định của 知って います là 知りません."
+      },
+      "examples": [
+        {
+          "jp": "山田さんを 知って いますか。 …はい、知って います。",
+          "romaji": "Yamada-san o shitte imasu ka. … Hai, shitte imasu.",
+          "vi": "Bạn có biết anh Yamada không? …Có, tôi biết.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "木村さんの 住所を 知って いますか。 …いいえ、知りません。",
+          "romaji": "Kimura-san no jūsho o shitte imasu ka. … Iie, shirimasen.",
+          "vi": "Bạn có biết địa chỉ của chị Kimura không? …Không, tôi không biết.",
+          "context": "Hỏi thông tin",
+          "breakdown": [
+            { "jp": "住所", "vi": "địa chỉ" },
+            { "jp": "知りません", "vi": "không biết" }
+          ]
+        },
+        {
+          "jp": "この 歌を 知って いますか。 …ええ、知って います。",
+          "romaji": "Kono uta o shitte imasu ka. … Ē, shitte imasu.",
+          "vi": "Bạn biết bài hát này không? …Vâng, tôi biết.",
+          "context": "Giải trí"
+        },
+        {
+          "jp": "すみません、郵便局は どこですか。 …すみません、知りません。",
+          "romaji": "Sumimasen, yūbinkyoku wa doko desu ka. … Sumimasen, shirimasen.",
+          "vi": "Xin lỗi, bưu điện ở đâu ạ? …Xin lỗi, tôi không biết.",
+          "context": "Hỏi đường"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "いいえ、知って いません。",
+          "right": "いいえ、知りません。",
+          "explain": "Đây là ngoại lệ phải nhớ: 「không biết」 luôn là 知りません."
+        },
+        {
+          "wrong": "山田さんを 知りますか。",
+          "right": "山田さんを 知って いますか。",
+          "explain": "Hỏi 「có biết không」 (trạng thái hiện tại) → 知って いますか."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "Vても いいですか", "meaning": "Tôi V có được không? (xin phép)", "example": "写真を 撮っても いいですか。" },
+    { "pattern": "Vては いけません", "meaning": "Không được V (cấm)", "example": "ここで たばこを 吸っては いけません。" },
+    { "pattern": "Vて います (trạng thái)", "meaning": "Đã V, trạng thái vẫn còn", "example": "ミラーさんは 大阪に 住んで います。" },
+    { "pattern": "〜で Vて います (nghề nghiệp)", "meaning": "Làm việc / dạy / học… (thường xuyên)", "example": "わたしは IMCで 働いて います。" },
+    { "pattern": "知って います / 知りません", "meaning": "Biết / Không biết", "example": "木村さんの 住所を 知って いますか。 …いいえ、知りません。" }
+  ],
+  "exercises": [
+    {
+      "id": "L15-E01",
+      "type": "fill",
+      "grammarPoint": "L15-G1",
+      "question": "Gõ phần còn thiếu để thành câu xin phép (kana).",
+      "jp": "この 本を 借り＿＿ いいですか。",
+      "vi": "Tôi mượn quyển sách này được không?",
+      "answer": "ても",
+      "hint": "借ります là nhóm II",
+      "explanation": "Xin phép = Vても いいですか. 借ります (nhóm II) → 借りて → 借りても いいですか."
+    },
+    {
+      "id": "L15-E02",
+      "type": "situation",
+      "grammarPoint": "L15-G1",
+      "question": "Trên tàu, bạn thấy ghế trống cạnh một người. Bạn muốn hỏi xem mình ngồi được không. Bạn nói:",
+      "options": ["ここに 座っても いいですか。", "ここに 座っては いけません。", "ここに 座って ください。", "ここに 座って います。"],
+      "answer": "ここに 座っても いいですか。",
+      "explanation": "Xin phép → Vても いいですか. 座ります (り) → 座って."
+    },
+    {
+      "id": "L15-E03",
+      "type": "jp-vi",
+      "grammarPoint": "L15-G1",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "この パンフレットを もらっても いいですか。",
+      "romaji": "Kono panfuretto o moratte mo ii desu ka.",
+      "options": [
+        "Tôi lấy tờ giới thiệu này được không?",
+        "Không được lấy tờ giới thiệu này.",
+        "Hãy lấy tờ giới thiệu này.",
+        "Tôi đang lấy tờ giới thiệu này."
+      ],
+      "answer": "Tôi lấy tờ giới thiệu này được không?",
+      "explanation": "Vても いいですか = tôi V có được không? (もらいます → もらって)."
+    },
+    {
+      "id": "L15-E04",
+      "type": "choice",
+      "grammarPoint": "L15-G1",
+      "question": "Du khách hỏi bạn 「写真を 撮っても いいですか。」. Bạn đồng ý. Bạn đáp:",
+      "options": ["ええ、いいですよ。", "ええ、撮っては いけません。", "いいえ、いいですよ。", "ええ、撮りましょうか。"],
+      "answer": "ええ、いいですよ。",
+      "explanation": "Cho phép → ええ、いいですよ (hoặc ええ、どうぞ)."
+    },
+    {
+      "id": "L15-E05",
+      "type": "order",
+      "grammarPoint": "L15-G1",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi mở cửa sổ được không?",
+      "tokens": ["窓", "を", "開けて", "も", "いいですか"],
+      "explanation": "N を + Vて + も いいですか."
+    },
+    {
+      "id": "L15-E06",
+      "type": "particle",
+      "grammarPoint": "L15-G2",
+      "question": "Chọn trợ từ phù hợp.",
+      "jp": "ここで たばこを 吸って＿＿ いけません。",
+      "romaji": "Koko de tabako o sutte ___ ikemasen.",
+      "vi": "Không được hút thuốc ở đây.",
+      "options": ["は", "も", "が", "を"],
+      "answer": "は",
+      "explanation": "Cấm = Vては いけません. ても chỉ đi với いいです."
+    },
+    {
+      "id": "L15-E07",
+      "type": "vi-jp",
+      "grammarPoint": "L15-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Không được chụp ảnh trong bảo tàng mỹ thuật.",
+      "options": [
+        "美術館で 写真を 撮っては いけません。",
+        "美術館で 写真を 撮っても いいです。",
+        "美術館で 写真を 撮っても いけません。",
+        "美術館で 写真を 撮りては いけません。"
+      ],
+      "answer": "美術館で 写真を 撮っては いけません。",
+      "explanation": "Cấm → ては いけません. 撮ります (り) → 撮って."
+    },
+    {
+      "id": "L15-E08",
+      "type": "fix",
+      "grammarPoint": "L15-G2",
+      "question": "Câu nội quy sau bị sai. Chọn cách sửa đúng.",
+      "jp": "教室で 物を 食べても いけません。",
+      "options": [
+        "教室で 物を 食べては いけません。",
+        "教室で 物を 食べては いいです。",
+        "教室で 物を 食べて いけません。",
+        "教室で 物を 食べるは いけません。"
+      ],
+      "answer": "教室で 物を 食べては いけません。",
+      "explanation": "Cấm dùng ては いけません — は, không phải も."
+    },
+    {
+      "id": "L15-E09",
+      "type": "pattern",
+      "grammarPoint": "L15-G2",
+      "question": "Bạn là nhân viên, muốn nói với khách 「Không được vào phòng này」. Chọn mẫu phù hợp.",
+      "options": ["Vては いけません", "Vても いいです", "Vて ください", "Vましょうか"],
+      "answer": "Vては いけません",
+      "explanation": "Nói điều bị cấm → Vては いけません (この 部屋に 入っては いけません)."
+    },
+    {
+      "id": "L15-E10",
+      "type": "identify",
+      "grammarPoint": "L15-G2",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "この 部屋に 入っては いけません。",
+      "romaji": "Kono heya ni haitte wa ikemasen.",
+      "vi": "Không được vào phòng này.",
+      "options": ["Vては いけません (cấm)", "Vても いいです (cho phép)", "Vて います (trạng thái)", "Vて ください (nhờ vả)"],
+      "answer": "Vては いけません (cấm)",
+      "explanation": "入っては いけません = không được vào → mẫu cấm đoán."
+    },
+    {
+      "id": "L15-E11",
+      "type": "particle",
+      "grammarPoint": "L15-G3",
+      "question": "Chọn trợ từ phù hợp.",
+      "jp": "ミラーさんは 大阪＿＿ 住んで います。",
+      "romaji": "Mirā-san wa Ōsaka ___ sunde imasu.",
+      "vi": "Anh Miller đang sống ở Osaka.",
+      "options": ["に", "で", "を", "が"],
+      "answer": "に",
+      "explanation": "住みます đi với に: 大阪に 住んで います."
+    },
+    {
+      "id": "L15-E12",
+      "type": "jp-vi",
+      "grammarPoint": "L15-G3",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "わたしは 結婚して います。",
+      "romaji": "Watashi wa kekkon shite imasu.",
+      "options": [
+        "Tôi đã kết hôn (đang có gia đình).",
+        "Tôi đang tổ chức đám cưới.",
+        "Tôi sẽ kết hôn.",
+        "Tôi chưa kết hôn."
+      ],
+      "answer": "Tôi đã kết hôn (đang có gia đình).",
+      "explanation": "結婚して います là trạng thái kết quả: đã cưới và hiện vẫn có gia đình — không phải 「đang làm đám cưới」."
+    },
+    {
+      "id": "L15-E13",
+      "type": "fill",
+      "grammarPoint": "L15-G3",
+      "question": "Chia động từ 住みます cho đúng (gõ kana).",
+      "jp": "姉は ハノイに ＿＿ います。",
+      "vi": "Chị gái tôi đang sống ở Hà Nội.",
+      "answer": "すんで",
+      "accept": ["住んで", "sunde"],
+      "hint": "住みます",
+      "explanation": "住みます (み) → 住んで. Trạng thái đang sống → 住んで います."
+    },
+    {
+      "id": "L15-E14",
+      "type": "vi-jp",
+      "grammarPoint": "L15-G3",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tôi có xe hơi.",
+      "options": ["車を 持って います。", "車を 持ちます。", "車が 持って います。", "車を 持って ください。"],
+      "answer": "車を 持って います。",
+      "explanation": "Sở hữu (trạng thái) → 持って います. 車 là tân ngữ nên dùng を."
+    },
+    {
+      "id": "L15-E15",
+      "type": "situation",
+      "grammarPoint": "L15-G3",
+      "question": "Đồng nghiệp người Nhật hỏi 「結婚して いますか。」. Bạn còn độc thân. Bạn đáp:",
+      "options": ["いいえ、結婚して いません。", "いいえ、結婚しません。", "いいえ、知りません。", "いいえ、結婚しては いけません。"],
+      "answer": "いいえ、結婚して いません。",
+      "explanation": "Phủ định trạng thái → Vて いません. 結婚しません lại nghĩa là 「sẽ không kết hôn」."
+    },
+    {
+      "id": "L15-E16",
+      "type": "particle",
+      "grammarPoint": "L15-G4",
+      "question": "Chọn trợ từ phù hợp.",
+      "jp": "わたしは IMC＿＿ 働いて います。",
+      "romaji": "Watashi wa IMC ___ hataraite imasu.",
+      "vi": "Tôi làm việc ở công ty IMC.",
+      "options": ["で", "に", "を", "へ"],
+      "answer": "で",
+      "explanation": "Nơi diễn ra công việc → で: IMCで 働いて います."
+    },
+    {
+      "id": "L15-E17",
+      "type": "vi-jp",
+      "grammarPoint": "L15-G4",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Anh trai tôi dạy tiếng Anh ở trường cấp ba.",
+      "options": [
+        "兄は 高校で 英語を 教えて います。",
+        "兄は 高校に 英語を 教えて います。",
+        "兄は 高校で 英語を 習って います。",
+        "兄は 高校で 英語を 教えて ください。"
+      ],
+      "answer": "兄は 高校で 英語を 教えて います。",
+      "explanation": "Nghề nghiệp hiện tại → Vて います; nơi làm → で. 習います là 「học」, sai nghĩa."
+    },
+    {
+      "id": "L15-E18",
+      "type": "situation",
+      "grammarPoint": "L15-G4",
+      "question": "Trong buổi làm quen, người ta hỏi bạn làm ở đâu. Bạn làm ở ngân hàng. Bạn nói:",
+      "options": ["銀行で 働いて います。", "銀行に 働いて います。", "銀行で 働いては いけません。", "銀行を 働いて います。"],
+      "answer": "銀行で 働いて います。",
+      "explanation": "Nói nơi làm việc → 〜で 働いて います."
+    },
+    {
+      "id": "L15-E19",
+      "type": "order",
+      "grammarPoint": "L15-G4",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Karina đang học mỹ thuật ở Đại học Fuji.",
+      "tokens": ["カリナさん", "は", "富士大学", "で", "美術", "を", "勉強して", "います"],
+      "accept": [["カリナさん", "は", "美術", "を", "富士大学", "で", "勉強して", "います"]],
+      "explanation": "Chủ đề は + nơi で + môn học を + 勉強して います."
+    },
+    {
+      "id": "L15-E20",
+      "type": "jp-vi",
+      "grammarPoint": "L15-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "あの スーパーで ベトナムの コーヒーを 売って います。",
+      "romaji": "Ano sūpā de Betonamu no kōhī o utte imasu.",
+      "options": [
+        "Siêu thị kia có bán cà phê Việt Nam.",
+        "Tôi đang mua cà phê Việt Nam ở siêu thị kia.",
+        "Không được bán cà phê Việt Nam ở siêu thị kia.",
+        "Hãy bán cà phê Việt Nam ở siêu thị kia."
+      ],
+      "answer": "Siêu thị kia có bán cà phê Việt Nam.",
+      "explanation": "売って います = (thường xuyên) bán. 売ります là 「bán」, không phải 「mua」 (買います)."
+    },
+    {
+      "id": "L15-E21",
+      "type": "fix",
+      "grammarPoint": "L15-G5",
+      "question": "Câu trả lời sau bị sai. Chọn cách sửa đúng.",
+      "jp": "木村さんの 住所を 知って いますか。 …いいえ、知って いません。",
+      "options": [
+        "…いいえ、知りません。",
+        "…いいえ、知りませんです。",
+        "…いいえ、知って いませんか。",
+        "…いいえ、知っては いけません。"
+      ],
+      "answer": "…いいえ、知りません。",
+      "explanation": "Phủ định của 知って います là 知りません — ngoại lệ phải nhớ."
+    },
+    {
+      "id": "L15-E22",
+      "type": "choice",
+      "grammarPoint": "L15-G5",
+      "question": "「Tôi không biết」 nói thế nào cho đúng?",
+      "options": ["知りません。", "知って いません。", "知ってません。", "知りますません。"],
+      "answer": "知りません。",
+      "explanation": "「Không biết」 = 知りません. Không dùng 知って いません."
+    },
+    {
+      "id": "L15-E23",
+      "type": "fill",
+      "grammarPoint": "L15-G5",
+      "question": "Gõ từ còn thiếu (kana).",
+      "jp": "この 歌を 知って いますか。 …はい、知って ＿＿。",
+      "vi": "Bạn biết bài hát này không? …Có, tôi biết.",
+      "answer": "います",
+      "explanation": "「Biết」 (khẳng định) = 知って います."
+    },
+    {
+      "id": "L15-E24",
+      "type": "situation",
+      "grammarPoint": "L15-G5",
+      "question": "Một người lạ hỏi bạn bưu điện ở đâu, nhưng bạn không biết. Bạn đáp:",
+      "options": ["すみません、知りません。", "すみません、知って いません。", "すみません、知って います。", "すみません、知って ください。"],
+      "answer": "すみません、知りません。",
+      "explanation": "Không biết → 知りません."
+    },
+    {
+      "id": "L15-E25",
+      "type": "pattern",
+      "grammarPoint": "L15-G5",
+      "question": "Bạn muốn hỏi đồng nghiệp: 「Anh có biết số điện thoại của anh Santos không?」. Chọn câu đúng.",
+      "options": [
+        "サントスさんの 電話番号を 知って いますか。",
+        "サントスさんの 電話番号を 知りますか。",
+        "サントスさんの 電話番号を 知って いましょうか。",
+        "サントスさんの 電話番号を 知って くださいか。"
+      ],
+      "answer": "サントスさんの 電話番号を 知って いますか。",
+      "explanation": "Hỏi 「có biết không」 → 知って いますか."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 15 }
+}

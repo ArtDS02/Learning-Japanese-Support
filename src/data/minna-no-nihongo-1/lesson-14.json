@@ -1,0 +1,788 @@
+{
+  "lesson": 14,
+  "title": "Thể て — nhờ vả, đang làm, đề nghị giúp",
+  "titleJp": "みどり町まで お願いします",
+  "topic": "3 nhóm động từ · thể て · Vて ください · Vて います · Vましょうか · N が V",
+  "description": "Học xong bài này bạn chia được thể て của mọi động từ đã học, biết nhờ người khác làm việc gì đó một cách lịch sự, nói việc ai đang làm, và xung phong giúp đỡ người khác.",
+  "objectives": [
+    "Phân biệt được 3 nhóm động từ dựa vào thể ます.",
+    "Chia đúng thể て của động từ nhóm I, II, III (kể cả ngoại lệ 行きます → 行って).",
+    "Nhờ vả / yêu cầu lịch sự bằng Vて ください (và mở lời bằng すみませんが).",
+    "Nói hành động đang diễn ra bằng Vて います.",
+    "Xung phong giúp người khác bằng Vましょうか và biết cách đáp lại.",
+    "Kể lại hiện tượng, sự việc mình nhìn thấy bằng N が V."
+  ],
+  "keyPoints": [
+    "Nhóm I: âm trước ます thuộc hàng い (かきます, のみます, かえります). Nhóm II: hàng え (たべます) + vài từ hàng い phải học thuộc (みます, おきます, かります, あびます, います). Nhóm III: します, 来ます.",
+    "Nhóm I chia て theo âm trước ます: い・ち・り → って, み・び・に → んで, き → いて, ぎ → いで, し → して.",
+    "行きます là ngoại lệ: 行って (KHÔNG phải 行いて).",
+    "Nhóm II: bỏ ます + て. Nhóm III: します → して, 来ます → 来て (きて).",
+    "Vて ください = nhờ / yêu cầu. Vて います = đang làm. Vましょうか = để tôi làm giúp nhé?",
+    "Kể lại việc mắt thấy tai nghe: dùng が (雨が 降って います)."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L14-G1",
+      "title": "3 nhóm động từ",
+      "meaning": "Phân loại động từ để biết cách chia",
+      "why": "Từ bài này động từ bắt đầu 「biến hình」 (thể て, ない, từ điển, た…). Mỗi nhóm chia theo một quy tắc riêng, nên phải biết động từ thuộc nhóm nào trước đã.",
+      "when": [
+        "Trước khi chia bất kỳ động từ nào sang thể て (và các thể ở bài 17–19).",
+        "Khi học một động từ mới: học luôn nó thuộc nhóm mấy."
+      ],
+      "formula": "Nhóm I: âm trước ます thuộc hàng い → かきます, のみます, かえります\nNhóm II: âm trước ます thuộc hàng え → たべます, ねます\n　　+ một số từ hàng い: みます, おきます, かります, あびます, います, できます\nNhóm III: します, 来ます (きます), N + します",
+      "parts": [
+        { "part": "Nhóm I", "role": "Âm ngay trước ます thuộc hàng い (い・き・ぎ・し・ち・に・び・み・り). Nhóm đông nhất." },
+        { "part": "Nhóm II", "role": "Âm trước ます thuộc hàng え (べ, ね, せ, え…). Có vài động từ hàng い nhưng vẫn là nhóm II — phải học thuộc." },
+        { "part": "Nhóm III", "role": "Chỉ có します và 来ます, cùng các động từ dạng 「danh từ + します」 (勉強します, 結婚します…)." }
+      ],
+      "memoryTip": {
+        "emoji": "🗂️",
+        "hook": "Hàng い nhóm một, hàng え nhóm hai, します・来ます nhóm ba!",
+        "meaning": "→ Nhìn âm ngay trước ます để đoán nhóm. Nhớ riêng vài 「kẻ lạc loài」 nhóm II: みます, おきます, かります, あびます, います."
+      },
+      "examples": [
+        {
+          "jp": "書きます・飲みます・待ちます・帰ります",
+          "romaji": "Kakimasu, nomimasu, machimasu, kaerimasu",
+          "vi": "viết, uống, đợi, về — Nhóm I",
+          "context": "Nhóm I",
+          "note": "き, み, ち, り đều thuộc hàng い → nhóm I."
+        },
+        {
+          "jp": "食べます・寝ます・見せます・教えます",
+          "romaji": "Tabemasu, nemasu, misemasu, oshiemasu",
+          "vi": "ăn, ngủ, cho xem, dạy — Nhóm II",
+          "context": "Nhóm II",
+          "note": "べ, ね, せ, え đều thuộc hàng え → nhóm II."
+        },
+        {
+          "jp": "見ます・起きます・借ります・浴びます",
+          "romaji": "Mimasu, okimasu, karimasu, abimasu",
+          "vi": "xem, thức dậy, mượn, tắm (vòi sen) — Nhóm II đặc biệt",
+          "context": "Nhóm II (phải học thuộc)",
+          "note": "Âm trước ます thuộc hàng い nhưng vẫn là nhóm II. Sách Minna đánh dấu riêng các từ này."
+        },
+        {
+          "jp": "します・来ます・勉強します・結婚します",
+          "romaji": "Shimasu, kimasu, benkyō shimasu, kekkon shimasu",
+          "vi": "làm, đến, học, kết hôn — Nhóm III",
+          "context": "Nhóm III"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "見ます là nhóm I (vì み thuộc hàng い).",
+          "right": "見ます là nhóm II.",
+          "explain": "見ます, 起きます, 借ります, 浴びます, います, できます là ngoại lệ: trông như nhóm I nhưng thuộc nhóm II."
+        },
+        {
+          "wrong": "来ます là nhóm II (vì chỉ có 1 âm trước ます).",
+          "right": "来ます là nhóm III.",
+          "explain": "Nhóm III chỉ có します và 来ます — hai động từ bất quy tắc, chia riêng."
+        }
+      ]
+    },
+    {
+      "id": "L14-G2",
+      "title": "Cách chia thể て",
+      "meaning": "Dạng 「nối」 của động từ",
+      "why": "Thể て là 「chìa khoá vạn năng」: ghép với ください thành lời nhờ, với います thành 「đang làm」, và còn dùng tiếp ở bài 15, 16. Chia sai thể て thì sai cả câu.",
+      "when": [
+        "Mỗi khi cần nói Vて ください, Vて います (bài 14), Vても いいです, Vては いけません (bài 15), Vて から (bài 16)…",
+        "Thể た ở bài 19 cũng chia y hệt thể て."
+      ],
+      "formula": "Nhóm I (theo âm trước ます):\n　い・ち・り → って　(かいます → かって)\n　み・び・に → んで　(のみます → のんで)\n　き → いて　(かきます → かいて)\n　ぎ → いで　(およぎます → およいで)\n　し → して　(はなします → はなして)\n　★ 行きます → 行って (ngoại lệ)\nNhóm II: bỏ ます + て　(たべます → たべて)\nNhóm III: します → して, 来ます → 来て (きて)",
+      "parts": [
+        { "part": "って", "role": "Cho động từ nhóm I có い, ち, り trước ます: 買って, 待って, 帰って." },
+        { "part": "んで", "role": "Cho み, び, に: 飲んで, 遊んで, 死んで. Chú ý: là んで (có dấu), không phải んて." },
+        { "part": "いて / いで", "role": "き → いて (書いて), ぎ → いで (泳いで). Có dấu 「゛」 ở ぎ thì cũng có dấu ở で." },
+        { "part": "して", "role": "し → して (話して). Nhóm III します cũng → して." },
+        { "part": "行って", "role": "Ngoại lệ duy nhất của nhóm I: 行きます có き nhưng thành 行って." },
+        { "part": "Nhóm II + て", "role": "Dễ nhất: chỉ bỏ ます, thêm て (食べて, 見て, 起きて)." }
+      ],
+      "memoryTip": {
+        "emoji": "🎵",
+        "hook": "い-ち-り 「って」, み-び-に 「んで」, き 「いて」, ぎ 「いで」, し 「して」 — riêng 行く 「って」!",
+        "meaning": "→ Đọc to như hát 3 lần là thuộc quy tắc nhóm I. Nhóm II bỏ ます + て, nhóm III して / きて."
+      },
+      "examples": [
+        {
+          "jp": "買います → 買って ・ 待ちます → 待って ・ 帰ります → 帰って",
+          "romaji": "Kaimasu → katte, machimasu → matte, kaerimasu → kaette",
+          "vi": "mua, đợi, về (い・ち・り → って)",
+          "context": "Nhóm I"
+        },
+        {
+          "jp": "飲みます → 飲んで ・ 遊びます → 遊んで ・ 死にます → 死んで",
+          "romaji": "Nomimasu → nonde, asobimasu → asonde, shinimasu → shinde",
+          "vi": "uống, chơi, chết (み・び・に → んで)",
+          "context": "Nhóm I"
+        },
+        {
+          "jp": "書きます → 書いて ・ 急ぎます → 急いで",
+          "romaji": "Kakimasu → kaite, isogimasu → isoide",
+          "vi": "viết (き → いて), vội (ぎ → いで)",
+          "context": "Nhóm I"
+        },
+        {
+          "jp": "話します → 話して ・ 行きます → 行って",
+          "romaji": "Hanashimasu → hanashite, ikimasu → itte",
+          "vi": "nói (し → して), đi (ngoại lệ → 行って)",
+          "context": "Nhóm I",
+          "note": "行きます có き nhưng KHÔNG thành 行いて."
+        },
+        {
+          "jp": "食べます → 食べて ・ 見ます → 見て ・ 起きます → 起きて",
+          "romaji": "Tabemasu → tabete, mimasu → mite, okimasu → okite",
+          "vi": "ăn, xem, thức dậy (bỏ ます + て)",
+          "context": "Nhóm II"
+        },
+        {
+          "jp": "します → して ・ 来ます → 来て ・ 勉強します → 勉強して",
+          "romaji": "Shimasu → shite, kimasu → kite, benkyō shimasu → benkyō shite",
+          "vi": "làm, đến, học",
+          "context": "Nhóm III",
+          "note": "来て đọc là きて."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "行いて",
+          "right": "行って",
+          "explain": "行きます là ngoại lệ duy nhất của nhóm き: thể て là 行って."
+        },
+        {
+          "wrong": "書って",
+          "right": "書いて",
+          "explain": "き → いて. って chỉ dành cho い・ち・り."
+        },
+        {
+          "wrong": "泳いて",
+          "right": "泳いで",
+          "explain": "ぎ có dấu 「゛」 → いで cũng có dấu."
+        },
+        {
+          "wrong": "見って",
+          "right": "見て",
+          "explain": "見ます là nhóm II → chỉ bỏ ます thêm て, không đổi âm."
+        },
+        {
+          "wrong": "来って / 来いて",
+          "right": "来て (きて)",
+          "explain": "来ます là nhóm III, bất quy tắc: thể て là 来て, đọc 「kite」."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: thể て để làm gì?",
+          "text": "Bản thân thể て chưa phải câu hoàn chỉnh — nó là 「khớp nối」. Ghép thêm phần sau mới có nghĩa: Vて ください (hãy…), Vて います (đang…), Vても いいです (…cũng được), Vて から (sau khi…). Học chắc thể て bây giờ thì bài 15, 16, 19 sẽ rất nhẹ."
+        }
+      ]
+    },
+    {
+      "id": "L14-G3",
+      "title": "Vて ください",
+      "meaning": "Hãy (làm ơn) V",
+      "why": "Để nhờ vả, chỉ dẫn, yêu cầu người khác làm gì một cách lịch sự: 「Làm ơn đợi một chút」, 「Hãy viết tên vào đây」.",
+      "when": [
+        "Nhờ ai đó giúp: 「Làm ơn lấy giùm lọ muối」.",
+        "Chỉ dẫn, hướng dẫn: nhân viên nói 「Hãy viết vào đây」, nói với tài xế taxi 「Rẽ phải giúp tôi」.",
+        "Mời lịch sự: 「Mời anh vào」 (どうぞ 入って ください)."
+      ],
+      "formula": "(すみませんが、) Vて ください",
+      "parts": [
+        { "part": "すみませんが、", "role": "Mở lời: 「Xin lỗi, (làm phiền)…」. Làm lời nhờ nhẹ nhàng hơn, nhất là với người lạ." },
+        { "part": "Vて", "role": "Động từ ở thể て — hành động mình muốn người kia làm." },
+        { "part": "ください", "role": "「xin hãy, làm ơn」 — biến thành lời yêu cầu lịch sự." }
+      ],
+      "memoryTip": {
+        "emoji": "🙏",
+        "hook": "Nhờ ai thì 「て」 + 「ください」!",
+        "meaning": "→ Vて ください = làm ơn hãy V giùm."
+      },
+      "examples": [
+        {
+          "jp": "すみませんが、ちょっと 待って ください。",
+          "romaji": "Sumimasen ga, chotto matte kudasai.",
+          "vi": "Xin lỗi, làm ơn đợi một chút.",
+          "context": "Công việc",
+          "breakdown": [
+            { "jp": "すみませんが", "vi": "xin lỗi, (nhưng)…" },
+            { "jp": "ちょっと", "vi": "một chút" },
+            { "jp": "待って", "vi": "đợi (thể て của 待ちます)" },
+            { "jp": "ください", "vi": "làm ơn / hãy" }
+          ]
+        },
+        {
+          "jp": "ここに 住所と 名前を 書いて ください。",
+          "romaji": "Koko ni jūsho to namae o kaite kudasai.",
+          "vi": "Hãy viết địa chỉ và tên vào đây.",
+          "context": "Ngân hàng, bưu điện"
+        },
+        {
+          "jp": "すみませんが、もう 一度 ゆっくり 言って ください。",
+          "romaji": "Sumimasen ga, mō ichido yukkuri itte kudasai.",
+          "vi": "Xin lỗi, làm ơn nói lại một lần nữa chậm chậm.",
+          "context": "Lớp học",
+          "note": "言います → 言って (い → って)."
+        },
+        {
+          "jp": "すみませんが、塩を 取って ください。",
+          "romaji": "Sumimasen ga, shio o totte kudasai.",
+          "vi": "Xin lỗi, lấy giùm tôi lọ muối.",
+          "context": "Nhà hàng"
+        },
+        {
+          "jp": "あの 信号を 右へ 曲がって ください。",
+          "romaji": "Ano shingō o migi e magatte kudasai.",
+          "vi": "Hãy rẽ phải ở cái đèn giao thông kia.",
+          "context": "Đi taxi",
+          "note": "Chỗ rẽ dùng を: 信号を 曲がります."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "ちょっと 待ちます ください。",
+          "right": "ちょっと 待って ください。",
+          "explain": "ください đi sau thể て, không đi sau thể ます."
+        },
+        {
+          "wrong": "名前を 書きて ください。",
+          "right": "名前を 書いて ください。",
+          "explain": "書きます là nhóm I (き) → 書いて, không phải bỏ ます thêm て."
+        },
+        {
+          "explain": "Vて ください vẫn là một lời yêu cầu. Với cấp trên, thầy cô nên mở lời すみませんが… cho nhẹ nhàng, và đừng dùng để 「sai bảo」 liên tục."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: N を ください vs Vて ください",
+          "text": "Bài 13 đã có 「N を ください」 = cho tôi N (xin một vật). Bài này 「Vて ください」 = hãy làm V (nhờ một hành động). So sánh: 水を ください (Cho tôi nước) / 水を 持って きて ください (Hãy mang nước đến giùm).",
+          "examples": [
+            {
+              "jp": "コーヒーを ください。",
+              "romaji": "Kōhī o kudasai.",
+              "vi": "Cho tôi cà phê.",
+              "context": "Quán cà phê"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L14-G4",
+      "title": "Vて います (đang làm)",
+      "meaning": "Đang V",
+      "why": "Để nói hành động đang diễn ra ngay lúc này: 「Anh Miller đang gọi điện」, 「Tôi đang đọc sách」. Thể ます thường (読みます) không diễn tả được ý 「đang」.",
+      "when": [
+        "Kể ai đó đang làm gì vào lúc nói.",
+        "Hỏi 「Bây giờ bạn đang làm gì?」: 今 何を して いますか."
+      ],
+      "formula": "Vて います\nVて いますか (đang V phải không?)",
+      "parts": [
+        { "part": "Vて", "role": "Hành động (thể て)." },
+        { "part": "います", "role": "Ở đây nghĩa là 「đang ở trong hành động đó」 — không phải 「có (người)」." }
+      ],
+      "memoryTip": {
+        "emoji": "⏳",
+        "hook": "「て」 + 「います」 = ĐANG làm!",
+        "meaning": "→ 読みます (đọc) → 読んで います (đang đọc)."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんは 今 電話を かけて います。",
+          "romaji": "Mirā-san wa ima denwa o kakete imasu.",
+          "vi": "Anh Miller bây giờ đang gọi điện thoại.",
+          "context": "Công việc",
+          "breakdown": [
+            { "jp": "今", "vi": "bây giờ" },
+            { "jp": "電話を かけて", "vi": "gọi điện (thể て của かけます)" },
+            { "jp": "います", "vi": "đang" }
+          ]
+        },
+        {
+          "jp": "今 何を して いますか。 …本を 読んで います。",
+          "romaji": "Ima nani o shite imasu ka. … Hon o yonde imasu.",
+          "vi": "Bây giờ bạn đang làm gì? …Tôi đang đọc sách.",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "母は 台所で 料理を 作って います。",
+          "romaji": "Haha wa daidokoro de ryōri o tsukutte imasu.",
+          "vi": "Mẹ tôi đang nấu ăn trong bếp.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "学生たちは 教室で 日本語を 勉強して います。",
+          "romaji": "Gakusei-tachi wa kyōshitsu de Nihongo o benkyō shite imasu.",
+          "vi": "Các sinh viên đang học tiếng Nhật trong lớp.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "マリアさんは 今 シャワーを 浴びて います。",
+          "romaji": "Maria-san wa ima shawā o abite imasu.",
+          "vi": "Chị Maria bây giờ đang tắm.",
+          "context": "Sinh hoạt"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "今 本を 読みます。 (muốn nói 「đang đọc」)",
+          "right": "今 本を 読んで います。",
+          "explain": "読みます là thói quen / sẽ làm. Muốn nói 「đang」 phải dùng Vて います."
+        },
+        {
+          "wrong": "今 本を 読みて います。",
+          "right": "今 本を 読んで います。",
+          "explain": "読みます là nhóm I (み) → 読んで."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: Vて います còn nghĩa khác",
+          "text": "Ở bài 15, Vて います còn dùng để nói TRẠNG THÁI (結婚して います = đã kết hôn) và thói quen / nghề nghiệp (銀行で 働いて います). Bài này chỉ cần nhớ nghĩa 「đang làm」."
+        }
+      ]
+    },
+    {
+      "id": "L14-G5",
+      "title": "Vましょうか (đề nghị giúp)",
+      "meaning": "Để tôi V (giúp) nhé?",
+      "why": "Để chủ động xung phong giúp người khác một cách lịch sự: 「Để tôi xách hành lý giúp nhé?」, 「Để tôi gọi taxi nhé?」.",
+      "when": [
+        "Thấy người khác đang cần giúp và muốn đề nghị làm giúp.",
+        "Đáp lại: nhận → ええ、お願いします / すみません、お願いします; từ chối → いいえ、けっこうです."
+      ],
+      "formula": "Vましょうか\n→ ええ、お願いします。\n→ いいえ、けっこうです。",
+      "parts": [
+        { "part": "Vます → Vましょう", "role": "Bỏ ます, thêm ましょう." },
+        { "part": "か", "role": "Hỏi ý người kia: 「…nhé? / có cần không?」." },
+        { "part": "お願いします", "role": "Nhận lời giúp: 「Nhờ anh/chị ạ」." },
+        { "part": "いいえ、けっこうです", "role": "Từ chối lịch sự: 「Không cần đâu ạ」." }
+      ],
+      "memoryTip": {
+        "emoji": "🦸",
+        "hook": "「ましょうか」 = tôi xung phong: 「để tôi…nhé?」",
+        "meaning": "→ Người NÓI sẽ làm, để giúp người NGHE."
+      },
+      "examples": [
+        {
+          "jp": "荷物を 持ちましょうか。 …すみません。お願いします。",
+          "romaji": "Nimotsu o mochimashō ka. … Sumimasen. Onegai shimasu.",
+          "vi": "Để tôi xách hành lý giúp nhé? …Cảm ơn anh, nhờ anh nhé.",
+          "context": "Ở ga tàu",
+          "breakdown": [
+            { "jp": "荷物", "vi": "hành lý" },
+            { "jp": "持ちましょうか", "vi": "để tôi mang giúp nhé?" },
+            { "jp": "お願いします", "vi": "nhờ anh/chị" }
+          ]
+        },
+        {
+          "jp": "暑いですね。 窓を 開けましょうか。 …ええ、お願いします。",
+          "romaji": "Atsui desu ne. Mado o akemashō ka. … Ē, onegai shimasu.",
+          "vi": "Nóng nhỉ. Để tôi mở cửa sổ nhé? …Vâng, nhờ anh.",
+          "context": "Văn phòng"
+        },
+        {
+          "jp": "タクシーを 呼びましょうか。 …いいえ、けっこうです。",
+          "romaji": "Takushī o yobimashō ka. … Iie, kekkō desu.",
+          "vi": "Để tôi gọi taxi nhé? …Không, không cần đâu ạ.",
+          "context": "Khách sạn"
+        },
+        {
+          "jp": "地図を かきましょうか。 …ええ、お願いします。",
+          "romaji": "Chizu o kakimashō ka. … Ē, onegai shimasu.",
+          "vi": "Để tôi vẽ bản đồ cho nhé? …Vâng, nhờ anh.",
+          "context": "Chỉ đường"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "(muốn xung phong) 荷物を 持って ください。",
+          "right": "荷物を 持ちましょうか。",
+          "explain": "持って ください = NHỜ người kia xách. Muốn tự mình xách giúp thì dùng 持ちましょうか."
+        },
+        {
+          "wrong": "窓を 開けましょうか。 …はい、開けましょう。",
+          "right": "窓を 開けましょうか。 …ええ、お願いします。",
+          "explain": "Người kia đề nghị làm giúp mình thì mình đáp お願いします, không lặp lại động từ."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: ましょうか ở bài 6 và bài 14",
+          "text": "Bài 6 có 「どこで 会いましょうか」 = 「Chúng ta gặp ở đâu nhỉ?」 (cùng nhau quyết định). Bài 14 là 「để TÔI làm giúp nhé?」. Nhìn ngữ cảnh: có người đang cần giúp → nghĩa bài 14."
+        }
+      ]
+    },
+    {
+      "id": "L14-G6",
+      "title": "N が V (miêu tả hiện tượng)",
+      "meaning": "(Kìa,) N đang / vừa V",
+      "why": "Khi kể lại điều mình vừa nhìn thấy, nghe thấy (trời mưa, xe buýt đến, bọn trẻ đang chơi…), tiếng Nhật đánh dấu chủ thể bằng が chứ không phải は.",
+      "when": [
+        "Thông báo hiện tượng tự nhiên: mưa, tuyết…",
+        "Kể lại sự việc đang xảy ra trước mắt: 「A, xe buýt đến rồi」."
+      ],
+      "formula": "N が V",
+      "parts": [
+        { "part": "N", "role": "Chủ thể của hiện tượng/sự việc (雨, バス, 子ども…)." },
+        { "part": "が", "role": "Trợ từ chủ ngữ — dùng khi thuật lại nguyên vẹn một sự việc mới thấy." },
+        { "part": "V", "role": "Thường là Vて います (đang diễn ra) hoặc Vました (vừa xảy ra)." }
+      ],
+      "memoryTip": {
+        "emoji": "👀",
+        "hook": "Mắt thấy gì thì 「が」 nấy!",
+        "meaning": "→ Kể lại cảnh vừa thấy: 雨が 降って います, バスが 来ました."
+      },
+      "examples": [
+        {
+          "jp": "あ、雨が 降って います。",
+          "romaji": "A, ame ga futte imasu.",
+          "vi": "Ôi, trời đang mưa.",
+          "context": "Thời tiết",
+          "breakdown": [
+            { "jp": "雨", "vi": "mưa" },
+            { "jp": "が", "vi": "(chủ ngữ — hiện tượng)" },
+            { "jp": "降って います", "vi": "đang rơi (降ります → 降って)" }
+          ]
+        },
+        {
+          "jp": "子どもたちが 公園で 遊んで います。",
+          "romaji": "Kodomo-tachi ga kōen de asonde imasu.",
+          "vi": "Bọn trẻ đang chơi ở công viên.",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "あ、バスが 来ました。",
+          "romaji": "A, basu ga kimashita.",
+          "vi": "A, xe buýt đến rồi.",
+          "context": "Đi lại"
+        },
+        {
+          "jp": "外は 雪が 降って います。",
+          "romaji": "Soto wa yuki ga futte imasu.",
+          "vi": "Bên ngoài tuyết đang rơi.",
+          "context": "Thời tiết"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "あ、雨を 降って います。",
+          "right": "あ、雨が 降って います。",
+          "explain": "雨 là chủ thể của 「rơi」, không phải tân ngữ → dùng が, không dùng を."
+        },
+        {
+          "wrong": "あ、バスは 来ました。 (vừa thấy xe tới)",
+          "right": "あ、バスが 来ました。",
+          "explain": "Thuật lại sự việc mới xảy ra trước mắt → が. は dùng khi đã có chủ đề hoặc muốn so sánh."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "3 nhóm động từ", "meaning": "Hàng い → I, hàng え → II (+ みます, おきます…), します・来ます → III", "example": "書きます (I)・食べます (II)・来ます (III)" },
+    { "pattern": "Thể て", "meaning": "い・ち・り→って, み・び・に→んで, き→いて, ぎ→いで, し→して; 行って", "example": "書きます → 書いて、飲みます → 飲んで" },
+    { "pattern": "Vて ください", "meaning": "Hãy / làm ơn V", "example": "すみませんが、ちょっと 待って ください。" },
+    { "pattern": "Vて います", "meaning": "Đang V", "example": "ミラーさんは 今 電話を かけて います。" },
+    { "pattern": "Vましょうか", "meaning": "Để tôi V giúp nhé?", "example": "荷物を 持ちましょうか。" },
+    { "pattern": "N が V", "meaning": "Kể lại hiện tượng / sự việc nhìn thấy", "example": "あ、雨が 降って います。" }
+  ],
+  "exercises": [
+    {
+      "id": "L14-E01",
+      "type": "choice",
+      "grammarPoint": "L14-G1",
+      "question": "Động từ nào thuộc nhóm II?",
+      "options": ["たべます", "かきます", "のみます", "かえります"],
+      "answer": "たべます",
+      "explanation": "Âm trước ます của たべます là べ (hàng え) → nhóm II. Ba từ còn lại có き, み, り (hàng い) → nhóm I."
+    },
+    {
+      "id": "L14-E02",
+      "type": "choice",
+      "grammarPoint": "L14-G1",
+      "question": "「みます」 (xem) thuộc nhóm nào?",
+      "options": ["Nhóm II", "Nhóm I", "Nhóm III", "Không thuộc nhóm nào"],
+      "answer": "Nhóm II",
+      "explanation": "みます có み (hàng い) nhưng là ngoại lệ thuộc nhóm II — giống おきます, かります, あびます."
+    },
+    {
+      "id": "L14-E03",
+      "type": "choice",
+      "grammarPoint": "L14-G1",
+      "question": "Động từ nào thuộc nhóm III?",
+      "options": ["べんきょうします", "はなします", "おしえます", "かします"],
+      "answer": "べんきょうします",
+      "explanation": "Danh từ + します (勉強します) là nhóm III. はなします, かします là nhóm I (し hàng い); おしえます là nhóm II."
+    },
+    {
+      "id": "L14-E04",
+      "type": "fill",
+      "grammarPoint": "L14-G2",
+      "question": "Chia sang thể て (gõ kana).",
+      "jp": "書きます（かきます） → ＿＿",
+      "answer": "かいて",
+      "accept": ["書いて", "kaite"],
+      "hint": "き → ?",
+      "explanation": "Nhóm I, âm trước ます là き → いて: かいて."
+    },
+    {
+      "id": "L14-E05",
+      "type": "fill",
+      "grammarPoint": "L14-G2",
+      "question": "Chia sang thể て (gõ kana).",
+      "jp": "飲みます（のみます） → ＿＿",
+      "answer": "のんで",
+      "accept": ["飲んで", "nonde"],
+      "hint": "み・び・に → ?",
+      "explanation": "Nhóm I, み → んで: のんで."
+    },
+    {
+      "id": "L14-E06",
+      "type": "fill",
+      "grammarPoint": "L14-G2",
+      "question": "Chia sang thể て (gõ kana).",
+      "jp": "行きます（いきます） → ＿＿",
+      "answer": "いって",
+      "accept": ["行って", "itte"],
+      "hint": "Ngoại lệ!",
+      "explanation": "行きます là ngoại lệ: tuy có き nhưng thể て là いって (không phải いいて)."
+    },
+    {
+      "id": "L14-E07",
+      "type": "fill",
+      "grammarPoint": "L14-G2",
+      "question": "Chia sang thể て (gõ kana).",
+      "jp": "待ちます（まちます） → ＿＿",
+      "answer": "まって",
+      "accept": ["待って", "matte"],
+      "explanation": "Nhóm I, ち → って: まって."
+    },
+    {
+      "id": "L14-E08",
+      "type": "fill",
+      "grammarPoint": "L14-G2",
+      "question": "Chia sang thể て (gõ kana).",
+      "jp": "泳ぎます（およぎます） → ＿＿",
+      "answer": "およいで",
+      "accept": ["泳いで", "oyoide"],
+      "explanation": "Nhóm I, ぎ → いで (có dấu): およいで."
+    },
+    {
+      "id": "L14-E09",
+      "type": "fill",
+      "grammarPoint": "L14-G2",
+      "question": "Chia sang thể て (gõ kana).",
+      "jp": "起きます（おきます） → ＿＿",
+      "answer": "おきて",
+      "accept": ["起きて", "okite"],
+      "explanation": "おきます là nhóm II (ngoại lệ hàng い) → bỏ ます + て: おきて. Không phải おいて."
+    },
+    {
+      "id": "L14-E10",
+      "type": "fill",
+      "grammarPoint": "L14-G2",
+      "question": "Chia sang thể て (gõ kana).",
+      "jp": "来ます（きます） → ＿＿",
+      "answer": "きて",
+      "accept": ["来て", "kite"],
+      "explanation": "来ます là nhóm III, thể て là 来て (きて)."
+    },
+    {
+      "id": "L14-E11",
+      "type": "choice",
+      "grammarPoint": "L14-G2",
+      "question": "Thể て của 「帰ります」 (về) là gì?",
+      "options": ["帰って", "帰て", "帰りて", "帰んで"],
+      "answer": "帰って",
+      "explanation": "帰ります có り (hàng い) → nhóm I, り → って: 帰って (かえって)."
+    },
+    {
+      "id": "L14-E12",
+      "type": "fix",
+      "grammarPoint": "L14-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "駅まで 行いて ください。",
+      "options": ["駅まで 行って ください。", "駅まで 行きて ください。", "駅まで 行んで ください。", "駅まで 行いで ください。"],
+      "answer": "駅まで 行って ください。",
+      "explanation": "行きます là ngoại lệ: thể て là 行って. Câu: 「Làm ơn đi đến ga」."
+    },
+    {
+      "id": "L14-E13",
+      "type": "vi-jp",
+      "grammarPoint": "L14-G3",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Xin lỗi, làm ơn nói chậm lại.",
+      "options": [
+        "すみませんが、ゆっくり 話して ください。",
+        "すみませんが、ゆっくり 話します ください。",
+        "すみませんが、ゆっくり 話して います。",
+        "すみませんが、ゆっくり 話しましょうか。"
+      ],
+      "answer": "すみませんが、ゆっくり 話して ください。",
+      "explanation": "Nhờ người khác làm → Vて ください. 話します → 話して."
+    },
+    {
+      "id": "L14-E14",
+      "type": "situation",
+      "grammarPoint": "L14-G3",
+      "question": "Ở cửa hàng, bạn muốn nhân viên cho xem chiếc áo sơ mi kia. Bạn nói:",
+      "options": [
+        "すみませんが、その シャツを 見せて ください。",
+        "すみませんが、その シャツを 見せましょうか。",
+        "すみませんが、その シャツを 見せて います。",
+        "すみませんが、その シャツを 見せます ください。"
+      ],
+      "answer": "すみませんが、その シャツを 見せて ください。",
+      "explanation": "見せます = cho xem. Nhờ nhân viên làm → 見せて ください. 見せましょうか là mình xung phong cho người khác xem."
+    },
+    {
+      "id": "L14-E15",
+      "type": "order",
+      "grammarPoint": "L14-G3",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Xin lỗi, lấy giùm tôi lọ muối.",
+      "tokens": ["すみませんが、", "塩", "を", "取って", "ください"],
+      "explanation": "Mở lời すみませんが → tân ngữ 塩を → Vて ください."
+    },
+    {
+      "id": "L14-E16",
+      "type": "pattern",
+      "grammarPoint": "L14-G3",
+      "question": "Bạn muốn nhờ đồng nghiệp đợi mình một chút. Chọn mẫu câu phù hợp.",
+      "options": ["Vて ください", "Vて います", "Vましょうか", "Vましょう"],
+      "answer": "Vて ください",
+      "explanation": "Nhờ / yêu cầu người khác làm gì → Vて ください (ちょっと 待って ください)."
+    },
+    {
+      "id": "L14-E17",
+      "type": "fill",
+      "grammarPoint": "L14-G4",
+      "question": "Gõ từ còn thiếu (kana).",
+      "jp": "ミラーさんは 今 電話を かけて ＿＿。",
+      "vi": "Anh Miller bây giờ đang gọi điện thoại.",
+      "answer": "います",
+      "explanation": "「đang V」 = Vて います."
+    },
+    {
+      "id": "L14-E18",
+      "type": "jp-vi",
+      "grammarPoint": "L14-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "母は 台所で 料理を 作って います。",
+      "romaji": "Haha wa daidokoro de ryōri o tsukutte imasu.",
+      "options": [
+        "Mẹ tôi đang nấu ăn trong bếp.",
+        "Mẹ tôi hãy nấu ăn trong bếp.",
+        "Để mẹ tôi nấu ăn trong bếp nhé.",
+        "Mẹ tôi đã nấu ăn trong bếp."
+      ],
+      "answer": "Mẹ tôi đang nấu ăn trong bếp.",
+      "explanation": "作って います = đang làm (nấu). Vて います diễn tả hành động đang diễn ra."
+    },
+    {
+      "id": "L14-E19",
+      "type": "choice",
+      "grammarPoint": "L14-G4",
+      "question": "「今 何を して いますか。」 — Bạn đang đọc sách. Trả lời thế nào?",
+      "options": ["本を 読んで います。", "本を 読みます ください。", "本を 読みましょうか。", "本を 読みて います。"],
+      "answer": "本を 読んで います。",
+      "explanation": "Hỏi 「đang làm gì」 → đáp bằng Vて います. 読みます (み) → 読んで."
+    },
+    {
+      "id": "L14-E20",
+      "type": "identify",
+      "grammarPoint": "L14-G4",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "学生たちは 教室で 日本語を 勉強して います。",
+      "romaji": "Gakusei-tachi wa kyōshitsu de Nihongo o benkyō shite imasu.",
+      "vi": "Các sinh viên đang học tiếng Nhật trong lớp.",
+      "options": ["Vて います (đang làm)", "Vて ください (nhờ vả)", "Vましょうか (đề nghị giúp)", "N が V (miêu tả hiện tượng)"],
+      "answer": "Vて います (đang làm)",
+      "explanation": "勉強して います = đang học → Vて います."
+    },
+    {
+      "id": "L14-E21",
+      "type": "situation",
+      "grammarPoint": "L14-G5",
+      "question": "Ở ga tàu, bạn thấy một bà cụ xách hành lý nặng. Bạn muốn xung phong xách giúp. Bạn nói:",
+      "options": ["荷物を 持ちましょうか。", "荷物を 持って ください。", "荷物を 持って います。", "荷物を 持ちませんか。"],
+      "answer": "荷物を 持ちましょうか。",
+      "explanation": "Xung phong làm giúp người khác → Vましょうか. 持って ください là nhờ bà cụ xách; 持ちませんか là rủ bà cụ xách."
+    },
+    {
+      "id": "L14-E22",
+      "type": "jp-vi",
+      "grammarPoint": "L14-G5",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "タクシーを 呼びましょうか。",
+      "romaji": "Takushī o yobimashō ka.",
+      "options": [
+        "Để tôi gọi taxi giúp nhé?",
+        "Làm ơn gọi taxi giúp tôi.",
+        "Tôi đang gọi taxi.",
+        "Tôi đã gọi taxi rồi."
+      ],
+      "answer": "Để tôi gọi taxi giúp nhé?",
+      "explanation": "Vましょうか = để tôi làm (giúp) nhé? — người nói đề nghị làm cho người nghe."
+    },
+    {
+      "id": "L14-E23",
+      "type": "choice",
+      "grammarPoint": "L14-G5",
+      "question": "Đồng nghiệp hỏi 「窓を 開けましょうか。」. Bạn đang thấy nóng và muốn nhận lời. Bạn đáp:",
+      "options": ["ええ、お願いします。", "ええ、開けましょう。", "いいえ、けっこうです。", "ええ、開けて います。"],
+      "answer": "ええ、お願いします。",
+      "explanation": "Nhận lời đề nghị giúp đỡ → ええ、お願いします. いいえ、けっこうです là từ chối."
+    },
+    {
+      "id": "L14-E24",
+      "type": "order",
+      "grammarPoint": "L14-G5",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Để tôi vẽ bản đồ cho nhé?",
+      "tokens": ["地図", "を", "かき", "ましょう", "か"],
+      "explanation": "Tân ngữ 地図を + động từ bỏ ます thêm ましょうか: かきましょうか."
+    },
+    {
+      "id": "L14-E25",
+      "type": "particle",
+      "grammarPoint": "L14-G6",
+      "question": "Bạn nhìn ra cửa sổ và thông báo điều mình thấy. Chọn trợ từ phù hợp.",
+      "jp": "あ、雨＿＿ 降って います。",
+      "romaji": "A, ame ___ futte imasu.",
+      "vi": "Ôi, trời đang mưa.",
+      "options": ["が", "を", "で", "に"],
+      "answer": "が",
+      "explanation": "Kể lại hiện tượng vừa nhìn thấy → N が V. 雨 là chủ thể của 「rơi」 nên không dùng を."
+    },
+    {
+      "id": "L14-E26",
+      "type": "situation",
+      "grammarPoint": "L14-G6",
+      "question": "Bạn và bạn bè đang đợi ở bến. Bạn thấy xe buýt vừa tới. Bạn nói:",
+      "options": ["あ、バスが 来ました。", "あ、バスを 来ました。", "あ、バスが 来て ください。", "あ、バスが 来ましょうか。"],
+      "answer": "あ、バスが 来ました。",
+      "explanation": "Thuật lại sự việc vừa xảy ra trước mắt → N が V: バスが 来ました."
+    },
+    {
+      "id": "L14-E27",
+      "type": "vi-jp",
+      "grammarPoint": "L14-G6",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Bọn trẻ đang chơi ở công viên.",
+      "options": [
+        "子どもたちが 公園で 遊んで います。",
+        "子どもたちが 公園に 遊んで います。",
+        "子どもたちを 公園で 遊んで います。",
+        "子どもたちが 公園で 遊びて います。"
+      ],
+      "answer": "子どもたちが 公園で 遊んで います。",
+      "explanation": "Miêu tả cảnh đang thấy → が. Nơi diễn ra hành động → で. 遊びます (び) → 遊んで."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 14 }
+}

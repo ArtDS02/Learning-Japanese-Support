@@ -1,0 +1,962 @@
+{
+  "lesson": 8,
+  "title": "Tính từ い và な",
+  "titleJp": "そろそろ 失礼します",
+  "topic": "Miêu tả người, vật, nơi chốn · khen chê · hỏi cảm nhận",
+  "description": "Học xong bài này bạn miêu tả được người, đồ vật, thành phố bằng tính từ (đẹp, cao, yên tĩnh, ngon…), nói dạng phủ định, hỏi 「… thế nào?」 và nối hai ý bằng 「nhưng」 / 「và」.",
+  "objectives": [
+    "Phân biệt tính từ い và tính từ な.",
+    "Nói câu khẳng định và phủ định với tính từ: 高いです / 高くないです, 静かです / 静かじゃ ありません.",
+    "Đặt tính từ trước danh từ: 静かな 町, 高い 山.",
+    "Dùng とても (rất) và あまり〜ない (không… lắm).",
+    "Hỏi cảm nhận bằng どうですか và hỏi tính chất bằng どんな N ですか.",
+    "Nối hai câu bằng 〜が (nhưng) và そして (và).",
+    "Hỏi 「cái nào」 bằng どれ."
+  ],
+  "keyPoints": [
+    "Tính từ い kết thúc bằng い (高い, おいしい); tính từ な khi đứng trước danh từ cần な (静かな 町).",
+    "Cẩn thận: きれい, ゆうめい kết thúc bằng い nhưng là tính từ な!",
+    "Phủ định: いA bỏ い + くないです; なA + じゃ ありません. Đặc biệt: いい → よくないです.",
+    "Trước です, tính từ な KHÔNG có な: 静かです (không nói 静かなです).",
+    "あまり luôn đi với phủ định: あまり おいしくないです = không ngon lắm.",
+    "どう + ですか (hỏi cảm nhận) — どんな + danh từ (hỏi loại gì, như thế nào).",
+    "S1 が、S2 = S1 nhưng S2 (hai ý ngược nhau); そして = và (hai ý cùng chiều), đứng đầu câu sau."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L08-G1",
+      "title": "N は なA です / N は いA です",
+      "meaning": "N (thì) … (miêu tả tính chất)",
+      "why": "Để miêu tả người, đồ vật, nơi chốn: 「Núi Phú Sĩ cao」, 「Thị trấn này yên tĩnh」 — thiếu tính từ thì không khen, không chê được gì cả.",
+      "when": [
+        "Miêu tả đặc điểm của người, vật, nơi chốn.",
+        "Nói cảm nhận: món ăn ngon, công việc bận, thời tiết nóng.",
+        "Trả lời câu hỏi 「… thế nào?」."
+      ],
+      "formula": "N は なA です   (静かです)\nN は いA です   (高いです)",
+      "parts": [
+        { "part": "なA", "role": "Tính từ な (静か, きれい, 親切, 元気, 有名, 暇, 便利…). Trước です thì KHÔNG có な." },
+        { "part": "いA", "role": "Tính từ い — luôn kết thúc bằng い (高い, 新しい, おいしい, 忙しい…). Giữ nguyên い trước です." },
+        { "part": "です", "role": "Làm câu lịch sự. Với いA, です chỉ để lịch sự; với なA, です mang nghĩa 「là」 như sau danh từ." }
+      ],
+      "memoryTip": {
+        "emoji": "🏷️",
+        "hook": "Gặp 「です」 thì tính từ な cất chữ 「な」 đi!",
+        "meaning": "→ 静かです, きれいです (không có な); tính từ い giữ nguyên: 高いです."
+      },
+      "examples": [
+        {
+          "jp": "富士山は 高いです。",
+          "romaji": "Fujisan wa takai desu.",
+          "vi": "Núi Phú Sĩ cao.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "富士山", "vi": "núi Phú Sĩ" },
+            { "jp": "は", "vi": "(chủ đề)" },
+            { "jp": "高い", "vi": "cao (tính từ い)" },
+            { "jp": "です", "vi": "(lịch sự)" }
+          ]
+        },
+        {
+          "jp": "この 町は 静かです。",
+          "romaji": "Kono machi wa shizuka desu.",
+          "vi": "Thị trấn này yên tĩnh.",
+          "context": "Nơi ở",
+          "breakdown": [
+            { "jp": "この 町", "vi": "thị trấn này" },
+            { "jp": "静か", "vi": "yên tĩnh (tính từ な)" },
+            { "jp": "です", "vi": "(lịch sự)" }
+          ],
+          "note": "静か là tính từ な, nhưng trước です thì không có な."
+        },
+        {
+          "jp": "ワット先生は 親切です。",
+          "romaji": "Watto-sensei wa shinsetsu desu.",
+          "vi": "Thầy Watt tốt bụng.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "日本の 食べ物は おいしいです。",
+          "romaji": "Nihon no tabemono wa oishii desu.",
+          "vi": "Đồ ăn Nhật ngon.",
+          "context": "Nhà hàng"
+        },
+        {
+          "jp": "ハノイの 夏は 暑いです。",
+          "romaji": "Hanoi no natsu wa atsui desu.",
+          "vi": "Mùa hè Hà Nội nóng.",
+          "context": "Thời tiết"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "この 町は 静かなです。",
+          "right": "この 町は 静かです。",
+          "explain": "Tính từ な đứng trước です thì bỏ な. Chữ な chỉ xuất hiện khi đứng trước danh từ (静かな 町)."
+        },
+        {
+          "wrong": "きれいは tính từ い (vì kết thúc bằng い).",
+          "right": "きれい là tính từ な: きれいな 花, きれいじゃ ありません.",
+          "explain": "きれい, ゆうめい (有名), きらい tuy kết thúc bằng い nhưng là tính từ な. Học thuộc riêng mấy từ này!"
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: cách nhận biết",
+          "text": "Mẹo nhanh: nếu từ điển ghi 「〜な」 hoặc bạn thấy 〜な đứng trước danh từ (静かな, 親切な) thì đó là tính từ な. Tính từ い viết kanji thường có đuôi い bằng hiragana: 高い, 新しい, 大きい."
+        }
+      ]
+    },
+    {
+      "id": "L08-G2",
+      "title": "Phủ định: なA じゃ ありません / いA くないです",
+      "meaning": "N không … (không đẹp, không cao…)",
+      "why": "Để nói 「không ngon」, 「không lạnh」, 「không yên tĩnh」. Hai loại tính từ đổi sang phủ định theo hai cách khác nhau — nhầm là sai ngay.",
+      "when": [
+        "Chê nhẹ hoặc nói một đặc điểm KHÔNG đúng.",
+        "Trả lời いいえ cho câu hỏi về tính chất: 「おいしいですか」 → 「いいえ、おいしくないです」."
+      ],
+      "formula": "なA じゃ ありません   (静かじゃ ありません)\nいA (bỏ い) + くないです   (高い → 高くないです)\nいい → よくないです",
+      "parts": [
+        { "part": "じゃ ありません", "role": "Phủ định của tính từ な — giống hệt phủ định của danh từ ở bài 1." },
+        { "part": "〜くないです", "role": "Phủ định của tính từ い: bỏ い cuối, thêm くないです." },
+        { "part": "よくないです", "role": "Ngoại lệ: いい (tốt) đổi thành よくないです (vì いい gốc là よい)." }
+      ],
+      "memoryTip": {
+        "emoji": "✂️",
+        "hook": "Cắt đuôi 「い」, dán 「くない」!",
+        "meaning": "→ 高い → 高くないです; riêng いい → よくないです. Tính từ な thì dùng じゃ ありません."
+      },
+      "examples": [
+        {
+          "jp": "この 本は おもしろくないです。",
+          "romaji": "Kono hon wa omoshirokunai desu.",
+          "vi": "Cuốn sách này không thú vị.",
+          "context": "Sinh hoạt",
+          "breakdown": [
+            { "jp": "おもしろい", "vi": "thú vị" },
+            { "jp": "おもしろくないです", "vi": "không thú vị (bỏ い + くないです)" }
+          ]
+        },
+        {
+          "jp": "今日は 寒くないです。",
+          "romaji": "Kyō wa samukunai desu.",
+          "vi": "Hôm nay không lạnh.",
+          "context": "Thời tiết"
+        },
+        {
+          "jp": "この 町は 静かじゃ ありません。",
+          "romaji": "Kono machi wa shizuka ja arimasen.",
+          "vi": "Thị trấn này không yên tĩnh.",
+          "context": "Nơi ở",
+          "breakdown": [
+            { "jp": "静か", "vi": "yên tĩnh (tính từ な)" },
+            { "jp": "じゃ ありません", "vi": "không (phủ định)" }
+          ]
+        },
+        {
+          "jp": "この カメラは よくないです。",
+          "romaji": "Kono kamera wa yokunai desu.",
+          "vi": "Cái máy ảnh này không tốt.",
+          "context": "Mua sắm",
+          "note": "いい → よくないです (không nói いくないです)."
+        },
+        {
+          "jp": "わたしの 部屋は きれいじゃ ありません。",
+          "romaji": "Watashi no heya wa kirei ja arimasen.",
+          "vi": "Phòng tôi không sạch sẽ.",
+          "context": "Gia đình",
+          "note": "きれい là tính từ な nên dùng じゃ ありません."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "この 部屋は きれいくないです。",
+          "right": "この 部屋は きれいじゃ ありません。",
+          "explain": "きれい là tính từ な (dù kết thúc bằng い), nên phủ định là じゃ ありません."
+        },
+        {
+          "wrong": "この カメラは いくないです。",
+          "right": "この カメラは よくないです。",
+          "explain": "いい là ngoại lệ: phủ định luôn là よくないです."
+        },
+        {
+          "wrong": "今日は 寒いじゃ ありません。",
+          "right": "今日は 寒くないです。",
+          "explain": "Tính từ い không đi với じゃ ありません. Phải bỏ い và thêm くないです."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: 〜く ありません",
+          "text": "高くないです còn có thể nói 高く ありません — cùng nghĩa, hơi trang trọng hơn. Sách Minna dùng 〜くないです là chính.",
+          "examples": [
+            {
+              "jp": "この 靴は 高く ありません。",
+              "romaji": "Kono kutsu wa takaku arimasen.",
+              "vi": "Đôi giày này không đắt."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L08-G3",
+      "title": "なA な N / いA N — tính từ bổ nghĩa danh từ",
+      "meaning": "N … (thị trấn yên tĩnh, ngọn núi cao)",
+      "why": "Để gói tính chất vào trong danh từ: 「Nara là THÀNH PHỐ YÊN TĨNH」, 「Đây là CHIẾC XE MỚI」 — câu miêu tả tự nhiên hơn.",
+      "when": [
+        "Nói 「A là một N như thế nào」: 奈良は 静かな 町です.",
+        "Chỉ rõ đồ vật bằng đặc điểm: 青い 傘 (cái ô màu xanh), 新しい 車 (xe mới)."
+      ],
+      "formula": "なA な N   (静かな 町)\nいA N   (高い 山)",
+      "parts": [
+        { "part": "なA な", "role": "Tính từ な phải thêm な để nối với danh từ phía sau." },
+        { "part": "いA", "role": "Tính từ い đứng thẳng trước danh từ, giữ nguyên い, KHÔNG thêm な." },
+        { "part": "N", "role": "Danh từ được miêu tả — luôn đứng SAU tính từ (ngược tiếng Việt)." }
+      ],
+      "memoryTip": {
+        "emoji": "🌉",
+        "hook": "Tính từ な cần 「cây cầu な」 để sang danh từ!",
+        "meaning": "→ 静かな 町, きれいな 花; tính từ い đi thẳng: 高い 山."
+      },
+      "examples": [
+        {
+          "jp": "奈良は 静かな 町です。",
+          "romaji": "Nara wa shizuka na machi desu.",
+          "vi": "Nara là một thành phố yên tĩnh.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "静かな", "vi": "yên tĩnh (tính từ な + な)" },
+            { "jp": "町", "vi": "thành phố, thị trấn" }
+          ]
+        },
+        {
+          "jp": "富士山は 高い 山です。",
+          "romaji": "Fujisan wa takai yama desu.",
+          "vi": "Núi Phú Sĩ là ngọn núi cao.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "高い", "vi": "cao (tính từ い)" },
+            { "jp": "山", "vi": "núi" }
+          ]
+        },
+        {
+          "jp": "木村さんは きれいな 人です。",
+          "romaji": "Kimura-san wa kirei na hito desu.",
+          "vi": "Chị Kimura là người đẹp.",
+          "context": "Giới thiệu người khác"
+        },
+        {
+          "jp": "これは 新しい 車です。",
+          "romaji": "Kore wa atarashii kuruma desu.",
+          "vi": "Đây là chiếc xe mới.",
+          "context": "Mua sắm"
+        },
+        {
+          "jp": "ワット先生は おもしろい 先生です。",
+          "romaji": "Watto-sensei wa omoshiroi sensei desu.",
+          "vi": "Thầy Watt là một giáo viên vui tính.",
+          "context": "Trường học",
+          "note": "おもしろい vừa là 「thú vị」 vừa là 「vui tính, hài hước」 khi nói về người."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "奈良は 静か 町です。",
+          "right": "奈良は 静かな 町です。",
+          "explain": "Tính từ な đứng trước danh từ bắt buộc có な."
+        },
+        {
+          "wrong": "これは 新しいな 車です。",
+          "right": "これは 新しい 車です。",
+          "explain": "Tính từ い nối thẳng với danh từ, không thêm な."
+        },
+        {
+          "wrong": "これは 車 新しいです。",
+          "right": "これは 新しい 車です。",
+          "explain": "Tiếng Việt nói 「xe mới」, tiếng Nhật đảo lại: tính từ trước, danh từ sau."
+        }
+      ]
+    },
+    {
+      "id": "L08-G4",
+      "title": "とても / あまり〜ない",
+      "meaning": "rất… / không… lắm",
+      "why": "Để nói mức độ: 「RẤT ngon」 hay 「KHÔNG ngon LẮM」 — cách nói nhẹ nhàng, lịch sự hơn chê thẳng.",
+      "when": [
+        "とても: nhấn mạnh trong câu khẳng định (rất nóng, rất đẹp).",
+        "あまり: đi với phủ định để chê nhẹ nhàng, lịch sự (không đắt lắm, không thú vị lắm)."
+      ],
+      "formula": "とても + A (khẳng định)\nあまり + A (phủ định)",
+      "parts": [
+        { "part": "とても", "role": "「rất」 — đặt trước tính từ, dùng với câu khẳng định." },
+        { "part": "あまり", "role": "「không… lắm」 — đặt trước tính từ, câu PHẢI ở dạng phủ định (〜くないです / じゃ ありません)." }
+      ],
+      "memoryTip": {
+        "emoji": "🤏",
+        "hook": "「あまり」 đi đâu cũng rủ 「ない」 theo!",
+        "meaning": "→ あまり + phủ định = không… lắm (あまり おいしくないです)."
+      },
+      "examples": [
+        {
+          "jp": "北京は とても 寒いです。",
+          "romaji": "Pekin wa totemo samui desu.",
+          "vi": "Bắc Kinh rất lạnh.",
+          "context": "Thời tiết"
+        },
+        {
+          "jp": "この 料理は とても おいしいです。",
+          "romaji": "Kono ryōri wa totemo oishii desu.",
+          "vi": "Món này rất ngon.",
+          "context": "Nhà hàng"
+        },
+        {
+          "jp": "この 映画は あまり おもしろくないです。",
+          "romaji": "Kono eiga wa amari omoshirokunai desu.",
+          "vi": "Bộ phim này không hay lắm.",
+          "context": "Giải trí",
+          "breakdown": [
+            { "jp": "あまり", "vi": "không… lắm" },
+            { "jp": "おもしろくないです", "vi": "không thú vị (phủ định)" }
+          ]
+        },
+        {
+          "jp": "今週は あまり 暇じゃ ありません。",
+          "romaji": "Konshū wa amari hima ja arimasen.",
+          "vi": "Tuần này tôi không rảnh lắm.",
+          "context": "Công việc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "この 料理は あまり おいしいです。",
+          "right": "この 料理は あまり おいしくないです。",
+          "explain": "あまり phải đi với phủ định. Câu khẳng định thì dùng とても."
+        },
+        {
+          "wrong": "北京は とても 寒くないです。",
+          "right": "北京は あまり 寒くないです。",
+          "explain": "Muốn nói 「không… lắm」 thì dùng あまり + phủ định. とても dùng với câu khẳng định."
+        }
+      ]
+    },
+    {
+      "id": "L08-G5",
+      "title": "N は どうですか / N1 は どんな N2 ですか",
+      "meaning": "N thế nào? / N1 là N2 như thế nào?",
+      "why": "Để hỏi cảm nhận, ấn tượng của người khác: 「Cuộc sống ở Nhật thế nào?」, 「Nara là thành phố như thế nào?」 — câu hỏi làm quen rất hay dùng.",
+      "when": [
+        "どうですか: hỏi cảm nhận, ý kiến chung về một thứ (cuộc sống, công việc, món ăn).",
+        "どんな N ですか: hỏi tính chất / loại của danh từ — câu trả lời thường là 「tính từ + N」."
+      ],
+      "formula": "N は どうですか\nN1 は どんな N2 ですか → (A) N2 です",
+      "parts": [
+        { "part": "どう", "role": "「thế nào」 — đứng một mình trước ですか." },
+        { "part": "どんな", "role": "「như thế nào, loại gì」 — LUÔN đi kèm một danh từ ngay sau (どんな 町)." },
+        { "part": "N2", "role": "Danh từ mà mình hỏi tính chất (町, 先生, 人…)." }
+      ],
+      "memoryTip": {
+        "emoji": "🔍",
+        "hook": "「どんな」 luôn dắt theo một danh từ!",
+        "meaning": "→ どんな 町ですか; hỏi cảm nhận chung thì dùng どう: 仕事は どうですか."
+      },
+      "examples": [
+        {
+          "jp": "日本の 生活は どうですか。 …とても 楽しいです。",
+          "romaji": "Nihon no seikatsu wa dō desu ka. … Totemo tanoshii desu.",
+          "vi": "Cuộc sống ở Nhật thế nào? …Rất vui.",
+          "context": "Làm quen",
+          "breakdown": [
+            { "jp": "生活", "vi": "cuộc sống" },
+            { "jp": "どうですか", "vi": "thế nào?" },
+            { "jp": "楽しい", "vi": "vui" }
+          ]
+        },
+        {
+          "jp": "奈良は どんな 町ですか。 …古い 町です。",
+          "romaji": "Nara wa donna machi desu ka. … Furui machi desu.",
+          "vi": "Nara là thành phố như thế nào? …Là thành phố cổ.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "どんな 町", "vi": "thành phố như thế nào" },
+            { "jp": "古い 町", "vi": "thành phố cổ" }
+          ]
+        },
+        {
+          "jp": "ワット先生は どんな 先生ですか。 …おもしろい 先生です。",
+          "romaji": "Watto-sensei wa donna sensei desu ka. … Omoshiroi sensei desu.",
+          "vi": "Thầy Watt là giáo viên như thế nào? …Là một thầy vui tính.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "新しい 仕事は どうですか。 …忙しいです。",
+          "romaji": "Atarashii shigoto wa dō desu ka. … Isogashii desu.",
+          "vi": "Công việc mới thế nào? …Bận lắm.",
+          "context": "Công việc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "奈良は どう 町ですか。",
+          "right": "奈良は どんな 町ですか。",
+          "explain": "Trước danh từ phải dùng どんな. どう không đứng trước danh từ."
+        },
+        {
+          "wrong": "日本の 生活は どんなですか。",
+          "right": "日本の 生活は どうですか。",
+          "explain": "どんな không đứng một mình trước ですか. Không có danh từ theo sau thì dùng どう."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: いかがですか",
+          "text": "いかがですか là cách nói lịch sự hơn của どうですか — hay dùng khi mời đồ uống, đồ ăn: コーヒーは いかがですか (Anh dùng cà phê nhé?).",
+          "examples": [
+            {
+              "jp": "お茶は いかがですか。 …ありがとう ございます。",
+              "romaji": "Ocha wa ikaga desu ka. … Arigatō gozaimasu.",
+              "vi": "Mời anh dùng trà? …Cảm ơn chị."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L08-G6",
+      "title": "S1 が、S2 (nhưng) / そして (và)",
+      "meaning": "S1 nhưng S2 / S1. Và S2.",
+      "why": "Để nói hai ý về cùng một thứ: 「Ngon NHƯNG đắt」, 「Rẻ. VÀ ngon」 — câu miêu tả có chiều sâu hơn.",
+      "when": [
+        "が: hai vế NGƯỢC nhau (một tốt – một xấu, trái với mong đợi).",
+        "そして: hai câu CÙNG chiều (cùng tốt hoặc cùng xấu), そして đứng đầu câu thứ hai."
+      ],
+      "formula": "S1 が、S2\nS1。 そして、S2",
+      "parts": [
+        { "part": "が、", "role": "Đặt sau S1 (sau です) = 「nhưng」, nối hai vế trái chiều trong MỘT câu." },
+        { "part": "そして", "role": "「và, thêm nữa」 — đứng đầu câu thứ hai, nối hai câu cùng chiều." }
+      ],
+      "memoryTip": {
+        "emoji": "⚖️",
+        "hook": "Ngon 「が」 đắt — hai ý ngược chiều thì 「が」!",
+        "meaning": "→ S1 が、S2 = S1 nhưng S2; cùng chiều thì dùng そして (và)."
+      },
+      "examples": [
+        {
+          "jp": "日本の 食べ物は おいしいですが、高いです。",
+          "romaji": "Nihon no tabemono wa oishii desu ga, takai desu.",
+          "vi": "Đồ ăn Nhật ngon nhưng đắt.",
+          "context": "Nhà hàng",
+          "breakdown": [
+            { "jp": "おいしいですが", "vi": "ngon nhưng" },
+            { "jp": "高いです", "vi": "đắt" }
+          ]
+        },
+        {
+          "jp": "この 部屋は 狭いですが、きれいです。",
+          "romaji": "Kono heya wa semai desu ga, kirei desu.",
+          "vi": "Căn phòng này chật nhưng sạch đẹp.",
+          "context": "Nơi ở"
+        },
+        {
+          "jp": "仕事は 忙しいですが、おもしろいです。",
+          "romaji": "Shigoto wa isogashii desu ga, omoshiroi desu.",
+          "vi": "Công việc bận nhưng thú vị.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "この ホテルは きれいです。 そして、安いです。",
+          "romaji": "Kono hoteru wa kirei desu. Soshite, yasui desu.",
+          "vi": "Khách sạn này sạch đẹp. Và còn rẻ nữa.",
+          "context": "Du lịch",
+          "note": "Hai ý đều tốt → dùng そして."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "仕事は 忙しいですが、そして おもしろいです。",
+          "right": "仕事は 忙しいですが、おもしろいです。",
+          "explain": "が và そして là hai cách nối khác nhau, không dùng cùng lúc."
+        },
+        {
+          "wrong": "この ホテルは きれいです そして、安いです。",
+          "right": "この ホテルは きれいです。 そして、安いです。",
+          "explain": "そして đứng đầu câu thứ hai — câu thứ nhất phải kết thúc bằng 「。」."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: hai chữ が",
+          "text": "が ở đây là liên từ 「nhưng」, đứng SAU cả vế câu (sau です). Nó khác trợ từ が đứng sau danh từ mà bạn sẽ học ở bài 9 (日本語が わかります)."
+        }
+      ]
+    },
+    {
+      "id": "L08-G7",
+      "title": "どれ — cái nào",
+      "meaning": "Cái nào? (chọn trong nhiều thứ)",
+      "why": "Khi trước mặt có nhiều đồ giống nhau (ô, túi, xe…), bạn cần hỏi 「Cái nào là của anh?」.",
+      "when": [
+        "Hỏi chọn một thứ trong từ 3 thứ trở lên.",
+        "Câu trả lời thường dùng この / その / あの + (tính từ) + N."
+      ],
+      "formula": "N は どれですか\n→ この / その / あの (A) N です",
+      "parts": [
+        { "part": "どれ", "role": "「cái nào」 — đại từ đứng một mình (giống これ / それ / あれ), không đi kèm danh từ." }
+      ],
+      "memoryTip": null,
+      "keyword": "どれ = cái nào (chọn trong ≥3 thứ) — bạn của これ・それ・あれ",
+      "examples": [
+        {
+          "jp": "ミラーさんの 傘は どれですか。 …あの 青い 傘です。",
+          "romaji": "Mirā-san no kasa wa dore desu ka. … Ano aoi kasa desu.",
+          "vi": "Ô của anh Miller là cái nào? …Là cái ô màu xanh kia.",
+          "context": "Văn phòng",
+          "breakdown": [
+            { "jp": "傘", "vi": "cái ô" },
+            { "jp": "どれ", "vi": "cái nào" },
+            { "jp": "あの 青い 傘", "vi": "cái ô xanh kia" }
+          ]
+        },
+        {
+          "jp": "サントスさんの かばんは どれですか。 …その 黒い かばんです。",
+          "romaji": "Santosu-san no kaban wa dore desu ka. … Sono kuroi kaban desu.",
+          "vi": "Túi của anh Santos là cái nào? …Là cái túi đen đó.",
+          "context": "Nhà ga"
+        },
+        {
+          "jp": "木村さんの 車は どれですか。 …あの 白い 車です。",
+          "romaji": "Kimura-san no kuruma wa dore desu ka. … Ano shiroi kuruma desu.",
+          "vi": "Xe của chị Kimura là chiếc nào? …Là chiếc xe trắng kia.",
+          "context": "Bãi đỗ xe"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "ミラーさんの 傘は どれ 傘ですか。",
+          "right": "ミラーさんの 傘は どれですか。",
+          "explain": "どれ đứng một mình, không gắn danh từ phía sau (muốn đi với danh từ phải dùng どの — sẽ học sau)."
+        },
+        {
+          "wrong": "ミラーさんの 傘は だれですか。",
+          "right": "ミラーさんの 傘は どれですか。",
+          "explain": "だれ = ai (hỏi người). Hỏi đồ vật 「cái nào」 dùng どれ."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: chỉ có 2 thứ",
+          "text": "Khi chỉ chọn giữa HAI thứ, người Nhật dùng どちら (bài 12) thay cho どれ."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "N は なA です / いA です", "meaning": "N (thì) … (miêu tả)", "example": "この 町は 静かです。 富士山は 高いです。" },
+    { "pattern": "なA じゃ ありません / いA くないです", "meaning": "không … (いい → よくないです)", "example": "今日は 寒くないです。" },
+    { "pattern": "なA な N / いA N", "meaning": "N … (tính từ trước danh từ)", "example": "奈良は 静かな 町です。" },
+    { "pattern": "とても / あまり〜ない", "meaning": "rất… / không… lắm", "example": "この 映画は あまり おもしろくないです。" },
+    { "pattern": "N は どうですか / どんな N ですか", "meaning": "N thế nào? / N như thế nào?", "example": "奈良は どんな 町ですか。" },
+    { "pattern": "S1 が、S2 / そして", "meaning": "S1 nhưng S2 / và", "example": "おいしいですが、高いです。" },
+    { "pattern": "N は どれですか", "meaning": "N là cái nào?", "example": "ミラーさんの 傘は どれですか。" }
+  ],
+  "exercises": [
+    {
+      "id": "L08-E01",
+      "type": "choice",
+      "grammarPoint": "L08-G1",
+      "question": "Từ nào là tính từ な?",
+      "options": ["静か", "高い", "おいしい", "新しい"],
+      "answer": "静か",
+      "explanation": "静か (yên tĩnh) là tính từ な: 静かな 町. Ba từ còn lại là tính từ い."
+    },
+    {
+      "id": "L08-E02",
+      "type": "fix",
+      "grammarPoint": "L08-G1",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "この 町は 静かなです。",
+      "options": [
+        "この 町は 静かです。",
+        "この 町は 静かいです。",
+        "この 町は 静かのです。",
+        "この 町は 静かなじゃです。"
+      ],
+      "answer": "この 町は 静かです。",
+      "explanation": "Tính từ な đứng trước です thì bỏ な: 静かです."
+    },
+    {
+      "id": "L08-E03",
+      "type": "vi-jp",
+      "grammarPoint": "L08-G1",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Đồ ăn Nhật ngon.",
+      "options": [
+        "日本の 食べ物は おいしいです。",
+        "日本の 食べ物は おいしいなです。",
+        "日本の 食べ物は おいしです。",
+        "日本の おいしい 食べ物です ありません。"
+      ],
+      "answer": "日本の 食べ物は おいしいです。",
+      "explanation": "おいしい là tính từ い — giữ nguyên い trước です, không thêm な."
+    },
+    {
+      "id": "L08-E04",
+      "type": "choice",
+      "grammarPoint": "L08-G1",
+      "question": "「きれい」 (đẹp, sạch) thuộc loại từ nào?",
+      "options": ["Tính từ な", "Tính từ い", "Danh từ chỉ nơi chốn", "Động từ"],
+      "answer": "Tính từ な",
+      "explanation": "きれい kết thúc bằng い nhưng là tính từ な: きれいな 花, きれいじゃ ありません."
+    },
+    {
+      "id": "L08-E05",
+      "type": "fill",
+      "grammarPoint": "L08-G2",
+      "question": "Gõ phần còn thiếu để thành câu phủ định (kana).",
+      "jp": "この 本は おもしろ＿＿です。",
+      "vi": "Cuốn sách này không thú vị.",
+      "answer": "くない",
+      "hint": "bỏ い, thêm …",
+      "explanation": "Tính từ い phủ định: bỏ い + くないです → おもしろくないです."
+    },
+    {
+      "id": "L08-E06",
+      "type": "fix",
+      "grammarPoint": "L08-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしの 部屋は きれいくないです。",
+      "options": [
+        "わたしの 部屋は きれいじゃ ありません。",
+        "わたしの 部屋は きれくないです。",
+        "わたしの 部屋は きれいないです。",
+        "わたしの 部屋は きれいなくないです。"
+      ],
+      "answer": "わたしの 部屋は きれいじゃ ありません。",
+      "explanation": "きれい là tính từ な → phủ định bằng じゃ ありません, không dùng くない."
+    },
+    {
+      "id": "L08-E07",
+      "type": "choice",
+      "grammarPoint": "L08-G2",
+      "question": "Dạng phủ định của 「いいです」 là gì?",
+      "options": ["よくないです", "いくないです", "いいじゃ ありません", "いいないです"],
+      "answer": "よくないです",
+      "explanation": "いい là ngoại lệ: phủ định là よくないです."
+    },
+    {
+      "id": "L08-E08",
+      "type": "vi-jp",
+      "grammarPoint": "L08-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Hôm nay không lạnh.",
+      "options": [
+        "今日は 寒くないです。",
+        "今日は 寒いじゃ ありません。",
+        "今日は 寒いくないです。",
+        "今日は 寒じゃ ありません。"
+      ],
+      "answer": "今日は 寒くないです。",
+      "explanation": "寒い là tính từ い → bỏ い + くないです."
+    },
+    {
+      "id": "L08-E09",
+      "type": "order",
+      "grammarPoint": "L08-G2",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Thị trấn này không yên tĩnh.",
+      "tokens": ["この", "町", "は", "静か", "じゃ ありません"],
+      "explanation": "静か là tính từ な → phủ định: 静かじゃ ありません."
+    },
+    {
+      "id": "L08-E10",
+      "type": "particle",
+      "grammarPoint": "L08-G3",
+      "question": "Chọn chữ điền vào chỗ trống.",
+      "jp": "奈良は 静か＿＿ 町です。",
+      "romaji": "Nara wa shizuka ___ machi desu.",
+      "vi": "Nara là một thành phố yên tĩnh.",
+      "options": ["な", "の", "い", "は"],
+      "answer": "な",
+      "explanation": "Tính từ な đứng trước danh từ phải có な: 静かな 町."
+    },
+    {
+      "id": "L08-E11",
+      "type": "order",
+      "grammarPoint": "L08-G3",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Núi Phú Sĩ là ngọn núi cao.",
+      "tokens": ["富士山", "は", "高い", "山", "です"],
+      "explanation": "Tính từ い (高い) đứng thẳng trước danh từ (山)."
+    },
+    {
+      "id": "L08-E12",
+      "type": "fix",
+      "grammarPoint": "L08-G3",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "これは 新しいな 車です。",
+      "options": [
+        "これは 新しい 車です。",
+        "これは 新しの 車です。",
+        "これは 車 新しいです。",
+        "これは 新しいの 車です。"
+      ],
+      "answer": "これは 新しい 車です。",
+      "explanation": "Tính từ い nối thẳng với danh từ, không thêm な hay の."
+    },
+    {
+      "id": "L08-E13",
+      "type": "jp-vi",
+      "grammarPoint": "L08-G3",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "ワット先生は おもしろい 先生です。",
+      "romaji": "Watto-sensei wa omoshiroi sensei desu.",
+      "options": [
+        "Thầy Watt là một giáo viên vui tính.",
+        "Thầy Watt không phải là giáo viên vui tính.",
+        "Thầy Watt là giáo viên như thế nào?",
+        "Giáo viên vui tính là thầy Watt phải không?"
+      ],
+      "answer": "Thầy Watt là một giáo viên vui tính.",
+      "explanation": "おもしろい 先生 = giáo viên vui tính (tính từ い đứng trước danh từ). Câu khẳng định, không có か."
+    },
+    {
+      "id": "L08-E14",
+      "type": "pattern",
+      "grammarPoint": "L08-G3",
+      "question": "Muốn nói 「Hà Nội là một thành phố náo nhiệt」 (にぎやか là tính từ な), chọn câu đúng.",
+      "options": [
+        "ハノイは にぎやかな 町です。",
+        "ハノイは にぎやか 町です。",
+        "ハノイは にぎやかい 町です。",
+        "ハノイは 町 にぎやかです。"
+      ],
+      "answer": "ハノイは にぎやかな 町です。",
+      "explanation": "Mẫu なA な N: にぎやかな 町."
+    },
+    {
+      "id": "L08-E15",
+      "type": "choice",
+      "grammarPoint": "L08-G4",
+      "question": "Chọn cách nói đúng điền vào chỗ trống: 「この 映画は あまり ＿＿。」",
+      "jp": "この 映画は あまり ＿＿。",
+      "vi": "Bộ phim này không hay lắm.",
+      "options": ["おもしろくないです", "おもしろいです", "おもしろじゃ ありません", "おもしろいないです"],
+      "answer": "おもしろくないです",
+      "explanation": "あまり đi với phủ định; おもしろい là tính từ い → おもしろくないです."
+    },
+    {
+      "id": "L08-E16",
+      "type": "fix",
+      "grammarPoint": "L08-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "この 料理は あまり おいしいです。",
+      "options": [
+        "この 料理は あまり おいしくないです。",
+        "この 料理は あまり おいしいじゃ ありません。",
+        "この 料理は とても おいしくないです。",
+        "この 料理は あまり おいしなです。"
+      ],
+      "answer": "この 料理は あまり おいしくないです。",
+      "explanation": "あまり phải đi với phủ định: おいしい → おいしくないです."
+    },
+    {
+      "id": "L08-E17",
+      "type": "jp-vi",
+      "grammarPoint": "L08-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "北京は とても 寒いです。",
+      "romaji": "Pekin wa totemo samui desu.",
+      "options": [
+        "Bắc Kinh rất lạnh.",
+        "Bắc Kinh không lạnh lắm.",
+        "Bắc Kinh không lạnh.",
+        "Bắc Kinh lạnh thế nào?"
+      ],
+      "answer": "Bắc Kinh rất lạnh.",
+      "explanation": "とても + tính từ khẳng định = rất…"
+    },
+    {
+      "id": "L08-E18",
+      "type": "situation",
+      "grammarPoint": "L08-G4",
+      "question": "Bạn bè hỏi 「その 本は おもしろいですか」. Cuốn sách không thú vị lắm. Bạn đáp:",
+      "options": [
+        "いいえ、あまり おもしろくないです。",
+        "はい、あまり おもしろいです。",
+        "いいえ、とても おもしろいです。",
+        "いいえ、あまり おもしろいです。"
+      ],
+      "answer": "いいえ、あまり おもしろくないです。",
+      "explanation": "「không… lắm」 = あまり + phủ định, và câu phủ định thì bắt đầu bằng いいえ."
+    },
+    {
+      "id": "L08-E19",
+      "type": "vi-jp",
+      "grammarPoint": "L08-G5",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Nara là thành phố như thế nào?",
+      "options": [
+        "奈良は どんな 町ですか。",
+        "奈良は どう 町ですか。",
+        "奈良は どんなですか。",
+        "奈良は どれ 町ですか。"
+      ],
+      "answer": "奈良は どんな 町ですか。",
+      "explanation": "Hỏi tính chất của danh từ → どんな + N (どんな 町)."
+    },
+    {
+      "id": "L08-E20",
+      "type": "choice",
+      "grammarPoint": "L08-G5",
+      "question": "Chọn từ điền vào chỗ trống: 「日本の 生活は ＿＿ですか。 …とても 楽しいです。」",
+      "jp": "日本の 生活は ＿＿ですか。 …とても 楽しいです。",
+      "vi": "Cuộc sống ở Nhật thế nào? …Rất vui.",
+      "options": ["どう", "どんな", "どれ", "だれ"],
+      "answer": "どう",
+      "explanation": "Không có danh từ theo sau, hỏi cảm nhận chung → どうですか. どんな phải đi kèm danh từ."
+    },
+    {
+      "id": "L08-E21",
+      "type": "situation",
+      "grammarPoint": "L08-G5",
+      "question": "Đồng nghiệp người Nhật mới sang Việt Nam làm việc. Bạn muốn hỏi 「Cuộc sống ở Việt Nam thế nào?」. Bạn nói:",
+      "options": [
+        "ベトナムの 生活は どうですか。",
+        "ベトナムの 生活は どんなですか。",
+        "ベトナムの 生活は どれですか。",
+        "ベトナムの 生活は 何ですか。"
+      ],
+      "answer": "ベトナムの 生活は どうですか。",
+      "explanation": "Hỏi cảm nhận chung → N は どうですか."
+    },
+    {
+      "id": "L08-E22",
+      "type": "identify",
+      "grammarPoint": "L08-G5",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "ワット先生は どんな 先生ですか。",
+      "romaji": "Watto-sensei wa donna sensei desu ka.",
+      "vi": "Thầy Watt là giáo viên như thế nào?",
+      "options": [
+        "どんな N ですか (hỏi tính chất)",
+        "N は どれですか (cái nào)",
+        "S1 が、S2 (nhưng)",
+        "あまり〜ない (không… lắm)"
+      ],
+      "answer": "どんな N ですか (hỏi tính chất)",
+      "explanation": "どんな + 先生 → hỏi thầy là người như thế nào."
+    },
+    {
+      "id": "L08-E23",
+      "type": "particle",
+      "grammarPoint": "L08-G6",
+      "question": "Chọn chữ điền vào chỗ trống.",
+      "jp": "この 部屋は 狭いです＿＿、きれいです。",
+      "romaji": "Kono heya wa semai desu ___, kirei desu.",
+      "vi": "Căn phòng này chật nhưng sạch đẹp.",
+      "options": ["が", "も", "か", "の"],
+      "answer": "が",
+      "explanation": "Hai ý ngược chiều (chật – đẹp) → S1 が、S2 = nhưng."
+    },
+    {
+      "id": "L08-E24",
+      "type": "choice",
+      "grammarPoint": "L08-G6",
+      "question": "Chọn từ điền vào chỗ trống: 「この ホテルは きれいです。＿＿、安いです。」",
+      "jp": "この ホテルは きれいです。＿＿、安いです。",
+      "vi": "Khách sạn này sạch đẹp. Và còn rẻ nữa.",
+      "options": ["そして", "どれ", "どんな", "どう"],
+      "answer": "そして",
+      "explanation": "Hai ý cùng chiều (đẹp, rẻ) nối bằng そして đứng đầu câu sau."
+    },
+    {
+      "id": "L08-E25",
+      "type": "jp-vi",
+      "grammarPoint": "L08-G6",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "日本の 食べ物は おいしいですが、高いです。",
+      "romaji": "Nihon no tabemono wa oishii desu ga, takai desu.",
+      "options": [
+        "Đồ ăn Nhật ngon nhưng đắt.",
+        "Đồ ăn Nhật ngon và rẻ.",
+        "Đồ ăn Nhật không ngon nhưng đắt.",
+        "Đồ ăn Nhật đắt nhưng không ngon."
+      ],
+      "answer": "Đồ ăn Nhật ngon nhưng đắt.",
+      "explanation": "〜ですが、〜 = … nhưng …; おいしい = ngon, 高い = đắt."
+    },
+    {
+      "id": "L08-E26",
+      "type": "order",
+      "grammarPoint": "L08-G6",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Công việc bận nhưng thú vị.",
+      "tokens": ["仕事", "は", "忙しいです", "が、", "おもしろいです"],
+      "explanation": "S1 (忙しいです) + が、 + S2 (おもしろいです)."
+    },
+    {
+      "id": "L08-E27",
+      "type": "situation",
+      "grammarPoint": "L08-G7",
+      "question": "Ở cửa văn phòng có nhiều cái ô. Bạn muốn hỏi 「Ô của anh Miller là cái nào?」. Bạn nói:",
+      "options": [
+        "ミラーさんの 傘は どれですか。",
+        "ミラーさんの 傘は だれですか。",
+        "ミラーさんの 傘は どうですか。",
+        "ミラーさんの 傘は どんなですか。"
+      ],
+      "answer": "ミラーさんの 傘は どれですか。",
+      "explanation": "Chọn một thứ trong nhiều thứ → どれ (cái nào)."
+    },
+    {
+      "id": "L08-E28",
+      "type": "jp-vi",
+      "grammarPoint": "L08-G7",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "サントスさんの かばんは どれですか。 …その 黒い かばんです。",
+      "romaji": "Santosu-san no kaban wa dore desu ka. … Sono kuroi kaban desu.",
+      "options": [
+        "Túi của anh Santos là cái nào? …Là cái túi đen đó.",
+        "Túi của anh Santos thế nào? …Là cái túi đen đó.",
+        "Anh Santos có mấy cái túi? …Có một cái túi đen.",
+        "Túi đen đó là của ai? …Của anh Santos."
+      ],
+      "answer": "Túi của anh Santos là cái nào? …Là cái túi đen đó.",
+      "explanation": "どれ = cái nào; その 黒い かばん = cái túi đen đó."
+    },
+    {
+      "id": "L08-E29",
+      "type": "fix",
+      "grammarPoint": "L08-G7",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "木村さんの 車は どれ 車ですか。",
+      "options": [
+        "木村さんの 車は どれですか。",
+        "木村さんの 車は どれの 車ですか。",
+        "木村さんの 車は どんなですか。",
+        "木村さんの 車は だれですか。"
+      ],
+      "answer": "木村さんの 車は どれですか。",
+      "explanation": "どれ là đại từ đứng một mình (như これ, それ), không đi kèm danh từ."
+    },
+    {
+      "id": "L08-E30",
+      "type": "identify",
+      "grammarPoint": "L08-G2",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "この カメラは よくないです。",
+      "romaji": "Kono kamera wa yokunai desu.",
+      "vi": "Cái máy ảnh này không tốt.",
+      "options": [
+        "Phủ định tính từ い (いい → よくないです)",
+        "Tính từ な + な + N",
+        "S1 が、S2 (nhưng)",
+        "N は どうですか"
+      ],
+      "answer": "Phủ định tính từ い (いい → よくないです)",
+      "explanation": "よくないです là phủ định đặc biệt của いい (tốt)."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 8 }
+}

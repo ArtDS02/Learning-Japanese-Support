@@ -1,0 +1,760 @@
+{
+  "lesson": 16,
+  "title": "Nối câu — làm lần lượt, miêu tả người và vật",
+  "titleJp": "使い方を 教えて ください",
+  "topic": "V1て、V2 · い/な-A, N nối câu · V1てから、V2 · N1は N2が A · どうやって · どれ / どの N",
+  "description": "Học xong bài này bạn kể được một chuỗi việc làm theo thứ tự, nối nhiều tính từ để miêu tả người/vật, nói 「sau khi… thì…」, miêu tả đặc điểm (「con voi vòi dài」) và hỏi cách làm, cách đi.",
+  "objectives": [
+    "Nối 2–3 hành động theo thứ tự bằng V1て、V2て、V3.",
+    "Nối tính từ và danh từ: いA → くて, なA / N → で.",
+    "Nói 「sau khi V1 thì V2」 bằng V1てから、V2.",
+    "Miêu tả đặc điểm một bộ phận / khía cạnh bằng N1 は N2 が A.",
+    "Hỏi cách làm, cách đi bằng どうやって.",
+    "Hỏi 「cái nào / người nào」 bằng どれ và どの N."
+  ],
+  "keyPoints": [
+    "Nối hành động: dùng thể て cho các động từ ở giữa, động từ CUỐI quyết định thì (hiện tại / quá khứ).",
+    "いA: bỏ い + くて (若い → 若くて). Riêng いい → よくて.",
+    "なA và N: + で (静かで, 学生で).",
+    "Không nối hai ý trái ngược bằng くて / で — dùng が: 狭いですが、きれいです.",
+    "V1てから、V2 nhấn mạnh làm xong V1 rồi mới V2. Khác với 〜から (vì) của bài 9.",
+    "N1 は N2 が A: N1 là chủ đề lớn, N2 là bộ phận / khía cạnh được miêu tả (象は 鼻が 長いです).",
+    "どれ đứng một mình; どの luôn có danh từ đi sau (どの 人, どの バス)."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L16-G1",
+      "title": "V1て、V2て、V3 (chuỗi hành động)",
+      "meaning": "V1 rồi V2 rồi V3 (lần lượt)",
+      "why": "Để kể một ngày của mình, hướng dẫn các bước làm… gọn trong một câu, thay vì nói nhiều câu ngắn rời rạc.",
+      "when": [
+        "Kể lịch sinh hoạt: 「Sáng chạy bộ, tắm rồi đi làm」.",
+        "Kể lại việc đã làm theo thứ tự: 「Hôm qua đi Kobe, xem phim rồi uống trà」.",
+        "Hướng dẫn các bước: 「Bỏ tiền vào rồi bấm nút」."
+      ],
+      "formula": "V1て、(V2て、) V3\n(thì của cả câu = thì của V3)",
+      "parts": [
+        { "part": "V1て、V2て", "role": "Các hành động làm trước, xếp đúng thứ tự thời gian, ở thể て." },
+        { "part": "V3", "role": "Hành động cuối. Chia ます / ました / て ください… — quyết định thì và kiểu câu cho CẢ câu." }
+      ],
+      "memoryTip": {
+        "emoji": "🚃",
+        "hook": "Các toa nối bằng 「て」, đầu tàu cuối câu quyết định thì!",
+        "meaning": "→ Việc nào trước đứng trước; động từ cuối là ました thì cả chuỗi là quá khứ."
+      },
+      "examples": [
+        {
+          "jp": "朝 ジョギングを して、シャワーを 浴びて、会社へ 行きます。",
+          "romaji": "Asa jogingu o shite, shawā o abite, kaisha e ikimasu.",
+          "vi": "Buổi sáng tôi chạy bộ, tắm rồi đi làm.",
+          "context": "Sinh hoạt hằng ngày",
+          "breakdown": [
+            { "jp": "ジョギングを して", "vi": "chạy bộ (rồi)" },
+            { "jp": "シャワーを 浴びて", "vi": "tắm (rồi)" },
+            { "jp": "会社へ 行きます", "vi": "đi đến công ty" }
+          ]
+        },
+        {
+          "jp": "神戸へ 行って、映画を 見て、お茶を 飲みました。",
+          "romaji": "Kōbe e itte, eiga o mite, ocha o nomimashita.",
+          "vi": "Tôi đã đi Kobe, xem phim rồi uống trà.",
+          "context": "Cuối tuần",
+          "note": "Chỉ động từ cuối là ました, nhưng cả ba việc đều ở quá khứ."
+        },
+        {
+          "jp": "きのうは 図書館へ 行って、本を 借りて、うちへ 帰りました。",
+          "romaji": "Kinō wa toshokan e itte, hon o karite, uchi e kaerimashita.",
+          "vi": "Hôm qua tôi đến thư viện, mượn sách rồi về nhà.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "お金を 入れて、この ボタンを 押して ください。",
+          "romaji": "Okane o irete, kono botan o oshite kudasai.",
+          "vi": "Hãy bỏ tiền vào rồi bấm nút này.",
+          "context": "Mua vé ở ga",
+          "note": "Động từ cuối là Vて ください → cả câu là lời hướng dẫn."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "神戸へ 行きました、映画を 見ました。",
+          "right": "神戸へ 行って、映画を 見ました。",
+          "explain": "Không nối hai câu bằng dấu phẩy sau ました. Động từ ở giữa phải chuyển sang thể て."
+        },
+        {
+          "wrong": "映画を 見て、神戸へ 行きました。 (thực tế: đi Kobe trước rồi mới xem phim)",
+          "right": "神戸へ 行って、映画を 見ました。",
+          "explain": "Thứ tự trong câu = thứ tự thời gian. Đảo thứ tự là đổi nghĩa."
+        }
+      ]
+    },
+    {
+      "id": "L16-G2",
+      "title": "いA → くて / なA・N → で (nối tính từ, danh từ)",
+      "meaning": "…và… (nối các đặc điểm)",
+      "why": "Để miêu tả một người/vật bằng nhiều đặc điểm trong một câu: 「Phòng này rộng và sáng」, 「Nara yên tĩnh và đẹp」.",
+      "when": [
+        "Miêu tả người: 「Anh Miller trẻ và khỏe mạnh」.",
+        "Miêu tả nơi chốn, đồ vật: 「Máy tính này nhẹ và tiện」.",
+        "Giới thiệu hai thông tin về một người: 「Karina là người Indonesia, là du học sinh」."
+      ],
+      "formula": "いA (bỏ い) + くて、〜\nなA + で、〜\nN + で、〜\n(いい → よくて)",
+      "parts": [
+        { "part": "〜くて", "role": "Dạng nối của tính từ い: 若い → 若くて, 広い → 広くて." },
+        { "part": "よくて", "role": "Ngoại lệ: いい → よくて (không phải いくて)." },
+        { "part": "〜で", "role": "Dạng nối của tính từ な và danh từ: 静かで, 元気で, 学生で." }
+      ],
+      "memoryTip": {
+        "emoji": "🔗",
+        "hook": "い thì 「くて」, な với N thì 「で」!",
+        "meaning": "→ 広くて、明るい / 静かで、きれい / 学生で、〜. Riêng いい → よくて."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんは 若くて、元気です。",
+          "romaji": "Mirā-san wa wakakute, genki desu.",
+          "vi": "Anh Miller trẻ và khỏe mạnh.",
+          "context": "Miêu tả người",
+          "breakdown": [
+            { "jp": "若くて", "vi": "trẻ (và) — 若い → 若くて" },
+            { "jp": "元気です", "vi": "khỏe mạnh" }
+          ]
+        },
+        {
+          "jp": "この 部屋は 広くて、明るいです。",
+          "romaji": "Kono heya wa hirokute, akarui desu.",
+          "vi": "Căn phòng này rộng và sáng sủa.",
+          "context": "Tìm nhà"
+        },
+        {
+          "jp": "奈良は 静かで、きれいな 町です。",
+          "romaji": "Nara wa shizuka de, kirei na machi desu.",
+          "vi": "Nara là thành phố yên tĩnh và đẹp.",
+          "context": "Du lịch"
+        },
+        {
+          "jp": "カリナさんは インドネシア人で、富士大学の 留学生です。",
+          "romaji": "Karina-san wa Indoneshia-jin de, Fuji Daigaku no ryūgakusei desu.",
+          "vi": "Karina là người Indonesia, là du học sinh của Đại học Fuji.",
+          "context": "Giới thiệu",
+          "note": "Danh từ + で để nối hai thông tin."
+        },
+        {
+          "jp": "この 店は サービスが よくて、安いです。",
+          "romaji": "Kono mise wa sābisu ga yokute, yasui desu.",
+          "vi": "Quán này phục vụ tốt và rẻ.",
+          "context": "Nhà hàng",
+          "note": "いい → よくて."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "ミラーさんは 若いくて、元気です。",
+          "right": "ミラーさんは 若くて、元気です。",
+          "explain": "Phải BỎ い rồi mới thêm くて."
+        },
+        {
+          "wrong": "奈良は 静かくて、きれいです。",
+          "right": "奈良は 静かで、きれいです。",
+          "explain": "静か là tính từ な → dùng で, không dùng くて. (きれい cũng là tính từ な: きれいで.)"
+        },
+        {
+          "wrong": "この 店は サービスが いくて、安いです。",
+          "right": "この 店は サービスが よくて、安いです。",
+          "explain": "いい là ngoại lệ: dạng nối là よくて."
+        },
+        {
+          "wrong": "この 部屋は 狭くて、きれいです。",
+          "right": "この 部屋は 狭いですが、きれいです。",
+          "explain": "くて / で chỉ nối các ý cùng chiều (cùng tốt hoặc cùng xấu). Ý trái ngược (hẹp ↔ sạch đẹp) phải nối bằng が."
+        }
+      ]
+    },
+    {
+      "id": "L16-G3",
+      "title": "V1て から、V2",
+      "meaning": "Sau khi V1 (xong) thì V2",
+      "why": "Để nhấn mạnh thứ tự: phải làm xong việc này rồi mới làm việc kia — rất hay dùng khi hướng dẫn hoặc nói kế hoạch.",
+      "when": [
+        "Nói thói quen có thứ tự rõ: 「Tắm xong rồi mới ăn sáng」.",
+        "Kế hoạch: 「Sau khi về nước sẽ làm ở công ty bố」.",
+        "Hướng dẫn: 「Bỏ tiền vào rồi hãy bấm nút」."
+      ],
+      "formula": "V1て から、V2",
+      "parts": [
+        { "part": "V1て", "role": "Việc làm trước (thể て)." },
+        { "part": "から", "role": "「từ sau khi」 — mốc bắt đầu của V2." },
+        { "part": "V2", "role": "Việc làm sau; quyết định thì của câu." }
+      ],
+      "memoryTip": {
+        "emoji": "⏭️",
+        "hook": "「てから」 = xong cái trước RỒI mới tới cái sau!",
+        "meaning": "→ 食べてから = ăn xong rồi thì…"
+      },
+      "examples": [
+        {
+          "jp": "毎朝 シャワーを 浴びてから、朝ごはんを 食べます。",
+          "romaji": "Maiasa shawā o abite kara, asagohan o tabemasu.",
+          "vi": "Mỗi sáng tôi tắm xong rồi mới ăn sáng.",
+          "context": "Sinh hoạt",
+          "breakdown": [
+            { "jp": "浴びてから", "vi": "sau khi tắm" },
+            { "jp": "朝ごはんを 食べます", "vi": "ăn sáng" }
+          ]
+        },
+        {
+          "jp": "晩ごはんを 食べてから、宿題を します。",
+          "romaji": "Bangohan o tabete kara, shukudai o shimasu.",
+          "vi": "Ăn tối xong tôi sẽ làm bài tập.",
+          "context": "Học sinh"
+        },
+        {
+          "jp": "国へ 帰ってから、父の 会社で 働きます。",
+          "romaji": "Kuni e kaette kara, chichi no kaisha de hatarakimasu.",
+          "vi": "Sau khi về nước, tôi sẽ làm việc ở công ty của bố.",
+          "context": "Kế hoạch tương lai"
+        },
+        {
+          "jp": "お金を 入れてから、ボタンを 押して ください。",
+          "romaji": "Okane o irete kara, botan o oshite kudasai.",
+          "vi": "Hãy bỏ tiền vào trước rồi mới bấm nút.",
+          "context": "Máy bán vé"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "晩ごはんを 食べますから、宿題を します。 (muốn nói 「ăn xong rồi」)",
+          "right": "晩ごはんを 食べてから、宿題を します。",
+          "explain": "Vますから (bài 9) = 「VÌ ăn tối」 — chỉ lý do. 「Sau khi」 phải dùng thể て + から."
+        },
+        {
+          "wrong": "晩ごはんを 食べましてから、宿題を します。",
+          "right": "晩ごはんを 食べてから、宿題を します。",
+          "explain": "から đi sau thể て thường, không dùng dạng ます."
+        }
+      ]
+    },
+    {
+      "id": "L16-G4",
+      "title": "N1 は N2 が A",
+      "meaning": "N1 thì N2 (thì) A — miêu tả đặc điểm một bộ phận / khía cạnh",
+      "why": "Để miêu tả người/vật qua một đặc điểm cụ thể: 「Con voi vòi dài」, 「Chị Maria tóc dài」, 「Osaka đồ ăn ngon」.",
+      "when": [
+        "Miêu tả ngoại hình: 背が 高い (cao), 髪が 長い (tóc dài).",
+        "Nói điểm nổi bật của một nơi: 大阪は 食べ物が おいしい."
+      ],
+      "formula": "N1 は N2 が A",
+      "parts": [
+        { "part": "N1 は", "role": "Chủ đề lớn — người / vật / nơi đang được nói tới." },
+        { "part": "N2 が", "role": "Bộ phận hoặc khía cạnh của N1 (mũi, tóc, chiều cao, đồ ăn…)." },
+        { "part": "A", "role": "Tính từ miêu tả N2." }
+      ],
+      "memoryTip": {
+        "emoji": "🐘",
+        "hook": "象は 鼻が 長い — nói về con voi, đặc điểm là cái vòi!",
+        "meaning": "→ は = chủ đề lớn, が = bộ phận được khen / chê."
+      },
+      "examples": [
+        {
+          "jp": "象は 鼻が 長いです。",
+          "romaji": "Zō wa hana ga nagai desu.",
+          "vi": "Con voi có cái vòi dài.",
+          "context": "Động vật",
+          "breakdown": [
+            { "jp": "象は", "vi": "con voi (chủ đề)" },
+            { "jp": "鼻が", "vi": "mũi / vòi (bộ phận)" },
+            { "jp": "長いです", "vi": "dài" }
+          ]
+        },
+        {
+          "jp": "マリアさんは 髪が 長いです。",
+          "romaji": "Maria-san wa kami ga nagai desu.",
+          "vi": "Chị Maria tóc dài.",
+          "context": "Miêu tả người"
+        },
+        {
+          "jp": "佐藤さんは 背が 高いです。",
+          "romaji": "Satō-san wa se ga takai desu.",
+          "vi": "Chị Sato cao.",
+          "context": "Miêu tả người",
+          "note": "背が 高い = (người) cao; ngược lại 背が 低い = thấp."
+        },
+        {
+          "jp": "大阪は 食べ物が おいしいです。",
+          "romaji": "Ōsaka wa tabemono ga oishii desu.",
+          "vi": "Osaka đồ ăn ngon.",
+          "context": "Du lịch"
+        },
+        {
+          "jp": "ベトナムは 果物が 安くて、おいしいです。",
+          "romaji": "Betonamu wa kudamono ga yasukute, oishii desu.",
+          "vi": "Việt Nam trái cây rẻ và ngon.",
+          "context": "Mua sắm",
+          "note": "Kết hợp với くて (G2)."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "マリアさんは 髪を 長いです。",
+          "right": "マリアさんは 髪が 長いです。",
+          "explain": "Tính từ không có tân ngữ → không dùng を. Bộ phận được miêu tả đi với が."
+        },
+        {
+          "wrong": "象は 鼻は 長いです。 (khi chỉ muốn miêu tả bình thường)",
+          "right": "象は 鼻が 長いです。",
+          "explain": "Dùng hai は liền sẽ thành ý so sánh (「vòi thì dài, (còn cái khác thì không)」). Miêu tả thông thường: は … が."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: 象の 鼻は 長いです",
+          "text": "Câu 「象の 鼻は 長いです」 (Vòi của con voi thì dài) cũng đúng, nhưng chủ đề là 「cái vòi」. 「象は 鼻が 長いです」 thì chủ đề là 「con voi」 — hợp khi đang miêu tả con voi."
+        }
+      ]
+    },
+    {
+      "id": "L16-G5",
+      "title": "どうやって",
+      "meaning": "Bằng cách nào / làm thế nào",
+      "why": "Để hỏi đường đi, phương tiện hoặc cách sử dụng một thứ gì đó — cực kỳ cần thiết khi mới sang Nhật.",
+      "when": [
+        "Hỏi cách đi: 「Đến trường đại học đi thế nào?」.",
+        "Hỏi cách dùng máy móc: 「Máy này dùng thế nào?」.",
+        "Câu trả lời thường dùng chuỗi V1て、V2 (G1)."
+      ],
+      "formula": "どうやって V か\n→ V1て、V2 / (phương tiện) で V",
+      "parts": [
+        { "part": "どうやって", "role": "Từ để hỏi cách thức: 「bằng cách nào」." },
+        { "part": "V ますか", "role": "Hành động muốn biết cách làm (行きます, 使います, 来ます…)." }
+      ],
+      "memoryTip": {
+        "emoji": "🗺️",
+        "hook": "Hỏi đường, hỏi cách làm → 「どうやって」?",
+        "meaning": "→ どうやって 行きますか = đi bằng cách nào?"
+      },
+      "examples": [
+        {
+          "jp": "大学まで どうやって 行きますか。 …京都駅から 16番の バスに 乗って、大学前で 降ります。",
+          "romaji": "Daigaku made dōyatte ikimasu ka. … Kyōto-eki kara jūroku-ban no basu ni notte, Daigaku-mae de orimasu.",
+          "vi": "Đến trường đại học đi bằng cách nào? …Từ ga Kyoto đi xe buýt số 16, xuống ở bến Daigaku-mae.",
+          "context": "Hỏi đường",
+          "note": "Câu trả lời dùng chuỗi V1て、V2."
+        },
+        {
+          "jp": "会社まで どうやって 来ますか。 …地下鉄で 来ます。",
+          "romaji": "Kaisha made dōyatte kimasu ka. … Chikatetsu de kimasu.",
+          "vi": "Anh đến công ty bằng cách nào? …Tôi đi tàu điện ngầm.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "この 機械は どうやって 使いますか。",
+          "romaji": "Kono kikai wa dōyatte tsukaimasu ka.",
+          "vi": "Cái máy này dùng như thế nào?",
+          "context": "Văn phòng"
+        },
+        {
+          "jp": "空港から ホテルまで どうやって 行きますか。 …タクシーで 行きます。",
+          "romaji": "Kūkō kara hoteru made dōyatte ikimasu ka. … Takushī de ikimasu.",
+          "vi": "Từ sân bay đến khách sạn đi bằng cách nào? …Đi bằng taxi.",
+          "context": "Du lịch"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "日本の 生活は どうやってですか。",
+          "right": "日本の 生活は どうですか。",
+          "explain": "Hỏi 「thế nào (cảm nhận)?」 → どうですか (bài 8). どうやって chỉ hỏi CÁCH LÀM và đi với động từ."
+        },
+        {
+          "wrong": "大学まで どうやって 行きますか。 …はい、行きます。",
+          "right": "…バスで 行きます。",
+          "explain": "どうやって là câu hỏi có từ để hỏi → không trả lời はい / いいえ, mà nói rõ cách đi."
+        }
+      ]
+    },
+    {
+      "id": "L16-G6",
+      "title": "どれ / どの N",
+      "meaning": "Cái nào / N nào",
+      "why": "Để hỏi chọn ra một trong nhiều thứ (từ 3 thứ trở lên): 「Ô của anh là cái nào?」, 「Anh Santos là người nào?」.",
+      "when": [
+        "どれ: đứng một mình, thay cho vật (cái nào).",
+        "どの + N: khi có danh từ đi sau (người nào, xe buýt nào, cái túi nào)."
+      ],
+      "formula": "N は どれですか\nどの N ですか / どの N に 〜",
+      "parts": [
+        { "part": "どれ", "role": "Cái nào — dùng một mình như これ / それ / あれ." },
+        { "part": "どの N", "role": "N nào — luôn có danh từ đi sau, như この / その / あの + N." }
+      ],
+      "memoryTip": {
+        "emoji": "👉",
+        "hook": "どれ đứng một mình, どの phải dắt theo N!",
+        "meaning": "→ これ・それ・あれ・どれ (một mình) / この・その・あの・どの + N."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんの 傘は どれですか。 …あの 青い 傘です。",
+          "romaji": "Mirā-san no kasa wa dore desu ka. … Ano aoi kasa desu.",
+          "vi": "Ô của anh Miller là cái nào? …Là cái ô màu xanh kia.",
+          "context": "Văn phòng"
+        },
+        {
+          "jp": "サントスさんは どの 人ですか。 …あの 背が 高くて、髪が 黒い 人です。",
+          "romaji": "Santosu-san wa dono hito desu ka. … Ano se ga takakute, kami ga kuroi hito desu.",
+          "vi": "Anh Santos là người nào? …Là người cao, tóc đen kia.",
+          "context": "Bữa tiệc",
+          "note": "Câu trả lời kết hợp N1は N2が A và くて."
+        },
+        {
+          "jp": "どの バスに 乗りますか。 …16番の バスに 乗ります。",
+          "romaji": "Dono basu ni norimasu ka. … Jūroku-ban no basu ni norimasu.",
+          "vi": "Anh đi xe buýt nào? …Tôi đi xe số 16.",
+          "context": "Đi lại"
+        },
+        {
+          "jp": "田中さんの 車は どれですか。 …あの 白い 車です。",
+          "romaji": "Tanaka-san no kuruma wa dore desu ka. … Ano shiroi kuruma desu.",
+          "vi": "Xe của anh Tanaka là chiếc nào? …Là chiếc xe màu trắng kia.",
+          "context": "Bãi đỗ xe"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "サントスさんは どれ 人ですか。",
+          "right": "サントスさんは どの 人ですか。",
+          "explain": "Có danh từ 人 đi sau → どの. どれ không đứng trước danh từ."
+        },
+        {
+          "wrong": "ミラーさんの 傘は どのですか。",
+          "right": "ミラーさんの 傘は どれですか。",
+          "explain": "どの không đứng một mình được — phải có N. Đứng một mình dùng どれ."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "V1て、V2て、V3", "meaning": "V1 rồi V2 rồi V3 (lần lượt)", "example": "神戸へ 行って、映画を 見て、お茶を 飲みました。" },
+    { "pattern": "いA → くて / なA・N → で", "meaning": "Nối đặc điểm: …và…", "example": "この 部屋は 広くて、明るいです。" },
+    { "pattern": "V1て から、V2", "meaning": "Sau khi V1 thì V2", "example": "シャワーを 浴びてから、朝ごはんを 食べます。" },
+    { "pattern": "N1 は N2 が A", "meaning": "N1 có N2 (thì) A", "example": "象は 鼻が 長いです。" },
+    { "pattern": "どうやって V か", "meaning": "V bằng cách nào?", "example": "大学まで どうやって 行きますか。" },
+    { "pattern": "どれ / どの N", "meaning": "Cái nào / N nào", "example": "サントスさんは どの 人ですか。" }
+  ],
+  "exercises": [
+    {
+      "id": "L16-E01",
+      "type": "order",
+      "grammarPoint": "L16-G1",
+      "question": "Sắp xếp thành câu đúng (đúng thứ tự thời gian).",
+      "vi": "Buổi sáng tôi chạy bộ, tắm rồi đi làm.",
+      "tokens": ["朝", "ジョギングを して、", "シャワーを 浴びて、", "会社へ", "行きます"],
+      "explanation": "Các hành động xếp theo thứ tự thời gian, động từ giữa ở thể て, động từ cuối chia ます."
+    },
+    {
+      "id": "L16-E02",
+      "type": "fill",
+      "grammarPoint": "L16-G1",
+      "question": "Chia động từ 行きます để nối câu (gõ kana).",
+      "jp": "神戸へ ＿＿、映画を 見ました。",
+      "vi": "Tôi đã đi Kobe rồi xem phim.",
+      "answer": "いって",
+      "accept": ["行って", "itte"],
+      "hint": "行きます → thể て (ngoại lệ)",
+      "explanation": "Nối hành động bằng thể て. 行きます → 行って (ngoại lệ)."
+    },
+    {
+      "id": "L16-E03",
+      "type": "jp-vi",
+      "grammarPoint": "L16-G1",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "きのうは 図書館へ 行って、本を 借りて、うちへ 帰りました。",
+      "romaji": "Kinō wa toshokan e itte, hon o karite, uchi e kaerimashita.",
+      "options": [
+        "Hôm qua tôi đến thư viện, mượn sách rồi về nhà.",
+        "Hôm qua tôi về nhà rồi đến thư viện mượn sách.",
+        "Ngày mai tôi sẽ đến thư viện, mượn sách rồi về nhà.",
+        "Hôm qua tôi đến thư viện nhưng không mượn sách."
+      ],
+      "answer": "Hôm qua tôi đến thư viện, mượn sách rồi về nhà.",
+      "explanation": "Thứ tự hành động = thứ tự trong câu. Động từ cuối 帰りました → cả câu ở quá khứ."
+    },
+    {
+      "id": "L16-E04",
+      "type": "fix",
+      "grammarPoint": "L16-G1",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "神戸へ 行きました、映画を 見ました。",
+      "options": [
+        "神戸へ 行って、映画を 見ました。",
+        "神戸へ 行きて、映画を 見ました。",
+        "神戸へ 行いて、映画を 見ました。",
+        "神戸へ 行って、映画を 見て。"
+      ],
+      "answer": "神戸へ 行って、映画を 見ました。",
+      "explanation": "Động từ giữa đổi sang thể て (行って); động từ cuối giữ ました để câu hoàn chỉnh ở quá khứ."
+    },
+    {
+      "id": "L16-E05",
+      "type": "choice",
+      "grammarPoint": "L16-G1",
+      "question": "Trong câu 「神戸へ 行って、映画を 見て、お茶を 飲みました。」, việc 「đi Kobe」 xảy ra khi nào?",
+      "options": ["Trong quá khứ (đã đi)", "Ở hiện tại", "Trong tương lai", "Không xác định được"],
+      "answer": "Trong quá khứ (đã đi)",
+      "explanation": "Thì của cả chuỗi do động từ cuối quyết định: 飲みました → quá khứ."
+    },
+    {
+      "id": "L16-E06",
+      "type": "fill",
+      "grammarPoint": "L16-G2",
+      "question": "Gõ phần còn thiếu để nối hai tính từ (kana).",
+      "jp": "この 部屋は 広＿＿、明るいです。",
+      "vi": "Căn phòng này rộng và sáng sủa.",
+      "answer": "くて",
+      "explanation": "広い là tính từ い → bỏ い + くて: 広くて."
+    },
+    {
+      "id": "L16-E07",
+      "type": "choice",
+      "grammarPoint": "L16-G2",
+      "question": "Câu nào nối đúng 「静か」 và 「きれいな 町」?",
+      "options": [
+        "奈良は 静かで、きれいな 町です。",
+        "奈良は 静かくて、きれいな 町です。",
+        "奈良は 静かなで、きれいな 町です。",
+        "奈良は 静かいくて、きれいな 町です。"
+      ],
+      "answer": "奈良は 静かで、きれいな 町です。",
+      "explanation": "静か là tính từ な → nối bằng で (bỏ な)."
+    },
+    {
+      "id": "L16-E08",
+      "type": "fix",
+      "grammarPoint": "L16-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "この 店は サービスが いいくて、安いです。",
+      "options": [
+        "この 店は サービスが よくて、安いです。",
+        "この 店は サービスが いくて、安いです。",
+        "この 店は サービスが いいで、安いです。",
+        "この 店は サービスが いいと、安いです。"
+      ],
+      "answer": "この 店は サービスが よくて、安いです。",
+      "explanation": "いい là ngoại lệ: dạng nối là よくて."
+    },
+    {
+      "id": "L16-E09",
+      "type": "vi-jp",
+      "grammarPoint": "L16-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Karina là người Indonesia, là du học sinh Đại học Fuji.",
+      "options": [
+        "カリナさんは インドネシア人で、富士大学の 留学生です。",
+        "カリナさんは インドネシア人くて、富士大学の 留学生です。",
+        "カリナさんは インドネシア人です、富士大学の 留学生です。",
+        "カリナさんは インドネシア人て、富士大学の 留学生です。"
+      ],
+      "answer": "カリナさんは インドネシア人で、富士大学の 留学生です。",
+      "explanation": "Danh từ nối câu bằng で: インドネシア人で、〜."
+    },
+    {
+      "id": "L16-E10",
+      "type": "fill",
+      "grammarPoint": "L16-G3",
+      "question": "Gõ từ còn thiếu (kana).",
+      "jp": "晩ごはんを 食べて＿＿、宿題を します。",
+      "vi": "Ăn tối xong tôi sẽ làm bài tập.",
+      "answer": "から",
+      "explanation": "「Sau khi V1 thì V2」 = V1て から、V2."
+    },
+    {
+      "id": "L16-E11",
+      "type": "vi-jp",
+      "grammarPoint": "L16-G3",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Sau khi về nước, tôi sẽ làm việc ở công ty của bố.",
+      "options": [
+        "国へ 帰ってから、父の 会社で 働きます。",
+        "国へ 帰りますから、父の 会社で 働きます。",
+        "父の 会社で 働いてから、国へ 帰ります。",
+        "国へ 帰ってから、父の 会社に 働きます。"
+      ],
+      "answer": "国へ 帰ってから、父の 会社で 働きます。",
+      "explanation": "Sau khi = Vて から. 帰りますから là 「vì về nước」; đảo thứ tự thì sai nghĩa; 働きます đi với で."
+    },
+    {
+      "id": "L16-E12",
+      "type": "pattern",
+      "grammarPoint": "L16-G3",
+      "question": "Bạn muốn nói 「Tắm xong rồi tôi mới ăn sáng」 (nhấn mạnh thứ tự). Chọn mẫu phù hợp.",
+      "options": ["V1て から、V2", "V1ます から、V2", "V1ても いいです", "V1ては いけません"],
+      "answer": "V1て から、V2",
+      "explanation": "Nhấn mạnh làm xong V1 rồi mới V2 → V1てから、V2."
+    },
+    {
+      "id": "L16-E13",
+      "type": "situation",
+      "grammarPoint": "L16-G3",
+      "question": "Bạn hướng dẫn khách dùng máy bán vé: phải bỏ tiền vào TRƯỚC, rồi mới bấm nút. Bạn nói:",
+      "options": [
+        "お金を 入れてから、ボタンを 押して ください。",
+        "ボタンを 押してから、お金を 入れて ください。",
+        "お金を 入れますから、ボタンを 押して ください。",
+        "お金を 入れては いけません。"
+      ],
+      "answer": "お金を 入れてから、ボタンを 押して ください。",
+      "explanation": "Việc làm trước + てから + việc làm sau. 入れますから = 「vì tôi bỏ tiền」, sai ý."
+    },
+    {
+      "id": "L16-E14",
+      "type": "particle",
+      "grammarPoint": "L16-G4",
+      "question": "Chọn trợ từ phù hợp.",
+      "jp": "象は 鼻＿＿ 長いです。",
+      "romaji": "Zō wa hana ___ nagai desu.",
+      "vi": "Con voi có cái vòi dài.",
+      "options": ["が", "を", "で", "に"],
+      "answer": "が",
+      "explanation": "N1 は N2 が A: bộ phận được miêu tả (鼻) đi với が."
+    },
+    {
+      "id": "L16-E15",
+      "type": "jp-vi",
+      "grammarPoint": "L16-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "大阪は 食べ物が おいしいです。",
+      "romaji": "Ōsaka wa tabemono ga oishii desu.",
+      "options": [
+        "Osaka đồ ăn ngon.",
+        "Đồ ăn ở Osaka không ngon.",
+        "Tôi đã ăn đồ ăn ngon ở Osaka.",
+        "Osaka là món ăn ngon."
+      ],
+      "answer": "Osaka đồ ăn ngon.",
+      "explanation": "N1 (大阪) は + khía cạnh N2 (食べ物) が + A (おいしい)."
+    },
+    {
+      "id": "L16-E16",
+      "type": "vi-jp",
+      "grammarPoint": "L16-G4",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Chị Maria tóc dài.",
+      "options": ["マリアさんは 髪が 長いです。", "マリアさんは 髪を 長いです。", "マリアさんの 髪を 長いです。", "マリアさんは 髪で 長いです。"],
+      "answer": "マリアさんは 髪が 長いです。",
+      "explanation": "Người (chủ đề) は + bộ phận が + tính từ. Tính từ không đi với を."
+    },
+    {
+      "id": "L16-E17",
+      "type": "order",
+      "grammarPoint": "L16-G4",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Chị Sato cao.",
+      "tokens": ["佐藤さん", "は", "背", "が", "高い", "です"],
+      "explanation": "N1 は N2 が A: 佐藤さんは 背が 高いです."
+    },
+    {
+      "id": "L16-E18",
+      "type": "situation",
+      "grammarPoint": "L16-G5",
+      "question": "Bạn mới đến Kyoto và muốn hỏi người qua đường cách đi đến trường đại học. Bạn nói:",
+      "options": [
+        "すみません、大学まで どうやって 行きますか。",
+        "すみません、大学まで どう ですか。",
+        "すみません、大学まで 行っても いいですか。",
+        "すみません、大学は どれですか。"
+      ],
+      "answer": "すみません、大学まで どうやって 行きますか。",
+      "explanation": "Hỏi cách đi → どうやって 行きますか."
+    },
+    {
+      "id": "L16-E19",
+      "type": "jp-vi",
+      "grammarPoint": "L16-G5",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "この 機械は どうやって 使いますか。",
+      "romaji": "Kono kikai wa dōyatte tsukaimasu ka.",
+      "options": [
+        "Cái máy này dùng như thế nào?",
+        "Cái máy này có tốt không?",
+        "Tôi dùng cái máy này được không?",
+        "Cái máy này là cái nào?"
+      ],
+      "answer": "Cái máy này dùng như thế nào?",
+      "explanation": "どうやって + V = V bằng cách nào / như thế nào."
+    },
+    {
+      "id": "L16-E20",
+      "type": "fix",
+      "grammarPoint": "L16-G5",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "日本の 生活は どうやってですか。",
+      "options": ["日本の 生活は どうですか。", "日本の 生活は どれですか。", "日本の 生活は どのですか。", "日本の 生活は どうやって しますか。"],
+      "answer": "日本の 生活は どうですか。",
+      "explanation": "Hỏi cảm nhận 「thế nào」 → どうですか. どうやって chỉ hỏi cách làm và phải đi với động từ."
+    },
+    {
+      "id": "L16-E21",
+      "type": "fill",
+      "grammarPoint": "L16-G5",
+      "question": "Gõ từ để hỏi còn thiếu (kana).",
+      "jp": "会社まで ＿＿ 来ますか。 …地下鉄で 来ます。",
+      "vi": "Anh đến công ty bằng cách nào? …Tôi đi tàu điện ngầm.",
+      "answer": "どうやって",
+      "accept": ["なんで", "何で", "dōyatte", "douyatte"],
+      "hint": "bằng cách nào",
+      "explanation": "Hỏi cách đi → どうやって (hoặc 何で = bằng gì)."
+    },
+    {
+      "id": "L16-E22",
+      "type": "choice",
+      "grammarPoint": "L16-G6",
+      "question": "Chọn từ điền vào chỗ trống: 「ミラーさんの 傘は ＿＿ですか。 …あの 青い 傘です。」",
+      "options": ["どれ", "どの", "どうやって", "だれ"],
+      "answer": "どれ",
+      "explanation": "Hỏi 「cái nào」, đứng một mình trước です → どれ. どの phải có danh từ đi sau."
+    },
+    {
+      "id": "L16-E23",
+      "type": "fix",
+      "grammarPoint": "L16-G6",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "サントスさんは どれ 人ですか。",
+      "options": ["サントスさんは どの 人ですか。", "サントスさんは どれですか。", "サントスさんは どうやって 人ですか。", "サントスさんは どれの 人ですか。"],
+      "answer": "サントスさんは どの 人ですか。",
+      "explanation": "Có danh từ 人 đi sau → どの 人."
+    },
+    {
+      "id": "L16-E24",
+      "type": "identify",
+      "grammarPoint": "L16-G6",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "どの バスに 乗りますか。",
+      "romaji": "Dono basu ni norimasu ka.",
+      "vi": "Anh đi xe buýt nào?",
+      "options": ["どの N (N nào)", "どうやって (bằng cách nào)", "N1 は N2 が A (đặc điểm)", "V1て から、V2 (sau khi)"],
+      "answer": "どの N (N nào)",
+      "explanation": "どの + danh từ (バス) = xe buýt nào."
+    },
+    {
+      "id": "L16-E25",
+      "type": "situation",
+      "grammarPoint": "L16-G6",
+      "question": "Ở bữa tiệc có nhiều người. Bạn muốn hỏi anh Santos là người nào. Bạn nói:",
+      "options": ["サントスさんは どの 人ですか。", "サントスさんは どれですか。", "サントスさんは どこの 人ですか。", "サントスさんは どうやって 来ますか。"],
+      "answer": "サントスさんは どの 人ですか。",
+      "explanation": "Hỏi 「người nào」 → どの 人. どれ không dùng cho người; どこの 人 là hỏi quê / quốc tịch."
+    },
+    {
+      "id": "L16-E26",
+      "type": "identify",
+      "grammarPoint": "L16-G2",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "ミラーさんは 若くて、元気です。",
+      "romaji": "Mirā-san wa wakakute, genki desu.",
+      "vi": "Anh Miller trẻ và khỏe mạnh.",
+      "options": ["いA → くて (nối tính từ)", "V1て から、V2 (sau khi)", "N1 は N2 が A (đặc điểm)", "Vて います (đang làm)"],
+      "answer": "いA → くて (nối tính từ)",
+      "explanation": "若い → 若くて: dạng nối của tính từ い."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 16 }
+}

@@ -8,6 +8,8 @@ import QuizHub from "./common/QuizHub";
 import StudyRunner from "./common/StudyRunner";
 import SpeakButton from "./common/SpeakButton";
 import FilterRow from "./common/FilterRow";
+import Modal from "./common/Modal";
+import { readJSON, writeJSON } from "../lib/storage";
 import "../styles/tabs/numbers.css";
 
 const SECTIONS = [
@@ -18,6 +20,10 @@ const SECTIONS = [
   { id: "weekdays", label: "🗓️ Thứ", color: "#60a5fa" },
   { id: "rules", label: "💡 Quy tắc & Mẹo", color: "#34d399" },
 ];
+
+/* Kiểu hiển thị của mục "Bộ đếm": "list" = bảng đầy đủ như cũ, "card" = lưới thẻ
+   gọn, bấm vào mở popup chi tiết. Nhớ lựa chọn giữa các lần vào app. */
+const COUNTER_VIEW_KEY = "n5.numbers.counterView";
 
 const COMBO_NUMBERS = [
   { n: "11", jp: "十一", hira: "じゅういち" },
@@ -279,6 +285,109 @@ function Answer({ hidden, children }) {
   );
 }
 
+/* ── Bộ đếm ───────────────────────────────────────────────────────────────── */
+
+/** Bảng cách đọc của một bộ đếm — dùng chung cho cả kiểu danh sách và popup. */
+function CounterReadings({ counter, hideAnswers }) {
+  return (
+    <div className="num-grid num-grid--reading">
+      {counter.readings.map((r, i) => {
+        const warn = r.read.includes("⚠️");
+        const read = stripWarn(r.read);
+        return (
+          <div key={i} className={`num-reading ${warn ? "num-reading--warn" : ""}`}>
+            <div className="num-reading__n">{r.n}</div>
+            <Answer hidden={hideAnswers}>
+              <div className="num-reading__read">{read}</div>
+              <div className="num-reading__romaji">{kanaToRomaji(read)}</div>
+            </Answer>
+            <div className="num-reading__spk">
+              <SpeakButton text={read} size="sm" />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+/** Toàn bộ nội dung một bộ đếm: tiêu đề, lưu ý, bảng cách đọc và ví dụ. */
+function CounterDetail({ counter, hideAnswers, onStudy }) {
+  return (
+    <>
+      <div className="num-counter__head">
+        <span className="num-counter__suffix">{counter.suffix}</span>
+        <div className="num-counter__use">{counter.use}</div>
+        <button
+          className="num-counter__go"
+          title={`Học riêng ${counter.readings.length} cách đọc của bộ đếm này`}
+          onClick={() => onStudy(counter)}
+        >
+          🎴 {counter.readings.length} thẻ
+        </button>
+      </div>
+      {counter.note && <div className="num-counter__note">{counter.note}</div>}
+      <CounterReadings counter={counter} hideAnswers={hideAnswers} />
+      <div className="num-counter__example">📝 {counter.example}</div>
+    </>
+  );
+}
+
+/** Thẻ gọn trong lưới — bấm vào mở popup xem đầy đủ. */
+function CounterCard({ counter, index, hideAnswers, onOpen }) {
+  const preview = counter.readings
+    .slice(0, 3)
+    .map((r) => stripWarn(r.read))
+    .join(" · ");
+
+  return (
+    // Không dùng <button>: bên trong có nút ••• của "Ẩn đáp án", mà button lồng
+    // button là HTML không hợp lệ (React cảnh báo, và nút trong bị nuốt sự kiện).
+    <div
+      className="word-card num-ccard"
+      role="button"
+      tabIndex={0}
+      onClick={onOpen}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onOpen();
+        }
+      }}
+      style={{ "--card-color": counter.color, "--c": counter.color, animationDelay: `${index * 50}ms` }}
+      title={`Xem chi tiết bộ đếm ${counter.suffix}`}
+    >
+      <div className="num-ccard__suffix">{counter.suffix}</div>
+      <div className="num-ccard__use">{counter.use}</div>
+      <Answer hidden={hideAnswers}>
+        <div className="num-ccard__preview">{preview}…</div>
+      </Answer>
+      <div className="num-ccard__meta">
+        <span>{counter.readings.length} cách đọc</span>
+        {counter.note && <span className="num-ccard__warn">⚠️ biến âm</span>}
+      </div>
+    </div>
+  );
+}
+
+/** Popup chi tiết một bộ đếm (kiểu hiển thị thẻ). */
+function CounterModal({ counter, hideAnswers, onStudy, onClose }) {
+  return (
+    <Modal
+      onClose={onClose}
+      label={`Bộ đếm ${counter.suffix} — ${counter.use}`}
+      className="num-cmodal-overlay"
+      panelClassName="word-card num-cmodal"
+      panelStyle={{ "--card-color": counter.color, "--c": counter.color }}
+    >
+      <button className="num-cmodal__close" onClick={onClose} aria-label="Đóng">
+        ✕
+      </button>
+      <CounterDetail counter={counter} hideAnswers={hideAnswers} onStudy={onStudy} />
+    </Modal>
+  );
+}
+
 /** Thanh luyện tập số đếm — sinh câu từ chính bảng cách đọc trong tab này. */
 function NumbersPracticeBar({ open, onToggle }) {
   const sets = quizSetsFor("numbers");
@@ -312,6 +421,13 @@ export default function NumbersTab() {
   const [showQuiz, setShowQuiz] = useState(false);
   const [hideAnswers, setHideAnswers] = useState(false);
   const [study, setStudy] = useState(null); // { label, cards }
+  const [counterView, setCounterView] = useState(() => readJSON(COUNTER_VIEW_KEY, "list"));
+  const [openCounter, setOpenCounter] = useState(null);
+
+  const pickCounterView = (v) => {
+    setCounterView(v);
+    writeJSON(COUNTER_VIEW_KEY, v);
+  };
 
   const sectionCards = useMemo(() => FLASH_SETS[section](), [section]);
   const allCards = useMemo(() => Object.values(FLASH_SETS).flatMap((build) => build()), []);
@@ -320,6 +436,7 @@ export default function NumbersTab() {
 
   const startStudy = (cards, label, { random = false } = {}) => {
     if (!cards.length) return;
+    setOpenCounter(null);
     setStudy({
       label,
       cards: random ? shuffle(cards) : orderForStudy(cards, "numbers", (c) => c.id),
@@ -444,45 +561,64 @@ export default function NumbersTab() {
           <div className="num-note" style={{ "--c": "#22d3ee" }}>
             💡 Tiếng Nhật có nhiều "bộ đếm" (counter) khác nhau tùy theo loại vật đếm. Đây là điểm khó nhưng rất quan trọng!
           </div>
-          <div className="num-counters-list">
-            {data.counters.map((counter, ci) => (
-              <div key={counter.id} className="word-card" style={{ "--card-color": counter.color, "--c": counter.color, animationDelay: `${ci * 80}ms` }}>
-                <div className="num-counter__head">
-                  <span className="num-counter__suffix">{counter.suffix}</span>
-                  <div className="num-counter__use">{counter.use}</div>
-                  <button
-                    className="num-counter__go"
-                    title={`Học riêng ${counter.readings.length} cách đọc của bộ đếm này`}
-                    onClick={() =>
-                      startStudy(counterCards([counter]), `Bộ đếm ${counter.suffix} · ${counter.use}`)
-                    }
-                  >
-                    🎴 {counter.readings.length} thẻ
-                  </button>
-                </div>
-                {counter.note && <div className="num-counter__note">{counter.note}</div>}
-                <div className="num-grid num-grid--reading">
-                  {counter.readings.map((r, i) => {
-                    const warn = r.read.includes("⚠️");
-                    const read = r.read.replace(" ⚠️", "");
-                    return (
-                      <div key={i} className={`num-reading ${warn ? "num-reading--warn" : ""}`}>
-                        <div className="num-reading__n">{r.n}</div>
-                        <Answer hidden={hideAnswers}>
-                          <div className="num-reading__read">{read}</div>
-                          <div className="num-reading__romaji">{kanaToRomaji(read)}</div>
-                        </Answer>
-                        <div className="num-reading__spk">
-                          <SpeakButton text={read} size="sm" />
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className="num-counter__example">📝 {counter.example}</div>
-              </div>
-            ))}
+
+          {/* Hai kiểu xem: bảng đầy đủ (như cũ) hoặc lưới thẻ + popup chi tiết */}
+          <div className="num-view" role="group" aria-label="Kiểu hiển thị bộ đếm">
+            <span className="num-view__label">Hiển thị</span>
+            <button
+              className={`num-view__btn ${counterView === "list" ? "is-on" : ""}`}
+              aria-pressed={counterView === "list"}
+              onClick={() => pickCounterView("list")}
+            >
+              ☰ Danh sách
+            </button>
+            <button
+              className={`num-view__btn ${counterView === "card" ? "is-on" : ""}`}
+              aria-pressed={counterView === "card"}
+              onClick={() => pickCounterView("card")}
+            >
+              ▦ Thẻ
+            </button>
           </div>
+
+          {counterView === "list" ? (
+            <div className="num-counters-list">
+              {data.counters.map((counter, ci) => (
+                <div
+                  key={counter.id}
+                  className="word-card"
+                  style={{ "--card-color": counter.color, "--c": counter.color, animationDelay: `${ci * 80}ms` }}
+                >
+                  <CounterDetail
+                    counter={counter}
+                    hideAnswers={hideAnswers}
+                    onStudy={(c) => startStudy(counterCards([c]), `Bộ đếm ${c.suffix} · ${c.use}`)}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="num-grid num-grid--ccards">
+              {data.counters.map((counter, ci) => (
+                <CounterCard
+                  key={counter.id}
+                  counter={counter}
+                  index={ci}
+                  hideAnswers={hideAnswers}
+                  onOpen={() => setOpenCounter(counter)}
+                />
+              ))}
+            </div>
+          )}
+
+          {openCounter && (
+            <CounterModal
+              counter={openCounter}
+              hideAnswers={hideAnswers}
+              onStudy={(c) => startStudy(counterCards([c]), `Bộ đếm ${c.suffix} · ${c.use}`)}
+              onClose={() => setOpenCounter(null)}
+            />
+          )}
         </div>
       )}
 

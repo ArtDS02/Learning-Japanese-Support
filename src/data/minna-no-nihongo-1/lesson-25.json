@@ -1,0 +1,704 @@
+{
+  "lesson": 25,
+  "title": "Giả định và nhượng bộ",
+  "titleJp": "いろいろ お世話に なりました",
+  "topic": "〜たら (nếu) · Vたら (sau khi) · 〜ても (dù… cũng) · もし · いくら",
+  "description": "Học xong bài này bạn nói được 「nếu… thì…」, 「xong việc A thì làm B」, 「dù… vẫn…」 — ba cách nối câu cực kỳ thông dụng để lên kế hoạch, đưa điều kiện và nói về ý chí của mình.",
+  "objectives": [
+    "Tạo thể 〜たら cho động từ, tính từ い, tính từ な và danh từ.",
+    "Dùng 〜たら để nói giả định 「nếu… thì…」.",
+    "Dùng Vたら để nói 「sau khi / khi (việc chắc chắn xảy ra) thì…」.",
+    "Tạo thể 〜ても và dùng để nói 「dù… cũng…」.",
+    "Nhấn mạnh bằng もし (nếu) và いくら (dù… đến mấy)."
+  ],
+  "keyPoints": [
+    "〜たら = thể た + ら: 降ったら, 安かったら, 暇だったら, 雨だったら. KHÔNG mang nghĩa quá khứ.",
+    "いい → よかったら. ある → あったら, phủ định → なかったら.",
+    "Khác với と (bài 23), vế sau của たら dùng được mong muốn, rủ rê, nhờ vả: 〜たいです, 〜ましょう, 〜て ください.",
+    "Vたら với việc chắc chắn xảy ra (đến giờ, xong việc, đến nơi) = 「sau khi / khi… thì」. Không dùng もし.",
+    "〜ても = thể て + も: 降っても, 安くても, 暇でも, 日曜日でも, 読まなくても.",
+    "もし đi với 〜たら (nhấn mạnh giả định); いくら đi với 〜ても (dù… đến mấy)."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L25-G1",
+      "title": "〜たら、〜 — nếu… thì…",
+      "meaning": "Nếu…, (thì)…",
+      "why": "Để nói về một điều kiện chưa biết có xảy ra hay không: 「Nếu có tiền thì đi du lịch」, 「Nếu rảnh thì giúp tôi nhé」. Đây là cách nói 「nếu」 thông dụng nhất trong hội thoại.",
+      "when": [
+        "Giả định một điều chưa chắc xảy ra: nếu trời mưa, nếu có tiền, nếu rẻ…",
+        "Đưa ra điều kiện cho lời rủ rê, nhờ vả, mong muốn: 暇だったら、手伝って ください."
+      ],
+      "formula": "Vた → Vたら · Vなかった → Vなかったら\nいA: 〜かった → 〜かったら (いい → よかったら)\nなA / N: 〜だった → 〜だったら\n、〜 (câu chính)",
+      "parts": [
+        { "part": "Vたら", "role": "Thể た của động từ + ら: 降った → 降ったら, あった → あったら." },
+        { "part": "Vなかったら", "role": "Phủ định: 来なかった → 来なかったら (nếu không đến)." },
+        { "part": "いA かったら", "role": "安かった → 安かったら. いい → よかったら." },
+        { "part": "なA / N だったら", "role": "暇だった → 暇だったら, 雨だった → 雨だったら." },
+        { "part": "、〜", "role": "Câu chính — có thể là ý chí, mong muốn, rủ rê, nhờ vả (khác với と)." }
+      ],
+      "memoryTip": {
+        "emoji": "🔮",
+        "hook": "Thể た + 「ら」 = mở cánh cửa sang thế giới 「nếu」!",
+        "meaning": "→ 雨が 降った + ら = nếu trời mưa (không phải 「đã mưa」)."
+      },
+      "examples": [
+        {
+          "jp": "お金が あったら、旅行します。",
+          "romaji": "Okane ga attara, ryokō shimasu.",
+          "vi": "Nếu có tiền thì tôi sẽ đi du lịch.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "お金が あった", "vi": "có tiền (thể た)" },
+            { "jp": "ら", "vi": "nếu" },
+            { "jp": "旅行します", "vi": "đi du lịch" }
+          ]
+        },
+        {
+          "jp": "雨が 降ったら、出かけません。",
+          "romaji": "Ame ga futtara, dekakemasen.",
+          "vi": "Nếu trời mưa thì tôi không ra ngoài.",
+          "context": "Thời tiết"
+        },
+        {
+          "jp": "安かったら、パソコンを 買いたいです。",
+          "romaji": "Yasukattara, pasokon o kaitai desu.",
+          "vi": "Nếu rẻ thì tôi muốn mua máy tính.",
+          "context": "Mua sắm"
+        },
+        {
+          "jp": "暇だったら、手伝って ください。",
+          "romaji": "Hima dattara, tetsudatte kudasai.",
+          "vi": "Nếu rảnh thì giúp tôi với.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "いい 天気だったら、散歩しませんか。",
+          "romaji": "Ii tenki dattara, sanpo shimasen ka.",
+          "vi": "Nếu trời đẹp thì mình đi dạo không?",
+          "context": "Rủ rê"
+        },
+        {
+          "jp": "時間が なかったら、タクシーで 行きましょう。",
+          "romaji": "Jikan ga nakattara, takushī de ikimashō.",
+          "vi": "Nếu không có thời gian thì mình đi taxi nhé.",
+          "context": "Đi lại"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "安いたら、買います。",
+          "right": "安かったら、買います。",
+          "explain": "Tính từ い: 安い → 安かった → 安かったら. Không gắn たら thẳng vào 安い."
+        },
+        {
+          "wrong": "暇たら、手伝って ください。",
+          "right": "暇だったら、手伝って ください。",
+          "explain": "Tính từ な và danh từ: 〜だった + ら → 暇だったら."
+        },
+        {
+          "wrong": "安いと、パソコンを 買いたいです。",
+          "right": "安かったら、パソコンを 買いたいです。",
+          "explain": "と (bài 23) không đi với mong muốn / rủ rê / nhờ vả ở vế sau. Muốn nói 「nếu… thì tôi muốn…」 → dùng たら."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: chủ ngữ trong mệnh đề たら / ても dùng が",
+          "text": "Giống mệnh đề とき, と (bài 23): chủ ngữ bên trong mệnh đề 〜たら, 〜ても dùng が, không dùng は.",
+          "examples": [
+            {
+              "jp": "友達が 来たら、いっしょに 食事に 行きます。",
+              "romaji": "Tomodachi ga kitara, issho ni shokuji ni ikimasu.",
+              "vi": "Nếu bạn tôi đến thì chúng tôi sẽ cùng đi ăn."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L25-G2",
+      "title": "Vたら、〜 — sau khi / khi (việc chắc chắn xảy ra)",
+      "meaning": "(Khi / sau khi) V xong thì…",
+      "why": "Khi việc A chắc chắn sẽ đến (đến giờ, xong việc, đến nơi), Vたら nói 「A xong / tới thì làm B」. Rất hay dùng để hẹn giờ, lên kế hoạch, dặn dò.",
+      "when": [
+        "Hẹn theo thời điểm: đến 10 giờ thì đi.",
+        "Dặn việc làm sau khi xong một việc: về nhà thì tắm, đến ga thì gọi điện.",
+        "Kế hoạch tương lai: tốt nghiệp xong thì muốn làm ở công ty Nhật."
+      ],
+      "formula": "Vたら、〜 (A chắc chắn xảy ra → sau đó làm B)",
+      "parts": [
+        { "part": "Vたら", "role": "Việc chắc chắn sẽ xảy ra: 10時に なったら, うちへ 帰ったら, 駅に 着いたら." },
+        { "part": "、〜", "role": "Việc làm SAU đó — thường là ý chí, rủ rê, nhờ vả, mong muốn." },
+        { "part": "(không có もし)", "role": "Vì việc A chắc chắn xảy ra, không dùng もし (nếu)." }
+      ],
+      "memoryTip": {
+        "emoji": "⏭️",
+        "hook": "Xong việc A 「たら」 làm tiếp việc B!",
+        "meaning": "→ A chắc chắn xảy ra (đến giờ, xong việc) → sau đó làm B."
+      },
+      "examples": [
+        {
+          "jp": "10時に なったら、出かけましょう。",
+          "romaji": "Jū-ji ni nattara, dekakemashō.",
+          "vi": "Đến 10 giờ thì mình đi nhé.",
+          "context": "Hẹn giờ"
+        },
+        {
+          "jp": "うちへ 帰ったら、すぐ シャワーを 浴びます。",
+          "romaji": "Uchi e kaettara, sugu shawā o abimasu.",
+          "vi": "Về đến nhà là tôi tắm ngay.",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "駅に 着いたら、電話を ください。",
+          "romaji": "Eki ni tsuitara, denwa o kudasai.",
+          "vi": "Đến ga thì gọi điện cho tôi nhé.",
+          "context": "Hẹn gặp"
+        },
+        {
+          "jp": "仕事が 終わったら、飲みに 行きませんか。",
+          "romaji": "Shigoto ga owattara, nomi ni ikimasen ka.",
+          "vi": "Làm xong việc thì đi uống không?",
+          "context": "Đồng nghiệp"
+        },
+        {
+          "jp": "大学を 卒業したら、日本の 会社で 働きたいです。",
+          "romaji": "Daigaku o sotsugyō shitara, Nihon no kaisha de hatarakitai desu.",
+          "vi": "Tốt nghiệp đại học xong, tôi muốn làm việc ở công ty Nhật.",
+          "context": "Kế hoạch tương lai"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "10時に なると、出かけましょう。",
+          "right": "10時に なったら、出かけましょう。",
+          "explain": "Vế sau là lời rủ (〜ましょう) → không dùng と, phải dùng たら."
+        },
+        {
+          "wrong": "もし 10時に なったら、出かけましょう。",
+          "right": "10時に なったら、出かけましょう。",
+          "explain": "10 giờ chắc chắn sẽ đến → không phải giả định, không dùng もし."
+        }
+      ]
+    },
+    {
+      "id": "L25-G3",
+      "title": "〜ても、〜 — dù… cũng…",
+      "meaning": "Dù…, (vẫn / cũng)…",
+      "why": "Để nói kết quả KHÔNG như người ta nghĩ: 「Dù mưa vẫn giặt đồ」, 「Dù rẻ cũng không mua」. Đây là cách thể hiện ý chí, quyết tâm hoặc sự việc trái với kỳ vọng.",
+      "when": [
+        "Việc vẫn xảy ra bất chấp điều kiện: dù mưa vẫn đi, dù Chủ nhật vẫn làm.",
+        "Kết quả ngược với mong đợi: uống thuốc rồi mà vẫn không khỏi.",
+        "Không cần điều kiện đó vẫn được: không đọc hướng dẫn cũng biết cách dùng."
+      ],
+      "formula": "Vて → Vても · Vない → Vなくても\nいA: 〜くて → 〜くても (いい → よくても)\nなA / N: 〜で → 〜でも\n、〜 (câu chính)",
+      "parts": [
+        { "part": "Vても", "role": "Thể て + も: 降って → 降っても, 飲んで → 飲んでも." },
+        { "part": "Vなくても", "role": "Phủ định: 読まない → 読まなくても (dù không đọc)." },
+        { "part": "いA くても", "role": "安い → 安くても. いい → よくても." },
+        { "part": "なA / N でも", "role": "暇 → 暇でも, 日曜日 → 日曜日でも." },
+        { "part": "、〜", "role": "Kết quả vẫn xảy ra / trái với kỳ vọng." }
+      ],
+      "memoryTip": {
+        "emoji": "💪",
+        "hook": "「ても」 = dù trời sập 「cũng」 vẫn làm!",
+        "meaning": "→ Aても、B: dù A thì B vẫn xảy ra (ngược với kỳ vọng)."
+      },
+      "examples": [
+        {
+          "jp": "雨が 降っても、洗濯します。",
+          "romaji": "Ame ga futte mo, sentaku shimasu.",
+          "vi": "Dù trời mưa tôi vẫn giặt đồ.",
+          "context": "Việc nhà"
+        },
+        {
+          "jp": "安くても、要らない 物は 買いません。",
+          "romaji": "Yasukute mo, iranai mono wa kaimasen.",
+          "vi": "Dù rẻ, tôi cũng không mua đồ không cần thiết.",
+          "context": "Mua sắm"
+        },
+        {
+          "jp": "日曜日でも、会社へ 行きます。",
+          "romaji": "Nichiyōbi demo, kaisha e ikimasu.",
+          "vi": "Dù là Chủ nhật tôi vẫn đến công ty.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "薬を 飲んでも、よく なりません。",
+          "romaji": "Kusuri o nonde mo, yoku narimasen.",
+          "vi": "Dù đã uống thuốc mà vẫn không đỡ.",
+          "context": "Sức khoẻ"
+        },
+        {
+          "jp": "説明書を 読まなくても、使い方が わかります。",
+          "romaji": "Setsumeisho o yomanakute mo, tsukaikata ga wakarimasu.",
+          "vi": "Dù không đọc sách hướng dẫn vẫn biết cách dùng.",
+          "context": "Dùng máy móc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "安いても、買いません。",
+          "right": "安くても、買いません。",
+          "explain": "Tính từ い: 安い → 安くて → 安くても."
+        },
+        {
+          "wrong": "日曜日だっても、働きます。",
+          "right": "日曜日でも、働きます。",
+          "explain": "Danh từ và tính từ な: 〜で + も → 日曜日でも, 暇でも."
+        },
+        {
+          "wrong": "（Ý muốn nói: dù mưa vẫn đi）雨が 降ったら、出かけます。",
+          "right": "雨が 降っても、出かけます。",
+          "explain": "たら = nếu (điều kiện dẫn tới kết quả). ても = dù (kết quả xảy ra bất chấp điều kiện)."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: 〜ても いいです (bài 15)",
+          "text": "Đừng nhầm với 〜ても いいですか (có được… không) ở bài 15. Cả hai cùng dùng thể ても, nhưng 〜ても、〜 ở bài này nối hai câu với nghĩa 「dù… cũng…」."
+        }
+      ]
+    },
+    {
+      "id": "L25-G4",
+      "title": "もし 〜たら · いくら 〜ても",
+      "meaning": "Nếu (giả sử)… thì… · Dù… đến mấy cũng…",
+      "why": "もし đặt ở đầu câu báo trước 「đây là giả định」, còn いくら nhấn mạnh mức độ 「dù… bao nhiêu / đến đâu」. Người nghe biết ngay kiểu câu từ chữ đầu tiên.",
+      "when": [
+        "もし: nhấn mạnh giả định, thường là điều khó xảy ra hoặc chưa chắc: nếu trúng số, nếu mai mưa.",
+        "いくら: nhấn mạnh mức độ của điều kiện nhượng bộ: dù nghĩ bao nhiêu, dù đắt đến mấy."
+      ],
+      "formula": "もし 〜たら、〜\nいくら 〜ても、〜",
+      "parts": [
+        { "part": "もし", "role": "「nếu, giả sử」 — đứng đầu mệnh đề, đi với 〜たら. Không dùng cho việc chắc chắn xảy ra." },
+        { "part": "いくら", "role": "「dù… bao nhiêu / đến mấy」 — đi với 〜ても. (Khác với いくら = bao nhiêu tiền ở bài 3.)" }
+      ],
+      "memoryTip": {
+        "emoji": "🎲",
+        "hook": "もし cặp với 「たら」, いくら cặp với 「ても」 — cặp đôi không rời!",
+        "meaning": "→ もし 雨が 降ったら… / いくら 考えても…"
+      },
+      "examples": [
+        {
+          "jp": "もし 1億円 あったら、いろいろな 国を 旅行したいです。",
+          "romaji": "Moshi ichioku-en attara, iroiro na kuni o ryokō shitai desu.",
+          "vi": "Nếu có 100 triệu yên, tôi muốn đi du lịch nhiều nước.",
+          "context": "Ước mơ"
+        },
+        {
+          "jp": "もし あした 雨が 降ったら、うちで 映画を 見ましょう。",
+          "romaji": "Moshi ashita ame ga futtara, uchi de eiga o mimashō.",
+          "vi": "Nếu mai trời mưa thì mình xem phim ở nhà nhé.",
+          "context": "Kế hoạch cuối tuần"
+        },
+        {
+          "jp": "いくら 考えても、わかりません。",
+          "romaji": "Ikura kangaete mo, wakarimasen.",
+          "vi": "Nghĩ mãi mà vẫn không hiểu.",
+          "context": "Làm bài tập"
+        },
+        {
+          "jp": "いくら 高くても、この 本を 買います。",
+          "romaji": "Ikura takakute mo, kono hon o kaimasu.",
+          "vi": "Dù đắt đến mấy tôi cũng sẽ mua cuốn sách này.",
+          "context": "Mua sắm"
+        },
+        {
+          "jp": "いくら 呼んでも、だれも 来ません。",
+          "romaji": "Ikura yonde mo, dare mo kimasen.",
+          "vi": "Gọi mãi mà chẳng có ai đến.",
+          "context": "Nhà hàng"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "いくら 考えたら、わかりません。",
+          "right": "いくら 考えても、わかりません。",
+          "explain": "いくら (dù… đến mấy) đi với 〜ても, không đi với 〜たら."
+        },
+        {
+          "wrong": "もし 春に なったら、花見に 行きましょう。",
+          "right": "春に なったら、花見に 行きましょう。",
+          "explain": "Mùa xuân chắc chắn sẽ đến → không phải giả định, bỏ もし."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "〜たら、〜", "meaning": "Nếu… thì… (Vたら / いAかったら / なA・Nだったら)", "example": "お金が あったら、旅行します。" },
+    { "pattern": "Vたら、〜 (việc chắc chắn)", "meaning": "Sau khi / khi V xong thì…", "example": "10時に なったら、出かけましょう。" },
+    { "pattern": "〜ても、〜", "meaning": "Dù… cũng… (Vても / いAくても / なA・Nでも)", "example": "雨が 降っても、洗濯します。" },
+    { "pattern": "もし 〜たら · いくら 〜ても", "meaning": "Giả sử nếu… · Dù… đến mấy…", "example": "いくら 考えても、わかりません。" }
+  ],
+  "exercises": [
+    {
+      "id": "L25-E01",
+      "type": "fill",
+      "grammarPoint": "L25-G1",
+      "question": "Đổi động từ trong ngoặc sang thể たら, gõ vào chỗ trống.",
+      "jp": "お金が ＿＿、旅行します。（あります）",
+      "vi": "Nếu có tiền thì tôi sẽ đi du lịch.",
+      "answer": "あったら",
+      "hint": "Thể た của ある + ら",
+      "explanation": "ある → あった → あったら."
+    },
+    {
+      "id": "L25-E02",
+      "type": "choice",
+      "grammarPoint": "L25-G1",
+      "question": "Thể 〜たら của 「安い」 là gì?",
+      "options": ["安かったら", "安いたら", "安くたら", "安いだったら"],
+      "answer": "安かったら",
+      "explanation": "Tính từ い: 安い → 安かった (quá khứ) → + ら = 安かったら."
+    },
+    {
+      "id": "L25-E03",
+      "type": "fix",
+      "grammarPoint": "L25-G1",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "暇たら、手伝って ください。",
+      "options": [
+        "暇だったら、手伝って ください。",
+        "暇かったら、手伝って ください。",
+        "暇なたら、手伝って ください。",
+        "暇でたら、手伝って ください。"
+      ],
+      "answer": "暇だったら、手伝って ください。",
+      "explanation": "Tính từ な: 暇だった + ら = 暇だったら."
+    },
+    {
+      "id": "L25-E04",
+      "type": "vi-jp",
+      "grammarPoint": "L25-G1",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Nếu trời mưa thì tôi không ra ngoài.",
+      "options": [
+        "雨が 降ったら、出かけません。",
+        "雨が 降っても、出かけません。",
+        "雨が 降ったら、出かけます。",
+        "雨が 降るたら、出かけません。"
+      ],
+      "answer": "雨が 降ったら、出かけません。",
+      "explanation": "「nếu」 → 降ったら. 降っても là 「dù mưa」 — khác nghĩa. 降るたら là sai dạng."
+    },
+    {
+      "id": "L25-E05",
+      "type": "pattern",
+      "grammarPoint": "L25-G1",
+      "question": "Bạn muốn nói 「Nếu rẻ thì tôi muốn mua máy tính」. Câu nào đúng?",
+      "options": [
+        "安かったら、パソコンを 買いたいです。",
+        "安いと、パソコンを 買いたいです。",
+        "安くても、パソコンを 買いたいです。",
+        "安い とき、パソコンを 買いたかったです。"
+      ],
+      "answer": "安かったら、パソコンを 買いたいです。",
+      "explanation": "Vế sau là mong muốn (〜たいです) → dùng たら. と không đi với mong muốn; ても là 「dù」."
+    },
+    {
+      "id": "L25-E06",
+      "type": "jp-vi",
+      "grammarPoint": "L25-G1",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "いい 天気だったら、散歩しませんか。",
+      "romaji": "Ii tenki dattara, sanpo shimasen ka.",
+      "options": [
+        "Nếu trời đẹp thì mình đi dạo không?",
+        "Hôm qua trời đẹp nên đã đi dạo.",
+        "Dù trời đẹp cũng không đi dạo.",
+        "Trời đẹp thì không nên đi dạo."
+      ],
+      "answer": "Nếu trời đẹp thì mình đi dạo không?",
+      "explanation": "天気だったら = nếu (là) trời đẹp — たら không mang nghĩa quá khứ; 〜ませんか = rủ rê."
+    },
+    {
+      "id": "L25-E07",
+      "type": "fill",
+      "grammarPoint": "L25-G1",
+      "question": "Đổi từ trong ngoặc sang thể たら (phủ định), gõ vào chỗ trống.",
+      "jp": "時間が ＿＿、タクシーで 行きましょう。（ありません）",
+      "vi": "Nếu không có thời gian thì mình đi taxi nhé.",
+      "answer": "なかったら",
+      "hint": "Phủ định của ある là ない",
+      "explanation": "ない → なかった → なかったら."
+    },
+    {
+      "id": "L25-E08",
+      "type": "fix",
+      "grammarPoint": "L25-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "10時に なると、出かけましょう。",
+      "options": [
+        "10時に なったら、出かけましょう。",
+        "10時に なっても、出かけましょう。",
+        "10時に なるたら、出かけましょう。",
+        "10時に なったと、出かけましょう。"
+      ],
+      "answer": "10時に なったら、出かけましょう。",
+      "explanation": "Vế sau là lời rủ (〜ましょう) → dùng Vたら, không dùng と."
+    },
+    {
+      "id": "L25-E09",
+      "type": "vi-jp",
+      "grammarPoint": "L25-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Đến ga thì gọi điện cho tôi nhé.",
+      "options": [
+        "駅に 着いたら、電話を ください。",
+        "駅に 着くと、電話を ください。",
+        "駅に 着いても、電話を ください。",
+        "駅に 着くたら、電話を ください。"
+      ],
+      "answer": "駅に 着いたら、電話を ください。",
+      "explanation": "Việc chắc chắn xảy ra (đến ga) + lời nhờ → Vたら. と không đi với lời nhờ; ても là 「dù」."
+    },
+    {
+      "id": "L25-E10",
+      "type": "order",
+      "grammarPoint": "L25-G2",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Làm xong việc thì đi uống không?",
+      "tokens": ["仕事が", "終わったら、", "飲みに", "行きませんか"],
+      "explanation": "Việc A (仕事が 終わったら) trước, rồi lời rủ 飲みに 行きませんか."
+    },
+    {
+      "id": "L25-E11",
+      "type": "situation",
+      "grammarPoint": "L25-G2",
+      "question": "Trong buổi phỏng vấn, bạn muốn nói: 「Tốt nghiệp đại học xong, tôi muốn làm việc ở công ty Nhật」. Câu đúng:",
+      "options": [
+        "大学を 卒業したら、日本の 会社で 働きたいです。",
+        "大学を 卒業すると、日本の 会社で 働きたいです。",
+        "大学を 卒業しても、日本の 会社で 働きたいです。",
+        "もし 大学を 卒業しても、日本の 会社で 働きます。"
+      ],
+      "answer": "大学を 卒業したら、日本の 会社で 働きたいです。",
+      "explanation": "Sau khi xong việc A thì muốn làm B → Vたら + 〜たいです. と không đi với mong muốn; ても là 「dù」."
+    },
+    {
+      "id": "L25-E12",
+      "type": "identify",
+      "grammarPoint": "L25-G2",
+      "question": "〜たら trong câu này mang nghĩa nào?",
+      "jp": "うちへ 帰ったら、すぐ シャワーを 浴びます。",
+      "romaji": "Uchi e kaettara, sugu shawā o abimasu.",
+      "vi": "Về đến nhà là tôi tắm ngay.",
+      "options": [
+        "Sau khi (việc chắc chắn xảy ra) thì…",
+        "Nếu (giả định, chưa chắc xảy ra) thì…",
+        "Dù… cũng…",
+        "Đã… (quá khứ)"
+      ],
+      "answer": "Sau khi (việc chắc chắn xảy ra) thì…",
+      "explanation": "Về nhà là việc chắc chắn sẽ xảy ra → Vたら = 「về đến nhà thì…」, không phải giả định."
+    },
+    {
+      "id": "L25-E13",
+      "type": "particle",
+      "grammarPoint": "L25-G2",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "10時＿＿ なったら、出かけましょう。",
+      "romaji": "Jū-ji ___ nattara, dekakemashō.",
+      "vi": "Đến 10 giờ thì mình đi nhé.",
+      "options": ["に", "を", "が", "で"],
+      "answer": "に",
+      "explanation": "「trở thành, đến (thời điểm)」 = N に なります → 10時に なったら."
+    },
+    {
+      "id": "L25-E14",
+      "type": "fill",
+      "grammarPoint": "L25-G3",
+      "question": "Đổi động từ trong ngoặc sang thể ても, gõ vào chỗ trống.",
+      "jp": "雨が ＿＿、洗濯します。（降ります）",
+      "vi": "Dù trời mưa tôi vẫn giặt đồ.",
+      "answer": "ふっても",
+      "accept": ["降っても"],
+      "hint": "Thể て + も",
+      "explanation": "降る → 降って → 降っても."
+    },
+    {
+      "id": "L25-E15",
+      "type": "choice",
+      "grammarPoint": "L25-G3",
+      "question": "Thể 〜ても của 「安い」 là gì?",
+      "options": ["安くても", "安いても", "安かっても", "安いでも"],
+      "answer": "安くても",
+      "explanation": "Tính từ い: 安い → 安くて → 安くても."
+    },
+    {
+      "id": "L25-E16",
+      "type": "fix",
+      "grammarPoint": "L25-G3",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "日曜日だっても、会社へ 行きます。",
+      "options": [
+        "日曜日でも、会社へ 行きます。",
+        "日曜日くても、会社へ 行きます。",
+        "日曜日ても、会社へ 行きます。",
+        "日曜日だったら、会社へ 行きません。"
+      ],
+      "answer": "日曜日でも、会社へ 行きます。",
+      "explanation": "Danh từ + でも = dù là…: 日曜日でも."
+    },
+    {
+      "id": "L25-E17",
+      "type": "vi-jp",
+      "grammarPoint": "L25-G3",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Dù đã uống thuốc mà vẫn không đỡ.",
+      "options": [
+        "薬を 飲んでも、よく なりません。",
+        "薬を 飲んだら、よく なりません。",
+        "薬を 飲んでも、よく なります。",
+        "薬を 飲むても、よく なりません。"
+      ],
+      "answer": "薬を 飲んでも、よく なりません。",
+      "explanation": "「dù… vẫn không」 → Vても + phủ định. 飲んだら là 「nếu uống」 — sai nghĩa."
+    },
+    {
+      "id": "L25-E18",
+      "type": "jp-vi",
+      "grammarPoint": "L25-G3",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "説明書を 読まなくても、使い方が わかります。",
+      "romaji": "Setsumeisho o yomanakute mo, tsukaikata ga wakarimasu.",
+      "options": [
+        "Dù không đọc sách hướng dẫn vẫn biết cách dùng.",
+        "Nếu không đọc sách hướng dẫn thì không biết cách dùng.",
+        "Phải đọc sách hướng dẫn mới biết cách dùng.",
+        "Đọc sách hướng dẫn rồi mà vẫn không biết cách dùng."
+      ],
+      "answer": "Dù không đọc sách hướng dẫn vẫn biết cách dùng.",
+      "explanation": "Vなくても = dù không V. Kết quả: vẫn わかります."
+    },
+    {
+      "id": "L25-E19",
+      "type": "situation",
+      "grammarPoint": "L25-G3",
+      "question": "Bạn rất muốn đi buổi hoà nhạc của ca sĩ mình thích. Bạn nói 「Dù vé đắt tôi vẫn mua」:",
+      "options": [
+        "チケットが 高くても、買います。",
+        "チケットが 高かったら、買います。",
+        "チケットが 高いと、買います。",
+        "チケットが 高いでも、買います。"
+      ],
+      "answer": "チケットが 高くても、買います。",
+      "explanation": "「dù đắt vẫn mua」 → いA くても. 高かったら là 「nếu đắt (thì mua)」 — sai nghĩa; 高いでも sai dạng."
+    },
+    {
+      "id": "L25-E20",
+      "type": "pattern",
+      "grammarPoint": "L25-G3",
+      "question": "Bạn muốn nói 「Dù là ngày nghỉ, tôi cũng dậy lúc 6 giờ」. Chọn mẫu phù hợp cho 「dù là ngày nghỉ」.",
+      "options": [
+        "N でも (休みの 日でも)",
+        "N だったら (休みの 日だったら)",
+        "N の とき (休みの 日の とき)",
+        "N だと 思います (休みの 日だと 思います)"
+      ],
+      "answer": "N でも (休みの 日でも)",
+      "explanation": "「dù là N」 → N + でも. N だったら là 「nếu là N」."
+    },
+    {
+      "id": "L25-E21",
+      "type": "vi-jp",
+      "grammarPoint": "L25-G4",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Nếu có 100 triệu yên, tôi muốn đi du lịch nhiều nước.",
+      "options": [
+        "もし 1億円 あったら、いろいろな 国を 旅行したいです。",
+        "いくら 1億円 あったら、いろいろな 国を 旅行したいです。",
+        "もし 1億円 あると、いろいろな 国を 旅行したいです。",
+        "もし 1億円 あるたら、いろいろな 国を 旅行したいです。"
+      ],
+      "answer": "もし 1億円 あったら、いろいろな 国を 旅行したいです。",
+      "explanation": "Giả định khó xảy ra → もし 〜たら. いくら đi với ても; と không đi với mong muốn."
+    },
+    {
+      "id": "L25-E22",
+      "type": "fix",
+      "grammarPoint": "L25-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "いくら 考えたら、わかりません。",
+      "options": [
+        "いくら 考えても、わかりません。",
+        "もし 考えても、わかりません。",
+        "いくら 考えると、わかりません。",
+        "いくら 考えるても、わかりません。"
+      ],
+      "answer": "いくら 考えても、わかりません。",
+      "explanation": "いくら (dù… đến mấy) đi với 〜ても: 考えて → 考えても."
+    },
+    {
+      "id": "L25-E23",
+      "type": "fix",
+      "grammarPoint": "L25-G4",
+      "question": "Câu sau dùng もし không tự nhiên. Chọn câu đúng.",
+      "jp": "もし 10時に なったら、出かけましょう。",
+      "options": [
+        "10時に なったら、出かけましょう。",
+        "いくら 10時に なったら、出かけましょう。",
+        "もし 10時に なると、出かけましょう。",
+        "もし 10時に なっても、出かけましょう。"
+      ],
+      "answer": "10時に なったら、出かけましょう。",
+      "explanation": "10 giờ chắc chắn sẽ đến → không phải giả định → bỏ もし."
+    },
+    {
+      "id": "L25-E24",
+      "type": "order",
+      "grammarPoint": "L25-G4",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Nghĩ mãi mà vẫn không hiểu.",
+      "tokens": ["いくら", "考えても、", "わかりません"],
+      "explanation": "いくら đứng đầu, đi với 〜ても; kết quả わかりません ở cuối."
+    },
+    {
+      "id": "L25-E25",
+      "type": "situation",
+      "grammarPoint": "L25-G4",
+      "question": "Bạn rủ bạn: 「Nếu mai trời mưa thì mình xem phim ở nhà nhé」. Câu đúng:",
+      "options": [
+        "もし あした 雨が 降ったら、うちで 映画を 見ましょう。",
+        "もし あした 雨が 降ると、うちで 映画を 見ましょう。",
+        "いくら あした 雨が 降ったら、うちで 映画を 見ましょう。",
+        "もし あした 雨が 降っても、うちで 映画を 見ましょう。"
+      ],
+      "answer": "もし あした 雨が 降ったら、うちで 映画を 見ましょう。",
+      "explanation": "Giả định + lời rủ → もし 〜たら、〜ましょう. と không đi với rủ rê; ても là 「dù」 — sai nghĩa."
+    },
+    {
+      "id": "L25-E26",
+      "type": "choice",
+      "grammarPoint": "L25-G4",
+      "question": "Trong câu 「いくら 呼んでも、だれも 来ません」, いくら có nghĩa gì?",
+      "options": [
+        "Dù… bao nhiêu / đến mấy",
+        "Bao nhiêu tiền",
+        "Nếu, giả sử",
+        "Khi nào"
+      ],
+      "answer": "Dù… bao nhiêu / đến mấy",
+      "explanation": "いくら + 〜ても = dù… đến mấy. (いくら = bao nhiêu tiền chỉ dùng khi hỏi giá: これは いくらですか.)"
+    },
+    {
+      "id": "L25-E27",
+      "type": "jp-vi",
+      "grammarPoint": "L25-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "いくら 高くても、この 本を 買います。",
+      "romaji": "Ikura takakute mo, kono hon o kaimasu.",
+      "options": [
+        "Dù đắt đến mấy tôi cũng sẽ mua cuốn sách này.",
+        "Cuốn sách này giá bao nhiêu vậy?",
+        "Nếu đắt thì tôi không mua cuốn sách này.",
+        "Cuốn sách này đắt nên tôi không mua."
+      ],
+      "answer": "Dù đắt đến mấy tôi cũng sẽ mua cuốn sách này.",
+      "explanation": "いくら 〜くても = dù … đến mấy; vế sau 買います thể hiện quyết tâm."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 25 }
+}

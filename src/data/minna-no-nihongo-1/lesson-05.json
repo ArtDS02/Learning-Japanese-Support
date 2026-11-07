@@ -1,0 +1,733 @@
+{
+  "lesson": 5,
+  "title": "Đi lại",
+  "titleJp": "甲子園へ 行きますか",
+  "topic": "Đi · đến · về · bằng phương tiện gì · với ai · khi nào · 〜よ",
+  "description": "Học xong bài này bạn kể được mình đi đâu, đến đâu, về đâu, đi bằng gì, đi với ai, đi khi nào — và biết báo cho người khác thông tin mới bằng 〜よ.",
+  "objectives": [
+    "Dùng N へ 行きます / 来ます / 帰ります để nói hướng di chuyển.",
+    "Nói 「không đi đâu cả」 bằng どこ[へ]も + phủ định.",
+    "Nói phương tiện bằng で, và biết 歩いて (đi bộ) không dùng で.",
+    "Nói 「đi cùng ai」 bằng と, và 「một mình」 bằng 一人で.",
+    "Hỏi 「khi nào」 bằng いつ, nói ngày tháng.",
+    "Dùng 〜よ để báo thông tin người nghe chưa biết."
+  ],
+  "keyPoints": [
+    "へ chỉ HƯỚNG đi, viết へ nhưng đọc 「e」.",
+    "行きます = đi (rời chỗ mình), 来ます = đến (chỗ người nói đang ở), 帰ります = về (nhà, nước mình).",
+    "Từ để hỏi + も + động từ PHỦ ĐỊNH = không … nào cả: どこも 行きません.",
+    "で (bằng) + phương tiện: 電車で. Nhưng đi bộ là 歩いて, không có で.",
+    "と (cùng với) + người: 友達と. Một mình là 一人で, không phải 一人と.",
+    "いつ không đi với に. よ = báo tin mới; ね = mong người nghe đồng tình."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L05-G1",
+      "title": "N (nơi chốn) へ 行きます / 来ます / 帰ります",
+      "meaning": "Đi / đến / về (nơi chốn)",
+      "why": "Ba động từ di chuyển này dùng hằng ngày: đi học, đi làm, về nhà, đến Nhật…",
+      "when": [
+        "行きます: đi đến một nơi khác (rời khỏi chỗ mình).",
+        "来ます: đến chỗ người nói đang ở (đang ở Nhật thì nói 日本へ 来ました).",
+        "帰ります: về nhà, về nước mình."
+      ],
+      "formula": "N (nơi chốn) へ 行きます / 来ます / 帰ります\nどこへ 行きますか",
+      "parts": [
+        { "part": "N (nơi chốn)", "role": "Đích đến: 京都, 会社, うち, 国…" },
+        { "part": "へ", "role": "Trợ từ chỉ HƯỚNG di chuyển. Viết へ, đọc 「e」." },
+        { "part": "行きます", "role": "Đi." },
+        { "part": "来ます", "role": "Đến (về phía người nói)." },
+        { "part": "帰ります", "role": "Về (nhà, nước mình)." }
+      ],
+      "memoryTip": {
+        "emoji": "🚶",
+        "hook": "Đi đâu thì 「へ」 đó!",
+        "meaning": "→ へ (đọc e) gắn sau nơi mình đi tới: 京都へ 行きます."
+      },
+      "examples": [
+        {
+          "jp": "あした 京都へ 行きます。",
+          "romaji": "Ashita Kyōto e ikimasu.",
+          "vi": "Ngày mai tôi đi Kyoto.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "あした", "vi": "ngày mai" },
+            { "jp": "京都へ", "vi": "tới Kyoto" },
+            { "jp": "行きます", "vi": "đi" }
+          ]
+        },
+        {
+          "jp": "去年 日本へ 来ました。",
+          "romaji": "Kyonen Nihon e kimashita.",
+          "vi": "Tôi đã đến Nhật vào năm ngoái.",
+          "context": "Tự giới thiệu (đang ở Nhật)",
+          "note": "Đang ở Nhật nên dùng 来ました (đến đây), không dùng 行きました."
+        },
+        {
+          "jp": "7時に うちへ 帰ります。",
+          "romaji": "Shichi-ji ni uchi e kaerimasu.",
+          "vi": "Tôi về nhà lúc 7 giờ.",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "あした どこへ 行きますか。 …スーパーへ 行きます。",
+          "romaji": "Ashita doko e ikimasu ka. … Sūpā e ikimasu.",
+          "vi": "Ngày mai bạn đi đâu? …Tôi đi siêu thị.",
+          "context": "Mua sắm"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "Kyōto he ikimasu.",
+          "right": "Kyōto e ikimasu.",
+          "explain": "Khi là trợ từ chỉ hướng, へ đọc là 「e」, không đọc 「he」."
+        },
+        {
+          "wrong": "京都で 行きます。",
+          "right": "京都へ 行きます。",
+          "explain": "Nơi mình đi TỚI dùng へ. で là 「bằng / tại」, không chỉ hướng."
+        },
+        {
+          "wrong": "(Đang sống ở Nhật) 去年 日本へ 行きました。",
+          "right": "去年 日本へ 来ました。",
+          "explain": "Nơi người nói đang ở là 「đến」 → 来ます. 行きます là đi tới nơi khác."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: へ và に",
+          "text": "Trong đời thường người Nhật cũng hay dùng に thay cho へ: 京都に 行きます. Sách Minna ở bài này dùng へ để nhấn mạnh 「hướng」 di chuyển."
+        }
+      ]
+    },
+    {
+      "id": "L05-G2",
+      "title": "どこ[へ]も 行きません",
+      "meaning": "Không đi đâu cả",
+      "why": "Để trả lời 「Hôm qua đi đâu?」 khi mình không đi đâu hết — rất hay gặp khi nói về ngày nghỉ.",
+      "when": [
+        "Phủ định hoàn toàn: không đi nơi nào cả.",
+        "Luôn đi với động từ PHỦ ĐỊNH (ません / ませんでした)."
+      ],
+      "formula": "どこ[へ]も V ません / V ませんでした",
+      "parts": [
+        { "part": "どこ", "role": "Từ để hỏi 「đâu」." },
+        { "part": "[へ]", "role": "Có hoặc không đều được: どこへも = どこも." },
+        { "part": "も", "role": "Gắn sau từ để hỏi → 「… nào cũng (không)」." },
+        { "part": "V ません", "role": "Động từ bắt buộc ở dạng phủ định." }
+      ],
+      "memoryTip": {
+        "emoji": "🛋️",
+        "hook": "どこも + ません = nằm nhà, chẳng đi đâu!",
+        "meaning": "→ Từ để hỏi + も + phủ định = không … nào cả."
+      },
+      "examples": [
+        {
+          "jp": "日曜日 どこも 行きませんでした。",
+          "romaji": "Nichiyōbi doko mo ikimasen deshita.",
+          "vi": "Chủ nhật tôi đã không đi đâu cả.",
+          "context": "Kể về ngày nghỉ",
+          "breakdown": [
+            { "jp": "どこも", "vi": "(không) đâu cả" },
+            { "jp": "行きませんでした", "vi": "đã không đi" }
+          ]
+        },
+        {
+          "jp": "きのう どこへ 行きましたか。 …どこも 行きませんでした。",
+          "romaji": "Kinō doko e ikimashita ka. … Doko mo ikimasen deshita.",
+          "vi": "Hôm qua bạn đi đâu? …Tôi không đi đâu cả.",
+          "context": "Nói chuyện đầu tuần ở công ty"
+        },
+        {
+          "jp": "あしたは どこへも 行きません。 うちで 休みます。",
+          "romaji": "Ashita wa doko e mo ikimasen. Uchi de yasumimasu.",
+          "vi": "Ngày mai tôi không đi đâu cả. Tôi nghỉ ở nhà.",
+          "context": "Kế hoạch cuối tuần"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "どこも 行きます。",
+          "right": "どこも 行きません。",
+          "explain": "どこも mang nghĩa 「không … đâu cả」 nên động từ phải ở dạng phủ định."
+        },
+        {
+          "wrong": "どこへ 行きませんでした。",
+          "right": "どこも 行きませんでした。",
+          "explain": "Thiếu も thì câu thành 「Đã không đi đâu?」 — sai nghĩa. Phải có も sau どこ (へ)."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: だれも",
+          "text": "Cùng quy tắc với từ để hỏi khác: だれも + phủ định = không ai cả. (何も 〜ません — không … gì cả — sẽ gặp ở bài 6.)",
+          "examples": [
+            {
+              "jp": "きのう だれも 来ませんでした。",
+              "romaji": "Kinō dare mo kimasen deshita.",
+              "vi": "Hôm qua không có ai đến cả."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L05-G3",
+      "title": "N (phương tiện) で 行きます · 歩いて",
+      "meaning": "Đi bằng (phương tiện) · đi bộ",
+      "why": "Để nói mình đi học, đi làm bằng gì: tàu điện, xe buýt, xe đạp… và hỏi đường đi.",
+      "when": [
+        "Nói phương tiện: 電車で, バスで, 自転車で, 飛行機で.",
+        "Đi bộ thì dùng 歩いて — KHÔNG có で."
+      ],
+      "formula": "N (phương tiện) で N (nơi chốn) へ 行きます\n歩いて 行きます",
+      "parts": [
+        { "part": "N (phương tiện)", "role": "Tàu, xe, máy bay…" },
+        { "part": "で", "role": "「bằng」 — chỉ phương tiện." },
+        { "part": "歩いて", "role": "「đi bộ」 — tự nó đã là cách di chuyển nên không thêm で." }
+      ],
+      "memoryTip": {
+        "emoji": "🚌",
+        "hook": "Đi bằng gì thì 「で」 đó — trừ đôi chân: 歩いて!",
+        "meaning": "→ バスで 行きます, nhưng 歩いて 行きます (không で)."
+      },
+      "examples": [
+        {
+          "jp": "電車で 会社へ 行きます。",
+          "romaji": "Densha de kaisha e ikimasu.",
+          "vi": "Tôi đi làm bằng tàu điện.",
+          "context": "Đi làm",
+          "breakdown": [
+            { "jp": "電車で", "vi": "bằng tàu điện" },
+            { "jp": "会社へ", "vi": "tới công ty" },
+            { "jp": "行きます", "vi": "đi" }
+          ]
+        },
+        {
+          "jp": "何で 大阪へ 行きますか。 …新幹線で 行きます。",
+          "romaji": "Nan de Ōsaka e ikimasu ka. … Shinkansen de ikimasu.",
+          "vi": "Bạn đi Osaka bằng gì? …Tôi đi bằng tàu Shinkansen.",
+          "context": "Du lịch",
+          "note": "何で ở đây hỏi phương tiện, đọc là なんで."
+        },
+        {
+          "jp": "飛行機で 日本へ 来ました。",
+          "romaji": "Hikōki de Nihon e kimashita.",
+          "vi": "Tôi đã đến Nhật bằng máy bay.",
+          "context": "Tự giới thiệu"
+        },
+        {
+          "jp": "駅から 歩いて 帰りました。",
+          "romaji": "Eki kara aruite kaerimashita.",
+          "vi": "Tôi đã đi bộ từ ga về nhà.",
+          "context": "Sinh hoạt"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "歩いてで 学校へ 行きます。",
+          "right": "歩いて 学校へ 行きます。",
+          "explain": "歩いて đã có nghĩa 「đi bộ」, không thêm で."
+        },
+        {
+          "wrong": "バスへ 行きます。",
+          "right": "バスで 行きます。",
+          "explain": "へ chỉ nơi đi tới; phương tiện phải dùng で."
+        }
+      ]
+    },
+    {
+      "id": "L05-G4",
+      "title": "N (người) と V · 一人で",
+      "meaning": "Làm V cùng với N · (làm) một mình",
+      "why": "Để kể mình đi với ai, đến Nhật cùng ai: 「đi với bạn」, 「đến Nhật cùng gia đình」.",
+      "when": [
+        "Làm cùng với ai: 友達と, 家族と, 山田さんと.",
+        "Làm một mình: 一人で (không dùng と).",
+        "Hỏi 「với ai」: だれと."
+      ],
+      "formula": "N (người) と V\n一人で V",
+      "parts": [
+        { "part": "N (người)", "role": "Người cùng làm hành động." },
+        { "part": "と", "role": "「cùng với」." },
+        { "part": "一人で", "role": "「một mình」 — cố định với で." }
+      ],
+      "memoryTip": {
+        "emoji": "👫",
+        "hook": "Có bạn đi cùng → 「と」; lẻ bóng → 一人「で」!",
+        "meaning": "→ 友達と 行きます / 一人で 行きます."
+      },
+      "examples": [
+        {
+          "jp": "家族と 日本へ 来ました。",
+          "romaji": "Kazoku to Nihon e kimashita.",
+          "vi": "Tôi đã đến Nhật cùng gia đình.",
+          "context": "Tự giới thiệu",
+          "breakdown": [
+            { "jp": "家族と", "vi": "cùng gia đình" },
+            { "jp": "日本へ", "vi": "tới Nhật" },
+            { "jp": "来ました", "vi": "đã đến" }
+          ]
+        },
+        {
+          "jp": "友達と 京都へ 行きます。",
+          "romaji": "Tomodachi to Kyōto e ikimasu.",
+          "vi": "Tôi đi Kyoto với bạn.",
+          "context": "Du lịch"
+        },
+        {
+          "jp": "だれと 行きますか。 …山田さんと 行きます。",
+          "romaji": "Dare to ikimasu ka. … Yamada-san to ikimasu.",
+          "vi": "Bạn đi với ai? …Tôi đi với anh Yamada.",
+          "context": "Công tác"
+        },
+        {
+          "jp": "一人で 東京へ 行きます。",
+          "romaji": "Hitori de Tōkyō e ikimasu.",
+          "vi": "Tôi đi Tokyo một mình.",
+          "context": "Du lịch"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "一人と 東京へ 行きます。",
+          "right": "一人で 東京へ 行きます。",
+          "explain": "「một mình」 luôn là 一人で. と cần có người đi cùng."
+        },
+        {
+          "wrong": "友達で 京都へ 行きます。",
+          "right": "友達と 京都へ 行きます。",
+          "explain": "Đi CÙNG người → と. で dùng cho phương tiện (電車で) hoặc 一人で."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: hai chữ と",
+          "text": "Bài 4: N1 と N2 = N1 và N2 (パンと コーヒー). Bài 5: N (người) と V = cùng với (友達と 行きます). Nhìn phía sau: có danh từ → 「và」; có động từ → 「cùng với」."
+        }
+      ]
+    },
+    {
+      "id": "L05-G5",
+      "title": "いつ — khi nào",
+      "meaning": "Khi nào?",
+      "why": "Để hỏi thời gian không cụ thể giờ: đến Nhật khi nào, sinh nhật khi nào, về nước khi nào.",
+      "when": [
+        "Hỏi thời điểm của hành động: いつ 日本へ 来ましたか.",
+        "Hỏi ngày của sự kiện: 誕生日は いつですか.",
+        "いつ không đi với に."
+      ],
+      "formula": "いつ V ますか / V ましたか\nN は いつですか",
+      "parts": [
+        { "part": "いつ", "role": "Khi nào — thời gian chung chung (ngày, tháng, năm…)." },
+        { "part": "Câu trả lời", "role": "〜月〜日に, 去年, 来月… (có con số thì thêm に)." }
+      ],
+      "memoryTip": {
+        "emoji": "📅",
+        "hook": "「いつ」 tự do — không cần 「に」 đi kèm!",
+        "meaning": "→ いつ 来ましたか ✔ / いつに 来ましたか ✘. Trả lời có ngày cụ thể thì mới thêm に: 3月25日に 来ました."
+      },
+      "examples": [
+        {
+          "jp": "いつ 日本へ 来ましたか。 …3月25日に 来ました。",
+          "romaji": "Itsu Nihon e kimashita ka. … San-gatsu nijūgo-nichi ni kimashita.",
+          "vi": "Bạn đến Nhật khi nào? …Tôi đến vào ngày 25 tháng 3.",
+          "context": "Làm quen",
+          "breakdown": [
+            { "jp": "いつ", "vi": "khi nào" },
+            { "jp": "3月25日に", "vi": "vào ngày 25 tháng 3" }
+          ]
+        },
+        {
+          "jp": "誕生日は いつですか。 …6月13日です。",
+          "romaji": "Tanjōbi wa itsu desu ka. … Roku-gatsu jūsan-nichi desu.",
+          "vi": "Sinh nhật bạn là khi nào? …Ngày 13 tháng 6.",
+          "context": "Bạn bè"
+        },
+        {
+          "jp": "いつ 国へ 帰りますか。 …来月 帰ります。",
+          "romaji": "Itsu kuni e kaerimasu ka. … Raigetsu kaerimasu.",
+          "vi": "Khi nào bạn về nước? …Tháng sau tôi về.",
+          "context": "Du học sinh"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "いつに 国へ 帰りますか。",
+          "right": "いつ 国へ 帰りますか。",
+          "explain": "いつ không đi với に."
+        },
+        {
+          "wrong": "いつ 日本へ 来ましたか。 …3時です。",
+          "right": "いつ 日本へ 来ましたか。 …3月25日に 来ました。",
+          "explain": "いつ hỏi ngày / tháng / năm. Hỏi giờ cụ thể thì dùng 何時."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: tháng và ngày",
+          "text": "Tháng: 〜月 (がつ). Chú ý 4月 しがつ, 7月 しちがつ, 9月 くがつ. Ngày: 1日 ついたち, 2日 ふつか, 3日 みっか, 4日 よっか, 5日 いつか, 6日 むいか, 7日 なのか, 8日 ようか, 9日 ここのか, 10日 とおか, 14日 じゅうよっか, 20日 はつか, 24日 にじゅうよっか; các ngày khác: số + にち. Hỏi: 何月何日 (なんがつ なんにち)."
+        }
+      ]
+    },
+    {
+      "id": "L05-G6",
+      "title": "〜よ — báo thông tin mới",
+      "meaning": "…đấy / …đó (nhấn mạnh thông tin người nghe chưa biết)",
+      "why": "Để nhắc, báo cho người khác điều họ chưa biết: 「Tàu này không đi Koshien đâu」.",
+      "when": [
+        "Khi mình biết thông tin mà người nghe chưa biết.",
+        "Khi muốn nhấn mạnh ý kiến, lời nhắc của mình."
+      ],
+      "formula": "S よ",
+      "parts": [
+        { "part": "S", "role": "Câu chứa thông tin mới." },
+        { "part": "よ", "role": "Đặt cuối câu — 「…đấy / đó / đâu」." }
+      ],
+      "memoryTip": {
+        "emoji": "📢",
+        "hook": "よ = 「Nè, nói cho nghe nè!」",
+        "meaning": "→ よ báo tin người nghe chưa biết; ね mong người nghe đồng tình."
+      },
+      "examples": [
+        {
+          "jp": "この 電車は 甲子園へ 行きますか。 …いいえ、行きません。 次の 「普通」ですよ。",
+          "romaji": "Kono densha wa Kōshien e ikimasu ka. … Iie, ikimasen. Tsugi no “futsū” desu yo.",
+          "vi": "Tàu này có đi Koshien không? …Không, không đi. Là chuyến tàu thường kế tiếp đấy.",
+          "context": "Ở ga tàu",
+          "breakdown": [
+            { "jp": "次の", "vi": "tiếp theo" },
+            { "jp": "普通", "vi": "tàu thường (dừng mọi ga)" },
+            { "jp": "ですよ", "vi": "là… đấy" }
+          ]
+        },
+        {
+          "jp": "あの スーパーは 10時までですよ。",
+          "romaji": "Ano sūpā wa jū-ji made desu yo.",
+          "vi": "Siêu thị kia chỉ mở đến 10 giờ thôi đấy.",
+          "context": "Mua sắm"
+        },
+        {
+          "jp": "駅は あそこですよ。",
+          "romaji": "Eki wa asoko desu yo.",
+          "vi": "Nhà ga ở đằng kia đó.",
+          "context": "Chỉ đường cho khách du lịch"
+        },
+        {
+          "jp": "あしたは 日曜日ですよ。 会社は 休みです。",
+          "romaji": "Ashita wa nichiyōbi desu yo. Kaisha wa yasumi desu.",
+          "vi": "Mai là Chủ nhật đấy. Công ty nghỉ.",
+          "context": "Nhắc đồng nghiệp"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "(Đồng cảm) 大変ですよ。",
+          "right": "大変ですね。",
+          "explain": "Muốn đồng cảm với người nghe thì dùng ね. よ là báo thông tin, nghe như 「vất vả đấy (mà bạn không biết)」."
+        },
+        {
+          "explain": "Dùng よ quá nhiều với người trên có thể nghe như đang lên lớp. Chỉ dùng khi thật sự cần báo tin."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "N へ 行きます / 来ます / 帰ります", "meaning": "Đi / đến / về (nơi chốn) — へ đọc e", "example": "京都へ 行きます。" },
+    { "pattern": "どこ[へ]も V ません", "meaning": "Không đi đâu cả", "example": "どこも 行きませんでした。" },
+    { "pattern": "N (phương tiện) で V · 歩いて", "meaning": "Bằng phương tiện · đi bộ (không で)", "example": "電車で 会社へ 行きます。" },
+    { "pattern": "N (người) と V · 一人で", "meaning": "Cùng với N · một mình", "example": "友達と 京都へ 行きます。" },
+    { "pattern": "いつ", "meaning": "Khi nào? (không có に)", "example": "いつ 日本へ 来ましたか。" },
+    { "pattern": "S よ", "meaning": "…đấy (báo thông tin mới)", "example": "駅は あそこですよ。" }
+  ],
+  "exercises": [
+    {
+      "id": "L05-E01",
+      "type": "particle",
+      "grammarPoint": "L05-G1",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "あした 京都＿＿ 行きます。",
+      "romaji": "Ashita Kyōto ___ ikimasu.",
+      "vi": "Ngày mai tôi đi Kyoto.",
+      "options": ["へ", "で", "と", "の"],
+      "answer": "へ",
+      "explanation": "Nơi đi tới + へ (chỉ hướng)."
+    },
+    {
+      "id": "L05-E02",
+      "type": "choice",
+      "grammarPoint": "L05-G1",
+      "question": "Trong câu 「京都へ 行きます」, chữ へ được đọc là gì?",
+      "options": ["e", "he", "o", "wa"],
+      "answer": "e",
+      "explanation": "へ khi là trợ từ chỉ hướng luôn đọc là 「e」."
+    },
+    {
+      "id": "L05-E03",
+      "type": "fix",
+      "grammarPoint": "L05-G1",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "あした 大阪で 行きます。",
+      "options": ["あした 大阪へ 行きます。", "あしたに 大阪へ 行きます。", "あした 大阪を 行きます。", "あした 大阪と 行きます。"],
+      "answer": "あした 大阪へ 行きます。",
+      "explanation": "Đích đến của 行きます dùng へ. あした không có に."
+    },
+    {
+      "id": "L05-E04",
+      "type": "situation",
+      "grammarPoint": "L05-G1",
+      "question": "Bạn đang sống ở Nhật và kể cho người Nhật: 「Tôi đã đến Nhật năm ngoái」. Bạn nói:",
+      "options": ["去年 日本へ 来ました。", "去年 日本へ 行きました。", "去年 日本へ 帰りました。", "去年 日本へ 来ます。"],
+      "answer": "去年 日本へ 来ました。",
+      "explanation": "Nơi người nói đang ở → 来ます (đến); đã xảy ra → 来ました. 帰ります chỉ dùng khi về nhà / nước mình."
+    },
+    {
+      "id": "L05-E05",
+      "type": "order",
+      "grammarPoint": "L05-G1",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi về nhà.",
+      "tokens": ["わたし", "は", "うち", "へ", "帰ります"],
+      "explanation": "Chủ đề + は + nơi chốn + へ + 帰ります."
+    },
+    {
+      "id": "L05-E06",
+      "type": "fill",
+      "grammarPoint": "L05-G2",
+      "question": "Gõ trợ từ còn thiếu (kana hoặc romaji).",
+      "jp": "日曜日 どこ＿＿ 行きませんでした。",
+      "vi": "Chủ nhật tôi không đi đâu cả.",
+      "answer": "も",
+      "accept": ["へも"],
+      "explanation": "Từ để hỏi + も + phủ định = không … nào cả: どこも (hoặc どこへも) 行きませんでした."
+    },
+    {
+      "id": "L05-E07",
+      "type": "choice",
+      "grammarPoint": "L05-G2",
+      "question": "「きのう どこへ 行きましたか。」 — Hôm qua bạn ở nhà, không đi đâu. Trả lời thế nào?",
+      "options": ["どこも 行きませんでした。", "どこも 行きました。", "どこへ 行きませんでした。", "どこも 行きません。"],
+      "answer": "どこも 行きませんでした。",
+      "explanation": "どこも + phủ định; việc của hôm qua → ませんでした."
+    },
+    {
+      "id": "L05-E08",
+      "type": "fix",
+      "grammarPoint": "L05-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "あしたは どこも 行きます。",
+      "options": ["あしたは どこも 行きません。", "あしたは どこへ 行きません。", "あしたは どこも 行きませんでした。", "あしたは どこは 行きません。"],
+      "answer": "あしたは どこも 行きません。",
+      "explanation": "どこも luôn đi với phủ định. あした là tương lai → ません (không phải ませんでした)."
+    },
+    {
+      "id": "L05-E09",
+      "type": "jp-vi",
+      "grammarPoint": "L05-G2",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "土曜日は どこへも 行きません。",
+      "romaji": "Doyōbi wa doko e mo ikimasen.",
+      "options": [
+        "Thứ Bảy tôi không đi đâu cả.",
+        "Thứ Bảy tôi đi khắp nơi.",
+        "Thứ Bảy bạn đi đâu?",
+        "Thứ Bảy tôi cũng đi."
+      ],
+      "answer": "Thứ Bảy tôi không đi đâu cả.",
+      "explanation": "どこへも + 行きません = không đi đâu cả."
+    },
+    {
+      "id": "L05-E10",
+      "type": "particle",
+      "grammarPoint": "L05-G3",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "電車＿＿ 会社へ 行きます。",
+      "romaji": "Densha ___ kaisha e ikimasu.",
+      "vi": "Tôi đi làm bằng tàu điện.",
+      "options": ["で", "へ", "と", "の"],
+      "answer": "で",
+      "explanation": "Phương tiện + で = 「bằng」."
+    },
+    {
+      "id": "L05-E11",
+      "type": "choice",
+      "grammarPoint": "L05-G3",
+      "question": "「Tôi đi bộ từ ga về nhà.」 Chọn từ điền vào: 駅から ＿＿ 帰ります。",
+      "options": ["歩いて", "歩いてで", "歩いてへ", "歩いてと"],
+      "answer": "歩いて",
+      "explanation": "歩いて (đi bộ) không đi kèm で hay trợ từ nào khác."
+    },
+    {
+      "id": "L05-E12",
+      "type": "vi-jp",
+      "grammarPoint": "L05-G3",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tôi đã đến Nhật bằng máy bay.",
+      "options": ["飛行機で 日本へ 来ました。", "飛行機へ 日本で 来ました。", "飛行機と 日本へ 来ました。", "飛行機で 日本で 来ました。"],
+      "answer": "飛行機で 日本へ 来ました。",
+      "explanation": "Phương tiện + で, nơi đến + へ."
+    },
+    {
+      "id": "L05-E13",
+      "type": "fix",
+      "grammarPoint": "L05-G3",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "歩いてで 学校へ 行きます。",
+      "options": ["歩いて 学校へ 行きます。", "歩いてで 学校で 行きます。", "歩いてと 学校へ 行きます。", "歩いて 学校で 行きます。"],
+      "answer": "歩いて 学校へ 行きます。",
+      "explanation": "Bỏ で sau 歩いて; nơi đến vẫn dùng へ."
+    },
+    {
+      "id": "L05-E14",
+      "type": "identify",
+      "grammarPoint": "L05-G3",
+      "question": "Trong câu này, で có vai trò gì?",
+      "jp": "バスで うちへ 帰ります。",
+      "romaji": "Basu de uchi e kaerimasu.",
+      "vi": "Tôi về nhà bằng xe buýt.",
+      "options": ["Chỉ phương tiện (bằng)", "Chỉ nơi đi tới", "Chỉ người cùng làm", "Chỉ thời điểm"],
+      "answer": "Chỉ phương tiện (bằng)",
+      "explanation": "バスで = bằng xe buýt. Nơi đi tới là うちへ."
+    },
+    {
+      "id": "L05-E15",
+      "type": "particle",
+      "grammarPoint": "L05-G4",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "友達＿＿ 京都へ 行きます。",
+      "romaji": "Tomodachi ___ Kyōto e ikimasu.",
+      "vi": "Tôi đi Kyoto cùng bạn.",
+      "options": ["と", "で", "へ", "の"],
+      "answer": "と",
+      "explanation": "Người cùng làm hành động + と = 「cùng với」."
+    },
+    {
+      "id": "L05-E16",
+      "type": "vi-jp",
+      "grammarPoint": "L05-G4",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tôi đi Tokyo một mình.",
+      "options": ["一人で 東京へ 行きます。", "一人と 東京へ 行きます。", "一人へ 東京で 行きます。", "一人の 東京へ 行きます。"],
+      "answer": "一人で 東京へ 行きます。",
+      "explanation": "「một mình」 luôn là 一人で, không dùng と."
+    },
+    {
+      "id": "L05-E17",
+      "type": "situation",
+      "grammarPoint": "L05-G4",
+      "question": "Đồng nghiệp nói sắp đi Osaka. Bạn muốn hỏi 「Anh đi với ai?」:",
+      "options": ["だれと 行きますか。", "だれで 行きますか。", "だれへ 行きますか。", "何と 行きますか。"],
+      "answer": "だれと 行きますか。",
+      "explanation": "Hỏi người đi cùng → だれ (ai) + と (cùng với)."
+    },
+    {
+      "id": "L05-E18",
+      "type": "order",
+      "grammarPoint": "L05-G4",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi đã đến Nhật cùng gia đình.",
+      "tokens": ["家族", "と", "日本", "へ", "来ました"],
+      "accept": [["日本", "へ", "家族", "と", "来ました"]],
+      "explanation": "家族と (cùng gia đình) + 日本へ (tới Nhật) + 来ました. Động từ luôn ở cuối."
+    },
+    {
+      "id": "L05-E19",
+      "type": "fill",
+      "grammarPoint": "L05-G5",
+      "question": "Gõ từ để hỏi còn thiếu (kana hoặc romaji).",
+      "jp": "＿＿ 日本へ 来ましたか。 …去年 来ました。",
+      "vi": "Bạn đến Nhật khi nào? …Năm ngoái.",
+      "answer": "いつ",
+      "explanation": "Câu trả lời là thời gian (去年) → hỏi bằng いつ (khi nào)."
+    },
+    {
+      "id": "L05-E20",
+      "type": "fix",
+      "grammarPoint": "L05-G5",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "いつに 国へ 帰りますか。",
+      "options": ["いつ 国へ 帰りますか。", "いつに 国で 帰りますか。", "いつで 国へ 帰りますか。", "いつに 国へ 帰りましたか。"],
+      "answer": "いつ 国へ 帰りますか。",
+      "explanation": "いつ không đi với に."
+    },
+    {
+      "id": "L05-E21",
+      "type": "jp-vi",
+      "grammarPoint": "L05-G5",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "誕生日は いつですか。",
+      "romaji": "Tanjōbi wa itsu desu ka.",
+      "options": ["Sinh nhật bạn là khi nào?", "Sinh nhật bạn ở đâu?", "Hôm nay là sinh nhật bạn à?", "Bạn bao nhiêu tuổi?"],
+      "answer": "Sinh nhật bạn là khi nào?",
+      "explanation": "誕生日 = sinh nhật, いつ = khi nào."
+    },
+    {
+      "id": "L05-E22",
+      "type": "pattern",
+      "grammarPoint": "L05-G5",
+      "question": "Bạn muốn hỏi một người bạn mới 「Bạn đến Nhật khi nào?」. Chọn mẫu phù hợp.",
+      "options": ["いつ Vましたか", "どこへ Vましたか", "だれと Vましたか", "何で Vましたか"],
+      "answer": "いつ Vましたか",
+      "explanation": "Hỏi thời điểm (khi nào) → いつ. どこへ hỏi nơi, だれと hỏi người, 何で hỏi phương tiện."
+    },
+    {
+      "id": "L05-E23",
+      "type": "choice",
+      "grammarPoint": "L05-G5",
+      "question": "「4月」 (tháng 4) đọc thế nào?",
+      "options": ["しがつ", "よんがつ", "よがつ", "しいがつ"],
+      "answer": "しがつ",
+      "explanation": "Tháng 4 có cách đọc riêng: しがつ (tương tự 7月 しちがつ, 9月 くがつ)."
+    },
+    {
+      "id": "L05-E24",
+      "type": "situation",
+      "grammarPoint": "L05-G6",
+      "question": "Ở ga, một người định lên tàu vì nghĩ tàu này đi Koshien. Bạn biết là KHÔNG phải và muốn báo cho họ:",
+      "options": ["この 電車は 甲子園へ 行きませんよ。", "この 電車は 甲子園へ 行きませんね。", "この 電車は 甲子園へ 行きませんか。", "この 電車は 甲子園へ 行きませんでした。"],
+      "answer": "この 電車は 甲子園へ 行きませんよ。",
+      "explanation": "Báo thông tin người nghe chưa biết → よ. ね là mong người nghe đồng tình với điều họ đã biết."
+    },
+    {
+      "id": "L05-E25",
+      "type": "choice",
+      "grammarPoint": "L05-G6",
+      "question": "Khi nào dùng よ ở cuối câu?",
+      "options": [
+        "Khi báo cho người nghe thông tin họ chưa biết",
+        "Khi mong người nghe đồng tình với điều cả hai đều biết",
+        "Khi hỏi điều mình chưa biết",
+        "Khi nối hai danh từ"
+      ],
+      "answer": "Khi báo cho người nghe thông tin họ chưa biết",
+      "explanation": "よ = 「…đấy」, báo tin mới / nhấn mạnh. Đồng tình, xác nhận là ね; hỏi là か."
+    },
+    {
+      "id": "L05-E26",
+      "type": "jp-vi",
+      "grammarPoint": "L05-G6",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "あの スーパーは 10時までですよ。",
+      "romaji": "Ano sūpā wa jū-ji made desu yo.",
+      "options": [
+        "Siêu thị kia chỉ mở đến 10 giờ thôi đấy.",
+        "Siêu thị kia mở cửa từ 10 giờ nhỉ.",
+        "Siêu thị kia mở đến mấy giờ?",
+        "Siêu thị kia không mở đến 10 giờ."
+      ],
+      "answer": "Siêu thị kia chỉ mở đến 10 giờ thôi đấy.",
+      "explanation": "10時まで = đến 10 giờ; よ = 「đấy」, báo cho người nghe biết."
+    },
+    {
+      "id": "L05-E27",
+      "type": "fix",
+      "grammarPoint": "L05-G6",
+      "question": "Bạn nghe 「毎日 10時まで 働きます」 và muốn tỏ ý cảm thông, nhưng câu sau dùng sai. Chọn câu đúng.",
+      "jp": "大変ですよ。",
+      "options": ["大変ですね。", "大変ですか。", "大変じゃ ありませんね。", "大変じゃ ありませんよ。"],
+      "answer": "大変ですね。",
+      "explanation": "Đồng cảm với người nghe → ね (vất vả nhỉ). よ dùng để báo thông tin mới."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 5 }
+}

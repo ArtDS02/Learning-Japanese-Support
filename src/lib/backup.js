@@ -23,6 +23,7 @@ export const OWNED_KEYS = [
   "kanji_marked", // kanji đã đánh dấu
   "kanji_learned", // (cũ) kanji đánh dấu tay — giữ để không mất dữ liệu người dùng
   "kana:quiz:cfg", // cấu hình quiz kana
+  "minna1_v1", // Minna no Nihongo 1: tiến độ từng bài, câu sai, romaji/furigana
   "jlpt-active-tab",
 ];
 

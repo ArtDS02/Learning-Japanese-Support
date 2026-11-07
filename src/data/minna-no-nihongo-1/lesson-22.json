@@ -1,0 +1,666 @@
+{
+  "lesson": 22,
+  "title": "Mệnh đề bổ nghĩa danh từ",
+  "titleJp": "どんな アパートが いいですか",
+  "topic": "Mệnh đề + danh từ · chủ ngữ trong mệnh đề dùng が · V辞書形 時間 / 約束 / 用事",
+  "description": "Học xong bài này bạn ghép được cả một câu để miêu tả danh từ — 「người đang đeo kính」, 「cái bánh anh Miller làm」, 「ngôi nhà tôi đang ở」 — và dùng cụm đó ở bất cứ vị trí nào trong câu. Bạn cũng nói được 「có thời gian / có hẹn / có việc để làm gì」.",
+  "objectives": [
+    "Bổ nghĩa cho danh từ bằng một mệnh đề ở thể thông thường.",
+    "Biết chủ ngữ trong mệnh đề bổ nghĩa dùng が, không dùng は.",
+    "Dùng cụm [mệnh đề + N] làm chủ đề, vị ngữ, tân ngữ, nơi chốn… trong câu.",
+    "Nói có / không có thời gian, hẹn, việc để làm gì: V辞書形 時間 / 約束 / 用事 が あります."
+  ],
+  "keyPoints": [
+    "Mệnh đề bổ nghĩa đứng TRƯỚC danh từ (ngược với tiếng Việt): 眼鏡を かけて いる 人 = người đang đeo kính.",
+    "Động từ trong mệnh đề ở thể thông thường: 撮った 写真 (không nói 撮りました 写真).",
+    "Tính từ な giữ な, danh từ dùng の khi đứng trước danh từ: 静かな 町, 医者の 友達.",
+    "Chủ ngữ trong mệnh đề dùng が: ミラーさんが 作った ケーキ.",
+    "Cả cụm [mệnh đề + N] hoạt động như MỘT danh từ — theo sau là は, を, に, で, です… tuỳ vị trí.",
+    "V辞書形 + 時間 / 約束 / 用事 が あります: có thời gian / có hẹn / có việc để làm V."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L22-G1",
+      "title": "Mệnh đề (普通形) + N",
+      "meaning": "N mà (ai đó) đã / đang / sẽ làm… — dùng cả một câu để miêu tả danh từ",
+      "why": "Bạn đã biết bổ nghĩa bằng tính từ (高い 本, 静かな 町). Nhưng nhiều khi phải dùng cả một hành động để chỉ rõ: 「người ĐANG ĐEO KÍNH」, 「ảnh CHỤP Ở KYOTO」. Mệnh đề bổ nghĩa giúp nói những cụm này.",
+      "when": [
+        "Chỉ rõ người / vật nào khi có nhiều người / vật: 「người đeo kính là ai?」",
+        "Miêu tả đồ vật bằng hành động liên quan: 「ảnh tôi chụp ở Kyoto」, 「quần áo mặc ngày mai」.",
+        "Hỏi thông tin về người / vật đã làm gì: 「người không đến họp là ai?」"
+      ],
+      "formula": "V (普通形) + N\nいA + N\nなA な + N\nN の + N",
+      "parts": [
+        { "part": "Mệnh đề (V 普通形)", "role": "Vる / Vない / Vた / Vなかった / Vて いる… đứng ngay trước danh từ. Không dùng ます." },
+        { "part": "なA な / N の", "role": "Khi mệnh đề kết thúc bằng なA hoặc N, だ đổi thành な / の trước danh từ." },
+        { "part": "N", "role": "Danh từ chính được bổ nghĩa — luôn đứng CUỐI cụm." }
+      ],
+      "memoryTip": {
+        "emoji": "🧩",
+        "hook": "Tiếng Việt: 「người ĐEO KÍNH」 — tiếng Nhật: 「ĐEO KÍNH người」!",
+        "meaning": "→ Mệnh đề đứng TRƯỚC danh từ: 眼鏡を かけて いる 人."
+      },
+      "examples": [
+        {
+          "jp": "これは 京都で 撮った 写真です。",
+          "romaji": "Kore wa Kyōto de totta shashin desu.",
+          "vi": "Đây là bức ảnh chụp ở Kyoto.",
+          "context": "Du lịch",
+          "breakdown": [
+            { "jp": "京都で 撮った", "vi": "đã chụp ở Kyoto (mệnh đề)" },
+            { "jp": "写真", "vi": "bức ảnh (danh từ chính)" }
+          ]
+        },
+        {
+          "jp": "眼鏡を かけて いる 人は だれですか。",
+          "romaji": "Megane o kakete iru hito wa dare desu ka.",
+          "vi": "Người đang đeo kính là ai vậy?",
+          "context": "Ở văn phòng"
+        },
+        {
+          "jp": "パーティーで 着る 服を 買いました。",
+          "romaji": "Pātī de kiru fuku o kaimashita.",
+          "vi": "Tôi đã mua bộ quần áo để mặc ở bữa tiệc.",
+          "context": "Mua sắm"
+        },
+        {
+          "jp": "会議に 来なかった 人は だれですか。",
+          "romaji": "Kaigi ni konakatta hito wa dare desu ka.",
+          "vi": "Người không đến cuộc họp là ai?",
+          "context": "Công việc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "これは 京都で 撮りました 写真です。",
+          "right": "これは 京都で 撮った 写真です。",
+          "explain": "Động từ đứng trước danh từ phải ở thể thông thường. Độ lịch sự nằm ở です cuối câu."
+        },
+        {
+          "wrong": "人 眼鏡を かけて いる は だれですか。",
+          "right": "眼鏡を かけて いる 人は だれですか。",
+          "explain": "Không đặt danh từ lên trước như tiếng Việt. Mệnh đề luôn đứng trước, danh từ chính ở cuối cụm."
+        },
+        {
+          "wrong": "静かだ 町に 住みたいです。",
+          "right": "静かな 町に 住みたいです。",
+          "explain": "Trước danh từ, tính từ な dùng な (không dùng だ)."
+        }
+      ]
+    },
+    {
+      "id": "L22-G2",
+      "title": "Chủ ngữ trong mệnh đề: N が V + N",
+      "meaning": "N (mà) ai đó làm — chủ ngữ của mệnh đề đánh dấu bằng が",
+      "why": "Khi mệnh đề có chủ ngữ riêng (「cái bánh ANH MILLER làm」), chủ ngữ đó phải đi với が. Dùng は ở đây là lỗi rất phổ biến vì は đã dành cho chủ đề của cả câu.",
+      "when": [
+        "Mệnh đề bổ nghĩa có người thực hiện hành động: 「ảnh chị Sato chụp」, 「nhà anh Santos đang ở」.",
+        "Nói về nơi mình sinh ra, món mẹ nấu, v.v."
+      ],
+      "formula": "N1 が V (普通形) + N2",
+      "parts": [
+        { "part": "N1", "role": "Người / vật thực hiện hành động trong mệnh đề." },
+        { "part": "が", "role": "Đánh dấu chủ ngữ BÊN TRONG mệnh đề. Không dùng は." },
+        { "part": "V + N2", "role": "Hành động (thể thông thường) + danh từ chính được bổ nghĩa." }
+      ],
+      "memoryTip": {
+        "emoji": "🔒",
+        "hook": "Trong mệnh đề, 「は」 bị khoá cửa — chỉ 「が」 được vào!",
+        "meaning": "→ ミラーさんが 住んで いる 家 (không nói ミラーさんは 住んで いる 家)."
+      },
+      "examples": [
+        {
+          "jp": "これは ミラーさんが 作った ケーキです。",
+          "romaji": "Kore wa Mirā-san ga tsukutta kēki desu.",
+          "vi": "Đây là cái bánh anh Miller làm.",
+          "context": "Bữa tiệc",
+          "breakdown": [
+            { "jp": "ミラーさんが", "vi": "anh Miller (chủ ngữ mệnh đề)" },
+            { "jp": "作った", "vi": "đã làm" },
+            { "jp": "ケーキ", "vi": "cái bánh" }
+          ]
+        },
+        {
+          "jp": "わたしが 生まれた 所は ハノイです。",
+          "romaji": "Watashi ga umareta tokoro wa Hanoi desu.",
+          "vi": "Nơi tôi sinh ra là Hà Nội.",
+          "context": "Giới thiệu bản thân"
+        },
+        {
+          "jp": "母が 作る フォーは とても おいしいです。",
+          "romaji": "Haha ga tsukuru fō wa totemo oishii desu.",
+          "vi": "Món phở mẹ tôi nấu rất ngon.",
+          "context": "Gia đình"
+        },
+        {
+          "jp": "サントスさんが 住んで いる 家は 駅から 近いです。",
+          "romaji": "Santosu-san ga sunde iru uchi wa eki kara chikai desu.",
+          "vi": "Ngôi nhà anh Santos đang ở gần ga.",
+          "context": "Nhà ở"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "これは ミラーさんは 作った ケーキです。",
+          "right": "これは ミラーさんが 作った ケーキです。",
+          "explain": "ミラーさん là chủ ngữ của mệnh đề 「作った」 → dùng が."
+        },
+        {
+          "wrong": "わたしは 生まれた 所は ハノイです。",
+          "right": "わたしが 生まれた 所は ハノイです。",
+          "explain": "Chủ đề của câu là 「nơi tôi sinh ra」. わたし chỉ là chủ ngữ bên trong mệnh đề → が."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: が có thể đổi thành の",
+          "text": "Trong mệnh đề bổ nghĩa danh từ, が thường được thay bằng の mà nghĩa không đổi: わたしの 生まれた 所 = わたしが 生まれた 所. Ở bài này, cứ dùng が cho chắc.",
+          "examples": [
+            {
+              "jp": "これは 母の 作った 料理です。",
+              "romaji": "Kore wa haha no tsukutta ryōri desu.",
+              "vi": "Đây là món ăn mẹ tôi nấu."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L22-G3",
+      "title": "[Mệnh đề + N] ở mọi vị trí trong câu",
+      "meaning": "Cả cụm [mệnh đề + N] dùng như một danh từ bình thường",
+      "why": "Sau khi tạo cụm 「ảnh chị Sato chụp」, bạn có thể dùng nó làm chủ đề, vị ngữ, tân ngữ, nơi chốn… chỉ cần gắn trợ từ phù hợp phía sau — giống hệt một danh từ đơn.",
+      "when": [
+        "Làm chủ đề: [cụm] は 〜です.",
+        "Làm vị ngữ: これは [cụm] です.",
+        "Làm tân ngữ, nơi chốn…: [cụm] を 見ました / [cụm] で 会いました."
+      ],
+      "formula": "[mệnh đề + N] は 〜です (chủ đề)\n〜は [mệnh đề + N] です (vị ngữ)\n[mệnh đề + N] を / に / で … V",
+      "parts": [
+        { "part": "[mệnh đề + N]", "role": "Một khối danh từ lớn. Dù dài đến đâu cũng chỉ là MỘT danh từ." },
+        { "part": "Trợ từ sau cụm", "role": "は, が, を, に, で, です… chọn theo vai trò của cụm trong câu chính." },
+        { "part": "Động từ chính", "role": "Luôn ở cuối câu, sau toàn bộ cụm." }
+      ],
+      "memoryTip": {
+        "emoji": "📦",
+        "hook": "Cả cụm dài = 1 cái hộp danh từ — đặt vào chỗ nào của câu cũng được!",
+        "meaning": "→ Nhìn trợ từ SAU hộp để biết nó là chủ đề (は), tân ngữ (を), nơi chốn (で)…"
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんが 住んで いる 家は 古いです。",
+          "romaji": "Mirā-san ga sunde iru uchi wa furui desu.",
+          "vi": "Ngôi nhà anh Miller đang ở thì cũ.",
+          "context": "Nhà ở (cụm làm chủ đề)"
+        },
+        {
+          "jp": "これは 先週 買った パソコンです。",
+          "romaji": "Kore wa senshū katta pasokon desu.",
+          "vi": "Đây là cái máy tính tôi mua tuần trước.",
+          "context": "Mua sắm (cụm làm vị ngữ)"
+        },
+        {
+          "jp": "わたしは 佐藤さんが 撮った 写真を 見ました。",
+          "romaji": "Watashi wa Satō-san ga totta shashin o mimashita.",
+          "vi": "Tôi đã xem những bức ảnh chị Sato chụp.",
+          "context": "Bạn bè (cụm làm tân ngữ)"
+        },
+        {
+          "jp": "駅の 前に ある 喫茶店で 友達に 会いました。",
+          "romaji": "Eki no mae ni aru kissaten de tomodachi ni aimashita.",
+          "vi": "Tôi đã gặp bạn ở quán cà phê trước nhà ga.",
+          "context": "Hẹn gặp (cụm làm nơi chốn)"
+        },
+        {
+          "jp": "カリナさんが かいた 絵は どれですか。",
+          "romaji": "Karina-san ga kaita e wa dore desu ka.",
+          "vi": "Bức tranh Karina vẽ là bức nào?",
+          "context": "Triển lãm ở trường"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "わたしは 見ました 佐藤さんが 撮った 写真を。",
+          "right": "わたしは 佐藤さんが 撮った 写真を 見ました。",
+          "explain": "Dù tân ngữ dài thế nào, động từ chính vẫn phải đứng cuối câu."
+        },
+        {
+          "wrong": "駅の 前に ある 喫茶店に 友達に 会いました。",
+          "right": "駅の 前に ある 喫茶店で 友達に 会いました。",
+          "explain": "Cụm 「quán cà phê trước ga」 là nơi diễn ra hành động 会う → dùng で, như với danh từ thường."
+        }
+      ]
+    },
+    {
+      "id": "L22-G4",
+      "title": "V辞書形 時間 / 約束 / 用事 が あります",
+      "meaning": "Có thời gian / có hẹn / có việc (để) làm V",
+      "why": "Đây là cách tự nhiên để từ chối lời mời, giải thích vì sao bận: 「Tôi không có thời gian ăn sáng」, 「Tôi có hẹn đi xem phim」, 「Tôi có việc phải ra ủy ban」.",
+      "when": [
+        "Nói có / không có thời gian để làm gì.",
+        "Từ chối khéo vì đã có hẹn (約束) hoặc có việc riêng (用事)."
+      ],
+      "formula": "V辞書形 + 時間 / 約束 / 用事 が あります\n(phủ định: 〜が ありません)",
+      "parts": [
+        { "part": "V辞書形", "role": "Việc định làm — dùng thể từ điển vì việc đó chưa xảy ra." },
+        { "part": "時間", "role": "Thời gian (để làm V)." },
+        { "part": "約束", "role": "Lời hẹn, cuộc hẹn (làm V với ai đó)." },
+        { "part": "用事", "role": "Việc riêng, công chuyện (phải làm V)." },
+        { "part": "が あります", "role": "Có. Không có → が ありません." }
+      ],
+      "memoryTip": {
+        "emoji": "⏰",
+        "hook": "Có thời gian ĐỂ làm gì → 「V辞書形 + 時間」!",
+        "meaning": "→ 本を 読む 時間 = thời gian để đọc sách. Tương tự với 約束 (hẹn), 用事 (việc)."
+      },
+      "examples": [
+        {
+          "jp": "わたしは 朝ごはんを 食べる 時間が ありません。",
+          "romaji": "Watashi wa asagohan o taberu jikan ga arimasen.",
+          "vi": "Tôi không có thời gian ăn sáng.",
+          "context": "Sinh hoạt buổi sáng"
+        },
+        {
+          "jp": "土曜日は 友達と 映画を 見る 約束が あります。",
+          "romaji": "Doyōbi wa tomodachi to eiga o miru yakusoku ga arimasu.",
+          "vi": "Thứ bảy tôi có hẹn đi xem phim với bạn.",
+          "context": "Từ chối lời mời"
+        },
+        {
+          "jp": "きょうは 市役所へ 行く 用事が あります。",
+          "romaji": "Kyō wa shiyakusho e iku yōji ga arimasu.",
+          "vi": "Hôm nay tôi có việc phải đến tòa thị chính.",
+          "context": "Thủ tục hành chính"
+        },
+        {
+          "jp": "忙しくて、本を 読む 時間が ありません。",
+          "romaji": "Isogashikute, hon o yomu jikan ga arimasen.",
+          "vi": "Bận quá nên tôi không có thời gian đọc sách.",
+          "context": "Công việc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "朝ごはんを 食べます 時間が ありません。",
+          "right": "朝ごはんを 食べる 時間が ありません。",
+          "explain": "Trước danh từ 時間 dùng thể từ điển, không dùng ます."
+        },
+        {
+          "wrong": "友達と 映画を 見た 約束が あります。",
+          "right": "友達と 映画を 見る 約束が あります。",
+          "explain": "Việc đã hẹn là việc SẮP làm → thể từ điển 見る, không dùng thể た."
+        },
+        {
+          "wrong": "本を 読む 時間を ありません。",
+          "right": "本を 読む 時間が ありません。",
+          "explain": "あります đi với が."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "Mệnh đề (普通形) + N", "meaning": "N mà… (mệnh đề đứng trước danh từ)", "example": "眼鏡を かけて いる 人" },
+    { "pattern": "N1 が V + N2", "meaning": "N2 mà N1 làm (chủ ngữ mệnh đề dùng が)", "example": "ミラーさんが 作った ケーキ" },
+    { "pattern": "[mệnh đề + N] は / を / で…", "meaning": "Cụm dùng như một danh từ ở mọi vị trí", "example": "佐藤さんが 撮った 写真を 見ました。" },
+    { "pattern": "V辞書形 時間 / 約束 / 用事 が あります", "meaning": "Có thời gian / hẹn / việc để làm V", "example": "朝ごはんを 食べる 時間が ありません。" }
+  ],
+  "exercises": [
+    {
+      "id": "L22-E01",
+      "type": "choice",
+      "grammarPoint": "L22-G1",
+      "question": "「Người đang đeo kính」 nói thế nào?",
+      "options": [
+        "眼鏡を かけて いる 人",
+        "人 眼鏡を かけて いる",
+        "眼鏡を かけて います 人",
+        "眼鏡を かけて いるの 人"
+      ],
+      "answer": "眼鏡を かけて いる 人",
+      "explanation": "Mệnh đề (thể thông thường) đứng trước danh từ, nối trực tiếp, không có の và không dùng ます."
+    },
+    {
+      "id": "L22-E02",
+      "type": "fix",
+      "grammarPoint": "L22-G1",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "これは 京都で 撮りました 写真です。",
+      "options": [
+        "これは 京都で 撮った 写真です。",
+        "これは 京都で 撮ったの 写真です。",
+        "これは 写真 京都で 撮ったです。",
+        "これは 京都で 撮りましたの 写真です。"
+      ],
+      "answer": "これは 京都で 撮った 写真です。",
+      "explanation": "Động từ bổ nghĩa cho danh từ phải ở thể thông thường (撮った) và nối thẳng vào danh từ."
+    },
+    {
+      "id": "L22-E03",
+      "type": "fill",
+      "grammarPoint": "L22-G1",
+      "question": "Đổi động từ trong ngoặc cho phù hợp, gõ vào chỗ trống.",
+      "jp": "パーティーで ＿＿ 服を 買いました。（着ます）",
+      "vi": "Tôi đã mua bộ quần áo để mặc ở bữa tiệc.",
+      "answer": "きる",
+      "accept": ["着る"],
+      "hint": "Thể từ điển của 着ます",
+      "explanation": "Việc mặc chưa xảy ra → thể từ điển 着る + danh từ 服."
+    },
+    {
+      "id": "L22-E04",
+      "type": "order",
+      "grammarPoint": "L22-G1",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Đây là bức ảnh chụp ở Kyoto.",
+      "tokens": ["これは", "京都で", "撮った", "写真", "です"],
+      "explanation": "Mệnh đề 「京都で 撮った」 đứng ngay trước danh từ 写真."
+    },
+    {
+      "id": "L22-E05",
+      "type": "jp-vi",
+      "grammarPoint": "L22-G1",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "会議に 来なかった 人は だれですか。",
+      "romaji": "Kaigi ni konakatta hito wa dare desu ka.",
+      "options": [
+        "Người không đến cuộc họp là ai?",
+        "Ai sẽ không đến cuộc họp?",
+        "Cuộc họp không có ai đến à?",
+        "Người đến cuộc họp là ai?"
+      ],
+      "answer": "Người không đến cuộc họp là ai?",
+      "explanation": "会議に 来なかった bổ nghĩa cho 人: 「người đã không đến cuộc họp」."
+    },
+    {
+      "id": "L22-E06",
+      "type": "choice",
+      "grammarPoint": "L22-G1",
+      "question": "「Bộ quần áo sẽ mặc ngày mai」 nói thế nào?",
+      "options": [
+        "あした 着る 服",
+        "あした 着た 服",
+        "服 あした 着る",
+        "あした 着ます 服"
+      ],
+      "answer": "あした 着る 服",
+      "explanation": "Việc chưa xảy ra → thể từ điển 着る, đặt trước 服. 着た là 「đã mặc」."
+    },
+    {
+      "id": "L22-E07",
+      "type": "particle",
+      "grammarPoint": "L22-G2",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "これは ミラーさん＿＿ 作った ケーキです。",
+      "romaji": "Kore wa Mirā-san ___ tsukutta kēki desu.",
+      "vi": "Đây là cái bánh anh Miller làm.",
+      "options": ["が", "は", "を", "に"],
+      "answer": "が",
+      "explanation": "ミラーさん là chủ ngữ của mệnh đề 「作った」 → dùng が, không dùng は."
+    },
+    {
+      "id": "L22-E08",
+      "type": "fix",
+      "grammarPoint": "L22-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしは 生まれた 所は ハノイです。",
+      "options": [
+        "わたしが 生まれた 所は ハノイです。",
+        "わたしを 生まれた 所は ハノイです。",
+        "わたしは 生まれた 所を ハノイです。",
+        "わたしが 生まれました 所は ハノイです。"
+      ],
+      "answer": "わたしが 生まれた 所は ハノイです。",
+      "explanation": "わたし là chủ ngữ bên trong mệnh đề → が. Động từ trong mệnh đề ở thể thông thường."
+    },
+    {
+      "id": "L22-E09",
+      "type": "vi-jp",
+      "grammarPoint": "L22-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Món phở mẹ tôi nấu rất ngon.",
+      "options": [
+        "母が 作る フォーは とても おいしいです。",
+        "母は 作る フォーが とても おいしいです。",
+        "フォーは 母が 作る とても おいしいです。",
+        "母が 作る フォーを とても おいしいです。"
+      ],
+      "answer": "母が 作る フォーは とても おいしいです。",
+      "explanation": "Cụm [母が 作る フォー] là chủ đề → theo sau là は. Chủ ngữ trong mệnh đề (母) dùng が."
+    },
+    {
+      "id": "L22-E10",
+      "type": "situation",
+      "grammarPoint": "L22-G2",
+      "question": "Bạn muốn hỏi: 「Ngôi nhà anh Santos đang ở có gần ga không?」. Câu đúng:",
+      "options": [
+        "サントスさんが 住んで いる 家は 駅から 近いですか。",
+        "サントスさんは 住んで いる 家は 駅から 近いですか。",
+        "サントスさんが 住んで います 家は 駅から 近いですか。",
+        "家は サントスさんが 住んで いる 駅から 近いですか。"
+      ],
+      "answer": "サントスさんが 住んで いる 家は 駅から 近いですか。",
+      "explanation": "Chủ ngữ mệnh đề dùng が, động từ ở thể thông thường (住んで いる), mệnh đề đứng ngay trước 家."
+    },
+    {
+      "id": "L22-E11",
+      "type": "fill",
+      "grammarPoint": "L22-G2",
+      "question": "Gõ trợ từ còn thiếu.",
+      "jp": "わたし＿＿ 生まれた 町は ダナンです。",
+      "vi": "Thành phố nơi tôi sinh ra là Đà Nẵng.",
+      "answer": "が",
+      "accept": ["の"],
+      "hint": "Chủ ngữ trong mệnh đề",
+      "explanation": "Chủ ngữ bên trong mệnh đề bổ nghĩa → が (cũng có thể thay bằng の)."
+    },
+    {
+      "id": "L22-E12",
+      "type": "particle",
+      "grammarPoint": "L22-G3",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "わたしは 佐藤さんが 撮った 写真＿＿ 見ました。",
+      "romaji": "Watashi wa Satō-san ga totta shashin ___ mimashita.",
+      "vi": "Tôi đã xem những bức ảnh chị Sato chụp.",
+      "options": ["を", "が", "に", "で"],
+      "answer": "を",
+      "explanation": "Cụm [佐藤さんが 撮った 写真] là tân ngữ của 見ました → を."
+    },
+    {
+      "id": "L22-E13",
+      "type": "choice",
+      "grammarPoint": "L22-G3",
+      "question": "Trong câu 「これは 先週 買った パソコンです」, cụm 「先週 買った パソコン」 đóng vai trò gì?",
+      "options": [
+        "Vị ngữ (đứng giữa は và です)",
+        "Chủ đề của câu",
+        "Tân ngữ của động từ",
+        "Nơi chốn diễn ra hành động"
+      ],
+      "answer": "Vị ngữ (đứng giữa は và です)",
+      "explanation": "これは + [cụm] + です: cụm là phần 「là gì」 của câu → vị ngữ."
+    },
+    {
+      "id": "L22-E14",
+      "type": "order",
+      "grammarPoint": "L22-G3",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi đã gặp bạn ở quán cà phê trước nhà ga.",
+      "tokens": ["駅の 前に", "ある", "喫茶店で", "友達に", "会いました"],
+      "accept": [["友達に", "駅の 前に", "ある", "喫茶店で", "会いました"]],
+      "explanation": "[駅の 前に ある 喫茶店] là một cụm danh từ, theo sau là で (nơi gặp). Động từ 会いました ở cuối."
+    },
+    {
+      "id": "L22-E15",
+      "type": "jp-vi",
+      "grammarPoint": "L22-G3",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "カリナさんが かいた 絵は どれですか。",
+      "romaji": "Karina-san ga kaita e wa dore desu ka.",
+      "options": [
+        "Bức tranh Karina vẽ là bức nào?",
+        "Karina đã vẽ bức tranh nào?",
+        "Karina thích bức tranh nào?",
+        "Ai đã vẽ bức tranh này?"
+      ],
+      "answer": "Bức tranh Karina vẽ là bức nào?",
+      "explanation": "[カリナさんが かいた 絵] là chủ đề (は), hỏi 「là bức nào」 (どれですか)."
+    },
+    {
+      "id": "L22-E16",
+      "type": "fix",
+      "grammarPoint": "L22-G3",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしは 見ました 佐藤さんが 撮った 写真を。",
+      "options": [
+        "わたしは 佐藤さんが 撮った 写真を 見ました。",
+        "わたしは 佐藤さんが 見ました 撮った 写真を。",
+        "わたしは 写真を 佐藤さんが 撮った 見ました。",
+        "わたしは 撮った 写真を 佐藤さんが 見ました。"
+      ],
+      "answer": "わたしは 佐藤さんが 撮った 写真を 見ました。",
+      "explanation": "Cả cụm tân ngữ đứng trước, động từ chính 見ました ở cuối câu."
+    },
+    {
+      "id": "L22-E17",
+      "type": "identify",
+      "grammarPoint": "L22-G3",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "ミラーさんが 住んで いる 家は 古いです。",
+      "romaji": "Mirā-san ga sunde iru uchi wa furui desu.",
+      "vi": "Ngôi nhà anh Miller đang ở thì cũ.",
+      "options": [
+        "Cụm [mệnh đề + N] làm chủ đề của câu",
+        "〜と 思います (suy đoán)",
+        "V辞書形 時間が あります",
+        "N1 で N2 が あります (sự kiện)"
+      ],
+      "answer": "Cụm [mệnh đề + N] làm chủ đề của câu",
+      "explanation": "[ミラーさんが 住んで いる 家] + は → cả cụm là chủ đề, 古いです là nhận xét về nó."
+    },
+    {
+      "id": "L22-E18",
+      "type": "fill",
+      "grammarPoint": "L22-G4",
+      "question": "Đổi động từ trong ngoặc cho phù hợp, gõ vào chỗ trống.",
+      "jp": "朝ごはんを ＿＿ 時間が ありません。（食べます）",
+      "vi": "Tôi không có thời gian ăn sáng.",
+      "answer": "たべる",
+      "accept": ["食べる"],
+      "hint": "Thể từ điển",
+      "explanation": "V辞書形 + 時間: 食べます → 食べる 時間."
+    },
+    {
+      "id": "L22-E19",
+      "type": "fix",
+      "grammarPoint": "L22-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "土曜日は 友達と 映画を 見た 約束が あります。",
+      "options": [
+        "土曜日は 友達と 映画を 見る 約束が あります。",
+        "土曜日は 友達と 映画を 見ます 約束が あります。",
+        "土曜日は 友達と 映画を 見る 約束を あります。",
+        "土曜日は 友達と 映画を 見るの 約束が あります。"
+      ],
+      "answer": "土曜日は 友達と 映画を 見る 約束が あります。",
+      "explanation": "Hẹn làm việc sắp tới → thể từ điển 見る + 約束 + が あります."
+    },
+    {
+      "id": "L22-E20",
+      "type": "vi-jp",
+      "grammarPoint": "L22-G4",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Hôm nay tôi có việc phải đến tòa thị chính.",
+      "options": [
+        "きょうは 市役所へ 行く 用事が あります。",
+        "きょうは 市役所へ 行く 時間が あります。",
+        "きょうは 市役所へ 行った 用事が あります。",
+        "きょうは 市役所へ 行く 用事を します。"
+      ],
+      "answer": "きょうは 市役所へ 行く 用事が あります。",
+      "explanation": "「có việc (phải làm)」 = 用事が あります. 時間が あります là 「có thời gian」 — khác nghĩa."
+    },
+    {
+      "id": "L22-E21",
+      "type": "particle",
+      "grammarPoint": "L22-G4",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "忙しくて、本を 読む 時間＿＿ ありません。",
+      "romaji": "Isogashikute, hon o yomu jikan ___ arimasen.",
+      "vi": "Bận quá nên tôi không có thời gian đọc sách.",
+      "options": ["が", "を", "に", "で"],
+      "answer": "が",
+      "explanation": "あります / ありません đi với が: 時間が ありません."
+    },
+    {
+      "id": "L22-E22",
+      "type": "situation",
+      "grammarPoint": "L22-G4",
+      "question": "Đồng nghiệp rủ bạn đi uống vào thứ bảy, nhưng bạn đã hẹn gặp anh Wang hôm đó. Bạn từ chối:",
+      "options": [
+        "すみません、土曜日は ワンさんと 会う 約束が あります。",
+        "すみません、土曜日は ワンさんと 会った 約束が あります。",
+        "すみません、土曜日は ワンさんと 会う 時間が あります。",
+        "すみません、土曜日は ワンさんと 会います 約束が あります。"
+      ],
+      "answer": "すみません、土曜日は ワンさんと 会う 約束が あります。",
+      "explanation": "Đã có hẹn làm việc sắp tới → V辞書形 + 約束が あります. 「会う 時間が あります」 nghĩa là 「có thời gian gặp」 — không phải lý do từ chối."
+    },
+    {
+      "id": "L22-E23",
+      "type": "pattern",
+      "grammarPoint": "L22-G4",
+      "question": "Bạn muốn nói 「Dạo này tôi không có thời gian chơi thể thao」. Chọn mẫu phù hợp.",
+      "options": [
+        "V辞書形 時間が ありません",
+        "Vた 時間が ありません",
+        "Vます 時間が ありません",
+        "V辞書形 約束が あります"
+      ],
+      "answer": "V辞書形 時間が ありません",
+      "explanation": "Không có thời gian để làm V → V辞書形 + 時間が ありません (スポーツを する 時間が ありません)."
+    },
+    {
+      "id": "L22-E24",
+      "type": "order",
+      "grammarPoint": "L22-G4",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi có hẹn đi xem phim với bạn.",
+      "tokens": ["友達と", "映画を", "見る", "約束が", "あります"],
+      "accept": [["映画を", "友達と", "見る", "約束が", "あります"]],
+      "explanation": "Mệnh đề 「友達と 映画を 見る」 bổ nghĩa cho 約束, rồi が あります."
+    },
+    {
+      "id": "L22-E25",
+      "type": "identify",
+      "grammarPoint": "L22-G1",
+      "question": "Trong câu dưới, phần nào bổ nghĩa cho danh từ 人?",
+      "jp": "眼鏡を かけて いる 人は 木村さんです。",
+      "romaji": "Megane o kakete iru hito wa Kimura-san desu.",
+      "vi": "Người đang đeo kính là chị Kimura.",
+      "options": [
+        "眼鏡を かけて いる",
+        "木村さんです",
+        "人は 木村さん",
+        "眼鏡を"
+      ],
+      "answer": "眼鏡を かけて いる",
+      "explanation": "Mệnh đề đứng ngay trước danh từ là phần bổ nghĩa: 「眼鏡を かけて いる」 → 人."
+    },
+    {
+      "id": "L22-E26",
+      "type": "vi-jp",
+      "grammarPoint": "L22-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Đây là cái bánh anh Miller làm.",
+      "options": [
+        "これは ミラーさんが 作った ケーキです。",
+        "これは ミラーさんは 作った ケーキです。",
+        "これは ケーキ ミラーさんが 作ったです。",
+        "ミラーさんは これを 作った ケーキです。"
+      ],
+      "answer": "これは ミラーさんが 作った ケーキです。",
+      "explanation": "[ミラーさんが 作った ケーキ] — chủ ngữ mệnh đề dùng が, mệnh đề đứng trước danh từ."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 22 }
+}

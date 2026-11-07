@@ -1,0 +1,801 @@
+{
+  "lesson": 1,
+  "title": "Giới thiệu bản thân",
+  "titleJp": "はじめまして",
+  "topic": "Chào hỏi · tên · nghề nghiệp · quốc tịch · nơi làm việc",
+  "description": "Học xong bài này bạn tự giới thiệu được: tôi là ai, làm nghề gì, người nước nào, học/làm ở đâu — và hỏi lại người khác những điều đó.",
+  "objectives": [
+    "Nói được câu khẳng định 「A là B」 bằng N1 は N2 です.",
+    "Nói được câu phủ định 「A không phải là B」.",
+    "Đặt câu hỏi có/không bằng か và trả lời はい / いいえ.",
+    "Dùng も để nói 「cũng」.",
+    "Dùng の để nói mình thuộc trường/công ty nào.",
+    "Gọi tên người khác lịch sự với 〜さん."
+  ],
+  "keyPoints": [
+    "は là trợ từ chủ đề, viết là は nhưng ĐỌC là 「wa」.",
+    "です đứng cuối câu = 「là」 (lịch sự). Phủ định: じゃ ありません (nói) / では ありません (viết, trang trọng).",
+    "Thêm か vào cuối câu là thành câu hỏi — không cần đổi trật tự từ.",
+    "も thay vào chỗ của は khi muốn nói 「cũng」.",
+    "A の B = B của A (ngược với tiếng Việt!).",
+    "〜さん chỉ dùng cho người khác, không bao giờ gắn vào tên mình."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L01-G1",
+      "title": "N1 は N2 です",
+      "meaning": "N1 là N2",
+      "why": "Đây là câu nền móng của tiếng Nhật: giới thiệu tên, nghề nghiệp, quốc tịch… đều dùng mẫu này.",
+      "when": [
+        "Giới thiệu bản thân: 「Tôi là Mai」.",
+        "Nói nghề nghiệp, quốc tịch của ai đó: 「Anh Miller là nhân viên công ty」.",
+        "Bất cứ khi nào muốn nói 「A là B」 một cách lịch sự."
+      ],
+      "formula": "N1 は N2 です",
+      "parts": [
+        { "part": "N1", "role": "Chủ đề — người/vật mình đang nói tới." },
+        { "part": "は", "role": "Trợ từ chủ đề. Viết は, đọc 「wa」. Đánh dấu: 「nói về N1 thì…」." },
+        { "part": "N2", "role": "Thông tin về N1 (tên, nghề, quốc tịch…)." },
+        { "part": "です", "role": "「là」 — kết thúc câu lịch sự." }
+      ],
+      "memoryTip": {
+        "emoji": "🗣️",
+        "hook": "Nói về ai thì 「は」 người đó!",
+        "meaning": "→ は (đọc wa) gắn sau chủ đề của câu."
+      },
+      "examples": [
+        {
+          "jp": "わたしは マイク・ミラーです。",
+          "romaji": "Watashi wa Maiku Mirā desu.",
+          "vi": "Tôi là Mike Miller.",
+          "context": "Tự giới thiệu",
+          "breakdown": [
+            { "jp": "わたし", "vi": "tôi" },
+            { "jp": "は", "vi": "(chủ đề)" },
+            { "jp": "マイク・ミラー", "vi": "Mike Miller" },
+            { "jp": "です", "vi": "là" }
+          ]
+        },
+        {
+          "jp": "わたしは 学生です。",
+          "romaji": "Watashi wa gakusei desu.",
+          "vi": "Tôi là sinh viên.",
+          "context": "Trường học",
+          "breakdown": [
+            { "jp": "わたし", "vi": "tôi" },
+            { "jp": "は", "vi": "(chủ đề)" },
+            { "jp": "学生", "vi": "học sinh, sinh viên" },
+            { "jp": "です", "vi": "là" }
+          ]
+        },
+        {
+          "jp": "ミラーさんは 会社員です。",
+          "romaji": "Mirā-san wa kaishain desu.",
+          "vi": "Anh Miller là nhân viên công ty.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "サントスさんは ブラジル人です。",
+          "romaji": "Santosu-san wa Burajiru-jin desu.",
+          "vi": "Anh Santos là người Brazil.",
+          "context": "Quốc tịch",
+          "note": "Tên nước + 人 (じん) = người nước đó: ベトナム人, 日本人, アメリカ人."
+        },
+        {
+          "jp": "山田さんは 銀行員です。",
+          "romaji": "Yamada-san wa ginkōin desu.",
+          "vi": "Anh Yamada là nhân viên ngân hàng.",
+          "context": "Công việc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "Watashi ha gakusei desu.",
+          "right": "Watashi wa gakusei desu.",
+          "explain": "Khi là trợ từ, は luôn đọc 「wa」, không đọc 「ha」."
+        },
+        {
+          "wrong": "わたし 学生です。",
+          "right": "わたしは 学生です。",
+          "explain": "Trong câu lịch sự ở giai đoạn mới học, đừng bỏ は — nó cho biết câu đang nói về ai."
+        }
+      ]
+    },
+    {
+      "id": "L01-G2",
+      "title": "N1 は N2 じゃ ありません",
+      "meaning": "N1 không phải là N2",
+      "why": "Để phủ nhận thông tin sai: 「Tôi không phải giáo viên」, 「Anh ấy không phải người Nhật」.",
+      "when": [
+        "Khi người khác đoán sai về mình.",
+        "Khi muốn nói rõ ai đó KHÔNG phải là gì."
+      ],
+      "formula": "N1 は N2 じゃ ありません\nN1 は N2 では ありません",
+      "parts": [
+        { "part": "じゃ ありません", "role": "Dạng phủ định của です — dùng khi nói chuyện." },
+        { "part": "では ありません", "role": "Cùng nghĩa, trang trọng hơn — hay gặp trong văn viết, phát biểu. では đọc 「dewa」." }
+      ],
+      "memoryTip": {
+        "emoji": "🙅",
+        "hook": "です đổi áo thành じゃ ありません = KHÔNG PHẢI!",
+        "meaning": "→ chỉ thay phần cuối câu, phần đầu giữ nguyên."
+      },
+      "examples": [
+        {
+          "jp": "わたしは 先生じゃ ありません。",
+          "romaji": "Watashi wa sensei ja arimasen.",
+          "vi": "Tôi không phải là giáo viên.",
+          "context": "Trường học",
+          "breakdown": [
+            { "jp": "先生", "vi": "giáo viên" },
+            { "jp": "じゃ ありません", "vi": "không phải là" }
+          ]
+        },
+        {
+          "jp": "サントスさんは 学生じゃ ありません。",
+          "romaji": "Santosu-san wa gakusei ja arimasen.",
+          "vi": "Anh Santos không phải là sinh viên.",
+          "context": "Giới thiệu người khác"
+        },
+        {
+          "jp": "ワンさんは エンジニアでは ありません。",
+          "romaji": "Wan-san wa enjinia dewa arimasen.",
+          "vi": "Anh Wang không phải là kỹ sư.",
+          "context": "Công việc",
+          "note": "では ありません — cùng nghĩa với じゃ ありません nhưng trang trọng hơn."
+        },
+        {
+          "jp": "わたしは 日本人じゃ ありません。ベトナム人です。",
+          "romaji": "Watashi wa Nihon-jin ja arimasen. Betonamu-jin desu.",
+          "vi": "Tôi không phải người Nhật. Tôi là người Việt Nam.",
+          "context": "Quốc tịch"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "わたしは 先生じゃ ありませんです。",
+          "right": "わたしは 先生じゃ ありません。",
+          "explain": "じゃ ありません đã là cuối câu lịch sự rồi, không thêm です nữa."
+        },
+        {
+          "wrong": "わたしは 先生です ありません。",
+          "right": "わたしは 先生じゃ ありません。",
+          "explain": "Không ghép です với ありません — phải đổi hẳn です thành じゃ ありません."
+        }
+      ]
+    },
+    {
+      "id": "L01-G3",
+      "title": "S か — câu hỏi có/không",
+      "meaning": "…phải không? / …à?",
+      "why": "Để hỏi xác nhận thông tin: 「Anh là người Mỹ phải không?」 — câu hỏi phổ biến nhất khi làm quen.",
+      "when": [
+        "Hỏi xem một thông tin có đúng không (trả lời はい / いいえ).",
+        "Hỏi với từ để hỏi: だれ / どなた (ai), 何歳 / おいくつ (bao nhiêu tuổi)."
+      ],
+      "formula": "N1 は N2 ですか\n→ はい、N2 です。\n→ いいえ、N2 じゃ ありません。",
+      "parts": [
+        { "part": "か", "role": "Đặt cuối câu → thành câu hỏi. Không đổi trật tự từ, lên giọng nhẹ ở cuối." },
+        { "part": "はい", "role": "Vâng, đúng." },
+        { "part": "いいえ", "role": "Không." }
+      ],
+      "memoryTip": {
+        "emoji": "❓",
+        "hook": "「か」 cuối câu giống 「hả?」 cuối câu tiếng Việt!",
+        "meaning": "→ 学生です (là sinh viên) + か = 学生ですか (là sinh viên hả?)."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんは アメリカ人ですか。 …はい、アメリカ人です。",
+          "romaji": "Mirā-san wa Amerika-jin desu ka. … Hai, Amerika-jin desu.",
+          "vi": "Anh Miller là người Mỹ phải không? …Vâng, tôi là người Mỹ.",
+          "context": "Làm quen"
+        },
+        {
+          "jp": "ミラーさんは 先生ですか。 …いいえ、先生じゃ ありません。",
+          "romaji": "Mirā-san wa sensei desu ka. … Iie, sensei ja arimasen.",
+          "vi": "Anh Miller là giáo viên phải không? …Không, tôi không phải là giáo viên.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "あの 方は どなたですか。 …木村さんです。",
+          "romaji": "Ano kata wa donata desu ka. … Kimura-san desu.",
+          "vi": "Vị kia là ai vậy? …Là chị Kimura.",
+          "context": "Ở văn phòng",
+          "breakdown": [
+            { "jp": "あの 方", "vi": "vị kia (lịch sự của あの 人)" },
+            { "jp": "どなた", "vi": "ai (lịch sự của だれ)" }
+          ]
+        },
+        {
+          "jp": "テレーザちゃんは 何歳ですか。 …9歳です。",
+          "romaji": "Terēza-chan wa nan-sai desu ka. … Kyū-sai desu.",
+          "vi": "Bé Teresa mấy tuổi? …9 tuổi.",
+          "context": "Gia đình",
+          "note": "Hỏi người lớn lịch sự hơn: おいくつですか."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "ミラーさんは アメリカ人ですか？ …はい、ミラーです。",
+          "right": "ミラーさんは アメリカ人ですか。 …はい、アメリカ人です。",
+          "explain": "Trả lời はい thì lặp lại đúng thông tin được hỏi (アメリカ人), không trả lời lạc đề."
+        },
+        {
+          "wrong": "ですか ミラーさんは 学生？",
+          "right": "ミラーさんは 学生ですか。",
+          "explain": "Tiếng Nhật không đảo từ khi hỏi — giữ nguyên câu, chỉ thêm か vào cuối."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: dấu câu",
+          "text": "Sách Minna kết thúc câu hỏi bằng 「。」 chứ không phải 「？」, vì か đã cho biết đó là câu hỏi. Trong tin nhắn đời thường người Nhật vẫn hay dùng 「？」."
+        }
+      ]
+    },
+    {
+      "id": "L01-G4",
+      "title": "N も — cũng",
+      "meaning": "N cũng…",
+      "why": "Để khỏi lặp lại cả câu khi người thứ hai có cùng đặc điểm: 「Tôi là sinh viên. Bạn tôi CŨNG là sinh viên」.",
+      "when": [
+        "Khi thông tin của người/vật sau giống người/vật trước.",
+        "Trả lời 「Tôi cũng vậy」 trong hội thoại."
+      ],
+      "formula": "N1 は N2 です。 N3 も N2 です。",
+      "parts": [
+        { "part": "も", "role": "「cũng」 — đứng ĐÚNG VÀO CHỖ của は (không đi cùng は)." }
+      ],
+      "memoryTip": {
+        "emoji": "🙋",
+        "hook": "Tôi cũng vậy → わたし「も」!",
+        "meaning": "→ も = cũng, thay thế は."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんは 会社員です。 グプタさんも 会社員です。",
+          "romaji": "Mirā-san wa kaishain desu. Guputa-san mo kaishain desu.",
+          "vi": "Anh Miller là nhân viên công ty. Anh Gupta cũng là nhân viên công ty.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "わたしは ベトナム人です。 アンさんも ベトナム人です。",
+          "romaji": "Watashi wa Betonamu-jin desu. An-san mo Betonamu-jin desu.",
+          "vi": "Tôi là người Việt Nam. Chị An cũng là người Việt Nam.",
+          "context": "Quốc tịch"
+        },
+        {
+          "jp": "わたしは 学生です。 …わたしも 学生です。",
+          "romaji": "Watashi wa gakusei desu. … Watashi mo gakusei desu.",
+          "vi": "Tôi là sinh viên. …Tôi cũng là sinh viên.",
+          "context": "Làm quen ở trường"
+        },
+        {
+          "jp": "カリナさんは 学生じゃ ありません。 …いいえ、カリナさんも 学生です。",
+          "romaji": "Karina-san wa gakusei ja arimasen. … Iie, Karina-san mo gakusei desu.",
+          "vi": "Karina không phải sinh viên. …Không đâu, Karina cũng là sinh viên.",
+          "context": "Trường học"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "グプタさんはも 会社員です。",
+          "right": "グプタさんも 会社員です。",
+          "explain": "も thay thế は, không đứng cạnh は."
+        },
+        {
+          "wrong": "わたしは 学生です も。",
+          "right": "わたしも 学生です。",
+          "explain": "も gắn ngay sau danh từ được 「cũng」, không đặt cuối câu như chữ 「cũng」 trong tiếng Việt nói nhanh."
+        }
+      ]
+    },
+    {
+      "id": "L01-G5",
+      "title": "N1 の N2 — thuộc về / của",
+      "meaning": "N2 của N1 / N2 thuộc N1",
+      "why": "Để nói mình thuộc trường nào, công ty nào: 「sinh viên ĐẠI HỌC SAKURA」, 「nhân viên CÔNG TY IMC」.",
+      "when": [
+        "Nói nơi mình học, làm việc: IMCの 社員, さくら大学の 学生.",
+        "Nối hai danh từ khi danh từ trước bổ nghĩa cho danh từ sau."
+      ],
+      "formula": "N1 の N2",
+      "parts": [
+        { "part": "N1", "role": "Tổ chức / nơi chốn / chủ sở hữu." },
+        { "part": "の", "role": "Nối hai danh từ = 「của, thuộc」." },
+        { "part": "N2", "role": "Danh từ CHÍNH của cụm (người/vật được nói tới)." }
+      ],
+      "memoryTip": {
+        "emoji": "🔗",
+        "hook": "の là sợi dây 「của」 — nhưng đọc NGƯỢC tiếng Việt!",
+        "meaning": "→ IMCの 社員 = nhân viên của IMC (danh từ chính nằm SAU の)."
+      },
+      "examples": [
+        {
+          "jp": "ミラーさんは IMCの 社員です。",
+          "romaji": "Mirā-san wa IMC no shain desu.",
+          "vi": "Anh Miller là nhân viên của công ty IMC.",
+          "context": "Công việc",
+          "breakdown": [
+            { "jp": "IMC", "vi": "công ty IMC" },
+            { "jp": "の", "vi": "của / thuộc" },
+            { "jp": "社員", "vi": "nhân viên (của công ty cụ thể)" }
+          ]
+        },
+        {
+          "jp": "わたしは さくら大学の 学生です。",
+          "romaji": "Watashi wa Sakura Daigaku no gakusei desu.",
+          "vi": "Tôi là sinh viên trường Đại học Sakura.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "ワンさんは こうべ病院の 医者です。",
+          "romaji": "Wan-san wa Kōbe Byōin no isha desu.",
+          "vi": "Anh Wang là bác sĩ của bệnh viện Kobe.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "カリナさんは 富士大学の 学生です。",
+          "romaji": "Karina-san wa Fuji Daigaku no gakusei desu.",
+          "vi": "Karina là sinh viên Đại học Fuji.",
+          "context": "Trường học"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "わたしは 学生の さくら大学です。",
+          "right": "わたしは さくら大学の 学生です。",
+          "explain": "Danh từ chính (学生 — cái mình LÀ) phải đứng sau の. Câu sai nghĩa là 「Tôi là trường Sakura của sinh viên」."
+        },
+        {
+          "wrong": "IMCの 会社員です。",
+          "right": "IMCの 社員です。",
+          "explain": "Nói công ty cụ thể thì dùng 社員. 会社員 dùng khi chỉ nói chung chung 「dân văn phòng」."
+        }
+      ]
+    },
+    {
+      "id": "L01-G6",
+      "title": "〜さん",
+      "meaning": "anh / chị / ông / bà (gọi người khác lịch sự)",
+      "why": "Người Nhật gọi nhau bằng họ + さん. Gọi trống không là thiếu lịch sự.",
+      "when": [
+        "Gọi hoặc nhắc tới người khác: ミラーさん, 山田さん.",
+        "Không dùng cho chính mình, không dùng cho người nhà mình khi nói với người ngoài."
+      ],
+      "formula": "Tên / họ + さん",
+      "parts": [
+        { "part": "さん", "role": "Hậu tố kính trọng, dùng được cho cả nam lẫn nữ." }
+      ],
+      "memoryTip": {
+        "emoji": "🙇",
+        "hook": "さん là để TẶNG người khác — không tự tặng mình!",
+        "meaning": "→ わたしは ミラーです (không nói ミラーさんです)."
+      },
+      "examples": [
+        {
+          "jp": "わたしは ミラーです。",
+          "romaji": "Watashi wa Mirā desu.",
+          "vi": "Tôi là Miller.",
+          "context": "Tự giới thiệu",
+          "note": "Nói về mình → không có さん."
+        },
+        {
+          "jp": "山田さんは 先生ですか。",
+          "romaji": "Yamada-san wa sensei desu ka.",
+          "vi": "Anh Yamada là giáo viên phải không?",
+          "context": "Hỏi về người khác"
+        },
+        {
+          "jp": "あなたは マリアさんですか。",
+          "romaji": "Anata wa Maria-san desu ka.",
+          "vi": "Bạn là chị Maria phải không?",
+          "context": "Gặp lần đầu",
+          "note": "Người Nhật ít dùng あなた. Biết tên thì gọi tên + さん sẽ tự nhiên hơn."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "わたしは ミラーさんです。",
+          "right": "わたしは ミラーです。",
+          "explain": "Tự gắn さん cho mình giống như tự xưng 「ngài」 — nghe rất buồn cười."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: ちゃん / くん",
+          "text": "Với trẻ em người Nhật hay dùng 〜ちゃん (テレーザちゃん), với bé trai hay cậu em nhỏ tuổi hơn dùng 〜くん (たろうくん). Ở bài này chỉ cần dùng 〜さん."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "N1 は N2 です", "meaning": "N1 là N2", "example": "わたしは 学生です。" },
+    { "pattern": "N1 は N2 じゃ ありません", "meaning": "N1 không phải là N2", "example": "わたしは 先生じゃ ありません。" },
+    { "pattern": "N1 は N2 ですか", "meaning": "N1 là N2 phải không?", "example": "ミラーさんは アメリカ人ですか。" },
+    { "pattern": "N も", "meaning": "N cũng…", "example": "わたしも 学生です。" },
+    { "pattern": "N1 の N2", "meaning": "N2 của / thuộc N1", "example": "IMCの 社員です。" },
+    { "pattern": "〜さん", "meaning": "Gọi người khác lịch sự (không dùng cho mình)", "example": "山田さん" }
+  ],
+  "exercises": [
+    {
+      "id": "L01-E01",
+      "type": "particle",
+      "grammarPoint": "L01-G1",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "わたし＿＿ 学生です。",
+      "romaji": "Watashi ___ gakusei desu.",
+      "vi": "Tôi là sinh viên.",
+      "options": ["は", "も", "の", "か"],
+      "answer": "は",
+      "explanation": "「わたし」 là chủ đề của câu nên dùng は (đọc wa)."
+    },
+    {
+      "id": "L01-E02",
+      "type": "fill",
+      "grammarPoint": "L01-G1",
+      "question": "Gõ từ còn thiếu (kana hoặc romaji).",
+      "jp": "ミラーさんは 会社員＿＿。",
+      "vi": "Anh Miller là nhân viên công ty.",
+      "answer": "です",
+      "hint": "「là」 lịch sự ở cuối câu",
+      "explanation": "Câu khẳng định 「A là B」 kết thúc bằng です."
+    },
+    {
+      "id": "L01-E03",
+      "type": "vi-jp",
+      "grammarPoint": "L01-G1",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Anh Santos là người Brazil.",
+      "options": [
+        "サントスさんは ブラジル人です。",
+        "サントスさんは ブラジルです。",
+        "ブラジル人は サントスさんです。",
+        "サントスさんの ブラジル人です。"
+      ],
+      "answer": "サントスさんは ブラジル人です。",
+      "explanation": "Người nước nào = tên nước + 人. Chủ đề là サントスさん nên đứng trước は."
+    },
+    {
+      "id": "L01-E04",
+      "type": "order",
+      "grammarPoint": "L01-G1",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Anh Yamada là nhân viên ngân hàng.",
+      "tokens": ["山田さん", "は", "銀行員", "です"],
+      "explanation": "Trật tự: chủ đề + は + thông tin + です."
+    },
+    {
+      "id": "L01-E05",
+      "type": "choice",
+      "grammarPoint": "L01-G1",
+      "question": "Trong câu 「わたしは 学生です」, chữ は được đọc là gì?",
+      "options": ["wa", "ha", "o", "e"],
+      "answer": "wa",
+      "explanation": "は khi làm trợ từ chủ đề luôn đọc là 「wa」."
+    },
+    {
+      "id": "L01-E06",
+      "type": "fill",
+      "grammarPoint": "L01-G2",
+      "question": "Gõ phần còn thiếu để thành câu phủ định (kana hoặc romaji).",
+      "jp": "わたしは 先生じゃ ＿＿。",
+      "vi": "Tôi không phải là giáo viên.",
+      "answer": "ありません",
+      "explanation": "Phủ định của です là じゃ ありません."
+    },
+    {
+      "id": "L01-E07",
+      "type": "vi-jp",
+      "grammarPoint": "L01-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tôi không phải là người Nhật.",
+      "options": [
+        "わたしは 日本人じゃ ありません。",
+        "わたしは 日本人です。",
+        "わたしは 日本人じゃ ありませんです。",
+        "わたしも 日本人です。"
+      ],
+      "answer": "わたしは 日本人じゃ ありません。",
+      "explanation": "「không phải là」 = じゃ ありません, và không thêm です phía sau."
+    },
+    {
+      "id": "L01-E08",
+      "type": "fix",
+      "grammarPoint": "L01-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "サントスさんは 学生です ありません。",
+      "options": [
+        "サントスさんは 学生じゃ ありません。",
+        "サントスさんは 学生じゃ ありませんです。",
+        "サントスさんは 学生ですか ありません。",
+        "サントスさんも 学生です ありません。"
+      ],
+      "answer": "サントスさんは 学生じゃ ありません。",
+      "explanation": "Không ghép です với ありません. Phủ định phải đổi です → じゃ ありません."
+    },
+    {
+      "id": "L01-E09",
+      "type": "choice",
+      "grammarPoint": "L01-G2",
+      "question": "Cách nói nào cùng nghĩa với 「じゃ ありません」 nhưng trang trọng hơn?",
+      "options": ["では ありません", "です ありません", "じゃ です", "ですか"],
+      "answer": "では ありません",
+      "explanation": "では ありません (đọc dewa arimasen) là dạng trang trọng, hay dùng trong văn viết."
+    },
+    {
+      "id": "L01-E10",
+      "type": "particle",
+      "grammarPoint": "L01-G3",
+      "question": "Chọn từ điền vào cuối câu để thành câu hỏi.",
+      "jp": "ミラーさんは アメリカ人です＿＿。",
+      "romaji": "Mirā-san wa Amerika-jin desu ___.",
+      "vi": "Anh Miller là người Mỹ phải không?",
+      "options": ["か", "も", "の", "は"],
+      "answer": "か",
+      "explanation": "Thêm か vào cuối câu là thành câu hỏi, không cần đổi trật tự."
+    },
+    {
+      "id": "L01-E11",
+      "type": "choice",
+      "grammarPoint": "L01-G3",
+      "question": "「ミラーさんは 先生ですか。」 — Miller KHÔNG phải giáo viên. Trả lời thế nào?",
+      "options": [
+        "いいえ、先生じゃ ありません。",
+        "はい、先生じゃ ありません。",
+        "いいえ、先生です。",
+        "はい、ミラーです。"
+      ],
+      "answer": "いいえ、先生じゃ ありません。",
+      "explanation": "Thông tin sai → いいえ + câu phủ định じゃ ありません."
+    },
+    {
+      "id": "L01-E12",
+      "type": "jp-vi",
+      "grammarPoint": "L01-G3",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "あの 方は どなたですか。",
+      "romaji": "Ano kata wa donata desu ka.",
+      "options": [
+        "Vị kia là ai vậy?",
+        "Vị kia là người nước nào?",
+        "Vị kia bao nhiêu tuổi?",
+        "Vị kia là giáo viên à?"
+      ],
+      "answer": "Vị kia là ai vậy?",
+      "explanation": "どなた = ai (lịch sự của だれ). あの 方 = vị kia."
+    },
+    {
+      "id": "L01-E13",
+      "type": "order",
+      "grammarPoint": "L01-G3",
+      "question": "Sắp xếp thành câu hỏi đúng.",
+      "vi": "Anh Wang là bác sĩ phải không?",
+      "tokens": ["ワンさん", "は", "医者", "です", "か"],
+      "explanation": "Giữ nguyên câu khẳng định, thêm か ở cuối."
+    },
+    {
+      "id": "L01-E14",
+      "type": "situation",
+      "grammarPoint": "L01-G3",
+      "question": "Bạn muốn hỏi tuổi một bé gái tên Teresa. Bạn nói:",
+      "options": [
+        "テレーザちゃんは 何歳ですか。",
+        "テレーザちゃんは 何歳です。",
+        "テレーザちゃんは どなたですか。",
+        "テレーザちゃんも 何歳ですか。"
+      ],
+      "answer": "テレーザちゃんは 何歳ですか。",
+      "explanation": "何歳 (nan-sai) = mấy tuổi, và câu hỏi phải có か ở cuối."
+    },
+    {
+      "id": "L01-E15",
+      "type": "particle",
+      "grammarPoint": "L01-G4",
+      "question": "Chọn trợ từ phù hợp.",
+      "jp": "ミラーさんは 会社員です。 グプタさん＿＿ 会社員です。",
+      "vi": "Anh Miller là nhân viên công ty. Anh Gupta cũng là nhân viên công ty.",
+      "options": ["も", "は", "の", "か"],
+      "answer": "も",
+      "explanation": "Người thứ hai có cùng thông tin → 「cũng」 = も."
+    },
+    {
+      "id": "L01-E16",
+      "type": "fix",
+      "grammarPoint": "L01-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしはも 学生です。",
+      "options": [
+        "わたしも 学生です。",
+        "わたしは 学生ですも。",
+        "わたしの 学生です。",
+        "もわたしは 学生です。"
+      ],
+      "answer": "わたしも 学生です。",
+      "explanation": "も thay vào chỗ của は — không dùng は và も cùng lúc."
+    },
+    {
+      "id": "L01-E17",
+      "type": "situation",
+      "grammarPoint": "L01-G4",
+      "question": "Bạn cùng lớp nói 「わたしは ベトナム人です」. Bạn cũng là người Việt. Bạn đáp:",
+      "options": [
+        "わたしも ベトナム人です。",
+        "わたしは ベトナム人じゃ ありません。",
+        "わたしの ベトナム人です。",
+        "ベトナム人も わたしです。"
+      ],
+      "answer": "わたしも ベトナム人です。",
+      "explanation": "「Tôi cũng vậy」 → わたし + も."
+    },
+    {
+      "id": "L01-E18",
+      "type": "particle",
+      "grammarPoint": "L01-G5",
+      "question": "Chọn trợ từ phù hợp.",
+      "jp": "わたしは さくら大学＿＿ 学生です。",
+      "vi": "Tôi là sinh viên trường Đại học Sakura.",
+      "options": ["の", "は", "も", "か"],
+      "answer": "の",
+      "explanation": "Nối trường học với 学生 → N1 の N2 (sinh viên CỦA trường Sakura)."
+    },
+    {
+      "id": "L01-E19",
+      "type": "order",
+      "grammarPoint": "L01-G5",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Anh Miller là nhân viên của công ty IMC.",
+      "tokens": ["ミラーさん", "は", "IMC", "の", "社員", "です"],
+      "explanation": "IMCの 社員 — danh từ chính (社員) đứng sau の."
+    },
+    {
+      "id": "L01-E20",
+      "type": "jp-vi",
+      "grammarPoint": "L01-G5",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "ワンさんは こうべ病院の 医者です。",
+      "romaji": "Wan-san wa Kōbe Byōin no isha desu.",
+      "options": [
+        "Anh Wang là bác sĩ của bệnh viện Kobe.",
+        "Anh Wang là bệnh viện của bác sĩ Kobe.",
+        "Bệnh viện Kobe là của anh Wang.",
+        "Anh Wang không phải là bác sĩ bệnh viện Kobe."
+      ],
+      "answer": "Anh Wang là bác sĩ của bệnh viện Kobe.",
+      "explanation": "こうべ病院の 医者 = bác sĩ của bệnh viện Kobe (đọc ngược từ sau の lên trước)."
+    },
+    {
+      "id": "L01-E21",
+      "type": "fix",
+      "grammarPoint": "L01-G5",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "カリナさんは 学生の 富士大学です。",
+      "options": [
+        "カリナさんは 富士大学の 学生です。",
+        "カリナさんは 富士大学 学生です。",
+        "カリナさんの 富士大学は 学生です。",
+        "カリナさんは 学生も 富士大学です。"
+      ],
+      "answer": "カリナさんは 富士大学の 学生です。",
+      "explanation": "Karina LÀ sinh viên → 学生 là danh từ chính, phải đứng sau の."
+    },
+    {
+      "id": "L01-E22",
+      "type": "choice",
+      "grammarPoint": "L01-G6",
+      "question": "Tự giới thiệu tên mình là Miller, câu nào đúng?",
+      "options": [
+        "わたしは ミラーです。",
+        "わたしは ミラーさんです。",
+        "ミラーさんは わたしです。",
+        "わたしも ミラーさんです。"
+      ],
+      "answer": "わたしは ミラーです。",
+      "explanation": "さん chỉ dùng cho người khác, không gắn vào tên mình."
+    },
+    {
+      "id": "L01-E23",
+      "type": "situation",
+      "grammarPoint": "L01-G6",
+      "question": "Bạn muốn hỏi đồng nghiệp tên Yamada có phải kỹ sư không. Bạn nói:",
+      "options": [
+        "山田さんは エンジニアですか。",
+        "山田は エンジニアですか。",
+        "山田さんは エンジニアです。",
+        "山田さんの エンジニアですか。"
+      ],
+      "answer": "山田さんは エンジニアですか。",
+      "explanation": "Gọi người khác: họ + さん. Câu hỏi: thêm か ở cuối."
+    },
+    {
+      "id": "L01-E24",
+      "type": "identify",
+      "grammarPoint": "L01-G4",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "アンさんも ベトナム人です。",
+      "romaji": "An-san mo Betonamu-jin desu.",
+      "vi": "Chị An cũng là người Việt Nam.",
+      "options": ["N も (cũng)", "N1 の N2 (của)", "S か (câu hỏi)", "じゃ ありません (phủ định)"],
+      "answer": "N も (cũng)",
+      "explanation": "も đứng sau アンさん mang nghĩa 「cũng」."
+    },
+    {
+      "id": "L01-E25",
+      "type": "identify",
+      "grammarPoint": "L01-G2",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "ワンさんは エンジニアでは ありません。",
+      "romaji": "Wan-san wa enjinia dewa arimasen.",
+      "vi": "Anh Wang không phải là kỹ sư.",
+      "options": [
+        "N1 は N2 では ありません (phủ định)",
+        "N1 は N2 ですか (câu hỏi)",
+        "N1 の N2 (thuộc về)",
+        "N も (cũng)"
+      ],
+      "answer": "N1 は N2 では ありません (phủ định)",
+      "explanation": "では ありません là dạng phủ định trang trọng của です."
+    },
+    {
+      "id": "L01-E26",
+      "type": "pattern",
+      "grammarPoint": "L01-G5",
+      "question": "Muốn nói 「Tôi là nhân viên công ty Toyota」, chọn mẫu phù hợp.",
+      "options": [
+        "わたしは トヨタの 社員です。",
+        "わたしも トヨタです。",
+        "わたしは トヨタですか。",
+        "わたしは 社員じゃ ありません。"
+      ],
+      "answer": "わたしは トヨタの 社員です。",
+      "explanation": "Nói nơi làm việc → N1 の N2: トヨタの 社員."
+    },
+    {
+      "id": "L01-E27",
+      "type": "pattern",
+      "grammarPoint": "L01-G3",
+      "question": "Bạn chưa chắc người trước mặt là giáo viên. Chọn mẫu câu phù hợp để hỏi.",
+      "options": [
+        "N1 は N2 ですか",
+        "N1 は N2 です",
+        "N1 は N2 じゃ ありません",
+        "N1 も N2 です"
+      ],
+      "answer": "N1 は N2 ですか",
+      "explanation": "Chưa chắc chắn → hỏi xác nhận bằng ですか."
+    },
+    {
+      "id": "L01-E28",
+      "type": "jp-vi",
+      "grammarPoint": "L01-G1",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "わたしは 日本人じゃ ありません。ベトナム人です。",
+      "romaji": "Watashi wa Nihon-jin ja arimasen. Betonamu-jin desu.",
+      "options": [
+        "Tôi không phải người Nhật. Tôi là người Việt Nam.",
+        "Tôi là người Nhật. Tôi cũng là người Việt Nam.",
+        "Tôi không phải người Việt Nam. Tôi là người Nhật.",
+        "Tôi là người Nhật phải không?"
+      ],
+      "answer": "Tôi không phải người Nhật. Tôi là người Việt Nam.",
+      "explanation": "じゃ ありません = không phải là; câu sau です = là."
+    },
+    {
+      "id": "L01-E29",
+      "type": "fix",
+      "grammarPoint": "L01-G6",
+      "question": "Câu tự giới thiệu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "はじめまして。 わたしは マリアさんです。",
+      "options": [
+        "はじめまして。 わたしは マリアです。",
+        "はじめまして。 マリアさんは わたしです。",
+        "はじめまして。 わたしも マリアさんです。",
+        "はじめまして。 わたしの マリアさんです。"
+      ],
+      "answer": "はじめまして。 わたしは マリアです。",
+      "explanation": "Nói về chính mình thì bỏ さん."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 1 }
+}

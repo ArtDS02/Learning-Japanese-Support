@@ -1,0 +1,812 @@
+{
+  "lesson": 9,
+  "title": "Sở thích và khả năng",
+  "titleJp": "残念ですが",
+  "topic": "Thích / ghét · giỏi / kém · hiểu · có · nói lý do",
+  "description": "Học xong bài này bạn nói được mình thích gì, giỏi gì, hiểu ngoại ngữ đến mức nào, có gì (thời gian, hẹn, tiền…) — và giải thích lý do bằng 「vì… nên…」.",
+  "objectives": [
+    "Nói 「có」 và 「hiểu」 bằng N が あります / N が わかります.",
+    "Nói sở thích, khả năng: N が 好きです / きらいです / 上手です / 下手です.",
+    "Hỏi 「thích loại … nào」 bằng どんな N.",
+    "Diễn tả mức độ: よく, だいたい, たくさん, 少し, あまり〜ない, 全然〜ない.",
+    "Nói lý do bằng S1 から、S2.",
+    "Hỏi 「tại sao」 bằng どうして và trả lời bằng 〜から."
+  ],
+  "keyPoints": [
+    "Đối tượng của あります, わかります, 好き, きらい, 上手, 下手 được đánh dấu bằng が — KHÔNG phải を.",
+    "好き, きらい, 上手, 下手 đều là tính từ な: 好きじゃ ありません, 上手な 人.",
+    "よく / だいたい / 少し / たくさん đi với khẳng định; あまり / 全然 đi với phủ định.",
+    "S1 から、S2: から đứng cuối vế lý do (giống 「vì … nên …」).",
+    "Hỏi どうして… か → trả lời 〜から。 (không dùng はい / いいえ)."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L09-G1",
+      "title": "N が あります / N が わかります",
+      "meaning": "có N / hiểu N",
+      "why": "Để nói mình có gì (xe, hẹn, thời gian, tiền) và hiểu gì (tiếng Anh, tiếng Nhật) — hai động từ dùng hằng ngày.",
+      "when": [
+        "Nói sở hữu: 車が あります (tôi có xe).",
+        "Nói có việc, có hẹn: 約束が あります, 用事が あります.",
+        "Nói hiểu một ngôn ngữ, một vấn đề: 日本語が わかります."
+      ],
+      "formula": "(Người は) N が あります\n(Người は) N が わかります",
+      "parts": [
+        { "part": "N", "role": "Thứ mình có / thứ mình hiểu." },
+        { "part": "が", "role": "Đánh dấu đối tượng của あります, わかります (không dùng を)." },
+        { "part": "あります", "role": "Có (sở hữu đồ vật, có việc, có thời gian…)." },
+        { "part": "わかります", "role": "Hiểu, biết (ngôn ngữ, nội dung)." }
+      ],
+      "memoryTip": {
+        "emoji": "🧲",
+        "hook": "あります・わかります chỉ hút 「が」, không hút 「を」!",
+        "meaning": "→ 日本語が わかります, 車が あります."
+      },
+      "examples": [
+        {
+          "jp": "わたしは 車が あります。",
+          "romaji": "Watashi wa kuruma ga arimasu.",
+          "vi": "Tôi có ô tô.",
+          "context": "Sinh hoạt",
+          "breakdown": [
+            { "jp": "わたしは", "vi": "tôi (chủ đề)" },
+            { "jp": "車が", "vi": "xe ô tô (đối tượng)" },
+            { "jp": "あります", "vi": "có" }
+          ]
+        },
+        {
+          "jp": "今日は 約束が あります。",
+          "romaji": "Kyō wa yakusoku ga arimasu.",
+          "vi": "Hôm nay tôi có hẹn.",
+          "context": "Thời gian",
+          "breakdown": [
+            { "jp": "約束", "vi": "cuộc hẹn, lời hứa" }
+          ]
+        },
+        {
+          "jp": "ミラーさんは 日本語が わかります。",
+          "romaji": "Mirā-san wa Nihongo ga wakarimasu.",
+          "vi": "Anh Miller hiểu tiếng Nhật.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "カリナさんは 韓国語が わかりますか。 …いいえ、わかりません。",
+          "romaji": "Karina-san wa Kankokugo ga wakarimasu ka. … Iie, wakarimasen.",
+          "vi": "Karina có hiểu tiếng Hàn không? …Không, tôi không hiểu.",
+          "context": "Trường học"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "わたしは 英語を わかります。",
+          "right": "わたしは 英語が わかります。",
+          "explain": "Đối tượng của わかります dùng が, không dùng を (khác với 読みます, 食べます)."
+        },
+        {
+          "wrong": "わたしは お金を あります。",
+          "right": "わたしは お金が あります。",
+          "explain": "あります cũng đi với が."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: có việc bận",
+          "text": "Từ chối lời mời một cách lịch sự, người Nhật hay nói 用事が あります (tôi có chút việc) hoặc 約束が あります (tôi có hẹn), kèm 残念ですが… (tiếc quá nhưng…).",
+          "examples": [
+            {
+              "jp": "残念ですが、今晩は 用事が あります。",
+              "romaji": "Zannen desu ga, konban wa yōji ga arimasu.",
+              "vi": "Tiếc quá, tối nay tôi có chút việc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L09-G2",
+      "title": "N が 好きです / きらいです / 上手です / 下手です",
+      "meaning": "thích / ghét / giỏi / kém N",
+      "why": "Để nói về sở thích và khả năng của mình và người khác — chủ đề làm quen phổ biến nhất sau tên và nghề nghiệp.",
+      "when": [
+        "Nói mình thích / không thích món ăn, môn thể thao, âm nhạc…",
+        "Khen người khác giỏi một việc: 歌が 上手です (hát hay)."
+      ],
+      "formula": "(Người は) N が 好きです / きらいです\n(Người は) N が 上手です / 下手です",
+      "parts": [
+        { "part": "が", "role": "Đánh dấu thứ mình thích / ghét / giỏi / kém." },
+        { "part": "好き / きらい", "role": "Thích / ghét — tính từ な." },
+        { "part": "上手 / 下手", "role": "Giỏi / kém (về kỹ năng) — tính từ な." }
+      ],
+      "memoryTip": {
+        "emoji": "❤️",
+        "hook": "Thích ai thì 「が」 người đó!",
+        "meaning": "→ Thứ mình thích / ghét / giỏi / kém đứng trước が: すしが 好きです."
+      },
+      "examples": [
+        {
+          "jp": "わたしは イタリア料理が 好きです。",
+          "romaji": "Watashi wa Itaria-ryōri ga suki desu.",
+          "vi": "Tôi thích món Ý.",
+          "context": "Nhà hàng",
+          "breakdown": [
+            { "jp": "イタリア料理", "vi": "món ăn Ý" },
+            { "jp": "が", "vi": "(đối tượng)" },
+            { "jp": "好きです", "vi": "thích" }
+          ]
+        },
+        {
+          "jp": "わたしは 魚が きらいです。",
+          "romaji": "Watashi wa sakana ga kirai desu.",
+          "vi": "Tôi ghét cá.",
+          "context": "Ăn uống"
+        },
+        {
+          "jp": "木村さんは 歌が 上手です。",
+          "romaji": "Kimura-san wa uta ga jōzu desu.",
+          "vi": "Chị Kimura hát hay.",
+          "context": "Karaoke",
+          "breakdown": [
+            { "jp": "歌", "vi": "bài hát, ca hát" },
+            { "jp": "上手", "vi": "giỏi" }
+          ]
+        },
+        {
+          "jp": "わたしは 絵が 下手です。",
+          "romaji": "Watashi wa e ga heta desu.",
+          "vi": "Tôi vẽ kém.",
+          "context": "Sở thích"
+        },
+        {
+          "jp": "マリアさんは 料理が 上手です。",
+          "romaji": "Maria-san wa ryōri ga jōzu desu.",
+          "vi": "Chị Maria nấu ăn giỏi.",
+          "context": "Gia đình"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "わたしは 魚を 好きです。",
+          "right": "わたしは 魚が 好きです。",
+          "explain": "好き / きらい / 上手 / 下手 đi với が, không đi với を."
+        },
+        {
+          "wrong": "わたしは 野菜が 好きくないです。",
+          "right": "わたしは 野菜が 好きじゃ ありません。",
+          "explain": "好き là tính từ な → phủ định bằng じゃ ありません."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: khiêm tốn khi nói về mình",
+          "text": "上手 là lời khen, người Nhật hầu như không dùng để tự khen mình. Khi được khen 「日本語が 上手ですね」, hãy đáp khiêm tốn: いいえ、まだまだです (Không đâu, tôi còn kém lắm)."
+        },
+        {
+          "title": "📌 Kiến thức bổ sung: 好きな N",
+          "text": "Vì là tính từ な, nên đứng trước danh từ thì thêm な: 好きな 食べ物 (món ăn yêu thích), 上手な 人 (người giỏi)."
+        }
+      ]
+    },
+    {
+      "id": "L09-G3",
+      "title": "どんな N が 好きですか",
+      "meaning": "Bạn thích loại N nào?",
+      "why": "Để hỏi cụ thể sở thích của người khác: thích MÔN thể thao nào, LOẠI nhạc nào — câu mở chuyện rất tự nhiên.",
+      "when": [
+        "Hỏi loại / thể loại cụ thể mà người kia thích.",
+        "Câu trả lời thường là TÊN cụ thể: サッカー, ジャズ, ベトナム料理…"
+      ],
+      "formula": "どんな N が 好きですか\n→ (N cụ thể) が 好きです",
+      "parts": [
+        { "part": "どんな", "role": "「loại nào, như thế nào」 — luôn đi kèm danh từ (どんな スポーツ)." },
+        { "part": "N", "role": "Nhóm lớn: スポーツ, 音楽, 料理, 映画…" }
+      ],
+      "memoryTip": null,
+      "keyword": "どんな + nhóm (スポーツ, 音楽…) → trả lời bằng TÊN cụ thể",
+      "examples": [
+        {
+          "jp": "どんな スポーツが 好きですか。 …サッカーが 好きです。",
+          "romaji": "Donna supōtsu ga suki desu ka. … Sakkā ga suki desu.",
+          "vi": "Bạn thích môn thể thao nào? …Tôi thích bóng đá.",
+          "context": "Làm quen",
+          "breakdown": [
+            { "jp": "どんな スポーツ", "vi": "môn thể thao nào" },
+            { "jp": "サッカー", "vi": "bóng đá" }
+          ]
+        },
+        {
+          "jp": "どんな 音楽が 好きですか。 …ジャズが 好きです。",
+          "romaji": "Donna ongaku ga suki desu ka. … Jazu ga suki desu.",
+          "vi": "Bạn thích loại nhạc nào? …Tôi thích nhạc jazz.",
+          "context": "Sở thích"
+        },
+        {
+          "jp": "どんな 料理が 好きですか。 …ベトナム料理が 好きです。",
+          "romaji": "Donna ryōri ga suki desu ka. … Betonamu-ryōri ga suki desu.",
+          "vi": "Bạn thích món ăn nước nào? …Tôi thích món Việt.",
+          "context": "Nhà hàng"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "どんな スポーツが 好きですか。 …はい、好きです。",
+          "right": "どんな スポーツが 好きですか。 …テニスが 好きです。",
+          "explain": "どんな hỏi 「loại nào」, không phải câu có/không — phải nói tên cụ thể, không trả lời はい."
+        },
+        {
+          "wrong": "どう 音楽が 好きですか。",
+          "right": "どんな 音楽が 好きですか。",
+          "explain": "Trước danh từ dùng どんな; どう không đứng trước danh từ."
+        }
+      ]
+    },
+    {
+      "id": "L09-G4",
+      "title": "Trạng từ mức độ: よく / だいたい / たくさん / 少し / あまり〜ない / 全然〜ない",
+      "meaning": "rõ / đại khái / nhiều / một chút / không… lắm / hoàn toàn không",
+      "why": "Để nói chính xác mức độ: hiểu tiếng Nhật RÕ hay CHỈ MỘT CHÚT, có NHIỀU tiền hay KHÔNG CÓ CHÚT NÀO.",
+      "when": [
+        "Với わかります: よく (rõ) › だいたい (đại khái) › 少し (một chút) › あまり〜ません › 全然〜ません.",
+        "Với あります: たくさん (nhiều) › 少し (một ít) › あまり〜ません › 全然〜ません."
+      ],
+      "formula": "よく / だいたい / 少し + わかります\nたくさん / 少し + あります\nあまり / 全然 + わかりません / ありません",
+      "parts": [
+        { "part": "よく", "role": "Rõ, tốt — mức hiểu cao." },
+        { "part": "だいたい", "role": "Đại khái, gần hết." },
+        { "part": "たくさん", "role": "Nhiều (về SỐ LƯỢNG) — hay đi với あります." },
+        { "part": "少し", "role": "Một chút, một ít." },
+        { "part": "あまり / 全然", "role": "Không… lắm / hoàn toàn không — PHẢI đi với phủ định." }
+      ],
+      "memoryTip": {
+        "emoji": "🚫",
+        "hook": "「全然」 = số 0 tròn trĩnh — luôn đi với ません!",
+        "meaning": "→ 全然 / あまり + phủ định; よく / だいたい / たくさん / 少し + khẳng định."
+      },
+      "examples": [
+        {
+          "jp": "英語が よく わかります。",
+          "romaji": "Eigo ga yoku wakarimasu.",
+          "vi": "Tôi hiểu tiếng Anh rõ.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "日本語が だいたい わかります。",
+          "romaji": "Nihongo ga daitai wakarimasu.",
+          "vi": "Tôi hiểu đại khái tiếng Nhật.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "フランス語が 全然 わかりません。",
+          "romaji": "Furansugo ga zenzen wakarimasen.",
+          "vi": "Tôi hoàn toàn không hiểu tiếng Pháp.",
+          "context": "Ngoại ngữ",
+          "breakdown": [
+            { "jp": "全然", "vi": "hoàn toàn (không)" },
+            { "jp": "わかりません", "vi": "không hiểu" }
+          ]
+        },
+        {
+          "jp": "お金が たくさん あります。",
+          "romaji": "Okane ga takusan arimasu.",
+          "vi": "Tôi có nhiều tiền.",
+          "context": "Mua sắm"
+        },
+        {
+          "jp": "今週は 時間が あまり ありません。",
+          "romaji": "Konshū wa jikan ga amari arimasen.",
+          "vi": "Tuần này tôi không có nhiều thời gian lắm.",
+          "context": "Công việc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "フランス語が 全然 わかります。",
+          "right": "フランス語が 全然 わかりません。",
+          "explain": "全然 (hoàn toàn không) bắt buộc đi với động từ phủ định."
+        },
+        {
+          "wrong": "英語が たくさん わかります。",
+          "right": "英語が よく わかります。",
+          "explain": "たくさん nói về SỐ LƯỢNG (nhiều tiền, nhiều bạn). Nói mức độ hiểu thì dùng よく."
+        }
+      ]
+    },
+    {
+      "id": "L09-G5",
+      "title": "S1 から、S2",
+      "meaning": "Vì S1 nên S2",
+      "why": "Để giải thích lý do: 「Vì không có thời gian nên không đọc báo」 — rất cần khi từ chối, xin phép, giải thích.",
+      "when": [
+        "Nêu lý do trước, kết quả sau trong một câu.",
+        "Trả lời câu hỏi どうして (tại sao)."
+      ],
+      "formula": "S1 (lý do) から、S2 (kết quả)",
+      "parts": [
+        { "part": "S1", "role": "Lý do — có thể ở thể lịch sự (〜ます / 〜です)." },
+        { "part": "から", "role": "「vì」 — gắn vào CUỐI vế lý do." },
+        { "part": "S2", "role": "Kết quả, hành động." }
+      ],
+      "memoryTip": {
+        "emoji": "🤔",
+        "hook": "Lý do gì thì 「から」 đó!",
+        "meaning": "→ から đứng ngay sau lý do: 時間が ありませんから、… (vì không có thời gian nên …)."
+      },
+      "examples": [
+        {
+          "jp": "時間が ありませんから、新聞を 読みません。",
+          "romaji": "Jikan ga arimasen kara, shinbun o yomimasen.",
+          "vi": "Vì không có thời gian nên tôi không đọc báo.",
+          "context": "Sinh hoạt",
+          "breakdown": [
+            { "jp": "時間が ありませんから", "vi": "vì không có thời gian" },
+            { "jp": "新聞を 読みません", "vi": "không đọc báo" }
+          ]
+        },
+        {
+          "jp": "約束が ありますから、早く 帰ります。",
+          "romaji": "Yakusoku ga arimasu kara, hayaku kaerimasu.",
+          "vi": "Vì có hẹn nên tôi về sớm.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "日本の アニメが 好きですから、日本語を 勉強します。",
+          "romaji": "Nihon no anime ga suki desu kara, Nihongo o benkyō shimasu.",
+          "vi": "Vì thích anime Nhật nên tôi học tiếng Nhật.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "今日は 忙しいですから、どこも 行きません。",
+          "romaji": "Kyō wa isogashii desu kara, doko mo ikimasen.",
+          "vi": "Hôm nay tôi bận nên không đi đâu cả.",
+          "context": "Thời gian"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "新聞を 読みませんから、時間が ありません。",
+          "right": "時間が ありませんから、新聞を 読みません。",
+          "explain": "から gắn vào vế LÝ DO. Câu sai nghĩa là 「vì không đọc báo nên không có thời gian」 — ngược logic."
+        },
+        {
+          "wrong": "から 時間が ありません、新聞を 読みません。",
+          "right": "時間が ありませんから、新聞を 読みません。",
+          "explain": "Tiếng Việt 「vì」 đứng đầu, nhưng から đứng CUỐI vế lý do."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: hai chữ から",
+          "text": "Ở bài 4 bạn đã học N から (từ…): 9時から 5時まで. Ở bài này から đứng sau cả một câu (ありますから, 好きですから) và có nghĩa là 「vì」."
+        }
+      ]
+    },
+    {
+      "id": "L09-G6",
+      "title": "どうして — tại sao",
+      "meaning": "Tại sao…?",
+      "why": "Để hỏi lý do: 「Tại sao anh về sớm?」 — và biết cách trả lời bằng 〜から.",
+      "when": [
+        "Hỏi lý do của một hành động: どうして 〜か.",
+        "Hỏi lại lý do của câu người kia vừa nói: どうしてですか."
+      ],
+      "formula": "どうして S か\n→ 〜から。",
+      "parts": [
+        { "part": "どうして", "role": "「tại sao」 — đứng đầu câu hỏi." },
+        { "part": "〜から。", "role": "Câu trả lời: nêu lý do + から (không cần vế sau)." },
+        { "part": "どうしてですか", "role": "Hỏi lý do ngắn gọn cho câu người kia vừa nói." }
+      ],
+      "memoryTip": {
+        "emoji": "❓",
+        "hook": "Hỏi 「どうして」 thì đáp 「から」!",
+        "meaning": "→ どうして 〜か。 …〜から。"
+      },
+      "examples": [
+        {
+          "jp": "どうして 朝 新聞を 読みませんか。 …時間が ありませんから。",
+          "romaji": "Dōshite asa shinbun o yomimasen ka. … Jikan ga arimasen kara.",
+          "vi": "Tại sao buổi sáng anh không đọc báo? …Vì tôi không có thời gian.",
+          "context": "Sinh hoạt"
+        },
+        {
+          "jp": "どうして 日本語を 勉強しますか。 …日本の アニメが 好きですから。",
+          "romaji": "Dōshite Nihongo o benkyō shimasu ka. … Nihon no anime ga suki desu kara.",
+          "vi": "Tại sao bạn học tiếng Nhật? …Vì tôi thích anime Nhật.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "今日は 早く 帰ります。 …どうしてですか。 …子どもの 誕生日ですから。",
+          "romaji": "Kyō wa hayaku kaerimasu. … Dōshite desu ka. … Kodomo no tanjōbi desu kara.",
+          "vi": "Hôm nay tôi về sớm. …Sao vậy? …Vì hôm nay là sinh nhật con tôi.",
+          "context": "Công việc",
+          "note": "どうしてですか = hỏi lý do cho câu vừa nghe."
+        },
+        {
+          "jp": "どうして パーティーへ 行きませんか。 …用事が ありますから。",
+          "romaji": "Dōshite pātī e ikimasen ka. … Yōji ga arimasu kara.",
+          "vi": "Tại sao anh không đi dự tiệc? …Vì tôi có việc.",
+          "context": "Bạn bè"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "どうして 来ませんでしたか。 …はい、用事が ありましたから。",
+          "right": "どうして 来ませんでしたか。 …用事が ありましたから。",
+          "explain": "どうして không phải câu hỏi có/không nên không trả lời bằng はい / いいえ."
+        },
+        {
+          "wrong": "どう 早く 帰りますか。",
+          "right": "どうして 早く 帰りますか。",
+          "explain": "どう = thế nào; どうして = tại sao. Đừng nhầm hai từ này."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "N が あります / わかります", "meaning": "có N / hiểu N", "example": "日本語が わかります。" },
+    { "pattern": "N が 好きです / 上手です", "meaning": "thích / giỏi N (ngược: きらい / 下手)", "example": "木村さんは 歌が 上手です。" },
+    { "pattern": "どんな N が 好きですか", "meaning": "Thích loại N nào?", "example": "どんな スポーツが 好きですか。" },
+    { "pattern": "よく / 少し / あまり〜ない / 全然〜ない", "meaning": "mức độ: rõ / chút / không lắm / hoàn toàn không", "example": "フランス語が 全然 わかりません。" },
+    { "pattern": "S1 から、S2", "meaning": "Vì S1 nên S2", "example": "時間が ありませんから、新聞を 読みません。" },
+    { "pattern": "どうして 〜か。 …〜から。", "meaning": "Tại sao…? …Vì…", "example": "どうして 早く 帰りますか。 …約束が ありますから。" }
+  ],
+  "exercises": [
+    {
+      "id": "L09-E01",
+      "type": "particle",
+      "grammarPoint": "L09-G1",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "ミラーさんは 日本語＿＿ わかります。",
+      "romaji": "Mirā-san wa Nihongo ___ wakarimasu.",
+      "vi": "Anh Miller hiểu tiếng Nhật.",
+      "options": ["が", "を", "に", "で"],
+      "answer": "が",
+      "explanation": "Đối tượng của わかります đánh dấu bằng が."
+    },
+    {
+      "id": "L09-E02",
+      "type": "fix",
+      "grammarPoint": "L09-G1",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしは 英語を わかります。",
+      "options": [
+        "わたしは 英語が わかります。",
+        "わたしは 英語に わかります。",
+        "わたしを 英語が わかります。",
+        "わたしは 英語を わかりますか。"
+      ],
+      "answer": "わたしは 英語が わかります。",
+      "explanation": "わかります đi với が, không đi với を."
+    },
+    {
+      "id": "L09-E03",
+      "type": "vi-jp",
+      "grammarPoint": "L09-G1",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Hôm nay tôi có hẹn.",
+      "options": [
+        "今日は 約束が あります。",
+        "今日は 約束を あります。",
+        "今日は 約束が わかります。",
+        "今日は 約束に あります。"
+      ],
+      "answer": "今日は 約束が あります。",
+      "explanation": "「có hẹn」 = 約束が あります — đối tượng của あります dùng が."
+    },
+    {
+      "id": "L09-E04",
+      "type": "jp-vi",
+      "grammarPoint": "L09-G1",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "カリナさんは 韓国語が わかりますか。 …いいえ、わかりません。",
+      "romaji": "Karina-san wa Kankokugo ga wakarimasu ka. … Iie, wakarimasen.",
+      "options": [
+        "Karina có hiểu tiếng Hàn không? …Không, tôi không hiểu.",
+        "Karina có thích tiếng Hàn không? …Không, tôi không thích.",
+        "Karina có giỏi tiếng Hàn không? …Không, tôi kém lắm.",
+        "Karina có học tiếng Hàn không? …Không, tôi không học."
+      ],
+      "answer": "Karina có hiểu tiếng Hàn không? …Không, tôi không hiểu.",
+      "explanation": "わかります = hiểu; わかりません = không hiểu."
+    },
+    {
+      "id": "L09-E05",
+      "type": "particle",
+      "grammarPoint": "L09-G2",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "わたしは 魚＿＿ きらいです。",
+      "romaji": "Watashi wa sakana ___ kirai desu.",
+      "vi": "Tôi ghét cá.",
+      "options": ["が", "を", "の", "へ"],
+      "answer": "が",
+      "explanation": "きらい (ghét) đi với が: 魚が きらいです."
+    },
+    {
+      "id": "L09-E06",
+      "type": "vi-jp",
+      "grammarPoint": "L09-G2",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Chị Kimura hát hay.",
+      "options": [
+        "木村さんは 歌が 上手です。",
+        "木村さんは 歌を 上手です。",
+        "木村さんは 歌が 下手です。",
+        "木村さんは 歌が 好きじゃ ありません。"
+      ],
+      "answer": "木村さんは 歌が 上手です。",
+      "explanation": "Giỏi = 上手, đi với が: 歌が 上手です. 下手 = kém."
+    },
+    {
+      "id": "L09-E07",
+      "type": "fix",
+      "grammarPoint": "L09-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしは 野菜が 好きくないです。",
+      "options": [
+        "わたしは 野菜が 好きじゃ ありません。",
+        "わたしは 野菜を 好きくないです。",
+        "わたしは 野菜が 好くないです。",
+        "わたしは 野菜が 好きないです。"
+      ],
+      "answer": "わたしは 野菜が 好きじゃ ありません。",
+      "explanation": "好き là tính từ な → phủ định bằng じゃ ありません."
+    },
+    {
+      "id": "L09-E08",
+      "type": "order",
+      "grammarPoint": "L09-G2",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi thích món Ý.",
+      "tokens": ["わたし", "は", "イタリア料理", "が", "好きです"],
+      "explanation": "Người は + thứ mình thích が + 好きです."
+    },
+    {
+      "id": "L09-E09",
+      "type": "choice",
+      "grammarPoint": "L09-G2",
+      "question": "Từ nào trái nghĩa với 「上手」 (giỏi)?",
+      "options": ["下手", "好き", "きらい", "元気"],
+      "answer": "下手",
+      "explanation": "上手 (giỏi) ↔ 下手 (kém). 好き ↔ きらい là cặp thích / ghét."
+    },
+    {
+      "id": "L09-E10",
+      "type": "situation",
+      "grammarPoint": "L09-G3",
+      "question": "Bạn muốn hỏi người bạn mới quen 「Bạn thích loại nhạc nào?」. Bạn nói:",
+      "options": [
+        "どんな 音楽が 好きですか。",
+        "どう 音楽が 好きですか。",
+        "どれ 音楽が 好きですか。",
+        "音楽は どんなですか。"
+      ],
+      "answer": "どんな 音楽が 好きですか。",
+      "explanation": "Hỏi loại cụ thể → どんな + N (どんな 音楽)."
+    },
+    {
+      "id": "L09-E11",
+      "type": "choice",
+      "grammarPoint": "L09-G3",
+      "question": "「どんな スポーツが 好きですか。」 — câu trả lời nào phù hợp?",
+      "options": [
+        "サッカーが 好きです。",
+        "はい、好きです。",
+        "いいえ、スポーツです。",
+        "スポーツは どうですか。"
+      ],
+      "answer": "サッカーが 好きです。",
+      "explanation": "どんな hỏi 「loại nào」 → trả lời tên môn cụ thể, không dùng はい / いいえ."
+    },
+    {
+      "id": "L09-E12",
+      "type": "fill",
+      "grammarPoint": "L09-G3",
+      "question": "Gõ từ để hỏi còn thiếu (kana).",
+      "jp": "＿＿ 料理が 好きですか。 …ベトナム料理が 好きです。",
+      "vi": "Bạn thích món ăn nước nào? …Tôi thích món Việt.",
+      "answer": "どんな",
+      "explanation": "Từ để hỏi đi trước danh từ 料理, hỏi loại → どんな."
+    },
+    {
+      "id": "L09-E13",
+      "type": "fill",
+      "grammarPoint": "L09-G4",
+      "question": "Gõ phần đuôi động từ còn thiếu (kana).",
+      "jp": "フランス語が 全然 わかり＿＿。",
+      "vi": "Tôi hoàn toàn không hiểu tiếng Pháp.",
+      "answer": "ません",
+      "explanation": "全然 luôn đi với phủ định → わかりません."
+    },
+    {
+      "id": "L09-E14",
+      "type": "choice",
+      "grammarPoint": "L09-G4",
+      "question": "Chọn từ điền vào chỗ trống: 「今週は 時間が ＿＿ ありません。」",
+      "jp": "今週は 時間が ＿＿ ありません。",
+      "vi": "Tuần này tôi hoàn toàn không có thời gian.",
+      "options": ["全然", "よく", "たくさん", "だいたい"],
+      "answer": "全然",
+      "explanation": "Câu phủ định + nghĩa 「hoàn toàn không」 → 全然. よく / たくさん / だいたい đi với khẳng định."
+    },
+    {
+      "id": "L09-E15",
+      "type": "fix",
+      "grammarPoint": "L09-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "わたしは 中国語が 全然 わかります。",
+      "options": [
+        "わたしは 中国語が 全然 わかりません。",
+        "わたしは 中国語を 全然 わかりません。",
+        "わたしは 中国語が あまり わかります。",
+        "わたしは 中国語が 全然 わかりませんです。"
+      ],
+      "answer": "わたしは 中国語が 全然 わかりません。",
+      "explanation": "全然 phải đi với phủ định; đối tượng của わかります vẫn dùng が."
+    },
+    {
+      "id": "L09-E16",
+      "type": "jp-vi",
+      "grammarPoint": "L09-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "日本語が だいたい わかります。",
+      "romaji": "Nihongo ga daitai wakarimasu.",
+      "options": [
+        "Tôi hiểu đại khái tiếng Nhật.",
+        "Tôi hoàn toàn không hiểu tiếng Nhật.",
+        "Tôi không hiểu tiếng Nhật lắm.",
+        "Tôi thích tiếng Nhật."
+      ],
+      "answer": "Tôi hiểu đại khái tiếng Nhật.",
+      "explanation": "だいたい = đại khái, gần hết; câu khẳng định わかります."
+    },
+    {
+      "id": "L09-E17",
+      "type": "situation",
+      "grammarPoint": "L09-G4",
+      "question": "Bạn được hỏi 「お金が ありますか」. Bạn có rất nhiều tiền. Bạn đáp:",
+      "options": [
+        "はい、たくさん あります。",
+        "はい、全然 あります。",
+        "はい、あまり あります。",
+        "いいえ、たくさん あります。"
+      ],
+      "answer": "はい、たくさん あります。",
+      "explanation": "Nhiều về số lượng → たくさん + khẳng định. 全然 / あまり cần phủ định."
+    },
+    {
+      "id": "L09-E18",
+      "type": "particle",
+      "grammarPoint": "L09-G5",
+      "question": "Chọn từ điền vào chỗ trống.",
+      "jp": "時間が ありません＿＿、新聞を 読みません。",
+      "romaji": "Jikan ga arimasen ___, shinbun o yomimasen.",
+      "vi": "Vì không có thời gian nên tôi không đọc báo.",
+      "options": ["から", "まで", "の", "を"],
+      "answer": "から",
+      "explanation": "Vế trước là lý do → gắn から vào cuối vế lý do."
+    },
+    {
+      "id": "L09-E19",
+      "type": "order",
+      "grammarPoint": "L09-G5",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Vì có hẹn nên tôi về sớm.",
+      "tokens": ["約束", "が", "あります", "から、", "早く", "帰ります"],
+      "explanation": "Lý do (約束が あります) + から、 + kết quả (早く 帰ります)."
+    },
+    {
+      "id": "L09-E20",
+      "type": "fix",
+      "grammarPoint": "L09-G5",
+      "question": "Muốn nói 「Vì không có thời gian nên tôi không đọc báo」 nhưng câu sau đặt から sai chỗ. Chọn câu đúng.",
+      "jp": "新聞を 読みませんから、時間が ありません。",
+      "options": [
+        "時間が ありませんから、新聞を 読みません。",
+        "時間が ありませんが、新聞を 読みません。",
+        "から 時間が ありません、新聞を 読みません。",
+        "時間から ありません、新聞を 読みません。"
+      ],
+      "answer": "時間が ありませんから、新聞を 読みません。",
+      "explanation": "から gắn vào cuối vế LÝ DO (không có thời gian), vế kết quả đứng sau."
+    },
+    {
+      "id": "L09-E21",
+      "type": "jp-vi",
+      "grammarPoint": "L09-G5",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "日本の アニメが 好きですから、日本語を 勉強します。",
+      "romaji": "Nihon no anime ga suki desu kara, Nihongo o benkyō shimasu.",
+      "options": [
+        "Vì thích anime Nhật nên tôi học tiếng Nhật.",
+        "Vì học tiếng Nhật nên tôi thích anime Nhật.",
+        "Tôi thích anime Nhật nhưng không học tiếng Nhật.",
+        "Tại sao bạn học tiếng Nhật?"
+      ],
+      "answer": "Vì thích anime Nhật nên tôi học tiếng Nhật.",
+      "explanation": "から đứng sau 好きです → 「thích anime」 là lý do, 「học tiếng Nhật」 là kết quả."
+    },
+    {
+      "id": "L09-E22",
+      "type": "pattern",
+      "grammarPoint": "L09-G5",
+      "question": "Muốn nói 「Vì hôm nay bận nên tôi không đi đâu cả」, chọn mẫu phù hợp.",
+      "options": ["S1 から、S2", "S1 が、S2", "どんな N が 好きですか", "N は どうですか"],
+      "answer": "S1 から、S2",
+      "explanation": "Nêu lý do → kết quả dùng S1 から、S2. S1 が、S2 là 「nhưng」."
+    },
+    {
+      "id": "L09-E23",
+      "type": "choice",
+      "grammarPoint": "L09-G6",
+      "question": "「どうして 早く 帰りますか。」 — câu trả lời nào phù hợp?",
+      "options": [
+        "約束が ありますから。",
+        "はい、帰ります。",
+        "早く 帰りますから。",
+        "約束は どうですか。"
+      ],
+      "answer": "約束が ありますから。",
+      "explanation": "どうして hỏi lý do → trả lời lý do + から. Nhắc lại chính hành động (早く 帰りますから) không phải lý do."
+    },
+    {
+      "id": "L09-E24",
+      "type": "situation",
+      "grammarPoint": "L09-G6",
+      "question": "Ở bữa trưa, anh Santos không ăn cá. Bạn muốn hỏi 「Tại sao anh không ăn cá?」. Bạn nói:",
+      "options": [
+        "どうして 魚を 食べませんか。",
+        "どう 魚を 食べませんか。",
+        "どれ 魚を 食べませんか。",
+        "何 魚を 食べませんか。"
+      ],
+      "answer": "どうして 魚を 食べませんか。",
+      "explanation": "Hỏi 「tại sao」 → どうして. どう là 「thế nào」."
+    },
+    {
+      "id": "L09-E25",
+      "type": "fix",
+      "grammarPoint": "L09-G6",
+      "question": "Câu trả lời sau bị sai. Chọn cách sửa đúng.",
+      "jp": "どうして 来ませんでしたか。 …はい、用事が ありましたから。",
+      "options": [
+        "どうして 来ませんでしたか。 …用事が ありましたから。",
+        "どうして 来ませんでしたか。 …いいえ、用事が ありましたから。",
+        "どうして 来ませんでしたか。 …はい、来ませんでした。",
+        "どうして 来ませんでしたか。 …用事を ありましたから。"
+      ],
+      "answer": "どうして 来ませんでしたか。 …用事が ありましたから。",
+      "explanation": "どうして không phải câu hỏi có/không → bỏ はい, trả lời thẳng lý do + から."
+    },
+    {
+      "id": "L09-E26",
+      "type": "identify",
+      "grammarPoint": "L09-G6",
+      "question": "Trong hội thoại sau, câu 「どうしてですか」 dùng để làm gì?",
+      "jp": "今日は 早く 帰ります。 …どうしてですか。",
+      "romaji": "Kyō wa hayaku kaerimasu. … Dōshite desu ka.",
+      "vi": "Hôm nay tôi về sớm. …Sao vậy?",
+      "options": [
+        "Hỏi lý do (tại sao)",
+        "Hỏi cảm nhận (thế nào)",
+        "Hỏi thời gian (khi nào)",
+        "Hỏi loại (loại nào)"
+      ],
+      "answer": "Hỏi lý do (tại sao)",
+      "explanation": "どうしてですか = hỏi lý do cho câu người kia vừa nói."
+    },
+    {
+      "id": "L09-E27",
+      "type": "vi-jp",
+      "grammarPoint": "L09-G6",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tại sao anh không đi dự tiệc? …Vì tôi có việc.",
+      "options": [
+        "どうして パーティーへ 行きませんか。 …用事が ありますから。",
+        "どうして パーティーへ 行きませんか。 …はい、用事が あります。",
+        "どう パーティーへ 行きませんか。 …用事が ありますから。",
+        "どうして パーティーへ 行きませんか。 …用事を ありますから。"
+      ],
+      "answer": "どうして パーティーへ 行きませんか。 …用事が ありますから。",
+      "explanation": "Hỏi どうして, đáp lý do + から (không cần はい). Đối tượng của あります dùng が, không dùng を."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 9 }
+}

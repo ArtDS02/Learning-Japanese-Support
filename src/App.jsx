@@ -10,6 +10,7 @@ const GlobalSearch = lazy(() => import("./components/common/GlobalSearch"));
 const HomeTab = lazy(() => import("./components/HomeTab"));
 const VocabularyTab = lazy(() => import("./components/VocabularyTab"));
 const GrammarTab = lazy(() => import("./components/GrammarTab"));
+const MinnaTab = lazy(() => import("./components/MinnaTab"));
 const KanjiTab = lazy(() => import("./components/KanjiTab"));
 const KanaTab = lazy(() => import("./components/KanaTab"));
 const NumbersTab = lazy(() => import("./components/NumbersTab"));
@@ -30,6 +31,7 @@ const TABS = [
   { id: "home",       icon: "🔥", label: "Học hôm nay", short: "Hôm nay" },
   { id: "vocabulary", icon: "📖", label: "Từ vựng" },
   { id: "grammar",    icon: "⚙️", label: "Ngữ pháp" },
+  { id: "minna",      icon: "🎌", label: "Minna no Nihongo 1", short: "Minna 1" },
   { id: "kanji",      icon: "🈳", label: "Kanji" },
   { id: "kana",       icon: "🔤", label: "Kana" },
   { id: "numbers",    icon: "🔢", label: "Số đếm" },
@@ -283,6 +285,7 @@ export default function App() {
       case "home":       return <HomeTab onGoTo={goTo} />;
       case "vocabulary": return <VocabularyTab initialSearch={initialSearch} />;
       case "grammar":    return <GrammarTab initialSearch={initialSearch} />;
+      case "minna":      return <MinnaTab />;
       case "kanji":      return <KanjiTab initialSearch={initialSearch} />;
       case "kana":       return <KanaTab />;
       case "numbers":    return <NumbersTab />;

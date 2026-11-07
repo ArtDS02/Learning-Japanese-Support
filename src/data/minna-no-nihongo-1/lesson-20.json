@@ -1,0 +1,766 @@
+{
+  "lesson": 20,
+  "title": "Thể thông thường",
+  "titleJp": "夏休みは どう するの？",
+  "topic": "Lịch sự vs thân mật · 普通形 của động từ, tính từ, danh từ · hội thoại với bạn bè",
+  "description": "Học xong bài này bạn biết khi nào nói lịch sự (です/ます), khi nào nói thân mật với bạn bè, gia đình — và chuyển được mọi câu đã học sang thể thông thường (普通形), nền tảng cho các bài 21–25.",
+  "objectives": [
+    "Phân biệt văn phong lịch sự (丁寧体) và thông thường (普通体), biết dùng với ai.",
+    "Chia được 4 dạng thông thường của động từ: Vる / Vない / Vた / Vなかった.",
+    "Chia được thể thông thường của tính từ い, tính từ な và danh từ.",
+    "Nói chuyện thân mật tự nhiên: câu hỏi lên giọng không có か, うん / ううん, lược trợ từ.",
+    "Dùng けど để nói 「nhưng」 trong hội thoại thân mật."
+  ],
+  "keyPoints": [
+    "Lịch sự (です/ます) với người lớn, cấp trên, người mới gặp; thông thường với bạn thân, gia đình, người nhỏ tuổi đã thân.",
+    "Động từ: Vます → Vる, Vません → Vない, Vました → Vた, Vませんでした → Vなかった.",
+    "いA chỉ bỏ です: 高いです → 高い. なA và N thay です bằng だ: 元気です → 元気だ.",
+    "ある → phủ định là ない (không có 「あらない」). いい → よくない / よかった.",
+    "Câu hỏi thân mật: bỏ か, lên giọng. N/なA còn bỏ luôn だ: 元気？ (không nói 元気だ？).",
+    "うん = ừ (có) · ううん = không. Trợ từ は・を・へ hay được lược, nhưng で・に・と・から… thì giữ.",
+    "けど = が (nhưng) trong văn nói thân mật."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L20-G1",
+      "title": "丁寧体 và 普通体 — lịch sự và thông thường",
+      "meaning": "Hai văn phong: lịch sự (có です/ます) và thông thường (không có です/ます)",
+      "why": "Tiếng Nhật đổi đuôi câu theo mối quan hệ. Nói です/ます với bạn thân nghe xa cách, còn nói trống không với sếp thì thất lễ. Ngoài ra thể thông thường là 「nguyên liệu」 để ghép các mẫu ngữ pháp từ bài 21 trở đi.",
+      "when": [
+        "Lịch sự (丁寧体): người lớn tuổi hơn, cấp trên, thầy cô, khách hàng, người mới gặp lần đầu.",
+        "Thông thường (普通体): bạn thân, gia đình, người nhỏ tuổi hơn mà mình đã thân.",
+        "Văn viết như nhật ký, báo chí, luận văn cũng dùng thể thông thường."
+      ],
+      "formula": "丁寧体: 〜です / 〜ます\n普通体: 〜だ / Vる / Vない / Vた…",
+      "parts": [
+        { "part": "丁寧形 (ていねいけい)", "role": "Dạng lịch sự — câu kết thúc bằng です hoặc ます." },
+        { "part": "普通形 (ふつうけい)", "role": "Dạng thông thường — bỏ です/ます, dùng thể từ điển, thể ない, thể た…" },
+        { "part": "丁寧体 / 普通体", "role": "Văn phong của cả đoạn hội thoại. Đã chọn thì nên giữ thống nhất với người đó." }
+      ],
+      "memoryTip": {
+        "emoji": "🎩",
+        "hook": "Gặp sếp đội mũ 「ます」, gặp bạn thì cởi mũ ra!",
+        "meaning": "→ Với người trên: です/ます. Với bạn thân: bỏ です/ます, dùng thể thông thường."
+      },
+      "examples": [
+        {
+          "jp": "山田さん、あした パーティーに 行きますか。 …はい、行きます。",
+          "romaji": "Yamada-san, ashita pātī ni ikimasu ka. … Hai, ikimasu.",
+          "vi": "Anh Yamada, mai anh có đi tiệc không? …Vâng, tôi đi.",
+          "context": "Nói với đồng nghiệp lớn tuổi (lịch sự)"
+        },
+        {
+          "jp": "あした パーティー 行く？ …うん、行く。",
+          "romaji": "Ashita pātī iku? … Un, iku.",
+          "vi": "Mai đi tiệc không? …Ừ, đi.",
+          "context": "Nói với bạn thân (thông thường)",
+          "note": "Cùng một nội dung, chỉ đổi đuôi câu: 行きますか → 行く？, はい → うん."
+        },
+        {
+          "jp": "きのうは とても 忙しかった。",
+          "romaji": "Kinō wa totemo isogashikatta.",
+          "vi": "Hôm qua bận ơi là bận.",
+          "context": "Viết nhật ký",
+          "note": "Nhật ký viết cho chính mình nên dùng thể thông thường (忙しかったです → 忙しかった)."
+        },
+        {
+          "jp": "この 本、おもしろい？ …うん、とても おもしろい。",
+          "romaji": "Kono hon, omoshiroi? … Un, totemo omoshiroi.",
+          "vi": "Cuốn sách này hay không? …Ừ, hay lắm.",
+          "context": "Nói chuyện với bạn cùng lớp"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "（Nói với giám đốc）社長、コーヒー 飲む？",
+          "right": "社長、コーヒーを 飲みますか。",
+          "explain": "Giám đốc là cấp trên → phải dùng thể lịch sự. Thể thông thường chỉ dành cho người thân thiết."
+        },
+        {
+          "wrong": "あした 学校へ 行くです。",
+          "right": "あした 学校へ 行きます。（lịch sự） / あした 学校へ 行く。（thông thường）",
+          "explain": "Không gắn です sau động từ thể từ điển. Muốn lịch sự thì dùng ます."
+        },
+        {
+          "explain": "Với bạn thân mà cứ dùng です/ます mãi thì không sai ngữ pháp, nhưng nghe khách sáo, xa cách — như đang nói chuyện với người lạ."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: người Nhật đổi văn phong thế nào?",
+          "text": "Lúc mới quen, người Nhật thường nói lịch sự. Khi đã thân (hoặc người lớn tuổi hơn bảo 「cứ nói thoải mái đi」) mới chuyển sang thể thông thường. Nếu chưa chắc, hãy dùng thể lịch sự — an toàn hơn."
+        }
+      ]
+    },
+    {
+      "id": "L20-G2",
+      "title": "普通形 của động từ — Vる / Vない / Vた / Vなかった",
+      "meaning": "4 dạng thông thường của động từ: làm / không làm / đã làm / đã không làm",
+      "why": "Mỗi dạng ます có một dạng thông thường tương ứng. Bạn đã học thể từ điển (bài 18), thể ない (bài 17), thể た (bài 19) — bài này ghép chúng lại thành một bảng dùng để nói chuyện.",
+      "when": [
+        "Nói chuyện thân mật với bạn bè, gia đình.",
+        "Viết nhật ký, ghi chú.",
+        "Làm nguyên liệu cho các mẫu 〜と 思います, 〜とき, 〜たら… ở các bài sau."
+      ],
+      "formula": "Vます → V辞書形 (Vる)\nVません → Vない\nVました → Vた\nVませんでした → Vなかった",
+      "parts": [
+        { "part": "Vる (thể từ điển)", "role": "Khẳng định hiện tại / tương lai: 行く, 食べる, する, 来る (くる)." },
+        { "part": "Vない", "role": "Phủ định: 行かない, 食べない, しない, 来ない (こない). Đặc biệt: ある → ない." },
+        { "part": "Vた", "role": "Quá khứ khẳng định: 行った, 食べた, した, 来た (きた)." },
+        { "part": "Vなかった", "role": "Quá khứ phủ định: lấy thể ない, bỏ い, thêm かった → 行かなかった." }
+      ],
+      "memoryTip": {
+        "emoji": "🔁",
+        "hook": "なかった = ない bỏ 「い」 thêm 「かった」 — y như tính từ い!",
+        "meaning": "→ 行かない → 行かなかった, giống 高い → 高かった."
+      },
+      "examples": [
+        {
+          "jp": "毎朝 6時に 起きる。",
+          "romaji": "Maiasa roku-ji ni okiru.",
+          "vi": "Sáng nào tôi cũng dậy lúc 6 giờ.",
+          "context": "Sinh hoạt (nhật ký)",
+          "breakdown": [
+            { "jp": "毎朝", "vi": "mỗi sáng" },
+            { "jp": "6時に", "vi": "lúc 6 giờ" },
+            { "jp": "起きる", "vi": "thức dậy (= 起きます)" }
+          ]
+        },
+        {
+          "jp": "きょうは 学校へ 行かない。",
+          "romaji": "Kyō wa gakkō e ikanai.",
+          "vi": "Hôm nay tôi không đến trường.",
+          "context": "Trường học",
+          "note": "行きません → 行かない."
+        },
+        {
+          "jp": "きのう 友達と 映画を 見た。",
+          "romaji": "Kinō tomodachi to eiga o mita.",
+          "vi": "Hôm qua tôi xem phim với bạn.",
+          "context": "Cuối tuần",
+          "note": "見ました → 見た."
+        },
+        {
+          "jp": "日曜日は どこも 行かなかった。",
+          "romaji": "Nichiyōbi wa doko mo ikanakatta.",
+          "vi": "Chủ nhật tôi chẳng đi đâu cả.",
+          "context": "Cuối tuần",
+          "note": "行きませんでした → 行かなかった."
+        },
+        {
+          "jp": "今 お金が ない。",
+          "romaji": "Ima okane ga nai.",
+          "vi": "Bây giờ tôi không có tiền.",
+          "context": "Mua sắm",
+          "note": "ありません → ない. Động từ ある KHÔNG có dạng 「あらない」."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "今 時間が あらない。",
+          "right": "今 時間が ない。",
+          "explain": "ある là ngoại lệ: thể phủ định là ない (quá khứ: なかった)."
+        },
+        {
+          "wrong": "きのう 宿題を するなかった。",
+          "right": "きのう 宿題を しなかった。",
+          "explain": "Vなかった tạo từ thể ない (しない), không phải từ thể từ điển (する)."
+        },
+        {
+          "wrong": "あした 山田さんは くない。",
+          "right": "あした 山田さんは 来ない (こない)。",
+          "explain": "来る (くる) có thể ない là 来ない — đọc 「こない」, không phải 「くない」 hay 「きない」."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: các mẫu đã học ở thể thông thường",
+          "text": "Chỉ cần đổi phần cuối: 〜て います → 〜て いる, 〜たいです → 〜たい, 〜ても いいです → 〜ても いい, 〜なければ なりません → 〜なければ ならない, 〜ないで ください → 〜ないで.",
+          "examples": [
+            {
+              "jp": "今 日本語を 勉強して いる。",
+              "romaji": "Ima Nihongo o benkyō shite iru.",
+              "vi": "Bây giờ tôi đang học tiếng Nhật."
+            },
+            {
+              "jp": "冷たい 水が 飲みたい。",
+              "romaji": "Tsumetai mizu ga nomitai.",
+              "vi": "Tôi muốn uống nước lạnh."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L20-G3",
+      "title": "普通形 của tính từ và danh từ",
+      "meaning": "Thể thông thường của いA, なA và N (hiện tại / phủ định / quá khứ / quá khứ phủ định)",
+      "why": "Câu miêu tả (ngon, đắt, rảnh, trời mưa…) cũng phải đổi đuôi khi nói với bạn bè. Hai nhóm có quy tắc khác nhau: tính từ い chỉ bỏ です, còn tính từ な và danh từ thì cần だ.",
+      "when": [
+        "Nhận xét, miêu tả với bạn bè: おいしい！, 暇？",
+        "Kể lại chuyện đã qua: きのう 寒かった, 雨だった.",
+        "Làm nguyên liệu cho 〜と 思います (bài 21), 〜とき (bài 23)…"
+      ],
+      "formula": "いA: 高い / 高くない / 高かった / 高くなかった\nなA: 元気だ / 元気じゃない / 元気だった / 元気じゃなかった\nN: 雨だ / 雨じゃない / 雨だった / 雨じゃなかった",
+      "parts": [
+        { "part": "いA", "role": "Bỏ です là xong: 高いです → 高い, 高くないです → 高くない, 高かったです → 高かった." },
+        { "part": "なA / N + だ", "role": "です đổi thành だ: 元気です → 元気だ, 雨です → 雨だ." },
+        { "part": "じゃない / だった / じゃなかった", "role": "じゃ ありません → じゃない, でした → だった, じゃ ありませんでした → じゃなかった." },
+        { "part": "いい", "role": "Ngoại lệ: いい → よくない / よかった / よくなかった." }
+      ],
+      "memoryTip": {
+        "emoji": "🧢",
+        "hook": "いA chỉ cần cởi 「です」; なA và N phải thay 「です」 bằng 「だ」!",
+        "meaning": "→ 高いです → 高い; 元気です → 元気だ; 雨です → 雨だ."
+      },
+      "examples": [
+        {
+          "jp": "この ラーメン、おいしい。",
+          "romaji": "Kono rāmen, oishii.",
+          "vi": "Mì ramen này ngon.",
+          "context": "Nhà hàng (nói với bạn)"
+        },
+        {
+          "jp": "きのうの 試験は 難しかった。",
+          "romaji": "Kinō no shiken wa muzukashikatta.",
+          "vi": "Bài thi hôm qua khó.",
+          "context": "Trường học",
+          "note": "難しかったです → 難しかった."
+        },
+        {
+          "jp": "あの 店は 静かじゃなかった。",
+          "romaji": "Ano mise wa shizuka ja nakatta.",
+          "vi": "Quán đó không yên tĩnh.",
+          "context": "Quán cà phê",
+          "note": "静かじゃ ありませんでした → 静かじゃなかった."
+        },
+        {
+          "jp": "きのう 東京は 雨だった。",
+          "romaji": "Kinō Tōkyō wa ame datta.",
+          "vi": "Hôm qua Tokyo mưa.",
+          "context": "Thời tiết",
+          "note": "雨でした → 雨だった."
+        },
+        {
+          "jp": "旅行は 天気が よくなかった。",
+          "romaji": "Ryokō wa tenki ga yokunakatta.",
+          "vi": "Chuyến du lịch thì thời tiết không đẹp.",
+          "context": "Du lịch",
+          "note": "いい → よくなかった (không nói いくなかった)."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "この ラーメン、おいしいだ。",
+          "right": "この ラーメン、おいしい。",
+          "explain": "Tính từ い không thêm だ. Chỉ なA và danh từ mới dùng だ."
+        },
+        {
+          "wrong": "この 部屋は きれいくない。",
+          "right": "この 部屋は きれいじゃない。",
+          "explain": "きれい là tính từ な (dù kết thúc bằng い) → phủ định là きれいじゃない."
+        },
+        {
+          "wrong": "天気が いくなかった。",
+          "right": "天気が よくなかった。",
+          "explain": "いい biến đổi từ よい: よくない, よかった, よくなかった."
+        }
+      ]
+    },
+    {
+      "id": "L20-G4",
+      "title": "Hội thoại thân mật — câu hỏi lên giọng, うん / ううん, lược trợ từ",
+      "meaning": "Cách nói chuyện tự nhiên với bạn bè bằng thể thông thường",
+      "why": "Hội thoại thân mật không chỉ là đổi đuôi câu. Người Nhật còn bỏ か, bỏ だ, lược bớt trợ từ và dùng うん / ううん. Nắm các quy tắc này bạn mới nghe hiểu được bạn bè, phim, anime.",
+      "when": [
+        "Hỏi bạn: lên giọng ở cuối, không dùng か → 飲む？↗",
+        "Câu hỏi với N / なA: bỏ だ → 元気？, 暇？",
+        "Trả lời có/không: うん (ừ) / ううん (không).",
+        "Lược trợ từ は・を・へ khi nghĩa vẫn rõ: コーヒー 飲む？"
+      ],
+      "formula": "Câu hỏi: 普通形？↗ (không có か)\nN / なA: 元気？ (không có だ)\nTrả lời: うん (có) / ううん (không)\nLược は・を・へ: コーヒー 飲む？",
+      "parts": [
+        { "part": "↗ (lên giọng)", "role": "Thay cho か. 普通形 + か nghe cộc lốc, thô (thường chỉ nam giới dùng)." },
+        { "part": "(bỏ だ)", "role": "Câu hỏi với N / なA không có だ: 暇？ Câu trả lời khẳng định cũng hay bỏ だ: うん、暇." },
+        { "part": "うん / ううん", "role": "うん = ừ, có (thân mật của はい). ううん = không (thân mật của いいえ)." },
+        { "part": "Lược trợ từ", "role": "は, を, へ thường bị lược. Trợ từ mang nghĩa quan trọng như で, に, と, から, まで thì giữ lại." },
+        { "part": "〜てる", "role": "Trong văn nói, 〜て いる thường rơi mất い: 見て いる → 見てる." }
+      ],
+      "memoryTip": {
+        "emoji": "🎵",
+        "hook": "Hỏi bạn thân: bỏ 「か」, lên giọng là xong!",
+        "meaning": "→ 飲みますか → 飲む？↗; 元気ですか → 元気？↗"
+      },
+      "examples": [
+        {
+          "jp": "コーヒー 飲む？ …うん、飲む。",
+          "romaji": "Kōhī nomu? … Un, nomu.",
+          "vi": "Uống cà phê không? …Ừ, uống.",
+          "context": "Ở nhà bạn",
+          "note": "Lược を (コーヒーを 飲む), bỏ か, lên giọng."
+        },
+        {
+          "jp": "あした 暇？ …ううん、暇じゃない。",
+          "romaji": "Ashita hima? … Uun, hima ja nai.",
+          "vi": "Mai rảnh không? …Không, không rảnh.",
+          "context": "Rủ bạn đi chơi",
+          "note": "暇だ？ ✗ → 暇？ ✓ (bỏ だ trong câu hỏi)."
+        },
+        {
+          "jp": "日曜日 どこ 行った？ …京都。",
+          "romaji": "Nichiyōbi doko itta? … Kyōto.",
+          "vi": "Chủ nhật đi đâu thế? …Kyoto.",
+          "context": "Đầu tuần gặp bạn",
+          "note": "Lược へ (どこへ 行った). Câu trả lời ngắn gọn, chỉ cần danh từ."
+        },
+        {
+          "jp": "今 何 してる？ …テレビ 見てる。",
+          "romaji": "Ima nani shiteru? … Terebi miteru.",
+          "vi": "Đang làm gì đấy? …Đang xem TV.",
+          "context": "Nhắn tin với bạn",
+          "note": "して いる → してる, 見て いる → 見てる."
+        },
+        {
+          "jp": "元気？ …うん、元気。",
+          "romaji": "Genki? … Un, genki.",
+          "vi": "Khoẻ không? …Ừ, khoẻ.",
+          "context": "Gặp lại bạn cũ"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "あした 暇だ？",
+          "right": "あした 暇？",
+          "explain": "Câu hỏi thân mật với N / なA thì bỏ だ, chỉ lên giọng ở cuối."
+        },
+        {
+          "wrong": "コーヒー 飲むか？",
+          "right": "コーヒー 飲む？",
+          "explain": "普通形 + か nghe rất cộc (kiểu đàn ông nói trống không). Câu hỏi thân mật thông thường chỉ cần lên giọng."
+        },
+        {
+          "wrong": "図書館 勉強する。",
+          "right": "図書館で 勉強する。",
+          "explain": "Chỉ lược は・を・へ. で (nơi hành động) mang nghĩa quan trọng nên phải giữ."
+        }
+      ]
+    },
+    {
+      "id": "L20-G5",
+      "title": "〜けど — nhưng (thân mật)",
+      "meaning": "…nhưng… / …, (lời dạo đầu)",
+      "why": "Trong thể thông thường, trợ từ nối が (nhưng — bài 8) thường được thay bằng けど cho tự nhiên. けど còn dùng để mở lời trước khi rủ rê, hỏi han.",
+      "when": [
+        "Nối hai ý trái ngược: ngon NHƯNG đắt.",
+        "Dạo đầu câu chuyện trước khi rủ, nhờ, hỏi: 「Tớ có 2 vé, đi cùng không?」"
+      ],
+      "formula": "普通形 けど、〜\n(N / なA: 〜だ けど)",
+      "parts": [
+        { "part": "普通形", "role": "Câu thứ nhất ở thể thông thường. N / なA phải giữ だ: 暇だけど." },
+        { "part": "けど", "role": "= が (nhưng) trong văn nói thân mật. Đứng cuối vế thứ nhất." },
+        { "part": "〜", "role": "Vế thứ hai: ý trái ngược, hoặc lời rủ / câu hỏi (khi けど là lời dạo đầu)." }
+      ],
+      "memoryTip": {
+        "emoji": "🔀",
+        "hook": "「が」 đi chơi với bạn thì đổi tên thành 「けど」!",
+        "meaning": "→ おいしいですが、高いです = おいしいけど、高い (nhưng)."
+      },
+      "examples": [
+        {
+          "jp": "この 料理は おいしいけど、高い。",
+          "romaji": "Kono ryōri wa oishii kedo, takai.",
+          "vi": "Món này ngon nhưng đắt.",
+          "context": "Nhà hàng"
+        },
+        {
+          "jp": "日本語は 難しいけど、おもしろい。",
+          "romaji": "Nihongo wa muzukashii kedo, omoshiroi.",
+          "vi": "Tiếng Nhật khó nhưng thú vị.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "行きたいけど、時間が ない。",
+          "romaji": "Ikitai kedo, jikan ga nai.",
+          "vi": "Muốn đi lắm nhưng không có thời gian.",
+          "context": "Từ chối lời rủ"
+        },
+        {
+          "jp": "映画の チケットが 2枚 あるけど、いっしょに 行かない？",
+          "romaji": "Eiga no chiketto ga ni-mai aru kedo, issho ni ikanai?",
+          "vi": "Tớ có 2 vé xem phim, đi cùng không?",
+          "context": "Rủ bạn",
+          "note": "けど ở đây là lời dạo đầu, không mang nghĩa 「nhưng」. 行かない？ = thể thân mật của 行きませんか (rủ rê)."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "あしたは 暇けど、…",
+          "right": "あしたは 暇だけど、…",
+          "explain": "Trước けど, tính từ な và danh từ phải có だ."
+        },
+        {
+          "wrong": "この 料理は おいしいだけど、高い。",
+          "right": "この 料理は おいしいけど、高い。",
+          "explain": "Tính từ い không có だ → おいしいけど."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "丁寧体 / 普通体", "meaning": "Lịch sự (です/ます) với người trên · thông thường với bạn thân", "example": "行きますか。 / 行く？" },
+    { "pattern": "Vる / Vない / Vた / Vなかった", "meaning": "Thể thông thường của động từ", "example": "きのう 映画を 見た。" },
+    { "pattern": "いA / なAだ / Nだ", "meaning": "Thể thông thường của tính từ, danh từ", "example": "きのう 東京は 雨だった。" },
+    { "pattern": "普通形？↗ · うん / ううん", "meaning": "Hội thoại thân mật: bỏ か (và だ), lược は・を・へ", "example": "あした 暇？ …ううん、暇じゃない。" },
+    { "pattern": "普通形 けど、〜", "meaning": "…nhưng… (thân mật của が)", "example": "おいしいけど、高い。" }
+  ],
+  "exercises": [
+    {
+      "id": "L20-E01",
+      "type": "choice",
+      "grammarPoint": "L20-G1",
+      "question": "Bạn hỏi giám đốc công ty xem ngày mai ông có đến văn phòng không. Câu nào phù hợp?",
+      "options": [
+        "社長、あした 会社に 来ますか。",
+        "社長、あした 会社 来る？",
+        "社長、あした 会社に 来るか。",
+        "社長、あした 会社に 来るですか。"
+      ],
+      "answer": "社長、あした 会社に 来ますか。",
+      "explanation": "Nói với cấp trên phải dùng thể lịch sự (ます). 来る？/ 来るか là thể thông thường; 来るですか là sai ngữ pháp."
+    },
+    {
+      "id": "L20-E02",
+      "type": "situation",
+      "grammarPoint": "L20-G1",
+      "question": "Bạn thân cùng phòng ký túc xá hỏi: 「あした 何 する？」. Bạn định đi mua sắm. Câu trả lời tự nhiên nhất:",
+      "options": [
+        "買い物に 行く。",
+        "買い物に 行くです。",
+        "買い物に 行かない。",
+        "買い物に 行くか。"
+      ],
+      "answer": "買い物に 行く。",
+      "explanation": "Bạn thân hỏi bằng thể thông thường → đáp bằng thể thông thường 行く. Không gắn です sau thể từ điển."
+    },
+    {
+      "id": "L20-E03",
+      "type": "identify",
+      "grammarPoint": "L20-G1",
+      "question": "Câu này thuộc văn phong nào?",
+      "jp": "きのうは とても 忙しかった。",
+      "romaji": "Kinō wa totemo isogashikatta.",
+      "vi": "Hôm qua bận ơi là bận.",
+      "options": [
+        "普通体 (thông thường)",
+        "丁寧体 (lịch sự)",
+        "Câu hỏi",
+        "Câu mệnh lệnh"
+      ],
+      "answer": "普通体 (thông thường)",
+      "explanation": "Câu kết thúc bằng 忙しかった, không có です/ます → thể thông thường."
+    },
+    {
+      "id": "L20-E04",
+      "type": "pattern",
+      "grammarPoint": "L20-G1",
+      "question": "Bạn viết nhật ký bằng tiếng Nhật. Nên dùng văn phong nào?",
+      "options": [
+        "Thể thông thường: きょうは 雨だった。",
+        "Thể lịch sự: きょうは 雨でした。 — bắt buộc",
+        "Trộn lẫn: きょうは 雨だったです。",
+        "Thể hỏi: きょうは 雨？"
+      ],
+      "answer": "Thể thông thường: きょうは 雨だった。",
+      "explanation": "Nhật ký viết cho chính mình → dùng thể thông thường. 「だったです」 là trộn sai hai văn phong."
+    },
+    {
+      "id": "L20-E05",
+      "type": "fill",
+      "grammarPoint": "L20-G2",
+      "question": "Đổi động từ trong ngoặc sang thể thông thường, gõ vào chỗ trống.",
+      "jp": "きのう 友達と 映画を ＿＿。（見ました）",
+      "vi": "Hôm qua tôi xem phim với bạn.",
+      "answer": "みた",
+      "accept": ["見た"],
+      "hint": "Thể た của 見る",
+      "explanation": "Vました → Vた: 見ました → 見た."
+    },
+    {
+      "id": "L20-E06",
+      "type": "fill",
+      "grammarPoint": "L20-G2",
+      "question": "Đổi động từ trong ngoặc sang thể thông thường, gõ vào chỗ trống.",
+      "jp": "きょうは 学校へ ＿＿。（行きません）",
+      "vi": "Hôm nay tôi không đến trường.",
+      "answer": "いかない",
+      "accept": ["行かない"],
+      "hint": "Thể ない của 行く",
+      "explanation": "Vません → Vない: 行きません → 行かない (nhóm I: く → か + ない)."
+    },
+    {
+      "id": "L20-E07",
+      "type": "fill",
+      "grammarPoint": "L20-G2",
+      "question": "Đổi động từ trong ngoặc sang thể thông thường, gõ vào chỗ trống.",
+      "jp": "日曜日は どこも ＿＿。（行きませんでした）",
+      "vi": "Chủ nhật tôi chẳng đi đâu cả.",
+      "answer": "いかなかった",
+      "accept": ["行かなかった"],
+      "hint": "Thể ない → bỏ い → thêm かった",
+      "explanation": "Vませんでした → Vなかった: 行かない → 行かなかった."
+    },
+    {
+      "id": "L20-E08",
+      "type": "choice",
+      "grammarPoint": "L20-G2",
+      "question": "Thể thông thường của 「(お金が) ありません」 là gì?",
+      "options": ["ない", "あらない", "ありない", "あない"],
+      "answer": "ない",
+      "explanation": "ある là ngoại lệ: phủ định là ない, không có dạng あらない."
+    },
+    {
+      "id": "L20-E09",
+      "type": "choice",
+      "grammarPoint": "L20-G2",
+      "question": "Thể thông thường của 「来ません」 đọc là gì?",
+      "options": ["こない", "きない", "くない", "こらない"],
+      "answer": "こない",
+      "explanation": "来る (くる) → thể ない là 来ない, đọc 「こない」."
+    },
+    {
+      "id": "L20-E10",
+      "type": "fix",
+      "grammarPoint": "L20-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "きのう 宿題を するなかった。",
+      "options": [
+        "きのう 宿題を しなかった。",
+        "きのう 宿題を しないかった。",
+        "きのう 宿題を するなかったです。",
+        "きのう 宿題を さなかった。"
+      ],
+      "answer": "きのう 宿題を しなかった。",
+      "explanation": "Vなかった tạo từ thể ない: する → しない → しなかった (bỏ い, thêm かった)."
+    },
+    {
+      "id": "L20-E11",
+      "type": "vi-jp",
+      "grammarPoint": "L20-G2",
+      "question": "Chọn câu tiếng Nhật (thể thông thường) đúng nghĩa.",
+      "vi": "Tôi không uống rượu.",
+      "options": [
+        "お酒は 飲まない。",
+        "お酒は 飲まなかった。",
+        "お酒は 飲む。",
+        "お酒は 飲みない。"
+      ],
+      "answer": "お酒は 飲まない。",
+      "explanation": "Phủ định hiện tại → Vない: 飲む → 飲まない. 飲まなかった là quá khứ (đã không uống)."
+    },
+    {
+      "id": "L20-E12",
+      "type": "order",
+      "grammarPoint": "L20-G2",
+      "question": "Sắp xếp thành câu đúng (thể thông thường).",
+      "vi": "Sáng nào tôi cũng dậy lúc 6 giờ.",
+      "tokens": ["毎朝", "6時に", "起きる"],
+      "accept": [["6時に", "毎朝", "起きる"]],
+      "explanation": "Thời gian đứng đầu, động từ thể từ điển 起きる (= 起きます) ở cuối câu."
+    },
+    {
+      "id": "L20-E13",
+      "type": "choice",
+      "grammarPoint": "L20-G3",
+      "question": "Thể thông thường quá khứ của 「いい」 là gì?",
+      "options": ["よかった", "いかった", "いいだった", "よいでした"],
+      "answer": "よかった",
+      "explanation": "いい biến đổi từ よい: よかった, よくない, よくなかった."
+    },
+    {
+      "id": "L20-E14",
+      "type": "fill",
+      "grammarPoint": "L20-G3",
+      "question": "Đổi từ trong ngoặc sang thể thông thường, gõ vào chỗ trống.",
+      "jp": "きのうは ＿＿。（寒かったです）",
+      "vi": "Hôm qua trời lạnh.",
+      "answer": "さむかった",
+      "accept": ["寒かった"],
+      "explanation": "Tính từ い chỉ cần bỏ です: 寒かったです → 寒かった."
+    },
+    {
+      "id": "L20-E15",
+      "type": "fix",
+      "grammarPoint": "L20-G3",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "この 部屋は きれいくない。",
+      "options": [
+        "この 部屋は きれいじゃない。",
+        "この 部屋は きれくない。",
+        "この 部屋は きれいだない。",
+        "この 部屋は きれいくなかった。"
+      ],
+      "answer": "この 部屋は きれいじゃない。",
+      "explanation": "きれい là tính từ な → phủ định thông thường là きれいじゃない."
+    },
+    {
+      "id": "L20-E16",
+      "type": "vi-jp",
+      "grammarPoint": "L20-G3",
+      "question": "Chọn câu tiếng Nhật (thể thông thường) đúng nghĩa.",
+      "vi": "Hôm qua Tokyo mưa.",
+      "options": [
+        "きのう 東京は 雨だった。",
+        "きのう 東京は 雨かった。",
+        "きのう 東京は 雨だ。",
+        "きのう 東京は 雨じゃなかった。"
+      ],
+      "answer": "きのう 東京は 雨だった。",
+      "explanation": "Danh từ ở quá khứ: 雨でした → 雨だった. 「雨かった」 sai vì かった chỉ dành cho tính từ い."
+    },
+    {
+      "id": "L20-E17",
+      "type": "identify",
+      "grammarPoint": "L20-G3",
+      "question": "Trong câu này, 「静かじゃなかった」 là dạng nào?",
+      "jp": "あの 店は 静かじゃなかった。",
+      "romaji": "Ano mise wa shizuka ja nakatta.",
+      "vi": "Quán đó không yên tĩnh.",
+      "options": [
+        "Quá khứ phủ định của tính từ な",
+        "Quá khứ khẳng định của tính từ な",
+        "Hiện tại phủ định của tính từ な",
+        "Quá khứ phủ định của tính từ い"
+      ],
+      "answer": "Quá khứ phủ định của tính từ な",
+      "explanation": "静か là tính từ な; じゃなかった = じゃ ありませんでした (quá khứ phủ định)."
+    },
+    {
+      "id": "L20-E18",
+      "type": "fix",
+      "grammarPoint": "L20-G4",
+      "question": "Bạn muốn hỏi bạn thân 「Mai rảnh không?」. Câu sau chưa tự nhiên. Chọn cách sửa đúng.",
+      "jp": "あした 暇だ？",
+      "options": [
+        "あした 暇？",
+        "あした 暇だか？",
+        "あした 暇です？",
+        "あした 暇な？"
+      ],
+      "answer": "あした 暇？",
+      "explanation": "Câu hỏi thân mật với N / なA: bỏ だ, chỉ lên giọng ở cuối."
+    },
+    {
+      "id": "L20-E19",
+      "type": "situation",
+      "grammarPoint": "L20-G4",
+      "question": "Bạn thân hỏi 「コーヒー 飲む？」. Bạn KHÔNG muốn uống. Trả lời thân mật thế nào?",
+      "options": [
+        "ううん、飲まない。",
+        "うん、飲まない。",
+        "ううん、飲む。",
+        "うん、飲みません。"
+      ],
+      "answer": "ううん、飲まない。",
+      "explanation": "ううん = không (thân mật của いいえ), đi với thể phủ định thông thường 飲まない."
+    },
+    {
+      "id": "L20-E20",
+      "type": "jp-vi",
+      "grammarPoint": "L20-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "日曜日 どこ 行った？",
+      "romaji": "Nichiyōbi doko itta?",
+      "options": [
+        "Chủ nhật đi đâu thế?",
+        "Chủ nhật định đi đâu?",
+        "Chủ nhật không đi đâu à?",
+        "Chủ nhật đi đâu cũng được."
+      ],
+      "answer": "Chủ nhật đi đâu thế?",
+      "explanation": "行った là quá khứ (đã đi), câu hỏi lên giọng không có か; trợ từ へ đã được lược."
+    },
+    {
+      "id": "L20-E21",
+      "type": "choice",
+      "grammarPoint": "L20-G4",
+      "question": "Trong hội thoại thân mật, trợ từ nào KHÔNG nên lược bỏ?",
+      "options": [
+        "で trong 「図書館で 勉強する」",
+        "を trong 「コーヒーを 飲む」",
+        "へ trong 「どこへ 行く」",
+        "は trong 「この 本は おもしろい」"
+      ],
+      "answer": "で trong 「図書館で 勉強する」",
+      "explanation": "は・を・へ thường được lược. で chỉ nơi hành động mang nghĩa quan trọng nên phải giữ."
+    },
+    {
+      "id": "L20-E22",
+      "type": "jp-vi",
+      "grammarPoint": "L20-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "今 何 してる？ …テレビ 見てる。",
+      "romaji": "Ima nani shiteru? … Terebi miteru.",
+      "options": [
+        "Đang làm gì đấy? …Đang xem TV.",
+        "Đã làm gì thế? …Đã xem TV.",
+        "Muốn làm gì? …Muốn xem TV.",
+        "Sẽ làm gì? …Sẽ xem TV."
+      ],
+      "answer": "Đang làm gì đấy? …Đang xem TV.",
+      "explanation": "してる / 見てる là dạng nói tắt của して いる / 見て いる (đang làm)."
+    },
+    {
+      "id": "L20-E23",
+      "type": "particle",
+      "grammarPoint": "L20-G5",
+      "question": "Chọn từ điền vào chỗ trống.",
+      "jp": "日本語は 難しい＿＿、おもしろい。",
+      "romaji": "Nihongo wa muzukashii ___, omoshiroi.",
+      "vi": "Tiếng Nhật khó nhưng thú vị.",
+      "options": ["けど", "から", "と", "も"],
+      "answer": "けど",
+      "explanation": "Hai ý trái ngược (khó ↔ thú vị) → けど = nhưng. から là 「vì」, không hợp nghĩa."
+    },
+    {
+      "id": "L20-E24",
+      "type": "fix",
+      "grammarPoint": "L20-G5",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "あしたは 暇けど、あさっては 忙しい。",
+      "options": [
+        "あしたは 暇だけど、あさっては 忙しい。",
+        "あしたは 暇いけど、あさっては 忙しい。",
+        "あしたは 暇なけど、あさっては 忙しい。",
+        "あしたは 暇だっけど、あさっては 忙しい。"
+      ],
+      "answer": "あしたは 暇だけど、あさっては 忙しい。",
+      "explanation": "Trước けど, tính từ な và danh từ phải có だ: 暇だけど."
+    },
+    {
+      "id": "L20-E25",
+      "type": "order",
+      "grammarPoint": "L20-G5",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Món này ngon nhưng đắt.",
+      "tokens": ["この", "料理は", "おいしい", "けど、", "高い"],
+      "explanation": "Vế 1 (ngon) + けど + vế 2 (đắt). Đổi chỗ おいしい và 高い sẽ thành 「đắt nhưng ngon」 — sai nghĩa."
+    },
+    {
+      "id": "L20-E26",
+      "type": "jp-vi",
+      "grammarPoint": "L20-G5",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "映画の チケットが 2枚 あるけど、いっしょに 行かない？",
+      "romaji": "Eiga no chiketto ga ni-mai aru kedo, issho ni ikanai?",
+      "options": [
+        "Tớ có 2 vé xem phim, đi cùng không?",
+        "Tớ có 2 vé xem phim nhưng không đi cùng đâu.",
+        "Tớ không có vé xem phim nên không đi.",
+        "Có 2 vé xem phim nhưng không đi được à?"
+      ],
+      "answer": "Tớ có 2 vé xem phim, đi cùng không?",
+      "explanation": "けど ở đây là lời dạo đầu; 行かない？ lên giọng = rủ rê thân mật (= 行きませんか)."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 20 }
+}

@@ -1,0 +1,771 @@
+{
+  "lesson": 21,
+  "title": "Nêu ý kiến và trích dẫn",
+  "titleJp": "わたしも そう 思います",
+  "topic": "〜と 思います · 〜について どう 思いますか · 〜と 言います · 〜でしょう？ · sự kiện diễn ra ở đâu",
+  "description": "Học xong bài này bạn nói được suy đoán và ý kiến của mình, hỏi ý kiến người khác, thuật lại lời ai đó nói, xác nhận điều mà người nghe cũng biết, và nói sự kiện (tiệc, trận đấu, cuộc họp) diễn ra ở đâu.",
+  "objectives": [
+    "Nói suy đoán bằng 普通形 と 思います.",
+    "Nêu ý kiến và hỏi ý kiến: 〜と 思います / N について どう 思いますか.",
+    "Trích dẫn trực tiếp 「…」と 言います và gián tiếp 普通形 と 言います.",
+    "Xác nhận, mong người nghe đồng ý bằng 〜でしょう？",
+    "Nói nơi diễn ra sự kiện: N1 で N2 が あります.",
+    "Dùng で để chỉ dịp / tình huống: 会議で, パーティーで."
+  ],
+  "keyPoints": [
+    "Trước と 思います / と 言います luôn là thể thông thường (普通形).",
+    "N / なA phải giữ だ trước と: 雨だと 思います, きれいだと 思います.",
+    "Hỏi ý kiến: N について どう 思いますか. Đồng ý: わたしも そう 思います.",
+    "Trích dẫn nguyên văn → đặt trong 「 」, giữ nguyên câu gốc. Thuật lại gián tiếp → đổi sang thể thông thường, không có 「 」.",
+    "〜でしょう？ lên giọng: N / なA BỎ だ (上手でしょう？).",
+    "Đồ vật ở đâu: に あります. Sự kiện diễn ra ở đâu: で あります."
+  ],
+  "grammarPoints": [
+    {
+      "id": "L21-G1",
+      "title": "普通形 と 思います — suy đoán",
+      "meaning": "Tôi nghĩ là… / Chắc là…",
+      "why": "Khi không chắc chắn 100%, người Nhật rất hay dùng 〜と 思います để nói mềm mỏng: 「Tôi nghĩ mai trời mưa」, 「Chắc anh ấy về rồi」 — thay vì khẳng định cứng.",
+      "when": [
+        "Đoán thời tiết, đoán việc sẽ xảy ra.",
+        "Đoán tình trạng của người khác: đã về chưa, có đến không.",
+        "Muốn nói nhẹ nhàng, không khẳng định chắc chắn."
+      ],
+      "formula": "V / いA (普通形) と 思います\nN / なA + だ と 思います",
+      "parts": [
+        { "part": "普通形", "role": "Nội dung suy nghĩ, ở thể thông thường: 降る, 帰った, 来ない, 高い…" },
+        { "part": "だ", "role": "N và なA phải giữ だ: 休みだ, 元気だ. Tính từ い thì không có だ." },
+        { "part": "と", "role": "Trợ từ trích dẫn — 「rằng, là」, nối nội dung với động từ 思います." },
+        { "part": "思います", "role": "Nghĩ. Chủ ngữ mặc định là 「tôi」." }
+      ],
+      "memoryTip": {
+        "emoji": "💭",
+        "hook": "Nghĩ gì thì nói ra, rồi gói lại bằng 「と 思います」!",
+        "meaning": "→ Nội dung (thể thông thường) + と + 思います. N / なA nhớ giữ だ."
+      },
+      "examples": [
+        {
+          "jp": "あしたは 雨が 降ると 思います。",
+          "romaji": "Ashita wa ame ga furu to omoimasu.",
+          "vi": "Tôi nghĩ ngày mai trời sẽ mưa.",
+          "context": "Thời tiết",
+          "breakdown": [
+            { "jp": "雨が 降る", "vi": "trời mưa (thể thông thường)" },
+            { "jp": "と", "vi": "rằng" },
+            { "jp": "思います", "vi": "tôi nghĩ" }
+          ]
+        },
+        {
+          "jp": "ミラーさんは もう 帰ったと 思います。",
+          "romaji": "Mirā-san wa mō kaetta to omoimasu.",
+          "vi": "Tôi nghĩ anh Miller đã về rồi.",
+          "context": "Văn phòng"
+        },
+        {
+          "jp": "山田さんは パーティーに 来ないと 思います。",
+          "romaji": "Yamada-san wa pātī ni konai to omoimasu.",
+          "vi": "Tôi nghĩ anh Yamada sẽ không đến bữa tiệc.",
+          "context": "Chuẩn bị tiệc",
+          "note": "Đoán 「không」 thì phủ định ở vế trước: 来ないと 思います."
+        },
+        {
+          "jp": "あの レストランは きょう 休みだと 思います。",
+          "romaji": "Ano resutoran wa kyō yasumi da to omoimasu.",
+          "vi": "Tôi nghĩ nhà hàng đó hôm nay nghỉ.",
+          "context": "Nhà hàng",
+          "note": "休み là danh từ → phải có だ: 休みだと 思います."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "あしたは 雨と 思います。",
+          "right": "あしたは 雨だと 思います。",
+          "explain": "Danh từ (雨) và tính từ な phải giữ だ trước と 思います."
+        },
+        {
+          "wrong": "ミラーさんは もう 帰りましたと 思います。",
+          "right": "ミラーさんは もう 帰ったと 思います。",
+          "explain": "Phần trước と phải ở thể thông thường. Độ lịch sự đã nằm ở 思います rồi."
+        },
+        {
+          "wrong": "山田さんは 来ると 思いません。",
+          "right": "山田さんは 来ないと 思います。",
+          "explain": "Câu sai không hẳn sai ngữ pháp, nhưng người Nhật tự nhiên hơn khi phủ định ở vế trước: 「tôi nghĩ là KHÔNG đến」."
+        }
+      ]
+    },
+    {
+      "id": "L21-G2",
+      "title": "〜と 思います (ý kiến) · N について どう 思いますか",
+      "meaning": "Tôi cho rằng… · Bạn nghĩ thế nào về N?",
+      "why": "Trong lớp học, cuộc họp hay khi nói chuyện, bạn cần nêu quan điểm và hỏi ý kiến người khác. Mẫu này giúp nói ý kiến một cách lịch sự, không áp đặt.",
+      "when": [
+        "Nêu nhận xét, quan điểm: 「Tôi cho rằng tàu điện Nhật tiện lợi」.",
+        "Hỏi ý kiến người khác về một chủ đề.",
+        "Đồng ý / không đồng ý với ý kiến vừa nghe."
+      ],
+      "formula": "普通形 と 思います\nN について どう 思いますか\n→ 〜と 思います / わたしも そう 思います",
+      "parts": [
+        { "part": "N について", "role": "「về N」 — chủ đề muốn hỏi ý kiến." },
+        { "part": "どう", "role": "「thế nào」 — hỏi ý kiến thì dùng どう, không dùng 何." },
+        { "part": "そう 思います", "role": "「Tôi nghĩ vậy」 — dùng để đồng tình. Không đồng tình: そう 思いません / 〜と 思います (nêu ý mình)." }
+      ],
+      "memoryTip": null,
+      "keyword": "Hỏi ý kiến = 「について どう 思いますか」 · Đồng ý = 「わたしも そう 思います」",
+      "examples": [
+        {
+          "jp": "日本の 電車は 便利だと 思います。",
+          "romaji": "Nihon no densha wa benri da to omoimasu.",
+          "vi": "Tôi cho rằng tàu điện Nhật Bản tiện lợi.",
+          "context": "Đi tàu",
+          "note": "便利 là tính từ な → 便利だと 思います."
+        },
+        {
+          "jp": "日本の 物価に ついて どう 思いますか。 …高いと 思います。",
+          "romaji": "Nihon no bukka ni tsuite dō omoimasu ka. … Takai to omoimasu.",
+          "vi": "Bạn nghĩ thế nào về vật giá ở Nhật? …Tôi nghĩ là đắt.",
+          "context": "Mua sắm",
+          "breakdown": [
+            { "jp": "物価", "vi": "vật giá" },
+            { "jp": "に ついて", "vi": "về" },
+            { "jp": "どう 思いますか", "vi": "nghĩ thế nào" }
+          ]
+        },
+        {
+          "jp": "新しい 空港に ついて どう 思いますか。 …きれいですが、ちょっと 遠いと 思います。",
+          "romaji": "Atarashii kūkō ni tsuite dō omoimasu ka. … Kirei desu ga, chotto tōi to omoimasu.",
+          "vi": "Anh nghĩ sao về sân bay mới? …Đẹp nhưng tôi thấy hơi xa.",
+          "context": "Du lịch"
+        },
+        {
+          "jp": "ベトナムの 料理は おいしいと 思います。 …わたしも そう 思います。",
+          "romaji": "Betonamu no ryōri wa oishii to omoimasu. … Watashi mo sō omoimasu.",
+          "vi": "Tôi thấy món ăn Việt Nam ngon. …Tôi cũng nghĩ vậy.",
+          "context": "Nói chuyện ở công ty"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "日本の 物価に ついて 何 思いますか。",
+          "right": "日本の 物価に ついて どう 思いますか。",
+          "explain": "Hỏi ý kiến (thấy thế nào) phải dùng どう, không dùng 何 (cái gì)."
+        },
+        {
+          "wrong": "日本の 物価を ついて どう 思いますか。",
+          "right": "日本の 物価に ついて どう 思いますか。",
+          "explain": "「về N」 luôn là N に ついて — trợ từ に, không phải を."
+        }
+      ]
+    },
+    {
+      "id": "L21-G3",
+      "title": "「câu」と 言います · 普通形 と 言います",
+      "meaning": "Nói rằng… / (ai đó) đã nói là…",
+      "why": "Để thuật lại lời người khác: 「Thầy nói tuần sau có kiểm tra」, 「Anh Miller bảo mai nghỉ」, hoặc giải thích người Nhật nói gì trong một tình huống.",
+      "when": [
+        "Trích dẫn nguyên văn lời nói (đặt trong 「 」).",
+        "Thuật lại gián tiếp nội dung ai đó nói (không có 「 」).",
+        "Nói câu cửa miệng dùng trong tình huống nào: trước khi ngủ nói 「お休みなさい」."
+      ],
+      "formula": "「câu nguyên văn」と 言います (trực tiếp)\n普通形 と 言います (gián tiếp)\nN(người) に 言います (nói với ai)",
+      "parts": [
+        { "part": "「 」", "role": "Dấu ngoặc trích dẫn — bên trong giữ nguyên câu gốc (có thể là です/ます)." },
+        { "part": "普通形", "role": "Thuật lại gián tiếp → đổi nội dung sang thể thông thường, bỏ 「 」." },
+        { "part": "と", "role": "Trợ từ trích dẫn, đứng ngay trước 言います." },
+        { "part": "言います", "role": "Nói. Kể lại lời đã nói thì dùng 言いました." }
+      ],
+      "memoryTip": {
+        "emoji": "🗨️",
+        "hook": "Lời ai nói thì kẹp vào 「 」, chốt bằng 「と 言いました」!",
+        "meaning": "→ Không có 「 」 (thuật gián tiếp) thì đổi nội dung sang thể thông thường."
+      },
+      "examples": [
+        {
+          "jp": "寝る まえに、「お休みなさい」と 言います。",
+          "romaji": "Neru mae ni, 'Oyasuminasai' to iimasu.",
+          "vi": "Trước khi đi ngủ thì nói 「Chúc ngủ ngon」.",
+          "context": "Sinh hoạt gia đình"
+        },
+        {
+          "jp": "ミラーさんは 「あした 休みます」と 言いました。",
+          "romaji": "Mirā-san wa 'Ashita yasumimasu' to iimashita.",
+          "vi": "Anh Miller đã nói: 「Mai tôi nghỉ」.",
+          "context": "Văn phòng (trích dẫn trực tiếp)"
+        },
+        {
+          "jp": "ミラーさんは あした 休むと 言いました。",
+          "romaji": "Mirā-san wa ashita yasumu to iimashita.",
+          "vi": "Anh Miller nói là mai anh ấy nghỉ.",
+          "context": "Văn phòng (thuật gián tiếp)",
+          "note": "Gián tiếp → 休みます đổi thành 休む, bỏ 「 」."
+        },
+        {
+          "jp": "先生は 来週 試験が あると 言いました。",
+          "romaji": "Sensei wa raishū shiken ga aru to iimashita.",
+          "vi": "Thầy giáo nói tuần sau có bài thi.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "「Thank you」は 日本語で 何と 言いますか。 …「ありがとう」と 言います。",
+          "romaji": "'Thank you' wa Nihongo de nan to iimasu ka. … 'Arigatō' to iimasu.",
+          "vi": "「Thank you」 tiếng Nhật nói thế nào? …Nói là 「ありがとう」.",
+          "context": "Lớp học"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "ミラーさんは あした 休みますと 言いました。",
+          "right": "ミラーさんは あした 休むと 言いました。",
+          "explain": "Không có 「 」 là thuật gián tiếp → nội dung phải ở thể thông thường (休む). Nếu giữ 休みます thì phải đặt trong 「 」."
+        },
+        {
+          "wrong": "「おはよう」を 言います。",
+          "right": "「おはよう」と 言います。",
+          "explain": "Nội dung lời nói đi với と (trích dẫn), không dùng を."
+        }
+      ]
+    },
+    {
+      "id": "L21-G4",
+      "title": "普通形 でしょう？ — xác nhận",
+      "meaning": "…phải không? / …đúng không nhỉ?",
+      "why": "Khi bạn nghĩ người nghe cũng biết hoặc sẽ đồng ý, dùng でしょう？ (lên giọng) để xác nhận — nghe thân thiện, kéo người nghe vào câu chuyện.",
+      "when": [
+        "Xác nhận điều mình khá chắc: 「Mai cậu đi tiệc đúng không?」",
+        "Đoán cảm nhận của người nghe và mong họ đồng ý: 「Hokkaido lạnh lắm phải không?」"
+      ],
+      "formula": "V / いA (普通形) でしょう？↗\nN / なA (bỏ だ) でしょう？↗",
+      "parts": [
+        { "part": "普通形", "role": "Động từ, tính từ い ở thể thông thường: 行く, 寒かった…" },
+        { "part": "(bỏ だ)", "role": "N / なA không có だ trước でしょう: 上手でしょう？, 先生でしょう？" },
+        { "part": "でしょう？↗", "role": "Lên giọng ở cuối — xác nhận, mong người nghe đồng ý." }
+      ],
+      "memoryTip": {
+        "emoji": "🤝",
+        "hook": "「でしょう？」 lên giọng = kéo người nghe cùng gật đầu!",
+        "meaning": "→ Mình nghĩ người nghe cũng biết / đồng ý, chỉ hỏi lại cho chắc."
+      },
+      "examples": [
+        {
+          "jp": "あしたの パーティーに 行くでしょう？ …ええ、行きます。",
+          "romaji": "Ashita no pātī ni iku deshō? … Ē, ikimasu.",
+          "vi": "Mai anh đi tiệc đúng không? …Vâng, tôi đi.",
+          "context": "Văn phòng"
+        },
+        {
+          "jp": "北海道は 寒かったでしょう？ …いいえ、あまり 寒くなかったです。",
+          "romaji": "Hokkaidō wa samukatta deshō? … Iie, amari samukunakatta desu.",
+          "vi": "Hokkaido lạnh lắm phải không? …Không, không lạnh lắm.",
+          "context": "Hỏi chuyện du lịch"
+        },
+        {
+          "jp": "カリナさんは 絵が 上手でしょう？",
+          "romaji": "Karina-san wa e ga jōzu deshō?",
+          "vi": "Karina vẽ giỏi nhỉ, đúng không?",
+          "context": "Trường học",
+          "note": "上手 là tính từ な → bỏ だ: 上手でしょう？"
+        },
+        {
+          "jp": "あの 人は ワンさんの 奥さんでしょう？",
+          "romaji": "Ano hito wa Wan-san no okusan deshō?",
+          "vi": "Người kia là vợ anh Wang phải không?",
+          "context": "Ở bữa tiệc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "カリナさんは 絵が 上手だでしょう？",
+          "right": "カリナさんは 絵が 上手でしょう？",
+          "explain": "Trước でしょう, N / なA bỏ だ (khác với と 思います phải giữ だ)."
+        },
+        {
+          "wrong": "パーティーに 行きますでしょう？",
+          "right": "パーティーに 行くでしょう？",
+          "explain": "Trước でしょう dùng thể thông thường (行く), không dùng ます."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: でしょう xuống giọng",
+          "text": "Ở bài 32 bạn sẽ học でしょう xuống giọng với nghĩa 「có lẽ」 (dự báo thời tiết: あしたは 雨でしょう). Bài này chỉ học でしょう？ lên giọng để xác nhận."
+        }
+      ]
+    },
+    {
+      "id": "L21-G5",
+      "title": "N1(nơi) で N2 が あります — sự kiện diễn ra",
+      "meaning": "Ở N1 có / diễn ra N2 (tiệc, trận đấu, cuộc họp, lễ hội…)",
+      "why": "あります không chỉ dùng cho đồ vật. Khi nói sự kiện diễn ra ở đâu, nơi chốn đi với で chứ không phải に — đây là lỗi người mới học rất hay mắc.",
+      "when": [
+        "Thông báo nơi diễn ra sự kiện: tiệc, lễ hội, trận đấu, cuộc họp, buổi hoà nhạc.",
+        "Hỏi sự kiện được tổ chức ở đâu: どこで 〜が ありますか."
+      ],
+      "formula": "N1(nơi) で N2(sự kiện) が あります",
+      "parts": [
+        { "part": "N1 で", "role": "Nơi sự kiện DIỄN RA — dùng で (giống nơi diễn ra hành động)." },
+        { "part": "N2 が", "role": "Sự kiện: パーティー, 試合, 会議, お祭り, コンサート…" },
+        { "part": "あります", "role": "「có, diễn ra」 (sự kiện)." }
+      ],
+      "memoryTip": {
+        "emoji": "🎉",
+        "hook": "Đồ vật NẰM ở đâu → 「に」; sự kiện DIỄN RA ở đâu → 「で」!",
+        "meaning": "→ 机の 上に 本が あります / 東京で 試合が あります."
+      },
+      "examples": [
+        {
+          "jp": "東京で 日本と ブラジルの サッカーの 試合が あります。",
+          "romaji": "Tōkyō de Nihon to Burajiru no sakkā no shiai ga arimasu.",
+          "vi": "Ở Tokyo có trận bóng đá giữa Nhật Bản và Brazil.",
+          "context": "Thể thao"
+        },
+        {
+          "jp": "あした 会社で 会議が あります。",
+          "romaji": "Ashita kaisha de kaigi ga arimasu.",
+          "vi": "Ngày mai có cuộc họp ở công ty.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "土曜日 ミラーさんの うちで パーティーが あります。",
+          "romaji": "Doyōbi Mirā-san no uchi de pātī ga arimasu.",
+          "vi": "Thứ bảy có tiệc ở nhà anh Miller.",
+          "context": "Bạn bè"
+        },
+        {
+          "jp": "どこで お祭りが ありますか。 …京都で あります。",
+          "romaji": "Doko de omatsuri ga arimasu ka. … Kyōto de arimasu.",
+          "vi": "Lễ hội diễn ra ở đâu? …Ở Kyoto.",
+          "context": "Du lịch"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "あした 会社に 会議が あります。",
+          "right": "あした 会社で 会議が あります。",
+          "explain": "会議 là sự kiện → nơi diễn ra dùng で. に あります chỉ dùng cho vị trí của đồ vật, người."
+        },
+        {
+          "wrong": "東京で 試合を あります。",
+          "right": "東京で 試合が あります。",
+          "explain": "Sự kiện là chủ thể của あります → dùng が."
+        }
+      ]
+    },
+    {
+      "id": "L21-G6",
+      "title": "N(dịp / tình huống) で",
+      "meaning": "Trong (cuộc họp, bữa tiệc, kỳ thi…)",
+      "why": "Để nói hành động xảy ra trong khuôn khổ một sự kiện, dịp nào: 「phát biểu TRONG cuộc họp」, 「hát TRONG bữa tiệc」.",
+      "when": [
+        "Nói việc làm trong một cuộc họp, bữa tiệc, lễ cưới, kỳ thi…",
+        "Hỏi về hành động trong một dịp cụ thể: 会議で 何か 意見を 言いましたか."
+      ],
+      "formula": "N(dịp / tình huống) で V",
+      "parts": [
+        { "part": "N", "role": "Dịp, sự kiện, tình huống: 会議, パーティー, 試験, 結婚式…" },
+        { "part": "で", "role": "Chỉ khuôn khổ / phạm vi hành động diễn ra — 「trong, tại」." }
+      ],
+      "memoryTip": null,
+      "keyword": "で = 「trong dịp…」: 会議で, パーティーで, 試験で",
+      "examples": [
+        {
+          "jp": "会議で 何か 意見を 言いましたか。 …いいえ、何も 言いませんでした。",
+          "romaji": "Kaigi de nanika iken o iimashita ka. … Iie, nani mo iimasen deshita.",
+          "vi": "Trong cuộc họp anh có nêu ý kiến gì không? …Không, tôi không nói gì cả.",
+          "context": "Công việc"
+        },
+        {
+          "jp": "パーティーで ベトナムの 歌を 歌いました。",
+          "romaji": "Pātī de Betonamu no uta o utaimashita.",
+          "vi": "Tôi đã hát một bài hát Việt Nam trong bữa tiệc.",
+          "context": "Tiệc công ty"
+        },
+        {
+          "jp": "試験で 辞書を 使っても いいですか。",
+          "romaji": "Shiken de jisho o tsukatte mo ii desu ka.",
+          "vi": "Trong giờ thi có được dùng từ điển không ạ?",
+          "context": "Trường học"
+        },
+        {
+          "jp": "友達の 結婚式で スピーチを しました。",
+          "romaji": "Tomodachi no kekkonshiki de supīchi o shimashita.",
+          "vi": "Tôi đã phát biểu trong lễ cưới của bạn.",
+          "context": "Gia đình, bạn bè"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "会議に 意見を 言いました。",
+          "right": "会議で 意見を 言いました。",
+          "explain": "Hành động diễn ra trong khuôn khổ cuộc họp → で. (会議に 出ます = tham dự cuộc họp — nghĩa khác.)"
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "普通形 と 思います", "meaning": "Tôi nghĩ là… (suy đoán)", "example": "あしたは 雨が 降ると 思います。" },
+    { "pattern": "N について どう 思いますか", "meaning": "Bạn nghĩ thế nào về N? (hỏi ý kiến)", "example": "日本の 物価に ついて どう 思いますか。" },
+    { "pattern": "「…」/ 普通形 と 言います", "meaning": "Nói rằng… (trích dẫn)", "example": "ミラーさんは あした 休むと 言いました。" },
+    { "pattern": "普通形 でしょう？", "meaning": "…phải không? (xác nhận)", "example": "北海道は 寒かったでしょう？" },
+    { "pattern": "N1 で N2 が あります", "meaning": "Ở N1 diễn ra sự kiện N2", "example": "会社で 会議が あります。" },
+    { "pattern": "N(dịp) で", "meaning": "Trong (cuộc họp, bữa tiệc…)", "example": "会議で 意見を 言いました。" }
+  ],
+  "exercises": [
+    {
+      "id": "L21-E01",
+      "type": "particle",
+      "grammarPoint": "L21-G1",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "あしたは 雨が 降る＿＿ 思います。",
+      "romaji": "Ashita wa ame ga furu ___ omoimasu.",
+      "vi": "Tôi nghĩ ngày mai trời sẽ mưa.",
+      "options": ["と", "を", "が", "に"],
+      "answer": "と",
+      "explanation": "Nội dung suy nghĩ + と + 思います. と là trợ từ trích dẫn."
+    },
+    {
+      "id": "L21-E02",
+      "type": "fix",
+      "grammarPoint": "L21-G1",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "あの レストランは きょう 休みと 思います。",
+      "options": [
+        "あの レストランは きょう 休みだと 思います。",
+        "あの レストランは きょう 休みですと 思います。",
+        "あの レストランは きょう 休みなと 思います。",
+        "あの レストランは きょう 休みのと 思います。"
+      ],
+      "answer": "あの レストランは きょう 休みだと 思います。",
+      "explanation": "休み là danh từ → trước と 思います phải có だ. Không dùng です vì phần trước と là thể thông thường."
+    },
+    {
+      "id": "L21-E03",
+      "type": "vi-jp",
+      "grammarPoint": "L21-G1",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Tôi nghĩ anh Miller đã về rồi.",
+      "options": [
+        "ミラーさんは もう 帰ったと 思います。",
+        "ミラーさんは もう 帰りましたと 思います。",
+        "ミラーさんは もう 帰ると 思います。",
+        "ミラーさんは もう 帰ったを 思います。"
+      ],
+      "answer": "ミラーさんは もう 帰ったと 思います。",
+      "explanation": "「đã về」 → thể た 帰った (thông thường) + と 思います. Không dùng ます trước と."
+    },
+    {
+      "id": "L21-E04",
+      "type": "fill",
+      "grammarPoint": "L21-G1",
+      "question": "Đổi động từ trong ngoặc sang thể thông thường, gõ vào chỗ trống.",
+      "jp": "山田さんは パーティーに ＿＿と 思います。（来ません）",
+      "vi": "Tôi nghĩ anh Yamada sẽ không đến bữa tiệc.",
+      "answer": "こない",
+      "accept": ["来ない"],
+      "hint": "Thể ない của 来る",
+      "explanation": "Đoán 「không đến」 → phủ định ở vế trước: 来ない (こない) + と 思います."
+    },
+    {
+      "id": "L21-E05",
+      "type": "order",
+      "grammarPoint": "L21-G1",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi nghĩ bài thi tuần sau sẽ khó.",
+      "tokens": ["来週の", "試験は", "難しい", "と", "思います"],
+      "explanation": "Nội dung (来週の 試験は 難しい) + と + 思います. Tính từ い không cần だ."
+    },
+    {
+      "id": "L21-E06",
+      "type": "particle",
+      "grammarPoint": "L21-G2",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "日本の 物価＿＿ ついて どう 思いますか。",
+      "romaji": "Nihon no bukka ___ tsuite dō omoimasu ka.",
+      "vi": "Bạn nghĩ thế nào về vật giá ở Nhật?",
+      "options": ["に", "を", "で", "が"],
+      "answer": "に",
+      "explanation": "「về N」 = N に ついて."
+    },
+    {
+      "id": "L21-E07",
+      "type": "situation",
+      "grammarPoint": "L21-G2",
+      "question": "Đồng nghiệp nói 「ベトナムの 料理は おいしいと 思います」. Bạn hoàn toàn đồng ý. Bạn nói:",
+      "options": [
+        "わたしも そう 思います。",
+        "わたしも そう 言います。",
+        "わたしは そう 思いません。",
+        "わたしも どう 思いますか。"
+      ],
+      "answer": "わたしも そう 思います。",
+      "explanation": "Đồng tình với ý kiến vừa nghe → わたしも そう 思います (Tôi cũng nghĩ vậy)."
+    },
+    {
+      "id": "L21-E08",
+      "type": "jp-vi",
+      "grammarPoint": "L21-G2",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "新しい 空港に ついて どう 思いますか。",
+      "romaji": "Atarashii kūkō ni tsuite dō omoimasu ka.",
+      "options": [
+        "Anh nghĩ thế nào về sân bay mới?",
+        "Sân bay mới ở đâu vậy?",
+        "Anh đã nói gì về sân bay mới?",
+        "Anh có đi sân bay mới không?"
+      ],
+      "answer": "Anh nghĩ thế nào về sân bay mới?",
+      "explanation": "に ついて = về; どう 思いますか = nghĩ thế nào (hỏi ý kiến)."
+    },
+    {
+      "id": "L21-E09",
+      "type": "pattern",
+      "grammarPoint": "L21-G2",
+      "question": "Bạn muốn hỏi ý kiến bạn cùng lớp về ký túc xá mới. Chọn mẫu phù hợp.",
+      "options": [
+        "N に ついて どう 思いますか",
+        "N に ついて 何と 言いますか",
+        "N で N が ありますか",
+        "N は どこですか"
+      ],
+      "answer": "N に ついて どう 思いますか",
+      "explanation": "Hỏi ý kiến, cảm nhận về một chủ đề → N に ついて どう 思いますか."
+    },
+    {
+      "id": "L21-E10",
+      "type": "particle",
+      "grammarPoint": "L21-G3",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "ご飯を 食べる まえに、「いただきます」＿＿ 言います。",
+      "romaji": "Gohan o taberu mae ni, 'Itadakimasu' ___ iimasu.",
+      "vi": "Trước khi ăn cơm thì nói 「Itadakimasu」.",
+      "options": ["と", "を", "に", "で"],
+      "answer": "と",
+      "explanation": "Nội dung lời nói (trong 「 」) + と + 言います."
+    },
+    {
+      "id": "L21-E11",
+      "type": "fix",
+      "grammarPoint": "L21-G3",
+      "question": "Câu thuật lại gián tiếp sau bị sai. Chọn cách sửa đúng.",
+      "jp": "ミラーさんは あした 休みますと 言いました。",
+      "options": [
+        "ミラーさんは あした 休むと 言いました。",
+        "ミラーさんは あした 休むを 言いました。",
+        "ミラーさんは あした 休むだと 言いました。",
+        "ミラーさんは あした 休みましたと 言いました。"
+      ],
+      "answer": "ミラーさんは あした 休むと 言いました。",
+      "explanation": "Thuật gián tiếp (không có 「 」) → nội dung ở thể thông thường: 休む + と 言いました. Động từ không thêm だ."
+    },
+    {
+      "id": "L21-E12",
+      "type": "vi-jp",
+      "grammarPoint": "L21-G3",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Thầy giáo nói tuần sau có bài thi.",
+      "options": [
+        "先生は 来週 試験が あると 言いました。",
+        "先生は 来週 試験が あると 思いました。",
+        "先生は 来週 試験が あるを 言いました。",
+        "先生は 来週 試験が あるだと 言いました。"
+      ],
+      "answer": "先生は 来週 試験が あると 言いました。",
+      "explanation": "「nói rằng」 = 普通形 + と 言いました. 思いました là 「đã nghĩ」 — sai nghĩa."
+    },
+    {
+      "id": "L21-E13",
+      "type": "fill",
+      "grammarPoint": "L21-G3",
+      "question": "Đổi động từ trong ngoặc sang thể thông thường để thuật lại gián tiếp.",
+      "jp": "カリナさんは 来月 国へ ＿＿と 言いました。（帰ります）",
+      "vi": "Karina nói là tháng sau cô ấy về nước.",
+      "answer": "かえる",
+      "accept": ["帰る"],
+      "hint": "Thể từ điển của 帰ります",
+      "explanation": "Thuật gián tiếp → thể thông thường: 帰ります → 帰る."
+    },
+    {
+      "id": "L21-E14",
+      "type": "identify",
+      "grammarPoint": "L21-G3",
+      "question": "Câu này là cách trích dẫn nào?",
+      "jp": "カリナさんは 「絵が 好きです」と 言いました。",
+      "romaji": "Karina-san wa 'E ga suki desu' to iimashita.",
+      "vi": "Karina đã nói: 「Tôi thích vẽ tranh」.",
+      "options": [
+        "Trích dẫn trực tiếp (giữ nguyên lời trong 「 」)",
+        "Thuật lại gián tiếp",
+        "Nêu ý kiến của người nói",
+        "Xác nhận với でしょう？"
+      ],
+      "answer": "Trích dẫn trực tiếp (giữ nguyên lời trong 「 」)",
+      "explanation": "Lời gốc được đặt trong 「 」 và giữ nguyên です → trích dẫn trực tiếp."
+    },
+    {
+      "id": "L21-E15",
+      "type": "fix",
+      "grammarPoint": "L21-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "カリナさんは 絵が 上手だでしょう？",
+      "options": [
+        "カリナさんは 絵が 上手でしょう？",
+        "カリナさんは 絵が 上手なでしょう？",
+        "カリナさんは 絵が 上手ですでしょう？",
+        "カリナさんは 絵が 上手くでしょう？"
+      ],
+      "answer": "カリナさんは 絵が 上手でしょう？",
+      "explanation": "Trước でしょう, tính từ な và danh từ bỏ だ: 上手でしょう？"
+    },
+    {
+      "id": "L21-E16",
+      "type": "situation",
+      "grammarPoint": "L21-G4",
+      "question": "Đồng nghiệp vừa đi Hokkaido về vào mùa đông. Bạn đoán ở đó rất lạnh và muốn họ xác nhận. Bạn nói:",
+      "options": [
+        "北海道は 寒かったでしょう？",
+        "北海道は 寒いだったでしょう？",
+        "北海道は 寒かったですでしょう？",
+        "北海道は 寒くでしょう？"
+      ],
+      "answer": "北海道は 寒かったでしょう？",
+      "explanation": "Tính từ い quá khứ thông thường 寒かった + でしょう？ (lên giọng) để xác nhận."
+    },
+    {
+      "id": "L21-E17",
+      "type": "choice",
+      "grammarPoint": "L21-G4",
+      "question": "Câu nào đúng ngữ pháp?",
+      "options": [
+        "あしたの パーティーに 行くでしょう？",
+        "あしたの パーティーに 行きますでしょう？",
+        "あしたの パーティーに 行くだでしょう？",
+        "あしたの パーティーに 行くでしょうです？"
+      ],
+      "answer": "あしたの パーティーに 行くでしょう？",
+      "explanation": "Động từ thể thông thường (行く) + でしょう？. Không dùng ます hay だ trước でしょう."
+    },
+    {
+      "id": "L21-E18",
+      "type": "jp-vi",
+      "grammarPoint": "L21-G4",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "あの 人は ワンさんの 奥さんでしょう？",
+      "romaji": "Ano hito wa Wan-san no okusan deshō?",
+      "options": [
+        "Người kia là vợ anh Wang phải không?",
+        "Người kia không phải vợ anh Wang.",
+        "Vợ anh Wang là người nào?",
+        "Tôi nghĩ vợ anh Wang sẽ không đến."
+      ],
+      "answer": "Người kia là vợ anh Wang phải không?",
+      "explanation": "〜でしょう？ lên giọng = xác nhận điều người nói khá chắc chắn."
+    },
+    {
+      "id": "L21-E19",
+      "type": "particle",
+      "grammarPoint": "L21-G5",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "東京＿＿ サッカーの 試合が あります。",
+      "romaji": "Tōkyō ___ sakkā no shiai ga arimasu.",
+      "vi": "Ở Tokyo có trận bóng đá.",
+      "options": ["で", "に", "を", "へ"],
+      "answer": "で",
+      "explanation": "試合 là sự kiện → nơi diễn ra dùng で. に あります chỉ vị trí đồ vật."
+    },
+    {
+      "id": "L21-E20",
+      "type": "fix",
+      "grammarPoint": "L21-G5",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "あした 会社に 会議が あります。",
+      "options": [
+        "あした 会社で 会議が あります。",
+        "あした 会社で 会議を あります。",
+        "あした 会社を 会議が あります。",
+        "あした 会社に 会議を します。"
+      ],
+      "answer": "あした 会社で 会議が あります。",
+      "explanation": "Sự kiện (会議) diễn ra ở đâu → で; sự kiện là chủ thể của あります → が."
+    },
+    {
+      "id": "L21-E21",
+      "type": "vi-jp",
+      "grammarPoint": "L21-G5",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Thứ bảy có tiệc ở nhà anh Miller.",
+      "options": [
+        "土曜日 ミラーさんの うちで パーティーが あります。",
+        "土曜日 ミラーさんの うちに パーティーが あります。",
+        "土曜日 ミラーさんの うちで パーティーが います。",
+        "土曜日 ミラーさんの うちへ パーティーを あります。"
+      ],
+      "answer": "土曜日 ミラーさんの うちで パーティーが あります。",
+      "explanation": "Sự kiện diễn ra ở đâu → N で N が あります. Sự kiện dùng あります, không dùng います."
+    },
+    {
+      "id": "L21-E22",
+      "type": "order",
+      "grammarPoint": "L21-G5",
+      "question": "Sắp xếp thành câu hỏi đúng.",
+      "vi": "Lễ hội diễn ra ở đâu?",
+      "tokens": ["どこ", "で", "お祭り", "が", "ありますか"],
+      "explanation": "Hỏi nơi diễn ra sự kiện: どこで + sự kiện が + ありますか."
+    },
+    {
+      "id": "L21-E23",
+      "type": "particle",
+      "grammarPoint": "L21-G6",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "会議＿＿ 意見を 言いました。",
+      "romaji": "Kaigi ___ iken o iimashita.",
+      "vi": "Tôi đã nêu ý kiến trong cuộc họp.",
+      "options": ["で", "を", "が", "へ"],
+      "answer": "で",
+      "explanation": "Hành động diễn ra trong khuôn khổ một dịp / sự kiện → N で."
+    },
+    {
+      "id": "L21-E24",
+      "type": "jp-vi",
+      "grammarPoint": "L21-G6",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "試験で 辞書を 使っても いいですか。",
+      "romaji": "Shiken de jisho o tsukatte mo ii desu ka.",
+      "options": [
+        "Trong giờ thi có được dùng từ điển không ạ?",
+        "Tôi dùng từ điển để học thi.",
+        "Không được dùng từ điển trong giờ thi.",
+        "Bài thi có từ điển không ạ?"
+      ],
+      "answer": "Trong giờ thi có được dùng từ điển không ạ?",
+      "explanation": "試験で = trong kỳ thi (dịp); 〜ても いいですか = có được … không (bài 15)."
+    },
+    {
+      "id": "L21-E25",
+      "type": "choice",
+      "grammarPoint": "L21-G6",
+      "question": "Trong câu 「パーティーで ベトナムの 歌を 歌いました」, で chỉ điều gì?",
+      "options": [
+        "Dịp / sự kiện mà hành động diễn ra",
+        "Phương tiện (bằng cái gì)",
+        "Hướng đi tới",
+        "Người cùng làm"
+      ],
+      "answer": "Dịp / sự kiện mà hành động diễn ra",
+      "explanation": "パーティーで = trong bữa tiệc — で chỉ khuôn khổ (dịp) diễn ra hành động 歌う."
+    },
+    {
+      "id": "L21-E26",
+      "type": "situation",
+      "grammarPoint": "L21-G6",
+      "question": "Sếp hỏi bạn có nêu ý kiến gì trong cuộc họp không. Bạn muốn trả lời: 「Không, tôi không nói gì cả」. Câu đúng:",
+      "options": [
+        "いいえ、会議で 何も 言いませんでした。",
+        "いいえ、会議に 何も 言いませんでした。",
+        "いいえ、会議で 何か 言いませんでした。",
+        "いいえ、会議を 何も 言いませんでした。"
+      ],
+      "answer": "いいえ、会議で 何も 言いませんでした。",
+      "explanation": "Trong cuộc họp → 会議で. 「không … gì cả」 = 何も + phủ định (何か dùng trong câu hỏi / khẳng định)."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 21 }
+}

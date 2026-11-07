@@ -1,0 +1,709 @@
+{
+  "lesson": 6,
+  "title": "Hành động hằng ngày & rủ rê",
+  "titleJp": "いっしょに 行きませんか",
+  "topic": "Ăn · uống · đọc · xem · làm · ở đâu · mời · rủ cùng làm",
+  "description": "Học xong bài này bạn kể được mình ăn gì, uống gì, đọc gì, làm gì và làm ở đâu; hỏi người khác 「làm gì?」, mời họ đi chơi và rủ nhau cùng làm.",
+  "objectives": [
+    "Dùng を để chỉ đối tượng của hành động: パンを 食べます.",
+    "Nói các hoạt động với N を します: テニスを します, 宿題を します.",
+    "Hỏi 「làm gì?」 bằng 何を しますか và phân biệt なに / なん.",
+    "Dùng で để chỉ NƠI diễn ra hành động: 駅で 新聞を 買います.",
+    "Mời người khác bằng Vませんか.",
+    "Rủ cùng làm / nhận lời mời bằng Vましょう."
+  ],
+  "keyPoints": [
+    "を (đọc 「o」) đứng sau đối tượng bị tác động: 水を 飲みます.",
+    "「chơi」 thể thao / trò chơi, 「làm」 bài tập / tiệc → N を します, không dịch từng chữ.",
+    "何 đọc なに trước を, が…; đọc なん trước です, の và trước từ đếm (何時, 何歳).",
+    "で (nơi chốn) = nơi hành động XẢY RA; へ = nơi mình đi TỚI.",
+    "Vませんか: mời, tôn trọng ý người nghe. Vましょう: rủ tích cực, hoặc nhận lời mời.",
+    "Từ chối lời mời khéo léo: すみません、〜は ちょっと…"
+  ],
+  "grammarPoints": [
+    {
+      "id": "L06-G1",
+      "title": "N を V (tha động từ)",
+      "meaning": "V (làm gì đó) N",
+      "why": "Hầu hết hành động hằng ngày đều tác động lên một thứ gì đó: ăn CƠM, uống NƯỚC, đọc SÁCH. を cho biết thứ đó là gì.",
+      "when": [
+        "Với động từ có đối tượng: 食べます, 飲みます, 読みます, 見ます, 聞きます, 書きます, 買います, 撮ります.",
+        "Hỏi đối tượng: 何を 食べますか."
+      ],
+      "formula": "N を V",
+      "parts": [
+        { "part": "N", "role": "Đối tượng bị tác động (thứ được ăn, uống, đọc…)." },
+        { "part": "を", "role": "Trợ từ chỉ đối tượng. Viết を, đọc 「o」." },
+        { "part": "V", "role": "Tha động từ (động từ cần đối tượng)." }
+      ],
+      "memoryTip": {
+        "emoji": "🍜",
+        "hook": "Ăn CÁI GÌ, uống CÁI GÌ → cái đó + 「を」!",
+        "meaning": "→ パンを 食べます, コーヒーを 飲みます."
+      },
+      "examples": [
+        {
+          "jp": "毎朝 新聞を 読みます。",
+          "romaji": "Maiasa shinbun o yomimasu.",
+          "vi": "Sáng nào tôi cũng đọc báo.",
+          "context": "Sinh hoạt",
+          "breakdown": [
+            { "jp": "毎朝", "vi": "mỗi sáng" },
+            { "jp": "新聞", "vi": "báo" },
+            { "jp": "を", "vi": "(đối tượng)" },
+            { "jp": "読みます", "vi": "đọc" }
+          ]
+        },
+        {
+          "jp": "ジュースを 飲みます。",
+          "romaji": "Jūsu o nomimasu.",
+          "vi": "Tôi uống nước hoa quả.",
+          "context": "Nhà hàng"
+        },
+        {
+          "jp": "毎晩 音楽を 聞きます。",
+          "romaji": "Maiban ongaku o kikimasu.",
+          "vi": "Tối nào tôi cũng nghe nhạc.",
+          "context": "Thư giãn buổi tối"
+        },
+        {
+          "jp": "京都で 写真を 撮りました。",
+          "romaji": "Kyōto de shashin o torimashita.",
+          "vi": "Tôi đã chụp ảnh ở Kyoto.",
+          "context": "Du lịch"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "Pan wo tabemasu.",
+          "right": "Pan o tabemasu.",
+          "explain": "Trợ từ を được đọc là 「o」."
+        },
+        {
+          "wrong": "京都を 行きます。",
+          "right": "京都へ 行きます。",
+          "explain": "行きます là di chuyển, nơi đi tới dùng へ. を dùng cho đối tượng của hành động (ăn, uống, đọc…)."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: 何も 〜ません",
+          "text": "Giống どこも 行きません (bài 5): 何も + động từ phủ định = không … gì cả. Khi đó を được bỏ đi (không nói 何をも).",
+          "examples": [
+            {
+              "jp": "けさ 何も 食べませんでした。",
+              "romaji": "Kesa nani mo tabemasen deshita.",
+              "vi": "Sáng nay tôi không ăn gì cả."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L06-G2",
+      "title": "N を します",
+      "meaning": "Làm / chơi N",
+      "why": "します là động từ 「đa năng」: chơi thể thao, làm bài tập, tổ chức tiệc, họp… đều dùng N を します.",
+      "when": [
+        "Thể thao, trò chơi: サッカーを します, テニスを します.",
+        "Công việc, bài tập: 宿題を します, 仕事を します.",
+        "Sự kiện: パーティーを します, 会議を します."
+      ],
+      "formula": "N を します",
+      "parts": [
+        { "part": "N", "role": "Hoạt động: môn thể thao, bài tập, bữa tiệc, cuộc họp…" },
+        { "part": "を", "role": "Trợ từ chỉ đối tượng." },
+        { "part": "します", "role": "Làm — nghĩa cụ thể thay đổi theo N (chơi, làm, tổ chức…)." }
+      ],
+      "memoryTip": {
+        "emoji": "⚽",
+        "hook": "Chơi hay làm — cứ 「を します」!",
+        "meaning": "→ テニスを します (chơi tennis), 宿題を します (làm bài tập)."
+      },
+      "examples": [
+        {
+          "jp": "土曜日 友達と サッカーを します。",
+          "romaji": "Doyōbi tomodachi to sakkā o shimasu.",
+          "vi": "Thứ Bảy tôi chơi bóng đá với bạn.",
+          "context": "Cuối tuần",
+          "breakdown": [
+            { "jp": "サッカー", "vi": "bóng đá" },
+            { "jp": "を します", "vi": "chơi" }
+          ]
+        },
+        {
+          "jp": "毎晩 宿題を します。",
+          "romaji": "Maiban shukudai o shimasu.",
+          "vi": "Tối nào tôi cũng làm bài tập.",
+          "context": "Trường học"
+        },
+        {
+          "jp": "金曜日の 晩 パーティーを します。",
+          "romaji": "Kin'yōbi no ban pātī o shimasu.",
+          "vi": "Tối thứ Sáu chúng tôi tổ chức tiệc.",
+          "context": "Công ty"
+        },
+        {
+          "jp": "3時から 会議を します。",
+          "romaji": "San-ji kara kaigi o shimasu.",
+          "vi": "Từ 3 giờ chúng ta họp.",
+          "context": "Công việc"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "テニスを 遊びます。",
+          "right": "テニスを します。",
+          "explain": "「Chơi」 thể thao trong tiếng Nhật là します, không dịch thẳng bằng 遊びます."
+        },
+        {
+          "wrong": "宿題を 作ります。",
+          "right": "宿題を します。",
+          "explain": "「Làm bài tập」 = 宿題を します. 作ります là 「chế tạo, nấu」."
+        }
+      ]
+    },
+    {
+      "id": "L06-G3",
+      "title": "何を しますか · なに / なん",
+      "meaning": "(Bạn) làm gì?",
+      "why": "Câu hỏi thông dụng nhất khi nói chuyện về cuối tuần, kỳ nghỉ, kế hoạch. Đồng thời phải biết 何 lúc đọc なに, lúc đọc なん.",
+      "when": [
+        "Hỏi người khác làm gì: 日曜日 何を しますか.",
+        "Câu trả lời dùng động từ cụ thể (không nhất thiết là します).",
+        "何 đọc なに trước を, が…; đọc なん trước です, の, và trước từ đếm (何時, 何歳)."
+      ],
+      "formula": "(thời gian) 何を しますか / しましたか",
+      "parts": [
+        { "part": "何 (なに)", "role": "「Cái gì」 — đọc なに khi đứng trước を." },
+        { "part": "を", "role": "Trợ từ đối tượng." },
+        { "part": "しますか", "role": "Làm … không? → hỏi việc sẽ làm; しましたか → việc đã làm." }
+      ],
+      "memoryTip": {
+        "emoji": "🎯",
+        "hook": "Trước 「を」 là なに, trước 「です」 là なん!",
+        "meaning": "→ 何を (なにを) しますか / 何ですか (なんですか)."
+      },
+      "examples": [
+        {
+          "jp": "日曜日 何を しますか。 …京都へ 行きます。",
+          "romaji": "Nichiyōbi nani o shimasu ka. … Kyōto e ikimasu.",
+          "vi": "Chủ nhật bạn làm gì? …Tôi đi Kyoto.",
+          "context": "Kế hoạch cuối tuần",
+          "note": "Hỏi bằng します nhưng trả lời bằng động từ cụ thể (行きます)."
+        },
+        {
+          "jp": "きのう 何を しましたか。 …テニスを しました。",
+          "romaji": "Kinō nani o shimashita ka. … Tenisu o shimashita.",
+          "vi": "Hôm qua bạn đã làm gì? …Tôi đã chơi tennis.",
+          "context": "Nói chuyện đầu tuần"
+        },
+        {
+          "jp": "朝 何を 食べますか。 …パンと 卵を 食べます。",
+          "romaji": "Asa nani o tabemasu ka. … Pan to tamago o tabemasu.",
+          "vi": "Buổi sáng bạn ăn gì? …Tôi ăn bánh mì và trứng.",
+          "context": "Ăn uống"
+        },
+        {
+          "jp": "それは 何ですか。 …日本の お茶です。",
+          "romaji": "Sore wa nan desu ka. … Nihon no ocha desu.",
+          "vi": "Đó là gì vậy? …Là trà Nhật.",
+          "context": "Ở văn phòng",
+          "note": "Trước です → đọc なん."
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "なんを 飲みますか。",
+          "right": "なにを 飲みますか。",
+          "explain": "Trước を, 何 đọc là なに."
+        },
+        {
+          "wrong": "これは なにですか。",
+          "right": "これは なんですか。",
+          "explain": "Trước です (âm d), 何 đọc là なん."
+        }
+      ]
+    },
+    {
+      "id": "L06-G4",
+      "title": "N (nơi chốn) で V",
+      "meaning": "Làm V tại N",
+      "why": "Để nói hành động xảy ra ở đâu: mua báo Ở GA, ăn trưa Ở NHÀ ĂN, học Ở THƯ VIỆN.",
+      "when": [
+        "Nơi diễn ra hành động (ăn, mua, đọc, học, làm việc…).",
+        "Hỏi: どこで V ますか."
+      ],
+      "formula": "N (nơi chốn) で N を V",
+      "parts": [
+        { "part": "N (nơi chốn)", "role": "Nơi hành động xảy ra." },
+        { "part": "で", "role": "「tại, ở」 — đánh dấu nơi diễn ra hành động." },
+        { "part": "V", "role": "Động từ hành động (không phải động từ di chuyển 行きます / 来ます)." }
+      ],
+      "memoryTip": {
+        "emoji": "🏟️",
+        "hook": "Làm ở đâu thì 「で」 ở đó!",
+        "meaning": "→ 駅で 新聞を 買います. (Đi tới đâu thì へ: 駅へ 行きます.)"
+      },
+      "examples": [
+        {
+          "jp": "駅で 新聞を 買います。",
+          "romaji": "Eki de shinbun o kaimasu.",
+          "vi": "Tôi mua báo ở ga.",
+          "context": "Đi tàu",
+          "breakdown": [
+            { "jp": "駅で", "vi": "ở nhà ga" },
+            { "jp": "新聞を", "vi": "báo (đối tượng)" },
+            { "jp": "買います", "vi": "mua" }
+          ]
+        },
+        {
+          "jp": "食堂で 昼ごはんを 食べます。",
+          "romaji": "Shokudō de hirugohan o tabemasu.",
+          "vi": "Tôi ăn trưa ở nhà ăn.",
+          "context": "Trường học / công ty"
+        },
+        {
+          "jp": "どこで その かばんを 買いましたか。 …デパートで 買いました。",
+          "romaji": "Doko de sono kaban o kaimashita ka. … Depāto de kaimashita.",
+          "vi": "Bạn mua cái cặp đó ở đâu? …Tôi mua ở trung tâm thương mại.",
+          "context": "Mua sắm"
+        },
+        {
+          "jp": "図書館で 本を 読みます。",
+          "romaji": "Toshokan de hon o yomimasu.",
+          "vi": "Tôi đọc sách ở thư viện.",
+          "context": "Trường học"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "図書館へ 本を 読みます。",
+          "right": "図書館で 本を 読みます。",
+          "explain": "へ chỉ nơi đi TỚI. Đọc sách ở đâu → nơi diễn ra hành động → で."
+        },
+        {
+          "wrong": "駅で 行きます。",
+          "right": "駅へ 行きます。",
+          "explain": "Với động từ di chuyển (行きます, 来ます, 帰ります), đích đến dùng へ, không dùng で."
+        }
+      ]
+    },
+    {
+      "id": "L06-G5",
+      "title": "V ませんか — mời",
+      "meaning": "…không? / Cùng … nhé? (lời mời)",
+      "why": "Để mời bạn bè, đồng nghiệp đi chơi, đi ăn một cách lịch sự, để người nghe tự do nhận lời hay từ chối.",
+      "when": [
+        "Mời người khác cùng làm gì: いっしょに 京都へ 行きませんか.",
+        "Nhận lời: ええ、いいですね / ええ、行きましょう.",
+        "Từ chối khéo: すみません、〜は ちょっと…"
+      ],
+      "formula": "いっしょに V ませんか",
+      "parts": [
+        { "part": "いっしょに", "role": "Cùng nhau." },
+        { "part": "V ませんか", "role": "Hình thức phủ định + か, nhưng nghĩa là LỜI MỜI (không phải 「không làm à?」)." }
+      ],
+      "memoryTip": {
+        "emoji": "💌",
+        "hook": "Mời ai? Nói 「〜ませんか」 — nghe phủ định mà là lời mời!",
+        "meaning": "→ いっしょに 行きませんか = Đi cùng không?"
+      },
+      "examples": [
+        {
+          "jp": "いっしょに 京都へ 行きませんか。 …ええ、いいですね。",
+          "romaji": "Issho ni Kyōto e ikimasen ka. … Ee, ii desu ne.",
+          "vi": "Cùng đi Kyoto không? …Ừ, hay đấy.",
+          "context": "Rủ bạn đi chơi",
+          "breakdown": [
+            { "jp": "いっしょに", "vi": "cùng nhau" },
+            { "jp": "行きませんか", "vi": "đi không? (mời)" },
+            { "jp": "いいですね", "vi": "hay nhỉ (nhận lời)" }
+          ]
+        },
+        {
+          "jp": "いっしょに 昼ごはんを 食べませんか。",
+          "romaji": "Issho ni hirugohan o tabemasen ka.",
+          "vi": "Cùng ăn trưa không?",
+          "context": "Công ty"
+        },
+        {
+          "jp": "日曜日 いっしょに テニスを しませんか。 …すみません、日曜日は ちょっと…。",
+          "romaji": "Nichiyōbi issho ni tenisu o shimasen ka. … Sumimasen, nichiyōbi wa chotto….",
+          "vi": "Chủ nhật cùng chơi tennis không? …Xin lỗi, Chủ nhật thì hơi…",
+          "context": "Từ chối khéo",
+          "note": "ちょっと… bỏ lửng = cách từ chối nhẹ nhàng rất Nhật."
+        },
+        {
+          "jp": "お茶を 飲みませんか。",
+          "romaji": "Ocha o nomimasen ka.",
+          "vi": "Anh uống trà nhé?",
+          "context": "Mời khách"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "(Mời bạn) いっしょに 京都へ 行きますか。",
+          "right": "いっしょに 京都へ 行きませんか。",
+          "explain": "Vますか chỉ là hỏi thông tin (「có đi không?」). Muốn MỜI lịch sự thì dùng Vませんか."
+        },
+        {
+          "wrong": "(Nhận lời mời) はい、行きません。",
+          "right": "ええ、いいですね。 / ええ、行きましょう。",
+          "explain": "Nhận lời thì không lặp lại dạng ません — trả lời いいですね hoặc Vましょう."
+        }
+      ]
+    },
+    {
+      "id": "L06-G6",
+      "title": "V ましょう — rủ cùng làm",
+      "meaning": "Chúng ta hãy … / … nhé!",
+      "why": "Để chủ động rủ mọi người cùng làm, hoặc nhận lời mời một cách hào hứng.",
+      "when": [
+        "Đề nghị cùng làm (khi đoán người nghe sẽ đồng ý): ちょっと 休みましょう.",
+        "Đáp lại lời mời Vませんか: ええ、行きましょう.",
+        "Hẹn gặp: 駅で 会いましょう."
+      ],
+      "formula": "V ましょう",
+      "parts": [
+        { "part": "V (bỏ ます)", "role": "Gốc động từ: 休み, 行き, 食べ…" },
+        { "part": "ましょう", "role": "「Chúng ta hãy…」 — rủ rê tích cực." }
+      ],
+      "memoryTip": {
+        "emoji": "🙌",
+        "hook": "ましょう = 「Let's go!」 — chốt kèo luôn!",
+        "meaning": "→ ませんか hỏi ý người nghe; ましょう thì chủ động, tích cực hơn."
+      },
+      "examples": [
+        {
+          "jp": "ちょっと 休みましょう。",
+          "romaji": "Chotto yasumimashō.",
+          "vi": "Chúng ta nghỉ một chút nhé.",
+          "context": "Giờ học / giờ làm",
+          "breakdown": [
+            { "jp": "ちょっと", "vi": "một chút" },
+            { "jp": "休みましょう", "vi": "hãy nghỉ" }
+          ]
+        },
+        {
+          "jp": "いっしょに 行きませんか。 …ええ、行きましょう。",
+          "romaji": "Issho ni ikimasen ka. … Ee, ikimashō.",
+          "vi": "Cùng đi không? …Ừ, đi thôi.",
+          "context": "Nhận lời mời"
+        },
+        {
+          "jp": "どこで 会いますか。 …駅で 会いましょう。",
+          "romaji": "Doko de aimasu ka. … Eki de aimashō.",
+          "vi": "Mình gặp nhau ở đâu? …Gặp ở ga nhé.",
+          "context": "Hẹn bạn"
+        },
+        {
+          "jp": "いっしょに 昼ごはんを 食べましょう。",
+          "romaji": "Issho ni hirugohan o tabemashō.",
+          "vi": "Cùng ăn trưa nào.",
+          "context": "Công ty"
+        }
+      ],
+      "mistakes": [
+        {
+          "wrong": "いっしょに 行きませんか。 …ええ、行きませんか。",
+          "right": "いっしょに 行きませんか。 …ええ、行きましょう。",
+          "explain": "Nhận lời mời thì đáp bằng Vましょう, không hỏi ngược lại bằng ませんか."
+        },
+        {
+          "wrong": "ちょっと 休みますしょう。",
+          "right": "ちょっと 休みましょう。",
+          "explain": "ましょう thay THẾ ます (休みます → 休みましょう), không ghép thêm vào sau ます."
+        }
+      ],
+      "extra": [
+        {
+          "title": "📌 Kiến thức bổ sung: お〜 làm từ nghe nhẹ nhàng",
+          "text": "Ở bài này bạn gặp お茶 (trà), お酒 (rượu). お ở đây làm từ nghe lịch sự, nhẹ nhàng hơn, không mang nghĩa 「của anh/chị」 như お国 ở bài 3."
+        }
+      ]
+    }
+  ],
+  "quickReview": [
+    { "pattern": "N を V", "meaning": "V (ăn, uống, đọc…) N — を đọc o", "example": "パンを 食べます。" },
+    { "pattern": "N を します", "meaning": "Chơi / làm N", "example": "テニスを します。" },
+    { "pattern": "何を しますか · なに / なん", "meaning": "Làm gì? (trước を đọc なに)", "example": "日曜日 何を しますか。" },
+    { "pattern": "N (nơi) で V", "meaning": "Làm V tại N", "example": "駅で 新聞を 買います。" },
+    { "pattern": "V ませんか", "meaning": "Cùng … không? (mời)", "example": "いっしょに 京都へ 行きませんか。" },
+    { "pattern": "V ましょう", "meaning": "Chúng ta hãy … (rủ / nhận lời)", "example": "ちょっと 休みましょう。" }
+  ],
+  "exercises": [
+    {
+      "id": "L06-E01",
+      "type": "particle",
+      "grammarPoint": "L06-G1",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "ジュース＿＿ 飲みます。",
+      "romaji": "Jūsu ___ nomimasu.",
+      "vi": "Tôi uống nước hoa quả.",
+      "options": ["を", "へ", "で", "と"],
+      "answer": "を",
+      "explanation": "ジュース là đối tượng của 飲みます → を."
+    },
+    {
+      "id": "L06-E02",
+      "type": "choice",
+      "grammarPoint": "L06-G1",
+      "question": "Trong câu 「パンを 食べます」, chữ を được đọc là gì?",
+      "options": ["o", "wo", "wa", "e"],
+      "answer": "o",
+      "explanation": "Trợ từ を đọc là 「o」 (romaji chuẩn trong sách: Pan o tabemasu)."
+    },
+    {
+      "id": "L06-E03",
+      "type": "vi-jp",
+      "grammarPoint": "L06-G1",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Sáng nào tôi cũng đọc báo.",
+      "options": ["毎朝 新聞を 読みます。", "毎朝 新聞へ 読みます。", "毎朝 新聞で 読みます。", "毎朝に 新聞を 読みます。"],
+      "answer": "毎朝 新聞を 読みます。",
+      "explanation": "Đối tượng được đọc (新聞) + を. 毎朝 không có に."
+    },
+    {
+      "id": "L06-E04",
+      "type": "order",
+      "grammarPoint": "L06-G1",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi đã chụp ảnh.",
+      "tokens": ["わたし", "は", "写真", "を", "撮りました"],
+      "explanation": "Chủ đề + は + đối tượng + を + động từ."
+    },
+    {
+      "id": "L06-E05",
+      "type": "fill",
+      "grammarPoint": "L06-G1",
+      "question": "Gõ trợ từ còn thiếu (kana hoặc romaji).",
+      "jp": "けさ 何＿＿ 食べませんでした。",
+      "vi": "Sáng nay tôi không ăn gì cả.",
+      "answer": "も",
+      "explanation": "何も + phủ định = không … gì cả (giống どこも 行きません). を được bỏ đi."
+    },
+    {
+      "id": "L06-E06",
+      "type": "choice",
+      "grammarPoint": "L06-G2",
+      "question": "「Tôi chơi tennis.」 Câu nào đúng?",
+      "options": ["テニスを します。", "テニスを 遊びます。", "テニスで します。", "テニスへ します。"],
+      "answer": "テニスを します。",
+      "explanation": "Chơi thể thao → N を します."
+    },
+    {
+      "id": "L06-E07",
+      "type": "fix",
+      "grammarPoint": "L06-G2",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "毎晩 宿題を 作ります。",
+      "options": ["毎晩 宿題を します。", "毎晩 宿題で します。", "毎晩に 宿題を します。", "毎晩 宿題を 遊びます。"],
+      "answer": "毎晩 宿題を します。",
+      "explanation": "「Làm bài tập」 = 宿題を します. 毎晩 không có に."
+    },
+    {
+      "id": "L06-E08",
+      "type": "jp-vi",
+      "grammarPoint": "L06-G2",
+      "question": "Câu này có nghĩa là gì?",
+      "jp": "土曜日 友達と サッカーを します。",
+      "romaji": "Doyōbi tomodachi to sakkā o shimasu.",
+      "options": [
+        "Thứ Bảy tôi chơi bóng đá với bạn.",
+        "Thứ Bảy tôi xem bóng đá với bạn.",
+        "Thứ Bảy bạn tôi chơi bóng đá một mình.",
+        "Thứ Bảy tôi không chơi bóng đá."
+      ],
+      "answer": "Thứ Bảy tôi chơi bóng đá với bạn.",
+      "explanation": "サッカーを します = chơi bóng đá; 友達と = cùng với bạn."
+    },
+    {
+      "id": "L06-E09",
+      "type": "identify",
+      "grammarPoint": "L06-G2",
+      "question": "Câu này dùng mẫu ngữ pháp nào?",
+      "jp": "金曜日の 晩 パーティーを します。",
+      "romaji": "Kin'yōbi no ban pātī o shimasu.",
+      "vi": "Tối thứ Sáu chúng tôi tổ chức tiệc.",
+      "options": ["N を します (làm / tổ chức N)", "V ませんか (mời)", "V ましょう (rủ)", "N (nơi) で V"],
+      "answer": "N を します (làm / tổ chức N)",
+      "explanation": "パーティーを します = tổ chức tiệc — mẫu N を します."
+    },
+    {
+      "id": "L06-E10",
+      "type": "choice",
+      "grammarPoint": "L06-G3",
+      "question": "Trong câu 「何を 食べますか」, chữ 何 đọc là gì?",
+      "options": ["なに", "なん", "いつ", "だれ"],
+      "answer": "なに",
+      "explanation": "Trước を, 何 đọc là なに."
+    },
+    {
+      "id": "L06-E11",
+      "type": "fill",
+      "grammarPoint": "L06-G3",
+      "question": "Gõ từ để hỏi còn thiếu (kana hoặc romaji).",
+      "jp": "日曜日 ＿＿を しますか。 …テニスを します。",
+      "vi": "Chủ nhật bạn làm gì? …Tôi chơi tennis.",
+      "answer": "なに",
+      "accept": ["何"],
+      "explanation": "Hỏi 「làm gì」 → 何を しますか; trước を đọc なに."
+    },
+    {
+      "id": "L06-E12",
+      "type": "situation",
+      "grammarPoint": "L06-G3",
+      "question": "Thứ Sáu, bạn muốn hỏi đồng nghiệp 「Chủ nhật này anh (sẽ) làm gì?」:",
+      "options": ["日曜日 何を しますか。", "日曜日 何を しましたか。", "日曜日 何が しますか。", "日曜日 何へ しますか。"],
+      "answer": "日曜日 何を しますか。",
+      "explanation": "Việc sắp tới → しますか (しましたか là hỏi việc đã làm). Đối tượng của します dùng を."
+    },
+    {
+      "id": "L06-E13",
+      "type": "fix",
+      "grammarPoint": "L06-G3",
+      "question": "Câu sau viết sai cách đọc. Chọn cách sửa đúng.",
+      "jp": "なんを 飲みますか。",
+      "options": ["なにを 飲みますか。", "なんが 飲みますか。", "なにが 飲みますか。", "なんを 飲みましたか。"],
+      "answer": "なにを 飲みますか。",
+      "explanation": "Trước を, 何 đọc là なに, không đọc なん."
+    },
+    {
+      "id": "L06-E14",
+      "type": "particle",
+      "grammarPoint": "L06-G4",
+      "question": "Chọn trợ từ điền vào chỗ trống.",
+      "jp": "駅＿＿ 新聞を 買います。",
+      "romaji": "Eki ___ shinbun o kaimasu.",
+      "vi": "Tôi mua báo ở ga.",
+      "options": ["で", "へ", "に", "と"],
+      "answer": "で",
+      "explanation": "Nơi diễn ra hành động (mua) → で."
+    },
+    {
+      "id": "L06-E15",
+      "type": "fix",
+      "grammarPoint": "L06-G4",
+      "question": "Câu sau bị sai. Chọn cách sửa đúng.",
+      "jp": "図書館へ 本を 読みます。",
+      "options": ["図書館で 本を 読みます。", "図書館で 本で 読みます。", "図書館を 本を 読みます。", "図書館へ 本へ 読みます。"],
+      "answer": "図書館で 本を 読みます。",
+      "explanation": "Đọc sách TẠI thư viện → nơi diễn ra hành động dùng で; へ chỉ nơi đi tới."
+    },
+    {
+      "id": "L06-E16",
+      "type": "situation",
+      "grammarPoint": "L06-G4",
+      "question": "Bạn thấy bạn mình có cái cặp mới rất đẹp. Bạn muốn hỏi 「Bạn đã mua nó ở đâu?」:",
+      "options": ["どこで その かばんを 買いましたか。", "どこへ その かばんを 買いましたか。", "どこを その かばんを 買いましたか。", "どこで その かばんを 買いますね。"],
+      "answer": "どこで その かばんを 買いましたか。",
+      "explanation": "Hỏi nơi diễn ra hành động mua → どこで. Đã mua → 買いましたか."
+    },
+    {
+      "id": "L06-E17",
+      "type": "order",
+      "grammarPoint": "L06-G4",
+      "question": "Sắp xếp thành câu đúng.",
+      "vi": "Tôi ăn trưa ở nhà ăn.",
+      "tokens": ["食堂", "で", "昼ごはん", "を", "食べます"],
+      "accept": [["昼ごはん", "を", "食堂", "で", "食べます"]],
+      "explanation": "Nơi chốn + で, đối tượng + を, động từ đứng cuối câu."
+    },
+    {
+      "id": "L06-E18",
+      "type": "pattern",
+      "grammarPoint": "L06-G4",
+      "question": "Bạn muốn nói 「Tôi học tiếng Nhật ở trường」 — nhấn vào NƠI diễn ra hành động. Chọn mẫu phù hợp.",
+      "options": ["N (nơi) で V", "N (nơi) へ 行きます", "N を します", "V ませんか"],
+      "answer": "N (nơi) で V",
+      "explanation": "Nơi diễn ra hành động → で: 学校で 日本語を 勉強します."
+    },
+    {
+      "id": "L06-E19",
+      "type": "choice",
+      "grammarPoint": "L06-G5",
+      "question": "Bạn muốn MỜI bạn: 「Chủ nhật cùng đi Kyoto không?」. Câu nào đúng?",
+      "options": ["日曜日 いっしょに 京都へ 行きませんか。", "日曜日 いっしょに 京都へ 行きませんでした。", "日曜日 いっしょに 京都へ 行きません。", "日曜日 いっしょに 京都へ 行きましたか。"],
+      "answer": "日曜日 いっしょに 京都へ 行きませんか。",
+      "explanation": "Lời mời lịch sự → Vませんか."
+    },
+    {
+      "id": "L06-E20",
+      "type": "jp-vi",
+      "grammarPoint": "L06-G5",
+      "question": "Đồng nghiệp nói câu này lúc 12 giờ trưa. Nghĩa là gì?",
+      "jp": "いっしょに 昼ごはんを 食べませんか。",
+      "romaji": "Issho ni hirugohan o tabemasen ka.",
+      "options": ["Cùng ăn trưa không?", "Anh đã ăn trưa chưa?", "Chúng tôi không ăn trưa.", "Anh ăn trưa ở đâu?"],
+      "answer": "Cùng ăn trưa không?",
+      "explanation": "いっしょに + Vませんか = lời mời cùng làm."
+    },
+    {
+      "id": "L06-E21",
+      "type": "situation",
+      "grammarPoint": "L06-G5",
+      "question": "Bạn được mời chơi tennis vào Chủ nhật nhưng bạn bận. Bạn muốn TỪ CHỐI KHÉO:",
+      "options": ["すみません、日曜日は ちょっと…。", "ええ、しましょう。", "ええ、いいですね。", "はい、しませんか。"],
+      "answer": "すみません、日曜日は ちょっと…。",
+      "explanation": "Người Nhật từ chối nhẹ nhàng bằng すみません + 〜は ちょっと… (bỏ lửng)."
+    },
+    {
+      "id": "L06-E22",
+      "type": "identify",
+      "grammarPoint": "L06-G5",
+      "question": "Trong câu này, 〜ませんか mang ý nghĩa gì?",
+      "jp": "日曜日 いっしょに テニスを しませんか。",
+      "romaji": "Nichiyōbi issho ni tenisu o shimasen ka.",
+      "vi": "Chủ nhật cùng chơi tennis không?",
+      "options": ["Lời mời người nghe cùng làm", "Câu phủ định ở quá khứ", "Hỏi người nghe đã làm gì", "Báo thông tin mới cho người nghe"],
+      "answer": "Lời mời người nghe cùng làm",
+      "explanation": "いっしょに + Vませんか là lời mời, dù hình thức là phủ định."
+    },
+    {
+      "id": "L06-E23",
+      "type": "fill",
+      "grammarPoint": "L06-G6",
+      "question": "Gõ phần đuôi còn thiếu (kana hoặc romaji).",
+      "jp": "ちょっと 休み＿＿。",
+      "vi": "Chúng ta nghỉ một chút nhé.",
+      "answer": "ましょう",
+      "explanation": "Rủ cùng làm → thay ます bằng ましょう: 休みます → 休みましょう."
+    },
+    {
+      "id": "L06-E24",
+      "type": "choice",
+      "grammarPoint": "L06-G6",
+      "question": "Bạn được mời 「いっしょに 行きませんか。」 và muốn đồng ý hào hứng. Bạn đáp:",
+      "options": ["ええ、行きましょう。", "ええ、行きませんか。", "ええ、行きませんでした。", "ええ、行きません。"],
+      "answer": "ええ、行きましょう。",
+      "explanation": "Nhận lời mời → Vましょう (đi thôi!)."
+    },
+    {
+      "id": "L06-E25",
+      "type": "vi-jp",
+      "grammarPoint": "L06-G6",
+      "question": "Chọn câu tiếng Nhật đúng nghĩa.",
+      "vi": "Mình gặp nhau ở ga nhé.",
+      "options": ["駅で 会いましょう。", "駅へ 会いましょう。", "駅を 会いましょう。", "駅で 会いませんでした。"],
+      "answer": "駅で 会いましょう。",
+      "explanation": "Nơi gặp (diễn ra hành động) → で; rủ cùng làm → ましょう."
+    },
+    {
+      "id": "L06-E26",
+      "type": "fix",
+      "grammarPoint": "L06-G6",
+      "question": "Câu trả lời sau bị sai. Chọn cách sửa đúng.",
+      "jp": "いっしょに 昼ごはんを 食べませんか。 …ええ、食べませんか。",
+      "options": [
+        "いっしょに 昼ごはんを 食べませんか。 …ええ、食べましょう。",
+        "いっしょに 昼ごはんを 食べませんか。 …ええ、食べません。",
+        "いっしょに 昼ごはんを 食べませんか。 …ええ、食べませんでした。",
+        "いっしょに 昼ごはんを 食べませんか。 …ええ、食べますしょう。"
+      ],
+      "answer": "いっしょに 昼ごはんを 食べませんか。 …ええ、食べましょう。",
+      "explanation": "Nhận lời mời → Vましょう. ましょう thay thế ます (食べます → 食べましょう)."
+    }
+  ],
+  "meta": { "jlpt": "N5", "vocabLesson": 6 }
+}
