@@ -19,6 +19,7 @@ const DATA_FILES = [
   'modifiers',
   'tips-exercises',
   'jlpt-sets',
+  'minimal-pairs',
   'minna-no-nihongo-1/index',
   ...MINNA_LESSONS,
 ]

@@ -722,6 +722,22 @@ function ChoiceBody({ item, revealed, selected, onPick, furigana, audible }) {
           )}
           {item.explanation && <div className="run-reveal__ex">{item.explanation}</div>}
           {item.translation && <div className="run-reveal__vn">📝 {item.translation}</div>}
+          {/* Cặp âm dễ nhầm: nghe lại từng từ liền nhau mới phân biệt được độ dài âm. */}
+          {item.compare?.length > 0 && (
+            <div className="run-compare">
+              <div className="run-compare__label">🔁 Nghe lại để so sánh</div>
+              {item.compare.map((c) => (
+                <div
+                  key={c.text}
+                  className={`run-compare__row ${c.text === item.answer ? "is-answer" : ""}`}
+                >
+                  {audible && <SpeakButton text={c.speak || c.text} />}
+                  <span className="run-compare__jp">{c.text}</span>
+                  {c.sub && <span className="run-compare__sub">{c.sub}</span>}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>

@@ -14,6 +14,7 @@ const FILES = [
   { id: "modifiers",      icon: "🎨", label: "Từ bổ nghĩa" },
   { id: "tips-exercises", icon: "💡", label: "Mẹo & Lộ trình" },
   { id: "jlpt-sets",      icon: "📝", label: "Đề JLPT" },
+  { id: "minimal-pairs",  icon: "👂", label: "Cặp âm dễ nhầm" },
   { id: "minna-no-nihongo-1/index", icon: "🎌", label: "Minna · mục lục" },
 ];
 

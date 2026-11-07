@@ -7,6 +7,7 @@
 //   · vocabulary.json · 580/580 từ đều có câu ví dụ
 //   · numbers.json    · bộ đếm / giờ / tháng / ngày / thứ kèm cách đọc
 //   · kanji.json      · nghĩa + âm On/Kun + từ ghép
+//   · minimal-pairs.json · cặp từ chỉ khác trường âm / っ (lấy từ vocabulary.json)
 //
 // Mọi phương án nhiễu đều lấy từ chính data (không tự bịa tiếng Nhật), nên
 // không có nguy cơ sinh ra câu sai ngữ pháp.
@@ -20,6 +21,7 @@ import grammarData from "../data/grammar.json";
 import numbersData from "../data/numbers.json";
 import kanjiData from "../data/kanji.json";
 import kanaData from "../data/kana.json";
+import pairsData from "../data/minimal-pairs.json";
 import { shuffle } from "./random";
 import { similarKanji } from "./kanjiSimilar";
 import { loadSrs, replaceState } from "./srs";
@@ -678,6 +680,44 @@ export function listenKana() {
   }));
 }
 
+/**
+ * Cặp âm dễ nhầm (minimal-pairs.json): phát MỘT từ trong cặp, chọn đúng cách
+ * viết giữa hai từ. Chỉ 2 lựa chọn nên phần thưởng thật sự là bước sau khi trả
+ * lời: nghe lại CẢ HAI từ liền nhau (`compare`) để tai bắt được độ dài âm.
+ *
+ * Phát bằng `kana` chứ không phải chữ có kanji: TTS đọc kanji có thể chọn cách
+ * đọc khác (家 → うち) và phá mất đúng điểm cần luyện.
+ */
+export function listenPairs() {
+  const kindLabel = (k) => pairsData.meta?.kinds?.[k] || "Khác";
+  const sideInfo = (s) => ({
+    text: s.kana,
+    sub: [s.jp !== s.kana ? s.jp : null, s.vn].filter(Boolean).join(" · "),
+    speak: s.kana,
+  });
+  return (pairsData.pairs || []).flatMap((p) => {
+    if (!p?.a?.kana || !p?.b?.kana || p.a.kana === p.b.kana) return [];
+    const key = contentKey(p.a.kana + p.b.kana);
+    return [
+      ["a", p.a],
+      ["b", p.b],
+    ].map(([side, target]) => ({
+      id: `mp:${key}:${side}`,
+      deck: "listening",
+      kind: "choice",
+      prompt: "Nghe và chọn đúng từ vừa nghe",
+      question: null,
+      audio: target.kana,
+      reveal: `${target.jp}${target.jp !== target.kana ? ` (${target.kana})` : ""} · ${target.vn}`,
+      choices: shuffle([p.a.kana, p.b.kana]),
+      answer: target.kana,
+      compare: [sideInfo(p.a), sideInfo(p.b)],
+      explanation: `${kindLabel(p.kind)}: hai từ chỉ khác nhau ở độ dài / số âm — nghe lại cả hai để so sánh.`,
+      tag: `Cặp âm · ${kindLabel(p.kind)}`,
+    }));
+  });
+}
+
 // ── Danh mục bộ luyện tập (UI đọc từ đây) ────────────────────────────────────
 
 export const QUIZ_SETS = [
@@ -712,6 +752,7 @@ export const QUIZ_SETS = [
   { id: "listen-sentence", tab: "listening", deck: "listening", icon: "💬", label: "Nghe câu → chọn nghĩa", desc: "580 câu ví dụ", gen: listenSentenceToMeaning },
   { id: "listen-type", tab: "listening", deck: "listening", icon: "📝", label: "Nghe → chép lại", desc: "Chính tả: gõ lại từ vừa nghe", gen: listenWordTyping },
   { id: "listen-kana", tab: "listening", deck: "listening", icon: "🔤", label: "Nghe kana", desc: "Nhận âm từng chữ kana", gen: listenKana },
+  { id: "listen-pairs", tab: "listening", deck: "listening", icon: "👂", label: "Cặp âm dễ nhầm", desc: "Trường âm & âm ngắt — ビール/ビル, おばあさん/おばさん", gen: listenPairs },
 ];
 
 export const quizSetsFor = (tab) => QUIZ_SETS.filter((s) => s.tab === tab);

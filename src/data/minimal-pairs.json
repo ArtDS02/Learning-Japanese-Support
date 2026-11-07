@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "title": "Cặp âm dễ nhầm",
+    "description": "Cặp từ chỉ khác nhau ở trường âm (nguyên âm dài), âm ngắt っ hoặc một âm nhỏ — luyện tai phân biệt. Mọi từ đều lấy từ vocabulary.json, không tự bịa.",
+    "kinds": {
+      "long-vowel": "Trường âm",
+      "sokuon": "Âm ngắt っ",
+      "other": "Khác"
+    }
+  },
+  "pairs": [
+    {
+      "id": "biiru-biru",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "ビール",
+        "kana": "ビール",
+        "vn": "Bia",
+        "vocabId": "f16"
+      },
+      "b": {
+        "jp": "ビル",
+        "kana": "ビル",
+        "vn": "Tòa nhà cao tầng",
+        "vocabId": "mnb52"
+      }
+    },
+    {
+      "id": "karee-kare",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "カレー",
+        "kana": "カレー",
+        "vn": "Cà ri",
+        "vocabId": "kw18"
+      },
+      "b": {
+        "jp": "彼",
+        "kana": "かれ",
+        "vn": "Anh ấy",
+        "vocabId": "pf3"
+      }
+    },
+    {
+      "id": "iie-ie",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "いいえ",
+        "kana": "いいえ",
+        "vn": "Không, không phải",
+        "vocabId": "mna12"
+      },
+      "b": {
+        "jp": "家",
+        "kana": "いえ",
+        "vn": "Nhà",
+        "vocabId": "ho1"
+      }
+    },
+    {
+      "id": "hoshii-hoshi",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "欲しい",
+        "kana": "ほしい",
+        "vn": "Muốn (có)",
+        "vocabId": "ak8"
+      },
+      "b": {
+        "jp": "星",
+        "kana": "ほし",
+        "vn": "Ngôi sao",
+        "vocabId": "nw14"
+      }
+    },
+    {
+      "id": "kookoo-koko",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "高校",
+        "kana": "こうこう",
+        "vn": "Trường cấp ba",
+        "vocabId": "st2"
+      },
+      "b": {
+        "jp": "ここ",
+        "kana": "ここ",
+        "vn": "Ở đây",
+        "vocabId": "qd14"
+      }
+    },
+    {
+      "id": "yuumei-yume",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "有名",
+        "kana": "ゆうめい",
+        "vn": "Nổi tiếng",
+        "vocabId": "aj25"
+      },
+      "b": {
+        "jp": "夢",
+        "kana": "ゆめ",
+        "vn": "Giấc mơ; ước mơ",
+        "vocabId": "mn18"
+      }
+    },
+    {
+      "id": "ee-e",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "ええ",
+        "kana": "ええ",
+        "vn": "Vâng, ừ (thân mật)",
+        "vocabId": "mnb6"
+      },
+      "b": {
+        "jp": "絵",
+        "kana": "え",
+        "vn": "Tranh, hình vẽ",
+        "vocabId": "hb9"
+      }
+    },
+    {
+      "id": "anoo-ano",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "あのう",
+        "kana": "あのう",
+        "vn": "À, ừm (mở lời)",
+        "vocabId": "mna38"
+      },
+      "b": {
+        "jp": "あの",
+        "kana": "あの",
+        "vn": "...kia",
+        "vocabId": "qd13"
+      }
+    },
+    {
+      "id": "ojiisan-ojisan",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "おじいさん",
+        "kana": "おじいさん",
+        "vn": "Ông (già)",
+        "vocabId": "ef1"
+      },
+      "b": {
+        "jp": "おじさん",
+        "kana": "おじさん",
+        "vn": "Chú, bác (trai)",
+        "vocabId": "ef3"
+      }
+    },
+    {
+      "id": "obaasan-obasan",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "おばあさん",
+        "kana": "おばあさん",
+        "vn": "Bà (già)",
+        "vocabId": "ef2"
+      },
+      "b": {
+        "jp": "おばさん",
+        "kana": "おばさん",
+        "vn": "Cô, bác (gái)",
+        "vocabId": "ef4"
+      }
+    },
+    {
+      "id": "kaado-kado",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "カード",
+        "kana": "カード",
+        "vn": "Thẻ (thẻ ngân hàng, thẻ từ)",
+        "vocabId": "mna32"
+      },
+      "b": {
+        "jp": "角",
+        "kana": "かど",
+        "vn": "Góc (đường, phòng)",
+        "vocabId": "mne28"
+      }
+    },
+    {
+      "id": "uun-un",
+      "kind": "long-vowel",
+      "a": {
+        "jp": "ううん",
+        "kana": "ううん",
+        "vn": "Không (thân mật của いいえ)",
+        "vocabId": "mnd53"
+      },
+      "b": {
+        "jp": "うん",
+        "kana": "うん",
+        "vn": "Ừ (thân mật của はい)",
+        "vocabId": "mnd52"
+      }
+    },
+    {
+      "id": "motteikimasu-mottekimasu",
+      "kind": "other",
+      "a": {
+        "jp": "持って行きます",
+        "kana": "もっていきます",
+        "vn": "Mang đi, cầm đi",
+        "vocabId": "mnd12"
+      },
+      "b": {
+        "jp": "持って来ます",
+        "kana": "もってきます",
+        "vn": "Mang đến, cầm tới",
+        "vocabId": "mnd13"
+      }
+    }
+  ]
+}

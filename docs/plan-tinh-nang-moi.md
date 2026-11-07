@@ -28,7 +28,7 @@ Trạng thái:
 |---|---|---|---|
 | F1 | Lịch ôn FSRS | L | ⬜ Chưa làm |
 | F2 | Đếm ngược ngày thi + tự gợi ý số thẻ mới/ngày | S | ✅ Đã xong |
-| F3 | Luyện nghe cặp âm dễ nhầm (trường âm, っ) | M | ⬜ Chưa làm |
+| F3 | Luyện nghe cặp âm dễ nhầm (trường âm, っ) | M | ✅ Đã xong |
 | F4 | Shadowing có chấm điểm bằng nhận giọng nói | M | ⬜ Chưa làm |
 | F5 | Luyện kanji dễ nhầm theo bộ thủ | M | ✅ Đã xong |
 | F6 | Kiểm tra thứ tự & hướng nét khi tập viết | M–L | ⬜ Chưa làm |
@@ -200,6 +200,12 @@ ngày thi đã qua → ẩn thẻ đếm ngược, không chia cho 0.
 ---
 
 ## F3. Luyện nghe cặp âm dễ nhầm (trường âm, âm ngắt っ)
+
+> ✅ **Đã xong** (2026-11-08). `src/data/minimal-pairs.json` — 13 cặp quét từ `vocabulary.json`
+> (11 cặp ở dưới + ゆうめい/ゆめ, ううん/うん; data hiện chưa có cặp っ thuần nên không thêm).
+> Bộ `listen-pairs` (26 câu, phát bằng kana) trong `quizgen.js`; StudyRunner hiện khối
+> "🔁 Nghe lại để so sánh" khi item có `compare`. Đã thêm vào whitelist Admin ở cả hai chỗ.
+> Quyết định phương án không có thật: dùng mặc định **không**.
 
 **Mục tiêu.** Luyện tai phân biệt độ dài nguyên âm và っ — lỗi phổ biến nhất của người
 Việt (おばさん/おばあさん, きて/きって, ビル/ビール).
