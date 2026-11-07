@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getNote, setNote } from "../../lib/userdata";
 
 /**
@@ -10,11 +10,17 @@ export default function NoteBox({ kind, id, placeholder }) {
   const [open, setOpen] = useState(() => !!getNote(kind, id));
   const [saved, setSaved] = useState(false);
 
-  useEffect(() => {
+  // Đổi sang thẻ khác (StudyRunner dùng lại cùng một NoteBox) → nạp ghi chú của
+  // thẻ mới ngay trong lúc render, thay cho effect gọi setState.
+  const ident = `${kind}:${id}`;
+  const [shownFor, setShownFor] = useState(ident);
+  if (shownFor !== ident) {
     const next = getNote(kind, id);
+    setShownFor(ident);
     setValue(next);
     setOpen(!!next);
-  }, [kind, id]);
+    setSaved(false);
+  }
 
   const commit = (v) => {
     setValue(v);

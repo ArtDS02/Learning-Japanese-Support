@@ -15,7 +15,14 @@ import vocabData from "../data/vocabulary.json";
 import kanjiData from "../data/kanji.json";
 import numbersData from "../data/numbers.json";
 
-const HAS_KANJI = /[一-鿿]/;
+const HAS_KANJI = /[一-鿿々]/;
+
+// Một kanji ĐỨNG MỘT MÌNH chỉ được gắn ruby khi nó thật sự là một từ độc lập:
+// không dính kanji khác (三人 ≠ さん+ひと, 中国人 ≠ …+ひと, 八百屋 ≠ はち+ひゃく) và
+// theo sau là trợ từ / dấu câu / hết câu — không phải okurigana (上がる ≠ うえ,
+// 下さい ≠ した). Cách đọc một chữ đơn lẻ đổi theo ngữ cảnh, nên khi không chắc thì
+// để trống — đúng nguyên tắc "không bao giờ đoán".
+const SOLO_NEXT_OK = /^(?:$|[をにはでとのもへやかねよ、。！？!?・」』）)\s\u3000])/;
 
 let dict = null; // Map<dạng kanji, cách đọc kana>
 let maxLen = 0;
@@ -99,10 +106,14 @@ export function annotate(text) {
     for (let len = Math.min(maxLen, s.length - i); len >= 1; len--) {
       const sub = s.substr(i, len);
       const reading = map.get(sub);
-      if (reading) {
-        hit = { t: sub, r: reading };
-        break;
+      if (!reading) continue;
+      if (len === 1) {
+        const prev = s[i - 1] || "";
+        const next = s.slice(i + 1);
+        if ((prev && HAS_KANJI.test(prev)) || !SOLO_NEXT_OK.test(next)) break;
       }
+      hit = { t: sub, r: reading };
+      break;
     }
     if (hit) {
       flush();

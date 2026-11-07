@@ -6,6 +6,7 @@ import { rateCard, getCard, getStatus, getStats } from "../lib/srs";
 import { kanaPool } from "../lib/session";
 import SpeakButton from "./common/SpeakButton";
 import FilterRow from "./common/FilterRow";
+import { useDataVersion } from "../lib/useDataVersion";
 import "../styles/tabs/kana.css";
 import "../styles/tabs/kana-extra.css";
 
@@ -97,6 +98,7 @@ function weightedPick(pool, weights, exclude) {
 }
 
 export default function KanaTab() {
+  useDataVersion(); // vẽ lại thống kê kana mỗi khi SRS đổi
   const [mode, setMode] = useState("hiragana"); // hiragana | katakana | katakana-words
   const [quizMode, setQuizMode] = useState(false);
   const [fillMode, setFillMode] = useState(false);
@@ -112,10 +114,8 @@ export default function KanaTab() {
   const modeColor = mode === "hiragana" ? "#22d3ee" : "#a78bfa";
 
   // Độ thuộc kana nay được lưu trong SRS ⇒ hiện được ngay trên đầu tab.
-  const kanaStats = useMemo(
-    () => getStats("kana", kanaPool().map((c) => c.char)),
-    [quizMode, fillMode, mode],
-  );
+  // useDataVersion() ở trên lo vẽ lại khi SRS đổi; đếm 200 thẻ thì rẻ.
+  const kanaStats = getStats("kana", kanaPool().map((c) => c.char));
 
   return (
     <div>
@@ -628,7 +628,8 @@ function FillRomaji({ chars, mode, color }) {
   };
 
   const onKeyDown = (e) => {
-    if (e.key === "Enter") {
+    // Enter để chốt chữ trong bộ gõ IME tiếng Nhật không phải là nộp bài.
+    if (e.key === "Enter" && !e.nativeEvent.isComposing && e.keyCode !== 229) {
       e.preventDefault();
       submit();
     }

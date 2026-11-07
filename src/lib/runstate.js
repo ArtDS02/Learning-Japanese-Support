@@ -47,6 +47,11 @@ function writeAll(all) {
   writeJSON(KEY, all);
 }
 
+/** Bỏ bản trong bộ nhớ (sau khi xoá toàn bộ / nhập file sao lưu). */
+export function invalidateRuns() {
+  cache = null;
+}
+
 export function loadRun(key) {
   const row = readAll()[key];
   if (!row || Date.now() - (row.at || 0) > TTL_MS) return null;

@@ -1,7 +1,13 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { getStats, orderForStudy } from "../lib/srs";
-import { modifierWords, modifierGroups, posMeta, confusables } from "../lib/modifiers";
-import { shuffle } from "../lib/random";
+import {
+  modifierWords,
+  modifierGroups,
+  posMeta,
+  confusables,
+  sayable,
+  modifierCard as flashOf,
+} from "../lib/modifiers";
 import StudyRunner from "./common/StudyRunner";
 import SpeakButton from "./common/SpeakButton";
 import NoteBox from "./common/NoteBox";
@@ -45,50 +51,7 @@ const ALL_WORDS = modifierWords();
 const GROUP_BY_ID = Object.fromEntries(GROUPS.map((g) => [g.id, g]));
 const CONFUSABLES = confusables();
 
-/** Cách đọc dùng cho TTS: bỏ ngoặc và chỉ lấy biến thể đầu ở các mục "A・B". */
-const sayable = (w) => String(w.hira || w.jp).replace(/[（）()]/g, "").split("・")[0].trim();
-
 const posOf = posMeta;
-
-/** Thẻ lật: mặt trước là từ tiếng Nhật, mặt sau là nghĩa + từ loại + đối tượng bổ nghĩa. */
-function flashOf(w, { reverse = false } = {}) {
-  const p = posOf(w.pos);
-  const base = {
-    deck: "modifiers",
-    kind: "flash",
-    id: w.id,
-    tab: "modifiers",
-    tag: `${w.groupIcon} ${w.groupLabel} · ${p.short}`,
-    color: w.groupColor,
-    noteKind: "modifiers",
-    example: { jp: w.ex.jp, vn: w.ex.vn },
-    extra: [
-      `${p.jp}（${p.kana}）${w.posNote ? ` — ${w.posNote}` : ""}`,
-      `Bổ nghĩa cho: ${w.modifies}`,
-      ...(w.note ? [`💡 ${w.note}`] : []),
-    ],
-  };
-
-  if (reverse) {
-    return {
-      ...base,
-      front: w.vn,
-      frontSub: `${w.groupLabel} · ${p.short}`,
-      back: w.jp,
-      backSub: w.jp === w.hira ? w.romaji : `${w.hira} · ${w.romaji}`,
-      speakBack: sayable(w), // nghe trước khi lật là lộ đáp án
-    };
-  }
-
-  return {
-    ...base,
-    front: w.jp,
-    frontSub: w.jp === w.hira ? w.romaji : `${w.hira} · ${w.romaji}`,
-    back: w.vn,
-    backSub: `${p.jp} · bổ nghĩa cho ${w.modifies}`,
-    speak: sayable(w), // cách đọc KHÔNG phải đáp án nên nghe trước được
-  };
-}
 
 /** Nhãn từ loại — dùng ở cả bảng tra và thẻ, nên tách ra một chỗ. */
 function PosBadge({ pos, note }) {
@@ -374,26 +337,18 @@ function CheatSheet({ onGoWord }) {
 }
 
 export default function ModifiersTab({ initialSearch }) {
-  const [view, setView] = useState("table");
+  // Kết quả tìm kiếm toàn cục có thể là một CẶP từ dễ nhầm ("だけ vs しか") —
+  // chuỗi đó không khớp từ nào trong bảng tra, nên phải mở đúng mục Từ dễ nhầm.
+  // (App dựng lại hẳn tab mỗi lần nhảy từ tìm kiếm, nên khởi tạo là đủ.)
+  const [view, setView] = useState(() =>
+    initialSearch && CONFUSABLES.some((c) => c.title === initialSearch) ? "confuse" : "table",
+  );
   const [group, setGroup] = useState("all");
   const [pos, setPos] = useState("all");
   const [level, setLevel] = useState("all");
   const [search, setSearch] = useState(initialSearch || "");
   const [openCard, setOpenCard] = useState(null);
   const [study, setStudy] = useState(null); // { cards, label }
-
-  // Khi mở từ tìm kiếm toàn cục: về bảng tra, bỏ mọi bộ lọc đang bật.
-  useEffect(() => {
-    if (initialSearch) {
-      setSearch(initialSearch);
-      // Kết quả tìm kiếm có thể là một CẶP từ dễ nhầm ("だけ vs しか") — chuỗi đó
-      // không khớp từ nào trong bảng tra, nên phải mở đúng mục Từ dễ nhầm.
-      setView(CONFUSABLES.some((c) => c.title === initialSearch) ? "confuse" : "table");
-      setGroup("all");
-      setPos("all");
-      setLevel("all");
-    }
-  }, [initialSearch]);
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();

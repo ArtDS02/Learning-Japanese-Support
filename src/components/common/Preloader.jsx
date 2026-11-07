@@ -129,12 +129,20 @@ export default function Preloader({ onDone }) {
   const pctRef = useRef(null);
   const doneRef = useRef(false);
 
-  const [phase, setPhase] = useState("code");
+  // Người dùng tắt hiệu ứng chuyển động: vào thẳng pha "form" (logo tĩnh).
+  const [phase, setPhase] = useState(() =>
+    typeof window !== "undefined" &&
+    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+      ? "form"
+      : "code",
+  );
 
   // onDone đi qua ref: effect chỉ được chạy đúng một lần, không phụ thuộc vào
   // việc hàm callback có ổn định giữa các lần render hay không.
   const doneCb = useRef(onDone);
-  doneCb.current = onDone;
+  useEffect(() => {
+    doneCb.current = onDone;
+  }, [onDone]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -153,7 +161,6 @@ export default function Preloader({ onDone }) {
     if (reduced) {
       if (codeEl) codeEl.textContent = CODE;
       if (pctEl) pctEl.textContent = "100";
-      setPhase("form");
       const t1 = setTimeout(() => setPhase("exit"), 620);
       const t2 = setTimeout(finish, 980);
       return () => {

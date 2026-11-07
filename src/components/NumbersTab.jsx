@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import data from "../data/numbers.json";
 import { kanaToRomaji } from "../lib/romaji";
 import { getStats, orderForStudy } from "../lib/srs";
@@ -263,10 +263,12 @@ const FLASH_SETS = {
  */
 function Answer({ hidden, children }) {
   const [shown, setShown] = useState(false);
-
-  useEffect(() => {
+  // Tắt rồi bật lại "Ẩn đáp án" → che lại (điều chỉnh ngay trong render).
+  const [hiddenSeen, setHiddenSeen] = useState(hidden);
+  if (hiddenSeen !== hidden) {
+    setHiddenSeen(hidden);
     setShown(false);
-  }, [hidden]);
+  }
 
   if (!hidden || shown) return <>{children}</>;
 

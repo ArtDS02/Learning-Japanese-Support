@@ -1,74 +1,115 @@
-# React + TypeScript + Vite
+# Project Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Install dependencies
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Run Project (Development)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Start local development server:
+
+```bash
+npm run dev
 ```
-"# Learning-Japanese-Support" 
+
+Default local URL:
+
+```txt
+http://localhost:5173
+```
+
+---
+
+# Build Project
+
+Build production files:
+
+```bash
+npm run build
+```
+
+Output folder:
+
+```txt
+dist/
+```
+
+---
+
+# Firebase Hosting Deployment
+
+## Login Firebase
+
+```bash
+firebase login
+```
+
+---
+
+## Check current Firebase project
+
+```bash
+firebase use
+```
+
+---
+
+## Build and Deploy
+
+```bash
+npm run build
+firebase deploy --only hosting
+```
+
+---
+
+# Environment Variables
+
+None required. The app is fully client-side: all learning data lives in
+`src/data/*.json` and user progress is stored in the browser's `localStorage`
+(export/import a backup file from the **Tiến độ** tab). Firebase is used only
+for static hosting — there is no Firebase SDK or API key in the app.
+
+`.env` files are still ignored by git if you add any later.
+
+---
+
+# Lint
+
+```bash
+npm run lint
+```
+
+---
+
+# Git Ignore
+
+Ignored files:
+
+```txt
+node_modules/
+dist/
+.env
+.env.*
+.firebase/
+```
+
+---
+
+# Tech Stack
+
+- Vite
+- React 19
+- Web Speech API (Japanese text-to-speech, no audio files)
+- Service worker (offline / installable PWA)
+- Firebase Hosting (static files only)
+
+# Credits
+
+- Kanji stroke order data: [KanjiVG](https://kanjivg.tagaini.net) by Ulrich Apel,
+  licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
+  The derived file `src/data/kanji-strokes.json` is distributed under the same license.

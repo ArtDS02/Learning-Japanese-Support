@@ -5,6 +5,8 @@
 // đủ dùng: một file JSON mang theo được.
 
 import { readJSON, writeJSON } from "./storage";
+import { invalidateSrs } from "./srs";
+import { invalidateRuns } from "./runstate";
 
 export const APP_TAG = "jlpt-n5-learning";
 export const BACKUP_VERSION = 1;
@@ -24,24 +26,46 @@ export const OWNED_KEYS = [
   "kanji_learned", // (cũ) kanji đánh dấu tay — giữ để không mất dữ liệu người dùng
   "kana:quiz:cfg", // cấu hình quiz kana
   "minna1_v1", // Minna no Nihongo 1: tiến độ từng bài, câu sai, romaji/furigana
+  "studyplan_checks_v1", // checklist lộ trình 12 tuần
+  "run_progress_v1", // phiên học đang dở (học tiếp chỗ cũ)
+  "daily_new_v1", // số thẻ mới đã mở trong ngày (giới hạn thẻ mới/ngày)
+  "n5.numbers.counterView", // cách xem bảng bộ đếm
+  "migrations_done_v1", // cờ di trú dữ liệu — mang theo để không di trú lại
   "jlpt-active-tab",
 ];
+
+// Khoá lưu CHUỖI THUẦN (không phải JSON) — phải ghi lại đúng dạng chuỗi, nếu
+// không "home" thành "\"home\"" và app không nhận ra nữa.
+const RAW_STRING_KEYS = new Set(["jlpt-active-tab"]);
+
+/**
+ * Các module giữ bản sao dữ liệu trong bộ nhớ (SRS, phiên học dở). Ghi thẳng
+ * localStorage mà không bỏ bản sao này thì lượt ôn kế tiếp sẽ ghi ĐÈ dữ liệu
+ * cũ trở lại — đúng lỗi "xoá rồi mà tiến độ sống lại".
+ */
+function dropCaches() {
+  invalidateSrs();
+  invalidateRuns();
+}
 
 /** Gói toàn bộ dữ liệu học thành một object có thể tải về. */
 export function exportData() {
   const data = {};
   for (const key of OWNED_KEYS) {
-    const val = readJSON(key, undefined);
-    if (val !== undefined) data[key] = val;
-    else {
-      // Một số khoá lưu chuỗi thuần (không phải JSON) — vẫn mang theo.
-      try {
-        const raw = localStorage.getItem(key);
-        if (raw != null) data[key] = raw;
-      } catch {
-        /* ignore */
-      }
+    let raw = null;
+    try {
+      raw = localStorage.getItem(key);
+    } catch {
+      /* ignore */
     }
+    if (raw == null) continue;
+    if (RAW_STRING_KEYS.has(key)) {
+      data[key] = raw;
+      continue;
+    }
+    const val = readJSON(key, undefined);
+    // Một số khoá lưu chuỗi thuần (không phải JSON) — vẫn mang theo.
+    data[key] = val !== undefined ? val : raw;
   }
   return {
     app: APP_TAG,
@@ -73,40 +97,45 @@ export function downloadBackup() {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
+/** Kiểm tra sơ bộ một object đã parse có phải file sao lưu của app không. */
+export function validateBackup(payload) {
+  if (!payload || typeof payload !== "object" || !payload.data || typeof payload.data !== "object") {
+    return "File không đúng định dạng sao lưu của app.";
+  }
+  if (payload.app && payload.app !== APP_TAG) return `File thuộc app khác (${payload.app}).`;
+  return null;
+}
+
 /**
  * Nhập dữ liệu từ object đã parse.
  * mode: "replace" (ghi đè) | "merge" (gộp — giữ tiến độ cao hơn).
  * Trả về { ok, keys, error }.
  */
 export function importData(payload, mode = "replace") {
-  if (!payload || typeof payload !== "object" || !payload.data) {
-    return { ok: false, error: "File không đúng định dạng sao lưu của app." };
-  }
-  if (payload.app && payload.app !== APP_TAG) {
-    return { ok: false, error: `File thuộc app khác (${payload.app}).` };
-  }
+  const error = validateBackup(payload);
+  if (error) return { ok: false, error };
 
   const keys = [];
   for (const [key, value] of Object.entries(payload.data)) {
     if (!OWNED_KEYS.includes(key)) continue; // chỉ nhận khoá đã biết
     try {
-      if (mode === "merge") {
-        writeJSON(key, mergeValue(key, readJSON(key, undefined), value));
-      } else if (typeof value === "string") {
-        localStorage.setItem(key, value);
-      } else {
-        writeJSON(key, value);
-      }
+      const next =
+        mode === "merge" && !RAW_STRING_KEYS.has(key)
+          ? mergeValue(key, readJSON(key, undefined), value)
+          : value;
+      if (typeof next === "string" && RAW_STRING_KEYS.has(key)) localStorage.setItem(key, next);
+      else writeJSON(key, next);
       keys.push(key);
     } catch {
       /* bỏ qua khoá lỗi, không làm hỏng cả lần nhập */
     }
   }
+  dropCaches();
   return { ok: true, keys };
 }
 
 /** Gộp hai giá trị của cùng một khoá — ưu tiên tiến độ cao hơn / dữ liệu nhiều hơn. */
-function mergeValue(key, current, incoming) {
+export function mergeValue(key, current, incoming) {
   if (current == null) return incoming;
   if (incoming == null) return current;
 
@@ -114,7 +143,7 @@ function mergeValue(key, current, incoming) {
     const out = { ...current };
     for (const [deck, bag] of Object.entries(incoming)) {
       out[deck] = { ...(out[deck] || {}) };
-      for (const [id, card] of Object.entries(bag)) {
+      for (const [id, card] of Object.entries(bag || {})) {
         const mine = out[deck][id];
         // Thẻ nào có nhiều lượt ôn hơn thì giữ (coi như mới hơn).
         if (!mine || (card.reps || 0) > (mine.reps || 0)) out[deck][id] = card;
@@ -136,11 +165,28 @@ function mergeValue(key, current, incoming) {
     return out;
   }
 
-  // Mảng id (đánh dấu) → hợp
+  // Lịch sử thi thử: các lần thi không có id — khoá theo (đề, thời điểm) rồi sắp
+  // mới → cũ. Lọc theo `id` như mảng thường sẽ vứt sạch toàn bộ lịch sử.
+  if (key === "exam_history_v1" && Array.isArray(current) && Array.isArray(incoming)) {
+    const seen = new Set();
+    return [...current, ...incoming]
+      .filter((r) => {
+        if (!r || typeof r !== "object") return false;
+        const k = `${r.examId}|${r.at}`;
+        if (seen.has(k)) return false;
+        seen.add(k);
+        return true;
+      })
+      .sort((a, b) => (b.at || 0) - (a.at || 0))
+      .slice(0, 50);
+  }
+
+  // Mảng (id đánh dấu, thẻ tự tạo…) → hợp. Phần tử object không có id thì so
+  // khớp theo nội dung — không bao giờ âm thầm bỏ đi.
   if (Array.isArray(current) && Array.isArray(incoming)) {
     const seen = new Set();
     return [...current, ...incoming].filter((x) => {
-      const k = typeof x === "object" ? x?.id : x;
+      const k = x && typeof x === "object" ? (x.id ?? JSON.stringify(x)) : x;
       if (k == null || seen.has(k)) return false;
       seen.add(k);
       return true;
@@ -153,13 +199,15 @@ function mergeValue(key, current, incoming) {
   return incoming;
 }
 
-/** Đọc file người dùng chọn rồi nhập. */
-export function importFromFile(file, mode = "replace") {
+/** Đọc file người dùng chọn → object đã parse (chưa nhập). */
+export function readBackupFile(file) {
   return new Promise((resolve) => {
     const reader = new FileReader();
     reader.onload = () => {
       try {
-        resolve(importData(JSON.parse(String(reader.result)), mode));
+        const payload = JSON.parse(String(reader.result));
+        const error = validateBackup(payload);
+        resolve(error ? { ok: false, error } : { ok: true, payload });
       } catch (e) {
         resolve({ ok: false, error: `Không đọc được JSON: ${String(e.message || e)}` });
       }
@@ -172,10 +220,13 @@ export function importFromFile(file, mode = "replace") {
 /** Xoá sạch dữ liệu app (giữ nguyên các khoá không thuộc app). */
 export function wipeAll() {
   for (const key of OWNED_KEYS) {
+    // Giữ cờ di trú: không có lý do gì để chạy lại di trú trên dữ liệu đã xoá.
+    if (key === "migrations_done_v1") continue;
     try {
       localStorage.removeItem(key);
     } catch {
       /* ignore */
     }
   }
+  dropCaches();
 }

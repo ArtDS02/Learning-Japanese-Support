@@ -372,6 +372,45 @@
   color: var(--text-muted);
 }
 
+/* Khung báo lỗi (ErrorBoundary) */
+.err-box {
+  max-width: 32rem;
+  margin: 3rem auto;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-md);
+}
+
+.err-box__icon {
+  font-size: 2rem;
+}
+
+.err-box__title {
+  margin-top: 0.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.err-box__text {
+  margin: 0.5rem 0 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.err-box__btn {
+  background: var(--accent-violet);
+  border: 0;
+  border-radius: var(--radius-md);
+  color: #0a0b0f;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+}
+
 /* Nút mở tìm kiếm trên header */
 .gs-trigger {
   display: inline-flex;

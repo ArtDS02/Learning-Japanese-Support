@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { todayOverview, buildTodaySession } from "../lib/session";
 import { DECKS, deckMeta, getForecast, allDeckStats } from "../lib/srs";
 import {
@@ -12,6 +12,7 @@ import {
 } from "../lib/progress";
 import { loadSettings, saveSettings } from "../lib/userdata";
 import { nextLesson, lessonsOverview } from "../lib/lessons";
+import { useDataVersion } from "../lib/useDataVersion";
 import StudyRunner from "./common/StudyRunner";
 import "../styles/tabs/home.css";
 // Ô cài đặt ở đây dùng .qh__chip của quiz.css. Tab này không render QuizHub nên
@@ -27,80 +28,59 @@ const DECK_TAB = Object.fromEntries(DECKS.map((d) => [d.id, d.tab]));
  */
 export default function HomeTab({ onGoTo }) {
   const [session, setSession] = useState(null);
-  const [tick, setTick] = useState(0);
   const [settings, setSettings] = useState(() => loadSettings());
   const [showSettings, setShowSettings] = useState(false);
+  // Vẽ lại mỗi khi SRS / tiến độ đổi (kể cả từ tab trình duyệt khác).
+  const version = useDataVersion();
 
-  // Dữ liệu 6 bộ đề nặng ~186KB; nạp SAU khi màn hình đầu đã vẽ để mở app nhanh.
-  const [exam, setExam] = useState({ open: [], mistakes: [] });
+  // Dữ liệu 6 bộ đề (~186KB) và bộ sinh câu hỏi của các deck còn lại nặng; nạp
+  // SAU khi màn hình đầu đã vẽ để mở app nhanh. `extra` = thẻ tới hạn của ngữ
+  // pháp / số đếm / nghe / từ bổ nghĩa.
+  const [exam, setExam] = useState({ open: [], mistakes: [], extra: [] });
   useEffect(() => {
+    if (session) return undefined; // đang học: khỏi tính lại sau mỗi thẻ
     let alive = true;
-    import("../lib/examStore").then((m) => {
+    Promise.all([import("../lib/examStore"), import("../lib/sessionExtra")]).then(([m, x]) => {
       if (!alive) return;
-      setExam({ open: m.inProgressExams(), mistakes: m.mistakeEntries() });
+      setExam({ open: m.inProgressExams(), mistakes: m.mistakeEntries(), extra: x.extraDueCards() });
     });
     return () => {
       alive = false;
     };
-  }, [tick]);
+  }, [version, session]);
+
+  const start = (opts) => {
+    const queue = buildTodaySession({ ...opts, mistakes: exam.mistakes, extra: exam.extra });
+    if (queue.length) setSession(queue);
+  };
+
+  if (session) {
+    return (
+      <StudyRunner
+        items={session}
+        title="🔥 Phiên học hôm nay"
+        subtitle="Trộn mọi phần đang tới hạn theo lịch ôn + thẻ mới"
+        color="#f97316"
+        onExit={() => setSession(null)}
+      />
+    );
+  }
+
   const openExams = exam.open;
   const mistakes = exam.mistakes;
-
-  const overview = useMemo(
-    () => todayOverview({ mistakes: exam.mistakes }),
-    [tick, settings.newPerDay, exam.mistakes],
-  );
-  const progress = useMemo(() => loadProgress(), [tick]);
+  const overview = todayOverview({ mistakes: exam.mistakes, extra: exam.extra });
+  const progress = loadProgress();
   const streak = getStreak(progress);
   const today = studiedToday(progress);
   const doneToday = reviewsToday(progress);
   const goal = settings.dailyGoal || 30;
   const goalPct = Math.min(100, Math.round((doneToday / goal) * 100));
   const acc = accuracyOverall(30, progress);
-  const forecast = useMemo(() => getForecast(7), [tick]);
-  const deckStats = useMemo(() => allDeckStats(), [tick]);
-  const activity = useMemo(() => recentActivity(7, progress), [progress]);
-  const lesson = useMemo(() => nextLesson(), [tick]);
-  const lessonsInfo = useMemo(() => lessonsOverview(), [tick]);
-
-  const items = useMemo(() => (session ? session : []), [session]);
-
-  const start = (opts) => {
-    const queue = buildTodaySession({ ...opts, mistakes: exam.mistakes });
-    if (queue.length) setSession(queue);
-  };
-
-  // Nhắc học: chỉ chạy được khi trang đang mở (không có push server).
-  useEffect(() => {
-    if (!settings.reminderOn || typeof Notification === "undefined") return;
-    if (Notification.permission !== "granted") return;
-    const check = () => {
-      const [h, m] = String(settings.reminderTime || "20:00").split(":").map(Number);
-      const now = new Date();
-      if (now.getHours() === h && now.getMinutes() === m && !studiedToday()) {
-        new Notification("JLPT N5 — đến giờ học rồi!", {
-          body: `Hôm nay bạn còn ${overview.total} thẻ cần ôn. Giữ chuỗi ${streak} ngày nhé!`,
-        });
-      }
-    };
-    const t = setInterval(check, 60000);
-    return () => clearInterval(t);
-  }, [settings.reminderOn, settings.reminderTime, overview.total, streak]);
-
-  if (session) {
-    return (
-      <StudyRunner
-        items={items}
-        title="🔥 Phiên học hôm nay"
-        subtitle="Trộn từ vựng · kanji · kana · câu sai theo lịch ôn"
-        color="#f97316"
-        onExit={() => {
-          setSession(null);
-          setTick((t) => t + 1);
-        }}
-      />
-    );
-  }
+  const forecast = getForecast(7);
+  const deckStats = allDeckStats();
+  const activity = recentActivity(7, progress);
+  const lesson = nextLesson();
+  const lessonsInfo = lessonsOverview();
 
   return (
     <div className="hm">
@@ -160,8 +140,8 @@ export default function HomeTab({ onGoTo }) {
                 >
                   {meta.icon} {meta.label}
                   <span className="hm-chip__n">
-                    {/* 🆕 = số thẻ chưa học CÒN LẠI của phần đó. Mỗi phiên chỉ
-                        lấy tối đa `newPerDay` thẻ mới cho toàn bộ phiên. */}
+                    {/* 🆕 = số thẻ chưa học CÒN LẠI của phần đó. Mỗi ngày chỉ
+                        mở tối đa `newPerDay` thẻ mới cho mọi phần cộng lại. */}
                     {b.due > 0 && `📅${b.due}`}
                     {b.due > 0 && b.new > 0 && " "}
                     {b.new > 0 && `🆕${b.new}`}
@@ -457,8 +437,8 @@ function GoalSettings({ settings, onChange, onClose }) {
               />
             </div>
             <div className="hm-settings__hint">
-              Lưu ý thật: nhắc học chỉ chạy khi trang web đang mở (app không có server đẩy thông báo).
-              Muốn chắc chắn hơn thì cài app ra màn hình chính và mở mỗi ngày.
+              Nhắc một lần mỗi ngày khi đã quá giờ hẹn mà bạn chưa học. Lưu ý thật: chỉ chạy khi app
+              đang mở ở bất kỳ tab nào (app không có server đẩy thông báo) — nên cài app ra màn hình chính.
             </div>
           </>
         )}

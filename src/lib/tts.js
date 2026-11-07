@@ -57,6 +57,25 @@ if (synth) {
   }, 300);
 }
 
+// iOS Safari chỉ cho phát giọng đọc bắt đầu từ một cú chạm của người dùng; câu
+// tự phát khi sang thẻ mới (StudyRunner) chạy trong timer nên bị chặn. Phát một
+// câu rỗng ngay lần chạm đầu tiên là đủ "mở khoá" cho các lần phát sau.
+if (synth && typeof document !== "undefined") {
+  const unlock = () => {
+    document.removeEventListener("pointerdown", unlock, true);
+    document.removeEventListener("keydown", unlock, true);
+    try {
+      const u = new SpeechSynthesisUtterance("");
+      u.volume = 0;
+      synth.speak(u);
+    } catch {
+      /* không mở khoá được thì nút loa vẫn chạy bình thường khi bấm */
+    }
+  };
+  document.addEventListener("pointerdown", unlock, true);
+  document.addEventListener("keydown", unlock, true);
+}
+
 /** Trình duyệt có hỗ trợ SpeechSynthesis hay không. */
 export function ttsSupported() {
   return !!synth && typeof window.SpeechSynthesisUtterance === "function";

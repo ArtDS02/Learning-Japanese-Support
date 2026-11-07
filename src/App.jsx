@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback, useRef, lazy, Suspense } from "react";
 import Preloader from "./components/common/Preloader";
+import ErrorBoundary from "./components/common/ErrorBoundary";
+import { startReminder } from "./lib/reminder";
 
 // Tìm kiếm toàn cục cũng lazy: chỉ mục của nó đọc mọi file data, để import tĩnh
 // là kéo toàn bộ JSON vào bundle đầu tiên — đúng thứ vừa tách ra.
@@ -212,7 +214,12 @@ function BackToTop() {
 
 export default function App() {
   const [activeTab, setActiveTab] = useState(() => {
-    const saved = localStorage.getItem("jlpt-active-tab");
+    let saved = null;
+    try {
+      saved = localStorage.getItem("jlpt-active-tab");
+    } catch {
+      /* chế độ riêng tư chặn localStorage */
+    }
     return saved && VALID.has(saved) ? saved : "home";
   });
   const [mounted, setMounted] = useState(false);
@@ -249,8 +256,15 @@ export default function App() {
   }, [revealing]);
 
   useEffect(() => {
-    localStorage.setItem("jlpt-active-tab", activeTab);
+    try {
+      localStorage.setItem("jlpt-active-tab", activeTab);
+    } catch {
+      /* chế độ riêng tư / hết dung lượng — không đáng để làm vỡ app */
+    }
   }, [activeTab]);
+
+  // Nhắc học chạy ở cấp App để hoạt động dù đang mở tab nào.
+  useEffect(() => startReminder(), []);
 
   // Ctrl/⌘ + K mở tìm kiếm toàn cục ở bất kỳ tab nào.
   useEffect(() => {
@@ -350,15 +364,19 @@ export default function App() {
           aria-labelledby={`tab-${activeTab}`}
           tabIndex={-1}
         >
-          <Suspense fallback={<div className="tab-loading">Đang tải…</div>}>
-            <div key={`${activeTab}:${jumped ? jump.n : 0}`}>{renderTab()}</div>
-          </Suspense>
+          <ErrorBoundary resetKey={activeTab}>
+            <Suspense fallback={<div className="tab-loading">Đang tải…</div>}>
+              <div key={`${activeTab}:${jumped ? jump.n : 0}`}>{renderTab()}</div>
+            </Suspense>
+          </ErrorBoundary>
         </main>
 
         {searchOpen && (
-          <Suspense fallback={null}>
-            <GlobalSearch open onClose={() => setSearchOpen(false)} onJump={onJump} />
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={null}>
+              <GlobalSearch open onClose={() => setSearchOpen(false)} onJump={onJump} />
+            </Suspense>
+          </ErrorBoundary>
         )}
 
         <BackToTop />

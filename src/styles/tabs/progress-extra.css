@@ -390,6 +390,13 @@
   padding: 0.5rem 0.75rem;
 }
 
+.pgx-backup__confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  border: 0.0625rem solid var(--bg-border);
+}
+
 .prog-note--plain {
   margin-top: 0;
 }

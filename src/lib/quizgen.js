@@ -21,6 +21,8 @@ import numbersData from "../data/numbers.json";
 import kanjiData from "../data/kanji.json";
 import kanaData from "../data/kana.json";
 import { shuffle } from "./random";
+import { loadSrs, replaceState } from "./srs";
+import { readJSON, writeJSON } from "./storage";
 
 export const BLANK = "＿＿";
 
@@ -46,6 +48,21 @@ function distractors(pool, answer, n, keyOf = (x) => x) {
 /** Ghép đáp án + nhiễu rồi xáo. */
 function mcChoices(answer, wrong) {
   return shuffle([answer, ...wrong]);
+}
+
+/**
+ * Mã ngắn ổn định theo NỘI DUNG (FNV-1a) — dùng làm phần cuối id thẻ SRS. Trước
+ * đây id dựa theo VỊ TRÍ trong mảng (date:0, p_wa#0…): chèn/xoá một mục trong
+ * Admin là toàn bộ tiến độ phía sau bị gắn sang thẻ khác.
+ */
+function contentKey(text) {
+  let h = 2166136261;
+  const t = String(text || "");
+  for (let i = 0; i < t.length; i += 1) {
+    h ^= t.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return (h >>> 0).toString(36);
 }
 
 const clean = (s) => String(s || "").replace(/[<>]/g, "");
@@ -86,7 +103,8 @@ export function particleCloze() {
       if (wrong.length < 2) return;
 
       out.push({
-        id: `${item.id}#${key}`,
+        id: `${item.id}#${contentKey(ex.jp)}`,
+        legacyId: `${item.id}#${key}`,
         deck: "grammar",
         kind: "choice",
         prompt: "Điền trợ từ thích hợp vào chỗ trống",
@@ -136,7 +154,8 @@ export function patternCloze() {
         if (wrong.length < 2) return;
 
         out.push({
-          id: `${item.id}#${i}`,
+          id: `${item.id}#${contentKey(ex.jp)}`,
+          legacyId: `${item.id}#${i}`,
           deck: "grammar",
           kind: "choice",
           prompt: "Chọn cách điền đúng vào chỗ trống",
@@ -190,7 +209,8 @@ function conjugationItems(categoryId, forms, deck, tagPrefix) {
         if (others.length < 2) return;
 
         out.push({
-          id: `${group.id}#${ri}#${f.key}`,
+          id: `${group.id}#${contentKey(row.dict)}#${f.key}`,
+          legacyId: `${group.id}#${ri}#${f.key}`,
           deck,
           kind: "choice",
           prompt: `Chia sang dạng ${f.label}`,
@@ -228,7 +248,8 @@ export function verbConjugationTyping() {
         const answer = row[f.key];
         if (!answer || /[一-鿿]/.test(answer)) return; // chỉ lấy dạng thuần kana
         out.push({
-          id: `type:${group.id}#${ri}#${f.key}`,
+          id: `type:${group.id}#${contentKey(row.dict)}#${f.key}`,
+          legacyId: `type:${group.id}#${ri}#${f.key}`,
           deck: "grammar",
           kind: "type",
           prompt: `Gõ dạng ${f.label}`,
@@ -362,7 +383,7 @@ export function counterReadings() {
   return out;
 }
 
-function readingSet({ rows, idPrefix, deck, prompt, tag, questionOf, answerOf, subOf }) {
+function readingSet({ rows, idPrefix, keyOf, deck, prompt, tag, questionOf, answerOf, subOf }) {
   const answers = rows.map((r) => stripWarn(answerOf(r)));
   return rows
     .map((r, i) => {
@@ -370,7 +391,8 @@ function readingSet({ rows, idPrefix, deck, prompt, tag, questionOf, answerOf, s
       const wrong = distractors(answers.filter((a) => a !== answer), answer, 3);
       if (wrong.length < 2) return null;
       return {
-        id: `${idPrefix}:${i}`,
+        id: `${idPrefix}:${keyOf(r)}`,
+        legacyId: `${idPrefix}:${i}`,
         deck,
         kind: "choice",
         prompt,
@@ -389,6 +411,7 @@ export function hourReadings() {
   return readingSet({
     rows: numbersData.hours,
     idPrefix: "hour",
+    keyOf: (h) => `${h.n}時`, // khoá không thuần số: tránh trùng với id cũ "hour:<vị trí>"
     deck: "numbers",
     prompt: "Giờ này đọc thế nào?",
     tag: "Giờ 〜時",
@@ -401,6 +424,7 @@ export function monthReadings() {
   return readingSet({
     rows: numbersData.months,
     idPrefix: "month",
+    keyOf: (m) => m.jp,
     deck: "numbers",
     prompt: "Tháng này đọc thế nào?",
     tag: "Tháng 〜月",
@@ -413,6 +437,7 @@ export function dateReadings() {
   return readingSet({
     rows: numbersData.dates,
     idPrefix: "date",
+    keyOf: (d) => d.jp,
     deck: "numbers",
     prompt: "Ngày này đọc thế nào? (phần bất quy tắc nhất của N5)",
     tag: "Ngày 〜日",
@@ -432,7 +457,8 @@ export function weekdayReadings() {
       (o) => o.vn,
     ).map((o) => o.vn);
     return {
-      id: `wd:${i}`,
+      id: `wd:${d.jp}`,
+      legacyId: `wd:${i}`,
       deck: "numbers",
       kind: "choice",
       prompt: "Thứ mấy?",
@@ -451,6 +477,7 @@ export function numberReadings() {
   return readingSet({
     rows: numbersData.numbers,
     idPrefix: "num",
+    keyOf: (n) => n.kanji || `n${n.num}`,
     deck: "numbers",
     prompt: "Số này đọc thế nào?",
     tag: "Số cơ bản",
@@ -655,13 +682,67 @@ export const QUIZ_SETS = [
 export const quizSetsFor = (tab) => QUIZ_SETS.filter((s) => s.tab === tab);
 export const quizSetById = (id) => QUIZ_SETS.find((s) => s.id === id);
 
+/** Hai câu trùng nội dung trong cùng một bộ → thêm hậu tố để id vẫn duy nhất. */
+function uniqueIds(items) {
+  const seen = new Map();
+  return items.map((it) => {
+    const n = (seen.get(it.id) || 0) + 1;
+    seen.set(it.id, n);
+    return n === 1 ? it : { ...it, id: `${it.id}~${n}` };
+  });
+}
+
 /** Sinh câu hỏi cho một bộ; trả về [] nếu bộ không tồn tại. */
 export function buildQuiz(setId) {
   const set = quizSetById(setId);
   if (!set) return [];
   try {
-    return set.gen() || [];
+    return uniqueIds(set.gen() || []);
   } catch {
     return [];
   }
+}
+
+// ── Di trú id theo vị trí → id theo nội dung ────────────────────────────────
+
+const MIGRATION_KEY = "migrations_done_v1";
+const MIGRATION_NAME = "quiz_content_ids";
+
+/**
+ * Chạy một lần: đổi khoá SRS của các thẻ ngữ pháp / số đếm từ id cũ (theo vị
+ * trí) sang id mới (theo nội dung), để người dùng hiện tại không mất tiến độ.
+ * Dữ liệu chưa bị sửa kể từ bản cũ nên vị trí cũ vẫn trỏ đúng câu.
+ */
+export function migrateQuizIds() {
+  const flags = readJSON(MIGRATION_KEY, {});
+  if (flags[MIGRATION_NAME]) return 0;
+  const state = loadSrs();
+  let moved = 0;
+  for (const set of QUIZ_SETS) {
+    if (set.deck !== "grammar" && set.deck !== "numbers") continue;
+    const bag = state[set.deck];
+    if (!bag) continue;
+    // Hai pha: gom mọi cặp (cũ → mới) từ bản chụp trước, xoá hết khoá cũ rồi
+    // mới ghi khoá mới — không để một khoá cũ bị ghi đè giữa chừng.
+    const moves = buildQuiz(set.id)
+      .filter((it) => it.legacyId && it.legacyId !== it.id && bag[it.legacyId])
+      .map((it) => [it.legacyId, it.id]);
+    const snapshot = { ...bag };
+    moves.forEach(([oldId]) => delete bag[oldId]);
+    moves.forEach(([oldId, newId]) => {
+      if (!bag[newId]) {
+        bag[newId] = snapshot[oldId];
+        moved += 1;
+      }
+    });
+  }
+  if (moved) replaceState(state);
+  writeJSON(MIGRATION_KEY, { ...readJSON(MIGRATION_KEY, {}), [MIGRATION_NAME]: new Date().toISOString() });
+  return moved;
+}
+
+try {
+  migrateQuizIds();
+} catch {
+  /* di trú lỗi thì bỏ qua — không được làm hỏng tab luyện tập */
 }

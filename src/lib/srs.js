@@ -52,6 +52,16 @@ function saveSrs(state) {
   listeners.forEach((fn) => fn());
 }
 
+/**
+ * Bỏ bản sao trong bộ nhớ — gọi sau khi localStorage bị ghi từ bên ngoài
+ * (xoá toàn bộ, nhập file sao lưu). Không bỏ thì lượt ôn kế tiếp ghi đè dữ liệu
+ * cũ trở lại.
+ */
+export function invalidateSrs() {
+  cache = null;
+  listeners.forEach((fn) => fn());
+}
+
 /** Đăng ký nhận thông báo khi SRS thay đổi. Trả về hàm hủy đăng ký. */
 export function subscribeSrs(fn) {
   listeners.add(fn);
@@ -78,36 +88,81 @@ function addDays(key, n) {
   return dayKey(d);
 }
 
-// rating: "forget" | "vague" | "remember"
+// ── Giới hạn thẻ mới mỗi ngày ────────────────────────────────────────────────
+// "Thẻ mới/ngày" phải đếm theo NGÀY, không theo phiên: trước đây học xong 10 thẻ
+// mới, bấm bắt đầu lại là có thêm 10 thẻ nữa — phiên hôm nay không bao giờ xong.
+
+const NEW_KEY = "daily_new_v1";
+// Chỉ đếm những deck có thẻ mới trong phiên "Học hôm nay".
+const NEW_TRACKED = new Set(["vocab", "kanji", "kana"]);
+
+/** Số thẻ mới (box 0 → đã học) đã mở hôm nay. */
+export function newIntroducedToday() {
+  const rec = readJSON(NEW_KEY, null);
+  return rec && rec.day === dayKey() ? rec.count || 0 : 0;
+}
+
+function bumpNewToday() {
+  writeJSON(NEW_KEY, { day: dayKey(), count: newIntroducedToday() + 1 });
+}
+
+/**
+ * Chấm một thẻ. rating: "forget" | "vague" | "remember".
+ *
+ * Luật chống "học dồn rồi coi như thuộc":
+ *  · Thẻ chỉ LÊN BOX khi đã tới hạn, và tối đa một lần mỗi ngày. Ôn lại thẻ chưa
+ *    tới hạn (học lại từ đầu, làm quiz trắc nghiệm cùng thẻ, thẻ sai được đưa lại
+ *    cuối phiên) vẫn tính là luyện tập nhưng không đẩy lịch đi xa hơn.
+ *  · Quên thì luôn rớt về box 1 — đó là tín hiệu thật. Nhưng quên nhiều lần
+ *    trong CÙNG một ngày chỉ tính là một lần rớt.
+ *  · Thẻ vừa quên hôm nay rồi nhớ lại ngay trong phiên → hẹn ôn lại ngày mai.
+ */
 export function rateCard(deck, id, rating) {
   const state = loadSrs();
   if (!state[deck]) state[deck] = {};
   const prev = state[deck][String(id)] ?? emptyCard();
   const today = dayKey();
+  const isNew = !prev.box;
+  const reviewedToday = prev.last === today;
+  const dueNow = isNew || !prev.due || dayDiff(today, prev.due) >= 0;
 
-  let box = prev.box;
-  let lapses = prev.lapses;
+  let box = prev.box || 0;
+  let due = prev.due;
+  let lapses = prev.lapses || 0;
+  let lapseDay = prev.lapseDay || null;
 
-  if (rating === "remember") {
-    box = Math.min(MAX_BOX, (box || 0) + 1);
-  } else if (rating === "vague") {
-    box = Math.max(1, box || 1); // giữ nguyên độ khó, vẫn tính là đang học
-  } else {
-    // forget — rớt về đầu
+  if (rating === "forget") {
     box = 1;
-    lapses += 1;
+    due = today; // gặp lại ngay trong phiên
+    if (lapseDay !== today) {
+      lapses += 1;
+      lapseDay = today;
+    }
+  } else if (rating === "vague") {
+    box = Math.max(1, box); // giữ nguyên độ khó, vẫn tính là đang học
+    due = addDays(today, 1);
+  } else if (isNew) {
+    box = 1;
+    due = addDays(today, BOX_INTERVALS[1]);
+  } else if (reviewedToday || !dueNow) {
+    // Ôn sớm / ôn lần hai trong ngày: không lên box. Thẻ đang tới hạn ngay hôm
+    // nay (vừa quên trong phiên) thì dời sang ngày mai thay vì để lặp mãi.
+    if (dueNow) due = addDays(today, 1);
+  } else {
+    box = Math.min(MAX_BOX, box + 1);
+    due = addDays(today, BOX_INTERVALS[box]);
   }
-
-  const interval = rating === "remember" ? BOX_INTERVALS[box] : rating === "vague" ? 1 : 0;
 
   const next = {
     box,
-    due: addDays(today, interval),
-    reps: prev.reps + 1,
+    due,
+    reps: (prev.reps || 0) + 1,
     lapses,
     last: today,
   };
+  if (lapseDay) next.lapseDay = lapseDay;
 
+  if (isNew && NEW_TRACKED.has(deck)) bumpNewToday();
   state[deck][String(id)] = next;
   saveSrs(state);
   return next;
@@ -116,6 +171,17 @@ export function rateCard(deck, id, rating) {
 export function getStatus(card) {
   if (!card || !card.box) return "new";
   return card.box >= MASTERED_BOX ? "mastered" : "learning";
+}
+
+/**
+ * Thẻ ĐÃ HỌC này có cần ôn hôm nay không. Thẻ "đã thuộc" vẫn phải ôn khi tới hạn
+ * — bỏ qua chúng là người học quên dần mà app vẫn báo "đã thuộc". Riêng deck
+ * "exam" (Sổ tay lỗi): đạt box thuộc nghĩa là câu đã RỜI sổ, không ôn nữa.
+ */
+export function needsReview(deck, card, today = dayKey()) {
+  if (!card || !card.box) return false;
+  if (deck === "exam" && card.box >= MASTERED_BOX) return false;
+  return isDue(card, today);
 }
 
 export function isDue(card, today = dayKey()) {
@@ -127,7 +193,7 @@ export function isDue(card, today = dayKey()) {
 /**
  * Thống kê cho một danh sách id thuộc cùng deck.
  *
- *   due   = thẻ ĐANG HỌC và đã tới hạn ôn (không tính thẻ chưa học)
+ *   due   = thẻ ĐÃ HỌC (đang học hoặc đã thuộc) và tới hạn ôn — không tính thẻ mới
  *   ready = due + thẻ mới, tức tổng số thẻ có thể học ngay
  *
  * Phân biệt hai con số này là cần thiết: nếu tính cả thẻ mới vào `due` thì người
@@ -145,10 +211,8 @@ export function getStats(deck, ids) {
     const status = getStatus(card);
     if (status === "new") neu += 1;
     else if (status === "mastered") mastered += 1;
-    else {
-      learning += 1;
-      if (isDue(card, today)) due += 1;
-    }
+    else learning += 1;
+    if (needsReview(deck, card, today)) due += 1;
   }
   return { new: neu, learning, mastered, due, ready: due + neu, total: ids.length };
 }
@@ -184,16 +248,15 @@ export function resetDeck(deck) {
 // ── Bổ sung: chọn thẻ cho phiên học, phân tích, migrate, import ──────────────
 
 /**
- * Lọc ra các thẻ đang tới hạn ôn (chưa thuộc hẳn) — dùng cho phiên "Học hôm nay".
+ * Lọc ra các thẻ đã học và đang tới hạn ôn — dùng cho phiên "Học hôm nay".
  * `items` là mảng bất kỳ, `idOf` lấy id của phần tử.
  */
 export function dueItems(items, deck, idOf) {
   const bag = loadSrs()[deck] || {};
   const today = dayKey();
   return items.filter((it) => {
-    const card = bag[String(idOf(it))];
-    if (!card || !card.box) return false; // thẻ mới không tính là "tới hạn"
-    return getStatus(card) !== "mastered" && isDue(card, today);
+    // thẻ mới không tính là "tới hạn"
+    return needsReview(deck, bag[String(idOf(it))], today);
   });
 }
 
@@ -209,7 +272,7 @@ export function deckDueCount(deck) {
   const today = dayKey();
   let n = 0;
   for (const card of Object.values(bag)) {
-    if (getStatus(card) !== "mastered" && isDue(card, today)) n += 1;
+    if (needsReview(deck, card, today)) n += 1;
   }
   return n;
 }
@@ -228,7 +291,7 @@ export function allDeckStats() {
       const st = getStatus(card);
       if (st === "mastered") mastered += 1;
       else learning += 1;
-      if (st !== "mastered" && isDue(card, today)) due += 1;
+      if (needsReview(id, card, today)) due += 1;
     }
     out[id] = { learning, mastered, due, seen: Object.keys(bag).length };
   }
@@ -251,7 +314,7 @@ export function getForecast(days = 7) {
 
   for (const { id } of DECKS) {
     for (const card of Object.values(state[id] || {})) {
-      if (!card.box || getStatus(card) === "mastered") continue;
+      if (!card.box || (id === "exam" && card.box >= MASTERED_BOX)) continue;
       const diff = dayDiff(card.due || today, today); // >0 = còn n ngày nữa
       if (diff <= 0) {
         overdue += 1;

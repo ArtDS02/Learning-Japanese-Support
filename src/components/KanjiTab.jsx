@@ -6,6 +6,7 @@ import { vocabWithKanji } from "../lib/searchIndex";
 import { shuffle } from "../lib/random";
 import { openKanjiPracticeSheet } from "../lib/kanjiSheet";
 import { exportKanjiPdf } from "../lib/kanjiPdf";
+import { loadStrokes, strokesReady, withStrokes, useKanjiStrokes } from "../lib/kanjiStrokes";
 import StudyRunner from "./common/StudyRunner";
 import QuizHub from "./common/QuizHub";
 import SpeakButton from "./common/SpeakButton";
@@ -13,6 +14,7 @@ import NoteBox from "./common/NoteBox";
 import WritePad from "./common/WritePad";
 import Modal from "./common/Modal";
 import FilterRow from "./common/FilterRow";
+import { useDataVersion } from "../lib/useDataVersion";
 import "../styles/tabs/kanji.css";
 import "../styles/tabs/kanji-extra.css";
 
@@ -45,7 +47,7 @@ export default function KanjiTab({ initialSearch }) {
   const [printMode, setPrintMode] = useState(false); // chọn kanji để xuất tập viết
   const [printSel, setPrintSel] = useState(() => new Set());
   const [pdfBusy, setPdfBusy] = useState(false); // đang tạo file PDF
-  const [tick, setTick] = useState(0); // buộc render lại sau khi SRS đổi
+  useDataVersion(); // vẽ lại mỗi khi SRS đổi (chấm thẻ, học ở tab khác…)
 
   useEffect(() => {
     try {
@@ -54,15 +56,6 @@ export default function KanjiTab({ initialSearch }) {
       /* quota */
     }
   }, [marked]);
-
-  useEffect(() => {
-    if (initialSearch) {
-      setSearch(initialSearch);
-      setActiveCategory("all");
-      setStudy(null);
-      setShowQuiz(false);
-    }
-  }, [initialSearch]);
 
   const inLevel = useMemo(
     () =>
@@ -132,10 +125,7 @@ export default function KanjiTab({ initialSearch }) {
   const catColor = (id) =>
     kanjiData.categories.find((c) => c.id === id)?.color || "#a78bfa";
 
-  const stats = useMemo(
-    () => getStats("kanji", kanjiData.kanji.map((k) => k.id)),
-    [tick],
-  );
+  const stats = getStats("kanji", kanjiData.kanji.map((k) => k.id));
 
   const toggleMark = (id) => {
     setMarked((prev) => {
@@ -182,9 +172,16 @@ export default function KanjiTab({ initialSearch }) {
   const clearPrintSel = () => setPrintSel(new Set());
 
   // Mở hộp thoại IN (người dùng tự chọn máy in / lưu PDF thủ công).
-  const printList = (list) => {
+  // Nét viết nằm ở file riêng: nạp sẵn khi bật chế độ chọn để lúc bấm In vẫn
+  // còn trong cú click (window.open sau await dễ bị trình duyệt chặn pop-up).
+  useEffect(() => {
+    if (printMode) loadStrokes();
+  }, [printMode]);
+
+  const printList = async (list) => {
     if (!list.length) return;
-    openKanjiPracticeSheet(list, { title: "Tập viết Kanji N5 & N4" });
+    if (!strokesReady()) await loadStrokes();
+    openKanjiPracticeSheet(withStrokes(list), { title: "Tập viết Kanji N5 & N4" });
   };
 
   // TẢI THẲNG file PDF về máy — không cần thao tác in.
@@ -192,7 +189,8 @@ export default function KanjiTab({ initialSearch }) {
     if (!list.length || pdfBusy) return;
     setPdfBusy(true);
     try {
-      await exportKanjiPdf(list, { title: "Tập viết Kanji N5 & N4" });
+      await loadStrokes();
+      await exportKanjiPdf(withStrokes(list), { title: "Tập viết Kanji N5 & N4" });
     } catch (err) {
       console.error(err);
       alert("Không tạo được PDF. Bạn thử lại hoặc dùng nút In nhé.");
@@ -243,7 +241,6 @@ export default function KanjiTab({ initialSearch }) {
         color="#a78bfa"
         onExit={() => {
           setStudy(null);
-          setTick((t) => t + 1);
         }}
       />
     );
@@ -600,14 +597,12 @@ export default function KanjiTab({ initialSearch }) {
           total={filtered.length}
           onClose={() => {
             setSelectedIdx(null);
-            setTick((t) => t + 1);
           }}
           onPrev={() => setSelectedIdx((i) => Math.max(i - 1, 0))}
           onNext={() => setSelectedIdx((i) => Math.min(i + 1, filtered.length - 1))}
           catColor={catColor(filtered[selectedIdx].category)}
           isMarked={marked.has(filtered[selectedIdx].id)}
           onToggleMark={() => toggleMark(filtered[selectedIdx].id)}
-          onRated={() => setTick((t) => t + 1)}
           onFilterRadical={(ch) => {
             setSelectedIdx(null);
             setActiveCategory("all");
@@ -630,8 +625,9 @@ function StrokeOrderAnimator({ strokes, catColor }) {
   const GAP_MS = 120;
 
   function clearTimers() {
+    // Xoá tại chỗ (không thay mảng mới) để cleanup của effect giữ đúng mảng này.
     timersRef.current.forEach(clearTimeout);
-    timersRef.current = [];
+    timersRef.current.length = 0;
   }
   function getLen(el) {
     try {
@@ -698,14 +694,21 @@ function StrokeOrderAnimator({ strokes, catColor }) {
     });
   }
 
+  // Tự vẽ khi đổi chữ. `animate` là hàm mới mỗi lần render nên đi qua ref, để
+  // effect chỉ chạy lại khi bộ nét thật sự đổi.
+  const animateRef = useRef(animate);
   useEffect(() => {
-    if (strokes && strokes.length > 0) {
-      const t = setTimeout(animate, 200);
-      return () => {
-        clearTimeout(t);
-        clearTimers();
-      };
-    }
+    animateRef.current = animate;
+  });
+  useEffect(() => {
+    if (!strokes || strokes.length === 0) return undefined;
+    const timers = timersRef.current;
+    const t = setTimeout(() => animateRef.current(), 200);
+    return () => {
+      clearTimeout(t);
+      timers.forEach(clearTimeout);
+      timers.length = 0;
+    };
   }, [strokes]);
 
   if (!strokes || strokes.length === 0) return null;
@@ -779,6 +782,7 @@ function KanjiModal({
   onFilterRadical,
 }) {
   const [tab, setTab] = useState("info"); // info | write
+  const strokes = useKanjiStrokes(kanji.id);
   const card = getCard("kanji", kanji.id);
   const status = getStatus(card);
   const related = useMemo(() => vocabWithKanji(kanji.char), [kanji.char]);
@@ -852,10 +856,20 @@ function KanjiModal({
           </div>
 
           {tab === "info" ? (
-            <StrokeOrderAnimator strokes={kanji.strokes} catColor={catColor} />
+            <StrokeOrderAnimator strokes={strokes} catColor={catColor} />
           ) : (
-            <WritePad strokes={kanji.strokes} char={kanji.char} color={catColor} />
+            <WritePad strokes={strokes} char={kanji.char} color={catColor} />
           )}
+          <div className="km-credit">
+            Nét viết:{" "}
+            <a href="https://kanjivg.tagaini.net" target="_blank" rel="noreferrer">
+              KanjiVG
+            </a>{" "}
+            · giấy phép{" "}
+            <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noreferrer">
+              CC BY-SA 3.0
+            </a>
+          </div>
 
           <div className="kanji-modal__readings">
             <div className="kanji-modal__reading-group">

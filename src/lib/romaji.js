@@ -34,9 +34,25 @@ const MONO = {
   ぁ: "a", ぃ: "i", ぅ: "u", ぇ: "e", ぉ: "o",
 };
 
+// Âm ghép chỉ gặp trong từ katakana (đã quy về hiragana trước khi tra).
+const FOREIGN = {
+  てぃ: "ti", でぃ: "di", とぅ: "tu", どぅ: "du",
+  ふぁ: "fa", ふぃ: "fi", ふぇ: "fe", ふぉ: "fo",
+  しぇ: "she", じぇ: "je", ちぇ: "che", いぇ: "ye",
+  うぃ: "wi", うぇ: "we", うぉ: "wo",
+  ゔぁ: "va", ゔぃ: "vi", ゔぇ: "ve", ゔぉ: "vo",
+};
+const MONO_EXTRA = { ゔ: "vu", ゐ: "i", ゑ: "e" };
+const MACRON = { a: "ā", i: "ī", u: "ū", e: "ē", o: "ō" };
+
+/**
+ * Kana → romaji Hepburn. Nhận cả katakana (trước đây katakana bị giữ nguyên nên
+ * mọi từ ngoại lai như コーヒー không có romaji để chấm), và dấu trường âm ー được
+ * đổi thành nguyên âm có macron: コーヒー → kōhī.
+ */
 export function kanaToRomaji(input) {
   if (!input) return "";
-  const s = String(input).replace(/⚠️/g, "").trim();
+  const s = kataToHira(String(input).replace(/⚠️/g, "").trim());
   let out = "";
   let i = 0;
 
@@ -44,18 +60,31 @@ export function kanaToRomaji(input) {
     const ch = s[i];
 
     // Âm ngắt っ → gấp đôi phụ âm đầu của âm tiếp theo
-    if (ch === "っ" || ch === "ッ") {
+    if (ch === "っ") {
       const two = s.substr(i + 1, 2);
-      const next = YOUON[two] || MONO[s[i + 1]];
+      const next = YOUON[two] || FOREIGN[two] || MONO[s[i + 1]] || MONO_EXTRA[s[i + 1]];
       if (next) out += next.startsWith("ch") ? "t" : next[0];
       i += 1;
       continue;
     }
 
+    // Trường âm ー → kéo dài nguyên âm ngay trước (thành macron).
+    if (ch === "ー") {
+      const last = out[out.length - 1];
+      if (MACRON[last]) out = out.slice(0, -1) + MACRON[last];
+      i += 1;
+      continue;
+    }
+
     const pair = s.substr(i, 2);
-    if (YOUON[pair]) {
-      out += YOUON[pair];
+    if (YOUON[pair] || FOREIGN[pair]) {
+      out += YOUON[pair] || FOREIGN[pair];
       i += 2;
+      continue;
+    }
+    if (MONO_EXTRA[ch]) {
+      out += MONO_EXTRA[ch];
+      i += 1;
       continue;
     }
     if (MONO[ch]) {
@@ -86,11 +115,33 @@ export function kataToHira(s) {
   );
 }
 
+const VOWEL_KANA = { a: "あ", i: "い", u: "う", e: "え", o: "う" };
+
+/**
+ * Dấu trường âm ー → nguyên âm tương ứng (ビール → びいる, コーヒー → こうひい).
+ * Trước đây ー bị XOÁ khi so sánh nên gõ ビル (toà nhà) cũng được chấm đúng cho
+ * ビール (bia) — độ dài nguyên âm đổi nghĩa từ, không được bỏ qua.
+ */
+function expandChoon(h) {
+  let out = "";
+  for (let i = 0; i < h.length; i += 1) {
+    const c = h[i];
+    if (c !== "ー") {
+      out += c;
+      continue;
+    }
+    const pair = h.slice(Math.max(0, i - 2), i);
+    const prev = h[i - 1];
+    const r = YOUON[pair] || FOREIGN[pair] || MONO[prev] || MONO_EXTRA[prev] || "";
+    out += VOWEL_KANA[r[r.length - 1]] || "";
+  }
+  return out;
+}
+
 /** Bỏ mọi thứ không phải kana/kanji để so sánh (dấu cách, ・, 〜, ⚠️…). */
 export function normalizeKana(s) {
-  return kataToHira(s)
-    .replace(/⚠️/g, "")
-    .replace(/[\s・･。、!?！？~〜ー―\-()（）]/g, "")
+  return expandChoon(kataToHira(s).replace(/⚠️/g, ""))
+    .replace(/[\s・･。、!?！？~〜―\-()（）]/g, "")
     .trim();
 }
 
@@ -150,9 +201,42 @@ export function romajiVariants(kana) {
   };
   expand("ū", ["u", "uu"]);
   expand("ō", ["o", "ou", "oo"]);
+  expand("ā", ["a", "aa"]);
+  expand("ī", ["i", "ii"]);
+  expand("ē", ["e", "ee"]);
+  // Trợ từ は cuối cụm chào hỏi đọc là "wa": こんにちは → konnichiwa.
+  const hira = normalizeKana(kana);
+  if (hira.length >= 3 && hira.endsWith("は")) {
+    for (const f of [...forms]) if (f.endsWith("ha")) forms.push(`${f.slice(0, -2)}wa`);
+  }
   // ん trước b/m/p thường được gõ là "m" (しんぶん → shimbun)
   for (const f of [...forms]) if (/n[bmp]/.test(f)) forms.push(f.replace(/n([bmp])/g, "m$1"));
   return new Set(forms.map(stripLatin).filter(Boolean));
+}
+
+/**
+ * Các dạng có thể của chữ người học gõ. Macron được hiểu theo cả hai cách: bỏ
+ * dấu (jū → ju) và nhân đôi nguyên âm (onēsan → oneesan, kōhī → kouhii/koohii).
+ */
+function inputForms(raw) {
+  const low = String(raw).toLowerCase();
+  const out = new Set([canonLatin(low)]);
+  if (/[āīūēōâîûêô]/.test(low)) {
+    let forms = [low];
+    const exp = (chars, reps) => {
+      const test = new RegExp(`[${chars}]`);
+      const all = new RegExp(`[${chars}]`, "g");
+      forms = forms.flatMap((f) => (test.test(f) ? reps.map((r) => f.replace(all, r)) : [f]));
+    };
+    exp("āâ", ["aa"]);
+    exp("īî", ["ii"]);
+    exp("ūû", ["uu"]);
+    exp("ēê", ["ee", "ei"]);
+    exp("ōô", ["ou", "oo"]);
+    forms.forEach((f) => out.add(canonLatin(f)));
+  }
+  out.delete("");
+  return out;
 }
 
 /**
@@ -173,10 +257,10 @@ export function matchesKana(input, answer, extra = []) {
   }
 
   // Toàn chữ Latin → so với mọi biến thể romaji (đã quy về dạng chuẩn).
-  const n = canonLatin(raw);
-  if (!n) return false;
+  const typed = inputForms(raw);
+  if (!typed.size) return false;
   return targets.some((t) => {
-    for (const v of romajiVariants(t)) if (canonLatin(v) === n) return true;
+    for (const v of romajiVariants(t)) if (typed.has(canonLatin(v))) return true;
     return false;
   });
 }

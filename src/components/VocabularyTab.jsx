@@ -1,5 +1,5 @@
 import vocabData from "../data/vocabulary.json";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { getCard, getStatus, orderForStudy, getStats } from "../lib/srs";
 import { vocabCard } from "../lib/session";
 import { lessons, lessonProgress, nextLesson, lessonsOverview, LESSON_SIZE } from "../lib/lessons";
@@ -17,6 +17,7 @@ import SpeakButton from "./common/SpeakButton";
 import NoteBox from "./common/NoteBox";
 import Ruby from "./common/Ruby";
 import FilterRow from "./common/FilterRow";
+import { useDataVersion } from "../lib/useDataVersion";
 import "../styles/tabs/vocabulary.css";
 import "../styles/tabs/vocabulary-extra.css";
 
@@ -51,20 +52,11 @@ export default function VocabularyTab({ initialSearch }) {
   const [study, setStudy] = useState(null); // { words, label, reverse }
   const [showQuiz, setShowQuiz] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
-  const [customTick, setCustomTick] = useState(0);
-
-  // Khi mở từ tìm kiếm toàn cục.
-  useEffect(() => {
-    if (initialSearch) {
-      setSearch(initialSearch);
-      setActiveCategory("all");
-      setView("cards");
-      setStudy(null);
-      setShowQuiz(false);
-    }
-  }, [initialSearch]);
-
-  const custom = useMemo(() => customAsWords(), [customTick]);
+  // Vẽ lại khi SRS / thẻ tự tạo đổi — thống kê đầu tab luôn khớp sau phiên học.
+  // (Mở từ tìm kiếm toàn cục: App dựng lại hẳn tab với initialSearch mới, nên
+  // các state khác tự về mặc định — không cần effect đồng bộ.)
+  useDataVersion();
+  const custom = customAsWords();
 
   const allWords = useMemo(
     () => [
@@ -109,7 +101,7 @@ export default function VocabularyTab({ initialSearch }) {
     [filtered, markedIds],
   );
 
-  const stats = useMemo(() => getStats("vocab", allWords.map((w) => w.id)), [allWords]);
+  const stats = getStats("vocab", allWords.map((w) => w.id));
 
   const toggleMark = (id, e) => {
     e?.stopPropagation();
@@ -355,7 +347,6 @@ export default function VocabularyTab({ initialSearch }) {
           cards={loadCustomCards()}
           onChanged={() => {
             invalidateSearchIndex();
-            setCustomTick((t) => t + 1);
           }}
         />
       )}
@@ -398,7 +389,6 @@ export default function VocabularyTab({ initialSearch }) {
                   ? () => {
                       removeCustomCard(word.id);
                       invalidateSearchIndex();
-                      setCustomTick((t) => t + 1);
                     }
                   : null
               }
@@ -425,10 +415,12 @@ function WordCard({
   const isIAdj = word.type === "i-adj";
   const isNaAdj = word.type === "na-adj";
   const [localRevealed, setLocalRevealed] = useState(null);
-
-  useEffect(() => {
+  // Bật/tắt "Ẩn nghĩa" → che lại toàn bộ (điều chỉnh ngay trong render).
+  const [hideSeen, setHideSeen] = useState(hideMeanings);
+  if (hideSeen !== hideMeanings) {
+    setHideSeen(hideMeanings);
     setLocalRevealed(null);
-  }, [hideMeanings]);
+  }
 
   const meaningHidden = localRevealed !== null ? !localRevealed : hideMeanings;
   const status = getStatus(getCard("vocab", word.id));

@@ -21,8 +21,10 @@ export default function SpeakButton({
 
   const onClick = (e) => {
     if (stopPropagation) e.stopPropagation();
-    setPlaying(true);
-    speak(text, { onEnd: () => setPlaying(false) });
+    // speak() trả false khi TTS bị tắt / không phát được → không bật trạng thái
+    // "đang phát", nếu không icon 🔉 kẹt mãi vì onEnd không bao giờ được gọi.
+    const ok = speak(text, { onEnd: () => setPlaying(false) });
+    setPlaying(ok);
   };
 
   return (

@@ -98,6 +98,7 @@ export function loadExam(examId) {
     startedAt: s?.startedAt || null,
     submitted: !!s?.submitted,
     elapsed: s?.elapsed || 0,
+    clock: s?.clock || null,
   };
 }
 
@@ -108,21 +109,33 @@ function writeExam(examId, patch) {
   return all[examId];
 }
 
-/** Ghi lựa chọn của người dùng cho một câu. Trả về true nếu đúng. */
-export function answerQuestion(examId, qid, choice) {
+/** Sổ tay lỗi: sai → vào deck SRS "exam"; đúng → nâng cấp thẻ (nếu đã từng sai). */
+function rateMistake(qid, ok) {
+  if (!ok) rateCard("exam", qid, "forget");
+  else if (loadSrs().exam?.[qid]) rateCard("exam", qid, "remember");
+}
+
+/**
+ * Ghi lựa chọn của người dùng cho một câu. Trả về true nếu đúng.
+ * `rate` = false ở chế độ thi thử: chỉ lưu lựa chọn (còn đổi được), việc chấm
+ * vào Sổ tay lỗi để lúc nộp bài — trước đây chấm cả lúc chọn lẫn lúc nộp nên mỗi
+ * câu sai bị tính hai lần quên.
+ */
+export function answerQuestion(examId, qid, choice, { rate = true } = {}) {
   const state = loadExam(examId);
   const answers = { ...state.answers, [qid]: choice };
   writeExam(examId, { answers, startedAt: state.startedAt || Date.now() });
 
   const found = findQuestion(qid);
   const ok = !!found && choice === found.q.answer;
-
-  // Sổ tay lỗi: sai → vào deck SRS "exam"; đúng → nâng cấp thẻ (nếu đã từng sai).
-  if (found) {
-    if (!ok) rateCard("exam", qid, "forget");
-    else if (loadSrs().exam?.[qid]) rateCard("exam", qid, "remember");
-  }
+  if (found && rate) rateMistake(qid, ok);
   return ok;
+}
+
+/** Số giây đã trôi qua kể từ lúc bắt đầu thi (theo đồng hồ thật, không dừng). */
+export function examElapsed(state, now = Date.now()) {
+  if (!state?.startedAt) return state?.elapsed || 0;
+  return Math.max(0, Math.floor((now - state.startedAt) / 1000));
 }
 
 export function setExamMode(examId, mode) {
@@ -131,13 +144,27 @@ export function setExamMode(examId, mode) {
 
 export function startExam(examId, mode = "test") {
   const all = loadAll();
-  all[examId] = { answers: {}, mode, startedAt: Date.now(), submitted: false, elapsed: 0 };
+  all[examId] = {
+    answers: {},
+    mode,
+    startedAt: Date.now(),
+    submitted: false,
+    elapsed: 0,
+    clock: "wall",
+  };
   writeJSON(STATE_KEY, all);
   return all[examId];
 }
 
-export function saveElapsed(examId, elapsed) {
-  return writeExam(examId, { elapsed });
+/**
+ * Đề thi thử bắt đầu từ bản cũ dùng đồng hồ "đếm giây khi đang mở" (dừng khi thu
+ * gọn đề / đổi tab). Chuyển sang đồng hồ thật mà KHÔNG tính khoảng thời gian app
+ * đóng trước đó: lùi mốc bắt đầu đúng bằng số giây đã làm.
+ */
+export function ensureWallClock(examId) {
+  const s = loadExam(examId);
+  if (s.mode !== "test" || s.submitted || s.clock === "wall") return s;
+  return writeExam(examId, { startedAt: Date.now() - (s.elapsed || 0) * 1000, clock: "wall" });
 }
 
 export function resetExam(examId) {
@@ -248,20 +275,28 @@ export function clearHistory() {
   writeJSON(HISTORY_KEY, []);
 }
 
-/** Nộp bài: chấm, lưu lịch sử, đẩy mọi câu sai vào Sổ tay lỗi. */
+/**
+ * Nộp bài: chấm, lưu lịch sử, đẩy câu sai vào Sổ tay lỗi.
+ * `exam` phải là ĐỀ ĐẦY ĐỦ (không lọc phần) — lịch sử thi chỉ so sánh được khi
+ * mọi lần thi chấm trên cùng một thang.
+ */
 export function submitExam(exam) {
   const state = loadExam(exam.id);
   const result = scoreExam(exam, state.answers);
+  const isTest = state.mode === "test";
 
-  exam.sections.forEach((section) => {
-    getQuestions(section).forEach((q) => {
-      const chosen = state.answers[q.id];
-      if (chosen == null) return;
-      if (chosen !== q.answer) rateCard("exam", q.id, "forget");
+  // Chế độ luyện tập đã chấm từng câu lúc chọn; chế độ thi chấm một lần ở đây.
+  if (isTest) {
+    exam.sections.forEach((section) => {
+      getQuestions(section).forEach((q) => {
+        const chosen = state.answers[q.id];
+        if (chosen != null) rateMistake(q.id, chosen === q.answer);
+      });
     });
-  });
+  }
 
-  writeExam(exam.id, { submitted: true });
+  const elapsed = isTest ? examElapsed(state) : state.elapsed;
+  writeExam(exam.id, { submitted: true, elapsed });
   pushHistory({
     examId: exam.id,
     title: exam.title,
@@ -271,7 +306,7 @@ export function submitExam(exam) {
     score: result.score,
     maxScore: result.maxScore,
     pass: result.pass,
-    elapsed: state.elapsed,
+    elapsed,
     groups: Object.fromEntries(
       Object.entries(result.groups).map(([k, g]) => [k, { correct: g.correct, total: g.total, score: g.score }]),
     ),

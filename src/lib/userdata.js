@@ -15,7 +15,18 @@ export function subscribeUserData(fn) {
   listeners.add(fn);
   return () => listeners.delete(fn);
 }
-const notify = () => listeners.forEach((fn) => fn());
+let customCache = null; // customAsWords() — giữ nguyên mảng giữa hai lần dữ liệu đổi
+const notify = () => {
+  customCache = null;
+  listeners.forEach((fn) => fn());
+};
+
+if (typeof window !== "undefined") {
+  // Ghi chú / thẻ tự tạo / cài đặt đổi ở tab khác → vẽ lại.
+  window.addEventListener("storage", (e) => {
+    if ([NOTES_KEY, CARDS_KEY, SETTINGS_KEY].includes(e.key)) notify();
+  });
+}
 
 // ── Ghi chú cá nhân ──────────────────────────────────────────────────────────
 // Mẹo nhớ do chính mình nghĩ ra là thứ nhớ lâu nhất — nên cho phép gắn vào
@@ -100,15 +111,21 @@ export function removeCustomCard(id) {
   notify();
 }
 
-/** Chuẩn hoá thẻ tự tạo về đúng shape của từ vựng để dùng chung mọi UI. */
+/**
+ * Chuẩn hoá thẻ tự tạo về đúng shape của từ vựng để dùng chung mọi UI.
+ * Trả về CÙNG một mảng cho tới khi dữ liệu người dùng đổi — component dùng nó
+ * làm dependency của useMemo mà không phải tự giữ biến "tick".
+ */
 export function customAsWords() {
-  return loadCustomCards().map((c) => ({
+  if (customCache) return customCache;
+  customCache = loadCustomCards().map((c) => ({
     ...c,
     categoryId: "my-cards",
     categoryLabel: "Thẻ của tôi",
     categoryColor: "#f472b6",
     isCustom: true,
   }));
+  return customCache;
 }
 
 // ── Cài đặt ──────────────────────────────────────────────────────────────────

@@ -4,14 +4,23 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 // Các file data được phép đọc/ghi qua admin (whitelist chống path traversal)
+const MINNA_LESSONS = Array.from(
+  { length: 25 },
+  (_, i) => `minna-no-nihongo-1/lesson-${String(i + 1).padStart(2, '0')}`,
+)
+
 const DATA_FILES = [
   'kana',
   'kanji',
+  'kanji-strokes',
   'vocabulary',
   'grammar',
   'numbers',
+  'modifiers',
   'tips-exercises',
   'jlpt-sets',
+  'minna-no-nihongo-1/index',
+  ...MINNA_LESSONS,
 ]
 
 /**
@@ -69,7 +78,28 @@ function adminDataApi(): Plugin {
   }
 }
 
+/**
+ * Gắn mã build vào public/sw.js (thay `__BUILD_ID__`). Mỗi lần build là một
+ * phiên bản cache mới ⇒ service worker mới kích hoạt sẽ dọn cache của bản cũ.
+ */
+function swBuildId(): Plugin {
+  let outDir = 'dist'
+  return {
+    name: 'sw-build-id',
+    apply: 'build',
+    configResolved(cfg) {
+      outDir = path.resolve(cfg.root, cfg.build.outDir)
+    },
+    writeBundle() {
+      const file = path.join(outDir, 'sw.js')
+      if (!fs.existsSync(file)) return
+      const id = Date.now().toString(36)
+      fs.writeFileSync(file, fs.readFileSync(file, 'utf8').replaceAll('__BUILD_ID__', id))
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), adminDataApi()],
+  plugins: [react(), adminDataApi(), swBuildId()],
 })

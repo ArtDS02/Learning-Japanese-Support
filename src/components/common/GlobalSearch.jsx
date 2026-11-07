@@ -28,21 +28,20 @@ export default function GlobalSearch({ open, onClose, onJump }) {
     [q, kind],
   );
 
+  // App chỉ gắn component này khi đang mở (đóng là gỡ hẳn), nên state tự về
+  // mặc định mỗi lần mở — chỉ cần đưa con trỏ vào ô tìm.
   useEffect(() => {
-    if (open) {
-      setActive(0);
-      const t = setTimeout(() => inputRef.current?.focus(), 30);
-      return () => clearTimeout(t);
-    }
-    setQ("");
+    if (!open) return undefined;
+    const t = setTimeout(() => inputRef.current?.focus(), 30);
+    return () => clearTimeout(t);
   }, [open]);
-
-  useEffect(() => setActive(0), [q, kind]);
 
   useEffect(() => {
     if (!open) return;
     // Esc do <Modal> lo. Ở đây chỉ còn phần điều hướng trong danh sách kết quả.
     const onKey = (e) => {
+      // Đang gõ IME tiếng Nhật: Enter/mũi tên là để chọn chữ, không phải điều hướng.
+      if (e.isComposing || e.keyCode === 229) return;
       if (e.key === "ArrowDown") {
         e.preventDefault();
         setActive((i) => Math.min(i + 1, results.length - 1));
@@ -81,7 +80,10 @@ export default function GlobalSearch({ open, onClose, onJump }) {
           ref={inputRef}
           className="gs-input"
           value={q}
-          onChange={(e) => setQ(e.target.value)}
+          onChange={(e) => {
+            setQ(e.target.value);
+            setActive(0);
+          }}
           placeholder="Tìm mọi nơi: từ vựng, kanji, trợ từ, mẫu câu, bộ đếm…"
           autoComplete="off"
           spellCheck={false}
@@ -94,7 +96,10 @@ export default function GlobalSearch({ open, onClose, onJump }) {
           <button
             key={k}
             className={`gs-filter ${kind === k ? "is-on" : ""}`}
-            onClick={() => setKind(k)}
+            onClick={() => {
+              setKind(k);
+              setActive(0);
+            }}
           >
             {k === "all" ? "🌐 Tất cả" : KIND_LABEL[k]}
           </button>

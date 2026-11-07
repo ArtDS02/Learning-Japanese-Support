@@ -9,7 +9,7 @@
                     "title": "Phần 1: Từ vựng (語彙)",
                     "icon": "📖",
                     "color": "#22d3ee",
-                    "timeLimit": 25,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J1V1",
@@ -343,7 +343,7 @@
                     "title": "Phần 2: Ngữ pháp (文法)",
                     "icon": "⚙️",
                     "color": "#a78bfa",
-                    "timeLimit": 40,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J1G1",
@@ -912,7 +912,7 @@
                     "title": "Phần 3: Đọc hiểu (読解)",
                     "icon": "📰",
                     "color": "#34d399",
-                    "timeLimit": 50,
+                    "timeLimit": 20,
                     "passages": [
                         {
                             "id": "J1R-A",
@@ -1182,7 +1182,7 @@
                     "title": "Phần 1: Từ vựng (語彙)",
                     "icon": "📖",
                     "color": "#22d3ee",
-                    "timeLimit": 25,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J2V1",
@@ -1516,7 +1516,7 @@
                     "title": "Phần 2: Ngữ pháp (文法)",
                     "icon": "⚙️",
                     "color": "#a78bfa",
-                    "timeLimit": 40,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J2G1",
@@ -2085,7 +2085,7 @@
                     "title": "Phần 3: Đọc hiểu (読解)",
                     "icon": "📰",
                     "color": "#34d399",
-                    "timeLimit": 50,
+                    "timeLimit": 20,
                     "passages": [
                         {
                             "id": "J2R-A",
@@ -2353,7 +2353,7 @@
                     "title": "Phần 1: Từ vựng (語彙)",
                     "icon": "📖",
                     "color": "#22d3ee",
-                    "timeLimit": 25,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J3V1",
@@ -2687,7 +2687,7 @@
                     "title": "Phần 2: Ngữ pháp (文法)",
                     "icon": "⚙️",
                     "color": "#a78bfa",
-                    "timeLimit": 40,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J3G1",
@@ -3256,7 +3256,7 @@
                     "title": "Phần 3: Đọc hiểu (読解)",
                     "icon": "📰",
                     "color": "#34d399",
-                    "timeLimit": 50,
+                    "timeLimit": 20,
                     "passages": [
                         {
                             "id": "J3R-A",
@@ -3524,7 +3524,7 @@
                     "title": "Phần 1: Từ vựng (語彙)",
                     "icon": "📖",
                     "color": "#22d3ee",
-                    "timeLimit": 25,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J4V1",
@@ -3858,7 +3858,7 @@
                     "title": "Phần 2: Ngữ pháp (文法)",
                     "icon": "⚙️",
                     "color": "#a78bfa",
-                    "timeLimit": 40,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J4G1",
@@ -4427,7 +4427,7 @@
                     "title": "Phần 3: Đọc hiểu (読解)",
                     "icon": "📰",
                     "color": "#34d399",
-                    "timeLimit": 50,
+                    "timeLimit": 20,
                     "passages": [
                         {
                             "id": "J4R-A",
@@ -4694,7 +4694,7 @@
                     "title": "Phần 1: Từ vựng (語彙)",
                     "icon": "📖",
                     "color": "#22d3ee",
-                    "timeLimit": 25,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J5V1",
@@ -5028,7 +5028,7 @@
                     "title": "Phần 2: Ngữ pháp (文法)",
                     "icon": "⚙️",
                     "color": "#a78bfa",
-                    "timeLimit": 40,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J5G1",
@@ -5597,7 +5597,7 @@
                     "title": "Phần 3: Đọc hiểu (読解)",
                     "icon": "📰",
                     "color": "#34d399",
-                    "timeLimit": 50,
+                    "timeLimit": 20,
                     "passages": [
                         {
                             "id": "J5R-A",
@@ -5864,7 +5864,7 @@
                     "title": "Phần 1: Từ vựng (語彙)",
                     "icon": "📖",
                     "color": "#22d3ee",
-                    "timeLimit": 25,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J6V1",
@@ -6198,7 +6198,7 @@
                     "title": "Phần 2: Ngữ pháp (文法)",
                     "icon": "⚙️",
                     "color": "#a78bfa",
-                    "timeLimit": 40,
+                    "timeLimit": 20,
                     "questions": [
                         {
                             "id": "J6G1",
@@ -6767,7 +6767,7 @@
                     "title": "Phần 3: Đọc hiểu (読解)",
                     "icon": "📰",
                     "color": "#34d399",
-                    "timeLimit": 50,
+                    "timeLimit": 20,
                     "passages": [
                         {
                             "id": "J6R-A",

@@ -53,3 +53,46 @@ export function modifierPoolStats() {
   });
   return { total: pool.length, mastered, learning, new: pool.length - mastered - learning };
 }
+
+/** Cách đọc dùng cho TTS: bỏ ngoặc và chỉ lấy biến thể đầu ở các mục "A・B". */
+export const sayable = (w) => String(w.hira || w.jp).replace(/[（）()]/g, "").split("・")[0].trim();
+
+/** Thẻ lật: mặt trước là từ tiếng Nhật, mặt sau là nghĩa + từ loại + đối tượng bổ nghĩa. */
+export function modifierCard(w, { reverse = false } = {}) {
+  const p = posMeta(w.pos);
+  const base = {
+    deck: "modifiers",
+    kind: "flash",
+    id: w.id,
+    tab: "modifiers",
+    tag: `${w.groupIcon} ${w.groupLabel} · ${p.short}`,
+    color: w.groupColor,
+    noteKind: "modifiers",
+    example: { jp: w.ex.jp, vn: w.ex.vn },
+    extra: [
+      `${p.jp}（${p.kana}）${w.posNote ? ` — ${w.posNote}` : ""}`,
+      `Bổ nghĩa cho: ${w.modifies}`,
+      ...(w.note ? [`💡 ${w.note}`] : []),
+    ],
+  };
+
+  if (reverse) {
+    return {
+      ...base,
+      front: w.vn,
+      frontSub: `${w.groupLabel} · ${p.short}`,
+      back: w.jp,
+      backSub: w.jp === w.hira ? w.romaji : `${w.hira} · ${w.romaji}`,
+      speakBack: sayable(w), // nghe trước khi lật là lộ đáp án
+    };
+  }
+
+  return {
+    ...base,
+    front: w.jp,
+    frontSub: w.jp === w.hira ? w.romaji : `${w.hira} · ${w.romaji}`,
+    back: w.vn,
+    backSub: `${p.jp} · bổ nghĩa cho ${w.modifies}`,
+    speak: sayable(w), // cách đọc KHÔNG phải đáp án nên nghe trước được
+  };
+}

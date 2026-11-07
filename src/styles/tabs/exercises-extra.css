@@ -238,6 +238,18 @@
   cursor: not-allowed;
 }
 
+.exm-showresult {
+  display: block;
+  margin: 0 0 1rem;
+}
+
+.exm-hidden-note {
+  margin: 0.5rem 0 1rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
 .exm-picked {
   margin-top: 0.75rem;
   font-size: 0.75rem;

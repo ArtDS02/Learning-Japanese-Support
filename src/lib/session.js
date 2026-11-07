@@ -5,14 +5,17 @@
 //
 //   1. Thẻ tới hạn (mọi deck) — ưu tiên cao nhất
 //   2. Câu sai trong Sổ tay lỗi đã tới hạn
-//   3. Thẻ mới, giới hạn theo cài đặt `newPerDay`
+//   3. Thẻ mới, giới hạn theo cài đặt `newPerDay` — tính theo NGÀY (đã mở bao
+//      nhiêu thẻ mới hôm nay thì trừ đi), không phải theo từng phiên.
+//   4. Thẻ tới hạn của ngữ pháp / số đếm / nghe / từ bổ nghĩa — dựng ở
+//      lib/sessionExtra.js (nặng) và được phía gọi truyền vào qua `extra`.
 //
 // Mọi phần tử đều theo shape chung của StudyRunner: kind "flash" | "choice" | "type".
 
 import vocabData from "../data/vocabulary.json";
 import kanjiData from "../data/kanji.json";
 import kanaData from "../data/kana.json";
-import { dueItems, newItems, getCard, getStatus } from "./srs";
+import { dueItems, newItems, getCard, getStatus, newIntroducedToday } from "./srs";
 import { loadSettings, customAsWords } from "./userdata";
 import { shuffle } from "./random";
 
@@ -147,12 +150,18 @@ export function mistakeCard(entry) {
 
 // ── Dựng phiên ───────────────────────────────────────────────────────────────
 
+/** Số thẻ mới còn được mở trong hôm nay. */
+export function newQuotaLeft(settings = loadSettings()) {
+  return Math.max(0, (settings.newPerDay || 0) - newIntroducedToday());
+}
+
 /**
  * Tổng quan hôm nay — dùng cho khối "Học hôm nay" ở trang chủ.
  * Không dựng hàng đợi, chỉ đếm (nhẹ, gọi được mỗi lần render).
- * `mistakes` là kết quả examStore.mistakeEntries() do phía gọi truyền vào.
+ * `mistakes` là kết quả examStore.mistakeEntries(), `extra` là
+ * sessionExtra.extraDueCards() — cả hai do phía gọi truyền vào.
  */
-export function todayOverview({ mistakes = [] } = {}) {
+export function todayOverview({ mistakes = [], extra = [] } = {}) {
   const s = loadSettings();
   const vocab = vocabPool();
   const kanji = kanjiPool();
@@ -167,19 +176,25 @@ export function todayOverview({ mistakes = [] } = {}) {
   const newKanji = newItems(kanji, "kanji", (k) => k.id).length;
   const newKana = newItems(kana, "kana", (c) => c.char).length;
 
-  const due = dueVocab + dueKanji + dueKana + dueMistakes;
-  const fresh = Math.min(s.newPerDay, newVocab + newKanji + newKana);
+  const breakdown = {
+    vocab: { due: dueVocab, new: newVocab },
+    kanji: { due: dueKanji, new: newKanji },
+    kana: { due: dueKana, new: newKana },
+    exam: { due: dueMistakes, new: 0 },
+  };
+  extra.forEach((c) => {
+    breakdown[c.deck] ??= { due: 0, new: 0 };
+    breakdown[c.deck].due += 1;
+  });
+
+  const due = dueVocab + dueKanji + dueKana + dueMistakes + extra.length;
+  const fresh = Math.min(newQuotaLeft(s), newVocab + newKanji + newKana);
 
   return {
     due,
     new: fresh,
     total: due + fresh,
-    breakdown: {
-      vocab: { due: dueVocab, new: newVocab },
-      kanji: { due: dueKanji, new: newKanji },
-      kana: { due: dueKana, new: newKana },
-      exam: { due: dueMistakes, new: 0 },
-    },
+    breakdown,
     // ~6 giây/thẻ là nhịp trung bình của một phiên flashcard
     minutes: Math.max(1, Math.round(((due + fresh) * 6) / 60)),
   };
@@ -187,36 +202,39 @@ export function todayOverview({ mistakes = [] } = {}) {
 
 /**
  * Dựng hàng đợi cho phiên học hôm nay.
- * opts: { includeNew, newLimit, decks: ["vocab","kanji","kana","exam"], max, mistakes }
+ * opts: { includeNew, newLimit, decks: ["vocab","kanji",…] (bỏ trống = mọi deck),
+ *         max, mistakes, extra }
  */
 export function buildTodaySession(opts = {}) {
   const s = loadSettings();
-  const decks = opts.decks || ["vocab", "kanji", "kana", "exam"];
-  const newLimit = opts.newLimit ?? s.newPerDay;
+  const has = (deck) => !opts.decks || opts.decks.includes(deck);
+  const newLimit = opts.newLimit ?? newQuotaLeft(s);
   const includeNew = opts.includeNew !== false;
   const mistakes = opts.mistakes || [];
+  const extra = opts.extra || [];
 
   const dueCards = [];
   const newCards = [];
 
-  if (decks.includes("vocab")) {
+  if (has("vocab")) {
     const pool = vocabPool();
     dueCards.push(...dueItems(pool, "vocab", (w) => w.id).map(vocabCard));
     if (includeNew) newCards.push(...newItems(pool, "vocab", (w) => w.id).map(vocabCard));
   }
-  if (decks.includes("kanji")) {
+  if (has("kanji")) {
     const pool = kanjiPool();
     dueCards.push(...dueItems(pool, "kanji", (k) => k.id).map(kanjiCard));
     if (includeNew) newCards.push(...newItems(pool, "kanji", (k) => k.id).map(kanjiCard));
   }
-  if (decks.includes("kana")) {
+  if (has("kana")) {
     const pool = kanaPool();
     dueCards.push(...dueItems(pool, "kana", (c) => c.char).map(kanaCard));
     if (includeNew) newCards.push(...newItems(pool, "kana", (c) => c.char).map(kanaCard));
   }
-  if (decks.includes("exam")) {
+  if (has("exam")) {
     dueCards.push(...mistakes.filter((m) => m.due).map(mistakeCard));
   }
+  dueCards.push(...extra.filter((c) => has(c.deck)));
 
   // Thẻ tới hạn: box thấp & quá hạn lâu lên trước.
   dueCards.sort((a, b) => {

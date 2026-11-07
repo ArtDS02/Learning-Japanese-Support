@@ -26,6 +26,13 @@ function save(p) {
   listeners.forEach((fn) => fn());
 }
 
+if (typeof window !== "undefined") {
+  // Học ở tab khác của cùng trình duyệt → báo các màn hình đang mở vẽ lại.
+  window.addEventListener("storage", (e) => {
+    if (e.key === KEY) listeners.forEach((fn) => fn());
+  });
+}
+
 /** Đăng ký nhận thông báo khi tiến độ thay đổi. Trả về hàm hủy đăng ký. */
 export function subscribeProgress(fn) {
   listeners.add(fn);

@@ -4,10 +4,13 @@
  * (index-abc123.js) nên không precache theo danh sách cố định được; ở đây dùng:
  *   · navigation  → network-first, offline thì trả index.html đã cache (SPA shell)
  *   · asset same-origin → cache-first (file đã băm tên nên không bao giờ "cũ")
- * Bump CACHE_VERSION khi muốn dọn cache cũ.
+ *
+ * CACHE_VERSION được plugin trong vite.config.ts thay bằng mã build mỗi lần
+ * `npm run build` → bản mới kích hoạt là dọn sạch cache của bản cũ (trước đây
+ * phiên bản cố định nên cache phình mãi qua mỗi lần deploy).
  */
 
-const CACHE_VERSION = "jlpt-n5-v1";
+const CACHE_VERSION = "jlpt-n5-__BUILD_ID__";
 const SHELL = "./index.html";
 
 self.addEventListener("install", (event) => {
@@ -33,6 +36,20 @@ self.addEventListener("message", (event) => {
   if (event.data === "skipWaiting") self.skipWaiting();
 });
 
+/**
+ * Chỉ cache phản hồi THẬT của asset. Hosting kiểu SPA (Firebase rewrite "**")
+ * trả index.html với mã 200 cho file không tồn tại — chunk của bản cũ đã bị xoá
+ * sau deploy chẳng hạn. Cache nhầm cái HTML đó thay cho file JS là tab đó hỏng
+ * vĩnh viễn, nên phải loại theo Content-Type.
+ */
+function cacheable(request, res) {
+  if (!res || res.status !== 200 || res.type !== "basic") return false;
+  const type = res.headers.get("content-type") || "";
+  if (type.includes("text/html")) return false;
+  if (/\.(m?js)$/.test(new URL(request.url).pathname) && !/javascript/.test(type)) return false;
+  return true;
+}
+
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET") return;
@@ -45,8 +62,10 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
       fetch(request)
         .then((res) => {
-          const copy = res.clone();
-          caches.open(CACHE_VERSION).then((c) => c.put(SHELL, copy)).catch(() => undefined);
+          if (res && res.ok) {
+            const copy = res.clone();
+            caches.open(CACHE_VERSION).then((c) => c.put(SHELL, copy)).catch(() => undefined);
+          }
           return res;
         })
         .catch(() => caches.match(SHELL).then((r) => r || Response.error())),
@@ -60,13 +79,13 @@ self.addEventListener("fetch", (event) => {
       if (hit) return hit;
       return fetch(request)
         .then((res) => {
-          if (res && res.status === 200 && res.type === "basic") {
+          if (cacheable(request, res)) {
             const copy = res.clone();
             caches.open(CACHE_VERSION).then((c) => c.put(request, copy)).catch(() => undefined);
           }
           return res;
         })
-        .catch(() => hit || Response.error());
+        .catch(() => Response.error());
     }),
   );
 });

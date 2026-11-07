@@ -29,8 +29,9 @@ import { describeModifier, modifierPoolStats } from "../lib/modifiers";
 import { loadSettings } from "../lib/userdata";
 import { loadHistory, mistakeEntries } from "../lib/examStore";
 import { noteCount, loadCustomCards } from "../lib/userdata";
-import { downloadBackup, importFromFile, wipeAll, OWNED_KEYS } from "../lib/backup";
+import { downloadBackup, readBackupFile, importData, wipeAll, OWNED_KEYS } from "../lib/backup";
 import StudyRunner from "./common/StudyRunner";
+import { useDataVersion } from "../lib/useDataVersion";
 import "../styles/tabs/progress.css";
 import "../styles/tabs/progress-extra.css";
 
@@ -57,20 +58,25 @@ function StatCard({ icon, value, label, color, sub }) {
 }
 
 export default function ProgressTab({ onGoTo }) {
-  const [tick, force] = useState(0);
-  const [hardSession, setHardSession] = useState(null);
+  // Vẽ lại mỗi khi SRS / tiến độ đổi — kể cả do tab trình duyệt khác ghi.
+  useDataVersion();
+  // Danh sách thẻ của phiên "ôn thẻ khó" — dựng MỘT LẦN lúc bấm, để phiên không
+  // bị dựng lại (mất chỗ đang học) mỗi khi SRS đổi sau từng thẻ.
+  const [hardItems, setHardItems] = useState(null);
   const [importMsg, setImportMsg] = useState(null);
+  // File sao lưu đã đọc, đang chờ người dùng chọn GỘP hay GHI ĐÈ.
+  const [pendingImport, setPendingImport] = useState(null); // { name, payload }
   const fileRef = useRef(null);
 
   const settings = loadSettings();
-  const p = useMemo(() => loadProgress(), [tick]);
+  const p = loadProgress();
   const streak = getStreak(p);
   const total = totalReviews(p);
   const today = studiedToday(p);
   const doneToday = reviewsToday(p);
-  const activity = useMemo(() => recentActivity(14, p), [p]);
+  const activity = recentActivity(14, p);
   const maxAct = Math.max(1, ...activity.map((a) => a.count));
-  const accTrend = useMemo(() => accuracyTrend(14, p), [p]);
+  const accTrend = accuracyTrend(14, p);
   const acc30 = accuracyOverall(30, p);
 
   const vocabCats = useMemo(
@@ -88,65 +94,76 @@ export default function ProgressTab({ onGoTo }) {
   const allVocabIds = useMemo(() => vocabCats.flatMap((c) => c.ids), [vocabCats]);
   const allKanjiIds = useMemo(() => kanjiData.kanji.map((k) => k.id), []);
 
-  const vocabStats = useMemo(() => getStats("vocab", allVocabIds), [allVocabIds, tick]);
-  const kanjiStats = useMemo(() => getStats("kanji", allKanjiIds), [allKanjiIds, tick]);
-  const kanaStats = useMemo(() => getStats("kana", kanaPool().map((c) => c.char)), [tick]);
-  const deckStats = useMemo(() => allDeckStats(), [tick]);
-  const forecast = useMemo(() => getForecast(7), [tick]);
-  const hardest = useMemo(() => getHardest(20, 1), [tick]);
-  const history = useMemo(() => loadHistory(), [tick]);
-  const mistakes = useMemo(() => mistakeEntries(), [tick]);
+  const vocabStats = getStats("vocab", allVocabIds);
+  const kanjiStats = getStats("kanji", allKanjiIds);
+  const kanaStats = getStats("kana", kanaPool().map((c) => c.char));
+  const deckStats = allDeckStats();
+  const forecast = getForecast(7);
+  const hardest = getHardest(20, 1);
+  const history = loadHistory();
+  const mistakes = mistakeEntries();
 
   const masteredAll = Object.values(deckStats).reduce((a, s) => a + s.mastered, 0);
   const dueAll = Object.values(deckStats).reduce((a, s) => a + s.due, 0);
 
-  const hardItems = useMemo(
-    () => (hardSession ? buildHardSession(hardSession, mistakes) : []),
-    [hardSession, mistakes],
-  );
-
   const resetAll = () => {
     if (!window.confirm("Xoá toàn bộ tiến độ học (SRS, streak, bài làm, ghi chú)? Không thể hoàn tác.")) return;
     wipeAll();
-    force((n) => n + 1);
+    // Tải lại trang: mọi module đang giữ dữ liệu trong bộ nhớ (SRS, phiên học dở,
+    // Minna…) phải đọc lại từ đầu, nếu không lượt ôn kế tiếp ghi lại dữ liệu cũ.
+    window.location.reload();
   };
 
   const resetOneDeck = (deck) => {
     const meta = deckMeta(deck);
     if (!window.confirm(`Xoá tiến độ SRS của "${meta.label}"?`)) return;
     resetDeck(deck);
-    force((n) => n + 1);
   };
 
+  // Bước 1: đọc & kiểm tra file — CHƯA ghi gì cả.
   const onImportFile = async (e) => {
     const file = e.target.files?.[0];
-    if (!file) return;
-    const mode = window.confirm(
-      "Nhấn OK để GỘP với tiến độ hiện tại (giữ tiến độ cao hơn).\nNhấn Cancel để GHI ĐÈ toàn bộ.",
-    )
-      ? "merge"
-      : "replace";
-    const res = await importFromFile(file, mode);
     e.target.value = "";
+    if (!file) return;
+    const res = await readBackupFile(file);
+    if (!res.ok) {
+      setPendingImport(null);
+      setImportMsg(`❌ ${res.error}`);
+      return;
+    }
+    setImportMsg(null);
+    setPendingImport({ name: file.name, payload: res.payload });
+  };
+
+  // Bước 2: người dùng bấm hẳn nút "Gộp" hoặc "Ghi đè". Không còn chuyện bấm
+  // "Huỷ" lại thành ghi đè dữ liệu như bản dùng window.confirm cũ.
+  const applyImport = (mode) => {
+    if (!pendingImport) return;
+    if (
+      mode === "replace" &&
+      !window.confirm("Ghi đè sẽ THAY toàn bộ tiến độ hiện tại bằng nội dung file. Tiếp tục?")
+    )
+      return;
+    const res = importData(pendingImport.payload, mode);
+    setPendingImport(null);
     if (res.ok) {
-      setImportMsg(`✅ Đã nhập ${res.keys.length} mục (${mode === "merge" ? "gộp" : "ghi đè"}). Tải lại trang để áp dụng…`);
-      setTimeout(() => window.location.reload(), 1200);
+      setImportMsg(
+        `✅ Đã nhập ${res.keys.length} mục (${mode === "merge" ? "gộp" : "ghi đè"}). Đang tải lại trang…`,
+      );
+      setTimeout(() => window.location.reload(), 900);
     } else {
       setImportMsg(`❌ ${res.error}`);
     }
   };
 
-  if (hardSession) {
+  if (hardItems) {
     return (
       <StudyRunner
         items={hardItems}
         title="🔥 Ôn thẻ hay quên nhất"
         subtitle="Những thẻ bạn rớt nhiều lần nhất — ôn tập trung vào đây hiệu quả hơn ôn dàn trải"
         color="#ff4757"
-        onExit={() => {
-          setHardSession(null);
-          force((n) => n + 1);
-        }}
+        onExit={() => setHardItems(null)}
       />
     );
   }
@@ -312,7 +329,7 @@ export default function ProgressTab({ onGoTo }) {
                 );
               })}
             </div>
-            <button className="pgx-hardbtn" onClick={() => setHardSession(hardest)}>
+            <button className="pgx-hardbtn" onClick={() => setHardItems(buildHardSession(hardest, mistakes))}>
               🎯 Ôn ngay {hardest.length} thẻ khó nhất
             </button>
           </>
@@ -473,6 +490,28 @@ export default function ProgressTab({ onGoTo }) {
             />
           </div>
         </div>
+        {pendingImport && (
+          <div className="pgx-backup__msg pgx-backup__confirm">
+            <div>
+              📄 <strong>{pendingImport.name}</strong>
+              {pendingImport.payload.exportedAt
+                ? ` · xuất lúc ${new Date(pendingImport.payload.exportedAt).toLocaleString("vi-VN")}`
+                : ""}
+              {` · ${Object.keys(pendingImport.payload.data).length} nhóm dữ liệu`}
+            </div>
+            <div className="pgx-backup__btns">
+              <button className="pgx-btn pgx-btn--primary" onClick={() => applyImport("merge")}>
+                🔀 Gộp (giữ tiến độ cao hơn)
+              </button>
+              <button className="pgx-btn" onClick={() => applyImport("replace")}>
+                ♻️ Ghi đè toàn bộ
+              </button>
+              <button className="pgx-btn" onClick={() => setPendingImport(null)}>
+                ✕ Huỷ
+              </button>
+            </div>
+          </div>
+        )}
         {importMsg && <div className="pgx-backup__msg">{importMsg}</div>}
       </div>
 

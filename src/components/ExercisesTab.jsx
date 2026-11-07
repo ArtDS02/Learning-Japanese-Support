@@ -9,7 +9,8 @@ import {
   resetSection,
   startExam,
   setExamMode,
-  saveElapsed,
+  examElapsed,
+  ensureWallClock,
   scoreExam,
   submitExam,
   mistakeEntries,
@@ -82,21 +83,23 @@ function SectionTimer({ minutes }) {
   );
 }
 
-/** Đồng hồ tổng cho chế độ thi thật — chạy liên tục, lưu lại khi F5. */
-function ExamTimer({ examId, totalMinutes, initialElapsed, onTimeUp, paused }) {
-  const [elapsed, setElapsed] = useState(initialElapsed || 0);
+/**
+ * Đồng hồ tổng cho chế độ thi thật. Tính theo GIỜ THẬT từ lúc bắt đầu (startedAt)
+ * nên không dừng khi thu gọn đề, đổi tab hay tải lại trang — trước đây đồng hồ
+ * chỉ đếm khi component đang hiện, nên thu gọn đề là "dừng giờ" được.
+ */
+function ExamTimer({ startedAt, totalMinutes, onTimeUp }) {
+  const calc = useCallback(
+    () => examElapsed({ startedAt }),
+    [startedAt],
+  );
+  const [elapsed, setElapsed] = useState(calc);
   const firedRef = useRef(false);
 
   useEffect(() => {
-    if (paused) return;
-    const t = setInterval(() => setElapsed((e) => e + 1), 1000);
+    const t = setInterval(() => setElapsed(calc()), 1000);
     return () => clearInterval(t);
-  }, [paused]);
-
-  // Lưu mỗi 5 giây để reload không mất thời gian đã làm.
-  useEffect(() => {
-    if (elapsed % 5 === 0) saveElapsed(examId, elapsed);
-  }, [elapsed, examId]);
+  }, [calc]);
 
   const total = totalMinutes * 60;
   const left = Math.max(0, total - elapsed);
@@ -129,7 +132,7 @@ function ExamTimer({ examId, totalMinutes, initialElapsed, onTimeUp, paused }) {
 /* =========================================================
  * CÂU HỎI
  * =======================================================*/
-function QuestionCard({ q, delay = 0, chosen, onAnswer, testMode, furigana, num }) {
+function QuestionCard({ q, delay = 0, chosen, onAnswer, testMode, locked, furigana, num }) {
   const revealed = !testMode && chosen != null;
   const isCorrect = chosen === q.answer;
   const audible = ttsSupported() && hasJaVoice();
@@ -150,8 +153,11 @@ function QuestionCard({ q, delay = 0, chosen, onAnswer, testMode, furigana, num 
     });
   };
 
+  // Luyện tập: chọn một lần (hiện đáp án ngay). Thi thử: được đổi lựa chọn tới
+  // khi nộp bài, như thi thật. Đã nộp bài thi: khoá hẳn.
+  const canPick = !locked && (testMode || chosen == null);
   const handleSelect = (choice) => {
-    if (chosen != null) return;
+    if (!canPick || choice === chosen) return;
     onAnswer(q.id, choice);
   };
 
@@ -229,7 +235,7 @@ function QuestionCard({ q, delay = 0, chosen, onAnswer, testMode, furigana, num 
             key={i}
             className={getChoiceClass(choice)}
             onClick={() => handleSelect(choice)}
-            disabled={chosen != null}
+            disabled={!canPick}
           >
             <span className="choice-letter">{String.fromCharCode(65 + i)}.</span>
             {choice}
@@ -259,7 +265,12 @@ function QuestionCard({ q, delay = 0, chosen, onAnswer, testMode, furigana, num 
       )}
 
       {testMode && chosen != null && (
-        <div className="exm-picked">Đã chọn: <strong>{chosen}</strong> · chấm điểm khi nộp bài</div>
+        <div className="exm-picked">
+          Đã chọn: <strong>{chosen}</strong> · còn đổi được · chấm điểm khi nộp bài
+        </div>
+      )}
+      {locked && chosen == null && (
+        <div className="exm-picked">Bỏ trống · đáp án đúng: <strong>{q.answer}</strong></div>
       )}
     </div>
   );
@@ -268,7 +279,7 @@ function QuestionCard({ q, delay = 0, chosen, onAnswer, testMode, furigana, num 
 /* =========================================================
  * BÀI ĐỌC
  * =======================================================*/
-function ReadingPassage({ passage, answers, onAnswer, testMode, furigana, numberOf }) {
+function ReadingPassage({ passage, answers, onAnswer, testMode, locked, furigana, numberOf }) {
   return (
     <div className="reading-passage">
       <div className="reading-box">
@@ -297,6 +308,7 @@ function ReadingPassage({ passage, answers, onAnswer, testMode, furigana, number
             chosen={answers[q.id]}
             onAnswer={onAnswer}
             testMode={testMode}
+              locked={locked}
             furigana={furigana}
           />
         ))}
@@ -308,7 +320,17 @@ function ReadingPassage({ passage, answers, onAnswer, testMode, furigana, number
 /* =========================================================
  * MỘT PHẦN THI
  * =======================================================*/
-function SectionBlock({ section, startDelay = 0, answers, onAnswer, onResetSection, testMode, furigana, numberOf }) {
+function SectionBlock({
+  section,
+  startDelay = 0,
+  answers,
+  onAnswer,
+  onResetSection,
+  testMode,
+  locked,
+  furigana,
+  numberOf,
+}) {
   const qids = useMemo(() => getQuestionIds(section), [section]);
   const questions = useMemo(() => getQuestions(section), [section]);
   const questionCount = qids.length;
@@ -360,6 +382,7 @@ function SectionBlock({ section, startDelay = 0, answers, onAnswer, onResetSecti
               chosen={answers[q.id]}
               onAnswer={onAnswer}
               testMode={testMode}
+              locked={locked}
               furigana={furigana}
             />
           ))}
@@ -372,6 +395,7 @@ function SectionBlock({ section, startDelay = 0, answers, onAnswer, onResetSecti
               answers={answers}
               onAnswer={onAnswer}
               testMode={testMode}
+              locked={locked}
               furigana={furigana}
               numberOf={numberOf}
             />
@@ -390,13 +414,26 @@ function SectionBlock({ section, startDelay = 0, answers, onAnswer, onResetSecti
 /* =========================================================
  * MỘT ĐỀ THI
  * =======================================================*/
-function ExamCard({ exam, globalMode, furigana }) {
+/**
+ * `exam` luôn là ĐỀ ĐẦY ĐỦ — chấm điểm, đồng hồ và lịch sử thi đều dựa trên nó.
+ * `sectionFilter` chỉ quyết định phần nào được HIỆN ở chế độ luyện tập; thi thử
+ * luôn hiện và chấm cả đề (trước đây lọc "Từ vựng" rồi thi thử là chỉ chấm phần
+ * từ vựng /120, lẫn vào lịch sử với các lần thi đủ đề).
+ */
+function ExamCard({ exam, sectionFilter, globalMode, furigana }) {
   const [expanded, setExpanded] = useState(true);
-  const [state, setState] = useState(() => loadExam(exam.id));
+  // Đề thi thử dở dang từ bản cũ: chuyển sang đồng hồ thật trước lần vẽ đầu.
+  const [state, setState] = useState(() => ensureWallClock(exam.id));
   const [result, setResult] = useState(null);
+  const [hideResult, setHideResult] = useState(false);
 
   const testMode = state.mode === "test" && !state.submitted;
+  // Đã nộp bài thi: khoá đáp án — không trả lời thêm câu bỏ trống sau khi chấm.
+  const locked = state.mode === "test" && state.submitted;
   const totalMinutes = exam.sections.reduce((a, s) => a + (s.timeLimit || 0), 0);
+  const visibleSections =
+    testMode || !sectionFilter ? exam.sections : exam.sections.filter(sectionFilter);
+  const hiddenCount = exam.sections.length - visibleSections.length;
 
   const numbering = useMemo(() => {
     const map = new Map();
@@ -406,46 +443,84 @@ function ExamCard({ exam, globalMode, furigana }) {
   }, [exam]);
   const numberOf = useCallback((id) => numbering.get(id), [numbering]);
 
-  // Đồng bộ khi người dùng đổi chế độ ở thanh trên.
-  useEffect(() => {
-    if (globalMode && globalMode !== state.mode && !Object.keys(state.answers).length) {
+  // Đồng bộ khi người dùng đổi chế độ mặc định ở thanh trên (chỉ với đề chưa làm).
+  // Điều chỉnh state ngay trong lúc render theo mẫu "giá trị trước đó" của React,
+  // thay cho effect gọi setState.
+  const answeredCount = Object.keys(state.answers).length;
+  const [appliedMode, setAppliedMode] = useState(globalMode);
+  if (globalMode !== appliedMode) {
+    setAppliedMode(globalMode);
+    if (globalMode && globalMode !== state.mode && !answeredCount) {
       setState(setExamMode(exam.id, globalMode));
     }
-  }, [globalMode]); // eslint-disable-line react-hooks/exhaustive-deps
+  }
 
   const scored = useMemo(() => scoreExam(exam, state.answers), [exam, state.answers]);
 
   const onAnswer = (qid, choice) => {
-    const ok = answerQuestion(exam.id, qid, choice);
+    const ok = answerQuestion(exam.id, qid, choice, { rate: !testMode });
     // Ở chế độ luyện tập, mỗi câu tính là một lượt ôn (vào streak + độ chính xác).
     if (!testMode) recordReview(1, ok);
     setState(loadExam(exam.id));
   };
 
-  const onResetSection = (qids) => setState(resetSection(exam.id, qids));
+  const onResetSection = (qids) => {
+    if (locked) return;
+    setState(resetSection(exam.id, qids));
+  };
 
   const doSubmit = useCallback(() => {
     const r = submitExam(exam);
     // Nộp bài mới ghi nhận lượt ôn của chế độ thi (tránh nhắc streak khi đang thi).
     if (state.mode === "test") recordReview(r.answered || 0, undefined);
     setResult(r);
+    setHideResult(false);
     setState(loadExam(exam.id));
   }, [exam, state.mode]);
 
   const doStart = (mode) => {
     setResult(null);
+    setHideResult(false);
     setState(startExam(exam.id, mode));
     setExpanded(true);
   };
 
+  // Bấm "Thi thử": đang thi dở thì giữ nguyên; còn bài làm thì hỏi trước khi xoá.
+  const askStartTest = () => {
+    if (testMode) return;
+    if (
+      answeredCount > 0 &&
+      !window.confirm(
+        `Bắt đầu thi thử sẽ xoá ${answeredCount} câu đã làm của đề này và tính giờ từ đầu. Tiếp tục?`,
+      )
+    )
+      return;
+    doStart("test");
+  };
+
+  // Bấm "Luyện tập" giữa lúc thi: bỏ dở bài thi và lộ đáp án — phải hỏi.
+  const askPractice = () => {
+    if (state.mode === "practice") return;
+    if (
+      testMode &&
+      answeredCount > 0 &&
+      !window.confirm("Dừng thi thử? Đáp án sẽ hiện ra và lần thi này không được chấm điểm.")
+    )
+      return;
+    setResult(null);
+    setHideResult(false);
+    setState(setExamMode(exam.id, "practice"));
+  };
+
   const doReset = () => {
+    if (answeredCount > 0 && !window.confirm("Xoá toàn bộ bài làm của đề này?")) return;
     resetExam(exam.id);
     setResult(null);
+    setHideResult(false);
     setState(loadExam(exam.id));
   };
 
-  const answeredCount = Object.keys(state.answers).length;
-  const shown = result || (state.submitted ? scored : null);
+  const shown = hideResult ? null : result || (state.submitted ? scored : null);
 
   return (
     <div className="exam-card">
@@ -473,7 +548,8 @@ function ExamCard({ exam, globalMode, furigana }) {
       {/* Tiếp tục đề đang làm dở */}
       {!expanded && answeredCount > 0 && !state.submitted && (
         <div className="exm-resume">
-          ⏭ Đề này đang làm dở — <strong>{answeredCount}/{scored.total}</strong> câu.
+          ⏭ Đề này đang làm dở — <strong>{answeredCount}/{scored.total}</strong> câu
+          {testMode ? " · đồng hồ thi vẫn chạy" : ""}.
           <button className="exm-resume__btn" onClick={() => setExpanded(true)}>Tiếp tục</button>
         </div>
       )}
@@ -485,14 +561,14 @@ function ExamCard({ exam, globalMode, furigana }) {
             <div className="exm-modebar__group">
               <button
                 className={`exm-modebtn ${state.mode === "practice" ? "is-on" : ""}`}
-                onClick={() => setState(setExamMode(exam.id, "practice"))}
+                onClick={askPractice}
               >
                 📚 Luyện tập
                 <span>Hiện đáp án + giải thích ngay</span>
               </button>
               <button
                 className={`exm-modebtn ${state.mode === "test" ? "is-on" : ""}`}
-                onClick={() => doStart("test")}
+                onClick={askStartTest}
               >
                 ⏱ Thi thử
                 <span>Ẩn đáp án · {totalMinutes} phút · chấm thang 180</span>
@@ -501,14 +577,19 @@ function ExamCard({ exam, globalMode, furigana }) {
 
             {testMode && (
               <ExamTimer
-                examId={exam.id}
+                key={state.startedAt}
+                startedAt={state.startedAt}
                 totalMinutes={totalMinutes}
-                initialElapsed={state.elapsed}
-                paused={state.submitted}
                 onTimeUp={doSubmit}
               />
             )}
           </div>
+
+          {testMode && sectionFilter && (
+            <div className="exm-resume">
+              ℹ️ Thi thử luôn làm và chấm <strong>cả đề</strong> — bộ lọc phần thi chỉ áp dụng cho chế độ luyện tập.
+            </div>
+          )}
 
           {/* Bảng điểm */}
           {shown ? (
@@ -517,8 +598,12 @@ function ExamCard({ exam, globalMode, furigana }) {
               exam={exam}
               answers={state.answers}
               onRetry={() => doStart(state.mode)}
-              onReview={() => setResult(null)}
+              onReview={() => setHideResult(true)}
             />
+          ) : state.submitted ? (
+            <button className="exm-btn exm-showresult" onClick={() => setHideResult(false)}>
+              📊 Xem lại bảng điểm
+            </button>
           ) : (
             answeredCount > 0 &&
             !testMode && <PracticeSummary scored={scored} />
@@ -537,7 +622,7 @@ function ExamCard({ exam, globalMode, furigana }) {
           )}
 
           <div className="exam-card__sections">
-            {exam.sections.map((section, idx) => (
+            {visibleSections.map((section, idx) => (
               <SectionBlock
                 key={section.id}
                 section={section}
@@ -546,11 +631,17 @@ function ExamCard({ exam, globalMode, furigana }) {
                 onAnswer={onAnswer}
                 onResetSection={onResetSection}
                 testMode={testMode}
+                locked={locked}
                 furigana={furigana}
                 numberOf={numberOf}
               />
             ))}
           </div>
+          {hiddenCount > 0 && (
+            <div className="exm-hidden-note">
+              Đang ẩn {hiddenCount} phần khác của đề theo bộ lọc “Phần thi”.
+            </div>
+          )}
 
           <button className="reset-btn exm-resetall" onClick={doReset}>
             🗑 Xoá toàn bộ bài làm của đề này
@@ -684,7 +775,11 @@ function MistakeNotebook({ onBack }) {
   const [running, setRunning] = useState(false);
   const [onlyDue, setOnlyDue] = useState(true);
 
-  const pool = onlyDue ? entries.filter((e) => e.due) : entries;
+  // Memo hoá: StudyRunner coi mỗi mảng items mới là một phiên mới.
+  const pool = useMemo(
+    () => (onlyDue ? entries.filter((e) => e.due) : entries),
+    [entries, onlyDue],
+  );
   const items = useMemo(() => pool.map(mistakeCard), [pool]);
 
   if (running) {
@@ -865,23 +960,24 @@ export default function ExercisesTab() {
   const filteredExams =
     activeExam === "all" ? examSets : examSets.filter((e) => e.id === activeExam);
 
-  const finalExams = filteredExams
-    .map((exam) => {
-      let sections = exam.sections;
-      if (activeSectionType !== "all") {
-        sections = sections.filter((section) => {
-          const title = section.title.toLowerCase();
-          if (activeSectionType === "vocab") return title.includes("語彙") || title.includes("từ vựng");
-          if (activeSectionType === "grammar") return title.includes("文法") || title.includes("ngữ pháp");
-          if (activeSectionType === "reading") return title.includes("読解") || title.includes("đọc hiểu");
-          if (activeSectionType === "listening")
-            return section.type === "listening" || title.includes("聴解") || title.includes("nghe");
-          return true;
-        });
-      }
-      return { ...exam, sections };
-    })
-    .filter((exam) => exam.sections.length > 0);
+  // Bộ lọc phần thi CHỈ dùng để hiển thị. Đề truyền xuống ExamCard luôn là đề
+  // đầy đủ để chấm điểm / lịch sử thi không bị tính trên một phần của đề.
+  const sectionFilter = useMemo(() => {
+    if (activeSectionType === "all") return null;
+    return (section) => {
+      const title = section.title.toLowerCase();
+      if (activeSectionType === "vocab") return title.includes("語彙") || title.includes("từ vựng");
+      if (activeSectionType === "grammar") return title.includes("文法") || title.includes("ngữ pháp");
+      if (activeSectionType === "reading") return title.includes("読解") || title.includes("đọc hiểu");
+      if (activeSectionType === "listening")
+        return section.type === "listening" || title.includes("聴解") || title.includes("nghe");
+      return true;
+    };
+  }, [activeSectionType]);
+
+  const finalExams = filteredExams.filter(
+    (exam) => !sectionFilter || exam.sections.some(sectionFilter),
+  );
 
   if (view === "mistakes") return <MistakeNotebook onBack={() => setView("exams")} />;
   if (view === "history") return <ExamHistory onBack={() => setView("exams")} />;
@@ -978,7 +1074,13 @@ export default function ExercisesTab() {
 
       <div>
         {finalExams.map((exam) => (
-          <ExamCard key={exam.id} exam={exam} globalMode={globalMode} furigana={furigana} />
+          <ExamCard
+            key={exam.id}
+            exam={exam}
+            sectionFilter={sectionFilter}
+            globalMode={globalMode}
+            furigana={furigana}
+          />
         ))}
       </div>
 

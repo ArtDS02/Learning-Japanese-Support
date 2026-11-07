@@ -55,7 +55,21 @@ function resumeSession(items) {
   };
 }
 
-export default function StudyRunner({
+// Mỗi mảng `items` mới = một phiên mới. Gắn khoá theo ĐỊNH DANH mảng để React
+// dựng lại hẳn Runner (state + ref sạch), thay cho effect setState-hàng-loạt.
+const sessionIds = new WeakMap();
+let sessionSeq = 0;
+const sessionIdOf = (items) => {
+  if (!items || typeof items !== "object") return 0;
+  if (!sessionIds.has(items)) sessionIds.set(items, ++sessionSeq);
+  return sessionIds.get(items);
+};
+
+export default function StudyRunner(props) {
+  return <Runner key={sessionIdOf(props.items)} {...props} />;
+}
+
+function Runner({
   items,
   title,
   subtitle,
@@ -85,22 +99,6 @@ export default function StudyRunner({
 
   const item = queue[pos];
   const audible = ttsSupported() && hasJaVoice();
-
-  // Dựng lại phiên khi bộ thẻ đổi.
-  useEffect(() => {
-    setQueue(session.queue);
-    setPos(0);
-    setRevealed(false);
-    setSelected(null);
-    setTyped("");
-    setTypeOk(null);
-    setDone(false);
-    setStats(session.stats);
-    setMissed(session.missed);
-    setResumed(session.resumed);
-    requeued.current = new Map();
-    graded.current = new Set(session.graded);
-  }, [session]);
 
   /** Ghi nhớ tiến độ — gọi sau mỗi lượt chấm, payload chỉ gồm id nên rất nhẹ. */
   const remember = useCallback(
@@ -285,7 +283,11 @@ export default function StudyRunner({
         return;
       }
       if (item.kind === "type") {
-        if (e.key === "Enter" && typing) {
+        // Enter trong ô nhập do chính ô đó xử lý (onKeyDown của TypeBody). Trước
+        // đây cả hai cùng bắt một phím Enter → một câu bị chấm HAI lần (ghi SRS,
+        // lượt ôn, điểm phiên đều nhân đôi). Ở đây chỉ lo Enter sau khi đã hiện
+        // đáp án — lúc đó ô nhập bị khoá nên mất tiêu điểm.
+        if (e.key === "Enter" && !typing && revealed && !e.isComposing) {
           e.preventDefault();
           checkTyped();
         }
@@ -750,7 +752,8 @@ function TypeBody({ item, revealed, typed, setTyped, typeOk, onSubmit, inputRef,
         value={typed}
         onChange={(e) => setTyped(e.target.value)}
         onKeyDown={(e) => {
-          if (e.key === "Enter") {
+          // Enter để chốt chữ trong bộ gõ tiếng Nhật (IME) không phải là nộp bài.
+          if (e.key === "Enter" && !e.nativeEvent.isComposing && e.keyCode !== 229) {
             e.preventDefault();
             onSubmit();
           }
