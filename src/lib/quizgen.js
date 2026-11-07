@@ -21,6 +21,7 @@ import numbersData from "../data/numbers.json";
 import kanjiData from "../data/kanji.json";
 import kanaData from "../data/kana.json";
 import { shuffle } from "./random";
+import { similarKanji } from "./kanjiSimilar";
 import { loadSrs, replaceState } from "./srs";
 import { readJSON, writeJSON } from "./storage";
 
@@ -557,6 +558,39 @@ export function kanjiReadingToChar() {
     .filter(Boolean);
 }
 
+/**
+ * Kanji dễ nhầm: cho nghĩa + âm Hán Việt, chọn đúng chữ giữa các chữ TRÔNG GIỐNG
+ * nhau (chung bộ thủ / thành phần — lib/kanjiSimilar.js). Nhiễu ngẫu nhiên như
+ * bộ "Nghĩa → chọn Kanji" thường khác hẳn hình dạng nên nhìn qua là loại được;
+ * ở đây buộc phải để ý đúng nét khác nhau.
+ */
+export function kanjiConfusable() {
+  return kanjiPool
+    .map((k) => {
+      // Bỏ chữ trùng nghĩa: câu hỏi hiện nghĩa, trùng nghĩa là có hai đáp án đúng.
+      const wrong = similarKanji(k.id, 6)
+        .map((x) => x.kanji)
+        .filter((o) => o.char !== k.char && o.meaning !== k.meaning)
+        .slice(0, 3);
+      if (wrong.length < 2) return null;
+      const label = (o) => `${o.char} — ${o.meaning}${o.hanviet ? ` (${o.hanviet})` : ""}`;
+      return {
+        id: `conf:${k.id}`,
+        deck: "kanji",
+        kind: "choice",
+        prompt: "Chữ nào đúng? (các chữ trông giống nhau)",
+        question: k.meaning,
+        sub: k.hanviet ? `Hán Việt: ${k.hanviet}` : `${k.stroke} nét`,
+        choices: mcChoices(k.char, wrong.map((o) => o.char)),
+        answer: k.char,
+        explanation: [k, ...wrong].map(label).join(" · "),
+        speak: k.examples?.[0]?.reading,
+        tag: "Kanji dễ nhầm",
+      };
+    })
+    .filter(Boolean);
+}
+
 // ── Nghe (sinh từ chính data — dùng TTS thay vì file audio) ──────────────────
 
 export function listenWordToMeaning() {
@@ -671,6 +705,7 @@ export const QUIZ_SETS = [
   { id: "kanji-mean-char", tab: "kanji", deck: "kanji", icon: "🔎", label: "Nghĩa → chọn Kanji", desc: "Đảo chiều so với flashcard", gen: kanjiMeaningToChar },
   { id: "kanji-char-mean", tab: "kanji", deck: "kanji", icon: "🈳", label: "Kanji → chọn nghĩa", desc: `Kiểm tra nhanh ${kanjiData.kanji.length} kanji`, gen: kanjiCharToMeaning },
   { id: "kanji-read-char", tab: "kanji", deck: "kanji", icon: "🔉", label: "Cách đọc → chọn Kanji", desc: "Luyện âm On/Kun", gen: kanjiReadingToChar },
+  { id: "kanji-confusable", tab: "kanji", deck: "kanji", icon: "⚠️", label: "Kanji dễ nhầm", desc: "Phân biệt các chữ chung bộ thủ / thành phần (休・体, 大・犬・太)", gen: kanjiConfusable },
 
   // Nghe
   { id: "listen-word", tab: "listening", deck: "listening", icon: "🎧", label: "Nghe từ → chọn nghĩa", desc: "580 từ, phát bằng giọng đọc tiếng Nhật", gen: listenWordToMeaning },

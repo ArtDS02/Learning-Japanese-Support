@@ -1416,8 +1416,14 @@ font-size: 0.75rem;
 }
 
 /* ── Bộ thủ & thành phần (khối tách chữ trong modal) ── */
-.km-decomp {
+.km-decomp,
+.km-similar {
   margin-bottom: 1.25rem;
+}
+
+/* Chữ dễ nhầm: viền cam để tách khỏi khối thành phần ngay phía trên. */
+.km-similar .km-piece {
+  border-color: rgba(249, 115, 22, 0.35);
 }
 
 .km-decomp__pieces {

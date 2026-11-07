@@ -3,6 +3,7 @@ import kanjiData from "../data/kanji.json";
 import { getCard, getStatus, getStats, orderForStudy, rateCard, MASTERED_BOX } from "../lib/srs";
 import { kanjiCard } from "../lib/session";
 import { vocabWithKanji } from "../lib/searchIndex";
+import { similarKanji } from "../lib/kanjiSimilar";
 import { shuffle } from "../lib/random";
 import { openKanjiPracticeSheet } from "../lib/kanjiSheet";
 import { exportKanjiPdf } from "../lib/kanjiPdf";
@@ -102,6 +103,24 @@ export default function KanjiTab({ initialSearch }) {
       return matchCat && matchLevel && matchRadical && matchSearch;
     });
   }, [activeCategory, activeLevel, radicalFilter, search]);
+
+  /**
+   * Mở modal của một chữ bất kỳ (mục "Dễ nhầm với"). Chữ đó có thể đang bị bộ lọc
+   * ẩn đi — khi ấy bỏ hết bộ lọc: danh sách lúc đó chính là kanjiData.kanji theo
+   * đúng thứ tự, nên vị trí tính thẳng trên mảng gốc.
+   */
+  const openKanji = (id) => {
+    const i = filtered.findIndex((k) => k.id === id);
+    if (i >= 0) {
+      setSelectedIdx(i);
+      return;
+    }
+    setActiveCategory("all");
+    setActiveLevel("all");
+    setRadicalFilter("all");
+    setSearch("");
+    setSelectedIdx(kanjiData.kanji.findIndex((k) => k.id === id));
+  };
 
   /** Nhóm bộ thủ để dựng hàng lọc phụ: mỗi bộ kèm Hán Việt + số chữ (trong cấp
    *  độ đang chọn). Đếm theo cùng luật khớp với filter (bộ chính hoặc thành phần). */
@@ -300,7 +319,7 @@ export default function KanjiTab({ initialSearch }) {
           <span className="voc-act__icon" aria-hidden="true">🎯</span>
           <span className="voc-act__body">
             <span className="voc-act__title">Luyện tập</span>
-            <span className="voc-act__sub">Nghĩa → Kanji · cách đọc → Kanji</span>
+            <span className="voc-act__sub">Nghĩa → Kanji · cách đọc → Kanji · chữ dễ nhầm</span>
           </span>
         </button>
       </div>
@@ -608,6 +627,7 @@ export default function KanjiTab({ initialSearch }) {
             setActiveCategory("all");
             setRadicalFilter(ch);
           }}
+          onOpenKanji={openKanji}
         />
       )}
     </div>
@@ -780,9 +800,11 @@ function KanjiModal({
   onToggleMark,
   onRated,
   onFilterRadical,
+  onOpenKanji,
 }) {
   const [tab, setTab] = useState("info"); // info | write
   const strokes = useKanjiStrokes(kanji.id);
+  const similar = similarKanji(kanji.id, 4); // đã cache trong kanjiSimilar.js
   const card = getCard("kanji", kanji.id);
   const status = getStatus(card);
   const related = useMemo(() => vocabWithKanji(kanji.char), [kanji.char]);
@@ -913,6 +935,29 @@ function KanjiModal({
                 ))}
               </div>
               <div className="km-decomp__hint">Bấm một mảnh để lọc các kanji khác cùng bộ →</div>
+            </div>
+          )}
+
+          {/* ⚠️ Chữ trông giống — ẩn khi không có chữ nào đủ giống (không ghép gượng). */}
+          {similar.length > 0 && (
+            <div className="km-similar">
+              <div className="km-examples-label">⚠️ Dễ nhầm với</div>
+              <div className="km-decomp__pieces">
+                {similar.map(({ kanji: o }) => (
+                  <button
+                    key={o.id}
+                    className="km-piece"
+                    onClick={() => onOpenKanji?.(o.id)}
+                    title={`Mở chữ ${o.char}`}
+                  >
+                    <span className="km-piece__char">{o.char}</span>
+                    <span className="km-piece__meta">
+                      {o.hanviet && <span className="km-piece__hv">{o.hanviet}</span>}
+                      <span className="km-piece__mean">{o.meaning}</span>
+                    </span>
+                  </button>
+                ))}
+              </div>
             </div>
           )}
 

@@ -30,7 +30,7 @@ Trạng thái:
 | F2 | Đếm ngược ngày thi + tự gợi ý số thẻ mới/ngày | S | ✅ Đã xong |
 | F3 | Luyện nghe cặp âm dễ nhầm (trường âm, っ) | M | ⬜ Chưa làm |
 | F4 | Shadowing có chấm điểm bằng nhận giọng nói | M | ⬜ Chưa làm |
-| F5 | Luyện kanji dễ nhầm theo bộ thủ | M | ⬜ Chưa làm |
+| F5 | Luyện kanji dễ nhầm theo bộ thủ | M | ✅ Đã xong |
 | F6 | Kiểm tra thứ tự & hướng nét khi tập viết | M–L | ⬜ Chưa làm |
 | F7 | Phát hiện thẻ "khó nhớ dai dẳng" (leech) | S–M | ⬜ Chưa làm |
 | F8 | Vuốt thẻ trên điện thoại + chỉnh cỡ chữ | S | ⬜ Chưa làm |
@@ -255,6 +255,12 @@ báo rõ ràng; Firefox (không hỗ trợ) → không hiện nút, không lỗi
 ---
 
 ## F5. Luyện kanji dễ nhầm theo bộ thủ
+
+> ✅ **Đã xong** (2026-11-08). `lib/kanjiSimilar.js` (`similarityScore`, `similarKanji`,
+> `MIN_SCORE = 2`, chênh tối đa 4 nét; thành phần mở rộng 2 cấp nên 休/体 chung cả 亻 lẫn 木).
+> Bộ `kanji-confusable` (132 câu, id `conf:<kanjiId>`, bỏ nhiễu trùng nghĩa) trong `quizgen.js`;
+> mục "⚠️ Dễ nhầm với" trong modal kanji, bấm mở được cả chữ đang bị bộ lọc ẩn.
+> Kiểm tra mọi `QUIZ_SETS`: 0 lỗi. Giới hạn: cặp không chung thành phần (日/目) không phát hiện được.
 
 **Mục tiêu.** Phân biệt các chữ trông giống nhau (休/体, 見/貝, 未/末, 土/士) thay vì chỉ
 nhận mặt chữ.
