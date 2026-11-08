@@ -5,7 +5,7 @@ import TabLoader from "./components/common/TabLoader";
 import AccountButton from "./components/common/AccountButton";
 import { startReminder } from "./lib/reminder";
 import { applyFontScale, subscribeUserData } from "./lib/userdata";
-import { writeRaw } from "./lib/storage";
+import { writeRaw, readJSON, writeJSON } from "./lib/storage";
 
 // Áp cỡ chữ ngay khi nạp module (trước lần vẽ đầu) để không thấy chữ nhảy cỡ.
 applyFontScale();
@@ -34,24 +34,47 @@ const ProgressTab = lazy(() => import("./components/ProgressTab"));
 const IS_DEV = import.meta.env.DEV;
 const AdminTab = IS_DEV ? lazy(() => import("./components/admin/AdminTab")) : null;
 
-// `short`: nhãn rút gọn dùng cho thanh tab trên điện thoại. Chỉ khai báo khi
-// nhãn đầy đủ quá dài — còn lại dùng chung `label`.
+// `short`: nhãn rút gọn cho hàng tab con trên điện thoại. Chỉ khai báo khi
+// nhãn đầy đủ quá dài — còn lại dùng chung `label`. Thứ tự ở đây = thứ tự hiện
+// trong từng nhóm (xem GROUPS).
 const TABS = [
   { id: "home",       icon: "🔥", label: "Học hôm nay", short: "Hôm nay" },
+  { id: "minna",      icon: "📗", label: "Minna no Nihongo 1", short: "Minna 1" },
+  { id: "studyplan",  icon: "🗓️", label: "Lộ trình" },
+  { id: "kana",       icon: "あ", label: "Kana" },
   { id: "vocabulary", icon: "📖", label: "Từ vựng" },
-  { id: "grammar",    icon: "⚙️", label: "Ngữ pháp" },
-  { id: "minna",      icon: "🎌", label: "Minna no Nihongo 1", short: "Minna 1" },
-  { id: "kanji",      icon: "🈳", label: "Kanji" },
-  { id: "kana",       icon: "🔤", label: "Kana" },
+  { id: "kanji",      icon: "漢", label: "Kanji" },
+  { id: "grammar",    icon: "🧱", label: "Ngữ pháp" },
   { id: "numbers",    icon: "🔢", label: "Số đếm" },
-  { id: "modifiers",  icon: "🎨", label: "Từ bổ nghĩa", short: "Bổ nghĩa" },
+  { id: "modifiers",  icon: "🏷️", label: "Từ bổ nghĩa", short: "Bổ nghĩa" },
+  { id: "exercises",  icon: "✏️", label: "Bài tập" },
   { id: "listening",  icon: "🎧", label: "Nghe" },
   { id: "tips",       icon: "💡", label: "Mẹo thi" },
-  { id: "exercises",  icon: "✏️", label: "Bài tập" },
-  { id: "studyplan",  icon: "🗓️", label: "Lộ trình" },
   { id: "progress",   icon: "📊", label: "Tiến độ" },
+  // Admin không thuộc nhóm nào — mở bằng nút 🛠️ trên header (chỉ bản dev).
   ...(IS_DEV ? [{ id: "admin", icon: "🛠️", label: "Admin" }] : []),
 ];
+
+/**
+ * 13 tab gom thành 5 nhóm. Màn rộng: hàng trên là nhóm, hàng dưới là tab con
+ * của nhóm đang chọn. Điện thoại: nhóm thành thanh dưới đáy màn hình (ngón cái
+ * với tới), tab con là một hàng chip trên cùng. Nhóm chỉ có một tab thì bấm là
+ * mở thẳng, không có hàng con.
+ */
+const GROUPS = [
+  { id: "today",    icon: "🔥", label: "Hôm nay",   tabs: ["home"] },
+  { id: "course",   icon: "🗺️", label: "Theo bài",  tabs: ["minna", "studyplan"] },
+  { id: "learn",    icon: "📚", label: "Kiến thức", tabs: ["kana", "vocabulary", "kanji", "grammar", "numbers", "modifiers"] },
+  { id: "practice", icon: "🎯", label: "Luyện thi", tabs: ["exercises", "listening", "tips"] },
+  { id: "me",       icon: "📊", label: "Tiến độ",   tabs: ["progress"] },
+];
+
+const TAB_BY_ID = Object.fromEntries(TABS.map((t) => [t.id, t]));
+const GROUP_OF = Object.fromEntries(GROUPS.flatMap((g) => g.tabs.map((id) => [id, g])));
+
+// Tab con mở lần trước của từng nhóm: quay lại "Kiến thức" là về đúng Kanji
+// đang học dở, không bị đẩy về Kana. Chỉ là trạng thái giao diện của máy này.
+const NAV_LAST_KEY = "jlpt-nav-last";
 
 const VALID = new Set(TABS.map((t) => t.id));
 
@@ -72,16 +95,92 @@ function shouldPreload() {
 }
 
 /**
- * Thanh chuyển tab.
+ * Ẩn thanh điều hướng khi cuộn xuống, hiện lại khi cuộn lên — đọc nội dung dài
+ * (danh sách từ, kanji, bài ngữ pháp) thì có trọn màn hình, cần đổi tab thì chỉ
+ * cần vuốt ngược một chút.
  *
- * 13 tab không bao giờ vừa một hàng trên điện thoại, nên phần tràn phải *nhìn
- * ra được* thay vì bị cắt cụt im lặng: mờ dần hai mép để báo còn nội dung, nút
- * mũi tên cho người dùng chuột, và tab đang chọn luôn tự trượt vào tầm nhìn.
- * Từ 769px trở lên thì cho xuống dòng — còn chỗ thì hiện hết, khỏi cuộn.
+ * Dùng quãng cuộn *tích luỹ* cùng chiều thay vì từng sự kiện: vuốt rung tay vài
+ * pixel ngược chiều không làm thanh nhấp nháy. Luôn hiện khi ở gần đầu trang và
+ * khi chạm cuối trang (đọc xong thường là lúc muốn sang tab khác).
+ */
+const NAV_SHOW_TOP = 96; // px: gần đầu trang hơn mức này thì luôn hiện
+const NAV_HIDE_AFTER = 24; // px cuộn xuống liên tục mới ẩn
+const NAV_SHOW_AFTER = 40; // px cuộn lên liên tục mới hiện
+
+function useHideOnScroll() {
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    let lastY = Math.max(0, window.scrollY);
+    let acc = 0;
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const doc = document.documentElement;
+      const y = Math.max(0, window.scrollY); // iOS kéo nảy quá đầu trang → âm
+      const dy = y - lastY;
+      lastY = y;
+      if (!dy) return;
+
+      const atEnd = y + window.innerHeight >= doc.scrollHeight - 2;
+      if (y < NAV_SHOW_TOP || atEnd) {
+        acc = 0;
+        setHidden(false);
+        return;
+      }
+      acc = Math.sign(dy) === Math.sign(acc) ? acc + dy : dy;
+      if (acc > NAV_HIDE_AFTER) setHidden(true);
+      else if (acc < -NAV_SHOW_AFTER) setHidden(false);
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return [hidden, setHidden];
+}
+
+/**
+ * Thanh điều hướng hai tầng (xem GROUPS).
+ *
+ * Hàng tab con vẫn có thể tràn trên điện thoại (nhóm Kiến thức có 6 tab), nên
+ * giữ cách báo phần tràn: mờ dần hai mép, mũi tên cho người dùng chuột, và tab
+ * đang chọn luôn tự trượt vào tầm nhìn.
  */
 function TabNav({ activeTab, onSelect }) {
+  const group = GROUP_OF[activeTab] || null;
+  const subs = group && group.tabs.length > 1 ? group.tabs : [];
   const listRef = useRef(null);
   const [edge, setEdge] = useState({ left: false, right: false });
+  const [hidden, setHidden] = useHideOnScroll();
+
+  // Vừa đổi tab (trang cuộn về đầu) thì hiện lại ngay, khỏi chờ sự kiện cuộn.
+  useEffect(() => setHidden(false), [activeTab, setHidden]);
+
+  const lastRef = useRef(null);
+  if (lastRef.current === null) {
+    const saved = readJSON(NAV_LAST_KEY, {});
+    lastRef.current = saved && typeof saved === "object" ? saved : {};
+  }
+  useEffect(() => {
+    if (!group || lastRef.current[group.id] === activeTab) return;
+    lastRef.current = { ...lastRef.current, [group.id]: activeTab };
+    writeJSON(NAV_LAST_KEY, lastRef.current);
+  }, [activeTab, group]);
+
+  const openGroup = (g) => {
+    // Bấm lại nhóm đang mở = về đầu trang của tab hiện tại (như app di động).
+    if (g === group) return onSelect(activeTab);
+    const last = lastRef.current[g.id];
+    return onSelect(g.tabs.includes(last) ? last : g.tabs[0]);
+  };
 
   const measure = useCallback(() => {
     const el = listRef.current;
@@ -91,9 +190,11 @@ function TabNav({ activeTab, onSelect }) {
     setEdge({ left: el.scrollLeft > 1, right: el.scrollLeft < max - 1 });
   }, []);
 
+  // Hàng tab con mount/unmount theo nhóm → gắn lại bộ đo mỗi lần đổi nhóm.
+  const groupId = subs.length ? group.id : null;
   useEffect(() => {
     const el = listRef.current;
-    if (!el) return;
+    if (!el) return undefined;
     measure();
     el.addEventListener("scroll", measure, { passive: true });
     const ro = new ResizeObserver(measure);
@@ -105,21 +206,20 @@ function TabNav({ activeTab, onSelect }) {
       el.removeEventListener("scroll", measure);
       ro.disconnect();
     };
-  }, [measure]);
+  }, [measure, groupId]);
 
   // Kéo tab đang chọn vào tầm nhìn — kể cả khi mở lại app và khôi phục tab đã
-  // lưu, lúc đó nó có thể nằm tít bên phải ngoài màn hình.
+  // lưu. Lần đầu nhảy thẳng, những lần sau mới trượt mượt.
   const firstRun = useRef(true);
   useEffect(() => {
     const el = listRef.current?.querySelector(`[data-tab="${activeTab}"]`);
-    if (!el) return;
-    // Lần đầu thì nhảy thẳng: vừa mở app đã thấy thanh tab tự trượt một đoạn
-    // dài trông như lỗi. Những lần đổi tab sau mới trượt mượt.
-    el.scrollIntoView({
-      inline: "center",
-      block: "nearest",
-      behavior: firstRun.current ? "instant" : "smooth",
-    });
+    if (el) {
+      el.scrollIntoView({
+        inline: "center",
+        block: "nearest",
+        behavior: firstRun.current ? "instant" : "smooth",
+      });
+    }
     firstRun.current = false;
   }, [activeTab]);
 
@@ -128,66 +228,126 @@ function TabNav({ activeTab, onSelect }) {
     if (el) el.scrollBy({ left: dir * Math.max(180, el.clientWidth * 0.7), behavior: "smooth" });
   };
 
-  // Mũi tên ←/→ đi giữa các tab khi tiêu điểm đang ở trong thanh (chuẩn tablist).
-  const onKeyDown = (e) => {
-    const step = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+  // Mũi tên ←/→ đi giữa các mục trong cùng một hàng (chuẩn tablist).
+  const arrowStep = (e) => (e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0);
+
+  const onGroupKey = (e) => {
+    const step = arrowStep(e);
     if (!step) return;
     e.preventDefault();
-    const i = TABS.findIndex((t) => t.id === activeTab);
-    const next = TABS[(i + step + TABS.length) % TABS.length];
-    onSelect(next.id);
-    listRef.current?.querySelector(`[data-tab="${next.id}"]`)?.focus();
+    const i = Math.max(0, GROUPS.indexOf(group));
+    const next = GROUPS[(i + step + GROUPS.length) % GROUPS.length];
+    openGroup(next);
+    e.currentTarget.querySelector(`[data-grp="${next.id}"]`)?.focus();
   };
 
+  const onSubKey = (e) => {
+    const step = arrowStep(e);
+    if (!step) return;
+    e.preventDefault();
+    const i = subs.indexOf(activeTab);
+    const next = subs[(i + step + subs.length) % subs.length];
+    onSelect(next);
+    listRef.current?.querySelector(`[data-tab="${next}"]`)?.focus();
+  };
+
+  // Hàng nhóm vẽ hai lần: một trong thanh trên (màn rộng), một ở thanh đáy
+  // (điện thoại). CSS ẩn hẳn bản không dùng bằng display:none nên lúc nào cũng
+  // chỉ một bản nằm trong cây trợ năng. id `tab-*` chỉ gắn ở bản trên để không
+  // trùng — aria-labelledby vẫn đọc được tên từ phần tử bị ẩn.
+  const groupRow = (where) => (
+    <div className={`gnav gnav--${where}`} role="tablist" aria-label="Nhóm nội dung" onKeyDown={onGroupKey}>
+      {GROUPS.map((g, i) => {
+        const on = g === group;
+        const solo = g.tabs.length === 1;
+        return (
+          <button
+            key={g.id}
+            data-grp={g.id}
+            id={where === "top" && solo ? `tab-${g.tabs[0]}` : undefined}
+            role="tab"
+            aria-selected={on}
+            aria-controls={solo ? "tabpanel" : undefined}
+            tabIndex={on || (!group && i === 0) ? 0 : -1}
+            className={`gnav__btn ${on ? "gnav__btn--on" : ""}`}
+            onClick={() => openGroup(g)}
+          >
+            <span className="gnav__icon" aria-hidden="true">{g.icon}</span>
+            <span className="gnav__label">{g.label}</span>
+          </button>
+        );
+      })}
+    </div>
+  );
+
   return (
-    <nav className="tab-nav" aria-label="Khu vực học">
-      <div className={`tab-nav__wrap ${edge.left ? "is-l" : ""} ${edge.right ? "is-r" : ""}`}>
-        <button
-          className="tab-nav__arrow tab-nav__arrow--l"
-          onClick={() => nudge(-1)}
-          tabIndex={-1}
-          aria-hidden="true"
-        >
-          ‹
-        </button>
+    <>
+      <nav
+        className={`tab-nav ${subs.length ? "" : "tab-nav--solo"} ${hidden ? "is-hidden" : ""}`}
+        aria-label="Khu vực học"
+      >
+        {groupRow("top")}
 
-        <div className="tab-nav__inner" ref={listRef} role="tablist" onKeyDown={onKeyDown}>
-          {TABS.map((tab) => {
-            const on = activeTab === tab.id;
-            return (
-              <button
-                key={tab.id}
-                data-tab={tab.id}
-                id={`tab-${tab.id}`}
-                role="tab"
-                aria-selected={on}
-                aria-controls="tabpanel"
-                tabIndex={on ? 0 : -1}
-                className={`tab-btn ${on ? "tab-btn--active" : ""}`}
-                onClick={() => onSelect(tab.id)}
-                title={tab.label}
-              >
-                {/* Chỉ icon mới aria-hidden. Hai nhãn thay nhau bằng
-                    `display: none` nên lúc nào cũng đúng một cái nằm trong cây
-                    trợ năng — tên nút vì thế luôn có, không phải nhờ `title`. */}
-                <span className="tab-btn__icon" aria-hidden="true">{tab.icon}</span>
-                <span className="tab-btn__label">{tab.label}</span>
-                <span className="tab-btn__short">{tab.short || tab.label}</span>
-              </button>
-            );
-          })}
-        </div>
+        {subs.length > 0 && (
+          <div className={`tab-nav__wrap ${edge.left ? "is-l" : ""} ${edge.right ? "is-r" : ""}`}>
+            <button
+              className="tab-nav__arrow tab-nav__arrow--l"
+              onClick={() => nudge(-1)}
+              tabIndex={-1}
+              aria-hidden="true"
+            >
+              ‹
+            </button>
 
-        <button
-          className="tab-nav__arrow tab-nav__arrow--r"
-          onClick={() => nudge(1)}
-          tabIndex={-1}
-          aria-hidden="true"
-        >
-          ›
-        </button>
-      </div>
-    </nav>
+            <div
+              className="tab-nav__inner"
+              ref={listRef}
+              role="tablist"
+              aria-label={group.label}
+              onKeyDown={onSubKey}
+            >
+              {subs.map((id) => {
+                const tab = TAB_BY_ID[id];
+                const on = activeTab === id;
+                return (
+                  <button
+                    key={id}
+                    data-tab={id}
+                    id={`tab-${id}`}
+                    role="tab"
+                    aria-selected={on}
+                    aria-controls="tabpanel"
+                    tabIndex={on ? 0 : -1}
+                    className={`tab-btn ${on ? "tab-btn--active" : ""}`}
+                    onClick={() => onSelect(id)}
+                    title={tab.label}
+                  >
+                    {/* Hai nhãn thay nhau bằng `display: none` nên lúc nào cũng
+                        đúng một cái nằm trong cây trợ năng. */}
+                    <span className="tab-btn__icon" aria-hidden="true">{tab.icon}</span>
+                    <span className="tab-btn__label">{tab.label}</span>
+                    <span className="tab-btn__short">{tab.short || tab.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <button
+              className="tab-nav__arrow tab-nav__arrow--r"
+              onClick={() => nudge(1)}
+              tabIndex={-1}
+              aria-hidden="true"
+            >
+              ›
+            </button>
+          </div>
+        )}
+      </nav>
+
+      <nav className={`bnav ${hidden ? "is-hidden" : ""}`} aria-label="Khu vực học">
+        {groupRow("bottom")}
+      </nav>
+    </>
   );
 }
 
@@ -356,6 +516,11 @@ export default function App() {
                 🔍 <span className="gs-trigger__t">Tìm mọi nơi</span>
                 <kbd>Ctrl K</kbd>
               </button>
+              {IS_DEV && (
+                <button className="gs-trigger" onClick={() => goTo("admin")} title="Admin (chỉ bản dev)" aria-label="Admin">
+                  🛠️
+                </button>
+              )}
               <AccountButton />
               <a href="https://portfolio-5728c.web.app/" className="header__badge">ArtDS02</a>
             </div>
@@ -372,7 +537,7 @@ export default function App() {
           tabIndex={-1}
         >
           <ErrorBoundary resetKey={activeTab}>
-            <Suspense fallback={<TabLoader label={TABS.find((t) => t.id === activeTab)?.label} />}>
+            <Suspense fallback={<TabLoader label={TAB_BY_ID[activeTab]?.label} />}>
               <div key={`${activeTab}:${jumped ? jump.n : 0}`}>{renderTab()}</div>
             </Suspense>
           </ErrorBoundary>

@@ -23,6 +23,7 @@ export const OWNED_KEYS = [
   "migrations_done_v1", // cờ di trú dữ liệu — mang theo để không di trú lại
   "swipe_hint_seen_v1", // đã xem gợi ý vuốt thẻ (để máy mới khỏi hiện lại)
   "jlpt-active-tab",
+  "jlpt-nav-last", // tab con mở lần trước của từng nhóm trên thanh điều hướng
 ];
 
 // Khoá lưu CHUỖI THUẦN (không phải JSON) — phải ghi lại đúng dạng chuỗi, nếu
@@ -36,6 +37,7 @@ export const RAW_STRING_KEYS = new Set(["jlpt-active-tab"]);
 //   · migrations_done_v1  di trú dữ liệu chạy riêng trên từng máy
 export const SYNC_EXCLUDE = new Set([
   "jlpt-active-tab",
+  "jlpt-nav-last",
   "tts_cfg_v1",
   "run_progress_v1",
   "migrations_done_v1",

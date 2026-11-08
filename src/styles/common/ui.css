@@ -618,6 +618,19 @@
   }
 }
 
+/* Điện thoại có thanh nhóm dính đáy (.bnav, cao 3.5rem) → nút nổi lên trên nó. */
+@media (max-width: 768px) {
+  .to-top.to-top {
+    bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));
+    transition: bottom 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  /* Thanh đáy trượt đi thì nút hạ xuống theo, khỏi lơ lửng giữa chừng. */
+  .bnav.is-hidden ~ .to-top.to-top {
+    bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  }
+}
+
 /* ── Ô hành động học (dùng ở Từ vựng và Kanji) ──
    Phải nằm ở file toàn cục này, KHÔNG phải trong CSS của một tab: trước đây cụm
    này ở tabs/vocabulary-extra.css — file chỉ được VocabularyTab import — nên mở
