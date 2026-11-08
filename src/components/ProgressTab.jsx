@@ -33,6 +33,7 @@ import { downloadBackup, readBackupFile, importData, wipeAll, OWNED_KEYS } from 
 import { ANKI_DECKS, ANKI_FILTERS, ANKI_COLUMNS, ankiItems, downloadAnki } from "../lib/ankiExport";
 import StudyRunner from "./common/StudyRunner";
 import { useDataVersion } from "../lib/useDataVersion";
+import { useCloud } from "../lib/cloud/store";
 import "../styles/tabs/progress.css";
 import "../styles/tabs/progress-extra.css";
 
@@ -123,6 +124,7 @@ function AnkiExport() {
 export default function ProgressTab({ onGoTo }) {
   // Vẽ lại mỗi khi SRS / tiến độ đổi — kể cả do tab trình duyệt khác ghi.
   useDataVersion();
+  const cloud = useCloud();
   // Danh sách thẻ của phiên "ôn thẻ khó" — dựng MỘT LẦN lúc bấm, để phiên không
   // bị dựng lại (mất chỗ đang học) mỗi khi SRS đổi sau từng thẻ.
   const [hardItems, setHardItems] = useState(null);
@@ -170,7 +172,10 @@ export default function ProgressTab({ onGoTo }) {
   const dueAll = Object.values(deckStats).reduce((a, s) => a + s.due, 0);
 
   const resetAll = () => {
-    if (!window.confirm("Xoá toàn bộ tiến độ học (SRS, streak, bài làm, ghi chú)? Không thể hoàn tác.")) return;
+    const msg = cloud.user
+      ? `Xoá toàn bộ tiến độ học (SRS, streak, bài làm, ghi chú) trên máy này VÀ trên tài khoản ${cloud.user.email} (mọi thiết bị)? Không thể hoàn tác.`
+      : "Xoá toàn bộ tiến độ học (SRS, streak, bài làm, ghi chú)? Không thể hoàn tác.";
+    if (!window.confirm(msg)) return;
     wipeAll();
     // Tải lại trang: mọi module đang giữ dữ liệu trong bộ nhớ (SRS, phiên học dở,
     // Minna…) phải đọc lại từ đầu, nếu không lượt ôn kế tiếp ghi lại dữ liệu cũ.
@@ -527,7 +532,11 @@ export default function ProgressTab({ onGoTo }) {
         <div className="prog-block__head">
           <h3>💾 Sao lưu &amp; chuyển máy</h3>
           <span className="prog-block__meta">
-            Tiến độ chỉ nằm trong trình duyệt này — xoá cache là mất hết
+            {cloud.user
+              ? `☁️ Đang tự đồng bộ với tài khoản ${cloud.user.email}`
+              : cloud.enabled
+                ? "Tiến độ chỉ nằm trong trình duyệt này — đăng nhập (góc trên phải) để đồng bộ giữa các máy"
+                : "Tiến độ chỉ nằm trong trình duyệt này — xoá cache là mất hết"}
           </span>
         </div>
         <div className="pgx-backup__body">

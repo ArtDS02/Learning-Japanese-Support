@@ -2,8 +2,10 @@ import { useState, useEffect, useCallback, useRef, lazy, Suspense } from "react"
 import Preloader from "./components/common/Preloader";
 import ErrorBoundary from "./components/common/ErrorBoundary";
 import TabLoader from "./components/common/TabLoader";
+import AccountButton from "./components/common/AccountButton";
 import { startReminder } from "./lib/reminder";
 import { applyFontScale, subscribeUserData } from "./lib/userdata";
+import { writeRaw } from "./lib/storage";
 
 // Áp cỡ chữ ngay khi nạp module (trước lần vẽ đầu) để không thấy chữ nhảy cỡ.
 applyFontScale();
@@ -261,11 +263,7 @@ export default function App() {
   }, [revealing]);
 
   useEffect(() => {
-    try {
-      localStorage.setItem("jlpt-active-tab", activeTab);
-    } catch {
-      /* chế độ riêng tư / hết dung lượng — không đáng để làm vỡ app */
-    }
+    writeRaw("jlpt-active-tab", activeTab);
   }, [activeTab]);
 
   // Nhắc học chạy ở cấp App để hoạt động dù đang mở tab nào.
@@ -358,6 +356,7 @@ export default function App() {
                 🔍 <span className="gs-trigger__t">Tìm mọi nơi</span>
                 <kbd>Ctrl K</kbd>
               </button>
+              <AccountButton />
               <a href="https://portfolio-5728c.web.app/" className="header__badge">ArtDS02</a>
             </div>
           </div>

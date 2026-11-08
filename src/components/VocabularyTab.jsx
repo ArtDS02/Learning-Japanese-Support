@@ -1,5 +1,6 @@
 import vocabData from "../data/vocabulary.json";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { writeJSON } from "../lib/storage";
 import { getCard, getStatus, orderForStudy, getStats } from "../lib/srs";
 import { vocabCard } from "../lib/session";
 import { lessons, lessonProgress, nextLesson, lessonsOverview, LESSON_SIZE } from "../lib/lessons";
@@ -32,7 +33,7 @@ function loadMarked() {
 }
 
 function saveMarked(set) {
-  localStorage.setItem(MARKED_KEY, JSON.stringify([...set]));
+  writeJSON(MARKED_KEY, [...set]);
 }
 
 const STATUS_META = {
@@ -57,6 +58,15 @@ export default function VocabularyTab({ initialSearch }) {
   // các state khác tự về mặc định — không cần effect đồng bộ.)
   useDataVersion();
   const custom = customAsWords();
+
+  // Đánh dấu đổi ở tab khác hoặc vừa đồng bộ từ máy khác về → đọc lại.
+  useEffect(() => {
+    const onStorage = (e) => {
+      if (e.key === MARKED_KEY) setMarkedIds(loadMarked());
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
 
   const allWords = useMemo(
     () => [

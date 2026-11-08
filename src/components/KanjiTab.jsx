@@ -16,6 +16,7 @@ import WritePad from "./common/WritePad";
 import Modal from "./common/Modal";
 import FilterRow from "./common/FilterRow";
 import { useDataVersion } from "../lib/useDataVersion";
+import { readJSON, writeJSON } from "../lib/storage";
 import "../styles/tabs/kanji.css";
 import "../styles/tabs/kanji-extra.css";
 
@@ -51,12 +52,17 @@ export default function KanjiTab({ initialSearch }) {
   useDataVersion(); // vẽ lại mỗi khi SRS đổi (chấm thẻ, học ở tab khác…)
 
   useEffect(() => {
-    try {
-      localStorage.setItem(MARKED_KEY, JSON.stringify([...marked]));
-    } catch {
-      /* quota */
-    }
+    writeJSON(MARKED_KEY, [...marked]);
   }, [marked]);
+
+  // Đánh dấu đổi ở tab khác hoặc vừa đồng bộ từ máy khác về → đọc lại.
+  useEffect(() => {
+    const onStorage = (e) => {
+      if (e.key === MARKED_KEY) setMarked(new Set(readJSON(MARKED_KEY, [])));
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
 
   const inLevel = useMemo(
     () =>

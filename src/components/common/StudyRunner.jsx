@@ -4,6 +4,7 @@ import { recordReview } from "../../lib/progress";
 import { matchesKana } from "../../lib/romaji";
 import { shuffle } from "../../lib/random";
 import { loadSettings } from "../../lib/userdata";
+import { writeRaw } from "../../lib/storage";
 import { cardKey, sessionKey, loadRun, saveRun, clearRun } from "../../lib/runstate";
 import { speak, ttsSupported, hasJaVoice } from "../../lib/tts";
 import SpeakButton from "./SpeakButton";
@@ -659,11 +660,7 @@ function FlashBody({ item, revealed, onFlip, onRate, furigana }) {
 
   const seeHint = () => {
     setHintSeen(true);
-    try {
-      localStorage.setItem(SWIPE_HINT_KEY, "1");
-    } catch {
-      /* chế độ riêng tư — chỉ là gợi ý, bỏ qua */
-    }
+    writeRaw(SWIPE_HINT_KEY, "1");
   };
 
   const onPointerDown = (e) => {

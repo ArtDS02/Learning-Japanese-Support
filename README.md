@@ -62,27 +62,60 @@ firebase use
 
 ```bash
 npm run build
-firebase deploy --only hosting
+firebase deploy --only firestore:rules,hosting
 ```
+
+`firestore:rules` deploys [firestore.rules](firestore.rules) (each user can only
+read/write `users/{uid}/kv/*`). `firebase.json` is gitignored, so on a new machine
+add `"firestore": { "rules": "firestore.rules" }` to it before deploying.
 
 ---
 
 # Environment Variables
 
-None required. The app is fully client-side: all learning data lives in
-`src/data/*.json` and user progress is stored in the browser's `localStorage`
-(export/import a backup file from the **Tiến độ** tab). Firebase is used only
-for static hosting — there is no Firebase SDK or API key in the app.
+Optional — only for **account sign-in & progress sync** (Google sign-in + Firestore).
+Copy [.env.example](.env.example) to `.env.local` and fill in the web app config
+from Firebase Console → Project settings → Your apps.
 
-`.env` files are still ignored by git if you add any later.
+| Variable | Meaning |
+|---|---|
+| `VITE_FIREBASE_API_KEY` | Web API key (not a secret — security lives in `firestore.rules`) |
+| `VITE_FIREBASE_AUTH_DOMAIN` | Auth domain; use the hosting domain (`<project>.web.app`) so sign-in is same-origin |
+| `VITE_FIREBASE_PROJECT_ID` | Firebase project ID |
+| `VITE_FIREBASE_APP_ID` | Web app ID |
+| `VITE_USE_EMULATOR` | Dev only: `1` connects to the local Firebase Emulator |
+
+Without these the account button is hidden and the app runs fully offline as
+before: progress stays in `localStorage` (export/import a backup file from the
+**Tiến độ** tab). Signed-out users never download the Firebase SDK — it lives in
+a lazy chunk loaded only on sign-in. Design: [docs/plan-dang-nhap-dong-bo.md](docs/plan-dang-nhap-dong-bo.md).
 
 ---
 
-# Lint
+# Lint & Test
 
 ```bash
 npm run lint
 ```
+
+```bash
+npm test
+```
+
+`npm test` runs the sync-core unit tests (`node --test`, no extra dependencies).
+
+## Testing sync locally with the Firebase Emulator
+
+Needs Java 21+. Put `VITE_USE_EMULATOR=1` in `.env.development.local`, then:
+
+```bash
+npm run emulators
+```
+
+Open the dev server on `127.0.0.1` (not `localhost` — the emulator's sign-in page
+at `127.0.0.1:9099` must be same-site, or the browser partitions its storage).
+Two dev servers on different ports act as two devices. Browsers that can't open
+popups: set `localStorage.dev_auth_redirect = "1"` to use the redirect flow.
 
 ---
 
@@ -106,7 +139,8 @@ dist/
 - React 19
 - Web Speech API (Japanese text-to-speech, no audio files)
 - Service worker (offline / installable PWA)
-- Firebase Hosting (static files only)
+- Firebase Hosting
+- Firebase Auth (Google) + Cloud Firestore lite — optional progress sync, local-first
 
 # Credits
 

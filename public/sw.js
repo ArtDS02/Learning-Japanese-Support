@@ -56,6 +56,10 @@ self.addEventListener("fetch", (event) => {
 
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return; // font Google… để trình duyệt tự xử lý
+  // Trang /__/auth/* của Firebase (đăng nhập kiểu chuyển trang): không bao giờ
+  // cache. Nhánh điều hướng bên dưới lưu MỌI trang mở ra đè lên index.html — để
+  // lọt trang auth vào thì bản offline của app biến thành trang đăng nhập.
+  if (url.pathname.startsWith("/__/")) return;
 
   // Điều hướng trang: ưu tiên mạng, mất mạng thì dùng shell đã cache.
   if (request.mode === "navigate") {

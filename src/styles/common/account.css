@@ -1,0 +1,468 @@
+/* ============================================================
+   Tài khoản & đồng bộ — nút trên header, hộp thoại tài khoản,
+   hộp thoại chọn cách gộp khi đăng nhập lần đầu.
+   ============================================================ */
+
+/* ── Nút trên header ── */
+.acct-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.acct-trigger:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+}
+
+.acct-trigger:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.acct-trigger--in {
+  padding: 0.1875rem;
+}
+
+.acct-trigger__dot {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  border: 0.125rem solid var(--bg-surface);
+  background: var(--status-c, var(--text-muted));
+}
+
+/* ── Avatar ── */
+.acct-avatar {
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.acct-avatar--sm {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 0.8125rem;
+}
+
+.acct-avatar--lg {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.25rem;
+}
+
+.acct-avatar--txt {
+  background: var(--gradient-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ── Màu trạng thái (dùng chung cho chấm trên header và dòng trạng thái) ── */
+.acct-status--idle {
+  --status-c: var(--accent-green);
+}
+.acct-status--syncing,
+.acct-status--starting {
+  --status-c: var(--accent-cyan);
+}
+.acct-status--pending {
+  --status-c: var(--accent-yellow);
+}
+.acct-status--offline {
+  --status-c: var(--text-muted);
+}
+.acct-status--error {
+  --status-c: var(--accent-red);
+}
+
+/* ── Khung hộp thoại ── */
+.acct-panel {
+  max-width: 28rem;
+  background: var(--bg-card);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 1.5rem;
+  color: var(--text-primary);
+}
+
+.acct-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.acct-close:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.acct-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin: 0 2rem 0.5rem 0;
+}
+
+.acct-lead {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0 0 0.75rem;
+}
+
+.acct-points {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.acct-note {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin: 1rem 0 0;
+}
+
+.acct-error {
+  color: var(--accent-red);
+  font-size: 0.875rem;
+  margin: 0.75rem 0 0;
+}
+
+/* ── Nút Google ── */
+.acct-google {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  background: #fff;
+  color: #1f1f1f;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+  transition: filter var(--transition);
+}
+
+.acct-google:hover {
+  filter: brightness(0.94);
+}
+
+.acct-google:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.acct-google__g {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ── Đã đăng nhập ── */
+.acct-user {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin: 0 2rem 1rem 0;
+}
+
+.acct-user__txt {
+  min-width: 0;
+}
+
+.acct-user__name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.acct-user__mail {
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.acct-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+  background: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.acct-status__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--status-c, var(--text-muted));
+}
+
+.acct-status--syncing .acct-status__dot,
+.acct-status--starting .acct-status__dot {
+  animation: acct-pulse 1s ease-in-out infinite;
+}
+
+@keyframes acct-pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.acct-status__ago {
+  color: var(--text-muted);
+}
+
+.acct-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.acct-btn-act {
+  flex: 1 1 auto;
+  background: var(--bg-surface);
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.625rem 1rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background var(--transition);
+}
+
+.acct-btn-act:hover {
+  background: var(--bg-card-hover);
+}
+
+.acct-btn-act:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.acct-btn-act--primary {
+  background: var(--accent-green);
+  border-color: transparent;
+  color: #0a0b0f;
+}
+
+.acct-btn-act--primary:hover {
+  background: var(--accent-green);
+  filter: brightness(1.1);
+}
+
+.acct-btn-act small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+.acct-leave {
+  margin-top: 1rem;
+}
+
+.acct-check {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.acct-check input {
+  margin-top: 0.2rem;
+  accent-color: var(--accent-red);
+}
+
+.acct-check small {
+  color: var(--text-muted);
+}
+
+.acct-danger {
+  display: block;
+  margin: 1rem auto 0;
+  background: none;
+  border: none;
+  color: var(--accent-red);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.acct-danger:hover {
+  opacity: 1;
+}
+
+/* ── Chính sách quyền riêng tư ── */
+.acct-privacy {
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.acct-privacy summary {
+  cursor: pointer;
+  color: var(--accent-blue);
+}
+
+.acct-privacy ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.125rem;
+  line-height: 1.6;
+}
+
+/* ── Chọn cách gộp lần đầu ── */
+.acct-cmp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.625rem;
+  margin-bottom: 1rem;
+}
+
+.acct-cmp__col {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.acct-cmp__col strong {
+  color: var(--text-primary);
+}
+
+.acct-cmp__label {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.acct-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.acct-link {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ── Điện thoại: header chật → nút chỉ còn biểu tượng ── */
+@media (max-width: 40rem) {
+  .acct-trigger__t {
+    display: none;
+  }
+
+  .acct-trigger {
+    padding: 0.375rem 0.5rem;
+  }
+
+  .acct-trigger--in {
+    padding: 0.1875rem;
+  }
+
+  .acct-panel {
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media (max-width: 22rem) {
+  .acct-cmp {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Lớp phủ: làm tối & mờ trang nền khi mở hộp thoại tài khoản ── */
+.acct-overlay {
+  background: rgba(5, 6, 10, 0.72);
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
+}
+
+/* ── Vòng xoay trên nút "Đồng bộ ngay" ── */
+.acct-btn-act.is-syncing {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.acct-btn-act--primary.is-syncing:disabled {
+  /* Đang chạy chứ không phải bị khoá → giữ nguyên màu, chỉ đổi con trỏ. */
+  opacity: 1;
+  cursor: progress;
+}
+
+.acct-spinner {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 0.15rem solid currentColor;
+  border-right-color: transparent;
+  animation: acct-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes acct-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acct-spinner {
+    animation-duration: 1.6s;
+  }
+}

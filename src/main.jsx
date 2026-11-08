@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { runMigrations } from './lib/migrate'
+import { initCloud } from './lib/cloud/store'
 import './styles/base.css'
 // modal.css định nghĩa vỏ .ovl; các file sau nó chỉ chỉnh phần trang trí riêng
 // của từng hộp thoại, nên phải nạp trước ui.css và trước CSS của các tab.
@@ -13,6 +14,9 @@ import './styles/common/preloader.css'
 
 // Chuyển dữ liệu người dùng sang mô hình tiến độ mới (nếu cần) trước khi render.
 runMigrations()
+
+// Đồng bộ tài khoản: chưa đăng nhập thì không làm gì (không tải Firebase).
+initCloud()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

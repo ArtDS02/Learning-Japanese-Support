@@ -1,0 +1,31 @@
+rules_version = '2';
+
+// Đồng bộ tiến độ học: mỗi người chỉ đọc/ghi được dữ liệu của chính mình.
+//   users/{uid}/kv/{key} = { v: string | null, t: number, st: timestamp, dev: string }
+// Xem src/lib/cloud/syncCore.js để biết ý nghĩa từng field.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid}/kv/{key} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid) && validKv(request.resource.data);
+    }
+
+    // Mọi đường dẫn khác: cấm.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    function validKv(d) {
+      return d.keys().hasOnly(['v', 't', 'st', 'dev'])
+        && d.keys().hasAll(['v', 't', 'st', 'dev'])
+        && (d.v == null || (d.v is string && d.v.size() < 900000))
+        && d.t is int
+        && d.st == request.time
+        && d.dev is string && d.dev.size() <= 64;
+    }
+  }
+}
