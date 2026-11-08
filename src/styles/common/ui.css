@@ -365,12 +365,143 @@
 
 /* Trạng thái tải tab (lazy import) */
 
-.tab-loading {
-  padding: 3rem 1rem;
+/* Cả khối và thanh tiến trình đều chờ 150ms mới hiện: chunk về nhanh hơn thế
+   thì người dùng không thấy gì, khỏi nháy. `both` giữ opacity 0 trong lúc chờ —
+   khối vẫn chiếm chỗ nên footer không nhảy lên rồi tụt xuống. */
+.tl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 18rem;
+  padding: 4rem 1rem 3rem;
   text-align: center;
-  font-size: 0.875rem;
-  color: var(--text-muted);
+  animation: tl-in 0.3s ease 0.15s both;
 }
+
+@keyframes tl-in {
+  from { opacity: 0; transform: translateY(0.375rem); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Vòng tròn: rãnh mờ + hai cung đỏ/tím của logo xoay quanh chữ kana. Cung nằm
+   trên ::before để chữ ở giữa đứng yên, không xoay theo. */
+.tl__ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.1), transparent 70%);
+}
+
+.tl__ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 0.1875rem solid var(--bg-border);
+  border-top-color: var(--accent-red);
+  border-right-color: var(--accent-violet);
+  animation: tl-spin 0.9s linear infinite;
+}
+
+@keyframes tl-spin {
+  to { transform: rotate(360deg); }
+}
+
+.tl__kana {
+  font-size: calc(2rem * var(--jp-scale));
+  line-height: 1;
+  color: var(--text-primary);
+  animation: tl-kana 0.42s ease both;
+}
+
+@keyframes tl-kana {
+  from { opacity: 0; transform: scale(0.7); }
+  40% { opacity: 1; transform: scale(1.06); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.tl__label {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.tl__label b {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tl__tip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  max-width: 28rem;
+  padding: 0.5rem 0.875rem;
+  border: 0.0625rem solid var(--bg-border);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+.tl__tip-k {
+  flex: 0 0 auto;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-yellow);
+}
+
+/* Thanh tiến trình: vẽ bằng ::after của .tab-nav (sticky) nên luôn bám mép
+   dưới thanh tab. Nó chỉ tồn tại khi trong trang có .tl — .tl mất thì ::after
+   mất, lần tải sau tạo lại nên animation chạy lại từ đầu. Không biết trước chunk nặng bao nhiêu, nên nó chạy nhanh lúc đầu
+   rồi chậm dần và dừng ở 90% — tải xong thì cả khối gỡ đi. Vệt sáng chạy dọc
+   thân để lúc đứng ở 90% vẫn thấy là "đang chạy" chứ không phải treo. */
+.app:has(.tl) .tab-nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.0625rem;
+  height: 0.1875rem;
+  width: 0;
+  border-radius: 0 999px 999px 0;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent) 0 0 / 40% 100% no-repeat,
+    var(--gradient-primary);
+  box-shadow: 0 0 0.625rem rgba(167, 139, 250, 0.6);
+  pointer-events: none;
+  animation:
+    tl-bar-show 0.2s ease 0.15s both,
+    tl-bar-grow 8s cubic-bezier(0.08, 0.75, 0.2, 1) 0.15s forwards,
+    tl-bar-sheen 1.2s linear 0.15s infinite;
+}
+
+@keyframes tl-bar-show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes tl-bar-grow {
+  0% { width: 0; }
+  15% { width: 45%; }
+  50% { width: 75%; }
+  100% { width: 90%; }
+}
+
+@keyframes tl-bar-sheen {
+  from { background-position: -40% 0, 0 0; }
+  to { background-position: 140% 0, 0 0; }
+}
+
+/* Giảm chuyển động: quy tắc chung trong base.css đã rút mọi animation về 1
+   khung, nên thanh sẽ nhảy thẳng tới 90% và vòng tròn đứng yên — vẫn đọc được. */
 
 /* Khung báo lỗi (ErrorBoundary) */
 .err-box {

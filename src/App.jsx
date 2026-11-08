@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef, lazy, Suspense } from "react";
 import Preloader from "./components/common/Preloader";
 import ErrorBoundary from "./components/common/ErrorBoundary";
+import TabLoader from "./components/common/TabLoader";
 import { startReminder } from "./lib/reminder";
 import { applyFontScale, subscribeUserData } from "./lib/userdata";
 
@@ -372,7 +373,7 @@ export default function App() {
           tabIndex={-1}
         >
           <ErrorBoundary resetKey={activeTab}>
-            <Suspense fallback={<div className="tab-loading">Đang tải…</div>}>
+            <Suspense fallback={<TabLoader label={TABS.find((t) => t.id === activeTab)?.label} />}>
               <div key={`${activeTab}:${jumped ? jump.n : 0}`}>{renderTab()}</div>
             </Suspense>
           </ErrorBoundary>

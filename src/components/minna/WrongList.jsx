@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { TYPE_LABEL, clearWrong, correctText, loadLessons, cachedLesson } from "../../lib/minna";
 import { MemoryTip } from "./GrammarPoint";
+import TabLoader from "../common/TabLoader";
 
 /**
  * Sổ câu sai: câu hỏi · đáp án của người học · đáp án đúng · giải thích ·
@@ -42,7 +43,7 @@ export default function WrongList({ entries, prefs, onPractice, showLesson = fal
     );
   }
   if (error) return <div className="mn-card mn-empty">Không tải được dữ liệu: {error}</div>;
-  if (!ready) return <div className="tab-loading">Đang tải…</div>;
+  if (!ready) return <TabLoader label="câu sai" />;
 
   return (
     <div className="mn-wrong">

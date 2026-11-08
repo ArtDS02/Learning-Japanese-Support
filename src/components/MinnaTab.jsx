@@ -14,6 +14,7 @@ import {
   lessonOfId,
 } from "../lib/minna";
 import LessonView from "./minna/LessonView";
+import TabLoader from "./common/TabLoader";
 import ReviewSetup from "./minna/ReviewSetup";
 import Practice from "./minna/Practice";
 import WrongList from "./minna/WrongList";
@@ -150,7 +151,7 @@ export default function MinnaTab() {
     }
     if (mode === "wrong") return <GlobalWrong store={store} prefs={prefs} onPractice={startGlobalWrong} />;
     if (error) return <div className="mn-card mn-empty">Không tải được bài {lessonNo}: {error}</div>;
-    if (!data || data.lesson !== lessonNo) return <div className="tab-loading">Đang tải bài {lessonNo}…</div>;
+    if (!data || data.lesson !== lessonNo) return <TabLoader label={`bài ${lessonNo}`} />;
     return <LessonView key={lessonNo} data={data} meta={meta} store={store} prefs={prefs} />;
   };
 

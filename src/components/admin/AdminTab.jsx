@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { loadData, saveData } from "../../lib/adminApi";
 import { Node } from "./JsonEditor";
+import TabLoader from "../common/TabLoader";
 import "../../styles/tabs/admin.css";
 
 // Phải khớp danh sách DATA_FILES trong vite.config.ts (whitelist phía server).
@@ -144,7 +145,7 @@ export default function AdminTab() {
 
       {/* Editor */}
       {loading ? (
-        <div className="adm-loading">Đang tải…</div>
+        <TabLoader label="dữ liệu" />
       ) : data ? (
         <div className="adm-editor">
           <Node

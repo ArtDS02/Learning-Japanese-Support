@@ -97,7 +97,6 @@
 .adm-status--ok  { background: rgba(52, 211, 153, 0.1); color: var(--accent-green); border-color: rgba(52, 211, 153, 0.3); }
 .adm-status--err { background: rgba(255, 71, 87, 0.1); color: var(--accent-red); border-color: rgba(255, 71, 87, 0.3); }
 
-.adm-loading { padding: 2rem; text-align: center; color: var(--text-secondary); }
 
 /* ── Editor đệ quy ─────────────────────────────────────── */
 .adm-editor { display: flex; flex-direction: column; gap: 0.6rem; }
